@@ -1,0 +1,3 @@
+import{describe,expect,it}from'vitest';import{calculate}from'./engine';
+const base={price:100,materialCost:10,laborCost:30,fixedCosts:1000,ownerPay:0,targetProfit:0,paymentFeePct:0,workers:1,hoursPerWorker:40,hoursPerJob:2,utilizationPct:100,conversionPct:25};
+describe('calculation engine',()=>{it('calculates jobs and leads',()=>{const r=calculate(base);expect(r.contribution).toBe(60);expect(r.jobs).toBe(17);expect(r.leads).toBe(68)});it('rejects non-positive contribution',()=>{expect(calculate({...base,price:40}).valid).toBe(false)});it('higher fixed costs never reduce jobs',()=>{expect(calculate({...base,fixedCosts:2000}).jobs).toBeGreaterThan(calculate(base).jobs)})});
