@@ -20,6 +20,7 @@ import BlogSection from "./BlogSection";
 import SecondaryPage from "./Pages";
 import { Logo, SiteFooter } from "./SiteChrome";
 import ScenarioTools from "./ScenarioTools";
+import HomeSEO from "./HomeSEO";
 import "./styles.css";
 import "./industries.css";
 import "./visuals.css";
@@ -78,13 +79,13 @@ function App() {
               <Sparkles /> AI-ready decision intelligence for SMBs
             </div>
             <h1>
-              Know your number.
+              Free break-even calculator
               <br />
-              <em>Prove you can reach it.</em>
+              <em>for small businesses.</em>
             </h1>
             <p>
-              Calculate the revenue, sales volume, capacity, and customer demand
-              your business needs to break even—in one transparent plan.
+              Calculate exact break-even revenue, required sales volume, team
+              capacity and customer demand with an industry-specific feasibility report.
             </p>
             <div className="trust">
               <span>
@@ -367,12 +368,13 @@ function App() {
             </p>
           </div>
           <div className="code">
-            <small>FORMULA TRACE · ENGINE v0.1</small>
+            <small>FORMULA TRACE · ENGINE v1.1.0</small>
             <code>contribution = price - direct_costs - fees</code>
-            <code>jobs_needed = ceil(fixed_need / contribution)</code>
-            <code>leads_needed = ceil(jobs_needed / conversion)</code>
+            <code>exact_units = fixed_need / contribution</code>
+            <code>required_inquiries = exact_units / conversion</code>
           </div>
         </section>
+        <HomeSEO />
         <BlogSection />
         <section className="pricing" id="pricing">
           <span>START WITHOUT AN EMAIL GATE</span>
