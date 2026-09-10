@@ -20,7 +20,7 @@
 }
 .insights-title h2,
 .blog-heading h2 {
-  font: 700 36px Manrope;
+  font: 700 36px Sora;
   margin: 10px 0;
 }
 .insights-title p {
@@ -53,7 +53,7 @@
 }
 .insight-grid header strong {
   display: block;
-  font: 700 19px Manrope;
+  font: 700 19px Sora;
   margin-top: 3px;
 }
 .stacked {
@@ -115,7 +115,7 @@
   display: block;
 }
 .gauge strong {
-  font: 800 30px Manrope;
+  font: 800 30px Sora;
 }
 .gauge small {
   font-size: 11px;
@@ -219,7 +219,7 @@
   text-transform: uppercase;
 }
 .blog-grid h3 {
-  font: 700 19px/1.35 Manrope;
+  font: 700 19px/1.35 Sora;
   margin: 8px 0;
 }
 .blog-grid p {
