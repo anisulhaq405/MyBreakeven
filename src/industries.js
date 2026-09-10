@@ -9,7 +9,7 @@ export const industries={
  salon:{name:"Salon Business",short:"Salon",unit:"appointments",singular:"appointment",source:"Appointment model",extraLabel:"Laundry + disposables per appointment",acquisitionLabel:"Marketing cost per booked appointment",values:{price:92,materialCost:13,laborCost:29,otherVariableCost:4,acquisitionCost:6,fixedCosts:8500,ownerPay:5500,targetProfit:1800,paymentFeePct:3,workers:5,hoursPerWorker:34,hoursPerJob:1.4,utilizationPct:76,conversionPct:38}}
 };
 export const fieldLabels=i=>[
- [`Average price per ${i.singular}`,'price','$'],[`Materials / product cost per ${i.singular}`,'materialCost','$'],[`Direct labor per ${i.singular}`,'laborCost','$'],[i.extraLabel,'otherVariableCost','$'],[i.acquisitionLabel,'acquisitionCost','$'],
- ['Monthly operating overhead','fixedCosts','$'],['Monthly owner pay','ownerPay','$'],['Target monthly profit','targetProfit','$'],['Payment and platform fees','paymentFeePct','%'],
- ['Active team members','workers',''],['Hours per team member / week','hoursPerWorker','hrs'],[`Delivery hours per ${i.singular}`,'hoursPerJob','hrs'],['Productive utilization','utilizationPct','%'],[`Inquiry-to-${i.singular} conversion`,'conversionPct','%']
+ [`Average price per ${i.singular}`,'price','$',{min:.01,step:.01}],[`Materials / product cost per ${i.singular}`,'materialCost','$',{step:.01}],[`Direct labor per ${i.singular}`,'laborCost','$',{step:.01}],[i.extraLabel,'otherVariableCost','$',{step:.01}],[i.acquisitionLabel,'acquisitionCost','$',{step:.01}],
+ ['Monthly operating overhead','fixedCosts','$',{step:.01}],['Monthly owner pay','ownerPay','$',{step:.01}],['Target monthly profit','targetProfit','$',{step:.01}],['Payment and platform fees','paymentFeePct','%',{max:100,step:.01}],
+ ['Active team members','workers','',{min:1,step:1}],['Hours per team member / week','hoursPerWorker','hrs',{step:.01}],[`Delivery hours per ${i.singular}`,'hoursPerJob','hrs',{min:.01,step:.01}],['Productive utilization','utilizationPct','%',{max:100,step:.01}],[`Inquiry-to-${i.singular} conversion`,'conversionPct','%',{min:.01,max:100,step:.01}]
 ];
