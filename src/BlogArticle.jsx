@@ -1,0 +1,23 @@
+import React,{useEffect}from"react";
+import {articles} from"./blogData.js";
+
+export default function BlogArticle({slug}){
+  const a=articles[slug];
+  useEffect(()=>{if(a){
+    document.title=`${a.title} | MyBreakeven`;
+    document.querySelector('meta[name="description"]')?.setAttribute("content",a.description);
+    document.querySelector('link[rel="canonical"]')?.setAttribute("href",`https://mybreakeven.com/blogs/${slug}/`);
+  }},[a,slug]);
+  if(!a)return <section className="page-hero"><h1>Guide not found</h1><a href="/blogs/">Return to blogs</a></section>;
+  return <article className="article-page">
+    <nav className="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/blogs/">Guides</a><span>›</span><span>{a.tag}</span></nav>
+    <span>{a.tag} BREAK-EVEN GUIDE</span><h1>{a.title}</h1><p className="article-lead">{a.description}</p>
+    {a.image&&<img src={a.image} alt={a.alt} width="720" height="480"/>}
+    <section className="article-summary"><h2>Quick answer</h2><p>Break-even is reached when contribution from completed {a.unit} covers monthly overhead and any owner-pay or profit target entered. Use actual per-{a.singular} costs and realistic productive capacity; the result is only as reliable as those assumptions.</p></section>
+    <section><h2>Calculator features</h2><ul>{a.features.map(item=><li key={item}>{item}</li>)}</ul></section>
+    {a.sections.map(section=><section key={section.heading}><h2>{section.heading}</h2>{section.paragraphs?.map(p=><p key={p}>{p}</p>)}{section.bullets&&<ul>{section.bullets.map(item=><li key={item}>{item}</li>)}</ul>}</section>)}
+    <section className="article-faq"><h2>Frequently asked questions</h2>{a.faq.map(item=><details key={item.q}><summary>{item.q}</summary><p>{item.a}</p></details>)}</section>
+    <aside><h2>Run your own {a.tag.toLowerCase()} numbers</h2><p>Open the matching calculator with industry-specific inputs, exact fractional results and whole-unit operating targets.</p><a className="page-button" href={`/calculators/${a.calculatorSlug}/`}>Use the free {a.tag} calculator</a></aside>
+    <p className="article-note">Reviewed September 10, 2026. Planning estimates only—not accounting, tax, legal or lending advice.</p>
+  </article>
+}
