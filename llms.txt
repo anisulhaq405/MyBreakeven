@@ -17,6 +17,11 @@ MyBreakeven is a free industry-specific break-even and feasibility calculator fo
 
 ## Guides
 - [Break-even and feasibility guides](https://mybreakeven.com/blogs/)
+- [Cleaning business break-even guide](https://mybreakeven.com/blogs/cleaning-business-break-even/)
+- [Landscaping break-even guide](https://mybreakeven.com/blogs/landscaping-break-even/)
+- [Photography business break-even guide](https://mybreakeven.com/blogs/photography-business-break-even/)
+- [Agency and freelancer break-even guide](https://mybreakeven.com/blogs/agency-break-even/)
+- [Mobile detailing break-even guide](https://mybreakeven.com/blogs/mobile-detailing-break-even/)
 - [E-commerce break-even guide](https://mybreakeven.com/blogs/ecommerce-break-even/)
 - [Restaurant break-even guide](https://mybreakeven.com/blogs/restaurant-break-even/)
 - [Salon break-even guide](https://mybreakeven.com/blogs/salon-break-even/)
