@@ -1,14 +1,14 @@
 import React from "react";
 
 const models = [
-  ["Cleaning business", "Estimate jobs, contribution margin, team capacity and cleaning leads required each month."],
-  ["Landscaping and lawn care", "Calculate profitable job volume after labor, materials, fuel, equipment and lead costs."],
-  ["Photography studio", "Connect session pricing, editing time, direct costs and booking conversion to break-even."],
-  ["Agency and freelancer", "Model retainers, contractor costs, delivery hours, client acquisition and capacity."],
-  ["Mobile auto detailing", "Calculate appointments needed after supplies, travel, labor and marketing costs."],
-  ["E-commerce store", "Include COGS, fulfillment, shipping subsidy, returns, payment fees and customer acquisition cost."],
-  ["Restaurant business", "Turn food cost, labor, packaging, delivery commissions and overhead into an order target."],
-  ["Salon business", "Estimate appointments required using service price, product usage, stylist labor and utilization."],
+  ["Cleaning business", "Estimate jobs, contribution margin, team capacity and cleaning leads required each month.", "cleaning-business-break-even-calculator"],
+  ["Landscaping and lawn care", "Calculate profitable job volume after labor, materials, fuel, equipment and lead costs.", "landscaping-break-even-calculator"],
+  ["Photography studio", "Connect session pricing, editing time, direct costs and booking conversion to break-even.", "photography-business-break-even-calculator"],
+  ["Agency and freelancer", "Model retainers, contractor costs, delivery hours, client acquisition and capacity.", "agency-break-even-calculator"],
+  ["Mobile auto detailing", "Calculate appointments needed after supplies, travel, labor and marketing costs.", "mobile-detailing-break-even-calculator"],
+  ["E-commerce store", "Include COGS, fulfillment, shipping subsidy, returns, payment fees and customer acquisition cost.", "ecommerce-break-even-calculator"],
+  ["Restaurant business", "Turn food cost, labor, packaging, delivery commissions and overhead into an order target.", "restaurant-break-even-calculator"],
+  ["Salon business", "Estimate appointments required using service price, product usage, stylist labor and utilization.", "salon-break-even-calculator"],
 ];
 
 const faqs = [
@@ -35,9 +35,9 @@ export default function HomeSEO() {
         </p>
       </div>
       <div className="seo-models" aria-label="Available industry break-even models">
-        {models.map(([name, description]) => (
+        {models.map(([name, description, slug]) => (
           <article key={name}>
-            <h3>{name} break-even calculator</h3>
+            <h3><a href={`/calculators/${slug}/`}>{name} break-even calculator</a></h3>
             <p>{description}</p>
           </article>
         ))}
