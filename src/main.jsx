@@ -17,44 +17,52 @@ import { calculate } from "./engine";
 import { fieldLabels, industries } from "./industries";
 import Insights from "./Insights";
 import BlogSection from "./BlogSection";
+import SecondaryPage from "./Pages";
+import { Logo, SiteFooter } from "./SiteChrome";
+import ScenarioTools from "./ScenarioTools";
 import "./styles.css";
 import "./industries.css";
 import "./visuals.css";
-const money = (n) =>
+const money = (n, currency = "USD") =>
   new Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
+    currency,
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
   }).format(n || 0);
+const quantity = (n) => new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 }).format(n || 0);
 function App() {
   const [industryKey, setIndustryKey] = useState("cleaning"),
     [input, setInput] = useState(industries.cleaning.values),
-    [mobile, setMobile] = useState(false);
+    [mobile, setMobile] = useState(false),
+    [currency, setCurrency] = useState("USD");
+  const currencySymbol = new Intl.NumberFormat("en-US", { style: "currency", currency, currencyDisplay: "narrowSymbol" }).formatToParts(0).find(p => p.type === "currency")?.value || currency;
   const industry = industries[industryKey],
     fields = fieldLabels(industry);
   const result = useMemo(() => calculate(input), [input]);
-  const set = (k, v) =>
-    setInput((s) => ({ ...s, [k]: Math.max(0, Number(v)) }));
+  const set = (k, v) => setInput((s) => ({ ...s, [k]: v }));
+  const normalize = (k, value, options = {}) => {
+    if (value === "") return;
+    const parsed = Number(value);
+    if (!Number.isFinite(parsed)) return set(k, "");
+    const stepped = options.step === 1 ? Math.round(parsed) : parsed;
+    set(k, Math.min(options.max ?? Number.POSITIVE_INFINITY, Math.max(options.min ?? 0, stepped)));
+  };
   const choose = (k) => {
     setIndustryKey(k);
     setInput({ ...industries[k].values });
   };
+  const path = window.location.pathname.replace(/\/$/, "") || "/";
+  if (path !== "/") return <SecondaryPage path={path} />;
   return (
     <>
       <header>
-        <a className="brand" href="#top">
-          <span className="brandmark">M</span>
-          <span>
-            My<span>Breakeven</span>
-          </span>
-        </a>
+        <Logo />
         <nav className={mobile ? "open" : ""}>
-          <a href="#calculator">Calculator</a>
-          <a href="#how">How it works</a>
-          <a href="#industries">Industries</a>
-          <a href="#methodology">Methodology</a>
-          <a href="#blog">Blogs</a>
-          <a href="#pricing">Pricing</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/blogs/">Blogs</a>
+          <a href="/about-us/">About Us</a>
+          <a href="/contact-us/">Contact Us</a>
           <button className="navCta">
             Start free <ArrowRight />
           </button>
@@ -113,13 +121,13 @@ function App() {
             <div className="mini-grid">
               <span>
                 {industry.unit} needed
-                <strong>{result.valid ? result.jobs : "—"}</strong>
+                <strong>{result.valid ? quantity(result.jobs) : "—"}</strong>
               </span>
               <span>
-                Capacity<strong>{result.valid ? result.capacity : "—"}</strong>
+                Capacity<strong>{result.valid ? quantity(result.capacity) : "—"}</strong>
               </span>
               <span>
-                Inquiries<strong>{result.valid ? result.leads : "—"}</strong>
+                Inquiries<strong>{result.valid ? quantity(result.leads) : "—"}</strong>
               </span>
             </div>
             <p>
@@ -133,6 +141,7 @@ function App() {
             <span>FREE INDUSTRY CALCULATORS</span>
             <h2>Can your {industry.name.toLowerCase()} break even?</h2>
             <p>Choose a business model, then edit its monthly assumptions.</p>
+            <label className="currency-select">Currency <select value={currency} onChange={e => setCurrency(e.target.value)}>{["USD","EUR","GBP","CAD","AUD","NZD","AED","SAR","PKR","INR","BDT","SGD","MYR","ZAR","JPY","CHF","SEK","NOK","DKK"].map(code => <option key={code}>{code}</option>)}</select><small>Amounts are labeled, not converted.</small></label>
           </div>
           <div
             className="industry-picker"
@@ -164,17 +173,21 @@ function App() {
                 </button>
               </div>
               <div className="field-grid">
-                {fields.map(([label, key, suffix]) => (
+                {fields.map(([label, key, suffix, options = {}]) => (
                   <label key={key}>
                     <span>{label}</span>
                     <div className="control">
-                      {suffix === "$" && <b>$</b>}
+                      {suffix === "$" && <b>{currencySymbol}</b>}
                       <input
                         type="number"
-                        min="0"
-                        step="0.1"
+                        min={options.min ?? 0}
+                        max={options.max}
+                        step={options.step ?? "0.01"}
+                        inputMode="decimal"
                         value={input[key]}
                         onChange={(e) => set(key, e.target.value)}
+                        onBlur={(e) => normalize(key, e.target.value, options)}
+                        aria-invalid={input[key] === ""}
                       />
                       {suffix && suffix !== "$" && <i>{suffix}</i>}
                     </div>
@@ -215,10 +228,9 @@ function App() {
                 <>
                   <div className="hero-result">
                     <span>Break-even revenue</span>
-                    <strong>{money(result.revenue)}</strong>
+                    <strong>{money(result.revenue, currency)}</strong>
                     <small>
-                      {result.jobs} {industry.unit} × {money(input.price)}{" "}
-                      average price
+                      Exact: {quantity(result.jobs)} {industry.unit} × {money(input.price, currency)} average price
                     </small>
                   </div>
                   <div className="metrics">
@@ -227,7 +239,7 @@ function App() {
                       <span>
                         {industry.unit} needed
                         <strong>
-                          {result.jobs}
+                          {quantity(result.jobs)}
                           <small>/ month</small>
                         </strong>
                       </span>
@@ -237,7 +249,7 @@ function App() {
                       <span>
                         Delivery capacity
                         <strong>
-                          {result.capacity}
+                          {quantity(result.capacity)}
                           <small>{industry.unit} / month</small>
                         </strong>
                       </span>
@@ -247,7 +259,7 @@ function App() {
                       <span>
                         Inquiries required
                         <strong>
-                          {result.leads}
+                          {quantity(result.leads)}
                           <small>/ month</small>
                         </strong>
                       </span>
@@ -257,7 +269,7 @@ function App() {
                     <div>
                       <span>Capacity used</span>
                       <strong>
-                        {Math.round((result.jobs / result.capacity) * 100)}%
+                        {quantity((result.jobs / result.capacity) * 100)}%
                       </strong>
                     </div>
                     <div className="bar">
@@ -269,8 +281,8 @@ function App() {
                     </div>
                     <p>
                       {result.gap >= 0
-                        ? `You have room for ${result.gap} more ${industry.unit} each month.`
-                        : `You need capacity for ${Math.abs(result.gap)} additional ${industry.unit}.`}
+                        ? `You have room for ${quantity(result.gap)} more ${industry.unit} each month.`
+                        : `You need capacity for ${quantity(Math.abs(result.gap))} additional ${industry.unit}.`}
                     </p>
                   </div>
                   <details>
@@ -280,9 +292,9 @@ function App() {
                     <p>
                       Contribution per {industry.singular} = Price − direct
                       costs − direct labor − payment fees ={" "}
-                      <strong>{money(result.contribution)}</strong>. Required{" "}
+                      <strong>{money(result.contribution, currency)}</strong>. Required{" "}
                       {industry.unit} = (overhead + owner pay + target profit) ÷
-                      contribution, rounded up.
+                      contribution = <strong>{quantity(result.jobs)}</strong> exact {industry.unit}. For real-world planning, use at least <strong>{result.wholeJobs}</strong> whole {industry.unit}, producing {money(result.practicalRevenue, currency)}.
                     </p>
                   </details>
                 </>
@@ -290,7 +302,8 @@ function App() {
             </div>
           </div>
         </section>
-        <Insights result={result} input={input} industry={industry} />
+        <Insights result={result} input={input} industry={industry} currency={currency} />
+        <ScenarioTools result={result} input={input} industry={industry} currency={currency} />
         <section className="proof" id="how">
           <span>ONE NUMBER ISN'T ENOUGH</span>
           <h2>
@@ -372,7 +385,7 @@ function App() {
                 Anonymous calculator, live results, formula trace and one
                 business model.
               </p>
-              <button>Use calculator</button>
+              <button onClick={() => { location.hash = "calculator"; }}>Use calculator</button>
             </article>
             <article className="pro">
               <small>PLANNED PRO</small>
@@ -384,24 +397,12 @@ function App() {
                 Saved scenarios, comparisons, cost-drift tracking and
                 downloadable reports.
               </p>
-              <button>Join the early list</button>
+              <button onClick={() => { location.href = "/contact-us/"; }}>Join the early list</button>
             </article>
           </div>
         </section>
       </main>
-      <footer>
-        <a className="brand" href="#top">
-          <span className="brandmark">M</span>
-          <span>
-            My<span>Breakeven</span>
-          </span>
-        </a>
-        <p>
-          Planning estimates based on your assumptions—not tax, legal,
-          accounting or lending advice.
-        </p>
-        <span>© 2026 MyBreakeven</span>
-      </footer>
+      <SiteFooter />
     </>
   );
 }
