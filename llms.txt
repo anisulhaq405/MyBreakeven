@@ -1,0 +1,25 @@
+# MyBreakeven
+
+MyBreakeven is a free industry-specific break-even and feasibility calculator for small and medium businesses.
+
+## Primary page
+- [Free small business break-even calculator](https://mybreakeven.com/): Exact break-even revenue, sales volume, team capacity, required inquiries, scenarios and formula trace.
+
+## Supported business models
+- Cleaning business
+- Landscaping and lawn care
+- Photography studio
+- Agency and freelancer
+- Mobile auto detailing
+- E-commerce store
+- Restaurant business
+- Salon business
+
+## Guides
+- [Break-even and feasibility guides](https://mybreakeven.com/blogs/)
+- [E-commerce break-even guide](https://mybreakeven.com/blogs/ecommerce-break-even/)
+- [Restaurant break-even guide](https://mybreakeven.com/blogs/restaurant-break-even/)
+- [Salon break-even guide](https://mybreakeven.com/blogs/salon-break-even/)
+
+## Calculation policy
+The deterministic formula engine calculates all financial values. Exact fractional results are retained; whole-unit targets are shown separately. Outputs are assumption-based planning estimates, not accounting, tax, legal or lending advice.
