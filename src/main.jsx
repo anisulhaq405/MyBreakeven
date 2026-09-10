@@ -33,8 +33,10 @@ const money = (n, currency = "USD") =>
   }).format(n || 0);
 const quantity = (n) => new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 }).format(n || 0);
 function App() {
-  const [industryKey, setIndustryKey] = useState("cleaning"),
-    [input, setInput] = useState(industries.cleaning.values),
+  const initialIndustry = new URLSearchParams(window.location.search).get("industry");
+  const startingIndustry = industries[initialIndustry] ? initialIndustry : "cleaning";
+  const [industryKey, setIndustryKey] = useState(startingIndustry),
+    [input, setInput] = useState(industries[startingIndustry].values),
     [mobile, setMobile] = useState(false),
     [currency, setCurrency] = useState("USD");
   const currencySymbol = new Intl.NumberFormat("en-US", { style: "currency", currency, currencyDisplay: "narrowSymbol" }).formatToParts(0).find(p => p.type === "currency")?.value || currency;
