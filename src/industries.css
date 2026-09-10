@@ -1,9 +1,46 @@
-.industry-picker{max-width:1180px;margin:0 auto 18px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.industry-picker button{padding:13px 14px;text-align:left;border:1px solid #294052;background:#10283b;color:#b8c8d4;border-radius:9px}
-.industry-picker button span,.industry-picker button small{display:block}
-.industry-picker button span{font-weight:700;font-size:14px}
-.industry-picker button small{font-size:10px;margin-top:2px;color:#7890a2}
-.industry-picker button.active{background:#0f9f91;border-color:#3fd1c2;color:#fff}
-.industry-picker button.active small{color:#d8fffa}
-@media(max-width:800px){.industry-picker{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:420px){.industry-picker{grid-template-columns:1fr}}
+.industry-picker {
+  max-width: 1180px;
+  margin: 0 auto 18px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.industry-picker button {
+  padding: 13px 14px;
+  text-align: left;
+  border: 1px solid #294052;
+  background: #10283b;
+  color: #b8c8d4;
+  border-radius: 9px;
+}
+.industry-picker button span,
+.industry-picker button small {
+  display: block;
+}
+.industry-picker button span {
+  font-weight: 700;
+  font-size: 14px;
+}
+.industry-picker button small {
+  font-size: 10px;
+  margin-top: 2px;
+  color: #7890a2;
+}
+.industry-picker button.active {
+  background: #0f9f91;
+  border-color: #3fd1c2;
+  color: #fff;
+}
+.industry-picker button.active small {
+  color: #d8fffa;
+}
+@media (max-width: 800px) {
+  .industry-picker {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 420px) {
+  .industry-picker {
+    grid-template-columns: 1fr;
+  }
+}
