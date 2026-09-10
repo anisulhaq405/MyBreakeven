@@ -1,5 +1,6 @@
 import { copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
-for (const route of ["pricing", "blogs", "about-us", "contact-us", "blogs/ecommerce-break-even", "blogs/restaurant-break-even", "blogs/salon-break-even"]) {
+import { articleList } from "../src/blogData.js";
+for (const route of ["pricing", "blogs", "about-us", "contact-us"]) {
   await mkdir(new URL(`../dist/${route}/`, import.meta.url), {
     recursive: true,
   });
@@ -21,6 +22,42 @@ const calculators = {
 };
 
 const base = await readFile(new URL("../dist/index.html", import.meta.url), "utf8");
+
+const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
+for (const article of articleList) {
+  const route = `blogs/${article.slug}`;
+  const canonical = `https://mybreakeven.com/${route}/`;
+  const title = `${article.title} | MyBreakeven`;
+  const schema = { "@context": "https://schema.org", "@graph": [
+    { "@type": "BlogPosting", "@id": `${canonical}#article`, headline: article.title, description: article.description, datePublished: "2026-09-10", dateModified: "2026-09-10", mainEntityOfPage: { "@id": `${canonical}#webpage` }, author: { "@type": "Organization", name: "MyBreakeven", url: "https://mybreakeven.com/" }, publisher: { "@id": "https://mybreakeven.com/#organization" }, about: `${article.name} break-even calculation`, inLanguage: "en-US" },
+    { "@type": "WebPage", "@id": `${canonical}#webpage`, url: canonical, name: title, description: article.description, isPartOf: { "@id": "https://mybreakeven.com/#website" } },
+    { "@type": "FAQPage", mainEntity: article.faq.map(item => ({ "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a } })) },
+    { "@type": "BreadcrumbList", itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://mybreakeven.com/" },
+      { "@type": "ListItem", position: 2, name: "Guides", item: "https://mybreakeven.com/blogs/" },
+      { "@type": "ListItem", position: 3, name: article.title, item: canonical }
+    ] }
+  ] };
+  const sections = article.sections.map(section => `<section><h2>${escapeHtml(section.heading)}</h2>${(section.paragraphs || []).map(p => `<p>${escapeHtml(p)}</p>`).join("")}${section.bullets ? `<ul>${section.bullets.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : ""}</section>`).join("");
+  const faq = article.faq.map(item => `<h3>${escapeHtml(item.q)}</h3><p>${escapeHtml(item.a)}</p>`).join("");
+  const fallback = `<div id="root"><main><article><nav><a href="/">Home</a> / <a href="/blogs/">Guides</a> / ${escapeHtml(article.tag)}</nav><h1>${escapeHtml(article.title)}</h1><p>${escapeHtml(article.description)}</p><section><h2>Calculator features</h2><ul>${article.features.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul></section>${sections}<section><h2>Frequently asked questions</h2>${faq}</section><p><a href="/calculators/${article.calculatorSlug}/">Use the free ${escapeHtml(article.tag)} calculator</a></p></article></main></div>`;
+  const html = base
+    .replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
+    .replace(/<meta name="description" content="[^"]*"\s*\/?>/, `<meta name="description" content="${escapeHtml(article.description)}" />`)
+    .replace(/<meta property="og:title" content="[^"]*"\s*\/?>/, `<meta property="og:title" content="${escapeHtml(title)}" />`)
+    .replace(/<meta property="og:description" content="[^"]*"\s*\/?>/, `<meta property="og:description" content="${escapeHtml(article.description)}" />`)
+    .replace(/<meta property="og:url" content="[^"]*"\s*\/?>/, `<meta property="og:url" content="${canonical}" />`)
+    .replace(/<meta name="twitter:title" content="[^"]*"\s*\/?>/, `<meta name="twitter:title" content="${escapeHtml(title)}" />`)
+    .replace(/<meta name="twitter:description" content="[^"]*"\s*\/?>/, `<meta name="twitter:description" content="${escapeHtml(article.description)}" />`)
+    .replace(/<link rel="canonical" href="[^"]*"\s*\/?>/, `<link rel="canonical" href="${canonical}" />`)
+    .replace(/<link rel="alternate" hreflang="en-US" href="[^"]*"\s*\/?>/, `<link rel="alternate" hreflang="en-US" href="${canonical}" />`)
+    .replace(/<link rel="alternate" hreflang="x-default" href="[^"]*"\s*\/?>/, `<link rel="alternate" hreflang="x-default" href="${canonical}" />`)
+    .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, `<script type="application/ld+json">${JSON.stringify(schema)}</script>`)
+    .replace(/<div id="root">[\s\S]*?<\/div>\s*<\/body>/, `${fallback}</body>`);
+  await mkdir(new URL(`../dist/${route}/`, import.meta.url), { recursive: true });
+  await writeFile(new URL(`../dist/${route}/index.html`, import.meta.url), html);
+}
+
 for (const [slug, [title, description]] of Object.entries(calculators)) {
   const route = `calculators/${slug}`;
   const canonical = `https://mybreakeven.com/${route}/`;
