@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">MyBreakeven small business break-even calculator</title>
+  <desc id="desc">MyBreakeven branding with a sample feasibility card showing revenue, sales volume, capacity and customer demand.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07182a"/><stop offset="1" stop-color="#102d46"/></linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#edf9f7"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1080" cy="70" r="250" fill="#0f9f91" opacity=".14"/>
+  <circle cx="975" cy="565" r="310" fill="#f59e0b" opacity=".08"/>
+  <g transform="translate(74 68)">
+    <rect width="58" height="58" rx="14" fill="#0f9f91"/>
+    <path d="M14 43h31M18 39V29h7v10m7 0V20h7v19m7 0V13" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+    <text x="74" y="42" fill="#fff" font-family="Arial, sans-serif" font-size="34" font-weight="700">My<tspan fill="#54d2c5">Breakeven</tspan></text>
+  </g>
+  <text x="74" y="230" fill="#fff" font-family="Arial, sans-serif" font-size="50" font-weight="700">Free Small Business</text>
+  <text x="74" y="292" fill="#54d2c5" font-family="Arial, sans-serif" font-size="50" font-weight="700">Break-Even Calculator</text>
+  <text x="74" y="355" fill="#c6d5e1" font-family="Arial, sans-serif" font-size="21">Revenue · Sales volume · Capacity · Customer demand</text>
+  <text x="74" y="415" fill="#fff" font-family="Arial, sans-serif" font-size="23" font-weight="700">Know your number. Prove you can reach it.</text>
+  <g transform="translate(755 115)">
+    <rect width="390" height="400" rx="28" fill="url(#card)"/>
+    <text x="34" y="53" fill="#64748b" font-family="Arial, sans-serif" font-size="17" font-weight="700">FEASIBILITY PLAN</text>
+    <rect x="276" y="27" width="86" height="34" rx="17" fill="#d9f5ef"/>
+    <text x="292" y="50" fill="#08796e" font-family="Arial, sans-serif" font-size="14" font-weight="700">FEASIBLE</text>
+    <text x="34" y="118" fill="#64748b" font-family="Arial, sans-serif" font-size="17">Break-even revenue</text>
+    <text x="34" y="165" fill="#0b1f33" font-family="Arial, sans-serif" font-size="42" font-weight="700">$20,520</text>
+    <line x1="34" y1="195" x2="356" y2="195" stroke="#d8e3e9"/>
+    <text x="34" y="234" fill="#64748b" font-family="Arial, sans-serif" font-size="15">SALES NEEDED</text>
+    <text x="34" y="272" fill="#0b1f33" font-family="Arial, sans-serif" font-size="29" font-weight="700">114 jobs</text>
+    <text x="218" y="234" fill="#64748b" font-family="Arial, sans-serif" font-size="15">CAPACITY</text>
+    <text x="218" y="272" fill="#0b1f33" font-family="Arial, sans-serif" font-size="29" font-weight="700">97 jobs</text>
+    <text x="34" y="321" fill="#64748b" font-family="Arial, sans-serif" font-size="15">INQUIRIES REQUIRED</text>
+    <text x="34" y="361" fill="#0f9f91" font-family="Arial, sans-serif" font-size="31" font-weight="700">378 / month</text>
+  </g>
+  <text x="74" y="570" fill="#91a8ba" font-family="Arial, sans-serif" font-size="18">Private by default · Formula-backed · No signup</text>
+</svg>
