@@ -370,7 +370,7 @@ function App() {
             </p>
           </div>
           <div className="code">
-            <small>FORMULA TRACE · ENGINE v1.1.0</small>
+            <small>FORMULA TRACE · ENGINE v1.2.0</small>
             <code>contribution = price - direct_costs - fees</code>
             <code>exact_units = fixed_need / contribution</code>
             <code>required_inquiries = exact_units / conversion</code>
