@@ -1,5 +1,9 @@
 const makeArticle = (data) => ({
   ...data,
+  image: `/images/blog/${data.calculatorSlug.replace("-break-even-calculator", "")}-featured.svg`,
+  alt: `${data.name} break-even dashboard showing revenue, required ${data.unit}, operating capacity and customer demand`,
+  insideImage: `/images/blog/${data.calculatorSlug.replace("-break-even-calculator", "")}-formula.svg`,
+  insideAlt: `${data.name} break-even formula from price and variable costs to contribution, required ${data.unit} and capacity`,
   description: `${data.description} Learn the inputs, formula, features, capacity checks and practical steps for using the free MyBreakeven calculator.`,
   features: [
     `Exact ${data.unit} and revenue targets without hiding fractional results`,

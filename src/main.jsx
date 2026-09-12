@@ -413,4 +413,6 @@ function App() {
     </>
   );
 }
-createRoot(document.getElementById("root")).render(<App />);
+const rootElement = document.getElementById("root");
+createRoot(rootElement).render(<App />);
+requestAnimationFrame(() => rootElement.removeAttribute("data-booting"));
