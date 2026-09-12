@@ -30,10 +30,16 @@
     <link rel="icon" href="/logo.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <link rel="alternate" hreflang="en-US" href="https://mybreakeven.com/" />
     <link rel="alternate" hreflang="x-default" href="https://mybreakeven.com/" />
     <title>Free Small Business Break-Even Calculator | MyBreakeven</title>
+    <style>
+      html { background: #f7f8ff; }
+      #root[data-booting] { visibility: hidden; }
+    </style>
+    <noscript><style>#root[data-booting] { visibility: visible; }</style></noscript>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -110,7 +116,7 @@
     </script>
   </head>
   <body>
-    <div id="root">
+    <div id="root" data-booting>
       <main>
         <h1>Free small business break-even calculator</h1>
         <p>Calculate exact break-even revenue, contribution margin, required sales volume, customer demand and operating capacity for cleaning, landscaping, photography, agency, mobile detailing, e-commerce, restaurant and salon businesses. No signup is required and calculations run privately in your browser.</p>
