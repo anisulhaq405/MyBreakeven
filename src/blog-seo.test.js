@@ -10,11 +10,12 @@ describe("industry guide SEO assets", () => {
 
   it("provides descriptive featured and in-article image metadata", () => {
     for (const article of articleList) {
-      expect(article.image).toMatch(/^\/images\/blog\/.+-featured\.svg$/);
+      expect(article.image).toMatch(/^\/images\/blog\/.+-featured\.webp$/);
       expect(article.insideImage).toMatch(/^\/images\/blog\/.+-formula\.svg$/);
       expect(article.alt.length).toBeGreaterThan(60);
       expect(article.insideAlt.length).toBeGreaterThan(60);
       expect(article.alt.toLowerCase()).toContain("break-even");
+      expect(article.imageCaption.length).toBeGreaterThan(70);
     }
   });
 });

@@ -1,8 +1,22 @@
-const makeArticle = (data) => ({
+const featuredVisuals = {
+  "cleaning-business": ["Cleaning business owner reviewing job costs and revenue performance beside professional cleaning equipment", "A cleaning business owner reviews job schedules, costs and revenue before setting a realistic monthly break-even target."],
+  landscaping: ["Landscaping business owner and crew lead reviewing job profitability and route capacity on site", "A landscaping team checks job profitability and route capacity before committing crew time and equipment."],
+  "photography-business": ["Professional photographer reviewing session pricing and booking capacity in a photography studio", "A photographer compares session pricing, bookings and delivery capacity inside a working studio."],
+  agency: ["Agency team reviewing client revenue, retainer performance and delivery capacity", "An agency team connects client retainers with delivery capacity and sustainable monthly revenue."],
+  "mobile-detailing": ["Mobile detailing business owner reviewing bookings and route profitability beside a detailing van", "A mobile detailing owner reviews bookings, route density and job profitability beside an equipped service van."],
+  ecommerce: ["E-commerce founder reviewing order profitability, fulfillment costs and sales performance", "An e-commerce founder evaluates order economics, shipping and fulfillment performance at an active workspace."],
+  restaurant: ["Restaurant owner reviewing food costs, order volume and break-even revenue before service", "A restaurant owner reviews food costs, order volume and revenue before the next service period."],
+  salon: ["Salon owner reviewing appointment capacity, service mix and monthly revenue", "A salon owner evaluates appointment capacity, service mix and revenue in a modern salon."],
+};
+const makeArticle = (data) => {
+  const visualKey = data.calculatorSlug.replace("-break-even-calculator", "");
+  const [alt, imageCaption] = featuredVisuals[visualKey];
+  return ({
   ...data,
-  image: `/images/blog/${data.calculatorSlug.replace("-break-even-calculator", "")}-featured.svg`,
-  alt: `${data.name} break-even dashboard showing revenue, required ${data.unit}, operating capacity and customer demand`,
-  insideImage: `/images/blog/${data.calculatorSlug.replace("-break-even-calculator", "")}-formula.svg`,
+  image: `/images/blog/${visualKey}-featured.webp`,
+  alt: `${alt} for a break-even calculation`,
+  imageCaption,
+  insideImage: `/images/blog/${visualKey}-formula.svg`,
   insideAlt: `${data.name} break-even formula from price and variable costs to contribution, required ${data.unit} and capacity`,
   description: `${data.description} Learn the inputs, formula, features, capacity checks and practical steps for using the free MyBreakeven calculator.`,
   features: [
@@ -29,7 +43,8 @@ const makeArticle = (data) => ({
     { q: `Does the calculator predict guaranteed profit?`, a: `No. It produces an assumption-based planning estimate. Actual sales, costs, cancellations, taxes and timing can differ.` },
     { q: `How often should the calculation be updated?`, a: `Update it whenever price, wages, supplier costs, advertising performance, overhead or team capacity changes materially, and review it at least monthly during active planning.` },
   ],
-});
+  });
+};
 
 export const articles = {
   "cleaning-business-break-even": makeArticle({tag:"Cleaning",name:"Cleaning business",singular:"job",unit:"jobs",calculatorSlug:"cleaning-business-break-even-calculator",title:"Cleaning Business Break-Even Calculator: Jobs, Revenue, Leads and Capacity",description:"Calculate the monthly cleaning jobs and revenue needed to break even after labor, supplies, travel and marketing costs.",variableSummary:"supplies, cleaner labor, travel, equipment use, card fees and lead generation",inputSummary:"average job price, supplies, direct cleaner labor, travel and equipment use, marketing cost per booked job, monthly overhead and team capacity",inputs:["Average price per cleaning job","Cleaning supplies and direct labor per job","Travel, laundry or equipment use per job","Lead-generation cost and card fees","Rent, software, insurance, vehicles and other monthly overhead","Cleaner count, weekly hours, job duration, utilization and booking conversion"],exampleInputs:"$180 per job, $98.22 total variable cost and $8,700 monthly financial need",contribution:"$76.78",exactUnits:"113.31",wholeUnits:"114",exactRevenue:"$20,395.94",practicalRevenue:"$20,520",capacity:"97.50",inquiries:"377.70",mistakes:["Treating all cleaner payroll as fixed when labor changes by job","Omitting travel time, laundry, supplies or equipment wear","Using total leads instead of qualified booking inquiries","Assuming every paid hour is available for billable cleaning"],improvement:"Review route density, job minimums, recurring-client mix, cleaner utilization, supply control and quote-to-booking conversion."}),
@@ -43,3 +58,15 @@ export const articles = {
 };
 
 export const articleList = Object.entries(articles).map(([slug, article]) => ({slug, ...article}));
+
+const relatedGuideSlugs = {
+  "cleaning-business-break-even": ["mobile-detailing-break-even", "landscaping-break-even", "salon-break-even"],
+  "landscaping-break-even": ["cleaning-business-break-even", "mobile-detailing-break-even", "agency-break-even"],
+  "photography-business-break-even": ["agency-break-even", "salon-break-even", "ecommerce-break-even"],
+  "agency-break-even": ["photography-business-break-even", "ecommerce-break-even", "cleaning-business-break-even"],
+  "mobile-detailing-break-even": ["cleaning-business-break-even", "landscaping-break-even", "restaurant-break-even"],
+  "ecommerce-break-even": ["agency-break-even", "restaurant-break-even", "photography-business-break-even"],
+  "restaurant-break-even": ["salon-break-even", "ecommerce-break-even", "mobile-detailing-break-even"],
+  "salon-break-even": ["photography-business-break-even", "restaurant-break-even", "cleaning-business-break-even"],
+};
+export const relatedArticlesFor = slug => relatedGuideSlugs[slug].map(relatedSlug => ({ slug: relatedSlug, ...articles[relatedSlug] }));
