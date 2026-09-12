@@ -59,26 +59,29 @@ function App() {
   if (path !== "/") return <SecondaryPage path={path} />;
   return (
     <>
+      <a className="skip-link" href="#main-content">Skip to main content</a>
       <header>
         <Logo />
-        <nav className={mobile ? "open" : ""}>
+        <nav className={mobile ? "open" : ""} aria-label="Main navigation">
+          <a href="/#calculator">Calculator</a>
+          <a href="/#methodology">Methodology</a>
           <a href="/pricing/">Pricing</a>
           <a href="/blogs/">Blogs</a>
           <a href="/about-us/">About Us</a>
           <a href="/contact-us/">Contact Us</a>
-          <button className="navCta">
+          <button className="navCta" onClick={() => { location.hash = "calculator"; }}>
             Start free <ArrowRight />
           </button>
         </nav>
-        <button className="menu" onClick={() => setMobile(!mobile)}>
+        <button className="menu" aria-label={mobile ? "Close navigation" : "Open navigation"} aria-expanded={mobile} onClick={() => setMobile(!mobile)}>
           {mobile ? <X /> : <Menu />}
         </button>
       </header>
-      <main id="top">
+      <main id="main-content">
         <section className="intro">
           <div className="hero-copy">
             <div className="eyebrow">
-              <Sparkles /> AI-ready decision intelligence for SMBs
+              <Sparkles /> Know your number. Prove you can reach it.
             </div>
             <h1>
               Free break-even calculator
@@ -87,7 +90,7 @@ function App() {
             </h1>
             <p>
               Calculate exact break-even revenue, required sales volume, team
-              capacity and customer demand with an industry-specific feasibility report.
+              capacity and customer demand with eight industry-specific business calculators.
             </p>
             <div className="trust">
               <span>
@@ -370,7 +373,7 @@ function App() {
             </p>
           </div>
           <div className="code">
-            <small>FORMULA TRACE · ENGINE v1.1.0</small>
+            <small>FORMULA TRACE · ENGINE v1.2.0</small>
             <code>contribution = price - direct_costs - fees</code>
             <code>exact_units = fixed_need / contribution</code>
             <code>required_inquiries = exact_units / conversion</code>
