@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { CheckCircle2, Mail, ShieldCheck, Sparkles } from "lucide-react";
 import BlogSection from "./BlogSection";
 import BlogArticle from "./BlogArticle";
@@ -109,6 +109,19 @@ const Contact = () => (
   </>
 );
 export default function SecondaryPage({ path }) {
+  const pageMeta = {
+    "/pricing": ["Break-Even Calculator Pricing | MyBreakeven", "Use the free MyBreakeven calculator, or explore upcoming planning tools for saved scenarios, comparisons and downloadable reports."],
+    "/blogs": ["Small Business Break-Even Guides | MyBreakeven", "Read practical break-even guides for cleaning, landscaping, photography, agencies, mobile detailing, e-commerce, restaurants and salons."],
+    "/about-us": ["About MyBreakeven | Formula-Backed Business Planning", "Learn how MyBreakeven turns contribution margin, sales demand and operating capacity into transparent business planning estimates."],
+    "/contact-us": ["Contact MyBreakeven", "Contact MyBreakeven about calculator feedback, industry requests, partnerships or formula-backed business planning tools."],
+  };
+  useEffect(() => {
+    const meta = pageMeta[path];
+    if (!meta) return;
+    document.title = meta[0];
+    document.querySelector('meta[name="description"]')?.setAttribute("content", meta[1]);
+    document.querySelector('link[rel="canonical"]')?.setAttribute("href", `https://mybreakeven.com${path}/`);
+  }, [path]);
   const slug = path.startsWith("/blogs/") ? path.split("/")[2] : null;
   const calculatorSlug = path.startsWith("/calculators/") ? path.split("/")[2] : null;
   const content = calculatorSlug && industryPages[calculatorSlug] ? <IndustryPage slug={calculatorSlug} /> : slug ? <BlogArticle slug={slug} /> :
