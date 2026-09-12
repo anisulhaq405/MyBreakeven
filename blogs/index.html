@@ -3,24 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#03050f" />
+    <meta name="theme-color" content="#0b1f33" />
+    <meta name="color-scheme" content="light" />
     <meta name="google-site-verification" content="28uuxJSLr8aC-2odaZg9geyQi4IZb7QH2vrTA16H0Jo" />
-    <meta name="description" content="Free small business break-even calculator for exact revenue, sales volume, customer demand and capacity feasibility across eight industries." />
+    <meta name="description" content="Read practical break-even guides for cleaning, landscaping, photography, agencies, mobile detailing, e-commerce, restaurants and salons." />
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
-    <meta name="keywords" content="small business break even calculator, break even revenue calculator, business feasibility calculator, contribution margin calculator, ecommerce break even calculator, restaurant break even calculator, salon break even calculator, cleaning business break even calculator" />
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="MyBreakeven" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content="Free Small Business Break-Even Calculator | MyBreakeven" />
-    <meta property="og:description" content="Calculate exact break-even revenue, required sales, team capacity and customer demand with an industry-specific feasibility report." />
-    <meta property="og:url" content="https://mybreakeven.com/" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Free Small Business Break-Even Calculator | MyBreakeven" />
-    <meta name="twitter:description" content="Exact break-even revenue, required sales volume, capacity and customer-demand analysis for small businesses." />
-    <link rel="canonical" href="https://mybreakeven.com/" />
-    <link rel="alternate" hreflang="en-US" href="https://mybreakeven.com/" />
-    <link rel="alternate" hreflang="x-default" href="https://mybreakeven.com/" />
-    <title>Free Small Business Break-Even Calculator | MyBreakeven</title>
+    <meta property="og:title" content="Small Business Break-Even Guides | MyBreakeven" />
+    <meta property="og:description" content="Read practical break-even guides for cleaning, landscaping, photography, agencies, mobile detailing, e-commerce, restaurants and salons." />
+    <meta property="og:url" content="https://mybreakeven.com/blogs/" />
+    <meta property="og:image" content="https://mybreakeven.com/mybreakeven-social-preview.png" />
+    <meta property="og:image:secure_url" content="https://mybreakeven.com/mybreakeven-social-preview.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="MyBreakeven calculator showing break-even revenue, required sales, capacity and customer demand" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Small Business Break-Even Guides | MyBreakeven" />
+    <meta name="twitter:description" content="Read practical break-even guides for cleaning, landscaping, photography, agencies, mobile detailing, e-commerce, restaurants and salons." />
+    <meta name="twitter:image" content="https://mybreakeven.com/mybreakeven-social-preview.png" />
+    <meta name="twitter:image:alt" content="MyBreakeven calculator showing break-even revenue, required sales, capacity and customer demand" />
+    <link rel="canonical" href="https://mybreakeven.com/blogs/" />
+    <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <link rel="alternate" hreflang="en-US" href="https://mybreakeven.com/blogs/" />
+    <link rel="alternate" hreflang="x-default" href="https://mybreakeven.com/blogs/" />
+    <title>Small Business Break-Even Guides | MyBreakeven</title>
+    <style>
+      html { background: #f7f8ff; }
+      #root[data-booting] { visibility: hidden; }
+    </style>
+    <noscript><style>#root[data-booting] { visibility: visible; }</style></noscript>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -30,7 +49,12 @@
             "@id": "https://mybreakeven.com/#organization",
             "name": "MyBreakeven",
             "url": "https://mybreakeven.com/",
-            "logo": "https://mybreakeven.com/logo.svg",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://mybreakeven.com/logo.svg",
+              "width": 512,
+              "height": 512
+            },
             "description": "Break-even and feasibility planning tools for small and medium businesses."
           },
           {
@@ -42,10 +66,28 @@
             "inLanguage": "en-US"
           },
           {
+            "@type": "WebPage",
+            "@id": "https://mybreakeven.com/#webpage",
+            "url": "https://mybreakeven.com/",
+            "name": "Free Small Business Break-Even Calculator",
+            "description": "Calculate break-even revenue, required sales, team capacity and customer demand with free, private, formula-backed calculators for eight business models.",
+            "isPartOf": { "@id": "https://mybreakeven.com/#website" },
+            "about": { "@id": "https://mybreakeven.com/#calculator" },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://mybreakeven.com/mybreakeven-social-preview.png",
+              "width": 1200,
+              "height": 630
+            },
+            "inLanguage": "en-US",
+            "dateModified": "2026-09-12"
+          },
+          {
             "@type": "WebApplication",
             "@id": "https://mybreakeven.com/#calculator",
             "name": "MyBreakeven Small Business Break-Even Calculator",
             "url": "https://mybreakeven.com/#calculator",
+            "mainEntityOfPage": { "@id": "https://mybreakeven.com/#webpage" },
             "applicationCategory": "BusinessApplication",
             "applicationSubCategory": "Financial calculator",
             "operatingSystem": "Any web browser",
@@ -72,22 +114,9 @@
         ]
       }
     </script>
-    <script type="module" crossorigin src="/assets/index-BIdrrOxh.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CySvMTWn.css">
+    <script type="module" crossorigin src="/assets/index-DGklz4wF.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CMalGw0T.css">
   </head>
   <body>
-    <div id="root">
-      <main>
-        <h1>Free small business break-even calculator</h1>
-        <p>Calculate exact break-even revenue, contribution margin, required sales volume, customer demand and operating capacity for cleaning, landscaping, photography, agency, mobile detailing, e-commerce, restaurant and salon businesses.</p>
-        <h2>Break-even and feasibility analysis</h2>
-        <p>MyBreakeven combines unit economics with team capacity and conversion assumptions so business owners can test whether a monthly sales target is financially and operationally feasible.</p>
-        <nav aria-label="Key pages">
-          <a href="/blogs/">Break-even guides</a>
-          <a href="/about-us/">About MyBreakeven</a>
-          <a href="/contact-us/">Contact MyBreakeven</a>
-        </nav>
-      </main>
-    </div>
-  </body>
+    <div id="root"><main><h1>Industry break-even calculator guides</h1><p>Read practical break-even guides for cleaning, landscaping, photography, agencies, mobile detailing, e-commerce, restaurants and salons.</p><ul><li><a href="/blogs/cleaning-business-break-even/">Cleaning Business Break-Even Calculator: Jobs, Revenue, Leads and Capacity</a></li><li><a href="/blogs/landscaping-break-even/">Landscaping Break-Even Calculator: Job Pricing, Crew Capacity and Leads</a></li><li><a href="/blogs/photography-business-break-even/">Photography Business Break-Even Calculator: Sessions, Pricing and Capacity</a></li><li><a href="/blogs/agency-break-even/">Agency Break-Even Calculator: Retainer Clients, Revenue and Delivery Capacity</a></li><li><a href="/blogs/mobile-detailing-break-even/">Mobile Detailing Break-Even Calculator: Jobs, Routes, Revenue and Leads</a></li><li><a href="/blogs/ecommerce-break-even/">E-commerce Break-Even Calculator: Orders, COGS, Returns, Shipping and Ads</a></li><li><a href="/blogs/restaurant-break-even/">Restaurant Break-Even Calculator: Revenue, Orders, Food Cost and Capacity</a></li><li><a href="/blogs/salon-break-even/">Salon Break-Even Calculator: Appointments, Service Mix and Stylist Capacity</a></li></ul></main></div></body>
 </html>
