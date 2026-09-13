@@ -6,7 +6,7 @@ import { industries } from "./industries";
 const exactMetrics = ["contribution", "fixedNeed", "jobs", "revenue", "practicalRevenue", "capacity", "leads"];
 const integerMetrics = ["wholeJobs", "wholeCapacity", "wholeLeads"];
 
-describe("engine 1.2.0 industry regression fixtures", () => {
+describe("engine 1.3.0 industry regression fixtures", () => {
   for (const [key, expected] of Object.entries(goldenFixtures)) {
     it(key + " matches its locked expected outputs", () => {
       const result = calculate(industries[key].values);
