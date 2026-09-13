@@ -21,10 +21,8 @@ const Pricing = () => (
         <article>
           <h3>Free</h3>
           <strong>$0</strong>
-          <p>
-            Live industry calculator, feasibility score, visual analysis and
-            formula trace.
-          </p>
+          <p>Calculate privately without a credit card.</p>
+          <ul><li>All 8 industry calculators</li><li>Exact break-even and feasibility results</li><li>Formula trace</li><li>Up to 3 saved scenarios</li></ul>
           <a className="page-button secondary" href="/#calculator">
             Use calculator
           </a>
@@ -35,12 +33,10 @@ const Pricing = () => (
           <strong>
             $19 <i>/ month</i>
           </strong>
-          <p>
-            Saved scenarios, comparisons, cost-drift tracking and downloadable
-            reports.
-          </p>
-          <a className="page-button" href="/contact-us/">
-            Join the early list
+          <p>Advanced planning for active owners and teams.</p>
+          <ul><li>Up to 100 saved scenarios</li><li>Compare 3 plans side by side</li><li>Cost-drift stress testing</li><li>CSV and PDF-ready reports</li></ul>
+          <a className="page-button" href="/signup/">
+            Create free account
           </a>
         </article>
       </div>
@@ -179,7 +175,7 @@ const LegalPage = ({ page }) => (
 );
 export default function SecondaryPage({ path }) {
   const pageMeta = {
-    "/pricing": ["Break-Even Calculator Pricing | MyBreakeven", "Use the free MyBreakeven calculator, or explore upcoming planning tools for saved scenarios, comparisons and downloadable reports."],
+    "/pricing": ["MyBreakeven Pricing: Free & Pro Business Planning", "Compare MyBreakeven Free and Pro plans for industry break-even calculators, saved scenarios, cost-drift analysis, comparisons and reports."],
     "/blogs": ["Small Business Break-Even Guides | MyBreakeven", "Read practical break-even guides for cleaning, landscaping, photography, agencies, mobile detailing, e-commerce, restaurants and salons."],
     "/about-us": ["About MyBreakeven | Formula-Backed Business Planning", "Learn how MyBreakeven turns contribution margin, sales demand and operating capacity into transparent business planning estimates."],
     "/contact-us": ["Contact MyBreakeven", "Contact MyBreakeven about calculator feedback, industry requests, partnerships or formula-backed business planning tools."],
