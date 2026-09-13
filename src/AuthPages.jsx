@@ -4,6 +4,7 @@ import { authConfigured, supabase } from "./authClient";
 import { calculate, FORMULA_ENGINE_VERSION } from "./engine";
 import { industries } from "./industries";
 import { limitsFor, normalizePlan } from "./entitlements";
+import { friendlyAuthError, withTimeout } from "./authSecurity";
 
 const authMeta = {
   "/login": ["Log in to MyBreakeven", "Access your private MyBreakeven planning workspace."],
@@ -38,6 +39,18 @@ export function AuthPage({ path }) {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [status, setStatus] = useState({ loading: false, error: "", message: "" });
+  const [resetReady, setResetReady] = useState(mode !== "reset");
+
+  useEffect(() => {
+    if (mode !== "reset" || !supabase) return;
+    let active = true;
+    withTimeout(supabase.auth.getSession()).then(({ data, error }) => {
+      if (!active) return;
+      if (error || !data.session) setStatus({ loading: false, error: "This secure link has expired or is invalid. Request a new password-reset link.", message: "" });
+      else setResetReady(true);
+    }).catch(error => active && setStatus({ loading: false, error: friendlyAuthError(error), message: "" }));
+    return () => { active = false; };
+  }, [mode]);
 
   const submit = async (event) => {
     event.preventDefault();
@@ -49,19 +62,18 @@ export function AuthPage({ path }) {
       return setStatus({ loading: false, error: "The passwords do not match.", message: "" });
     }
     setStatus({ loading: true, error: "", message: "" });
-    let result;
-    if (mode === "signup") {
-      result = await supabase.auth.signUp({ email, password, options: { emailRedirectTo: `${window.location.origin}/dashboard/` } });
-    } else if (mode === "forgot") {
-      result = await supabase.auth.resetPasswordForEmail(email, { redirectTo: `${window.location.origin}/reset-password/` });
-    } else if (mode === "reset") {
-      result = await supabase.auth.updateUser({ password });
-    } else {
-      result = await supabase.auth.signInWithPassword({ email, password });
+    try {
+      let result;
+      if (mode === "signup") result = await withTimeout(supabase.auth.signUp({ email, password, options: { emailRedirectTo: `${window.location.origin}/dashboard/` } }));
+      else if (mode === "forgot") result = await withTimeout(supabase.auth.resetPasswordForEmail(email, { redirectTo: `${window.location.origin}/reset-password/` }));
+      else if (mode === "reset") result = await withTimeout(supabase.auth.updateUser({ password }));
+      else result = await withTimeout(supabase.auth.signInWithPassword({ email, password }));
+      if (result.error) return setStatus({ loading: false, error: friendlyAuthError(result.error, "We could not complete that request. Please check your details and try again."), message: "" });
+      if (mode === "login" || mode === "reset") window.location.assign("/dashboard/");
+      else setStatus({ loading: false, error: "", message: mode === "signup" ? "Check your email to verify your account." : "If an account exists, a secure reset link has been sent." });
+    } catch (error) {
+      setStatus({ loading: false, error: friendlyAuthError(error), message: "" });
     }
-    if (result.error) return setStatus({ loading: false, error: result.error.message, message: "" });
-    if (mode === "login" || mode === "reset") window.location.assign("/dashboard/");
-    else setStatus({ loading: false, error: "", message: mode === "signup" ? "Check your email to verify your account." : "If an account exists, a secure reset link has been sent." });
   };
 
   const copy = {
@@ -74,13 +86,13 @@ export function AuthPage({ path }) {
   return <section className="auth-page">
     <div className="auth-copy"><span>{copy[0]}</span><h1>{copy[1]}</h1><p>{copy[2]}</p><ul><li><ShieldCheck /> Email verification</li><li><KeyRound /> Secure session handling</li><li><CheckCircle2 /> Your records stay separated by account</li></ul></div>
     <div className="auth-card">
-      {!authConfigured ? <SetupNotice /> : <form onSubmit={submit}>
+      {!authConfigured ? <SetupNotice /> : <form onSubmit={submit} aria-busy={status.loading}>
         {mode !== "reset" && <label>Email address<div className="auth-control"><Mail /><input type="email" autoComplete="email" required value={email} onChange={e => setEmail(e.target.value)} /></div></label>}
         {mode !== "forgot" && <label>{mode === "reset" ? "New password" : "Password"}<div className="auth-control"><KeyRound /><input type="password" minLength="8" autoComplete={mode === "login" ? "current-password" : "new-password"} required value={password} onChange={e => setPassword(e.target.value)} /></div></label>}
         {(mode === "signup" || mode === "reset") && <label>Confirm password<div className="auth-control"><KeyRound /><input type="password" minLength="8" autoComplete="new-password" required value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} /></div></label>}
         {status.error && <p className="auth-error" role="alert">{status.error}</p>}
         {status.message && <p className="auth-success" role="status">{status.message}</p>}
-        <button className="page-button" disabled={status.loading}>{status.loading ? "Please wait…" : mode === "signup" ? "Create free account" : mode === "forgot" ? "Send reset link" : mode === "reset" ? "Update password" : "Log in"}</button>
+        <button className="page-button" disabled={status.loading || !resetReady}>{status.loading ? "Please wait…" : mode === "signup" ? "Create free account" : mode === "forgot" ? "Send reset link" : mode === "reset" ? resetReady ? "Update password" : "Validating secure link…" : "Log in"}</button>
       </form>}
       {mode === "login" && <p className="auth-switch"><a href="/forgot-password/">Forgot password?</a><br />New to MyBreakeven? <a href="/signup/">Create an optional account</a></p>}
       {mode === "signup" && <p className="auth-switch">Already have an account? <a href="/login/">Log in</a></p>}
@@ -93,20 +105,26 @@ export function DashboardPage() {
   usePrivatePageMeta("/dashboard");
   const [state, setState] = useState({ loading: true, user: null, scenarios: [], plan: "free", error: "" });
   const [selected, setSelected] = useState([]);
+  const [actionId, setActionId] = useState("");
   const loadScenarios = async (user) => {
-    const [{ data, error }, { data: profile }] = await Promise.all([
+    const [{ data, error }, { data: profile, error: profileError }] = await Promise.all([
       supabase.from("saved_scenarios").select("id,name,industry_key,currency,inputs,engine_version,created_at,updated_at").eq("user_id", user.id).order("updated_at", { ascending: false }),
       supabase.from("profiles").select("plan,subscription_status,current_period_end").eq("id", user.id).single(),
     ]);
-    setState({ loading: false, user, scenarios: data || [], plan: normalizePlan(profile?.plan), subscriptionStatus: profile?.subscription_status || "inactive", currentPeriodEnd: profile?.current_period_end || null, error: error?.message || "" });
+    setState({ loading: false, user, scenarios: data || [], plan: normalizePlan(profile?.plan), subscriptionStatus: profile?.subscription_status || "inactive", currentPeriodEnd: profile?.current_period_end || null, error: friendlyAuthError(error || profileError, error || profileError ? "Your workspace could not be loaded. Please try again." : "") });
   };
   useEffect(() => {
     if (!supabase) return setState({ loading: false, user: null });
-    supabase.auth.getSession().then(({ data }) => data.session?.user ? loadScenarios(data.session.user) : setState({ loading: false, user: null, scenarios: [], plan: "free", error: "" }));
+    let active = true;
+    withTimeout(supabase.auth.getSession()).then(({ data, error }) => {
+      if (!active) return;
+      if (error) throw error;
+      return data.session?.user ? loadScenarios(data.session.user) : setState({ loading: false, user: null, scenarios: [], plan: "free", error: "" });
+    }).catch(error => active && setState({ loading: false, user: null, scenarios: [], plan: "free", error: friendlyAuthError(error) }));
     const { data } = supabase.auth.onAuthStateChange((_event, session) => {
       if (!session?.user) setState({ loading: false, user: null, scenarios: [], plan: "free", error: "" });
     });
-    return () => data.subscription.unsubscribe();
+    return () => { active = false; data.subscription.unsubscribe(); };
   }, []);
   const calculated = useMemo(() => state.scenarios.map(item => ({ ...item, result: calculate(item.inputs) })), [state.scenarios]);
   const limits = limitsFor(state.plan);
@@ -114,7 +132,7 @@ export function DashboardPage() {
   if (!authConfigured) return <section className="dashboard-page"><SetupNotice /></section>;
   if (state.loading) return <section className="dashboard-page"><p>Loading your secure workspace…</p></section>;
   if (!state.user) return <section className="dashboard-page"><div className="auth-card"><UserRound /><h1>Log in to access your workspace</h1><p>Your private saved scenarios will appear here.</p><a className="page-button" href="/login/">Log in</a></div></section>;
-  const logout = async () => { await supabase.auth.signOut(); window.location.assign("/"); };
+  const logout = async () => { setActionId("logout"); const { error } = await supabase.auth.signOut(); if (error) { setActionId(""); setState(current => ({ ...current, error: friendlyAuthError(error, "We could not log you out. Please try again.") })); } else window.location.assign("/"); };
   const remove = async (id) => {
     if (!window.confirm("Delete this saved scenario? This cannot be undone.")) return;
     const { error } = await supabase.from("saved_scenarios").delete().eq("id", id);
@@ -140,7 +158,7 @@ export function DashboardPage() {
     const link = document.createElement("a"); link.href = URL.createObjectURL(blob); link.download = "mybreakeven-saved-scenarios.csv"; link.click(); URL.revokeObjectURL(link.href);
   };
   return <section className="dashboard-page">
-    <div className="dashboard-heading"><div><span>PRIVATE WORKSPACE</span><h1>Your MyBreakeven dashboard</h1><p>Signed in as {state.user.email}</p><div className={`plan-badge ${state.plan}`}>{state.plan === "pro" ? "PRO PLAN" : `FREE PLAN · ${calculated.length}/${limits.savedScenarios} SAVES`}</div></div><button className="page-button secondary" onClick={logout}><LogOut /> Log out</button></div>
+    <div className="dashboard-heading"><div><span>PRIVATE WORKSPACE</span><h1>Your MyBreakeven dashboard</h1><p>Signed in as {state.user.email}</p><div className={`plan-badge ${state.plan}`}>{state.plan === "pro" ? "PRO PLAN" : `FREE PLAN · ${calculated.length}/${limits.savedScenarios} SAVES`}</div></div><button className="page-button secondary" onClick={logout} disabled={actionId === "logout"}><LogOut /> {actionId === "logout" ? "Logging out…" : "Log out"}</button></div>
     {state.error && <p className="auth-error" role="alert">{state.error}</p>}
     {!calculated.length ? <div className="dashboard-empty"><ShieldCheck /><h2>No saved scenarios yet</h2><p>Open the calculator, enter your assumptions and choose Save scenario. Only your authenticated account can access saved records.</p><a className="page-button" href="/#calculator">Create your first scenario</a></div> : <>
       <div className="saved-toolbar"><p><strong>{calculated.length}</strong> saved scenario{calculated.length === 1 ? "" : "s"}{isPro ? " · Select up to 3 to compare" : " · Comparison and exports unlock with Pro"}</p>{isPro ? <button onClick={exportSaved}><Download /> Export all CSV</button> : <a className="tool-upgrade" href="/pricing/">View Pro features</a>}</div>
