@@ -382,8 +382,8 @@ function App() {
               <h3>Free</h3>
               <strong>$0</strong>
               <p>
-                Anonymous calculator, live results, formula trace and one
-                business model.
+                All eight calculators, live results, formula trace and up to
+                three saved scenarios with an optional account.
               </p>
               <button onClick={() => { location.hash = "calculator"; }}>Use calculator</button>
             </article>
@@ -394,10 +394,10 @@ function App() {
                 $19 <i>/ month</i>
               </strong>
               <p>
-                Saved scenarios, comparisons, cost-drift tracking and
-                downloadable reports.
+                Up to 100 saved scenarios, three-way comparisons, cost-drift
+                tracking and downloadable reports.
               </p>
-              <button onClick={() => { location.href = "/contact-us/"; }}>Join the early list</button>
+              <button onClick={() => { location.href = "/signup/"; }}>Create free account</button>
             </article>
           </div>
         </section>
