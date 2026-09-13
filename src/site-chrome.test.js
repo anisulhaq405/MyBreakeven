@@ -4,6 +4,7 @@ import { primaryNavigation } from "./SiteChrome.jsx";
 
 const chrome = readFileSync(new URL("./SiteChrome.jsx", import.meta.url), "utf8");
 const pages = readFileSync(new URL("./Pages.jsx", import.meta.url), "utf8");
+const main = readFileSync(new URL("./main.jsx", import.meta.url), "utf8");
 const generator = readFileSync(new URL("../scripts/create-pages.mjs", import.meta.url), "utf8");
 const sitemap = readFileSync(new URL("../public/sitemap.xml", import.meta.url), "utf8");
 
@@ -21,6 +22,11 @@ describe("locked site chrome", () => {
   it("uses the shared header and footer on secondary pages", () => {
     expect(pages).toContain("<SiteHeader />");
     expect(pages).toContain("<SiteFooter />");
+  });
+
+  it("keeps homepage result icons imported", () => {
+    expect(main).toMatch(/import\s*\{[\s\S]*?BarChart3,[\s\S]*?\}\s*from \"lucide-react\"/);
+    expect(main).toContain("<BarChart3 />");
   });
 
   it("publishes all legal routes in the footer and sitemap", () => {
