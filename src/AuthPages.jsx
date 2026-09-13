@@ -3,6 +3,7 @@ import { CheckCircle2, Download, ExternalLink, KeyRound, LogOut, Mail, Pencil, S
 import { authConfigured, supabase } from "./authClient";
 import { calculate, FORMULA_ENGINE_VERSION } from "./engine";
 import { industries } from "./industries";
+import { limitsFor, normalizePlan } from "./entitlements";
 
 const authMeta = {
   "/login": ["Log in to MyBreakeven", "Access your private MyBreakeven planning workspace."],
@@ -90,21 +91,26 @@ export function AuthPage({ path }) {
 
 export function DashboardPage() {
   usePrivatePageMeta("/dashboard");
-  const [state, setState] = useState({ loading: true, user: null, scenarios: [], error: "" });
+  const [state, setState] = useState({ loading: true, user: null, scenarios: [], plan: "free", error: "" });
   const [selected, setSelected] = useState([]);
   const loadScenarios = async (user) => {
-    const { data, error } = await supabase.from("saved_scenarios").select("id,name,industry_key,currency,inputs,engine_version,created_at,updated_at").eq("user_id", user.id).order("updated_at", { ascending: false });
-    setState({ loading: false, user, scenarios: data || [], error: error?.message || "" });
+    const [{ data, error }, { data: profile }] = await Promise.all([
+      supabase.from("saved_scenarios").select("id,name,industry_key,currency,inputs,engine_version,created_at,updated_at").eq("user_id", user.id).order("updated_at", { ascending: false }),
+      supabase.from("profiles").select("plan,subscription_status,current_period_end").eq("id", user.id).single(),
+    ]);
+    setState({ loading: false, user, scenarios: data || [], plan: normalizePlan(profile?.plan), subscriptionStatus: profile?.subscription_status || "inactive", currentPeriodEnd: profile?.current_period_end || null, error: error?.message || "" });
   };
   useEffect(() => {
     if (!supabase) return setState({ loading: false, user: null });
-    supabase.auth.getSession().then(({ data }) => data.session?.user ? loadScenarios(data.session.user) : setState({ loading: false, user: null, scenarios: [], error: "" }));
+    supabase.auth.getSession().then(({ data }) => data.session?.user ? loadScenarios(data.session.user) : setState({ loading: false, user: null, scenarios: [], plan: "free", error: "" }));
     const { data } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (!session?.user) setState({ loading: false, user: null, scenarios: [], error: "" });
+      if (!session?.user) setState({ loading: false, user: null, scenarios: [], plan: "free", error: "" });
     });
     return () => data.subscription.unsubscribe();
   }, []);
   const calculated = useMemo(() => state.scenarios.map(item => ({ ...item, result: calculate(item.inputs) })), [state.scenarios]);
+  const limits = limitsFor(state.plan);
+  const isPro = state.plan === "pro";
   if (!authConfigured) return <section className="dashboard-page"><SetupNotice /></section>;
   if (state.loading) return <section className="dashboard-page"><p>Loading your secure workspace…</p></section>;
   if (!state.user) return <section className="dashboard-page"><div className="auth-card"><UserRound /><h1>Log in to access your workspace</h1><p>Your private saved scenarios will appear here.</p><a className="page-button" href="/login/">Log in</a></div></section>;
@@ -123,7 +129,10 @@ export function DashboardPage() {
     if (error) return setState(current => ({ ...current, error: error.message }));
     setState(current => ({ ...current, scenarios: current.scenarios.map(row => row.id === item.id ? { ...row, name, updated_at: new Date().toISOString() } : row), error: "" }));
   };
-  const toggle = (id) => setSelected(current => current.includes(id) ? current.filter(value => value !== id) : current.length < 3 ? [...current, id] : current);
+  const toggle = (id) => {
+    if (!isPro) return;
+    setSelected(current => current.includes(id) ? current.filter(value => value !== id) : current.length < limits.comparisons ? [...current, id] : current);
+  };
   const compared = calculated.filter(item => selected.includes(item.id));
   const exportSaved = () => {
     const rows = [["Scenario","Business","Currency","Break-even revenue","Exact units","Whole units","Capacity","Inquiries","Score","Engine"], ...calculated.map(item => [item.name, industries[item.industry_key]?.name, item.currency, item.result.revenue, item.result.jobs, item.result.wholeJobs, item.result.capacity, item.result.leads, item.result.score, item.engine_version])];
@@ -131,11 +140,11 @@ export function DashboardPage() {
     const link = document.createElement("a"); link.href = URL.createObjectURL(blob); link.download = "mybreakeven-saved-scenarios.csv"; link.click(); URL.revokeObjectURL(link.href);
   };
   return <section className="dashboard-page">
-    <div className="dashboard-heading"><div><span>PRIVATE WORKSPACE</span><h1>Your MyBreakeven dashboard</h1><p>Signed in as {state.user.email}</p></div><button className="page-button secondary" onClick={logout}><LogOut /> Log out</button></div>
+    <div className="dashboard-heading"><div><span>PRIVATE WORKSPACE</span><h1>Your MyBreakeven dashboard</h1><p>Signed in as {state.user.email}</p><div className={`plan-badge ${state.plan}`}>{state.plan === "pro" ? "PRO PLAN" : `FREE PLAN · ${calculated.length}/${limits.savedScenarios} SAVES`}</div></div><button className="page-button secondary" onClick={logout}><LogOut /> Log out</button></div>
     {state.error && <p className="auth-error" role="alert">{state.error}</p>}
     {!calculated.length ? <div className="dashboard-empty"><ShieldCheck /><h2>No saved scenarios yet</h2><p>Open the calculator, enter your assumptions and choose Save scenario. Only your authenticated account can access saved records.</p><a className="page-button" href="/#calculator">Create your first scenario</a></div> : <>
-      <div className="saved-toolbar"><p><strong>{calculated.length}</strong> saved scenario{calculated.length === 1 ? "" : "s"} · Select up to 3 to compare</p><button onClick={exportSaved}><Download /> Export all CSV</button></div>
-      <div className="saved-grid">{calculated.map(item => <article className={selected.includes(item.id) ? "selected" : ""} key={item.id}><label className="compare-check"><input type="checkbox" checked={selected.includes(item.id)} onChange={() => toggle(item.id)} disabled={!selected.includes(item.id) && selected.length >= 3} /> Compare</label><small>{industries[item.industry_key]?.name} · {item.currency}</small><h2>{item.name}</h2><strong>{item.result.valid ? new Intl.NumberFormat("en-US",{style:"currency",currency:item.currency}).format(item.result.revenue) : "Review inputs"}</strong><p>{item.result.valid ? `${item.result.jobs.toFixed(2)} ${industries[item.industry_key]?.unit} · ${item.result.score}/100 feasibility` : item.result.message}</p><time dateTime={item.updated_at}>Updated {new Date(item.updated_at).toLocaleDateString("en-US")}</time><div><a href={`/?scenario=${item.id}#calculator`}><ExternalLink /> Open</a><button onClick={() => rename(item)}><Pencil /> Rename</button><button className="danger" onClick={() => remove(item.id)}><Trash2 /> Delete</button></div></article>)}</div>
+      <div className="saved-toolbar"><p><strong>{calculated.length}</strong> saved scenario{calculated.length === 1 ? "" : "s"}{isPro ? " · Select up to 3 to compare" : " · Comparison and exports unlock with Pro"}</p>{isPro ? <button onClick={exportSaved}><Download /> Export all CSV</button> : <a className="tool-upgrade" href="/pricing/">View Pro features</a>}</div>
+      <div className="saved-grid">{calculated.map(item => <article className={selected.includes(item.id) ? "selected" : ""} key={item.id}>{isPro && <label className="compare-check"><input type="checkbox" checked={selected.includes(item.id)} onChange={() => toggle(item.id)} disabled={!selected.includes(item.id) && selected.length >= limits.comparisons} /> Compare</label>}<small>{industries[item.industry_key]?.name} · {item.currency}</small><h2>{item.name}</h2><strong>{item.result.valid ? new Intl.NumberFormat("en-US",{style:"currency",currency:item.currency}).format(item.result.revenue) : "Review inputs"}</strong><p>{item.result.valid ? `${item.result.jobs.toFixed(2)} ${industries[item.industry_key]?.unit} · ${item.result.score}/100 feasibility` : item.result.message}</p><time dateTime={item.updated_at}>Updated {new Date(item.updated_at).toLocaleDateString("en-US")}</time><div><a href={`/?scenario=${item.id}#calculator`}><ExternalLink /> Open</a><button onClick={() => rename(item)}><Pencil /> Rename</button><button className="danger" onClick={() => remove(item.id)}><Trash2 /> Delete</button></div></article>)}</div>
       {compared.length >= 2 && <div className="saved-comparison"><h2>Scenario comparison</h2><div className="scenario-table"><div className="scenario-row heading"><span>Scenario</span><span>Revenue</span><span>Exact units</span><span>Capacity</span><span>Score</span></div>{compared.map(item => <div className="scenario-row" key={item.id}><strong>{item.name}</strong><span>{new Intl.NumberFormat("en-US",{style:"currency",currency:item.currency}).format(item.result.revenue)}</span><span>{item.result.jobs.toFixed(2)}</span><span>{item.result.capacity.toFixed(2)}</span><span>{item.result.score}/100</span></div>)}</div></div>}
       <p className="dashboard-version">Results recalculate with formula engine {FORMULA_ENGINE_VERSION}; original save version is retained for auditability.</p>
     </>}
