@@ -45,6 +45,9 @@ describe("secure account foundation", () => {
     expect(schema).toContain("enable row level security");
     expect(schema).toContain("auth.uid()");
     expect(schema).toContain("revoke all on table public.profiles from anon");
+    expect(schema).toContain("revoke update on table public.profiles from authenticated");
+    expect(schema).toContain("grant update (display_name, updated_at)");
+    expect(schema).not.toContain("grant select, update on table public.profiles");
   });
 
   it("creates one profile owned by each verified auth identity", () => {
