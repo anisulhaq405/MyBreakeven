@@ -1,6 +1,7 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { calculate, FORMULA_ENGINE_VERSION } from "./engine";
 import { Download, FileText, Save, TrendingUp } from "lucide-react";
+import { limitsFor, normalizePlan } from "./entitlements";
 const formatMoney = (n, currency) =>
   new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -13,6 +14,17 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
   const money = (n) => formatMoney(n, currency);
   const [drift, setDrift] = useState(10);
   const [saveState, setSaveState] = useState({ loading: false, message: "", error: "" });
+  const [plan, setPlan] = useState("free");
+  const limits = limitsFor(plan);
+  const isPro = plan === "pro";
+  useEffect(() => {
+    import("./authClient").then(async ({ supabase }) => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return;
+      const { data } = await supabase.from("profiles").select("plan").eq("id", user.id).single();
+      setPlan(normalizePlan(data?.plan));
+    });
+  }, []);
   const scenarios = useMemo(
     () =>
       [
@@ -106,27 +118,34 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
       setSaveState({ loading: false, message: "", error: "Log in to save this scenario privately." });
       return;
     }
+    const [{ data: profile }, { count }] = await Promise.all([
+      supabase.from("profiles").select("plan").eq("id", user.id).single(),
+      supabase.from("saved_scenarios").select("id", { count: "exact", head: true }),
+    ]);
+    const currentPlan = normalizePlan(profile?.plan);
+    const currentLimits = limitsFor(currentPlan);
+    setPlan(currentPlan);
+    if ((count || 0) >= currentLimits.savedScenarios) {
+      setSaveState({ loading: false, message: "", error: `${currentPlan === "pro" ? "Pro" : "Free"} plan limit reached (${currentLimits.savedScenarios} saved scenarios).` });
+      return;
+    }
     const { error } = await supabase.from("saved_scenarios").insert({ name, industry_key: industryKey, currency, inputs: input, engine_version: FORMULA_ENGINE_VERSION });
-    setSaveState(error ? { loading: false, message: "", error: error.message } : { loading: false, message: "Scenario saved. Open it from your dashboard.", error: "" });
+    const friendlyError = error?.message?.includes("PLAN_LIMIT_REACHED") ? `Plan limit reached (${currentLimits.savedScenarios} saved scenarios).` : error?.message;
+    setSaveState(error ? { loading: false, message: "", error: friendlyError } : { loading: false, message: "Scenario saved. Open it from your dashboard.", error: "" });
   };
   if (!result.valid) return null;
   return (
     <section className="scenario-tools">
       <div className="tools-heading">
         <div>
-          <span>FREE PLANNING TOOLS</span>
+          <span>PLANNING TOOLS</span>
           <h2>Compare scenarios and stress-test rising costs</h2>
         </div>
         <div className="export-actions">
           <button onClick={saveScenario} disabled={saveState.loading}>
             <Save /> {saveState.loading ? "Saving…" : "Save scenario"}
           </button>
-          <button onClick={csv}>
-            <Download /> Download CSV
-          </button>
-          <button className="primary" onClick={print}>
-            <FileText /> Print / Save PDF
-          </button>
+          {limits.exports ? <><button onClick={csv}><Download /> Download CSV</button><button className="primary" onClick={print}><FileText /> Print / Save PDF</button></> : <a className="tool-upgrade" href="/pricing/">Unlock CSV &amp; PDF with Pro</a>}
         </div>
       </div>
       {saveState.error && <p className="tool-message error" role="alert">{saveState.error} {saveState.error.startsWith("Log in") && <a href="/login/">Log in</a>}</p>}
@@ -154,7 +173,7 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
           </div>
         ))}
       </div>
-      <div className="drift-card">
+      {isPro ? <div className="drift-card">
         <TrendingUp />
         <div>
           <label htmlFor="drift">
@@ -178,7 +197,7 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
               : " because contribution becomes non-positive."}
           </p>
         </div>
-      </div>
+      </div> : <div className="drift-card locked-tool"><TrendingUp /><div><strong>Cost-drift stress testing is a Pro feature</strong><p>Free accounts can save up to 3 scenarios. Pro unlocks cost-drift analysis, 3-way comparison and downloadable reports.</p><a href="/pricing/">View Pro features</a></div></div>}
     </section>
   );
 }
