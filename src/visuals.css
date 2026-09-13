@@ -218,13 +218,21 @@
   font-weight: 800;
   text-transform: uppercase;
 }
+.blog-grid article time {
+  display: block;
+  margin-top: 8px;
+  color: #4b5870;
+  font-size: 12px;
+  font-weight: 600;
+}
 .blog-grid h3 {
   font: 700 19px/1.35 Sora;
   margin: 8px 0;
 }
 .blog-grid p {
-  color: #65798a;
+  color: #435169;
   font-size: 14px;
+  line-height: 1.6;
 }
 .blog-grid a {
   font-size: 13px;

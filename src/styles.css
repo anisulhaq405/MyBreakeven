@@ -1129,6 +1129,21 @@ header {
   .industry-picker button:hover { transform: none; }
 }
 
+/* Editorial readability contract */
+.article-page > span { color: #5145cd; }
+.article-lead { color: #354158; line-height: 1.65; }
+.article-meta { display:flex; flex-wrap:wrap; gap:8px 18px; margin:18px 0; color:#4b5870; font-size:14px; font-weight:600; }
+.article-meta time { color:#302968; }
+.article-tags { display:flex; flex-wrap:wrap; gap:8px; margin:20px 0 28px; }
+.article-tags span { padding:7px 11px; border:1px solid #c9cff0; border-radius:999px; background:#f5f4ff; color:#393178; font-size:12px; font-weight:700; }
+.article-page section h2 { color:#11182c; }
+.article-page section p, .article-page li { color:#334155; }
+.article-featured figcaption, .article-visual figcaption { color:#4b5870; line-height:1.55; }
+.article-summary a, .related-guides a { color:#4338ca; text-decoration-thickness:1.5px; text-underline-offset:3px; }
+.article-page .breadcrumbs { color:#526078; }
+.breadcrumbs a { color:#4338ca; font-weight:600; }
+.article-page aside { color:#1e293b; }
+
 .seo-content {
   padding: 90px max(24px, calc((100% - 1180px) / 2));
   background: #fff;

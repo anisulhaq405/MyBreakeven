@@ -8,17 +8,31 @@ const featuredVisuals = {
   restaurant: ["Restaurant owner reviewing food costs, order volume and break-even revenue before service", "A restaurant owner reviews food costs, order volume and revenue before the next service period."],
   salon: ["Salon owner reviewing appointment capacity, service mix and monthly revenue", "A salon owner evaluates appointment capacity, service mix and revenue in a modern salon."],
 };
+const editorialMeta = {
+  "cleaning-business": { seoTitle: "Cleaning Business Break-Even Calculator & Formula", metaDescription: "Calculate cleaning jobs, revenue, leads and crew capacity needed to break even after labor, supplies, travel, overhead and marketing costs.", tags: ["Cleaning Business", "Job Pricing", "Profit Planning", "Capacity"], opening: "A full calendar can still lose money. The useful question is whether each completed cleaning job contributes enough to cover payroll, supplies, travel, overhead and the owner's income target." },
+  landscaping: { seoTitle: "Landscaping Break-Even Calculator & Job Pricing", metaDescription: "Estimate landscaping break-even jobs and revenue using labor, materials, fuel, equipment, lead costs and realistic monthly crew capacity.", tags: ["Landscaping", "Lawn Care", "Crew Capacity", "Job Costing"], opening: "Landscaping margins can disappear between drive time, fuel, materials and weather delays. A realistic break-even plan connects the price of an average job with the hours your crew can actually sell." },
+  "photography-business": { seoTitle: "Photography Break-Even Calculator & Pricing Guide", metaDescription: "Calculate photography sessions, revenue and inquiries needed after shooting, editing, travel, studio, delivery and marketing costs.", tags: ["Photography Business", "Session Pricing", "Studio Costs", "Bookings"], opening: "The camera time is only part of a paid session. Editing, client communication, travel and delivery all consume capacity, so profitable pricing starts with the complete workload behind every booking." },
+  agency: { seoTitle: "Agency Break-Even Calculator for Retainers & Capacity", metaDescription: "Calculate agency retainer clients and revenue needed after delivery labor, contractors, software, sales costs and realistic team capacity.", tags: ["Agency Finance", "Retainers", "Utilization", "Client Profitability"], opening: "More clients do not automatically create a healthier agency. Retainer revenue has to cover delivery labor, contractors, software, sales costs and the non-billable time that keeps accounts moving." },
+  "mobile-detailing": { seoTitle: "Mobile Detailing Break-Even Calculator & Pricing", metaDescription: "Calculate mobile detailing jobs and revenue needed after chemicals, labor, fuel, travel, equipment, overhead and customer acquisition.", tags: ["Mobile Detailing", "Route Planning", "Service Pricing", "Technician Capacity"], opening: "A strong ticket price can look less impressive after chemicals, towels, fuel, setup and drive time are counted. Your break-even target needs to reflect both job economics and the route capacity available each month." },
+  ecommerce: { seoTitle: "Ecommerce Break-Even Calculator: COGS, Ads & Returns", metaDescription: "Calculate ecommerce break-even orders and revenue after COGS, fulfillment, shipping, returns, platform fees and customer acquisition costs.", tags: ["Ecommerce", "COGS", "Customer Acquisition", "Fulfillment"], opening: "Revenue is not contribution. Product cost, fulfillment, shipping subsidies, returns, payment fees and acquisition spend all take a share of every order before it can pay for monthly overhead." },
+  restaurant: { seoTitle: "Restaurant Break-Even Calculator for Revenue & Orders", metaDescription: "Calculate restaurant break-even revenue and orders after food, direct labor, packaging, delivery fees, promotions and fixed overhead.", tags: ["Restaurant Finance", "Food Cost", "Order Volume", "Kitchen Capacity"], opening: "A busy dining room can hide weak unit economics. The clearest plan starts with the contribution left by an average order, then checks whether the kitchen can produce the volume needed to cover fixed costs." },
+  salon: { seoTitle: "Salon Break-Even Calculator for Pricing & Appointments", metaDescription: "Calculate salon appointments and revenue needed after products, stylist labor, laundry, booking fees, marketing and monthly overhead.", tags: ["Salon Business", "Service Mix", "Stylist Capacity", "Appointment Pricing"], opening: "A salon sells time as well as services. Product usage, stylist compensation, gaps, cancellations and the mix of appointments all affect how many bookings are needed before the month becomes profitable." },
+};
 const makeArticle = (data) => {
   const visualKey = data.calculatorSlug.replace("-break-even-calculator", "");
   const [alt, imageCaption] = featuredVisuals[visualKey];
+  const editorial = editorialMeta[visualKey];
   return ({
   ...data,
+  ...editorial,
+  published: "2026-09-10",
+  modified: "2026-09-13",
   image: `/images/blog/${visualKey}-featured.webp`,
   alt: `${alt} for a break-even calculation`,
   imageCaption,
   insideImage: `/images/blog/${visualKey}-formula.svg`,
   insideAlt: `${data.name} break-even formula from price and variable costs to contribution, required ${data.unit} and capacity`,
-  description: `${data.description} Learn the inputs, formula, features, capacity checks and practical steps for using the free MyBreakeven calculator.`,
+  description: data.description,
   features: [
     `Exact ${data.unit} and revenue targets without hiding fractional results`,
     `A separate whole-${data.singular} operating target for real-world planning`,
@@ -39,7 +53,7 @@ const makeArticle = (data) => {
   ],
   faq: [
     { q: `What does the ${data.name} break-even calculator include?`, a: `It includes price, direct costs, payment fees, acquisition cost, monthly overhead, owner pay, target profit, required ${data.unit}, inquiries and productive capacity.` },
-    { q: `Why are exact and whole ${data.unit} different?`, a: `The exact result preserves the mathematical fraction. The whole-unit target rounds up because selling only part of a ${data.singular} is usually not operationally possible.` },
+    { q: `Why are exact and whole ${data.unit} different?`, a: `The exact result preserves the mathematical fraction. The whole-unit target rounds up because selling only part of ${/^[aeiou]/i.test(data.singular) ? "an" : "a"} ${data.singular} is usually not operationally possible.` },
     { q: `Does the calculator predict guaranteed profit?`, a: `No. It produces an assumption-based planning estimate. Actual sales, costs, cancellations, taxes and timing can differ.` },
     { q: `How often should the calculation be updated?`, a: `Update it whenever price, wages, supplier costs, advertising performance, overhead or team capacity changes materially, and review it at least monthly during active planning.` },
   ],
