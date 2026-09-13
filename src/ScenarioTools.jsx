@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { calculate, FORMULA_ENGINE_VERSION } from "./engine";
-import { Download, FileText, TrendingUp } from "lucide-react";
+import { Download, FileText, Save, TrendingUp } from "lucide-react";
 const formatMoney = (n, currency) =>
   new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -9,9 +9,10 @@ const formatMoney = (n, currency) =>
     maximumFractionDigits: 2,
   }).format(n || 0);
 const safe = (s) => String(s).replaceAll('"', '""');
-export default function ScenarioTools({ input, result, industry, currency }) {
+export default function ScenarioTools({ input, result, industry, industryKey, currency }) {
   const money = (n) => formatMoney(n, currency);
   const [drift, setDrift] = useState(10);
+  const [saveState, setSaveState] = useState({ loading: false, message: "", error: "" });
   const scenarios = useMemo(
     () =>
       [
@@ -94,6 +95,20 @@ export default function ScenarioTools({ input, result, industry, currency }) {
     w.focus();
     w.print();
   };
+  const saveScenario = async () => {
+    const name = window.prompt("Name this scenario", `${industry.short} plan – ${new Date().toLocaleDateString("en-US")}`)?.trim();
+    if (!name) return;
+    if (name.length > 80) return setSaveState({ loading: false, message: "", error: "Use a name with 80 characters or fewer." });
+    setSaveState({ loading: true, message: "", error: "" });
+    const { supabase } = await import("./authClient");
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) {
+      setSaveState({ loading: false, message: "", error: "Log in to save this scenario privately." });
+      return;
+    }
+    const { error } = await supabase.from("saved_scenarios").insert({ name, industry_key: industryKey, currency, inputs: input, engine_version: FORMULA_ENGINE_VERSION });
+    setSaveState(error ? { loading: false, message: "", error: error.message } : { loading: false, message: "Scenario saved. Open it from your dashboard.", error: "" });
+  };
   if (!result.valid) return null;
   return (
     <section className="scenario-tools">
@@ -103,6 +118,9 @@ export default function ScenarioTools({ input, result, industry, currency }) {
           <h2>Compare scenarios and stress-test rising costs</h2>
         </div>
         <div className="export-actions">
+          <button onClick={saveScenario} disabled={saveState.loading}>
+            <Save /> {saveState.loading ? "Saving…" : "Save scenario"}
+          </button>
           <button onClick={csv}>
             <Download /> Download CSV
           </button>
@@ -111,6 +129,8 @@ export default function ScenarioTools({ input, result, industry, currency }) {
           </button>
         </div>
       </div>
+      {saveState.error && <p className="tool-message error" role="alert">{saveState.error} {saveState.error.startsWith("Log in") && <a href="/login/">Log in</a>}</p>}
+      {saveState.message && <p className="tool-message success" role="status">{saveState.message} <a href="/dashboard/">View dashboard</a></p>}
       <div className="scenario-table">
         <div className="scenario-row heading">
           <span>Scenario</span>
