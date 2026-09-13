@@ -54,4 +54,13 @@ describe("secure account foundation", () => {
     expect(schema).toContain("references auth.users(id) on delete cascade");
     expect(schema).toContain("on_auth_user_created");
   });
+
+  it("protects saved scenarios with per-user row-level policies", () => {
+    expect(schema).toContain("create table if not exists public.saved_scenarios");
+    expect(schema).toContain("Users can read their own scenarios");
+    expect(schema).toContain("Users can create their own scenarios");
+    expect(schema).toContain("Users can update their own scenarios");
+    expect(schema).toContain("Users can delete their own scenarios");
+    expect(schema).toContain("(select auth.uid()) = user_id");
+  });
 });
