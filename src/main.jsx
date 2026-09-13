@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
   BarChart3,
@@ -51,6 +51,19 @@ function App() {
     setIndustryKey(k);
     setInput({ ...industries[k].values });
   };
+  useEffect(() => {
+    const scenarioId = new URLSearchParams(window.location.search).get("scenario");
+    if (!scenarioId) return;
+    import("./authClient").then(async ({ supabase }) => {
+      if (!supabase) return;
+      const { data } = await supabase.from("saved_scenarios").select("industry_key,currency,inputs").eq("id", scenarioId).single();
+      if (!data || !industries[data.industry_key]) return;
+      setIndustryKey(data.industry_key);
+      setInput(data.inputs);
+      setCurrency(data.currency);
+      requestAnimationFrame(() => document.getElementById("calculator")?.scrollIntoView());
+    });
+  }, []);
   const path = window.location.pathname.replace(/\/$/, "") || "/";
   if (path !== "/") return <SecondaryPage path={path} />;
   return (
@@ -289,7 +302,7 @@ function App() {
           </div>
         </section>
         <Insights result={result} input={input} industry={industry} currency={currency} />
-        <ScenarioTools result={result} input={input} industry={industry} currency={currency} />
+        <ScenarioTools result={result} input={input} industry={industry} industryKey={industryKey} currency={currency} />
         <section className="proof" id="how">
           <span>ONE NUMBER ISN'T ENOUGH</span>
           <h2>
@@ -353,7 +366,7 @@ function App() {
             </p>
           </div>
           <div className="code">
-            <small>FORMULA TRACE · ENGINE v1.2.0</small>
+            <small>FORMULA TRACE · ENGINE v1.3.0</small>
             <code>contribution = price - direct_costs - fees</code>
             <code>exact_units = fixed_need / contribution</code>
             <code>required_inquiries = exact_units / conversion</code>
