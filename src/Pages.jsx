@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import React, { lazy, Suspense, useEffect } from "react";
 import { CheckCircle2, Mail, ShieldCheck, Sparkles } from "lucide-react";
 import BlogSection from "./BlogSection";
 import BlogArticle from "./BlogArticle";
 import { SiteFooter, SiteHeader } from "./SiteChrome";
 import IndustryPage, { industryPages } from "./IndustryPage";
+const AuthPage = lazy(() => import("./AuthPages").then(module => ({ default: module.AuthPage })));
+const DashboardPage = lazy(() => import("./AuthPages").then(module => ({ default: module.DashboardPage })));
 const Pricing = () => (
   <>
     <section className="page-hero">
@@ -117,6 +119,8 @@ const legalPages = {
       ["Calculator data", "The free calculator currently runs in your browser. We do not receive or store the financial assumptions you enter unless a future account feature clearly asks you to save them."],
       ["Website information", "Our hosting and security providers may process standard technical data such as IP address, browser type, device information, requested pages and timestamps to operate, protect and diagnose the website."],
       ["Messages you send", "If you contact us, we use the information in your message to reply, provide support and improve the product."],
+      ["Optional accounts", "If you create an account, our authentication provider processes your email address, encrypted authentication credentials, verification status and security session data. MyBreakeven never receives your plain-text password."],
+      ["Account controls", "You may request access, correction or deletion of account information by emailing hello@mybreakeven.com. Authentication records may be retained where reasonably required for security, fraud prevention or legal compliance."],
       ["Service providers", "We may use carefully selected hosting, analytics, authentication and payment providers. Each provider processes data for its stated service and under its own applicable terms."],
       ["Your choices", "You may ask about, correct or request deletion of personal information you have directly provided by emailing hello@mybreakeven.com."],
     ],
@@ -150,6 +154,7 @@ const legalPages = {
     intro: "How browser storage and cookies may be used on MyBreakeven.",
     sections: [
       ["Current use", "The free calculator does not require an account and currently keeps its calculation state in the active browser session rather than sending financial inputs to our servers."],
+      ["Account sessions", "Optional accounts use essential local storage and authentication tokens to keep users securely signed in, refresh sessions and protect private account routes. These essential technologies are not used for advertising."],
       ["Essential storage", "We may use essential cookies or similar browser storage for security, preferences, authentication and reliable site operation."],
       ["Analytics and payments", "If analytics or subscription checkout is added, this policy and any consent controls will be updated before non-essential tracking is enabled where consent is required."],
       ["Browser controls", "You can block or delete cookies through your browser settings, although essential account or checkout features may then stop working."],
@@ -182,6 +187,11 @@ export default function SecondaryPage({ path }) {
     "/terms-of-service": ["Terms of Service | MyBreakeven", "Read the terms for using MyBreakeven calculators, content and subscription features."],
     "/refund-policy": ["Refund Policy | MyBreakeven", "Review the cancellation and refund policy for future MyBreakeven paid subscriptions."],
     "/cookie-policy": ["Cookie Policy | MyBreakeven", "Learn how MyBreakeven uses essential browser storage and cookies."],
+    "/login": ["Log in to MyBreakeven", "Access your private MyBreakeven planning workspace."],
+    "/signup": ["Create a MyBreakeven account", "Create an optional account for saved business planning scenarios and reports."],
+    "/forgot-password": ["Reset your MyBreakeven password", "Request a secure password-reset link for your MyBreakeven account."],
+    "/reset-password": ["Choose a new MyBreakeven password", "Securely update your MyBreakeven account password."],
+    "/dashboard": ["Your MyBreakeven dashboard", "Manage your private MyBreakeven account and planning workspace."],
   };
   useEffect(() => {
     const meta = pageMeta[path];
@@ -192,7 +202,9 @@ export default function SecondaryPage({ path }) {
   }, [path]);
   const slug = path.startsWith("/blogs/") ? path.split("/")[2] : null;
   const calculatorSlug = path.startsWith("/calculators/") ? path.split("/")[2] : null;
+  const authPaths = ["/login", "/signup", "/forgot-password", "/reset-password"];
   const content = calculatorSlug && industryPages[calculatorSlug] ? <IndustryPage slug={calculatorSlug} /> : slug ? <BlogArticle slug={slug} /> :
+    authPaths.includes(path) ? <Suspense fallback={<p className="route-loading">Loading secure account…</p>}><AuthPage path={path} /></Suspense> : path === "/dashboard" ? <Suspense fallback={<p className="route-loading">Loading secure workspace…</p>}><DashboardPage /></Suspense> :
     path === "/pricing" ? (
       <Pricing />
     ) : path === "/blogs" || path === "/blog" ? (
