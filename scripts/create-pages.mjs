@@ -24,14 +24,21 @@ const staticPages = {
   "terms-of-service": ["Terms of Service | MyBreakeven", "Read the terms for using MyBreakeven calculators, content and subscription features.", "Terms of Service"],
   "refund-policy": ["Refund Policy | MyBreakeven", "Review the cancellation and refund policy for future MyBreakeven paid subscriptions.", "Refund Policy"],
   "cookie-policy": ["Cookie Policy | MyBreakeven", "Learn how MyBreakeven uses essential browser storage and cookies.", "Cookie Policy"],
+  login: ["Log in to MyBreakeven", "Access your private MyBreakeven planning workspace.", "Log in to MyBreakeven", true],
+  signup: ["Create a MyBreakeven account", "Create an optional account for saved business planning scenarios and reports.", "Create a MyBreakeven account", true],
+  "forgot-password": ["Reset your MyBreakeven password", "Request a secure password-reset link for your MyBreakeven account.", "Reset your password", true],
+  "reset-password": ["Choose a new MyBreakeven password", "Securely update your MyBreakeven account password.", "Choose a new password", true],
+  dashboard: ["Your MyBreakeven dashboard", "Manage your private MyBreakeven account and planning workspace.", "Your private dashboard", true],
 };
-for (const [route, [title, description, heading]] of Object.entries(staticPages)) {
+for (const [route, [title, description, heading, privatePage = false]] of Object.entries(staticPages)) {
   const canonical = `https://mybreakeven.com/${route}/`;
   const links = route === "blogs" ? `<ul>${articleList.map(article => `<li><a href="/blogs/${article.slug}/">${escapeHtml(article.title)}</a></li>`).join("")}</ul>` : `<p><a href="/#calculator">Use the free small business break-even calculator</a></p>`;
   const fallback = `<div id="root" data-booting><main><h1>${escapeHtml(heading)}</h1><p>${escapeHtml(description)}</p>${links}</main></div>`;
   const html = base
     .replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
     .replace(/<meta name="description" content="[^"]*"\s*\/?>/, `<meta name="description" content="${escapeHtml(description)}" />`)
+    .replace(/<meta name="robots" content="[^"]*"\s*\/?>/, `<meta name="robots" content="${privatePage ? "noindex,nofollow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"}" />`)
+    .replace(/<meta name="googlebot" content="[^"]*"\s*\/?>/, `<meta name="googlebot" content="${privatePage ? "noindex,nofollow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"}" />`)
     .replace(/<meta property="og:title" content="[^"]*"\s*\/?>/, `<meta property="og:title" content="${escapeHtml(title)}" />`)
     .replace(/<meta property="og:description" content="[^"]*"\s*\/?>/, `<meta property="og:description" content="${escapeHtml(description)}" />`)
     .replace(/<meta property="og:url" content="[^"]*"\s*\/?>/, `<meta property="og:url" content="${canonical}" />`)
