@@ -32,5 +32,6 @@ create trigger on_auth_user_created
 after insert on auth.users for each row execute procedure public.handle_new_user();
 
 revoke all on table public.profiles from anon;
-grant select, update on table public.profiles to authenticated;
-
+revoke update on table public.profiles from authenticated;
+grant select on table public.profiles to authenticated;
+grant update (display_name, updated_at) on table public.profiles to authenticated;
