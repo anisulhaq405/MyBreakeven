@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { ArrowRight, BarChart3, Menu, X } from "lucide-react";
+import { BarChart3, CreditCard, Menu, ShieldCheck, X } from "lucide-react";
+
+export const primaryNavigation = [
+  ["Calculator", "/#calculator"],
+  ["Pricing", "/pricing/"],
+  ["Blogs", "/blogs/"],
+  ["About Us", "/about-us/"],
+  ["Contact Us", "/contact-us/"],
+];
 
 export function Logo({ light = false }) {
   return (
@@ -16,12 +24,7 @@ export function SiteHeader() {
     <header>
       <Logo />
       <nav className={mobileOpen ? "open" : ""} aria-label="Main navigation">
-        <a href="/#calculator">Calculator</a>
-        <a href="/pricing/">Pricing</a>
-        <a href="/blogs/">Blogs</a>
-        <a href="/about-us/">About Us</a>
-        <a href="/contact-us/">Contact Us</a>
-        <a className="navCta" href="/#calculator">Start free <ArrowRight /></a>
+        {primaryNavigation.map(([label, href]) => <a key={label} href={href}>{label}</a>)}
       </nav>
       <button
         className="menu"
@@ -39,16 +42,36 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer>
-      <div className="footer-brand">
-        <Logo light />
-        <p>Industry-specific break-even and feasibility planning for small and medium businesses.</p>
+      <div className="footer-main">
+        <div className="footer-brand">
+          <Logo light />
+          <p>Formula-backed break-even and feasibility planning for small and medium businesses.</p>
+          <span className="footer-trust"><ShieldCheck /> Private by default · Transparent formulas</span>
+        </div>
+        <nav className="footer-links" aria-label="Product links">
+          <strong>Product</strong>
+          {primaryNavigation.map(([label, href]) => <a key={label} href={href}>{label}</a>)}
+        </nav>
+        <nav className="footer-links" aria-label="Legal links">
+          <strong>Legal</strong>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+          <a href="/refund-policy/">Refund Policy</a>
+          <a href="/cookie-policy/">Cookie Policy</a>
+        </nav>
+        <div className="footer-payments">
+          <strong>Supported by Polar checkout</strong>
+          <p>Payment integration is coming later.</p>
+          <div aria-label="Polar checkout supported payment methods">
+            <span><CreditCard /> Cards</span>
+            <span>Visa</span>
+            <span>Mastercard</span>
+            <span>Amex</span>
+            <span>Apple Pay</span>
+            <span>Google Pay</span>
+          </div>
+        </div>
       </div>
-      <nav className="footer-links" aria-label="Footer navigation">
-        <a href="/#calculator">Calculator</a>
-        <a href="/blogs/">Guides</a>
-        <a href="/about-us/">About</a>
-        <a href="/contact-us/">Contact</a>
-      </nav>
       <div className="footer-legal">
         <span>© 2026 MyBreakeven</span>
         <small>Planning estimates based on your assumptions—not tax, legal, accounting or lending advice.</small>

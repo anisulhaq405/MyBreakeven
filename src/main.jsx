@@ -1,24 +1,20 @@
 import React, { useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
-  ArrowRight,
-  BarChart3,
   BriefcaseBusiness,
   CheckCircle2,
   ChevronDown,
   Info,
-  Menu,
   ShieldCheck,
   Sparkles,
   Target,
-  X,
 } from "lucide-react";
 import { calculate } from "./engine";
 import { fieldLabels, industries } from "./industries";
 import Insights from "./Insights";
 import BlogSection from "./BlogSection";
 import SecondaryPage from "./Pages";
-import { Logo, SiteFooter } from "./SiteChrome";
+import { SiteFooter, SiteHeader } from "./SiteChrome";
 import ScenarioTools from "./ScenarioTools";
 import HomeSEO from "./HomeSEO";
 import "./styles.css";
@@ -37,7 +33,6 @@ function App() {
   const startingIndustry = industries[initialIndustry] ? initialIndustry : "cleaning";
   const [industryKey, setIndustryKey] = useState(startingIndustry),
     [input, setInput] = useState(industries[startingIndustry].values),
-    [mobile, setMobile] = useState(false),
     [currency, setCurrency] = useState("USD");
   const currencySymbol = new Intl.NumberFormat("en-US", { style: "currency", currency, currencyDisplay: "narrowSymbol" }).formatToParts(0).find(p => p.type === "currency")?.value || currency;
   const industry = industries[industryKey],
@@ -60,23 +55,7 @@ function App() {
   return (
     <>
       <a className="skip-link" href="#main-content">Skip to main content</a>
-      <header>
-        <Logo />
-        <nav className={mobile ? "open" : ""} aria-label="Main navigation">
-          <a href="/#calculator">Calculator</a>
-          <a href="/#methodology">Methodology</a>
-          <a href="/pricing/">Pricing</a>
-          <a href="/blogs/">Blogs</a>
-          <a href="/about-us/">About Us</a>
-          <a href="/contact-us/">Contact Us</a>
-          <button className="navCta" onClick={() => { location.hash = "calculator"; }}>
-            Start free <ArrowRight />
-          </button>
-        </nav>
-        <button className="menu" aria-label={mobile ? "Close navigation" : "Open navigation"} aria-expanded={mobile} onClick={() => setMobile(!mobile)}>
-          {mobile ? <X /> : <Menu />}
-        </button>
-      </header>
+      <SiteHeader />
       <main id="main-content">
         <section className="intro">
           <div className="hero-copy">
