@@ -3,6 +3,10 @@ create table if not exists public.profiles (
   id uuid primary key references auth.users(id) on delete cascade,
   display_name text check (char_length(display_name) <= 80),
   plan text not null default 'free' check (plan in ('free', 'pro')),
+  subscription_status text not null default 'inactive' check (subscription_status in ('inactive','active','past_due','canceled')),
+  current_period_end timestamptz,
+  polar_customer_id text unique,
+  polar_subscription_id text unique,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
@@ -64,3 +68,19 @@ for delete to authenticated using ((select auth.uid()) = user_id);
 
 revoke all on table public.saved_scenarios from anon;
 grant select, insert, update, delete on table public.saved_scenarios to authenticated;
+
+create or replace function public.enforce_saved_scenario_limit()
+returns trigger language plpgsql security definer set search_path = '' as $$
+declare account_plan text; scenario_count integer; plan_limit integer;
+begin
+  perform pg_advisory_xact_lock(hashtextextended(new.user_id::text, 0));
+  select plan into account_plan from public.profiles where id = new.user_id;
+  plan_limit := case when account_plan = 'pro' then 100 else 3 end;
+  select count(*) into scenario_count from public.saved_scenarios where user_id = new.user_id;
+  if scenario_count >= plan_limit then raise exception 'PLAN_LIMIT_REACHED' using errcode = 'P0001'; end if;
+  return new;
+end;
+$$;
+drop trigger if exists enforce_saved_scenario_limit on public.saved_scenarios;
+create trigger enforce_saved_scenario_limit before insert on public.saved_scenarios
+for each row execute procedure public.enforce_saved_scenario_limit();
