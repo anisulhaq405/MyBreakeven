@@ -1,6 +1,6 @@
 import Decimal from "decimal.js";
 
-export const FORMULA_ENGINE_VERSION = "1.2.0";
+export const FORMULA_ENGINE_VERSION = "1.3.0";
 
 Decimal.set({ precision: 40, rounding: Decimal.ROUND_HALF_UP });
 
@@ -20,11 +20,9 @@ export const calculate = (raw) => {
   const i = Object.fromEntries(
     Object.entries(raw).map(([key, value]) => [key, decimal(value)]),
   );
-  i.otherVariableCost ??= new Decimal(0);
-  i.acquisitionCost ??= new Decimal(0);
-
   const required = [
-    "price", "materialCost", "laborCost", "fixedCosts", "ownerPay",
+    "price", "materialCost", "laborCost", "otherVariableCost",
+    "acquisitionCost", "fixedCosts", "ownerPay",
     "targetProfit", "paymentFeePct", "workers", "hoursPerWorker",
     "hoursPerJob", "utilizationPct", "conversionPct",
   ];
@@ -33,9 +31,10 @@ export const calculate = (raw) => {
   }
   if (
     required.some((key) => i[key].isNegative()) ||
-    !i.price.gt(0) || !i.workers.gt(0) || !i.hoursPerJob.gt(0)
+    !i.price.gt(0) || !i.workers.gt(0) || !i.workers.isInteger() ||
+    !i.hoursPerJob.gt(0)
   ) {
-    return { valid: false, inputError: true, message: "Price, team size and delivery hours must be above zero; other values cannot be negative." };
+    return { valid: false, inputError: true, message: "Price and delivery hours must be above zero, team size must be a whole number, and other values cannot be negative." };
   }
   if (
     i.paymentFeePct.gt(100) || i.utilizationPct.gt(100) ||
