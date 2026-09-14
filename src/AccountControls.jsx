@@ -6,7 +6,7 @@ import "./account-controls.css";
 
 const initialStatus = { loading: "", error: "", message: "" };
 
-export default function AccountControls({ user, scenarios, displayName = "", onScenariosDeleted }) {
+export default function AccountControls({ user, scenarios, displayName = "", onProfileUpdated, onScenariosDeleted }) {
   const [name, setName] = useState(displayName);
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -21,7 +21,8 @@ export default function AccountControls({ user, scenarios, displayName = "", onS
     if (cleanName.length > 80) return setStatus({ loading: "", error: "Use a display name with 80 characters or fewer.", message: "" });
     setStatus({ loading: "profile", error: "", message: "" });
     const { error } = await supabase.from("profiles").update({ display_name: cleanName, updated_at: new Date().toISOString() }).eq("id", user.id);
-    setStatus(error ? { loading: "", error: friendlyAuthError(error, "Your profile could not be updated. Please try again."), message: "" } : { loading: "", error: "", message: "Profile updated." });
+    if (error) setStatus({ loading: "", error: friendlyAuthError(error, "Your profile could not be updated. Please try again."), message: "" });
+    else { onProfileUpdated(cleanName); setStatus({ loading: "", error: "", message: "Profile updated." }); }
   };
 
   const changePassword = async (event) => {
