@@ -7,6 +7,7 @@ const sql = readFileSync(new URL("../supabase/account-privacy-controls.sql", imp
 describe("account privacy controls", () => {
   it("supports profile, password and local data export", () => {
     expect(ui).toContain('from("profiles").update');
+    expect(ui).toContain("onProfileUpdated(cleanName)");
     expect(ui).toContain("signInWithPassword");
     expect(ui).toContain("mybreakeven-personal-data.json");
   });
