@@ -13,6 +13,11 @@ describe("professional Pro report", () => {
     expect(html).toContain("size:letter");
     expect(html).toContain("@media(max-width:620px)");
   });
+  it("includes advanced decision analysis when supplied", () => {
+    const analysis = { valid: true, accountingRevenue: 15000, targetRevenue: 20395.94, marginSafetyPct: 12.5, plannedProfit: 2300, capacityPrice: 195, additionalWorkers: 2, drivers: [{ name: "Selling price", impact: 18.2, viable: true }], forecast: [{ month: 1, units: 120, revenue: 21600, profit: 2300 }] };
+    const advanced = buildProReport({ input: {}, result, scenarios: [{ name: "Current plan", result }], analysis, industry, currency: "USD", engineVersion: "1.3.0" });
+    for (const text of ["Advanced decision metrics", "Accounting break-even", "Risk sensitivity", "12-month forecast", "Selling price"]) expect(advanced).toContain(text);
+  });
   it("escapes report content", () => {
     const unsafe = buildProReport({ input: { note: "<script>" }, result, scenarios: [{ name: "<b>x</b>", result }], industry, currency: "USD", engineVersion: "1.3.0" });
     expect(unsafe).not.toContain("<script>");

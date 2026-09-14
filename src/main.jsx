@@ -393,11 +393,11 @@ function App() {
               <small>PLANNED PRO</small>
               <h3>Pro</h3>
               <strong>
-                $19 <i>/ month</i>
+                $9.99 <i>/ month</i>
               </strong>
               <p>
-                Up to 100 saved scenarios, three-way comparisons, cost-drift
-                tracking and downloadable reports.
+                Advanced charts, profit forecasts, risk sensitivity, capacity
+                planning, 100 saved scenarios and downloadable reports.
               </p>
               <button onClick={() => { location.href = "/signup/"; }}>Create free account</button>
             </article>

@@ -5,8 +5,8 @@ import { readFileSync } from "node:fs";
 const migration = readFileSync(new URL("../supabase/subscription-entitlements.sql", import.meta.url), "utf8");
 
 describe("subscription entitlements", () => {
-  it("defines the approved Free limits", () => expect(PLAN_LIMITS.free).toEqual({ savedScenarios: 3, comparisons: 0, exports: false, costDrift: false }));
-  it("defines the approved Pro limits", () => expect(PLAN_LIMITS.pro).toEqual({ savedScenarios: 100, comparisons: 3, exports: true, costDrift: true }));
+  it("defines the approved Free limits", () => expect(PLAN_LIMITS.free).toEqual({ savedScenarios: 3, comparisons: 0, exports: false, costDrift: false, advancedAnalysis: false, forecasts: false }));
+  it("defines the approved Pro limits", () => expect(PLAN_LIMITS.pro).toEqual({ savedScenarios: 100, comparisons: 3, exports: true, costDrift: true, advancedAnalysis: true, forecasts: true }));
   it("fails unknown or missing plans closed to Free", () => {
     expect(normalizePlan()).toBe("free");
     expect(normalizePlan("enterprise")).toBe("free");
