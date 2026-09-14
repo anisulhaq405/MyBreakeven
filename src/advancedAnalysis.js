@@ -21,8 +21,11 @@ export function advancedAnalysis(input, result, options = {}) {
   const capacityPrice = D(result.capacity).gt(0)
     ? fixedBase.plus(input.targetProfit).div(result.capacity).plus(variable).div(netRate)
     : null;
+  const productiveHoursPerWorker = D(input.hoursPerWorker).mul(52).div(12).mul(D(input.utilizationPct).div(100));
   const additionalWorkers = result.gap < 0
-    ? D(Math.abs(result.gap)).mul(input.hoursPerJob).div(D(input.hoursPerWorker).mul(52).div(12).mul(D(input.utilizationPct).div(100))).ceil()
+    ? productiveHoursPerWorker.gt(0)
+      ? D(Math.abs(result.gap)).mul(input.hoursPerJob).div(productiveHoursPerWorker).ceil()
+      : null
     : D(0);
 
   const drivers = [
@@ -60,7 +63,8 @@ export function advancedAnalysis(input, result, options = {}) {
     valid: true, accountingRevenue: num(accountingRevenue), targetRevenue: result.revenue,
     plannedUnits: num(plannedUnits), plannedRevenue: num(plannedRevenue), plannedProfit: num(plannedProfit),
     marginSafetyRevenue: num(marginSafetyRevenue), marginSafetyPct: num(marginSafetyPct),
-    capacityPrice: capacityPrice ? num(capacityPrice) : null, additionalWorkers: additionalWorkers.toNumber(),
+    capacityPrice: capacityPrice ? num(capacityPrice) : null,
+    additionalWorkers: additionalWorkers ? additionalWorkers.toNumber() : null,
     drivers, heatmap, forecast,
   };
 }
