@@ -68,12 +68,12 @@ header {
   color: #fff;
   border-radius: 9px;
 }
-nav {
+header > nav {
   display: flex;
   align-items: center;
   gap: 27px;
 }
-nav a {
+header > nav a {
   color: #40556a;
   text-decoration: none;
   font-size: 14px;
@@ -661,7 +661,7 @@ footer p {
     padding: 7px 10px;
     font-size: 12px;
   }
-  nav {
+  header > nav {
     display: none;
     position: absolute;
     top: 64px;
@@ -673,7 +673,7 @@ footer p {
     align-items: flex-start;
     border-bottom: 1px solid #ddd;
   }
-  nav.open {
+  header > nav.open {
     display: flex;
   }
   .intro {
@@ -957,7 +957,7 @@ header {
 @media (prefers-reduced-motion: reduce) { .orbit { animation: none; } .mini-card, .proof article, .insight-grid article, .blog-grid article, .pricing article { transition: none; } }
 @media (max-width: 800px) {
   header { height: 64px; }
-  nav { background: rgba(247,248,255,.96); backdrop-filter: blur(22px); }
+  header > nav { background: rgba(247,248,255,.96); backdrop-filter: blur(22px); }
   .intro { min-height: auto; }
   .mini-card { transform: none; }
   .hero-visual { max-width: 520px; width: 100%; margin: auto; }
