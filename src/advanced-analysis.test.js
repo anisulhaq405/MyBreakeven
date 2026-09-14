@@ -10,4 +10,9 @@ describe("Pro advanced analysis",()=>{
   it("calculates margin of safety and a capacity-safe price",()=>{expect(analysis.marginSafetyRevenue).toBe(1000);expect(analysis.marginSafetyPct).toBe(25);expect(analysis.capacityPrice).toBeGreaterThan(50)});
   it("ranks sensitivity drivers and builds a price-volume heatmap",()=>{expect(analysis.drivers).toHaveLength(7);expect(analysis.heatmap).toHaveLength(4);expect(analysis.heatmap[0].cells).toHaveLength(5)});
   it("builds a twelve-month compounding forecast",()=>{expect(analysis.forecast).toHaveLength(12);expect(analysis.forecast[11].units).toBeGreaterThan(analysis.forecast[0].units)});
+  it("handles zero productive capacity without returning infinity",()=>{
+    const zeroCapacity={...input,utilizationPct:0};
+    const zeroResult=calculate(zeroCapacity);
+    expect(advancedAnalysis(zeroCapacity,zeroResult).additionalWorkers).toBeNull();
+  });
 });

@@ -12,8 +12,8 @@ const Pricing = () => (
       <span>STRAIGHTFORWARD PRICING</span>
       <h1>Start free. Upgrade when you need deeper planning.</h1>
       <p>
-        Use the core calculator without an account. Pro tools will add saved
-        scenarios, comparisons and downloadable reports.
+        Use the core calculator without an account. Pro expands saved
+        scenarios and adds advanced analysis, comparisons and downloadable reports.
       </p>
     </section>
     <section className="pricing page-pricing">

@@ -157,7 +157,7 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
       <div className="tools-heading">
         <div>
           <span>PLANNING TOOLS</span>
-          <h2>Compare scenarios and stress-test rising costs</h2>
+          <h2>{isPro ? "Compare scenarios and stress-test rising costs" : "Save your plan and unlock deeper analysis"}</h2>
         </div>
         <div className="export-actions">
           <button onClick={saveScenario} disabled={saveState.loading}>
@@ -176,7 +176,7 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
           <span>Inquiries</span>
           <span>Score</span>
         </div>
-        {scenarios.map((s) => (
+        {scenarios.filter((s) => isPro || s.name === "Current plan").map((s) => (
           <div
             className={`scenario-row ${s.name === "Current plan" ? "current" : ""}`}
             key={s.name}
