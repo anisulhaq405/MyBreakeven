@@ -19,6 +19,13 @@ describe("locked site chrome", () => {
     ]);
   });
 
+  it("keeps account access separate from the locked primary menu", () => {
+    expect(primaryNavigation).toHaveLength(5);
+    expect(chrome).toContain('className="account-link"');
+    expect(chrome).toContain('signedIn ? "/dashboard/" : "/login/"');
+    expect(chrome).toContain('signedIn ? "Dashboard" : "Sign In"');
+  });
+
   it("uses the shared header and footer on secondary pages", () => {
     expect(pages).toContain("<SiteHeader />");
     expect(pages).toContain("<SiteFooter />");
