@@ -3,6 +3,8 @@ import { calculate, FORMULA_ENGINE_VERSION } from "./engine";
 import { Download, FileText, Save, TrendingUp } from "lucide-react";
 import { limitsFor, normalizePlan } from "./entitlements";
 import { buildProReport } from "./reportBuilder";
+import ProIntelligence from "./ProIntelligence";
+import { advancedAnalysis } from "./advancedAnalysis";
 const formatMoney = (n, currency) =>
   new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -68,6 +70,7 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
       }),
     [input, drift],
   );
+  const reportAnalysis = useMemo(() => advancedAnalysis(input, result), [input, result]);
   const csv = () => {
     const rows = [
       ["MyBreakeven Feasibility Report"],
@@ -83,6 +86,22 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
         s.result.leads,
         s.result.score,
       ]),
+      [],
+      ["Advanced Pro metrics"],
+      ["Accounting break-even", reportAnalysis.accountingRevenue],
+      ["Target-profit revenue", reportAnalysis.targetRevenue],
+      ["Planned monthly revenue", reportAnalysis.plannedRevenue],
+      ["Planned monthly profit", reportAnalysis.plannedProfit],
+      ["Margin of safety %", reportAnalysis.marginSafetyPct],
+      ["Capacity-safe minimum price", reportAnalysis.capacityPrice],
+      ["Additional team members", reportAnalysis.additionalWorkers],
+      [],
+      ["Sensitivity driver", "Break-even impact %", "Viable"],
+      ...reportAnalysis.drivers.map((driver) => [driver.name, driver.impact, driver.viable ? "Yes" : "No"]),
+      [],
+      ["12-month forecast"],
+      ["Month", industry.unit, "Revenue", "Profit"],
+      ...reportAnalysis.forecast.map((month) => [month.month, month.units, month.revenue, month.profit]),
     ];
     const blob = new Blob(
       [
@@ -101,7 +120,7 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
   const print = () => {
     const w = window.open("", "_blank");
     if (!w) return;
-    w.document.write(buildProReport({ input, result, scenarios, industry, currency, engineVersion: FORMULA_ENGINE_VERSION }));
+    w.document.write(buildProReport({ input, result, scenarios, analysis: reportAnalysis, industry, currency, engineVersion: FORMULA_ENGINE_VERSION }));
     w.document.close();
     w.focus();
     w.print();
@@ -197,6 +216,7 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
           </p>
         </div>
       </div> : <div className="drift-card locked-tool"><TrendingUp /><div><strong>Cost-drift stress testing is a Pro feature</strong><p>Free accounts can save up to 3 scenarios. Pro unlocks cost-drift analysis, 3-way comparison and downloadable reports.</p><a href="/pricing/">View Pro features</a></div></div>}
+      <ProIntelligence input={input} result={result} industry={industry} currency={currency} isPro={isPro} />
     </section>
   );
 }

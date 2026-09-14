@@ -31,10 +31,10 @@ const Pricing = () => (
           <small>PLANNED PRO</small>
           <h3>Pro</h3>
           <strong>
-            $19 <i>/ month</i>
+            $9.99 <i>/ month</i>
           </strong>
           <p>Advanced planning for active owners and teams.</p>
-          <ul><li>Up to 100 saved scenarios</li><li>Compare 3 plans side by side</li><li>Cost-drift stress testing</li><li>CSV and PDF-ready reports</li></ul>
+          <ul><li>Up to 100 saved scenarios</li><li>Advanced break-even intelligence dashboard</li><li>Profit forecast, margin of safety and capacity solver</li><li>Risk sensitivity and price-volume heatmap</li><li>Compare 3 plans side by side</li><li>CSV and professional PDF reports</li></ul>
           <a className="page-button" href="/signup/">
             Create free account
           </a>
