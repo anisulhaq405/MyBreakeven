@@ -104,6 +104,27 @@ nav a {
   border: 0;
   background: none;
 }
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.account-link {
+  padding: 9px 14px;
+  border: 1px solid rgba(118, 92, 255, .28);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .72);
+  color: #5142d8;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.account-link:hover,
+.account-link:focus-visible {
+  background: #fff;
+  border-color: #765cff;
+}
 .intro {
   max-width: 1180px;
   margin: auto;
@@ -635,6 +656,10 @@ footer p {
   }
   .menu {
     display: block;
+  }
+  .account-link {
+    padding: 7px 10px;
+    font-size: 12px;
   }
   nav {
     display: none;
