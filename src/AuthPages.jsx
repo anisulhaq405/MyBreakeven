@@ -5,6 +5,7 @@ import { calculate, FORMULA_ENGINE_VERSION } from "./engine";
 import { industries } from "./industries";
 import { limitsFor, normalizePlan } from "./entitlements";
 import { friendlyAuthError, withTimeout } from "./authSecurity";
+import AccountControls from "./AccountControls";
 
 const authMeta = {
   "/login": ["Log in to MyBreakeven", "Access your private MyBreakeven planning workspace."],
@@ -103,15 +104,15 @@ export function AuthPage({ path }) {
 
 export function DashboardPage() {
   usePrivatePageMeta("/dashboard");
-  const [state, setState] = useState({ loading: true, user: null, scenarios: [], plan: "free", error: "" });
+  const [state, setState] = useState({ loading: true, user: null, scenarios: [], plan: "free", displayName: "", error: "" });
   const [selected, setSelected] = useState([]);
   const [actionId, setActionId] = useState("");
   const loadScenarios = async (user) => {
     const [{ data, error }, { data: profile }] = await Promise.all([
       supabase.from("saved_scenarios").select("id,name,industry_key,currency,inputs,engine_version,created_at,updated_at").eq("user_id", user.id).order("updated_at", { ascending: false }),
-      supabase.from("profiles").select("plan,subscription_status,current_period_end").eq("id", user.id).maybeSingle(),
+      supabase.from("profiles").select("display_name,plan,subscription_status,current_period_end").eq("id", user.id).maybeSingle(),
     ]);
-    setState({ loading: false, user, scenarios: data || [], plan: normalizePlan(profile?.plan), subscriptionStatus: profile?.subscription_status || "inactive", currentPeriodEnd: profile?.current_period_end || null, error: error ? friendlyAuthError(error, "Your saved scenarios could not be loaded. Please refresh and try again.") : "" });
+    setState({ loading: false, user, scenarios: data || [], plan: normalizePlan(profile?.plan), displayName: profile?.display_name || "", subscriptionStatus: profile?.subscription_status || "inactive", currentPeriodEnd: profile?.current_period_end || null, error: error ? friendlyAuthError(error, "Your saved scenarios could not be loaded. Please refresh and try again.") : "" });
   };
   useEffect(() => {
     if (!supabase) return setState({ loading: false, user: null });
@@ -166,5 +167,6 @@ export function DashboardPage() {
       {compared.length >= 2 && <div className="saved-comparison"><h2>Scenario comparison</h2><div className="scenario-table"><div className="scenario-row heading"><span>Scenario</span><span>Revenue</span><span>Exact units</span><span>Capacity</span><span>Score</span></div>{compared.map(item => <div className="scenario-row" key={item.id}><strong>{item.name}</strong><span>{new Intl.NumberFormat("en-US",{style:"currency",currency:item.currency}).format(item.result.revenue)}</span><span>{item.result.jobs.toFixed(2)}</span><span>{item.result.capacity.toFixed(2)}</span><span>{item.result.score}/100</span></div>)}</div></div>}
       <p className="dashboard-version">Results recalculate with formula engine {FORMULA_ENGINE_VERSION}; original save version is retained for auditability.</p>
     </>}
+    <AccountControls user={state.user} scenarios={state.scenarios} displayName={state.displayName} onScenariosDeleted={() => { setSelected([]); setState(current => ({ ...current, scenarios: [] })); }} />
   </section>;
 }
