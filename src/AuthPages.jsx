@@ -107,11 +107,11 @@ export function DashboardPage() {
   const [selected, setSelected] = useState([]);
   const [actionId, setActionId] = useState("");
   const loadScenarios = async (user) => {
-    const [{ data, error }, { data: profile, error: profileError }] = await Promise.all([
+    const [{ data, error }, { data: profile }] = await Promise.all([
       supabase.from("saved_scenarios").select("id,name,industry_key,currency,inputs,engine_version,created_at,updated_at").eq("user_id", user.id).order("updated_at", { ascending: false }),
-      supabase.from("profiles").select("plan,subscription_status,current_period_end").eq("id", user.id).single(),
+      supabase.from("profiles").select("plan,subscription_status,current_period_end").eq("id", user.id).maybeSingle(),
     ]);
-    setState({ loading: false, user, scenarios: data || [], plan: normalizePlan(profile?.plan), subscriptionStatus: profile?.subscription_status || "inactive", currentPeriodEnd: profile?.current_period_end || null, error: friendlyAuthError(error || profileError, error || profileError ? "Your workspace could not be loaded. Please try again." : "") });
+    setState({ loading: false, user, scenarios: data || [], plan: normalizePlan(profile?.plan), subscriptionStatus: profile?.subscription_status || "inactive", currentPeriodEnd: profile?.current_period_end || null, error: error ? friendlyAuthError(error, "Your saved scenarios could not be loaded. Please refresh and try again.") : "" });
   };
   useEffect(() => {
     if (!supabase) return setState({ loading: false, user: null });
