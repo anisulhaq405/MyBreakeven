@@ -18,6 +18,7 @@ import SecondaryPage from "./Pages";
 import { SiteFooter, SiteHeader } from "./SiteChrome";
 import ScenarioTools from "./ScenarioTools";
 import HomeSEO from "./HomeSEO";
+import AnalyticsConsent from "./AnalyticsConsent";
 import "./styles.css";
 import "./industries.css";
 import "./visuals.css";
@@ -407,5 +408,5 @@ function App() {
   );
 }
 const rootElement = document.getElementById("root");
-createRoot(rootElement).render(<App />);
+createRoot(rootElement).render(<><App /><AnalyticsConsent /></>);
 requestAnimationFrame(() => rootElement.removeAttribute("data-booting"));
