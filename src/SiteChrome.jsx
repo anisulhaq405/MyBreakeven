@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { BarChart3, CreditCard, Menu, ShieldCheck, X } from "lucide-react";
-import { supabase } from "./authClient";
 
 export const primaryNavigation = [
   ["Calculator", "/#calculator"],
@@ -24,17 +23,21 @@ export function SiteHeader() {
   const [signedIn, setSignedIn] = useState(false);
 
   useEffect(() => {
-    if (!supabase) return;
     let active = true;
-    supabase.auth.getSession().then(({ data }) => {
-      if (active) setSignedIn(Boolean(data.session));
-    });
-    const { data } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (active) setSignedIn(Boolean(session));
+    let subscription;
+    import("./authClient").then(({ supabase }) => {
+      if (!active || !supabase) return;
+      supabase.auth.getSession().then(({ data }) => {
+        if (active) setSignedIn(Boolean(data.session));
+      });
+      const { data } = supabase.auth.onAuthStateChange((_event, session) => {
+        if (active) setSignedIn(Boolean(session));
+      });
+      subscription = data.subscription;
     });
     return () => {
       active = false;
-      data.subscription.unsubscribe();
+      subscription?.unsubscribe();
     };
   }, []);
 
