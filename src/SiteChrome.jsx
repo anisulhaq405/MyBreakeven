@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BarChart3, CreditCard, Menu, ShieldCheck, X } from "lucide-react";
+import { supabase } from "./authClient";
 
 export const primaryNavigation = [
   ["Calculator", "/#calculator"],
@@ -20,21 +21,41 @@ export function Logo({ light = false }) {
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [signedIn, setSignedIn] = useState(false);
+
+  useEffect(() => {
+    if (!supabase) return;
+    let active = true;
+    supabase.auth.getSession().then(({ data }) => {
+      if (active) setSignedIn(Boolean(data.session));
+    });
+    const { data } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (active) setSignedIn(Boolean(session));
+    });
+    return () => {
+      active = false;
+      data.subscription.unsubscribe();
+    };
+  }, []);
+
   return (
     <header>
       <Logo />
       <nav className={mobileOpen ? "open" : ""} aria-label="Main navigation">
         {primaryNavigation.map(([label, href]) => <a key={label} href={href}>{label}</a>)}
       </nav>
-      <button
-        className="menu"
-        type="button"
-        aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
-        aria-expanded={mobileOpen}
-        onClick={() => setMobileOpen((open) => !open)}
-      >
-        {mobileOpen ? <X /> : <Menu />}
-      </button>
+      <div className="header-actions">
+        <a className="account-link" href={signedIn ? "/dashboard/" : "/login/"}>{signedIn ? "Dashboard" : "Sign In"}</a>
+        <button
+          className="menu"
+          type="button"
+          aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen((open) => !open)}
+        >
+          {mobileOpen ? <X /> : <Menu />}
+        </button>
+      </div>
     </header>
   );
 }
