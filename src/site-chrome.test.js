@@ -24,6 +24,8 @@ describe("locked site chrome", () => {
     expect(chrome).toContain('className="account-link"');
     expect(chrome).toContain('signedIn ? "/dashboard/" : "/login/"');
     expect(chrome).toContain('signedIn ? "Dashboard" : "Sign In"');
+    expect(chrome).toContain('import("./authClient")');
+    expect(chrome).not.toContain('import { supabase } from "./authClient"');
   });
 
   it("uses the shared header and footer on secondary pages", () => {
