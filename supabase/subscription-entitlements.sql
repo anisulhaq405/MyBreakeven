@@ -3,6 +3,10 @@ alter table public.profiles add column if not exists subscription_status text no
 alter table public.profiles add column if not exists current_period_end timestamptz;
 alter table public.profiles add column if not exists polar_customer_id text unique;
 alter table public.profiles add column if not exists polar_subscription_id text unique;
+insert into public.profiles (id, display_name)
+select id, left(coalesce(raw_user_meta_data ->> 'display_name', ''), 80)
+from auth.users
+on conflict (id) do nothing;
 do $$ begin
   alter table public.profiles add constraint profiles_subscription_status_check check (subscription_status in ('inactive','active','past_due','canceled'));
 exception when duplicate_object then null; end $$;
