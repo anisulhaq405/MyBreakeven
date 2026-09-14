@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { calculate, FORMULA_ENGINE_VERSION } from "./engine";
 import { Download, FileText, Save, TrendingUp } from "lucide-react";
 import { limitsFor, normalizePlan } from "./entitlements";
+import { buildProReport } from "./reportBuilder";
 const formatMoney = (n, currency) =>
   new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -100,9 +101,7 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
   const print = () => {
     const w = window.open("", "_blank");
     if (!w) return;
-    w.document.write(
-      `<!doctype html><title>MyBreakeven Feasibility Report</title><style>body{font:16px Arial;color:#11182c;max-width:850px;margin:45px auto;padding:20px}h1{color:#5545e8}table{width:100%;border-collapse:collapse;margin:25px 0}th,td{padding:12px;border:1px solid #dce1f2;text-align:left}.note{color:#657087;font-size:13px}</style><h1>MyBreakeven Feasibility Report</h1><h2>${industry.name}</h2><p>Generated ${new Date().toLocaleDateString("en-US")}</p><h3>Current result</h3><table><tr><th>Exact break-even revenue</th><td>${money(result.revenue)}</td></tr><tr><th>Exact ${industry.unit} needed</th><td>${result.jobs.toFixed(2)}</td></tr><tr><th>Minimum whole ${industry.unit}</th><td>${result.wholeJobs}</td></tr><tr><th>Exact capacity</th><td>${result.capacity.toFixed(2)}</td></tr><tr><th>Exact inquiries</th><td>${result.leads.toFixed(2)}</td></tr><tr><th>Feasibility score</th><td>${result.score}/100</td></tr></table><h3>Scenario comparison</h3><table><tr><th>Scenario</th><th>Revenue</th><th>${industry.unit}</th><th>Score</th></tr>${scenarios.map((s) => `<tr><td>${s.name}</td><td>${s.result.valid ? money(s.result.revenue) : "Not viable"}</td><td>${s.result.valid ? s.result.jobs.toFixed(2) : "—"}</td><td>${s.result.score ?? "—"}</td></tr>`).join("")}</table><p class="note">Formula engine ${FORMULA_ENGINE_VERSION}. Assumption-based planning estimate—not tax, legal, accounting or lending advice.</p>`,
-    );
+    w.document.write(buildProReport({ input, result, scenarios, industry, currency, engineVersion: FORMULA_ENGINE_VERSION }));
     w.document.close();
     w.focus();
     w.print();
