@@ -20,6 +20,7 @@ import { SiteFooter, SiteHeader } from "./SiteChrome";
 import ScenarioTools from "./ScenarioTools";
 import HomeSEO from "./HomeSEO";
 import AnalyticsConsent from "./AnalyticsConsent";
+import { POLAR_CHECKOUT_URL } from "./billing";
 import "./styles.css";
 import "./industries.css";
 import "./visuals.css";
@@ -390,7 +391,7 @@ function App() {
               <button onClick={() => { location.hash = "calculator"; }}>Use calculator</button>
             </article>
             <article className="pro">
-              <small>PLANNED PRO</small>
+              <small>MYBREAKEVEN PRO</small>
               <h3>Pro</h3>
               <strong>
                 $9.99 <i>/ month</i>
@@ -399,7 +400,7 @@ function App() {
                 Advanced charts, profit forecasts, risk sensitivity, capacity
                 planning, 100 saved scenarios and downloadable reports.
               </p>
-              <button onClick={() => { location.href = "/signup/"; }}>Create free account</button>
+              <button onClick={() => { location.href = POLAR_CHECKOUT_URL; }}>Upgrade to Pro</button>
             </article>
           </div>
         </section>

@@ -4,6 +4,7 @@ import BlogSection from "./BlogSection";
 import BlogArticle from "./BlogArticle";
 import { SiteFooter, SiteHeader } from "./SiteChrome";
 import IndustryPage, { industryPages } from "./IndustryPage";
+import { POLAR_CHECKOUT_URL } from "./billing";
 const AuthPage = lazy(() => import("./AuthPages").then(module => ({ default: module.AuthPage })));
 const DashboardPage = lazy(() => import("./AuthPages").then(module => ({ default: module.DashboardPage })));
 const Pricing = () => (
@@ -28,15 +29,15 @@ const Pricing = () => (
           </a>
         </article>
         <article className="pro">
-          <small>PLANNED PRO</small>
+          <small>MYBREAKEVEN PRO</small>
           <h3>Pro</h3>
           <strong>
             $9.99 <i>/ month</i>
           </strong>
           <p>Advanced planning for active owners and teams.</p>
           <ul><li>Up to 100 saved scenarios</li><li>Advanced break-even intelligence dashboard</li><li>Profit forecast, margin of safety and capacity solver</li><li>Risk sensitivity and price-volume heatmap</li><li>Compare 3 plans side by side</li><li>CSV and professional PDF reports</li></ul>
-          <a className="page-button" href="/signup/">
-            Create free account
+          <a className="page-button" href={POLAR_CHECKOUT_URL}>
+            Upgrade to Pro
           </a>
         </article>
       </div>
@@ -138,10 +139,10 @@ const legalPages = {
   "/refund-policy": {
     eyebrow: "BILLING",
     title: "Refund Policy",
-    intro: "The policy that will apply when paid MyBreakeven subscriptions become available.",
+    intro: "Cancellation and refund terms for paid MyBreakeven subscriptions.",
     sections: [
-      ["Before paid launch", "MyBreakeven does not currently collect subscription payments. This page is published in preparation for the paid service."],
-      ["Subscription cancellation", "When subscriptions launch, customers will be able to cancel renewal from the customer portal. Access will normally continue through the paid billing period."],
+      ["Subscription billing", "MyBreakeven Pro is billed monthly through Polar at the price shown during checkout."],
+      ["Subscription cancellation", "Customers can cancel renewal through the billing customer portal. Access will normally continue through the paid billing period."],
       ["Refund requests", "If a billing error, duplicate charge or material service problem occurs, contact us promptly at hello@mybreakeven.com. Eligible requests will be reviewed fairly under applicable consumer law and the checkout provider's rules."],
       ["No guaranteed outcome", "A subscription provides access to software features. Business results depend on user inputs and real-world conditions, so a particular financial outcome is not guaranteed."],
     ],

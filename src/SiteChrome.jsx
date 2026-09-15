@@ -85,7 +85,7 @@ export function SiteFooter() {
         </nav>
         <div className="footer-payments">
           <strong>Supported by Polar checkout</strong>
-          <p>Payment integration is coming later.</p>
+          <p>Secure subscription checkout and billing management.</p>
           <div aria-label="Polar checkout supported payment methods">
             <span><CreditCard /> Cards</span>
             <span>Visa</span>
