@@ -1,0 +1,10 @@
+01-cleaning.md: body_words=1810, calc_urls=['https://mybreakeven.com/calculators/cleaning-business-break-even-calculator/'], calc_count=1, title_len=37, meta_len=143, h2s=9, faq=9, refs=False
+02-landscaping.md: body_words=1832, calc_urls=['https://mybreakeven.com/calculators/landscaping-break-even-calculator/'], calc_count=1, title_len=42, meta_len=151, h2s=9, faq=9, refs=False
+03-photography.md: body_words=1862, calc_urls=['https://mybreakeven.com/calculators/photography-business-break-even-calculator/'], calc_count=1, title_len=41, meta_len=145, h2s=8, faq=9, refs=False
+04-detailing.md: body_words=1884, calc_urls=['https://mybreakeven.com/calculators/mobile-detailing-break-even-calculator/'], calc_count=1, title_len=48, meta_len=151, h2s=8, faq=9, refs=False
+05-salon.md: body_words=1889, calc_urls=['https://mybreakeven.com/calculators/salon-break-even-calculator/'], calc_count=1, title_len=49, meta_len=142, h2s=9, faq=10, refs=False
+06-agency.md: body_words=1893, calc_urls=['https://mybreakeven.com/calculators/agency-break-even-calculator/'], calc_count=1, title_len=50, meta_len=140, h2s=9, faq=9, refs=False
+07-ecommerce.md: body_words=1891, calc_urls=['https://mybreakeven.com/calculators/ecommerce-break-even-calculator/'], calc_count=1, title_len=49, meta_len=141, h2s=9, faq=9, refs=False
+08-restaurant.md: body_words=1892, calc_urls=['https://mybreakeven.com/calculators/restaurant-break-even-calculator/'], calc_count=1, title_len=45, meta_len=144, h2s=9, faq=9, refs=False
+done
+manual arithmetic review required for each numeric example
