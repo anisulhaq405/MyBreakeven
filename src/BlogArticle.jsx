@@ -1,7 +1,10 @@
 import React,{useEffect}from"react";
 import {articles,relatedArticlesFor} from"./blogData.js";
+import Day1Article from "./Day1Article.jsx";
+import { day1PostMap } from "./day1Posts.js";
 
 export default function BlogArticle({slug}){
+  if (day1PostMap[slug]) return <Day1Article slug={slug} />;
   const a=articles[slug];
   useEffect(()=>{if(a){
     document.title=`${a.seoTitle} | MyBreakeven`;
