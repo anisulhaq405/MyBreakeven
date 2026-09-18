@@ -2,9 +2,10 @@ import React,{useEffect}from"react";
 import {articles,relatedArticlesFor} from"./blogData.js";
 import Day1Article from "./Day1Article.jsx";
 import { day1PostMap } from "./day1Posts.js";
+import { day2PostMap } from "./day2Posts.js";
 
 export default function BlogArticle({slug}){
-  if (day1PostMap[slug]) return <Day1Article slug={slug} />;
+  if (day1PostMap[slug] || day2PostMap[slug]) return <Day1Article slug={slug} />;
   const a=articles[slug];
   useEffect(()=>{if(a){
     document.title=`${a.seoTitle} | MyBreakeven`;
@@ -25,6 +26,6 @@ export default function BlogArticle({slug}){
     <section className="article-faq"><h2>Frequently asked questions</h2>{a.faq.map(item=><details key={item.q}><summary>{item.q}</summary><p>{item.a}</p></details>)}</section>
     <aside><h2>Run your own {a.tag.toLowerCase()} numbers</h2><p>Open the matching calculator with industry-specific inputs, exact fractional results and whole-unit operating targets.</p><a className="page-button" href={`/calculators/${a.calculatorSlug}/`}>Use the free {a.tag} break-even calculator</a></aside>
     <section className="related-guides"><h2>Related break-even resources</h2><p>Compare similar operating models or review the methodology behind every result.</p><ul>{relatedArticlesFor(slug).map(item=><li key={item.slug}><a href={`/blogs/${item.slug}/`}>{item.title}</a></li>)}<li><a href="/#calculator">Free small business break-even calculator</a></li><li><a href="/#methodology">Transparent break-even calculation methodology</a></li></ul></section>
-    <p className="article-note">Published September 10, 2026 · Updated September 13, 2026. Planning estimates only—not accounting, tax, legal or lending advice.</p>
+    <p className="article-note">Published {new Date(`${a.published}T12:00:00Z`).toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric",timeZone:"UTC"})} · Updated {new Date(`${a.modified}T12:00:00Z`).toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric",timeZone:"UTC"})}. Planning estimates only—not accounting, tax, legal or lending advice.</p>
   </article>
 }
