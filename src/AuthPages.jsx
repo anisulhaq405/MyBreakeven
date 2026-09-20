@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { CheckCircle2, CreditCard, Download, ExternalLink, KeyRound, LogOut, Mail, Pencil, ShieldCheck, Trash2, UserRound } from "lucide-react";
+import { CheckCircle2, CreditCard, Download, ExternalLink, Eye, EyeOff, KeyRound, LogOut, Mail, Pencil, ShieldCheck, Trash2, UserRound } from "lucide-react";
 import { authConfigured, supabase } from "./authClient";
 import { calculate, FORMULA_ENGINE_VERSION } from "./engine";
 import { industries } from "./industries";
@@ -40,6 +40,8 @@ export function AuthPage({ path }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [status, setStatus] = useState({ loading: false, error: "", message: "" });
   const [resetReady, setResetReady] = useState(mode !== "reset");
 
@@ -88,10 +90,15 @@ export function AuthPage({ path }) {
   return <section className="auth-page">
     <div className="auth-copy"><span>{copy[0]}</span><h1>{copy[1]}</h1><p>{copy[2]}</p><ul><li><ShieldCheck /> Email verification</li><li><KeyRound /> Secure session handling</li><li><CheckCircle2 /> Your records stay separated by account</li></ul></div>
     <div className="auth-card">
+      <div className="auth-card-heading">
+        <span>{mode === "signup" ? "START FREE" : mode === "login" ? "YOUR ACCOUNT" : "ACCOUNT SECURITY"}</span>
+        <h2>{mode === "signup" ? "Create your account" : mode === "login" ? "Welcome back" : mode === "forgot" ? "Recover your account" : "Set a new password"}</h2>
+        <p>{mode === "signup" ? "No card required. Verify your email to activate your private workspace." : mode === "login" ? "Enter your details to continue to your dashboard." : mode === "forgot" ? "We will email you a secure password-reset link." : "Choose a secure password you do not use elsewhere."}</p>
+      </div>
       {!authConfigured ? <SetupNotice /> : <form onSubmit={submit} aria-busy={status.loading}>
-        {mode !== "reset" && <label>Email address<div className="auth-control"><Mail /><input type="email" autoComplete="email" required value={email} onChange={e => setEmail(e.target.value)} /></div></label>}
-        {mode !== "forgot" && <label>{mode === "reset" ? "New password" : "Password"}<div className="auth-control"><KeyRound /><input type="password" minLength="8" autoComplete={mode === "login" ? "current-password" : "new-password"} required value={password} onChange={e => setPassword(e.target.value)} /></div></label>}
-        {(mode === "signup" || mode === "reset") && <label>Confirm password<div className="auth-control"><KeyRound /><input type="password" minLength="8" autoComplete="new-password" required value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} /></div></label>}
+        {mode !== "reset" && <label>Email address<div className="auth-control"><Mail /><input type="email" autoComplete="email" placeholder="you@example.com" required value={email} onChange={e => setEmail(e.target.value)} /></div></label>}
+        {mode !== "forgot" && <label>{mode === "reset" ? "New password" : "Password"}<div className="auth-control"><KeyRound /><input type={showPassword ? "text" : "password"} minLength="8" autoComplete={mode === "login" ? "current-password" : "new-password"} placeholder="At least 8 characters" required value={password} onChange={e => setPassword(e.target.value)} /><button className="password-toggle" type="button" onClick={() => setShowPassword(value => !value)} aria-label={showPassword ? "Hide password" : "Show password"} aria-pressed={showPassword}>{showPassword ? <EyeOff /> : <Eye />}</button></div>{mode !== "login" && <small className="password-hint"><ShieldCheck /> Use 8 or more characters.</small>}</label>}
+        {(mode === "signup" || mode === "reset") && <label>Confirm password<div className="auth-control"><KeyRound /><input type={showConfirmPassword ? "text" : "password"} minLength="8" autoComplete="new-password" placeholder="Enter the same password again" required value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} /><button className="password-toggle" type="button" onClick={() => setShowConfirmPassword(value => !value)} aria-label={showConfirmPassword ? "Hide confirmation password" : "Show confirmation password"} aria-pressed={showConfirmPassword}>{showConfirmPassword ? <EyeOff /> : <Eye />}</button></div></label>}
         {status.error && <p className="auth-error" role="alert">{status.error}</p>}
         {status.message && <p className="auth-success" role="status">{status.message}</p>}
         <button className="page-button" disabled={status.loading || !resetReady}>{status.loading ? "Please wait…" : mode === "signup" ? "Create free account" : mode === "forgot" ? "Send reset link" : mode === "reset" ? resetReady ? "Update password" : "Validating secure link…" : "Log in"}</button>
@@ -109,10 +116,15 @@ export function DashboardPage() {
   const [selected, setSelected] = useState([]);
   const [actionId, setActionId] = useState("");
   const loadScenarios = async (user) => {
-    const [{ data, error }, { data: profile }] = await Promise.all([
-      supabase.from("saved_scenarios").select("id,name,industry_key,currency,inputs,engine_version,created_at,updated_at").eq("user_id", user.id).order("updated_at", { ascending: false }),
+    const queryScenarios = () => supabase.from("saved_scenarios").select("id,name,industry_key,currency,inputs,engine_version,created_at,updated_at").eq("user_id", user.id).order("updated_at", { ascending: false });
+    let [{ data, error }, { data: profile }] = await Promise.all([
+      queryScenarios(),
       supabase.from("profiles").select("display_name,plan,subscription_status,current_period_end").eq("id", user.id).maybeSingle(),
     ]);
+    if (error) {
+      await new Promise(resolve => setTimeout(resolve, 500));
+      ({ data, error } = await queryScenarios());
+    }
     setState({ loading: false, user, scenarios: data || [], plan: normalizePlan(profile?.plan), displayName: profile?.display_name || "", subscriptionStatus: profile?.subscription_status || "inactive", currentPeriodEnd: profile?.current_period_end || null, error: error ? friendlyAuthError(error, "Your saved scenarios could not be loaded. Please refresh and try again.") : "" });
   };
   useEffect(() => {
