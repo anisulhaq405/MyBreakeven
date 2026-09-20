@@ -1,0 +1,32 @@
+import React, { useEffect } from "react";
+import { day1PostMap } from "./day1Posts.js";
+import { day2PostMap } from "./day2Posts.js";
+import { day3PostMap } from "./day3Posts.js";
+
+const dateLabel = value => new Date(`${value}T12:00:00Z`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
+
+export default function Day1Article({ slug }) {
+  const a = day1PostMap[slug] || day2PostMap[slug] || day3PostMap[slug];
+  const isStartup = Boolean(day2PostMap[slug]);
+  const isProfitability = Boolean(day3PostMap[slug]);
+  useEffect(() => {
+    if (!a) return;
+    document.title = `${a.seoTitle} | MyBreakeven`;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", a.metaDescription);
+    document.querySelector('link[rel="canonical"]')?.setAttribute("href", `https://mybreakeven.com/blogs/${slug}/`);
+  }, [a, slug]);
+  if (!a) return <section className="page-hero"><h1>Guide not found</h1><a href="/blogs/">Return to blogs</a></section>;
+  return <article className="article-page">
+    <nav className="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/blogs/">Guides</a><span>›</span><span>{a.tag}</span></nav>
+    <span>{a.tag} {isProfitability ? "PROFITABILITY GUIDE" : isStartup ? "STARTUP COST GUIDE" : "PRICING GUIDE"}</span><h1>{a.title}</h1>
+    <div className="article-meta"><time dateTime={a.published}>Published {dateLabel(a.published)}</time><span>Updated {dateLabel(a.modified)}</span></div>
+    <p className="article-lead">{a.description}</p>
+    <div className="article-tags" aria-label="Article topics">{a.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
+    <figure className="article-featured"><img src={a.image} alt={a.alt} width="1200" height="675" fetchPriority="high" decoding="async"/><figcaption>{a.imageCaption}</figcaption></figure>
+    <div className="day1-markdown" dangerouslySetInnerHTML={{ __html: a.html }} />
+    {a.html && !a.html.includes('href="https://mybreakeven.com/blogs/"') && <p><a href="/blogs/">Browse the MyBreakeven blog hub</a> for related planning guides.</p>}
+    {!a.html && <section className="article-faq"><h2>Frequently asked questions</h2>{a.faq.map(item=><details key={item.q}><summary>{item.q}</summary><p>{item.a}</p></details>)}</section>}
+    {!a.html && <aside><h2>Run your own {a.tag.toLowerCase()} numbers</h2><p>Use your own costs, fees, volume and capacity assumptions in the matching calculator.</p><a className="page-button" href={`/calculators/${a.calculatorSlug}/`}>Use the free {a.tag} break-even calculator</a></aside>}
+    <p className="article-note">Planning estimates only—not accounting, tax, legal or lending advice.</p>
+  </article>;
+}
