@@ -28,6 +28,11 @@ describe("locked site chrome", () => {
     expect(chrome).not.toContain('import { supabase } from "./authClient"');
   });
 
+  it("locks the page and closes navigation after a mobile link is selected", () => {
+    expect(chrome).toContain('document.body.classList.toggle("mobile-menu-open", mobileOpen)');
+    expect(chrome).toContain('onClick={() => setMobileOpen(false)}');
+  });
+
   it("uses the shared header and footer on secondary pages", () => {
     expect(pages).toContain("<SiteHeader />");
     expect(pages).toContain("<SiteFooter />");

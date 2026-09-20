@@ -651,6 +651,9 @@ footer p {
   width: 24px;
 }
 @media (max-width: 800px) {
+  body.mobile-menu-open {
+    overflow: hidden;
+  }
   header {
     height: 64px;
   }
@@ -663,14 +666,18 @@ footer p {
   }
   header > nav {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 64px;
     left: 0;
     right: 0;
+    bottom: 0;
+    z-index: 20;
     background: #fff;
     padding: 24px;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: flex-start;
+    overflow-y: auto;
     border-bottom: 1px solid #ddd;
   }
   header > nav.open {

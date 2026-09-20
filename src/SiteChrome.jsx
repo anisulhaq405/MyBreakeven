@@ -41,11 +41,16 @@ export function SiteHeader() {
     };
   }, []);
 
+  useEffect(() => {
+    document.body.classList.toggle("mobile-menu-open", mobileOpen);
+    return () => document.body.classList.remove("mobile-menu-open");
+  }, [mobileOpen]);
+
   return (
     <header>
       <Logo />
       <nav className={mobileOpen ? "open" : ""} aria-label="Main navigation">
-        {primaryNavigation.map(([label, href]) => <a key={label} href={href}>{label}</a>)}
+        {primaryNavigation.map(([label, href]) => <a key={label} href={href} onClick={() => setMobileOpen(false)}>{label}</a>)}
       </nav>
       <div className="header-actions">
         <a className="account-link" href={signedIn ? "/dashboard/" : "/login/"}>{signedIn ? "Dashboard" : "Sign In"}</a>
