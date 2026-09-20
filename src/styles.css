@@ -668,11 +668,14 @@ footer p {
   }
   header > nav {
     display: none;
-    position: fixed;
+    position: absolute;
     top: 64px;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: auto;
+    width: 100%;
+    height: calc(100vh - 64px);
+    height: calc(100dvh - 64px);
     z-index: 20;
     background: #fff;
     padding: 24px;
