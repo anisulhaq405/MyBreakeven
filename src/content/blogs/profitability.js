@@ -1,4 +1,4 @@
-export const day3Posts = [
+export const profitabilityPosts = [
   {
     "slug": "is-a-cleaning-business-profitable",
     "tag": "Cleaning",
@@ -472,11 +472,11 @@ export const day3Posts = [
     ]
   }
 ];
-const ecommercePost = day3Posts.find(post => post.slug === "ecommerce-profit-margin");
+const ecommercePost = profitabilityPosts.find(post => post.slug === "ecommerce-profit-margin");
 if (ecommercePost) {
   ecommercePost.html = ecommercePost.html.replace(
     "Usually, 20% gross margin leaves little room for shipping, payment fees, returns, advertising, and overhead. ### Should owner pay be included in ecommerce expenses?</p>\n<p>Include a replacement wage",
     "Usually, 20% gross margin leaves little room for shipping, payment fees, returns, advertising, and overhead. Test the full contribution margin before deciding whether the product or channel is viable.</p>\n<h3>Should owner pay be included in ecommerce expenses?</h3>\n<p>Include a replacement wage"
   );
 }
-export const day3PostMap = Object.fromEntries(day3Posts.map(post => [post.slug, post]));
+export const profitabilityPostMap = Object.fromEntries(profitabilityPosts.map(post => [post.slug, post]));

@@ -1,4 +1,4 @@
-export const day1Posts = [
+export const pricingPosts = [
   {
     "slug": "how-much-to-charge-for-house-cleaning",
     "tag": "Cleaning",
@@ -468,4 +468,4 @@ export const day1Posts = [
     ]
   }
 ];
-export const day1PostMap = Object.fromEntries(day1Posts.map(post => [post.slug, post]));
+export const pricingPostMap = Object.fromEntries(pricingPosts.map(post => [post.slug, post]));

@@ -1,4 +1,4 @@
-export const day2Posts = [
+export const startupPosts = [
   {
     "slug": "how-much-does-it-cost-to-start-a-cleaning-business",
     "tag": "Cleaning",
@@ -468,4 +468,4 @@ export const day2Posts = [
     ]
   }
 ];
-export const day2PostMap = Object.fromEntries(day2Posts.map(post => [post.slug, post]));
+export const startupPostMap = Object.fromEntries(startupPosts.map(post => [post.slug, post]));
