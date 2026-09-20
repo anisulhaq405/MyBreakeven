@@ -23,4 +23,11 @@ describe("subscription entitlements", () => {
     expect(migration).toContain("polar_subscription_id");
     expect(migration).toContain("revoke update on table public.profiles from authenticated");
   });
+  it("handles Polar lifecycle events without removing paid-period access early", () => {
+    expect(migration).toContain("polar_webhook_receipts");
+    expect(migration).toContain("polar_event_created_at");
+    expect(migration).toContain("apply_polar_subscription_event");
+    expect(migration).toContain("return 'duplicate'");
+    expect(migration).toContain("return 'stale'");
+  });
 });

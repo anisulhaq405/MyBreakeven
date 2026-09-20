@@ -3,10 +3,11 @@ create table if not exists public.profiles (
   id uuid primary key references auth.users(id) on delete cascade,
   display_name text check (char_length(display_name) <= 80),
   plan text not null default 'free' check (plan in ('free', 'pro')),
-  subscription_status text not null default 'inactive' check (subscription_status in ('inactive','active','past_due','canceled')),
+  subscription_status text not null default 'inactive' check (subscription_status in ('inactive','active','trialing','past_due','canceled','paused','revoked','unpaid')),
   current_period_end timestamptz,
   polar_customer_id text unique,
   polar_subscription_id text unique,
+  polar_event_created_at timestamptz,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
