@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Download, KeyRound, Save, Trash2, UserRound } from "lucide-react";
+import { Download, Eye, EyeOff, KeyRound, Save, Trash2, UserRound } from "lucide-react";
 import { supabase } from "./authClient";
 import { friendlyAuthError, withTimeout } from "./authSecurity";
 import "./account-controls.css";
@@ -12,6 +12,7 @@ export default function AccountControls({ user, scenarios, displayName = "", onP
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [deletePassword, setDeletePassword] = useState("");
+  const [visiblePasswords, setVisiblePasswords] = useState({ current: false, next: false, confirm: false, delete: false });
   const [deletePhrase, setDeletePhrase] = useState("");
   const [status, setStatus] = useState(initialStatus);
 
@@ -32,7 +33,7 @@ export default function AccountControls({ user, scenarios, displayName = "", onP
     setStatus({ loading: "password", error: "", message: "" });
     try {
       const verified = await withTimeout(supabase.auth.signInWithPassword({ email: user.email, password: currentPassword }));
-      if (verified.error) throw verified.error;
+      if (verified.error) return setStatus({ loading: "", error: "Your current password is incorrect. Please check it and try again.", message: "" });
       const updated = await withTimeout(supabase.auth.updateUser({ password: newPassword }));
       if (updated.error) throw updated.error;
       setCurrentPassword(""); setNewPassword(""); setConfirmPassword("");
@@ -41,6 +42,13 @@ export default function AccountControls({ user, scenarios, displayName = "", onP
       setStatus({ loading: "", error: friendlyAuthError(error, "Your password could not be updated. Check your current password and try again."), message: "" });
     }
   };
+
+  const passwordField = (key, value, setValue, autoComplete, minLength) => <div className="account-password-control">
+    <input type={visiblePasswords[key] ? "text" : "password"} autoComplete={autoComplete} minLength={minLength} required value={value} onChange={event => setValue(event.target.value)} />
+    <button type="button" className="account-password-toggle" onClick={() => setVisiblePasswords(current => ({ ...current, [key]: !current[key] }))} aria-label={visiblePasswords[key] ? "Hide password" : "Show password"} aria-pressed={visiblePasswords[key]}>
+      {visiblePasswords[key] ? <EyeOff /> : <Eye />}
+    </button>
+  </div>;
 
   const exportData = () => {
     const payload = { exported_at: new Date().toISOString(), account: { email: user.email, display_name: name.trim() }, saved_scenarios: scenarios };
@@ -81,9 +89,9 @@ export default function AccountControls({ user, scenarios, displayName = "", onP
     {status.message && <p className="auth-success" role="status">{status.message}</p>}
     <div className="account-grid">
       <form className="account-card" onSubmit={saveProfile}><UserRound /><h3>Profile</h3><label>Display name<input value={name} maxLength="80" autoComplete="name" onChange={event => setName(event.target.value)} /></label><button disabled={Boolean(status.loading)}><Save /> {status.loading === "profile" ? "Saving…" : "Save profile"}</button></form>
-      <form className="account-card" onSubmit={changePassword}><KeyRound /><h3>Change password</h3><label>Current password<input type="password" autoComplete="current-password" required value={currentPassword} onChange={event => setCurrentPassword(event.target.value)} /></label><label>New password<input type="password" autoComplete="new-password" minLength="8" required value={newPassword} onChange={event => setNewPassword(event.target.value)} /></label><label>Confirm new password<input type="password" autoComplete="new-password" minLength="8" required value={confirmPassword} onChange={event => setConfirmPassword(event.target.value)} /></label><button disabled={Boolean(status.loading)}><KeyRound /> {status.loading === "password" ? "Updating…" : "Update password"}</button></form>
+      <form className="account-card" onSubmit={changePassword}><KeyRound /><h3>Change password</h3><label>Current password{passwordField("current", currentPassword, setCurrentPassword, "current-password")}</label><label>New password{passwordField("next", newPassword, setNewPassword, "new-password", 8)}</label><label>Confirm new password{passwordField("confirm", confirmPassword, setConfirmPassword, "new-password", 8)}</label><button disabled={Boolean(status.loading)}><KeyRound /> {status.loading === "password" ? "Updating…" : "Update password"}</button></form>
       <div className="account-card"><Download /><h3>Your data</h3><p>Download your account details and saved planning scenarios as JSON.</p><button type="button" onClick={exportData} disabled={Boolean(status.loading)}><Download /> Export personal data</button><button type="button" className="danger" onClick={deleteScenarios} disabled={Boolean(status.loading) || !scenarios.length}><Trash2 /> {status.loading === "scenarios" ? "Deleting…" : "Delete all scenarios"}</button></div>
-      <form className="account-card danger-zone" onSubmit={deleteAccount}><Trash2 /><h3>Delete account</h3><p>This permanently deletes your account and all saved scenarios.</p><label>Current password<input type="password" autoComplete="current-password" required value={deletePassword} onChange={event => setDeletePassword(event.target.value)} /></label><label>Type DELETE to confirm<input value={deletePhrase} autoComplete="off" required onChange={event => setDeletePhrase(event.target.value)} /></label><button className="danger" disabled={Boolean(status.loading) || deletePhrase !== "DELETE"}><Trash2 /> {status.loading === "account" ? "Deleting…" : "Permanently delete account"}</button></form>
+      <form className="account-card danger-zone" onSubmit={deleteAccount}><Trash2 /><h3>Delete account</h3><p>This permanently deletes your account and all saved scenarios.</p><label>Current password{passwordField("delete", deletePassword, setDeletePassword, "current-password")}</label><label>Type DELETE to confirm<input value={deletePhrase} autoComplete="off" required onChange={event => setDeletePhrase(event.target.value)} /></label><button className="danger" disabled={Boolean(status.loading) || deletePhrase !== "DELETE"}><Trash2 /> {status.loading === "account" ? "Deleting…" : "Permanently delete account"}</button></form>
     </div>
   </section>;
 }
