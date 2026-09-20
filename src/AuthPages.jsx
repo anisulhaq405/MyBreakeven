@@ -1,11 +1,12 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { CheckCircle2, Download, ExternalLink, KeyRound, LogOut, Mail, Pencil, ShieldCheck, Trash2, UserRound } from "lucide-react";
+import { CheckCircle2, CreditCard, Download, ExternalLink, KeyRound, LogOut, Mail, Pencil, ShieldCheck, Trash2, UserRound } from "lucide-react";
 import { authConfigured, supabase } from "./authClient";
 import { calculate, FORMULA_ENGINE_VERSION } from "./engine";
 import { industries } from "./industries";
 import { limitsFor, normalizePlan } from "./entitlements";
 import { friendlyAuthError, withTimeout } from "./authSecurity";
 import AccountControls from "./AccountControls";
+import { POLAR_CUSTOMER_PORTAL_URL } from "./billing";
 
 const authMeta = {
   "/login": ["Log in to MyBreakeven", "Access your private MyBreakeven planning workspace."],
@@ -159,7 +160,7 @@ export function DashboardPage() {
     const link = document.createElement("a"); link.href = URL.createObjectURL(blob); link.download = "mybreakeven-saved-scenarios.csv"; link.click(); URL.revokeObjectURL(link.href);
   };
   return <section className="dashboard-page">
-    <div className="dashboard-heading"><div><span>PRIVATE WORKSPACE</span><h1>Your MyBreakeven dashboard</h1>{state.displayName && <p className="dashboard-welcome">Welcome, <strong>{state.displayName}</strong></p>}<p>Signed in as {state.user.email}</p><div className={`plan-badge ${state.plan}`}>{state.plan === "pro" ? "PRO PLAN" : `FREE PLAN · ${calculated.length}/${limits.savedScenarios} SAVES`}</div></div><button className="page-button secondary" onClick={logout} disabled={actionId === "logout"}><LogOut /> {actionId === "logout" ? "Logging out…" : "Log out"}</button></div>
+    <div className="dashboard-heading"><div><span>PRIVATE WORKSPACE</span><h1>Your MyBreakeven dashboard</h1>{state.displayName && <p className="dashboard-welcome">Welcome, <strong>{state.displayName}</strong></p>}<p>Signed in as {state.user.email}</p><div className="dashboard-plan-row"><div className={`plan-badge ${state.plan}`}>{state.plan === "pro" ? "PRO PLAN" : `FREE PLAN · ${calculated.length}/${limits.savedScenarios} SAVES`}</div>{isPro && <a className="manage-subscription" href={POLAR_CUSTOMER_PORTAL_URL}><CreditCard /> Manage subscription</a>}</div></div><button className="page-button secondary" onClick={logout} disabled={actionId === "logout"}><LogOut /> {actionId === "logout" ? "Logging out…" : "Log out"}</button></div>
     {state.error && <p className="auth-error" role="alert">{state.error}</p>}
     {!calculated.length ? <div className="dashboard-empty"><ShieldCheck /><h2>No saved scenarios yet</h2><p>Open the calculator, enter your assumptions and choose Save scenario. Only your authenticated account can access saved records.</p><a className="page-button" href="/#calculator">Create your first scenario</a></div> : <>
       <div className="saved-toolbar"><p><strong>{calculated.length}</strong> saved scenario{calculated.length === 1 ? "" : "s"}{isPro ? " · Select up to 3 to compare" : " · Comparison and exports unlock with Pro"}</p>{isPro ? <button onClick={exportSaved}><Download /> Export all CSV</button> : <a className="tool-upgrade" href="/pricing/">View Pro features</a>}</div>
