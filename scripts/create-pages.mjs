@@ -2,6 +2,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { articleList, relatedArticlesFor } from "../src/blogData.js";
 import { day1Posts } from "../src/day1Posts.js";
 import { day2Posts } from "../src/day2Posts.js";
+import { day3Posts } from "../src/day3Posts.js";
 
 const calculators = {
   "cleaning-business-break-even-calculator": ["Cleaning Business Break-Even Calculator | MyBreakeven", "Calculate cleaning jobs, monthly revenue, leads and team capacity needed to break even after labor, supplies, travel, equipment and marketing costs."],
@@ -17,7 +18,7 @@ const calculators = {
 const base = await readFile(new URL("../dist/index.html", import.meta.url), "utf8");
 
 const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
-const allArticles = [...articleList, ...day1Posts, ...day2Posts].sort((a, b) => String(b.published).localeCompare(String(a.published)));
+const allArticles = [...articleList, ...day1Posts, ...day2Posts, ...day3Posts].sort((a, b) => String(b.published).localeCompare(String(a.published)));
 const formatArticleDate = (value) => new Date(`${value}T12:00:00Z`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
 const staticPages = {
   pricing: ["MyBreakeven Pricing: Free & Pro Business Planning", "Compare MyBreakeven Free and Pro plans for industry break-even calculators, saved scenarios, cost-drift analysis, comparisons and reports.", "MyBreakeven Free and Pro pricing"],
@@ -72,7 +73,8 @@ for (const article of allArticles) {
   const sections = article.html ? article.html : article.sections.map(section => `<section><h2>${escapeHtml(section.heading)}</h2>${(section.paragraphs || []).map(p => `<p>${escapeHtml(p)}</p>`).join("")}${section.bullets ? `<ul>${section.bullets.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : ""}</section>`).join("");
   const faq = article.faq.map(item => `<h3>${escapeHtml(item.q)}</h3><p>${escapeHtml(item.a)}</p>`).join("");
   const related = article.html ? "" : relatedArticlesFor(article.slug).map(item => `<li><a href="/blogs/${item.slug}/">${escapeHtml(item.title)}</a></li>`).join("");
-  const fallback = `<div id="root" data-booting><main><article><nav><a href="/">Home</a> / <a href="/blogs/">Guides</a> / ${escapeHtml(article.tag)}</nav><h1>${escapeHtml(article.title)}</h1><p><time datetime="${article.published}">Published ${formatArticleDate(article.published)}</time> · Updated ${formatArticleDate(article.modified)}</p><p>${escapeHtml(article.description)}</p><p>${article.tags.map(tag => `<span>${escapeHtml(tag)}</span>`).join(" · ")}</p>${article.html ? "" : `<p>${escapeHtml(article.opening)}</p>`}<img src="${article.image}" alt="${escapeHtml(article.alt)}" width="1200" height="675"><section><h2>Calculator features</h2><ul>${article.features.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul></section>${sections}${article.html ? "" : `<figure><img src="${article.insideImage}" alt="${escapeHtml(article.insideAlt)}" width="1200" height="630"></figure>`}<section><h2>Frequently asked questions</h2>${faq}</section><p><a href="/calculators/${article.calculatorSlug}/">Use the free ${escapeHtml(article.tag)} break-even calculator</a></p><section><h2>Related break-even resources</h2><ul>${related}<li><a href="/#calculator">Free small business break-even calculator</a></li><li><a href="/#methodology">Transparent break-even calculation methodology</a></li></ul></section></article></main></div>`;
+  const hubLink = article.html && !article.html.includes('href="https://mybreakeven.com/blogs/"') ? `<p><a href="/blogs/">Browse the MyBreakeven blog hub</a> for related planning guides.</p>` : "";
+  const fallback = `<div id="root" data-booting><main><article><nav><a href="/">Home</a> / <a href="/blogs/">Guides</a> / ${escapeHtml(article.tag)}</nav><h1>${escapeHtml(article.title)}</h1><p><time datetime="${article.published}">Published ${formatArticleDate(article.published)}</time> · Updated ${formatArticleDate(article.modified)}</p><p>${escapeHtml(article.description)}</p><p>${article.tags.map(tag => `<span>${escapeHtml(tag)}</span>`).join(" · ")}</p>${article.html ? "" : `<p>${escapeHtml(article.opening)}</p>`}<img src="${article.image}" alt="${escapeHtml(article.alt)}" width="1200" height="675"><section><h2>Calculator features</h2><ul>${article.features.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul></section>${sections}${hubLink}${article.html ? "" : `<figure><img src="${article.insideImage}" alt="${escapeHtml(article.insideAlt)}" width="1200" height="630"></figure><section><h2>Frequently asked questions</h2>${faq}</section><p><a href="/calculators/${article.calculatorSlug}/">Use the free ${escapeHtml(article.tag)} break-even calculator</a></p>`}<section><h2>Related break-even resources</h2><ul>${related}<li><a href="/#calculator">Free small business break-even calculator</a></li><li><a href="/#methodology">Transparent break-even calculation methodology</a></li></ul></section></article></main></div>`;
   const html = base
     .replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
     .replace(/<meta name="description" content="[^"]*"\s*\/?>/, `<meta name="description" content="${escapeHtml(article.metaDescription)}" />`)
