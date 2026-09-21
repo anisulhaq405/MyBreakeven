@@ -2,19 +2,21 @@
   <title id="title">MyBreakeven small business break-even calculator</title>
   <desc id="desc">MyBreakeven branding with a sample feasibility card showing revenue, sales volume, capacity and customer demand.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07182a"/><stop offset="1" stop-color="#102d46"/></linearGradient>
-    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#edf9f7"/></linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#080D1B"/><stop offset="1" stop-color="#17143C"/></linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#F2F0FF"/></linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#21D7DF"/><stop offset=".5" stop-color="#6555F4"/><stop offset="1" stop-color="#8D43F0"/></linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <circle cx="1080" cy="70" r="250" fill="#0f9f91" opacity=".14"/>
+  <circle cx="1080" cy="70" r="250" fill="#765EF5" opacity=".19"/>
   <circle cx="975" cy="565" r="310" fill="#f59e0b" opacity=".08"/>
   <g transform="translate(74 68)">
-    <rect width="58" height="58" rx="14" fill="#0f9f91"/>
-    <path d="M14 43h31M18 39V29h7v10m7 0V20h7v19m7 0V13" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-    <text x="74" y="42" fill="#fff" font-family="Arial, sans-serif" font-size="34" font-weight="700">My<tspan fill="#54d2c5">Breakeven</tspan></text>
+    <rect width="58" height="58" rx="16" fill="url(#brand)"/>
+    <path d="M17 14v31m0-29h12c8 0 13 3 13 9 0 5-3 7-8 8 6 1 10 4 10 10" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12 40h35M21 37l8-8 6 4 11-12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="74" y="42" fill="#fff" font-family="Arial, sans-serif" font-size="34" font-weight="700">My<tspan fill="#9E91FF">Breakeven</tspan></text>
   </g>
   <text x="74" y="230" fill="#fff" font-family="Arial, sans-serif" font-size="50" font-weight="700">Free Small Business</text>
-  <text x="74" y="292" fill="#54d2c5" font-family="Arial, sans-serif" font-size="50" font-weight="700">Break-Even Calculator</text>
+  <text x="74" y="292" fill="#9E91FF" font-family="Arial, sans-serif" font-size="50" font-weight="700">Break-Even Calculator</text>
   <text x="74" y="355" fill="#c6d5e1" font-family="Arial, sans-serif" font-size="21">Revenue · Sales volume · Capacity · Customer demand</text>
   <text x="74" y="415" fill="#fff" font-family="Arial, sans-serif" font-size="23" font-weight="700">Know your number. Prove you can reach it.</text>
   <g transform="translate(755 115)">
@@ -30,7 +32,7 @@
     <text x="218" y="234" fill="#64748b" font-family="Arial, sans-serif" font-size="15">CAPACITY</text>
     <text x="218" y="272" fill="#0b1f33" font-family="Arial, sans-serif" font-size="29" font-weight="700">97 jobs</text>
     <text x="34" y="321" fill="#64748b" font-family="Arial, sans-serif" font-size="15">INQUIRIES REQUIRED</text>
-    <text x="34" y="361" fill="#0f9f91" font-family="Arial, sans-serif" font-size="31" font-weight="700">378 / month</text>
+    <text x="34" y="361" fill="#6555F4" font-family="Arial, sans-serif" font-size="31" font-weight="700">378 / month</text>
   </g>
   <text x="74" y="570" fill="#91a8ba" font-family="Arial, sans-serif" font-size="18">Private by default · Formula-backed · No signup</text>
 </svg>
