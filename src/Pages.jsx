@@ -46,64 +46,122 @@ const Pricing = () => (
 );
 const About = () => (
   <>
-    <section className="page-hero">
-      <span>ABOUT MYBREAKEVEN</span>
-      <h1>Business decisions should begin with numbers you can verify.</h1>
+    <section className="about-hero">
+      <div className="about-hero-copy">
+        <span className="journey-kicker"><i /> ABOUT MYBREAKEVEN</span>
+        <h1>Know the number. Then see if the plan can actually work.</h1>
+        <p>
+          MyBreakeven turns your costs, pricing and workload into a monthly target you can inspect—not a promise, and not a black-box forecast.
+        </p>
+        <div className="journey-actions">
+          <a className="journey-primary" href="/#calculator">Run your numbers <span aria-hidden="true">↗</span></a>
+          <a className="journey-secondary" href="/blogs/">Read the guides <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <aside className="planning-loop" aria-label="The MyBreakeven planning loop">
+        <small>THE PLANNING LOOP</small>
+        <ol>
+          <li><b>01</b><span><strong>Map the costs</strong><em>Fixed, variable and owner pay</em></span></li>
+          <li><b>02</b><span><strong>Test the margin</strong><em>What each sale contributes</em></span></li>
+          <li><b>03</b><span><strong>Check capacity</strong><em>What your team can deliver</em></span></li>
+          <li><b>04</b><span><strong>Plan demand</strong><em>Customers and leads required</em></span></li>
+        </ol>
+      </aside>
+    </section>
+    <section className="about-story">
+      <div>
+        <span className="journey-kicker"><i /> WHY IT EXISTS</span>
+        <h2>A break-even number is useful only when the business can deliver it.</h2>
+      </div>
       <p>
-        MyBreakeven connects break-even economics with capacity and customer
-        demand.
+        A spreadsheet may show that the math balances. The next question is whether you have enough hours, crew capacity and qualified demand to reach that target. MyBreakeven keeps those questions in one practical planning flow for owner-operators.
       </p>
     </section>
-    <section className="page-grid">
+    <section className="about-principles" aria-label="How MyBreakeven works">
       <article>
-        <Sparkles />
-        <h2>Our purpose</h2>
-        <p>
-          Turn operating assumptions into a clear monthly target owners can
-          understand and act on.
-        </p>
+        <span>01</span><Sparkles />
+        <h2>Your assumptions stay visible</h2>
+        <p>Every result begins with the costs, prices and capacity you enter. Change an input and see what moves.</p>
       </article>
       <article>
-        <ShieldCheck />
-        <h2>Our standard</h2>
-        <p>
-          Transparent tested formulas. AI may explain verified outputs, but
-          never invent the math.
-        </p>
+        <span>02</span><ShieldCheck />
+        <h2>The formulas do the math</h2>
+        <p>Deterministic calculations produce the numbers. Explanations add context; they do not replace the formula.</p>
       </article>
       <article>
-        <CheckCircle2 />
-        <h2>Our approach</h2>
-        <p>
-          Industry-specific inputs, plain-language results and privacy-first
-          calculations.
-        </p>
+        <span>03</span><CheckCircle2 />
+        <h2>Feasibility comes next</h2>
+        <p>The plan is checked against sales volume, workload and lead demand so an attractive target does not hide an impossible operation.</p>
       </article>
+    </section>
+    <section className="about-journey">
+      <header>
+        <span className="journey-kicker"><i /> FROM IDEA TO DECISION</span>
+        <h2>One clean path through the numbers.</h2>
+        <p>Use the result as a planning baseline, then revise it when your real costs or capacity change.</p>
+      </header>
+      <div>
+        <article><b>01</b><h3>Choose your model</h3><p>Start with the calculator built around how your business sells and delivers work.</p></article>
+        <article><b>02</b><h3>Enter real assumptions</h3><p>Add fixed costs, per-sale costs, owner pay, pricing and available capacity.</p></article>
+        <article><b>03</b><h3>Read the whole result</h3><p>Review break-even revenue alongside sales volume, customer demand and workload.</p></article>
+        <article><b>04</b><h3>Test a safer case</h3><p>Lower demand, raise a cost or adjust pricing before committing cash and time.</p></article>
+      </div>
+    </section>
+    <section className="journey-cta">
+      <div><span>READY WHEN YOU ARE</span><h2>Put your own assumptions through the model.</h2></div>
+      <a href="/#calculator">Open the free calculator <span aria-hidden="true">↗</span></a>
     </section>
   </>
 );
 const Contact = () => (
   <>
-    <section className="page-hero">
-      <span>CONTACT US</span>
-      <h1>Questions, feedback or an industry request?</h1>
-      <p>
-        Tell us what you are building and which business model you want us to
-        support next.
-      </p>
-    </section>
-    <section className="contact-card">
-      <Mail />
+    <section className="contact-hero">
       <div>
-        <h2>Get in touch</h2>
-        <p>
-          Include your business type so we can give your message the right
-          context.
-        </p>
-        <a className="page-button" href="mailto:hello@mybreakeven.com">
-          hello@mybreakeven.com
-        </a>
+        <span className="journey-kicker"><i /> CONTACT MYBREAKEVEN</span>
+        <h1>Tell us what you are trying to work out.</h1>
+        <p>Send the business type, the page you were using and the question you need answered. Clear context helps us give you a useful reply.</p>
       </div>
+      <aside className="contact-inbox">
+        <Mail />
+        <small>PRIMARY SUPPORT INBOX</small>
+        <a href="mailto:support@mybreakeven.com">support@mybreakeven.com</a>
+        <p>Product questions, account support, calculator feedback and industry requests.</p>
+      </aside>
+    </section>
+    <section className="contact-route" aria-label="Contact options">
+      <article>
+        <span>01</span>
+        <h2>Calculator feedback</h2>
+        <p>Share the calculator, input or result that needs attention. Do not include passwords or payment-card details.</p>
+        <a href="mailto:support@mybreakeven.com?subject=Calculator%20feedback">Email calculator feedback →</a>
+      </article>
+      <article>
+        <span>02</span>
+        <h2>Account or billing</h2>
+        <p>Include the email attached to your account and a short description of the issue. Never send your password.</p>
+        <a href="mailto:support@mybreakeven.com?subject=Account%20or%20billing%20support">Request account support →</a>
+      </article>
+      <article>
+        <span>03</span>
+        <h2>Industry request</h2>
+        <p>Tell us the business model, what it sells and which costs or capacity limits should be included.</p>
+        <a href="mailto:support@mybreakeven.com?subject=New%20industry%20request">Suggest an industry →</a>
+      </article>
+    </section>
+    <section className="contact-brief">
+      <div>
+        <span className="journey-kicker"><i /> A USEFUL SUPPORT NOTE</span>
+        <h2>Three details help us understand the problem faster.</h2>
+      </div>
+      <ol>
+        <li><b>01</b><span><strong>Where were you?</strong>Include the page or calculator name.</span></li>
+        <li><b>02</b><span><strong>What did you expect?</strong>Describe the result or behaviour you expected.</span></li>
+        <li><b>03</b><span><strong>What happened instead?</strong>Add the exact message and a screenshot when useful.</span></li>
+      </ol>
+    </section>
+    <section className="contact-final">
+      <div><small>ONE INBOX. THE RIGHT CONTEXT.</small><h2>Ready to send your question?</h2></div>
+      <a href="mailto:support@mybreakeven.com">support@mybreakeven.com <span aria-hidden="true">↗</span></a>
     </section>
   </>
 );
@@ -117,11 +175,11 @@ const legalPages = {
       ["Website information", "Our hosting and security providers may process standard technical data such as IP address, browser type, device information, requested pages and timestamps to operate, protect and diagnose the website."],
       ["Messages you send", "If you contact us, we use the information in your message to reply, provide support and improve the product."],
       ["Optional accounts", "If you create an account, our authentication provider processes your email address, encrypted authentication credentials, verification status and security session data. MyBreakeven never receives your plain-text password."],
-      ["Account controls", "You may request access, correction or deletion of account information by emailing hello@mybreakeven.com. Authentication records may be retained where reasonably required for security, fraud prevention or legal compliance."],
+      ["Account controls", "You may request access, correction or deletion of account information by emailing support@mybreakeven.com. Authentication records may be retained where reasonably required for security, fraud prevention or legal compliance."],
       ["Analytics", "With your permission, Google Analytics measures pages viewed, approximate location, device and browser information, traffic sources and interactions. We do not send calculator inputs, account passwords or saved scenario contents to Google Analytics. You can reject optional analytics without losing access to the service."],
       ["Error monitoring", "We use Sentry to receive technical error details needed to diagnose failures. Default personally identifiable information, session replay, logs and performance tracing are disabled. Query strings, request headers, cookies, request bodies and user identity are removed before an error is sent."],
       ["Service providers", "We use carefully selected providers for hosting, analytics, authentication, email and future payments. Each provider processes data for its stated service and under its own applicable terms."],
-      ["Your choices", "You may ask about, correct or request deletion of personal information you have directly provided by emailing hello@mybreakeven.com."],
+      ["Your choices", "You may ask about, correct or request deletion of personal information you have directly provided by emailing support@mybreakeven.com."],
     ],
   },
   "/terms-of-service": {
@@ -133,7 +191,7 @@ const legalPages = {
       ["Your responsibility", "You are responsible for the accuracy of your inputs and for reviewing important decisions with qualified professionals where appropriate."],
       ["Acceptable use", "Do not misuse the service, interfere with its operation, attempt unauthorized access, or copy and resell the product or its protected content."],
       ["Availability", "We may improve, change or discontinue features. We aim for reliable service but cannot promise uninterrupted or error-free availability."],
-      ["Contact", "Questions about these terms can be sent to hello@mybreakeven.com."],
+      ["Contact", "Questions about these terms can be sent to support@mybreakeven.com."],
     ],
   },
   "/refund-policy": {
@@ -143,7 +201,7 @@ const legalPages = {
     sections: [
       ["Subscription billing", "MyBreakeven Pro is billed monthly through Polar at the price shown during checkout."],
       ["Subscription cancellation", "Customers can cancel renewal through the billing customer portal. Access will normally continue through the paid billing period."],
-      ["Refund requests", "If a billing error, duplicate charge or material service problem occurs, contact us promptly at hello@mybreakeven.com. Eligible requests will be reviewed fairly under applicable consumer law and the checkout provider's rules."],
+      ["Refund requests", "If a billing error, duplicate charge or material service problem occurs, contact us promptly at support@mybreakeven.com. Eligible requests will be reviewed fairly under applicable consumer law and the checkout provider's rules."],
       ["No guaranteed outcome", "A subscription provides access to software features. Business results depend on user inputs and real-world conditions, so a particular financial outcome is not guaranteed."],
     ],
   },
