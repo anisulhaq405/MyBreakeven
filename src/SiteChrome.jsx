@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ArrowUpRight, BarChart3, CreditCard, LockKeyhole, Mail, Menu, ShieldCheck, X } from "lucide-react";
+import { ArrowUpRight, CreditCard, LockKeyhole, Mail, Menu, ShieldCheck, X } from "lucide-react";
 
 export const primaryNavigation = [
   ["Calculator", "/#calculator"],
@@ -12,7 +12,7 @@ export const primaryNavigation = [
 export function Logo({ light = false }) {
   return (
     <a className={`brand${light ? " brand-light" : ""}`} href="/" aria-label="MyBreakeven home">
-      <span className="brandmark" aria-hidden="true"><BarChart3 /></span>
+      <img className="brandmark" src="/logo.svg" alt="" width="40" height="40" />
       <span>My<span>Breakeven</span></span>
     </a>
   );
