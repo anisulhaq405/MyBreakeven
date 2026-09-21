@@ -210,18 +210,17 @@ export default function SecondaryPage({ path }) {
     ) : path === "/blogs" || path === "/blog" ? (
       <div className="blogs-page">
         <section className="blog-hero">
-          <div>
-            <span>THE MYBREAKEVEN PLAYBOOK</span>
-            <h1>Find the number behind your next business decision.</h1>
-            <p>Search focused, formula-backed guides on pricing, startup costs, profit margins and break-even planning.</p>
-            <div className="blog-hero-actions"><a href="#blog">Search 32 guides ↓</a><a href="/#calculator">Run your numbers ↗</a></div>
+          <div className="blog-hero-copy">
+            <span><i /> MYBREAKEVEN JOURNAL</span>
+            <h1>Clear numbers for <em>real business decisions.</em></h1>
+            <p>Practical guides to pricing, startup costs, margins and break-even—written for owners doing the work.</p>
+            <div className="blog-hero-actions"><a href="#blog">Browse all guides <span aria-hidden="true">↓</span></a><a href="/#calculator">Open calculator <span aria-hidden="true">↗</span></a></div>
           </div>
-          <aside>
-            <small>DECISION LIBRARY</small>
-            <strong>32</strong>
-            <p>Guides across eight small-business models</p>
-            <div><span>Pricing</span><span>Startup</span><span>Profit</span><span>Break-even</span></div>
-          </aside>
+          <div className="blog-hero-index" aria-label="Guide library summary">
+            <div><strong>32</strong><span>focused guides</span></div>
+            <div><strong>8</strong><span>business models</span></div>
+            <p><span>Pricing</span><span>Startup</span><span>Margins</span><span>Break-even</span></p>
+          </div>
         </section>
         <BlogSection />
       </div>
