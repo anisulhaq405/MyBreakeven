@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import { CheckCircle2, Mail, ShieldCheck, Sparkles } from "lucide-react";
 import BlogSection from "./BlogSection";
 import BlogArticle from "./BlogArticle";
@@ -113,7 +113,44 @@ const About = () => (
     </section>
   </>
 );
-const supportEmailUrl = (subject) => `mailto:support@mybreakeven.com?subject=${encodeURIComponent(subject)}`;
+const supportEmailAddress = "support@mybreakeven.com";
+const emailProviderUrl = (provider, subject) => {
+  const email = encodeURIComponent(supportEmailAddress);
+  const topic = encodeURIComponent(subject);
+  return provider === "outlook"
+    ? `https://outlook.live.com/mail/0/deeplink/compose?to=${email}&subject=${topic}`
+    : `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${topic}`;
+};
+const SupportEmailLink = ({ subject, children }) => {
+  const [open, setOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const copyAddress = async () => {
+    try {
+      await navigator.clipboard.writeText(supportEmailAddress);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1800);
+    } catch {
+      window.prompt("Copy this support email:", supportEmailAddress);
+    }
+  };
+  return <>
+    <button type="button" className="support-email-trigger" onClick={() => setOpen(true)}>{children}</button>
+    {open && <div className="email-panel-backdrop" role="presentation" onMouseDown={(event) => event.target === event.currentTarget && setOpen(false)}>
+      <section className="email-panel" role="dialog" aria-modal="true" aria-labelledby="email-panel-title">
+        <button className="email-panel-close" type="button" onClick={() => setOpen(false)} aria-label="Close email options">×</button>
+        <span className="email-panel-icon"><Mail /></span>
+        <small>CONTACT MYBREAKEVEN</small>
+        <h2 id="email-panel-title">Choose how you want to email us.</h2>
+        <p>Your message will be addressed to <strong>{supportEmailAddress}</strong> with the subject ready.</p>
+        <div className="email-provider-actions">
+          <a href={emailProviderUrl("gmail", subject)} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>Continue with Gmail <span>↗</span></a>
+          <a href={emailProviderUrl("outlook", subject)} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>Continue with Outlook <span>↗</span></a>
+        </div>
+        <button className="email-copy-action" type="button" onClick={copyAddress}>{copied ? "Email copied" : "Copy email address"}</button>
+      </section>
+    </div>}
+  </>;
+};
 const Contact = () => (
   <>
     <section className="contact-hero">
@@ -125,7 +162,7 @@ const Contact = () => (
       <aside className="contact-inbox">
         <Mail />
         <small>PRIMARY SUPPORT INBOX</small>
-        <a href={supportEmailUrl("MyBreakeven support request")} aria-label="Email MyBreakeven support">support@mybreakeven.com <span aria-hidden="true">↗</span></a>
+        <SupportEmailLink subject="MyBreakeven support request">support@mybreakeven.com <span aria-hidden="true">↗</span></SupportEmailLink>
         <p>Product questions, account support, calculator feedback and industry requests.</p>
       </aside>
     </section>
@@ -134,19 +171,19 @@ const Contact = () => (
         <span>01</span>
         <h2>Calculator feedback</h2>
         <p>Share the calculator, input or result that needs attention. Do not include passwords or payment-card details.</p>
-        <a href={supportEmailUrl("Calculator feedback")}>Email calculator feedback ↗</a>
+        <SupportEmailLink subject="Calculator feedback">Email calculator feedback ↗</SupportEmailLink>
       </article>
       <article>
         <span>02</span>
         <h2>Account or billing</h2>
         <p>Include the email attached to your account and a short description of the issue. Never send your password.</p>
-        <a href={supportEmailUrl("Account or billing support")}>Request account support ↗</a>
+        <SupportEmailLink subject="Account or billing support">Request account support ↗</SupportEmailLink>
       </article>
       <article>
         <span>03</span>
         <h2>Industry request</h2>
         <p>Tell us the business model, what it sells and which costs or capacity limits should be included.</p>
-        <a href={supportEmailUrl("New industry request")}>Suggest an industry ↗</a>
+        <SupportEmailLink subject="New industry request">Suggest an industry ↗</SupportEmailLink>
       </article>
     </section>
     <section className="contact-brief">
@@ -162,7 +199,7 @@ const Contact = () => (
     </section>
     <section className="contact-final">
       <div><small>ONE INBOX. THE RIGHT CONTEXT.</small><h2>Ready to send your question?</h2></div>
-      <a href={supportEmailUrl("MyBreakeven support request")}>Email support <span aria-hidden="true">↗</span></a>
+      <SupportEmailLink subject="MyBreakeven support request">Email support <span aria-hidden="true">↗</span></SupportEmailLink>
     </section>
   </>
 );
