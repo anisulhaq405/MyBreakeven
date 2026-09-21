@@ -110,6 +110,11 @@ function App() {
                 {result.valid && result.gap >= 0 ? "FEASIBLE" : "REVIEW"}
               </span>
               </div>
+              <label className="hero-model-switcher">Choose your business
+                <select value={industryKey} onChange={event => choose(event.target.value)}>
+                  {Object.entries(industries).map(([key, item]) => <option value={key} key={key}>{item.short}</option>)}
+                </select>
+              </label>
               <div className="ai-signal">
                 <Sparkles />
                 <span><b>AI insight layer</b> Verified inputs · Explainable output</span>
@@ -135,6 +140,7 @@ function App() {
             <p>
               <Info /> Live model updates as you edit the calculator.
             </p>
+            <a className="hero-calculator-cta" href="#calculator">Open the full calculator <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </section>

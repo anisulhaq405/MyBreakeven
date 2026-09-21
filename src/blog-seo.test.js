@@ -30,8 +30,9 @@ describe("industry guide SEO assets", () => {
       expect(article.metaDescription.length).toBeLessThanOrEqual(160);
       expect(article.tags.length).toBeGreaterThanOrEqual(4);
       expect(article.opening.length).toBeGreaterThan(120);
-      expect(article.published).toBe("2026-09-10");
-      expect(article.modified).toBe("2026-09-13");
+      expect(article.authored).toBe("2026-09-10");
+      expect(article.published).toBe("2026-09-21");
+      expect(article.modified).toBe("2026-09-21");
     }
   });
 
