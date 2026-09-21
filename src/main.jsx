@@ -75,31 +75,6 @@ function App() {
       <SiteHeader />
       <main id="main-content">
         <section className="intro">
-          <div className="hero-copy">
-            <div className="eyebrow">
-              <Sparkles /> Know your number. Prove you can reach it.
-            </div>
-            <h1>
-              Free break-even calculator
-              <br />
-              <em>for small businesses.</em>
-            </h1>
-            <p>
-              Calculate exact break-even revenue, required sales volume, team
-              capacity and customer demand with eight industry-specific business calculators.
-            </p>
-            <div className="trust">
-              <span>
-                <CheckCircle2 /> No signup
-              </span>
-              <span>
-                <CheckCircle2 /> Private by default
-              </span>
-              <span>
-                <CheckCircle2 /> Formula-backed
-              </span>
-            </div>
-          </div>
           <div className="hero-visual">
             <span className="orbit orbit-one" />
             <span className="orbit orbit-two" />
@@ -142,6 +117,12 @@ function App() {
             </p>
             <a className="hero-calculator-cta" href="#calculator">Open the full calculator <span aria-hidden="true">↗</span></a>
             </div>
+          </div>
+          <div className="hero-copy">
+            <div className="eyebrow"><Sparkles /> Live, private business planning</div>
+            <h1>See your break-even number <em>before you make the decision.</em></h1>
+            <p>Choose your business on the left to preview the model, then open the full calculator for revenue, sales volume, capacity and demand.</p>
+            <div className="trust"><span><CheckCircle2 /> No signup</span><span><CheckCircle2 /> Private by default</span><span><CheckCircle2 /> Formula-backed</span></div>
           </div>
         </section>
         <section className="calculator" id="calculator">

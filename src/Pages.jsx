@@ -209,13 +209,19 @@ export default function SecondaryPage({ path }) {
       <Pricing />
     ) : path === "/blogs" || path === "/blog" ? (
       <div className="blogs-page">
-        <section className="page-hero">
-          <span>MYBREAKEVEN BLOGS</span>
-          <h1>Practical guides for stronger business decisions.</h1>
-          <p>
-            Industry-focused guidance on pricing, capacity, demand and
-            break-even planning.
-          </p>
+        <section className="blog-hero">
+          <div>
+            <span>THE MYBREAKEVEN PLAYBOOK</span>
+            <h1>Find the number behind your next business decision.</h1>
+            <p>Search focused, formula-backed guides on pricing, startup costs, profit margins and break-even planning.</p>
+            <div className="blog-hero-actions"><a href="#blog">Search 32 guides ↓</a><a href="/#calculator">Run your numbers ↗</a></div>
+          </div>
+          <aside>
+            <small>DECISION LIBRARY</small>
+            <strong>32</strong>
+            <p>Guides across eight small-business models</p>
+            <div><span>Pricing</span><span>Startup</span><span>Profit</span><span>Break-even</span></div>
+          </aside>
         </section>
         <BlogSection />
       </div>
