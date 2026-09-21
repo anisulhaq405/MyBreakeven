@@ -113,6 +113,7 @@ const About = () => (
     </section>
   </>
 );
+const supportEmailUrl = (subject) => `https://mail.google.com/mail/?view=cm&fs=1&to=support%40mybreakeven.com&su=${encodeURIComponent(subject)}`;
 const Contact = () => (
   <>
     <section className="contact-hero">
@@ -124,7 +125,7 @@ const Contact = () => (
       <aside className="contact-inbox">
         <Mail />
         <small>PRIMARY SUPPORT INBOX</small>
-        <a href="mailto:support@mybreakeven.com">support@mybreakeven.com</a>
+        <a href={supportEmailUrl("MyBreakeven support request")} target="_blank" rel="noreferrer" aria-label="Email MyBreakeven support using Gmail">support@mybreakeven.com <span aria-hidden="true">↗</span></a>
         <p>Product questions, account support, calculator feedback and industry requests.</p>
       </aside>
     </section>
@@ -133,19 +134,19 @@ const Contact = () => (
         <span>01</span>
         <h2>Calculator feedback</h2>
         <p>Share the calculator, input or result that needs attention. Do not include passwords or payment-card details.</p>
-        <a href="mailto:support@mybreakeven.com?subject=Calculator%20feedback">Email calculator feedback →</a>
+        <a href={supportEmailUrl("Calculator feedback")} target="_blank" rel="noreferrer">Email calculator feedback ↗</a>
       </article>
       <article>
         <span>02</span>
         <h2>Account or billing</h2>
         <p>Include the email attached to your account and a short description of the issue. Never send your password.</p>
-        <a href="mailto:support@mybreakeven.com?subject=Account%20or%20billing%20support">Request account support →</a>
+        <a href={supportEmailUrl("Account or billing support")} target="_blank" rel="noreferrer">Request account support ↗</a>
       </article>
       <article>
         <span>03</span>
         <h2>Industry request</h2>
         <p>Tell us the business model, what it sells and which costs or capacity limits should be included.</p>
-        <a href="mailto:support@mybreakeven.com?subject=New%20industry%20request">Suggest an industry →</a>
+        <a href={supportEmailUrl("New industry request")} target="_blank" rel="noreferrer">Suggest an industry ↗</a>
       </article>
     </section>
     <section className="contact-brief">
@@ -161,7 +162,7 @@ const Contact = () => (
     </section>
     <section className="contact-final">
       <div><small>ONE INBOX. THE RIGHT CONTEXT.</small><h2>Ready to send your question?</h2></div>
-      <a href="mailto:support@mybreakeven.com">support@mybreakeven.com <span aria-hidden="true">↗</span></a>
+      <a href={supportEmailUrl("MyBreakeven support request")} target="_blank" rel="noreferrer">Open email in Gmail <span aria-hidden="true">↗</span></a>
     </section>
   </>
 );
