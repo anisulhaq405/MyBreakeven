@@ -24,12 +24,8 @@ const seoTitleOverrides = {
 };
 
 const cleanText = value => typeof value === "string" ? value.replace(/^\*\*\s*/, "") : value;
-export const BLOG_RELEASE_DATE = "2026-09-21";
 const normalizePost = post => ({
   ...post,
-  authored: post.published,
-  published: BLOG_RELEASE_DATE,
-  modified: BLOG_RELEASE_DATE,
   seoTitle: seoTitleOverrides[post.slug] || cleanText(post.seoTitle),
   description: cleanText(post.description),
   metaDescription: cleanText(post.metaDescription),
@@ -45,7 +41,7 @@ export const blogCollections = Object.freeze({
 
 export const blogPosts = Object.values(blogCollections)
   .flat()
-  .sort((a, b) => String(b.authored).localeCompare(String(a.authored)));
+  .sort((a, b) => String(b.published).localeCompare(String(a.published)));
 
 const duplicateSlugs = blogPosts
   .map(post => post.slug)
