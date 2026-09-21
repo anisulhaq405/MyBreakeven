@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BarChart3, CreditCard, Menu, ShieldCheck, X } from "lucide-react";
+import { ArrowUpRight, BarChart3, CreditCard, LockKeyhole, Mail, Menu, ShieldCheck, X } from "lucide-react";
 
 export const primaryNavigation = [
   ["Calculator", "/#calculator"],
@@ -71,38 +71,52 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer>
+      <div className="footer-cta">
+        <div>
+          <span>FREE · PRIVATE · NO SIGN-UP REQUIRED</span>
+          <h2>Turn your assumptions into a number you can use.</h2>
+        </div>
+        <a href="/#calculator">Open the calculator <ArrowUpRight /></a>
+      </div>
       <div className="footer-main">
         <div className="footer-brand">
           <Logo light />
-          <p>Formula-backed break-even and feasibility planning for small and medium businesses.</p>
-          <span className="footer-trust"><ShieldCheck /> Private by default · Transparent formulas</span>
+          <p>Formula-backed break-even, demand and capacity planning for owner-operated businesses.</p>
+          <div className="footer-trust-row">
+            <span className="footer-trust"><ShieldCheck /> Transparent formulas</span>
+            <span className="footer-trust"><LockKeyhole /> Private by default</span>
+          </div>
+          <a className="footer-support" href="mailto:support@mybreakeven.com"><Mail /> support@mybreakeven.com</a>
         </div>
         <nav className="footer-links" aria-label="Product links">
-          <strong>Product</strong>
+          <strong>Explore</strong>
           {primaryNavigation.map(([label, href]) => <a key={label} href={href}>{label}</a>)}
         </nav>
         <nav className="footer-links" aria-label="Legal links">
-          <strong>Legal</strong>
+          <strong>Policies</strong>
           <a href="/privacy-policy/">Privacy Policy</a>
           <a href="/terms-of-service/">Terms of Service</a>
           <a href="/refund-policy/">Refund Policy</a>
           <a href="/cookie-policy/">Cookie Policy</a>
         </nav>
         <div className="footer-payments">
-          <strong>Supported by Polar checkout</strong>
-          <p>Secure subscription checkout and billing management.</p>
-          <div aria-label="Polar checkout supported payment methods">
-            <span><CreditCard /> Cards</span>
-            <span>Visa</span>
-            <span>Mastercard</span>
-            <span>Amex</span>
-            <span>Apple Pay</span>
-            <span>Google Pay</span>
+          <div className="footer-checkout-head">
+            <span><CreditCard /></span>
+            <div><strong>Secure checkout</strong><small>Subscriptions managed by Polar</small></div>
           </div>
+          <p>Encrypted payment processing. MyBreakeven does not store your card details.</p>
+          <div className="payment-wordmarks" aria-label="Polar checkout supported payment methods">
+            <span>VISA</span>
+            <span>mastercard</span>
+            <span>AMEX</span>
+            <span>Apple Pay</span>
+            <span>G Pay</span>
+          </div>
+          <span className="checkout-note"><LockKeyhole /> Secure subscription billing</span>
         </div>
       </div>
       <div className="footer-legal">
-        <span>© 2026 MyBreakeven</span>
+        <span>© 2026 MyBreakeven. All rights reserved.</span>
         <small>Planning estimates based on your assumptions—not tax, legal, accounting or lending advice.</small>
       </div>
     </footer>
