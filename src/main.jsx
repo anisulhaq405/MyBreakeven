@@ -4,12 +4,10 @@ import "./sentry";
 import {
   BarChart3,
   BriefcaseBusiness,
-  CheckCircle2,
   ChevronDown,
   Info,
   ShieldCheck,
   Sparkles,
-  Target,
 } from "lucide-react";
 import { calculate } from "./engine";
 import { fieldLabels, industries } from "./industries";
@@ -24,13 +22,6 @@ import { POLAR_CHECKOUT_URL } from "./billing";
 import "./styles.css";
 import "./industries.css";
 import "./visuals.css";
-const money = (n, currency = "USD") =>
-  new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency,
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(n || 0);
 const quantity = (n) => new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 }).format(n || 0);
 function App() {
   const initialIndustry = new URLSearchParams(window.location.search).get("industry");
@@ -74,7 +65,7 @@ function App() {
       <a className="skip-link" href="#main-content">Skip to main content</a>
       <SiteHeader />
       <main id="main-content">
-        <section className="intro">
+        <section className="intro calculator-hero" id="calculator">
           <div className="hero-visual">
             <span className="orbit orbit-one" />
             <span className="orbit orbit-two" />
@@ -85,11 +76,6 @@ function App() {
                 {result.valid && result.gap >= 0 ? "FEASIBLE" : "REVIEW"}
               </span>
               </div>
-              <label className="hero-model-switcher">Choose your business
-                <select value={industryKey} onChange={event => choose(event.target.value)}>
-                  {Object.entries(industries).map(([key, item]) => <option value={key} key={key}>{item.short}</option>)}
-                </select>
-              </label>
               <div className="ai-signal">
                 <Sparkles />
                 <span><b>AI insight layer</b> Verified inputs · Explainable output</span>
@@ -109,49 +95,45 @@ function App() {
                 Capacity<strong>{result.valid ? quantity(result.capacity) : "—"}</strong>
               </span>
               <span>
-                Inquiries<strong>{result.valid ? quantity(result.leads) : "—"}</strong>
+                <BarChart3 /> Inquiries<strong>{result.valid ? quantity(result.leads) : "—"}</strong>
               </span>
             </div>
             <p>
               <Info /> Live model updates as you edit the calculator.
             </p>
-            <a className="hero-calculator-cta" href="#calculator">Open the full calculator <span aria-hidden="true">↗</span></a>
+            <a className="hero-calculator-cta" href="#calculator-inputs">Edit your assumptions <span aria-hidden="true">→</span></a>
             </div>
           </div>
-          <div className="hero-copy">
-            <div className="eyebrow"><Sparkles /> Live, private business planning</div>
-            <h1>See your break-even number <em>before you make the decision.</em></h1>
-            <p>Choose your business on the left to preview the model, then open the full calculator for revenue, sales volume, capacity and demand.</p>
-            <div className="trust"><span><CheckCircle2 /> No signup</span><span><CheckCircle2 /> Private by default</span><span><CheckCircle2 /> Formula-backed</span></div>
-          </div>
-        </section>
-        <section className="calculator" id="calculator">
-          <div className="section-title">
-            <span>FREE INDUSTRY CALCULATORS</span>
-            <h2>Can your {industry.name.toLowerCase()} break even?</h2>
-            <p>Choose a business model, then edit its monthly assumptions.</p>
-            <label className="currency-select">Currency <select value={currency} onChange={e => setCurrency(e.target.value)}>{["USD","EUR","GBP","CAD","AUD","NZD","AED","SAR","PKR","INR","BDT","SGD","MYR","ZAR","JPY","CHF","SEK","NOK","DKK"].map(code => <option key={code}>{code}</option>)}</select><small>Amounts are labeled, not converted.</small></label>
-          </div>
-          <div
-            className="industry-picker"
-            role="tablist"
-            aria-label="Choose a business model"
-          >
-            {Object.entries(industries).map(([key, item]) => (
-              <button
-                role="tab"
-                aria-selected={key === industryKey}
-                className={key === industryKey ? "active" : ""}
-                key={key}
-                onClick={() => choose(key)}
-              >
-                <span>{item.short}</span>
-                <small>{item.source}</small>
-              </button>
-            ))}
-          </div>
-          <div className="workspace">
-            <div className="inputs">
+          <div className="hero-calculator-panel" id="calculator-inputs">
+            <div className="hero-calculator-heading">
+              <div>
+                <span>FREE INDUSTRY CALCULATOR</span>
+                <h1>Build your break-even plan.</h1>
+                <p>Choose your model and adjust the monthly assumptions.</p>
+              </div>
+              <span className="live-pill"><i /> Live</span>
+            </div>
+            <div className="calculator-selectors">
+              <label>
+                <span><BriefcaseBusiness /> Business model</span>
+                <div className="select-shell">
+                  <select value={industryKey} onChange={event => choose(event.target.value)}>
+                    {Object.entries(industries).map(([key, item]) => <option value={key} key={key}>{item.short}</option>)}
+                  </select>
+                  <ChevronDown />
+                </div>
+              </label>
+              <label>
+                <span><b>{currencySymbol}</b> Currency</span>
+                <div className="select-shell">
+                  <select value={currency} onChange={e => setCurrency(e.target.value)}>
+                    {["USD","EUR","GBP","CAD","AUD","NZD","AED","SAR","PKR","INR","BDT","SGD","MYR","ZAR","JPY","CHF","SEK","NOK","DKK"].map(code => <option key={code}>{code}</option>)}
+                  </select>
+                  <ChevronDown />
+                </div>
+              </label>
+            </div>
+            <div className="inputs hero-inputs">
               <div className="panel-head">
                 <div>
                   <span className="step">01</span>
@@ -190,104 +172,6 @@ function App() {
                   not sent or saved.
                 </span>
               </div>
-            </div>
-            <div className="results">
-              <div className="result-head">
-                <div>
-                  <span>LIVE RESULTS</span>
-                  <h3>Your monthly break-even plan</h3>
-                </div>
-                <div
-                  className={
-                    result.valid && result.gap >= 0
-                      ? "badge good"
-                      : "badge warn"
-                  }
-                >
-                  {result.valid
-                    ? result.gap >= 0
-                      ? "Feasible"
-                      : "Capacity gap"
-                    : "Fix pricing"}
-                </div>
-              </div>
-              {!result.valid ? (
-                <div className="alert">{result.message}</div>
-              ) : (
-                <>
-                  <div className="hero-result">
-                    <span>Break-even revenue</span>
-                    <strong>{money(result.revenue, currency)}</strong>
-                    <small>
-                      Exact: {quantity(result.jobs)} {industry.unit} × {money(input.price, currency)} average price
-                    </small>
-                  </div>
-                  <div className="metrics">
-                    <article>
-                      <Target />
-                      <span>
-                        {industry.unit} needed
-                        <strong>
-                          {quantity(result.jobs)}
-                          <small>/ month</small>
-                        </strong>
-                      </span>
-                    </article>
-                    <article>
-                      <BriefcaseBusiness />
-                      <span>
-                        Delivery capacity
-                        <strong>
-                          {quantity(result.capacity)}
-                          <small>{industry.unit} / month</small>
-                        </strong>
-                      </span>
-                    </article>
-                    <article>
-                      <BarChart3 />
-                      <span>
-                        Inquiries required
-                        <strong>
-                          {quantity(result.leads)}
-                          <small>/ month</small>
-                        </strong>
-                      </span>
-                    </article>
-                  </div>
-                  <div className="capacity">
-                    <div>
-                      <span>Capacity used</span>
-                      <strong>
-                        {quantity((result.jobs / result.capacity) * 100)}%
-                      </strong>
-                    </div>
-                    <div className="bar">
-                      <i
-                        style={{
-                          width: `${Math.min(100, (result.jobs / result.capacity) * 100)}%`,
-                        }}
-                      />
-                    </div>
-                    <p>
-                      {result.gap >= 0
-                        ? `You have room for ${quantity(result.gap)} more ${industry.unit} each month.`
-                        : `You need capacity for ${quantity(Math.abs(result.gap))} additional ${industry.unit}.`}
-                    </p>
-                  </div>
-                  <details>
-                    <summary>
-                      Show the formula trace <ChevronDown />
-                    </summary>
-                    <p>
-                      Contribution per {industry.singular} = Price − direct
-                      costs − direct labor − payment fees ={" "}
-                      <strong>{money(result.contribution, currency)}</strong>. Required{" "}
-                      {industry.unit} = (overhead + owner pay + target profit) ÷
-                      contribution = <strong>{quantity(result.jobs)}</strong> exact {industry.unit}. For real-world planning, use at least <strong>{result.wholeJobs}</strong> whole {industry.unit}, producing {money(result.practicalRevenue, currency)}.
-                    </p>
-                  </details>
-                </>
-              )}
             </div>
           </div>
         </section>
