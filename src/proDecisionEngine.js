@@ -131,3 +131,109 @@ export function buildBreakEvenLadder(input, safetyBufferPct = 10) {
   });
   return { valid: true, contribution: number(contribution), safetyBufferPct: number(buffer), levels };
 }
+
+export function analyzeAcquisitionBreakEven(input, currentResult, options = {}) {
+  const spend = Decimal.max(0, D(options.monthlySpend));
+  const leads = D(options.leads);
+  const conversion = D(options.conversionPct).div(100);
+  const repeatPurchases = D(options.repeatPurchases);
+  const contribution = D(currentResult?.contribution);
+  if (!leads.gt(0) || !conversion.gt(0) || conversion.gt(1) || !repeatPurchases.gt(0) || !contribution.gt(0)) {
+    return { valid: false, message: "Use positive leads, contribution and purchases, with conversion between 0% and 100%." };
+  }
+  const customers = leads.mul(conversion);
+  const cac = spend.div(customers);
+  const customerContribution = contribution.mul(repeatPurchases);
+  const lifetimeProfitAfterCac = customerContribution.minus(cac);
+  const firstOrderProfitAfterCac = contribution.minus(cac);
+  return {
+    valid: true,
+    monthlySpend: number(spend),
+    customers: number(customers),
+    cac: number(cac),
+    customerContribution: number(customerContribution),
+    firstOrderProfitAfterCac: number(firstOrderProfitAfterCac),
+    lifetimeProfitAfterCac: number(lifetimeProfitAfterCac),
+    breakEvenPurchases: number(cac.div(contribution)),
+    maxAffordableCac: number(customerContribution),
+    maxMonthlySpend: number(customers.mul(customerContribution)),
+    breakEvenCustomers: number(customerContribution.gt(0) ? spend.div(customerContribution) : 0),
+    leadsNeededToRecoverSpend: number(spend.div(contribution.mul(repeatPurchases).mul(conversion))),
+  };
+}
+
+export function analyzeHireBreakEven(input, currentResult, options = {}) {
+  const monthlyPay = Decimal.max(0, D(options.monthlyPay));
+  const burden = Decimal.max(0, D(options.payrollBurdenPct)).div(100);
+  const otherCost = Decimal.max(0, D(options.otherMonthlyCost));
+  const oneTimeCost = Decimal.max(0, D(options.oneTimeCost));
+  const productiveHours = D(options.productiveHoursPerMonth);
+  const expectedUnits = Decimal.max(0, D(options.expectedExtraUnits));
+  const contribution = D(currentResult?.contribution);
+  const conversion = D(input.conversionPct).div(100);
+  const hoursPerUnit = D(input.hoursPerJob);
+  if (!contribution.gt(0) || !productiveHours.gt(0) || !conversion.gt(0) || !hoursPerUnit.gt(0)) {
+    return { valid: false, message: "Positive contribution, productive hours, conversion and delivery time are required." };
+  }
+  const monthlyHireCost = monthlyPay.mul(D(1).plus(burden)).plus(otherCost);
+  const breakEvenUnits = monthlyHireCost.div(contribution);
+  const monthlyNetBenefit = expectedUnits.mul(contribution).minus(monthlyHireCost);
+  return {
+    valid: true,
+    monthlyHireCost: number(monthlyHireCost),
+    breakEvenUnits: number(breakEvenUnits),
+    wholeBreakEvenUnits: breakEvenUnits.ceil().toNumber(),
+    requiredLeads: number(breakEvenUnits.div(conversion)),
+    utilizationNeededPct: number(breakEvenUnits.mul(hoursPerUnit).div(productiveHours).mul(100)),
+    expectedContribution: number(expectedUnits.mul(contribution)),
+    monthlyNetBenefit: number(monthlyNetBenefit),
+    paybackMonths: monthlyNetBenefit.gt(0) ? number(oneTimeCost.div(monthlyNetBenefit)) : null,
+    revenueRequired: number(breakEvenUnits.mul(input.price)),
+  };
+}
+
+export function buildBreakEvenTimeline(input, currentResult, options = {}) {
+  const startupInvestment = Decimal.max(0, D(options.startupInvestment));
+  const startingUnits = Decimal.max(0, D(options.startingMonthlyUnits));
+  const growth = D(options.growthPct).div(100);
+  const maxMonths = Math.max(1, Math.min(60, Math.round(Number(options.maxMonths) || 36)));
+  const contribution = D(currentResult?.contribution);
+  const operatingBase = D(input.fixedCosts).plus(input.ownerPay);
+  const targetProfit = D(input.targetProfit);
+  if (!contribution.gt(0) || growth.lte(-1)) {
+    return { valid: false, message: "Positive contribution and monthly growth above -100% are required." };
+  }
+  const operatingBreakEvenUnits = operatingBase.div(contribution);
+  let cumulativeRecovery = startupInvestment.neg();
+  let paybackMonth = null;
+  let targetProfitMonth = null;
+  const forecast = Array.from({ length: maxMonths }, (_, index) => {
+    const month = index + 1;
+    const units = startingUnits.mul(D(1).plus(growth).pow(index));
+    const revenue = units.mul(input.price);
+    const operatingProfit = units.mul(contribution).minus(operatingBase);
+    cumulativeRecovery = cumulativeRecovery.plus(operatingProfit);
+    if (paybackMonth === null && cumulativeRecovery.gte(0)) paybackMonth = month;
+    if (targetProfitMonth === null && operatingProfit.gte(targetProfit)) targetProfitMonth = month;
+    return {
+      month,
+      units: number(units),
+      revenue: number(revenue),
+      operatingProfit: number(operatingProfit),
+      cumulativeRecovery: number(cumulativeRecovery),
+      breakEvenDay: units.gte(operatingBreakEvenUnits) && units.gt(0)
+        ? number(operatingBreakEvenUnits.div(units).mul(30))
+        : null,
+    };
+  });
+  return {
+    valid: true,
+    startupInvestment: number(startupInvestment),
+    operatingBreakEvenUnits: number(operatingBreakEvenUnits),
+    wholeOperatingBreakEvenUnits: operatingBreakEvenUnits.ceil().toNumber(),
+    operatingBreakEvenRevenue: number(operatingBreakEvenUnits.mul(input.price)),
+    paybackMonth,
+    targetProfitMonth,
+    forecast,
+  };
+}
