@@ -18,6 +18,11 @@ describe("professional Pro report", () => {
     const advanced = buildProReport({ input: {}, result, scenarios: [{ name: "Current plan", result }], analysis, industry, currency: "USD", engineVersion: "1.3.0" });
     for (const text of ["Advanced decision metrics", "Accounting break-even", "Risk sensitivity", "12-month forecast", "Selling price"]) expect(advanced).toContain(text);
   });
+  it("includes a deterministic executive decision brief when supplied", () => {
+    const brief = { valid: true, headline: "Capacity needs attention.", actions: [{ severity: "critical", title: "Close the gap", detail: "Add capacity before committing." }] };
+    const report = buildProReport({ input: {}, result, scenarios: [{ name: "Current plan", result }], brief, industry, currency: "USD", engineVersion: "1.3.0" });
+    for (const text of ["EXECUTIVE DECISION BRIEF", "Capacity needs attention", "Close the gap", "Add capacity before committing"]) expect(report).toContain(text);
+  });
   it("escapes report content", () => {
     const unsafe = buildProReport({ input: { note: "<script>" }, result, scenarios: [{ name: "<b>x</b>", result }], industry, currency: "USD", engineVersion: "1.3.0" });
     expect(unsafe).not.toContain("<script>");
