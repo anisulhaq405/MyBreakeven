@@ -12,7 +12,7 @@ export const primaryNavigation = [
 export function Logo({ light = false }) {
   return (
     <a className={`brand${light ? " brand-light" : ""}`} href="/" aria-label="MyBreakeven home">
-      <img className="brandmark" src="/logo.svg" alt="" width="40" height="40" />
+      <img className="brandmark" src="/logo.svg?v=20260922" alt="" width="42" height="42" />
       <span>My<span>Breakeven</span></span>
     </a>
   );
