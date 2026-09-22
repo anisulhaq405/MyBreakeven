@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { analyzeOfferMix, analyzePriceGuard, buildBreakEvenLadder } from "./proDecisionEngine";
+import { analyzeAcquisitionBreakEven, analyzeHireBreakEven, analyzeOfferMix, analyzePriceGuard, buildBreakEvenLadder, buildBreakEvenTimeline } from "./proDecisionEngine";
 import { calculate } from "./engine";
 import { limitsFor } from "./entitlements";
 
@@ -41,5 +41,34 @@ describe("Pro decision engines", () => {
     const ladder = buildBreakEvenLadder(input, 10);
     expect(ladder.levels.map((level) => level.wholeUnits)).toEqual([20, 30, 40, 44]);
     expect(ladder.levels[2].revenue).toBe(4000);
+  });
+
+  it("calculates CAC payback from contribution and repeat purchases", () => {
+    const analysis = analyzeAcquisitionBreakEven(input, calculate(input), { monthlySpend: 1000, leads: 100, conversionPct: 20, repeatPurchases: 2 });
+    expect(analysis.customers).toBe(20);
+    expect(analysis.cac).toBe(50);
+    expect(analysis.customerContribution).toBe(100);
+    expect(analysis.lifetimeProfitAfterCac).toBe(50);
+    expect(analysis.breakEvenPurchases).toBe(1);
+    expect(analysis.leadsNeededToRecoverSpend).toBe(50);
+  });
+
+  it("shows when an additional hire pays for itself", () => {
+    const analysis = analyzeHireBreakEven(input, calculate(input), { monthlyPay: 2000, payrollBurdenPct: 10, otherMonthlyCost: 300, oneTimeCost: 1000, productiveHoursPerMonth: 160, expectedExtraUnits: 60 });
+    expect(analysis.monthlyHireCost).toBe(2500);
+    expect(analysis.breakEvenUnits).toBe(50);
+    expect(analysis.requiredLeads).toBe(200);
+    expect(analysis.utilizationNeededPct).toBe(62.5);
+    expect(analysis.monthlyNetBenefit).toBe(500);
+    expect(analysis.paybackMonths).toBe(2);
+  });
+
+  it("builds a monthly startup recovery timeline", () => {
+    const timeline = buildBreakEvenTimeline(input, calculate(input), { startupInvestment: 3000, startingMonthlyUnits: 50, growthPct: 0, maxMonths: 12 });
+    expect(timeline.operatingBreakEvenUnits).toBe(30);
+    expect(timeline.operatingBreakEvenRevenue).toBe(3000);
+    expect(timeline.paybackMonth).toBe(3);
+    expect(timeline.targetProfitMonth).toBe(1);
+    expect(timeline.forecast[0].breakEvenDay).toBe(18);
   });
 });
