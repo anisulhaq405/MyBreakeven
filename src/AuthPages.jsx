@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { CheckCircle2, CreditCard, Download, ExternalLink, Eye, EyeOff, KeyRound, LogOut, Mail, Pencil, ShieldCheck, Trash2, UserRound } from "lucide-react";
+import { Activity, CheckCircle2, CreditCard, Download, ExternalLink, Eye, EyeOff, KeyRound, LogOut, Mail, Pencil, Search, ShieldCheck, SlidersHorizontal, Trash2, UserRound } from "lucide-react";
 import { authConfigured, supabase } from "./authClient";
 import { calculate, FORMULA_ENGINE_VERSION } from "./engine";
 import { industries } from "./industries";
@@ -7,6 +7,7 @@ import { limitsFor, normalizePlan } from "./entitlements";
 import { friendlyAuthError, withTimeout } from "./authSecurity";
 import AccountControls from "./AccountControls";
 import { POLAR_CUSTOMER_PORTAL_URL } from "./billing";
+import { compareScenarioCostDrift, filterScenarioPortfolio, summarizeScenarioPortfolio } from "./scenarioPortfolio";
 
 const authMeta = {
   "/login": ["Log in to MyBreakeven", "Access your private MyBreakeven planning workspace."],
@@ -115,6 +116,7 @@ export function DashboardPage() {
   const [state, setState] = useState({ loading: true, user: null, scenarios: [], plan: "free", displayName: "", error: "" });
   const [selected, setSelected] = useState([]);
   const [actionId, setActionId] = useState("");
+  const [filters, setFilters] = useState({ query: "", industry: "all", currency: "all", sort: "updated" });
   const loadScenarios = async (user) => {
     const queryScenarios = () => supabase.from("saved_scenarios").select("id,name,industry_key,currency,inputs,engine_version,created_at,updated_at").eq("user_id", user.id).order("updated_at", { ascending: false });
     let [{ data, error }, { data: profile }] = await Promise.all([
@@ -141,6 +143,13 @@ export function DashboardPage() {
     return () => { active = false; data.subscription.unsubscribe(); };
   }, []);
   const calculated = useMemo(() => state.scenarios.map(item => ({ ...item, result: calculate(item.inputs) })), [state.scenarios]);
+  const filteredScenarios = useMemo(() => filterScenarioPortfolio(calculated, filters), [calculated, filters]);
+  const portfolio = useMemo(() => summarizeScenarioPortfolio(filteredScenarios), [filteredScenarios]);
+  const compared = calculated.filter(item => selected.includes(item.id));
+  const driftComparison = useMemo(() => compareScenarioCostDrift(compared), [compared]);
+  const availableIndustries = [...new Set(calculated.map(item => item.industry_key))];
+  const availableCurrencies = [...new Set(calculated.map(item => item.currency))];
+  const portfolioCurrency = filters.currency !== "all" ? filters.currency : availableCurrencies.length === 1 ? availableCurrencies[0] : null;
   const limits = limitsFor(state.plan);
   const isPro = state.plan === "pro";
   if (!authConfigured) return <section className="dashboard-page"><SetupNotice /></section>;
@@ -165,7 +174,8 @@ export function DashboardPage() {
     if (!isPro) return;
     setSelected(current => current.includes(id) ? current.filter(value => value !== id) : current.length < limits.comparisons ? [...current, id] : current);
   };
-  const compared = calculated.filter(item => selected.includes(item.id));
+  const updateFilter = (key, value) => setFilters(current => ({ ...current, [key]: value }));
+  const delta = value => value === null ? "n/a" : `${value > 0 ? "+" : ""}${value.toFixed(1)}%`;
   const exportSaved = () => {
     const rows = [["Scenario","Business","Currency","Break-even revenue","Exact units","Whole units","Capacity","Inquiries","Score","Engine"], ...calculated.map(item => [item.name, industries[item.industry_key]?.name, item.currency, item.result.revenue, item.result.jobs, item.result.wholeJobs, item.result.capacity, item.result.leads, item.result.score, item.engine_version])];
     const blob = new Blob([rows.map(row => row.map(value => `"${String(value ?? "").replaceAll('"','""')}"`).join(",")).join("\n")], { type: "text/csv" });
@@ -175,9 +185,21 @@ export function DashboardPage() {
     <div className="dashboard-heading"><div><span>PRIVATE WORKSPACE</span><h1>Your MyBreakeven dashboard</h1>{state.displayName && <p className="dashboard-welcome">Welcome, <strong>{state.displayName}</strong></p>}<p>Signed in as {state.user.email}</p><div className="dashboard-plan-row"><div className={`plan-badge ${state.plan}`}>{state.plan === "pro" ? "PRO PLAN" : `FREE PLAN · ${calculated.length}/${limits.savedScenarios} SAVES`}</div>{isPro && <a className="manage-subscription" href={POLAR_CUSTOMER_PORTAL_URL}><CreditCard /> Manage subscription</a>}</div></div><button className="page-button secondary" onClick={logout} disabled={actionId === "logout"}><LogOut /> {actionId === "logout" ? "Logging out…" : "Log out"}</button></div>
     {state.error && <p className="auth-error" role="alert">{state.error}</p>}
     {!calculated.length ? <div className="dashboard-empty"><ShieldCheck /><h2>No saved scenarios yet</h2><p>Open the calculator, enter your assumptions and choose Save scenario. Only your authenticated account can access saved records.</p><a className="page-button" href="/#calculator">Create your first scenario</a></div> : <>
+      {isPro && <section className="portfolio-command" aria-label="Saved scenario portfolio summary">
+        <div className="portfolio-title"><div><span>PRO COMMAND CENTER</span><h2>Your planning portfolio at a glance</h2></div><Activity /></div>
+        <div className="portfolio-kpis">
+          <article><small>Saved plans</small><strong>{portfolio.count}</strong><span>{portfolio.viable} currently viable</span></article>
+          <article><small>Average target revenue</small><strong>{portfolioCurrency ? new Intl.NumberFormat("en-US",{style:"currency",currency:portfolioCurrency,maximumFractionDigits:0}).format(portfolio.averageRevenue) : "Mixed currencies"}</strong><span>{portfolioCurrency || "filter one currency for a valid average"}</span></article>
+          <article><small>Average feasibility</small><strong>{portfolio.averageScore.toFixed(1)}/100</strong><span>across viable plans</span></article>
+          <article className={portfolio.capacityRisks ? "risk" : "safe"}><small>Capacity risks</small><strong>{portfolio.capacityRisks}</strong><span>{portfolio.capacityRisks ? "plans exceed delivery capacity" : "no selected plan exceeds capacity"}</span></article>
+        </div>
+      </section>}
       <div className="saved-toolbar"><p><strong>{calculated.length}</strong> saved scenario{calculated.length === 1 ? "" : "s"}{isPro ? " · Select up to 3 to compare" : " · Comparison and exports unlock with Pro"}</p>{isPro ? <button onClick={exportSaved}><Download /> Export all CSV</button> : <a className="tool-upgrade" href="/pricing/">View Pro features</a>}</div>
-      <div className="saved-grid">{calculated.map(item => <article className={selected.includes(item.id) ? "selected" : ""} key={item.id}>{isPro && <label className="compare-check"><input type="checkbox" checked={selected.includes(item.id)} onChange={() => toggle(item.id)} disabled={!selected.includes(item.id) && selected.length >= limits.comparisons} /> Compare</label>}<small>{industries[item.industry_key]?.name} · {item.currency}</small><h2>{item.name}</h2><strong>{item.result.valid ? new Intl.NumberFormat("en-US",{style:"currency",currency:item.currency}).format(item.result.revenue) : "Review inputs"}</strong><p>{item.result.valid ? `${item.result.jobs.toFixed(2)} ${industries[item.industry_key]?.unit} · ${item.result.score}/100 feasibility` : item.result.message}</p><time dateTime={item.updated_at}>Updated {new Date(item.updated_at).toLocaleDateString("en-US")}</time><div><a href={`/?scenario=${item.id}#calculator`}><ExternalLink /> Open</a><button onClick={() => rename(item)}><Pencil /> Rename</button><button className="danger" onClick={() => remove(item.id)}><Trash2 /> Delete</button></div></article>)}</div>
+      {isPro && <div className="portfolio-filters"><label className="scenario-search"><Search /><input type="search" value={filters.query} placeholder="Search saved plans" onChange={event => updateFilter("query", event.target.value)} /></label><label><SlidersHorizontal /><select value={filters.industry} onChange={event => updateFilter("industry", event.target.value)}><option value="all">All businesses</option>{availableIndustries.map(key => <option value={key} key={key}>{industries[key]?.name || key}</option>)}</select></label><label><select value={filters.currency} onChange={event => updateFilter("currency", event.target.value)}><option value="all">All currencies</option>{availableCurrencies.map(value => <option value={value} key={value}>{value}</option>)}</select></label><label><select value={filters.sort} onChange={event => updateFilter("sort", event.target.value)}><option value="updated">Recently updated</option><option value="revenue-high">Highest revenue</option><option value="score-high">Highest feasibility</option><option value="name">Name A–Z</option></select></label></div>}
+      <div className="saved-grid">{filteredScenarios.map(item => <article className={selected.includes(item.id) ? "selected" : ""} key={item.id}>{isPro && <label className="compare-check"><input type="checkbox" checked={selected.includes(item.id)} onChange={() => toggle(item.id)} disabled={!selected.includes(item.id) && selected.length >= limits.comparisons} /> Compare</label>}<small>{industries[item.industry_key]?.name} · {item.currency}</small><h2>{item.name}</h2><strong>{item.result.valid ? new Intl.NumberFormat("en-US",{style:"currency",currency:item.currency}).format(item.result.revenue) : "Review inputs"}</strong><p>{item.result.valid ? `${item.result.jobs.toFixed(2)} ${industries[item.industry_key]?.unit} · ${item.result.score}/100 feasibility` : item.result.message}</p><time dateTime={item.updated_at}>Updated {new Date(item.updated_at).toLocaleDateString("en-US")}</time><div><a href={`/?scenario=${item.id}#calculator`}><ExternalLink /> Open</a><button onClick={() => rename(item)}><Pencil /> Rename</button><button className="danger" onClick={() => remove(item.id)}><Trash2 /> Delete</button></div></article>)}</div>
+      {!filteredScenarios.length && <div className="portfolio-empty"><Search /><strong>No saved plan matches these filters.</strong><button onClick={() => setFilters({ query: "", industry: "all", currency: "all", sort: "updated" })}>Clear filters</button></div>}
       {compared.length >= 2 && <div className="saved-comparison"><h2>Scenario comparison</h2><div className="scenario-table"><div className="scenario-row heading"><span>Scenario</span><span>Revenue</span><span>Exact units</span><span>Capacity</span><span>Score</span></div>{compared.map(item => <div className="scenario-row" key={item.id}><strong>{item.name}</strong><span>{new Intl.NumberFormat("en-US",{style:"currency",currency:item.currency}).format(item.result.revenue)}</span><span>{item.result.jobs.toFixed(2)}</span><span>{item.result.capacity.toFixed(2)}</span><span>{item.result.score}/100</span></div>)}</div></div>}
+      {isPro && driftComparison.valid && <section className="cost-drift-comparison"><div><span>PRO COST DRIFT</span><h2>What changed from {driftComparison.baselineName}?</h2><p>The first selected plan is the baseline. Deltas use saved inputs and current formula-engine results.</p></div><div className="drift-table"><div><span>Scenario</span><span>Price</span><span>Variable cost</span><span>Contribution</span><span>Fixed need</span><span>Revenue target</span></div>{driftComparison.rows.map((row,index) => <div key={row.id} className={index === 0 ? "baseline" : ""}><strong>{row.name}{index === 0 && <small>Baseline</small>}</strong><span className={(row.priceChangePct || 0) >= 0 ? "up" : "down"}>{delta(row.priceChangePct)}</span><span className={(row.variableCostChangePct || 0) <= 0 ? "down" : "up"}>{delta(row.variableCostChangePct)}</span><span className={(row.contributionChangePct || 0) >= 0 ? "down" : "up"}>{delta(row.contributionChangePct)}</span><span className={(row.fixedNeedChangePct || 0) <= 0 ? "down" : "up"}>{delta(row.fixedNeedChangePct)}</span><span className={(row.revenueChangePct || 0) <= 0 ? "down" : "up"}>{delta(row.revenueChangePct)}</span></div>)}</div></section>}
       <p className="dashboard-version">Results recalculate with formula engine {FORMULA_ENGINE_VERSION}; original save version is retained for auditability.</p>
     </>}
     <AccountControls user={state.user} scenarios={state.scenarios} displayName={state.displayName} onProfileUpdated={displayName => setState(current => ({ ...current, displayName }))} onScenariosDeleted={() => { setSelected([]); setState(current => ({ ...current, scenarios: [] })); }} />
