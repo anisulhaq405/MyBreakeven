@@ -2,6 +2,7 @@ import React, { lazy, Suspense, useEffect, useState } from "react";
 import { CheckCircle2, Mail, ShieldCheck, Sparkles } from "lucide-react";
 import BlogSection from "./BlogSection";
 import BlogArticle from "./BlogArticle";
+import { blogLibrarySummary } from "./content/blogs/index.js";
 import { SiteFooter, SiteHeader } from "./SiteChrome";
 import IndustryPage, { industryPages } from "./IndustryPage";
 import { POLAR_CHECKOUT_URL } from "./billing";
@@ -313,8 +314,8 @@ export default function SecondaryPage({ path }) {
             <div className="blog-hero-actions"><a href="#blog">Browse all guides <span aria-hidden="true">↓</span></a><a href="/#calculator">Open calculator <span aria-hidden="true">↗</span></a></div>
           </div>
           <div className="blog-hero-index" aria-label="Guide library summary">
-            <div><strong>32</strong><span>focused guides</span></div>
-            <div><strong>8</strong><span>business models</span></div>
+            <div><strong>{blogLibrarySummary.guideCount}</strong><span>focused guides</span></div>
+            <div><strong>{blogLibrarySummary.modelCount}</strong><span>business models</span></div>
             <p><span>Pricing</span><span>Startup</span><span>Margins</span><span>Break-even</span></p>
           </div>
         </section>

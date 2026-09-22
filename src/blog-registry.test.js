@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { blogCollections, blogPostMap, blogPosts } from "./content/blogs/index.js";
+import { blogCollections, blogLibrarySummary, blogModels, blogPostMap, blogPosts } from "./content/blogs/index.js";
 
 describe("central blog registry", () => {
   it("publishes every collection through one registry", () => {
@@ -12,6 +12,13 @@ describe("central blog registry", () => {
     ]);
     expect(blogPosts).toHaveLength(40);
     expect(Object.keys(blogPostMap)).toHaveLength(40);
+    expect(blogLibrarySummary.guideCount).toBe(blogPosts.length);
+    expect(blogLibrarySummary.modelCount).toBe(blogModels.length);
+    expect(blogModels).toHaveLength(8);
+    expect(blogModels).toContain("Agency");
+    expect(blogModels).toContain("Mobile Detailing");
+    expect(blogModels).not.toContain("Agency & Freelancer");
+    expect(blogModels).not.toContain("Mobile detailing");
   });
 
   it("keeps slugs, titles and canonical destinations unique", () => {

@@ -29,8 +29,19 @@ const seoTitleOverrides = {
 };
 
 const cleanText = value => typeof value === "string" ? value.replace(/^\*\*\s*/, "") : value;
+const canonicalTags = Object.freeze({
+  "agency & freelancer": "Agency",
+  "mobile detailing": "Mobile Detailing",
+});
+
+const canonicalTag = value => {
+  const tag = cleanText(value)?.trim();
+  return canonicalTags[tag?.toLowerCase()] || tag;
+};
+
 const normalizePost = post => ({
   ...post,
+  tag: canonicalTag(post.tag),
   seoTitle: seoTitleOverrides[post.slug] || cleanText(post.seoTitle),
   description: cleanText(post.description),
   metaDescription: cleanText(post.metaDescription),
@@ -48,6 +59,15 @@ export const blogCollections = Object.freeze({
 export const blogPosts = Object.values(blogCollections)
   .flat()
   .sort((a, b) => String(b.published).localeCompare(String(a.published)));
+
+export const blogModels = Object.freeze(
+  [...new Set(blogPosts.map(post => post.tag).filter(Boolean))],
+);
+
+export const blogLibrarySummary = Object.freeze({
+  guideCount: blogPosts.length,
+  modelCount: blogModels.length,
+});
 
 const duplicateSlugs = blogPosts
   .map(post => post.slug)
