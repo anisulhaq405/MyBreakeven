@@ -27,6 +27,12 @@ describe("saved scenario workspace", () => {
     expect(dashboard).toContain("Export all CSV");
     expect(migration).not.toContain("outputs jsonb");
   });
+  it("adds Pro portfolio filtering and deterministic cost-drift comparison", () => {
+    expect(dashboard).toContain("PRO COMMAND CENTER");
+    expect(dashboard).toContain("PRO COST DRIFT");
+    expect(dashboard).toContain("filterScenarioPortfolio");
+    expect(dashboard).toContain("compareScenarioCostDrift");
+  });
   it("validates scenario names, industries, currencies and JSON shape", () => {
     expect(migration).toContain("char_length(name) between 1 and 80");
     expect(migration).toContain("currency ~ '^[A-Z]{3}$'");
