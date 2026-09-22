@@ -1,10 +1,11 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { calculate, FORMULA_ENGINE_VERSION } from "./engine";
-import { Download, FileText, Save, TrendingUp } from "lucide-react";
+import { ClipboardCheck, Download, FileText, Save, Share2, TrendingUp } from "lucide-react";
 import { limitsFor, normalizePlan } from "./entitlements";
 import { buildProReport } from "./reportBuilder";
 import ProIntelligence from "./ProIntelligence";
 import { advancedAnalysis } from "./advancedAnalysis";
+import { buildDecisionBrief } from "./decisionBrief";
 const formatMoney = (n, currency) =>
   new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -17,6 +18,7 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
   const money = (n) => formatMoney(n, currency);
   const [drift, setDrift] = useState(10);
   const [saveState, setSaveState] = useState({ loading: false, message: "", error: "" });
+  const [briefMessage, setBriefMessage] = useState("");
   const [plan, setPlan] = useState("free");
   const limits = limitsFor(plan);
   const isPro = plan === "pro";
@@ -71,6 +73,7 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
     [input, drift],
   );
   const reportAnalysis = useMemo(() => advancedAnalysis(input, result), [input, result]);
+  const decisionBrief = useMemo(() => buildDecisionBrief({ input, result, analysis: reportAnalysis, industry, currency }), [input, result, reportAnalysis, industry, currency]);
   const csv = () => {
     const rows = [
       ["MyBreakeven Feasibility Report"],
@@ -96,6 +99,10 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
       ["Capacity-safe minimum price", reportAnalysis.capacityPrice],
       ["Additional team members", reportAnalysis.additionalWorkers],
       [],
+      ["Executive decision brief"],
+      [decisionBrief.headline],
+      ...decisionBrief.actions.map((action, index) => [`${index + 1}. ${action.title}`, action.detail]),
+      [],
       ["Sensitivity driver", "Break-even impact %", "Viable"],
       ...reportAnalysis.drivers.map((driver) => [driver.name, driver.impact, driver.viable ? "Yes" : "No"]),
       [],
@@ -120,10 +127,27 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
   const print = () => {
     const w = window.open("", "_blank");
     if (!w) return;
-    w.document.write(buildProReport({ input, result, scenarios, analysis: reportAnalysis, industry, currency, engineVersion: FORMULA_ENGINE_VERSION }));
+    w.document.write(buildProReport({ input, result, scenarios, analysis: reportAnalysis, brief: decisionBrief, industry, currency, engineVersion: FORMULA_ENGINE_VERSION }));
     w.document.close();
     w.focus();
     w.print();
+  };
+  const copyBrief = async () => {
+    try {
+      await navigator.clipboard.writeText(decisionBrief.text);
+      setBriefMessage("Decision brief copied securely to your clipboard.");
+    } catch {
+      setBriefMessage("Clipboard access was blocked. Use Download brief instead.");
+    }
+  };
+  const downloadBrief = () => {
+    const blob = new Blob([decisionBrief.text], { type: "text/plain;charset=utf-8" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = `mybreakeven-${industry.short.toLowerCase().replaceAll(" ", "-")}-decision-brief.txt`;
+    link.click();
+    URL.revokeObjectURL(link.href);
+    setBriefMessage("Decision brief downloaded.");
   };
   const saveScenario = async () => {
     const name = window.prompt("Name this scenario", `${industry.short} plan – ${new Date().toLocaleDateString("en-US")}`)?.trim();
@@ -216,6 +240,12 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
           </p>
         </div>
       </div> : <div className="drift-card locked-tool"><TrendingUp /><div><strong>Cost-drift stress testing is a Pro feature</strong><p>Free accounts can save up to 3 scenarios. Pro unlocks cost-drift analysis, 3-way comparison and downloadable reports.</p><a href="/pricing/">View Pro features</a></div></div>}
+      {isPro && decisionBrief.valid && <section className="executive-brief">
+        <header><div><span>EXECUTIVE DECISION BRIEF</span><h2>{decisionBrief.headline}</h2><p>Generated from verified calculator outputs and deterministic rules—not invented benchmarks.</p></div><ClipboardCheck /></header>
+        <div className="brief-watchlist">{decisionBrief.watchlist.map(item => <article key={item.label}><small>{item.label}</small><strong>{item.value}</strong></article>)}</div>
+        <div className="brief-actions">{decisionBrief.actions.map((action,index) => <article className={action.severity} key={action.title}><b>{String(index + 1).padStart(2,"0")}</b><div><strong>{action.title}</strong><p>{action.detail}</p></div></article>)}</div>
+        <div className="brief-share"><button onClick={copyBrief}><Share2 /> Copy brief</button><button onClick={downloadBrief}><Download /> Download brief</button>{briefMessage && <span role="status">{briefMessage}</span>}</div>
+      </section>}
       <ProIntelligence input={input} result={result} industry={industry} currency={currency} isPro={isPro} />
     </section>
   );
