@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
-import { BadgeDollarSign, Layers3, Plus, ShieldCheck, Trash2 } from "lucide-react";
-import { analyzeOfferMix, analyzePriceGuard, buildBreakEvenLadder } from "./proDecisionEngine";
+import { BadgeDollarSign, CalendarRange, Layers3, Megaphone, Plus, ShieldCheck, Trash2, UserPlus } from "lucide-react";
+import { analyzeAcquisitionBreakEven, analyzeHireBreakEven, analyzeOfferMix, analyzePriceGuard, buildBreakEvenLadder, buildBreakEvenTimeline } from "./proDecisionEngine";
 
 const numeric = (value) => Number.isFinite(Number(value)) ? Number(value) : 0;
 const format = (value, currency, digits = 0) => new Intl.NumberFormat("en-US", {
@@ -12,6 +12,9 @@ export default function ProDecisionStudio({ input, result, industry, currency })
   const [active, setActive] = useState("mix");
   const [discount, setDiscount] = useState(10);
   const [buffer, setBuffer] = useState(10);
+  const [acquisition, setAcquisition] = useState({ monthlySpend: Math.max(500, input.acquisitionCost * Math.ceil(result.jobs)), leads: Math.max(100, Math.ceil(result.leads)), conversionPct: input.conversionPct, repeatPurchases: 2 });
+  const [hire, setHire] = useState({ monthlyPay: Math.max(2500, input.ownerPay * .6), payrollBurdenPct: 12, otherMonthlyCost: 250, oneTimeCost: 1000, productiveHoursPerMonth: Math.max(120, input.hoursPerWorker * 52 / 12 * input.utilizationPct / 100), expectedExtraUnits: Math.max(10, Math.ceil(result.jobs * .25)) });
+  const [timeline, setTimeline] = useState({ startupInvestment: Math.max(1000, input.fixedCosts * 3), startingMonthlyUnits: Math.max(1, Math.ceil(result.jobs * .75)), growthPct: 3, maxMonths: 36 });
   const [offers, setOffers] = useState([
     { id: 1, name: `Core ${industry.singular}`, price: input.price, variableCost: baseVariable, mixPct: 70, hours: input.hoursPerJob },
     { id: 2, name: "Premium offer", price: Number((input.price * 1.35).toFixed(2)), variableCost: Number((baseVariable * 1.15).toFixed(2)), mixPct: 30, hours: Number((input.hoursPerJob * 1.25).toFixed(2)) },
@@ -19,6 +22,10 @@ export default function ProDecisionStudio({ input, result, industry, currency })
   const mix = useMemo(() => analyzeOfferMix(input, offers), [input, offers]);
   const price = useMemo(() => analyzePriceGuard(input, result, discount), [input, result, discount]);
   const ladder = useMemo(() => buildBreakEvenLadder(input, buffer), [input, buffer]);
+  const acquisitionAnalysis = useMemo(() => analyzeAcquisitionBreakEven(input, result, acquisition), [input, result, acquisition]);
+  const hireAnalysis = useMemo(() => analyzeHireBreakEven(input, result, hire), [input, result, hire]);
+  const timelineAnalysis = useMemo(() => buildBreakEvenTimeline(input, result, timeline), [input, result, timeline]);
+  const updateModel = (setter, key, value) => setter((current) => ({ ...current, [key]: numeric(value) }));
   const updateOffer = (id, key, value) => setOffers((current) => current.map((offer) => offer.id === id ? { ...offer, [key]: key === "name" ? value : numeric(value) } : offer));
   const addOffer = () => setOffers((current) => current.length >= 6 ? current : [...current, {
     id: Math.max(0, ...current.map((offer) => offer.id)) + 1,
@@ -27,13 +34,16 @@ export default function ProDecisionStudio({ input, result, industry, currency })
   }]);
   return <section className="decision-studio">
     <header className="decision-head">
-      <div><span>PRO DECISION STUDIO</span><h2>Move the decision. See the new break-even.</h2><p>Model your offer mix, protect pricing and understand each level the business must clear.</p></div>
+      <div><span>PRO DECISION STUDIO</span><h2>Move the decision. See the new break-even.</h2><p>Model pricing, acquisition, hiring and the path from investment to sustainable profit.</p></div>
       <ShieldCheck />
     </header>
     <nav className="decision-tabs" aria-label="Pro decision tools">
       <button className={active === "mix" ? "active" : ""} onClick={() => setActive("mix")}><Layers3 /> Offer Mix</button>
       <button className={active === "price" ? "active" : ""} onClick={() => setActive("price")}><BadgeDollarSign /> Price Guard</button>
       <button className={active === "ladder" ? "active" : ""} onClick={() => setActive("ladder")}><ShieldCheck /> Break-Even Ladder</button>
+      <button className={active === "acquisition" ? "active" : ""} onClick={() => setActive("acquisition")}><Megaphone /> Acquisition</button>
+      <button className={active === "hire" ? "active" : ""} onClick={() => setActive("hire")}><UserPlus /> Hire Break-Even</button>
+      <button className={active === "timeline" ? "active" : ""} onClick={() => setActive("timeline")}><CalendarRange /> Timeline</button>
     </nav>
 
     {active === "mix" && <div className="decision-panel">
@@ -81,6 +91,64 @@ export default function ProDecisionStudio({ input, result, industry, currency })
       <div className="break-even-ladder">
         {ladder.levels.map((level, index) => <article key={level.name}><b>{String(index + 1).padStart(2, "0")}</b><div><small>{level.name}</small><strong>{level.wholeUnits} {industry.unit}</strong><p>{level.description}</p></div><span>{format(level.revenue, currency)}</span></article>)}
       </div>
+    </div>}
+
+    {active === "acquisition" && <div className="decision-panel">
+      <div className="panel-intro"><div><small>ACQUISITION BREAK-EVEN</small><h3>Know the CAC your unit economics can safely carry.</h3><p>Connect spend, leads, conversion and repeat purchases before scaling a channel.</p></div></div>
+      <div className="decision-input-grid four">
+        <label><span>Monthly spend</span><div><small>{currency}</small><input type="number" min="0" value={acquisition.monthlySpend} onChange={(event) => updateModel(setAcquisition, "monthlySpend", event.target.value)} /></div></label>
+        <label><span>Monthly leads</span><div><input type="number" min="1" value={acquisition.leads} onChange={(event) => updateModel(setAcquisition, "leads", event.target.value)} /></div></label>
+        <label><span>Lead conversion</span><div><input type="number" min="0.1" max="100" step="0.1" value={acquisition.conversionPct} onChange={(event) => updateModel(setAcquisition, "conversionPct", event.target.value)} /><small>%</small></div></label>
+        <label><span>Purchases / customer</span><div><input type="number" min="0.1" step="0.1" value={acquisition.repeatPurchases} onChange={(event) => updateModel(setAcquisition, "repeatPurchases", event.target.value)} /></div></label>
+      </div>
+      {!acquisitionAnalysis.valid ? <p className="decision-warning">{acquisitionAnalysis.message}</p> : <>
+        <div className="decision-summary four">
+          <article><small>Customers acquired</small><strong>{acquisitionAnalysis.customers.toFixed(1)}</strong><span>from entered leads</span></article>
+          <article><small>Customer acquisition cost</small><strong>{format(acquisitionAnalysis.cac, currency, 2)}</strong><span>per new customer</span></article>
+          <article><small>Contribution / customer</small><strong>{format(acquisitionAnalysis.customerContribution, currency, 2)}</strong><span>across repeat purchases</span></article>
+          <article className={acquisitionAnalysis.lifetimeProfitAfterCac >= 0 ? "safe" : "risk"}><small>Profit after CAC</small><strong>{format(acquisitionAnalysis.lifetimeProfitAfterCac, currency, 2)}</strong><span>before fixed overhead</span></article>
+        </div>
+        <div className={`price-verdict ${acquisitionAnalysis.lifetimeProfitAfterCac >= 0 ? "safe" : "risk"}`}><Megaphone /><div><strong>{acquisitionAnalysis.lifetimeProfitAfterCac >= 0 ? `This channel recovers spend within ${acquisitionAnalysis.breakEvenPurchases.toFixed(1)} purchase(s).` : "This channel destroys contribution at the current assumptions."}</strong><p>Maximum modelled CAC is {format(acquisitionAnalysis.maxAffordableCac, currency, 2)}. You need about {Math.ceil(acquisitionAnalysis.leadsNeededToRecoverSpend)} leads to recover this spend across the selected purchase horizon.</p></div></div>
+      </>}
+    </div>}
+
+    {active === "hire" && <div className="decision-panel">
+      <div className="panel-intro"><div><small>HIRE BREAK-EVEN</small><h3>Turn a staffing decision into a measurable sales target.</h3><p>Include payroll burden, recurring overhead and onboarding investment.</p></div></div>
+      <div className="decision-input-grid three">
+        <label><span>Monthly pay</span><div><small>{currency}</small><input type="number" min="0" value={hire.monthlyPay} onChange={(event) => updateModel(setHire, "monthlyPay", event.target.value)} /></div></label>
+        <label><span>Payroll burden</span><div><input type="number" min="0" value={hire.payrollBurdenPct} onChange={(event) => updateModel(setHire, "payrollBurdenPct", event.target.value)} /><small>%</small></div></label>
+        <label><span>Other monthly cost</span><div><small>{currency}</small><input type="number" min="0" value={hire.otherMonthlyCost} onChange={(event) => updateModel(setHire, "otherMonthlyCost", event.target.value)} /></div></label>
+        <label><span>One-time onboarding</span><div><small>{currency}</small><input type="number" min="0" value={hire.oneTimeCost} onChange={(event) => updateModel(setHire, "oneTimeCost", event.target.value)} /></div></label>
+        <label><span>Productive hours / month</span><div><input type="number" min="1" value={Number(hire.productiveHoursPerMonth.toFixed?.(1) ?? hire.productiveHoursPerMonth)} onChange={(event) => updateModel(setHire, "productiveHoursPerMonth", event.target.value)} /></div></label>
+        <label><span>Expected extra {industry.unit}</span><div><input type="number" min="0" value={hire.expectedExtraUnits} onChange={(event) => updateModel(setHire, "expectedExtraUnits", event.target.value)} /></div></label>
+      </div>
+      {!hireAnalysis.valid ? <p className="decision-warning">{hireAnalysis.message}</p> : <>
+        <div className="decision-summary four">
+          <article><small>Fully loaded cost</small><strong>{format(hireAnalysis.monthlyHireCost, currency)}</strong><span>each month</span></article>
+          <article><small>Break-even volume</small><strong>{hireAnalysis.wholeBreakEvenUnits}</strong><span>extra {industry.unit}</span></article>
+          <article><small>Required revenue</small><strong>{format(hireAnalysis.revenueRequired, currency)}</strong><span>from added capacity</span></article>
+          <article className={hireAnalysis.monthlyNetBenefit >= 0 ? "safe" : "risk"}><small>Expected monthly impact</small><strong>{format(hireAnalysis.monthlyNetBenefit, currency)}</strong><span>after hire cost</span></article>
+        </div>
+        <div className={`price-verdict ${hireAnalysis.monthlyNetBenefit >= 0 ? "safe" : "risk"}`}><UserPlus /><div><strong>{hireAnalysis.monthlyNetBenefit >= 0 ? `The onboarding investment pays back in ${hireAnalysis.paybackMonths === null ? "under one month" : `${hireAnalysis.paybackMonths.toFixed(1)} months`}.` : "The expected volume does not yet fund this hire."}</strong><p>The role needs {Math.ceil(hireAnalysis.requiredLeads)} extra leads and {hireAnalysis.utilizationNeededPct.toFixed(1)}% of entered productive capacity to cover its monthly cost.</p></div></div>
+      </>}
+    </div>}
+
+    {active === "timeline" && <div className="decision-panel">
+      <div className="panel-intro"><div><small>BREAK-EVEN TIMELINE</small><h3>Map the month your operating model and startup investment recover.</h3><p>Project up to 60 months using a transparent, compounding volume assumption.</p></div></div>
+      <div className="decision-input-grid three">
+        <label><span>Startup investment</span><div><small>{currency}</small><input type="number" min="0" value={timeline.startupInvestment} onChange={(event) => updateModel(setTimeline, "startupInvestment", event.target.value)} /></div></label>
+        <label><span>Starting monthly {industry.unit}</span><div><input type="number" min="0" value={timeline.startingMonthlyUnits} onChange={(event) => updateModel(setTimeline, "startingMonthlyUnits", event.target.value)} /></div></label>
+        <label><span>Monthly volume growth</span><div><input type="number" min="-99" step="0.1" value={timeline.growthPct} onChange={(event) => updateModel(setTimeline, "growthPct", event.target.value)} /><small>%</small></div></label>
+      </div>
+      {timelineAnalysis.valid && <>
+        <div className="decision-summary four">
+          <article><small>Operating break-even</small><strong>{timelineAnalysis.wholeOperatingBreakEvenUnits}</strong><span>{industry.unit} each month</span></article>
+          <article><small>Break-even revenue</small><strong>{format(timelineAnalysis.operatingBreakEvenRevenue, currency)}</strong><span>monthly operating floor</span></article>
+          <article className={timelineAnalysis.paybackMonth ? "safe" : "risk"}><small>Investment recovered</small><strong>{timelineAnalysis.paybackMonth ? `Month ${timelineAnalysis.paybackMonth}` : "Beyond horizon"}</strong><span>cumulative payback</span></article>
+          <article><small>Target profit reached</small><strong>{timelineAnalysis.targetProfitMonth ? `Month ${timelineAnalysis.targetProfitMonth}` : "Beyond horizon"}</strong><span>monthly target</span></article>
+        </div>
+        <div className="timeline-table"><div><span>Month</span><span>Volume</span><span>Revenue</span><span>Operating profit</span><span>Cumulative recovery</span></div>{timelineAnalysis.forecast.slice(0, 12).map((row) => <div key={row.month}><strong>{row.month}</strong><span>{row.units.toFixed(1)}</span><span>{format(row.revenue, currency)}</span><span className={row.operatingProfit >= 0 ? "positive" : "negative"}>{format(row.operatingProfit, currency)}</span><span className={row.cumulativeRecovery >= 0 ? "positive" : "negative"}>{format(row.cumulativeRecovery, currency)}</span></div>)}</div>
+      </>}
     </div>}
     <p className="decision-disclaimer">Decision Studio uses the assumptions above and deterministic formulas. It does not predict demand or guarantee a business outcome.</p>
   </section>;
