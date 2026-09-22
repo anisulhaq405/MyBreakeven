@@ -8,9 +8,10 @@ describe("central blog registry", () => {
       "pricing",
       "startup",
       "profitability",
+      "volume",
     ]);
-    expect(blogPosts).toHaveLength(32);
-    expect(Object.keys(blogPostMap)).toHaveLength(32);
+    expect(blogPosts).toHaveLength(40);
+    expect(Object.keys(blogPostMap)).toHaveLength(40);
   });
 
   it("keeps slugs, titles and canonical destinations unique", () => {

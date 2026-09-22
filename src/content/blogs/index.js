@@ -2,6 +2,7 @@ import { articleList as foundationPosts, articles as foundationPostMap } from ".
 import { pricingPosts } from "./pricing.js";
 import { startupPosts } from "./startup.js";
 import { profitabilityPosts } from "./profitability.js";
+import { volumePosts } from "./volume.js";
 
 const seoTitleOverrides = {
   "how-much-does-it-cost-to-start-a-cleaning-business": "Cleaning Business Startup Cost Guide",
@@ -21,6 +22,10 @@ const seoTitleOverrides = {
   "ecommerce-break-even": "Ecommerce Break-Even Guide",
   "restaurant-break-even": "Restaurant Break-Even Guide",
   "salon-break-even": "Salon Break-Even and Pricing Guide",
+  "how-many-lawns-100k": "How Many Lawns to Make $100k?",
+  "how-many-detailing-jobs-week": "Detailing Jobs Per Week to Go Full Time",
+  "restaurant-covers-per-night-break-even": "Restaurant Covers Needed Per Night",
+  "how-many-agency-retainer-clients": "How Many Retainer Clients Does an Agency Need?",
 };
 
 const cleanText = value => typeof value === "string" ? value.replace(/^\*\*\s*/, "") : value;
@@ -37,6 +42,7 @@ export const blogCollections = Object.freeze({
   pricing: pricingPosts.map(normalizePost),
   startup: startupPosts.map(normalizePost),
   profitability: profitabilityPosts.map(normalizePost),
+  volume: volumePosts.map(normalizePost),
 });
 
 export const blogPosts = Object.values(blogCollections)
