@@ -1,6 +1,6 @@
 export const PLAN_LIMITS = Object.freeze({
   free: Object.freeze({ savedScenarios: 3, comparisons: 0, exports: false, costDrift: false, advancedAnalysis: false, forecasts: false }),
-  pro: Object.freeze({ savedScenarios: 100, comparisons: 3, exports: true, costDrift: true, advancedAnalysis: true, forecasts: true }),
+  pro: Object.freeze({ savedScenarios: 100, comparisons: 3, exports: true, costDrift: true, advancedAnalysis: true, forecasts: true, decisionStudio: true }),
 });
 
 export const normalizePlan = (plan) => plan === "pro" ? "pro" : "free";
