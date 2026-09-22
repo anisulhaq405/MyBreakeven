@@ -35,7 +35,7 @@ const Pricing = () => (
             $9.99 <i>/ month</i>
           </strong>
           <p>Advanced planning for active owners and teams.</p>
-          <ul><li>Up to 100 saved scenarios</li><li>Advanced break-even intelligence dashboard</li><li>Profit forecast, margin of safety and capacity solver</li><li>Risk sensitivity and price-volume heatmap</li><li>Compare 3 plans side by side</li><li>CSV and professional PDF reports</li></ul>
+          <ul><li>Up to 100 saved scenarios</li><li>Offer Mix Studio for multiple products and services</li><li>Price Guard and discount recovery analysis</li><li>Transparent Break-Even Ladder</li><li>Profit forecast, margin of safety and capacity solver</li><li>Risk sensitivity and price-volume heatmap</li><li>Compare 3 plans side by side</li><li>CSV and professional PDF reports</li></ul>
           <a className="page-button" href={POLAR_CHECKOUT_URL}>
             Upgrade to Pro
           </a>
