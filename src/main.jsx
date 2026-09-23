@@ -12,7 +12,7 @@ import {
 import { calculate } from "./engine";
 import { fieldLabels, industries } from "./industries";
 import Insights from "./Insights";
-import BlogSection from "./BlogSection";
+import HomeBlogShowcase from "./HomeBlogShowcase";
 import SecondaryPage from "./Pages";
 import { SiteFooter, SiteHeader } from "./SiteChrome";
 import ScenarioTools from "./ScenarioTools";
@@ -247,7 +247,7 @@ function App() {
           </div>
         </section>
         <HomeSEO />
-        <BlogSection />
+        <HomeBlogShowcase />
         <section className="pricing" id="pricing">
           <span>START WITHOUT AN EMAIL GATE</span>
           <h2>Calculate free. Save when it matters.</h2>
