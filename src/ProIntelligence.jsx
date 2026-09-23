@@ -6,11 +6,11 @@ import ProDecisionStudio from "./ProDecisionStudio";
 const money=(n,c)=>new Intl.NumberFormat("en-US",{style:"currency",currency:c,maximumFractionDigits:0}).format(n||0);
 const points=(values,w=640,h=190)=>{const min=Math.min(0,...values),max=Math.max(1,...values),span=max-min;return values.map((v,i)=>`${(i/(values.length-1))*w},${h-((v-min)/span)*h}`).join(" ")};
 
-export default function ProIntelligence({input,result,industry,currency,isPro}){
+export default function ProIntelligence({input,result,industry,industryKey,currency,isPro,userId}){
   const [plannedUnits,setPlannedUnits]=useState(Math.ceil(result.jobs*1.15));
   const [growth,setGrowth]=useState(2);
   const analysis=useMemo(()=>advancedAnalysis(input,result,{plannedUnits,growthPct:growth}),[input,result,plannedUnits,growth]);
-  if(!isPro) return <section className="pro-intel locked-intel"><LockKeyhole/><div><span>PRO INTELLIGENCE</span><h2>See the decision behind the break-even number</h2><p>Unlock Offer Mix, Price Guard, Acquisition, Hire and Timeline tools—plus forecasting, risk sensitivity, capacity pricing and advanced charts.</p><a href="/pricing/">Explore Pro — $9.99/month</a></div></section>;
+  if(!isPro) return <section className="pro-intel locked-intel"><LockKeyhole/><div><span>PRO INTELLIGENCE</span><h2>See the decision behind the break-even number</h2><p>Unlock Offer Mix, Price Guard, Acquisition, Hire, Timeline and Monthly Monitor tools—plus forecasting, risk sensitivity and advanced charts.</p><a href="/pricing/">Explore Pro — $9.99/month</a></div></section>;
   const maxImpact=Math.max(1,...analysis.drivers.map(x=>Math.abs(x.impact)));
   const profits=analysis.forecast.map(x=>x.profit);
   return <section className="pro-intel">
@@ -28,7 +28,7 @@ export default function ProIntelligence({input,result,industry,currency,isPro}){
       <article><header><div><span>Capacity solver</span><strong>Can the team deliver?</strong></div></header><dl><div><dt>Capacity-safe minimum price</dt><dd>{analysis.capacityPrice?money(analysis.capacityPrice,currency):"Not available"}</dd></div><div><dt>Additional team members</dt><dd>{analysis.additionalWorkers ?? "Not available"}</dd></div><div><dt>Planned revenue</dt><dd>{money(analysis.plannedRevenue,currency)}</dd></div><div><dt>Safety cushion</dt><dd>{money(analysis.marginSafetyRevenue,currency)}</dd></div></dl></article>
       <article className="wide"><header><div><span>Price × volume</span><strong>Monthly profit heatmap</strong></div><small>Green profit · red loss</small></header><div className="heatmap"><div/><>{[-10,-5,0,5,10].map(x=><b key={x}>{x>0?"+":""}{x}% price</b>)}</>{analysis.heatmap.map(row=><React.Fragment key={row.volumeFactor}><b>{Math.round(row.volumeFactor*100)}% volume</b>{row.cells.map(cell=><span className={cell.profit>=0?"profit":"loss"} key={cell.priceChange}>{money(cell.profit,currency)}</span>)}</React.Fragment>)}</div></article>
     </div>
-    <ProDecisionStudio input={input} result={result} industry={industry} currency={currency} />
+    <ProDecisionStudio input={input} result={result} industry={industry} industryKey={industryKey} currency={currency} userId={userId} />
     <p className="intel-note">Analysis is based on your assumptions and formula engine outputs; it is not accounting, tax, lending or investment advice.</p>
   </section>;
 }

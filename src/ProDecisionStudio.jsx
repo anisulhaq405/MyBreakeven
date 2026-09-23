@@ -1,13 +1,14 @@
 import React, { useMemo, useState } from "react";
-import { BadgeDollarSign, CalendarRange, Layers3, Megaphone, Plus, ShieldCheck, Trash2, UserPlus } from "lucide-react";
+import { BadgeDollarSign, CalendarRange, Layers3, Megaphone, Plus, ShieldCheck, Trash2, UserPlus, ChartNoAxesCombined } from "lucide-react";
 import { analyzeAcquisitionBreakEven, analyzeHireBreakEven, analyzeOfferMix, analyzePriceGuard, buildBreakEvenLadder, buildBreakEvenTimeline } from "./proDecisionEngine";
+import MonthlyMonitor from "./MonthlyMonitor";
 
 const numeric = (value) => Number.isFinite(Number(value)) ? Number(value) : 0;
 const format = (value, currency, digits = 0) => new Intl.NumberFormat("en-US", {
   style: "currency", currency, maximumFractionDigits: digits,
 }).format(value || 0);
 
-export default function ProDecisionStudio({ input, result, industry, currency }) {
+export default function ProDecisionStudio({ input, result, industry, industryKey, currency, userId }) {
   const baseVariable = input.materialCost + input.laborCost + input.otherVariableCost + input.acquisitionCost;
   const [active, setActive] = useState("mix");
   const [discount, setDiscount] = useState(10);
@@ -44,6 +45,7 @@ export default function ProDecisionStudio({ input, result, industry, currency })
       <button className={active === "acquisition" ? "active" : ""} onClick={() => setActive("acquisition")}><Megaphone /> Acquisition</button>
       <button className={active === "hire" ? "active" : ""} onClick={() => setActive("hire")}><UserPlus /> Hire Break-Even</button>
       <button className={active === "timeline" ? "active" : ""} onClick={() => setActive("timeline")}><CalendarRange /> Timeline</button>
+      <button className={active === "monitor" ? "active" : ""} onClick={() => setActive("monitor")}><ChartNoAxesCombined /> Monthly Monitor</button>
     </nav>
 
     {active === "mix" && <div className="decision-panel">
@@ -150,6 +152,7 @@ export default function ProDecisionStudio({ input, result, industry, currency })
         <div className="timeline-table"><div><span>Month</span><span>Volume</span><span>Revenue</span><span>Operating profit</span><span>Cumulative recovery</span></div>{timelineAnalysis.forecast.slice(0, 12).map((row) => <div key={row.month}><strong>{row.month}</strong><span>{row.units.toFixed(1)}</span><span>{format(row.revenue, currency)}</span><span className={row.operatingProfit >= 0 ? "positive" : "negative"}>{format(row.operatingProfit, currency)}</span><span className={row.cumulativeRecovery >= 0 ? "positive" : "negative"}>{format(row.cumulativeRecovery, currency)}</span></div>)}</div>
       </>}
     </div>}
+    {active === "monitor" && <MonthlyMonitor input={input} result={result} industry={industry} industryKey={industryKey} currency={currency} userId={userId} />}
     <p className="decision-disclaimer">Decision Studio uses the assumptions above and deterministic formulas. It does not predict demand or guarantee a business outcome.</p>
   </section>;
 }

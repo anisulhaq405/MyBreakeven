@@ -20,12 +20,14 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
   const [saveState, setSaveState] = useState({ loading: false, message: "", error: "" });
   const [briefMessage, setBriefMessage] = useState("");
   const [plan, setPlan] = useState("free");
+  const [userId, setUserId] = useState(null);
   const limits = limitsFor(plan);
   const isPro = plan === "pro";
   useEffect(() => {
     import("./authClient").then(async ({ supabase }) => {
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) return;
+      setUserId(user.id);
       const { data } = await supabase.from("profiles").select("plan").eq("id", user.id).single();
       setPlan(normalizePlan(data?.plan));
     });
@@ -246,7 +248,7 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
         <div className="brief-actions">{decisionBrief.actions.map((action,index) => <article className={action.severity} key={action.title}><b>{String(index + 1).padStart(2,"0")}</b><div><strong>{action.title}</strong><p>{action.detail}</p></div></article>)}</div>
         <div className="brief-share"><button onClick={copyBrief}><Share2 /> Copy brief</button><button onClick={downloadBrief}><Download /> Download brief</button>{briefMessage && <span role="status">{briefMessage}</span>}</div>
       </section>}
-      <ProIntelligence input={input} result={result} industry={industry} currency={currency} isPro={isPro} />
+      <ProIntelligence input={input} result={result} industry={industry} industryKey={industryKey} currency={currency} isPro={isPro} userId={userId} />
     </section>
   );
 }
