@@ -22,6 +22,7 @@ import { POLAR_CHECKOUT_URL } from "./billing";
 import "./styles.css";
 import "./industries.css";
 import "./visuals.css";
+import "./home-presentation.css";
 const quantity = (n) => new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 }).format(n || 0);
 function App() {
   const initialIndustry = new URLSearchParams(window.location.search).get("industry");
