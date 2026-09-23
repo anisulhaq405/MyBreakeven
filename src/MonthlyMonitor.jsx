@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { analyzeMonth, snapshotPlan } from "./monthlyMonitor";
+import { deleteMonthlyRecord, monthlyMonitorKey, readMonthlyRecords, upsertMonthlyRecord } from "./monthlyMonitorStorage";
 import "./monthly-monitor.css";
 
 const currentMonth = () => {
@@ -7,7 +8,6 @@ const currentMonth = () => {
   return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
 };
 const emptyActual = month => ({ month, units: "", revenue: "", variableCosts: "", fixedCosts: "", ownerPay: "", inquiries: "" });
-const storageKey = (userId, industryKey, currency) => `mybreakeven:monthly-monitor:v1:${userId}:${industryKey}:${currency}`;
 const money = (value, currency) => new Intl.NumberFormat("en-US", { style: "currency", currency, maximumFractionDigits: 0 }).format(value);
 const count = value => new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 }).format(value);
 
@@ -16,7 +16,7 @@ export default function MonthlyMonitor({ input, result, industry, industryKey, c
   const [records, setRecords] = useState([]);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
-  const key = userId ? storageKey(userId, industryKey, currency) : null;
+  const key = userId ? monthlyMonitorKey(userId, industryKey, currency) : null;
   const plan = useMemo(() => snapshotPlan(input, result), [input, result]);
   const review = useMemo(() => analyzeMonth(actual, plan), [actual, plan]);
 
@@ -26,8 +26,7 @@ export default function MonthlyMonitor({ input, result, industry, industryKey, c
     setError("");
     if (!key) { setRecords([]); return; }
     try {
-      const parsed = JSON.parse(localStorage.getItem(key) || "[]");
-      setRecords(Array.isArray(parsed) ? parsed.filter(row => row?.actual && row?.plan && /^\d{4}-(0[1-9]|1[0-2])$/.test(row.actual.month)).slice(0, 24) : []);
+      setRecords(readMonthlyRecords(localStorage, key));
     } catch {
       setRecords([]);
       setError("Saved months could not be read in this browser. No data was changed.");
@@ -40,9 +39,9 @@ export default function MonthlyMonitor({ input, result, industry, industryKey, c
     setMessage("");
     setError("");
   };
-  const persist = next => {
+  const persist = operation => {
     try {
-      localStorage.setItem(key, JSON.stringify(next));
+      const next = operation();
       setRecords(next);
       return true;
     } catch {
@@ -55,12 +54,11 @@ export default function MonthlyMonitor({ input, result, industry, industryKey, c
     if (!key) return setError("Your account is still loading. Try again in a moment.");
     if (!review.valid) return setError(review.message);
     if (!records.some(row => row.actual.month === actual.month) && records.length >= 24) return setError("The 24-month browser limit is reached. Remove an older month to add another.");
-    const next = [...records.filter(row => row.actual.month !== actual.month), { actual: { ...actual }, plan: { ...plan } }].sort((a, b) => b.actual.month.localeCompare(a.actual.month));
-    if (persist(next)) { setError(""); setMessage(`${actual.month} saved in this browser with today's plan snapshot.`); }
+    if (persist(() => upsertMonthlyRecord(localStorage, key, records, { actual: { ...actual }, plan: { ...plan } }))) { setError(""); setMessage(`${actual.month} saved in this browser with today's plan snapshot.`); }
   };
   const remove = () => {
     if (!key || !records.some(row => row.actual.month === actual.month)) return;
-    if (persist(records.filter(row => row.actual.month !== actual.month))) {
+    if (persist(() => deleteMonthlyRecord(localStorage, key, records, actual.month))) {
       setActual(emptyActual(actual.month));
       setError("");
       setMessage(`${actual.month} removed from this browser.`);
