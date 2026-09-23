@@ -1,0 +1,6 @@
+# Canonical host: keep every path and query string on the HTTPS apex domain.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.mybreakeven\.com$ [NC]
+RewriteRule ^ https://mybreakeven.com%{REQUEST_URI} [R=301,L,NE]
+</IfModule>
