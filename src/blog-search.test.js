@@ -15,6 +15,6 @@ describe("blog discovery", () => {
   });
   it("preserves each guide's own publication date", () => {
     expect(new Set(blogPosts.map(post => post.published)).size).toBeGreaterThan(1);
-    expect(blogPosts.every(post => /^2026-09-(10|17|18|20|22)$/.test(post.published))).toBe(true);
+    expect(blogPosts.every(post => /^2026-09-(10|17|18|20|22|23)$/.test(post.published))).toBe(true);
   });
 });

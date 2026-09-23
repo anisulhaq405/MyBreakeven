@@ -4,7 +4,9 @@ const dateLabel = value => new Date(`${value}T12:00:00Z`).toLocaleDateString("en
 
 export default function LongformArticle({ article: a }) {
   const slug = a?.slug;
-  const guideType = a?.cluster === "profitability"
+  const guideType = a?.cluster === "concepts"
+    ? "PRACTICAL GUIDE"
+    : a?.cluster === "profitability"
     ? "PROFITABILITY GUIDE"
     : a?.cluster?.startsWith("startup")
       ? "STARTUP COST GUIDE"
@@ -24,7 +26,7 @@ export default function LongformArticle({ article: a }) {
     <div className="article-tags" aria-label="Article topics">{a.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
     <figure className="article-featured"><img src={a.image} alt={a.alt} width="1200" height="675" fetchPriority="high" decoding="async"/><figcaption>{a.imageCaption}</figcaption></figure>
     <div className="day1-markdown" dangerouslySetInnerHTML={{ __html: a.html }} />
-    {!a.html.includes('href="https://mybreakeven.com/blogs/"') && <p><a href="/blogs/">Browse the MyBreakeven blog hub</a> for related planning guides.</p>}
+    {!a.html.includes('href="/blogs/"') && !a.html.includes('href="https://mybreakeven.com/blogs/"') && <p><a href="/blogs/">Browse the MyBreakeven blog hub</a> for related planning guides.</p>}
     <p className="article-note">Planning estimates only—not accounting, tax, legal or lending advice.</p>
   </article>;
 }

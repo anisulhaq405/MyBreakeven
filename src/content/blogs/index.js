@@ -3,6 +3,7 @@ import { pricingPosts } from "./pricing.js";
 import { startupPosts } from "./startup.js";
 import { profitabilityPosts } from "./profitability.js";
 import { volumePosts } from "./volume.js";
+import { conceptPosts } from "./concepts.js";
 
 const seoTitleOverrides = {
   "how-much-does-it-cost-to-start-a-cleaning-business": "Cleaning Business Startup Cost Guide",
@@ -54,6 +55,7 @@ export const blogCollections = Object.freeze({
   startup: startupPosts.map(normalizePost),
   profitability: profitabilityPosts.map(normalizePost),
   volume: volumePosts.map(normalizePost),
+  concepts: conceptPosts.map(normalizePost),
 });
 
 export const blogPosts = Object.values(blogCollections)
@@ -61,7 +63,7 @@ export const blogPosts = Object.values(blogCollections)
   .sort((a, b) => String(b.published).localeCompare(String(a.published)));
 
 export const blogModels = Object.freeze(
-  [...new Set(blogPosts.map(post => post.tag).filter(Boolean))],
+  [...new Set(blogPosts.map(post => post.tag).filter(tag => tag && tag !== "Break-Even Concepts"))],
 );
 
 export const blogLibrarySummary = Object.freeze({
