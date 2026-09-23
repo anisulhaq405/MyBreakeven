@@ -178,6 +178,7 @@ function App() {
         </section>
         <Insights result={result} input={input} industry={industry} currency={currency} />
         <ScenarioTools result={result} input={input} industry={industry} industryKey={industryKey} currency={currency} />
+        <HomeBlogShowcase />
         <section className="proof" id="how">
           <span>ONE NUMBER ISN'T ENOUGH</span>
           <h2>
@@ -248,7 +249,6 @@ function App() {
           </div>
         </section>
         <HomeSEO />
-        <HomeBlogShowcase />
         <section className="pricing" id="pricing">
           <span>START WITHOUT AN EMAIL GATE</span>
           <h2>Calculate free. Save when it matters.</h2>
