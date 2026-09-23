@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./sentry";
 import {
@@ -281,5 +281,10 @@ function App() {
   );
 }
 const rootElement = document.getElementById("root");
-createRoot(rootElement).render(<><App /><AnalyticsConsent /></>);
-requestAnimationFrame(() => rootElement.removeAttribute("data-booting"));
+function RevealAfterRender() {
+  useLayoutEffect(() => {
+    rootElement.removeAttribute("data-booting");
+  }, []);
+  return null;
+}
+createRoot(rootElement).render(<><App /><AnalyticsConsent /><RevealAfterRender /></>);
