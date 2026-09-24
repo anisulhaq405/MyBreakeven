@@ -2,6 +2,7 @@ import React, { lazy, Suspense, useEffect, useState } from "react";
 import { CheckCircle2, Mail, ShieldCheck, Sparkles } from "lucide-react";
 import BlogSection from "./BlogSection";
 import BlogArticle from "./BlogArticle";
+import ProUserGuide from "./ProUserGuide";
 import { blogLibrarySummary } from "./content/blogs/index.js";
 import { SiteFooter, SiteHeader } from "./SiteChrome";
 import IndustryPage, { industryPages } from "./IndustryPage";
@@ -37,6 +38,7 @@ const Pricing = () => (
           </strong>
           <p>Advanced planning for active owners and teams.</p>
           <ul><li>Up to 100 saved scenarios</li><li>Pro Command Center with search, filters and portfolio KPIs</li><li>Executive Decision Brief with shareable action plan</li><li>Offer Mix Studio for multiple products and services</li><li>Price Guard and discount recovery analysis</li><li>Customer Acquisition Break-Even and CAC payback</li><li>Hire Break-Even and staffing utilization</li><li>Startup recovery and break-even timeline</li><li>Monthly Break-Even Monitor (saved in this browser)</li><li>Profit forecast, margin of safety and capacity solver</li><li>Saved-plan cost drift and risk sensitivity</li><li>Compare 3 plans side by side</li><li>CSV and professional PDF reports</li></ul>
+          <a href="/pro-user-guide/">How to use every Pro feature</a>
           <a className="page-button" href={POLAR_CHECKOUT_URL}>
             Upgrade to Pro
           </a>
@@ -276,6 +278,7 @@ const LegalPage = ({ page }) => (
 );
 export default function SecondaryPage({ path }) {
   const pageMeta = {
+    "/pro-user-guide": ["MyBreakeven Pro Calculator User Guide", "Step-by-step guide to MyBreakeven Pro: enter costs, read break-even results, use advanced analysis, save scenarios and export reports."],
     "/pricing": ["MyBreakeven Pricing: Free & Pro Business Planning", "Compare MyBreakeven Free and Pro plans for industry break-even calculators, saved scenarios, cost-drift analysis, comparisons and reports."],
     "/blogs": ["Small Business Break-Even Guides | MyBreakeven", "Read practical break-even guides for cleaning, landscaping, photography, agencies, mobile detailing, e-commerce, restaurants and salons."],
     "/about-us": ["About MyBreakeven | Formula-Backed Business Planning", "Learn how MyBreakeven turns contribution margin, sales demand and operating capacity into transparent business planning estimates."],
@@ -302,7 +305,7 @@ export default function SecondaryPage({ path }) {
   const authPaths = ["/login", "/signup", "/forgot-password", "/reset-password"];
   const content = calculatorSlug && industryPages[calculatorSlug] ? <IndustryPage slug={calculatorSlug} /> : slug ? <BlogArticle slug={slug} /> :
     authPaths.includes(path) ? <Suspense fallback={<p className="route-loading">Loading secure account…</p>}><AuthPage path={path} /></Suspense> : path === "/dashboard" ? <Suspense fallback={<p className="route-loading">Loading secure workspace…</p>}><DashboardPage /></Suspense> :
-    path === "/pricing" ? (
+    path === "/pro-user-guide" ? <ProUserGuide /> : path === "/pricing" ? (
       <Pricing />
     ) : path === "/blogs" || path === "/blog" ? (
       <div className="blogs-page">
