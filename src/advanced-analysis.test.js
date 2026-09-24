@@ -10,6 +10,20 @@ describe("Pro advanced analysis",()=>{
   it("calculates margin of safety and a capacity-safe price",()=>{expect(analysis.marginSafetyRevenue).toBe(1000);expect(analysis.marginSafetyPct).toBe(25);expect(analysis.capacityPrice).toBeGreaterThan(50)});
   it("ranks sensitivity drivers and builds a price-volume heatmap",()=>{expect(analysis.drivers).toHaveLength(7);expect(analysis.heatmap).toHaveLength(4);expect(analysis.heatmap[0].cells).toHaveLength(5)});
   it("builds a twelve-month compounding forecast",()=>{expect(analysis.forecast).toHaveLength(12);expect(analysis.forecast[11].units).toBeGreaterThan(analysis.forecast[0].units)});
+  it("keeps risk sensitivity finite when fixed costs and target profit are zero",()=>{
+    const zeroNeed={...input,fixedCosts:0,ownerPay:0,targetProfit:0};
+    const zeroResult=calculate(zeroNeed);
+    const zeroAnalysis=advancedAnalysis(zeroNeed,zeroResult);
+    expect(zeroAnalysis.valid).toBe(true);
+    expect(zeroAnalysis.drivers.every(driver=>driver.impact === null || Number.isFinite(driver.impact))).toBe(true);
+  });
+  it("labels a non-viable price change without inventing a percentage",()=>{
+    const nearFloor={...input,price:52};
+    const nearResult=calculate(nearFloor);
+    const priceDriver=advancedAnalysis(nearFloor,nearResult).drivers.find(driver=>driver.name === "Selling price");
+    expect(priceDriver.viable).toBe(false);
+    expect(priceDriver.impact).toBeNull();
+  });
   it("handles zero productive capacity without returning infinity",()=>{
     const zeroCapacity={...input,utilizationPct:0};
     const zeroResult=calculate(zeroCapacity);
