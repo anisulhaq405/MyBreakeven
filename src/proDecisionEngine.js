@@ -19,7 +19,7 @@ export function analyzeOfferMix(input, offers = []) {
       hours: D(offer.hours),
     }))
     .filter((offer) => offer.price.gt(0) && offer.variableCost.gte(0) && offer.mixPct.gt(0) && offer.hours.gt(0));
-  if (!validOffers.length) return { valid: false, message: "Add at least one offer with a positive price, mix and delivery time." };
+  if (!validOffers.length || validOffers.length !== offers.length) return { valid: false, message: "Every offer needs a positive price, sales mix and delivery time, plus a non-negative variable cost." };
   const mixTotal = validOffers.reduce((sum, offer) => sum.plus(offer.mixPct), D(0));
   const rate = netRate(input);
   const rows = validOffers.map((offer) => {
@@ -137,7 +137,9 @@ export function analyzeAcquisitionBreakEven(input, currentResult, options = {}) 
   const leads = D(options.leads);
   const conversion = D(options.conversionPct).div(100);
   const repeatPurchases = D(options.repeatPurchases);
-  const contribution = D(currentResult?.contribution);
+  // The base contribution already deducts the calculator's per-sale acquisition estimate.
+  // Replace it with this channel's spend-derived CAC instead of deducting both.
+  const contribution = D(currentResult?.contribution).plus(input.acquisitionCost);
   if (!leads.gt(0) || !conversion.gt(0) || conversion.gt(1) || !repeatPurchases.gt(0) || !contribution.gt(0)) {
     return { valid: false, message: "Use positive leads, contribution and purchases, with conversion between 0% and 100%." };
   }

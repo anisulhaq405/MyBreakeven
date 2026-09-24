@@ -129,9 +129,9 @@ export default function ProDecisionStudio({ input, result, industry, industryKey
           <article><small>Fully loaded cost</small><strong>{format(hireAnalysis.monthlyHireCost, currency)}</strong><span>each month</span></article>
           <article><small>Break-even volume</small><strong>{hireAnalysis.wholeBreakEvenUnits}</strong><span>extra {industry.unit}</span></article>
           <article><small>Required revenue</small><strong>{format(hireAnalysis.revenueRequired, currency)}</strong><span>from added capacity</span></article>
-          <article className={hireAnalysis.monthlyNetBenefit >= 0 ? "safe" : "risk"}><small>Expected monthly impact</small><strong>{format(hireAnalysis.monthlyNetBenefit, currency)}</strong><span>after hire cost</span></article>
+          <article className={hireAnalysis.monthlyNetBenefit > 0 ? "safe" : "risk"}><small>Expected monthly impact</small><strong>{format(hireAnalysis.monthlyNetBenefit, currency)}</strong><span>after hire cost</span></article>
         </div>
-        <div className={`price-verdict ${hireAnalysis.monthlyNetBenefit >= 0 ? "safe" : "risk"}`}><UserPlus /><div><strong>{hireAnalysis.monthlyNetBenefit >= 0 ? `The onboarding investment pays back in ${hireAnalysis.paybackMonths === null ? "under one month" : `${hireAnalysis.paybackMonths.toFixed(1)} months`}.` : "The expected volume does not yet fund this hire."}</strong><p>The role needs {Math.ceil(hireAnalysis.requiredLeads)} extra leads and {hireAnalysis.utilizationNeededPct.toFixed(1)}% of entered productive capacity to cover its monthly cost.</p></div></div>
+        <div className={`price-verdict ${hireAnalysis.monthlyNetBenefit > 0 ? "safe" : "risk"}`}><UserPlus /><div><strong>{hireAnalysis.monthlyNetBenefit > 0 ? `The onboarding investment pays back in ${hireAnalysis.paybackMonths.toFixed(1)} months.` : "The expected volume does not yet fund this hire."}</strong><p>The role needs {Math.ceil(hireAnalysis.requiredLeads)} extra leads and {hireAnalysis.utilizationNeededPct.toFixed(1)}% of entered productive capacity to cover its monthly cost.</p></div></div>
       </>}
     </div>}
 

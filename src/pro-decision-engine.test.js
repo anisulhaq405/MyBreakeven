@@ -22,6 +22,15 @@ describe("Pro decision engines", () => {
     expect(analysis.capacityGapHours).toBeGreaterThan(0);
   });
 
+  it("rejects an invalid offer instead of silently removing it from the mix", () => {
+    const analysis = analyzeOfferMix(input, [
+      { name: "Core", price: 100, variableCost: 50, mixPct: 70, hours: 2 },
+      { name: "Premium", price: 0, variableCost: 80, mixPct: 30, hours: 4 },
+    ]);
+    expect(analysis.valid).toBe(false);
+    expect(analysis.message).toMatch(/Every offer/);
+  });
+
   it("shows the volume required to recover a discount", () => {
     const guard = analyzePriceGuard(input, calculate(input), 10);
     expect(guard.valid).toBe(true);
@@ -47,10 +56,10 @@ describe("Pro decision engines", () => {
     const analysis = analyzeAcquisitionBreakEven(input, calculate(input), { monthlySpend: 1000, leads: 100, conversionPct: 20, repeatPurchases: 2 });
     expect(analysis.customers).toBe(20);
     expect(analysis.cac).toBe(50);
-    expect(analysis.customerContribution).toBe(100);
-    expect(analysis.lifetimeProfitAfterCac).toBe(50);
-    expect(analysis.breakEvenPurchases).toBe(1);
-    expect(analysis.leadsNeededToRecoverSpend).toBe(50);
+    expect(analysis.customerContribution).toBe(110);
+    expect(analysis.lifetimeProfitAfterCac).toBe(60);
+    expect(analysis.breakEvenPurchases).toBeCloseTo(50 / 55);
+    expect(analysis.leadsNeededToRecoverSpend).toBeCloseTo(1000 / (55 * 2 * .2));
   });
 
   it("shows when an additional hire pays for itself", () => {
