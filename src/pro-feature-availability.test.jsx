@@ -15,6 +15,7 @@ const props = { input, result, industry, industryKey, currency: "USD", userId: "
 describe("Pro feature availability", () => {
   it("renders the protected Decision Studio and all seven tool tabs for Pro", () => {
     const html = renderToStaticMarkup(<ProIntelligence {...props} isPro />);
+    expect(html).toContain('id="pro-analysis"');
     for (const feature of ["Offer Mix", "Price Guard", "Break-Even Ladder", "Acquisition", "Hire Break-Even", "Timeline", "Monthly Monitor"]) {
       expect(html).toContain(feature);
     }
@@ -23,6 +24,7 @@ describe("Pro feature availability", () => {
 
   it("keeps decision tools hidden from a free visitor", () => {
     const html = renderToStaticMarkup(<ProIntelligence {...props} isPro={false} />);
+    expect(html).toContain('id="pro-analysis"');
     expect(html).toContain("Explore Pro");
     expect(html).not.toContain("PRO DECISION STUDIO");
     expect(html).not.toContain("Save / update month");
