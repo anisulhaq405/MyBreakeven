@@ -12,6 +12,17 @@ const calculators = {
   "salon-break-even-calculator": ["Salon Break-Even Calculator | MyBreakeven", "Calculate salon appointments, revenue, customer inquiries and stylist capacity after products, labor, disposables, laundry and marketing costs."],
 };
 
+const calculatorIndustries = {
+  "cleaning-business-break-even-calculator": "cleaning",
+  "landscaping-break-even-calculator": "landscaping",
+  "photography-business-break-even-calculator": "photography",
+  "agency-break-even-calculator": "agency",
+  "mobile-detailing-break-even-calculator": "detailing",
+  "ecommerce-break-even-calculator": "ecommerce",
+  "restaurant-break-even-calculator": "restaurant",
+  "salon-break-even-calculator": "salon",
+};
+
 const base = await readFile(new URL("../dist/index.html", import.meta.url), "utf8");
 
 const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
@@ -118,7 +129,7 @@ for (const [slug, [title, description]] of Object.entries(calculators)) {
     .replace(/<link rel="alternate" hreflang="en-US" href="[^"]*"\s*\/?>/, `<link rel="alternate" hreflang="en-US" href="${canonical}" />`)
     .replace(/<link rel="alternate" hreflang="x-default" href="[^"]*"\s*\/?>/, `<link rel="alternate" hreflang="x-default" href="${canonical}" />`)
     .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, `<script type="application/ld+json">${JSON.stringify(schema)}</script>`)
-    .replace(/<div id="root"[^>]*>[\s\S]*?<\/div>\s*<\/body>/, `<div id="root" data-booting><main><h1>${title.replace(" | MyBreakeven", "")}</h1><p>${description}</p><p>Use the free MyBreakeven calculator to test exact break-even revenue, required sales volume, customer demand and operating capacity.</p><a href="/#calculator">Use the calculator</a></main></div></body>`);
+    .replace(/<div id="root"[^>]*>[\s\S]*?<\/div>\s*<\/body>/, `<div id="root" data-booting><main><h1>${title.replace(" | MyBreakeven", "")}</h1><p>${description}</p><p>Use the free MyBreakeven calculator to test exact break-even revenue, required sales volume, customer demand and operating capacity.</p><a href="/?industry=${calculatorIndustries[slug]}#calculator">Use the ${escapeHtml(title.replace(" | MyBreakeven", ""))}</a></main></div></body>`);
   await mkdir(new URL(`../dist/${route}/`, import.meta.url), { recursive: true });
   await writeFile(new URL(`../dist/${route}/index.html`, import.meta.url), html);
 }
