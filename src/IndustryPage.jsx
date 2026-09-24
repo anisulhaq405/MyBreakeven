@@ -16,6 +16,21 @@ export const industryPages = {
 
 const money = (value) => new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 }).format(value);
 
+function answerQuestion(question, result, industry) {
+  const unit = industry.unit;
+  const v = industry.values;
+  if (/price|returns|shipping/i.test(question)) {
+    return `In this example, each ${industry.singular} contributes ${money(result.contribution)} after direct costs and fees. Changing the price or a per-${industry.singular} cost changes that contribution and therefore the number of ${unit} needed. Enter your own assumptions to see the effect.`;
+  }
+  if (/capacity|crew|team|cleaners|editing|kitchen|stylist|mobile|handle|serve/i.test(question)) {
+    return `The example requires ${result.wholeJobs} whole ${unit} and estimates capacity for ${result.wholeCapacity} whole ${unit} per month, using ${v.workers} team members, ${v.hoursPerWorker} hours each per week and ${v.utilizationPct}% productive time. Adjust those inputs to check your own delivery limit.`;
+  }
+  if (/leads|inquiries|bookings/i.test(question)) {
+    return `At the example ${v.conversionPct}% inquiry-to-${industry.singular} conversion rate, the model estimates at least ${result.wholeLeads} inquiries for the monthly target. Use your measured conversion rate for a more useful demand estimate.`;
+  }
+  return `At the example price of ${money(v.price)}, each ${industry.singular} contributes ${money(result.contribution)} after direct costs and fees. Covering ${money(result.fixedNeed)} in overhead, owner pay and target profit requires ${result.wholeJobs} whole ${unit}, or ${money(result.practicalRevenue)} in practical monthly sales. Replace these sample inputs with your figures.`;
+}
+
 export default function IndustryPage({ slug }) {
   const page = industryPages[slug];
   if (!page) return null;
@@ -33,9 +48,9 @@ export default function IndustryPage({ slug }) {
         <aside>
           <small>EXAMPLE MODEL</small>
           <strong>{money(example.revenue)}</strong>
-          <span>exact monthly break-even revenue</span>
+          <span>sample break-even revenue, before rounding up to whole {industry.unit}</span>
           <div><b>{example.jobs.toFixed(2)}</b> {industry.unit} required</div>
-          <div><b>{example.capacity.toFixed(2)}</b> {industry.unit} capacity</div>
+          <div><b>{example.wholeCapacity}</b> whole {industry.unit} capacity</div>
         </aside>
       </section>
       <section className="industry-content">
@@ -53,7 +68,7 @@ export default function IndustryPage({ slug }) {
         <div className="industry-faq">
           <span>QUESTIONS THIS MODEL ANSWERS</span>
           <h2>{industry.short} break-even questions</h2>
-          {page.questions.map((question) => <details key={question}><summary>{question}</summary><p>Enter your actual prices, costs, capacity and conversion assumptions in the free calculator to receive an exact, scenario-specific answer.</p></details>)}
+          {page.questions.map((question) => <details key={question}><summary>{question}</summary><p>{answerQuestion(question, example, industry)}</p></details>)}
         </div>
       </section>
     </>

@@ -1,0 +1,43 @@
+name: Verify pull request
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - name: Verify industry calculator HTML links
+        run: |
+          node --input-type=module <<'EOF'
+          import { readFileSync } from 'node:fs';
+          const mappings = {
+            'cleaning-business-break-even-calculator': 'cleaning',
+            'landscaping-break-even-calculator': 'landscaping',
+            'photography-business-break-even-calculator': 'photography',
+            'agency-break-even-calculator': 'agency',
+            'mobile-detailing-break-even-calculator': 'detailing',
+            'ecommerce-break-even-calculator': 'ecommerce',
+            'restaurant-break-even-calculator': 'restaurant',
+            'salon-break-even-calculator': 'salon',
+          };
+          for (const [slug, industry] of Object.entries(mappings)) {
+            const html = readFileSync(`dist/calculators/${slug}/index.html`, 'utf8');
+            if (!html.includes(`href="/?industry=${industry}#calculator"`)) {
+              throw new Error(`Incorrect static calculator link for ${slug}`);
+            }
+          }
+          EOF
