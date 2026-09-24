@@ -14,7 +14,7 @@ export default function ProIntelligence({input,result,industry,industryKey,curre
   const maxImpact=Math.max(1,...analysis.drivers.map(x=>Math.abs(x.impact ?? 0)));
   const profits=analysis.forecast.map(x=>x.profit);
   return <section id="pro-analysis" className="pro-intel">
-    <header><div><span>PRO INTELLIGENCE</span><h2>Advanced break-even decision dashboard</h2><p>Move from one target to a tested operating plan.</p></div><BrainCircuit/></header>
+    <header><div><span>PRO INTELLIGENCE</span><h2>Advanced break-even decision dashboard</h2><p>Move from one target to a tested operating plan. <a href="/pro-user-guide/" className="pro-intel-guide-link">How to use Pro</a></p></div><BrainCircuit/></header>
     <div className="intel-kpis">
       <article><Target/><small>Accounting break-even</small><strong>{money(analysis.accountingRevenue,currency)}</strong></article>
       <article><Activity/><small>Target-profit revenue</small><strong>{money(analysis.targetRevenue,currency)}</strong></article>
