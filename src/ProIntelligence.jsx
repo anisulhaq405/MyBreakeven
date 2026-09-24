@@ -10,10 +10,10 @@ export default function ProIntelligence({input,result,industry,industryKey,curre
   const [plannedUnits,setPlannedUnits]=useState(Math.ceil(result.jobs*1.15));
   const [growth,setGrowth]=useState(2);
   const analysis=useMemo(()=>advancedAnalysis(input,result,{plannedUnits,growthPct:growth}),[input,result,plannedUnits,growth]);
-  if(!isPro) return <section className="pro-intel locked-intel"><LockKeyhole/><div><span>PRO INTELLIGENCE</span><h2>See the decision behind the break-even number</h2><p>Unlock Offer Mix, Price Guard, Acquisition, Hire, Timeline and Monthly Monitor tools—plus forecasting, risk sensitivity and advanced charts.</p><a href="/pricing/">Explore Pro — $9.99/month</a></div></section>;
+  if(!isPro) return <section id="pro-analysis" className="pro-intel locked-intel"><LockKeyhole/><div><span>PRO INTELLIGENCE</span><h2>See the decision behind the break-even number</h2><p>Unlock Offer Mix, Price Guard, Acquisition, Hire, Timeline and Monthly Monitor tools—plus forecasting, risk sensitivity and advanced charts.</p><a href="/pricing/">Explore Pro — $9.99/month</a></div></section>;
   const maxImpact=Math.max(1,...analysis.drivers.map(x=>Math.abs(x.impact)));
   const profits=analysis.forecast.map(x=>x.profit);
-  return <section className="pro-intel">
+  return <section id="pro-analysis" className="pro-intel">
     <header><div><span>PRO INTELLIGENCE</span><h2>Advanced break-even decision dashboard</h2><p>Move from one target to a tested operating plan.</p></div><BrainCircuit/></header>
     <div className="intel-kpis">
       <article><Target/><small>Accounting break-even</small><strong>{money(analysis.accountingRevenue,currency)}</strong></article>
