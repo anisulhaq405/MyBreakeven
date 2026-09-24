@@ -29,6 +29,7 @@ const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll(
 const allArticles = blogPosts;
 const formatArticleDate = (value) => new Date(`${value}T12:00:00Z`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
 const staticPages = {
+  "pro-user-guide": ["MyBreakeven Pro Calculator User Guide", "Step-by-step guide to MyBreakeven Pro: enter costs, read break-even results, use advanced analysis, save scenarios and export reports.", "MyBreakeven Pro calculator user guide"],
   pricing: ["MyBreakeven Pricing: Free & Pro Business Planning", "Compare MyBreakeven Free and Pro plans for industry break-even calculators, saved scenarios, cost-drift analysis, comparisons and reports.", "MyBreakeven Free and Pro pricing"],
   blogs: ["Small Business Break-Even Guides | MyBreakeven", "Read practical break-even guides for cleaning, landscaping, photography, agencies, mobile detailing, e-commerce, restaurants and salons.", "Industry break-even calculator guides"],
   "about-us": ["About MyBreakeven | Formula-Backed Business Planning", "Learn how MyBreakeven turns contribution margin, sales demand and operating capacity into transparent business planning estimates.", "About MyBreakeven"],
