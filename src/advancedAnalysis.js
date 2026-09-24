@@ -35,9 +35,11 @@ export function advancedAnalysis(input, result, options = {}) {
     ["Conversion", "conversionPct", 0.9],
   ].map(([name, key, factor]) => {
     const changed = calculate({ ...input, [key]: D(input[key]).mul(factor).toNumber() });
-    const impact = changed.valid ? D(changed.revenue).minus(result.revenue).div(result.revenue).mul(100).toNumber() : 100;
+    const impact = !changed.valid ? null : D(result.revenue).gt(0)
+      ? D(changed.revenue).minus(result.revenue).div(result.revenue).mul(100).toNumber()
+      : 0;
     return { name, impact, viable: changed.valid };
-  }).sort((a, b) => Math.abs(b.impact) - Math.abs(a.impact));
+  }).sort((a, b) => (b.impact === null ? Infinity : Math.abs(b.impact)) - (a.impact === null ? Infinity : Math.abs(a.impact)));
 
   const priceChanges = [-10, -5, 0, 5, 10];
   const volumeFactors = [0.8, 1, 1.2, 1.5];
