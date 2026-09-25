@@ -1529,3 +1529,4 @@ footer{position:relative;display:block;min-height:0;padding:0 max(24px,calc((100
 .article-table-scroll th,.article-table-scroll td{padding:10px 16px;border-top:1px solid #e7e9f2;text-align:left}
 .article-table-scroll thead th{background:#f4f3ff}
 .article-table-scroll td:last-child{text-align:right;white-space:nowrap}
+.scenario-tools header{position:static;top:auto;z-index:auto;height:auto;padding:0;background:transparent;border:0;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
