@@ -54,6 +54,42 @@ export default function HomeSEO() {
           <li><strong>Test feasibility.</strong> Compare required sales with team capacity and translate the sales target into required customer inquiries.</li>
         </ol>
       </div>
+      <div className="seo-example" aria-labelledby="seo-example-heading">
+        <div>
+          <span>WORKED SERVICE BUSINESS EXAMPLE</span>
+          <h2 id="seo-example-heading">How many customers do you need to break even?</h2>
+          <p>
+            These are illustrative inputs, not market averages. Suppose a service sells for $200.
+            Materials, labor, travel and acquisition cost $95 per job, and a 2.5% payment fee costs $5.
+            Each completed job therefore contributes $100 toward monthly costs.
+          </p>
+          <p>
+            With $2,400 in overhead and $1,600 in owner pay, the business needs 40 jobs
+            ($8,000 in sales) to cover costs and owner pay. Add a $1,000 profit goal and the
+            target becomes 50 jobs ($10,000 in sales). At a 25% inquiry-to-job conversion
+            rate, those 50 jobs require 200 inquiries.
+          </p>
+          <p>
+            Now check delivery: two people working 20 hours a week at 50% productive
+            utilization provide about 87 delivery hours a month. If each job takes two
+            hours, they can complete only 43 whole jobs. The 50-job profit target needs
+            more capacity or a change in price, costs or the profit goal.
+          </p>
+          <p className="seo-example-source">
+            The basic break-even formula is fixed costs divided by contribution per sale;
+            this example separately includes owner pay, a profit target, inquiries and
+            delivery capacity. <a href="https://legacy.sba.gov/business-guide/plan-your-business/calculate-your-startup-costs/break-even-point">See the U.S. Small Business Administration&apos;s break-even method</a>.
+            {" "}<a href="#calculator">Run your own numbers in the free calculator</a>.
+          </p>
+        </div>
+        <dl aria-label="Illustrative break-even results">
+          <div><dt>Contribution per job</dt><dd>$100</dd></div>
+          <div><dt>Break-even jobs</dt><dd>40</dd></div>
+          <div><dt>Jobs for $1,000 profit</dt><dd>50</dd></div>
+          <div><dt>Inquiries at 25% conversion</dt><dd>200</dd></div>
+          <div><dt>Whole jobs the team can deliver</dt><dd>43</dd></div>
+        </dl>
+      </div>
       <div className="faq" aria-labelledby="faq-heading">
         <span>FREQUENTLY ASKED QUESTIONS</span>
         <h2 id="faq-heading">Small business break-even calculator FAQs</h2>

@@ -1250,6 +1250,23 @@ header {
 .seo-method ol { margin: 0; padding-left: 22px; display: grid; gap: 16px; color: #cbd3e4; }
 .seo-method li { padding-left: 7px; line-height: 1.65; }
 .seo-method strong { color: #fff; }
+.seo-example {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, .8fr);
+  gap: 48px;
+  align-items: start;
+  margin-top: 76px;
+}
+.seo-example > div > span { color: #6353ed; font-size: 12px; font-weight: 800; letter-spacing: 1.5px; }
+.seo-example h2 { margin: 10px 0 16px; color: #11152d; font: 700 clamp(28px, 3vw, 38px)/1.2 Sora; letter-spacing: -.035em; }
+.seo-example p { color: #53637a; line-height: 1.75; }
+.seo-example a { color: #4338ca; font-weight: 700; text-underline-offset: 3px; }
+.seo-example-source { font-size: 14px; }
+.seo-example dl { margin: 0; padding: 24px; border: 1px solid #dce2f1; border-radius: 20px; background: #f8f9ff; }
+.seo-example dl div { display: flex; justify-content: space-between; gap: 20px; padding: 12px 0; border-bottom: 1px solid #e5e9f5; }
+.seo-example dl div:last-child { border-bottom: 0; }
+.seo-example dt { color: #53637a; }
+.seo-example dd { margin: 0; color: #17113c; font-weight: 800; white-space: nowrap; }
 .faq { margin-top: 84px; }
 .faq > div {
   display: grid;
@@ -1267,7 +1284,7 @@ header {
 .faq p { margin: 12px 0 0; color: #5c6c82; font-size: 14px; line-height: 1.65; }
 @media (max-width: 900px) {
   .seo-models { grid-template-columns: 1fr 1fr; }
-  .seo-method { grid-template-columns: 1fr; gap: 20px; }
+  .seo-method, .seo-example { grid-template-columns: 1fr; gap: 20px; }
 }
 @media (max-width: 600px) {
   .seo-content { padding-top: 70px; padding-bottom: 70px; }
