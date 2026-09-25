@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import { ArrowRight, BarChart3, CheckCircle2, ShieldCheck } from "lucide-react";
 import { calculate } from "./engine";
-import { industries } from "./industries";
+import { fieldLabels, industries } from "./industries";
 
 export const industryPages = {
   "cleaning-business-break-even-calculator": { key: "cleaning", title: "Cleaning Business Break-Even Calculator", lead: "Calculate the monthly cleaning jobs, leads and team hours needed to cover overhead, owner pay and your profit goal.", costs: "cleaning supplies, direct labor, travel, equipment use, card fees and lead-generation cost", questions: ["How many cleaning jobs do I need to break even?", "Can my cleaners deliver the required monthly jobs?", "How many cleaning leads does my conversion rate require?"] },
@@ -31,6 +31,40 @@ function answerQuestion(question, result, industry) {
   return `At the example price of ${money(v.price)}, each ${industry.singular} contributes ${money(result.contribution)} after direct costs and fees. Covering ${money(result.fixedNeed)} in overhead, owner pay and target profit requires ${result.wholeJobs} whole ${unit}, or ${money(result.practicalRevenue)} in practical monthly sales. Replace these sample inputs with your figures.`;
 }
 
+function IndustryQuickCalculator({ industry, industryKey }) {
+  const [values, setValues] = useState(() => ({ ...industry.values }));
+  const result = useMemo(() => calculate(values), [values]);
+  const fields = fieldLabels(industry);
+
+  return <section className="industry-quick-calculator" id="industry-calculator" aria-labelledby="industry-calculator-title">
+    <div className="industry-quick-intro">
+      <span>TRY YOUR OWN NUMBERS · USD</span>
+      <h2 id="industry-calculator-title">Calculate your {industry.short.toLowerCase()} break-even point</h2>
+      <p>Replace the example inputs below. Results update in your browser as you type. Enter monthly totals for overhead, owner pay and target profit; enter direct costs per {industry.singular} separately.</p>
+    </div>
+    <div className="industry-quick-fields">
+      {fields.map(([label, key, suffix, options = {}]) => <label key={key}>
+        <span>{label}</span>
+        <span className="industry-quick-control">
+          {suffix === "$" && <b aria-hidden="true">$</b>}
+          <input type="number" inputMode="decimal" min={options.min ?? 0} max={options.max} step={options.step ?? "0.01"} value={values[key]} onChange={event => setValues(current => ({ ...current, [key]: event.target.value }))} aria-invalid={values[key] === ""} />
+          {suffix && suffix !== "$" && <b aria-hidden="true">{suffix}</b>}
+        </span>
+      </label>)}
+    </div>
+    {result.valid ? <div className="industry-quick-results" aria-live="polite">
+      <div><span>Contribution per {industry.singular}</span><strong>{money(result.contribution)}</strong></div>
+      <div><span>Minimum whole {industry.unit}</span><strong>{result.wholeJobs.toLocaleString("en-US")}</strong></div>
+      <div><span>Monthly sales at that volume</span><strong>{money(result.practicalRevenue)}</strong></div>
+      <p>At these assumptions, estimated delivery capacity is {result.wholeCapacity.toLocaleString("en-US")} whole {industry.unit} per month. {result.wholeCapacity < result.wholeJobs ? "The current capacity is below the required volume." : "The estimated capacity covers the required volume."} These are planning estimates, not a sales forecast.</p>
+    </div> : <p className="industry-quick-error" role="status">{result.message}</p>}
+    <div className="industry-quick-actions">
+      <button type="button" onClick={() => setValues({ ...industry.values })}>Reset example</button>
+      <a href={`/?industry=${industryKey}#calculator`}>Open full calculator and Pro analysis <ArrowRight /></a>
+    </div>
+  </section>;
+}
+
 export default function IndustryPage({ slug }) {
   const page = industryPages[slug];
   if (!page) return null;
@@ -43,7 +77,7 @@ export default function IndustryPage({ slug }) {
           <span>FREE INDUSTRY CALCULATOR</span>
           <h1>{page.title}</h1>
           <p>{page.lead}</p>
-          <a className="page-button industry-cta" href={`/?industry=${page.key}#calculator`}>Use the free calculator <ArrowRight /></a>
+          <a className="page-button industry-cta" href={page.key === "restaurant" || page.key === "ecommerce" ? "#industry-calculator" : `/?industry=${page.key}#calculator`}>Use the free calculator <ArrowRight /></a>
         </div>
         <aside>
           <small>EXAMPLE MODEL</small>
@@ -53,6 +87,7 @@ export default function IndustryPage({ slug }) {
           <div><b>{example.wholeCapacity}</b> whole {industry.unit} capacity</div>
         </aside>
       </section>
+      {(page.key === "restaurant" || page.key === "ecommerce") && <IndustryQuickCalculator industry={industry} industryKey={page.key} />}
       <section className="industry-content">
         <div className="industry-copy">
           <span>INDUSTRY-SPECIFIC UNIT ECONOMICS</span>
