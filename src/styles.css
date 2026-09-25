@@ -1290,6 +1290,9 @@ header {
   .seo-content { padding-top: 70px; padding-bottom: 70px; }
   .seo-models, .faq > div { grid-template-columns: 1fr; }
   .seo-method { padding: 26px; }
+  .seo-example { margin-top: 48px; }
+  .seo-example dl div { flex-wrap: wrap; }
+  .seo-example dd { white-space: normal; }
 }
 
 .industry-hero {
