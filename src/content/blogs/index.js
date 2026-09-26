@@ -1,6 +1,7 @@
 import { articleList as foundationPosts, articles as foundationPostMap } from "./core.js";
 import { pricingPosts } from "./pricing.js";
 import { startupPosts } from "./startup.js";
+import { cafePosts } from "./cafe.js";
 import { profitabilityPosts } from "./profitability.js";
 import { volumePosts } from "./volume.js";
 import { conceptPosts } from "./concepts.js";
@@ -52,7 +53,7 @@ const normalizePost = post => ({
 export const blogCollections = Object.freeze({
   foundation: foundationPosts.map(normalizePost),
   pricing: pricingPosts.map(normalizePost),
-  startup: startupPosts.map(normalizePost),
+  startup: [...startupPosts, ...cafePosts].map(normalizePost),
   profitability: profitabilityPosts.map(normalizePost),
   volume: volumePosts.map(normalizePost),
   concepts: conceptPosts.map(normalizePost),
