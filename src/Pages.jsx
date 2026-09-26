@@ -1,3 +1,5 @@
+import "./blogs-page.css";
+import "./about-contact.css";
 import React, { lazy, Suspense, useEffect, useState } from "react";
 import { CheckCircle2, Mail, ShieldCheck, Sparkles } from "lucide-react";
 import BlogSection from "./BlogSection";

@@ -1,3 +1,4 @@
+import "./pro-intelligence.css";
 import React, { useMemo, useState } from "react";
 import { Activity, BarChart3, BrainCircuit, Gauge, LockKeyhole, Target } from "lucide-react";
 import { advancedAnalysis } from "./advancedAnalysis";
