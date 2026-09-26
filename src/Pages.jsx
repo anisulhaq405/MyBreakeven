@@ -1,12 +1,12 @@
 import React, { lazy, Suspense, useEffect, useState } from "react";
 import { CheckCircle2, Mail, ShieldCheck, Sparkles } from "lucide-react";
 import BlogSection from "./BlogSection";
-import BlogArticle from "./BlogArticle";
 import ProUserGuide from "./ProUserGuide";
-import { blogLibrarySummary } from "./content/blogs/index.js";
+import { blogListingData } from "./blogListingData.js";
 import { SiteFooter, SiteHeader } from "./SiteChrome";
 import IndustryPage, { industryPages } from "./IndustryPage";
 import { POLAR_CHECKOUT_URL } from "./billing";
+const BlogArticle = lazy(() => import("./BlogArticle"));
 const AuthPage = lazy(() => import("./AuthPages").then(module => ({ default: module.AuthPage })));
 const DashboardPage = lazy(() => import("./AuthPages").then(module => ({ default: module.DashboardPage })));
 const Pricing = () => (
@@ -303,7 +303,7 @@ export default function SecondaryPage({ path }) {
   const slug = path.startsWith("/blogs/") ? path.split("/")[2] : null;
   const calculatorSlug = path.startsWith("/calculators/") ? path.split("/")[2] : null;
   const authPaths = ["/login", "/signup", "/forgot-password", "/reset-password"];
-  const content = calculatorSlug && industryPages[calculatorSlug] ? <IndustryPage slug={calculatorSlug} /> : slug ? <BlogArticle slug={slug} /> :
+  const content = calculatorSlug && industryPages[calculatorSlug] ? <IndustryPage slug={calculatorSlug} /> : slug ? <Suspense fallback={<section className="page-hero"><h1>Loading guide…</h1></section>}><BlogArticle slug={slug} /></Suspense> :
     authPaths.includes(path) ? <Suspense fallback={<p className="route-loading">Loading secure account…</p>}><AuthPage path={path} /></Suspense> : path === "/dashboard" ? <Suspense fallback={<p className="route-loading">Loading secure workspace…</p>}><DashboardPage /></Suspense> :
     path === "/pro-user-guide" ? <ProUserGuide /> : path === "/pricing" ? (
       <Pricing />
@@ -317,8 +317,8 @@ export default function SecondaryPage({ path }) {
             <div className="blog-hero-actions"><a href="#blog">Browse all guides <span aria-hidden="true">↓</span></a><a href="/#calculator">Open calculator <span aria-hidden="true">↗</span></a></div>
           </div>
           <div className="blog-hero-index" aria-label="Guide library summary">
-            <div><strong>{blogLibrarySummary.guideCount}</strong><span>focused guides</span></div>
-            <div><strong>{blogLibrarySummary.modelCount}</strong><span>business models</span></div>
+            <div><strong>{blogListingData.posts.length}</strong><span>focused guides</span></div>
+            <div><strong>{blogListingData.modelCount}</strong><span>business models</span></div>
             <p><span>Pricing</span><span>Startup</span><span>Margins</span><span>Break-even</span></p>
           </div>
         </section>
