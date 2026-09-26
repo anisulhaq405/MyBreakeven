@@ -1,6 +1,5 @@
-import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
+import React, { lazy, Suspense, useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
-import "./sentry";
 import {
   BarChart3,
   BriefcaseBusiness,
@@ -13,9 +12,7 @@ import { calculate } from "./engine";
 import { fieldLabels, industries } from "./industries";
 import Insights from "./Insights";
 import HomeBlogShowcase from "./HomeBlogShowcase";
-import SecondaryPage from "./Pages";
 import { SiteFooter, SiteHeader } from "./SiteChrome";
-import ScenarioTools from "./ScenarioTools";
 import HomeSEO from "./HomeSEO";
 import AnalyticsConsent from "./AnalyticsConsent";
 import { POLAR_CHECKOUT_URL } from "./billing";
@@ -23,8 +20,11 @@ import "./styles.css";
 import "./industries.css";
 import "./visuals.css";
 import "./home-presentation.css";
+const SecondaryPage = lazy(() => import("./Pages"));
+const ScenarioTools = lazy(() => import("./ScenarioTools"));
 const quantity = (n) => new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 }).format(n || 0);
 function App() {
+  const [showTools, setShowTools] = useState(false);
   const initialIndustry = new URLSearchParams(window.location.search).get("industry");
   const startingIndustry = industries[initialIndustry] ? initialIndustry : "cleaning";
   const [industryKey, setIndustryKey] = useState(startingIndustry),
@@ -60,7 +60,22 @@ function App() {
     });
   }, []);
   const path = window.location.pathname.replace(/\/$/, "") || "/";
-  if (path !== "/") return <SecondaryPage path={path} />;
+  useEffect(() => {
+    if (path !== "/") return;
+    const target = document.getElementById("scenario-tools-anchor");
+    if (!target || !window.IntersectionObserver) {
+      setShowTools(true);
+      return;
+    }
+    const observer = new IntersectionObserver(entries => {
+      if (!entries[0]?.isIntersecting) return;
+      setShowTools(true);
+      observer.disconnect();
+    }, { rootMargin: "600px 0px" });
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, [path]);
+  if (path !== "/") return <Suspense fallback={<main className="page-hero"><h1>Loading page…</h1></main>}><SecondaryPage path={path} /></Suspense>;
   return (
     <>
       <a className="skip-link" href="#main-content">Skip to main content</a>
@@ -177,7 +192,11 @@ function App() {
           </div>
         </section>
         <Insights result={result} input={input} industry={industry} currency={currency} />
-        <ScenarioTools result={result} input={input} industry={industry} industryKey={industryKey} currency={currency} />
+        <div id="scenario-tools-anchor">
+          {showTools && <Suspense fallback={<section className="scenario-tools" aria-label="Loading planning tools" />}>
+            <ScenarioTools result={result} input={input} industry={industry} industryKey={industryKey} currency={currency} />
+          </Suspense>}
+        </div>
         <HomeBlogShowcase />
         <section className="proof" id="how">
           <span>ONE NUMBER ISN'T ENOUGH</span>
@@ -289,3 +308,8 @@ function RevealAfterRender() {
   return null;
 }
 createRoot(rootElement).render(<><App /><AnalyticsConsent /><RevealAfterRender /></>);
+if (import.meta.env.PROD) {
+  const startMonitoring = () => { import("./sentry"); };
+  if ("requestIdleCallback" in window) window.requestIdleCallback(startMonitoring, { timeout: 3000 });
+  else window.setTimeout(startMonitoring, 1500);
+}

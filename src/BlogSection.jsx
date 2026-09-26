@@ -1,7 +1,8 @@
 import React, { useMemo, useState } from "react";
 import { ArrowUpRight, BookOpen, Search, X } from "lucide-react";
-import { blogPosts } from "./content/blogs/index.js";
+import { blogListingData } from "./blogListingData.js";
 import { filterBlogPosts } from "./blogSearch.js";
+const blogPosts = blogListingData.posts;
 const dateLabel = value => new Date(`${value}T12:00:00Z`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
 
 const initialQuery = () => typeof window === "undefined" ? "" : new URLSearchParams(window.location.search).get("q") || "";

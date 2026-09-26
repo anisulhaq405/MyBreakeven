@@ -1,15 +1,9 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
-import { blogCollections, blogLibrarySummary } from "./content/blogs/index.js";
+import { homeBlogData } from "./homeBlogData.js";
 import "./home-blog-showcase.css";
 
-const latest = collection => [...collection].sort((a, b) => b.published.localeCompare(a.published))[0];
-const featured = latest(blogCollections.concepts);
-const supporting = [
-  latest(blogCollections.pricing),
-  latest(blogCollections.startup),
-  latest(blogCollections.profitability),
-].filter(Boolean);
+const { featured, supporting, guideCount } = homeBlogData;
 
 const topics = [
   ["Break-even", "break-even"],
@@ -23,7 +17,7 @@ export default function HomeBlogShowcase() {
     <div className="home-journal-inner">
       <div className="home-journal-heading">
         <div><span className="home-journal-eyebrow"><span aria-hidden="true" className="home-journal-mark">MB / JOURNAL</span> INSIGHTS FOR BETTER DECISIONS</span><h2 id="home-journal-title">The numbers tell a story.<br /><em>Here's what to do next.</em></h2><p>Practical reading for the next decision in your business, from break-even to better pricing.</p></div>
-        <a className="home-journal-all" href="/blogs/">Browse {blogLibrarySummary.guideCount} guides <ArrowUpRight aria-hidden="true" /></a>
+        <a className="home-journal-all" href="/blogs/">Browse {guideCount} guides <ArrowUpRight aria-hidden="true" /></a>
       </div>
       <div className="home-journal-layout">
         {featured && <article className="home-journal-feature">
