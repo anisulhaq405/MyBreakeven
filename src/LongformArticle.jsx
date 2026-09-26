@@ -6,6 +6,8 @@ export default function LongformArticle({ article: a }) {
   const slug = a?.slug;
   const guideType = a?.cluster === "concepts"
     ? "PRACTICAL GUIDE"
+    : a?.cluster === "financial planning"
+    ? "BUSINESS PLANNING GUIDE"
     : a?.cluster === "profitability"
     ? "PROFITABILITY GUIDE"
     : a?.cluster?.startsWith("startup")

@@ -7,7 +7,7 @@ export const cafePosts = [
     "title": "How Much Does It Cost to Open a Café or Coffee Shop?",
     "seoTitle": "Café Opening Costs: Budget and Break-Even",
     "description": "Plan café or coffee shop opening costs, working cash, and the daily orders needed to break even with three transparent worked examples.",
-    "metaDescription": "Plan café opening costs, working cash, and daily break-even orders with three clear coffee shop budget examples.",
+    "metaDescription": "Plan café opening costs, working cash, and daily break-even orders with three clear coffee shop budget examples and a capacity check.",
     "image": "/images/blog/day2-restaurant-startup.webp",
     "alt": "Food-service owner reviewing an opening budget in an unfinished café space",
     "imageCaption": "Budget for the site and the monthly sales target before signing a café lease.",

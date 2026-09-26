@@ -10,9 +10,10 @@ describe("central blog registry", () => {
       "profitability",
       "volume",
       "concepts",
+      "financialPlanning",
     ]);
-    expect(blogPosts).toHaveLength(48);
-    expect(Object.keys(blogPostMap)).toHaveLength(48);
+    expect(blogPosts).toHaveLength(59);
+    expect(Object.keys(blogPostMap)).toHaveLength(59);
     expect(blogLibrarySummary.guideCount).toBe(blogPosts.length);
     expect(blogLibrarySummary.modelCount).toBe(blogModels.length);
     expect(blogModels).toHaveLength(8);
