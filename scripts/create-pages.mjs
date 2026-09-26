@@ -23,7 +23,15 @@ const calculatorIndustries = {
   "salon-break-even-calculator": "salon",
 };
 
-const base = await readFile(new URL("../dist/index.html", import.meta.url), "utf8");
+const homeFile = new URL("../dist/index.html", import.meta.url);
+const unoptimizedBase = await readFile(homeFile, "utf8");
+const googleFontStylesheet = /<link rel="stylesheet" href="(https:\/\/fonts\.googleapis\.com\/css2\?[^\"]+)"\s*\/>/;
+if (!googleFontStylesheet.test(unoptimizedBase)) throw new Error("Expected Google Fonts link in generated HTML");
+// Let the site render with its fallback font while the external font stylesheet loads.
+const base = unoptimizedBase.replace(googleFontStylesheet, (_link, url) =>
+  `<link rel="stylesheet" href="${url}" media="print" onload="this.media='all'" />` +
+  `<noscript><link rel="stylesheet" href="${url}" /></noscript>`);
+await writeFile(homeFile, base);
 
 const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 const allArticles = blogPosts;
