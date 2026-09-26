@@ -5,6 +5,7 @@ import { cafePosts } from "./cafe.js";
 import { profitabilityPosts } from "./profitability.js";
 import { volumePosts } from "./volume.js";
 import { conceptPosts } from "./concepts.js";
+import { financeExpansionPosts } from "./financeExpansion.js";
 
 const seoTitleOverrides = {
   "how-much-does-it-cost-to-start-a-cleaning-business": "Cleaning Business Startup Cost Guide",
@@ -57,6 +58,7 @@ export const blogCollections = Object.freeze({
   profitability: profitabilityPosts.map(normalizePost),
   volume: volumePosts.map(normalizePost),
   concepts: conceptPosts.map(normalizePost),
+  financialPlanning: financeExpansionPosts.map(normalizePost),
 });
 
 export const blogPosts = Object.values(blogCollections)
