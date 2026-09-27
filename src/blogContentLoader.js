@@ -10,6 +10,7 @@ const groupLoaders = {
   volume: () => import("./content/blogs/volume.js").then(module => module.volumePosts),
   concepts: () => import("./content/blogs/concepts.js").then(module => module.conceptPosts),
   financeExpansion: () => import("./content/blogs/financeExpansion.js").then(module => module.financeExpansionPosts),
+  unitEconomics: () => import("./content/blogs/unitEconomics.js").then(module => module.unitEconomicsPosts),
 };
 
 export async function loadBlogPost(slug) {
