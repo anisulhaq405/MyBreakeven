@@ -21,6 +21,7 @@ import "./industries.css";
 import "./visuals.css";
 import "./home-presentation.css";
 const SecondaryPage = lazy(() => import("./Pages"));
+let preparedBlogPage = null;
 const ScenarioTools = lazy(() => import("./ScenarioTools"));
 const quantity = (n) => new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 }).format(n || 0);
 function App() {
@@ -75,7 +76,13 @@ function App() {
     observer.observe(target);
     return () => observer.disconnect();
   }, [path]);
-  if (path !== "/") return <Suspense fallback={<main className="page-hero"><h1>Loading page…</h1></main>}><SecondaryPage path={path} /></Suspense>;
+  if (path !== "/") {
+    if (preparedBlogPage) {
+      const BlogPage = preparedBlogPage;
+      return <BlogPage path={path} />;
+    }
+    return <Suspense fallback={<main className="page-hero"><h1>Loading page…</h1></main>}><SecondaryPage path={path} /></Suspense>;
+  }
   return (
     <>
       <a className="skip-link" href="#main-content">Skip to main content</a>
@@ -314,10 +321,11 @@ async function renderApp() {
     // screen hidden until its route and content are ready to render together.
     const slug = path.startsWith("/blogs/") ? path.split("/")[2] : null;
     try {
-      await Promise.all([
+      const [pageModule] = await Promise.all([
         import("./Pages"),
-        ...(slug ? [import("./BlogArticle"), import("./blogContentLoader.js").then(({ loadBlogPost }) => loadBlogPost(slug))] : []),
+        ...(slug ? [import("./blogContentLoader.js").then(({ loadBlogPost }) => loadBlogPost(slug))] : []),
       ]);
+      preparedBlogPage = pageModule.default;
     } catch {
       // The normal route fallback still handles a failed chunk request.
     }
