@@ -1,6 +1,7 @@
 import { blogListingData } from "./blogListingData.js";
 
 const metadata = Object.fromEntries(blogListingData.posts.map(post => [post.slug, post]));
+const loadedPosts = new Map();
 const groupLoaders = {
   core: () => import("./content/blogs/core.js").then(module => module.articleList),
   pricing: () => import("./content/blogs/pricing.js").then(module => module.pricingPosts),
@@ -15,12 +16,19 @@ const groupLoaders = {
 };
 
 export async function loadBlogPost(slug) {
+  if (loadedPosts.has(slug)) return loadedPosts.get(slug);
   const preview = metadata[slug];
   if (!preview) return null;
   const group = await groupLoaders[preview.group]();
   const post = group.find(candidate => candidate.slug === slug);
   if (!post) throw new Error(`Missing blog content for ${slug}`);
-  return { ...post, ...preview };
+  const article = { ...post, ...preview };
+  loadedPosts.set(slug, article);
+  return article;
+}
+
+export function getLoadedBlogPost(slug) {
+  return loadedPosts.get(slug);
 }
 
 export function relatedBlogPosts(slug, limit = 3) {

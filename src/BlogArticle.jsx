@@ -1,9 +1,9 @@
 import React,{useEffect,useState}from"react";
 import LongformArticle from "./LongformArticle.jsx";
-import { loadBlogPost, relatedBlogPosts } from "./blogContentLoader.js";
+import { getLoadedBlogPost, loadBlogPost, relatedBlogPosts } from "./blogContentLoader.js";
 
 export default function BlogArticle({slug}){
-  const [a,setArticle]=useState(undefined);
+  const [a,setArticle]=useState(() => getLoadedBlogPost(slug));
   useEffect(()=>{
     let active=true;
     loadBlogPost(slug).then(post=>{if(active)setArticle(post);}).catch(()=>{if(active)setArticle(null);});

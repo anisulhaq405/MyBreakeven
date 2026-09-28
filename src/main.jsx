@@ -307,7 +307,24 @@ function RevealAfterRender() {
   }, []);
   return null;
 }
-createRoot(rootElement).render(<><App /><AnalyticsConsent /><RevealAfterRender /></>);
+async function renderApp() {
+  const path = window.location.pathname.replace(/\/$/, "") || "/";
+  if (path === "/blogs" || path.startsWith("/blogs/")) {
+    // Article HTML is already in the document for crawlers. Keep the initial
+    // screen hidden until its route and content are ready to render together.
+    const slug = path.startsWith("/blogs/") ? path.split("/")[2] : null;
+    try {
+      await Promise.all([
+        import("./Pages"),
+        ...(slug ? [import("./BlogArticle"), import("./blogContentLoader.js").then(({ loadBlogPost }) => loadBlogPost(slug))] : []),
+      ]);
+    } catch {
+      // The normal route fallback still handles a failed chunk request.
+    }
+  }
+  createRoot(rootElement).render(<><App /><AnalyticsConsent /><RevealAfterRender /></>);
+}
+renderApp();
 if (import.meta.env.PROD) {
   const startMonitoring = () => { import("./sentry"); };
   if ("requestIdleCallback" in window) window.requestIdleCallback(startMonitoring, { timeout: 3000 });
