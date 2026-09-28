@@ -7,6 +7,7 @@ import { volumePosts } from "./volume.js";
 import { conceptPosts } from "./concepts.js";
 import { financeExpansionPosts } from "./financeExpansion.js";
 import { unitEconomicsPosts } from "./unitEconomics.js";
+import { september28Drafts } from "./september28.js";
 
 const seoTitleOverrides = {
   "how-much-does-it-cost-to-start-a-cleaning-business": "Cleaning Business Startup Cost Guide",
@@ -36,6 +37,7 @@ const cleanText = value => typeof value === "string" ? value.replace(/^\*\*\s*/,
 const canonicalTags = Object.freeze({
   "agency & freelancer": "Agency",
   "mobile detailing": "Mobile Detailing",
+  "ecommerce": "E-commerce",
 });
 
 const canonicalTag = value => {
@@ -61,6 +63,7 @@ export const blogCollections = Object.freeze({
   concepts: conceptPosts.map(normalizePost),
   financialPlanning: financeExpansionPosts.map(normalizePost),
   unitEconomics: unitEconomicsPosts.map(normalizePost),
+  september28: september28Drafts.map(normalizePost),
 });
 
 export const blogPosts = Object.values(blogCollections)
