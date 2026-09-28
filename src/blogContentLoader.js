@@ -11,6 +11,7 @@ const groupLoaders = {
   concepts: () => import("./content/blogs/concepts.js").then(module => module.conceptPosts),
   financeExpansion: () => import("./content/blogs/financeExpansion.js").then(module => module.financeExpansionPosts),
   unitEconomics: () => import("./content/blogs/unitEconomics.js").then(module => module.unitEconomicsPosts),
+  september28: () => import("./content/blogs/september28.js").then(module => module.september28Drafts),
 };
 
 export async function loadBlogPost(slug) {
