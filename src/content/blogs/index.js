@@ -8,6 +8,8 @@ import { conceptPosts } from "./concepts.js";
 import { financeExpansionPosts } from "./financeExpansion.js";
 import { unitEconomicsPosts } from "./unitEconomics.js";
 import { september28Drafts } from "./september28.js";
+import { september29Posts } from "./september29.js";
+import { september29UpdateMap } from "./september29Updates.js";
 
 const seoTitleOverrides = {
   "how-much-does-it-cost-to-start-a-cleaning-business": "Cleaning Business Startup Cost Guide",
@@ -47,10 +49,11 @@ const canonicalTag = value => {
 
 const normalizePost = post => ({
   ...post,
+  ...september29UpdateMap[post.slug],
   tag: canonicalTag(post.tag),
-  seoTitle: seoTitleOverrides[post.slug] || cleanText(post.seoTitle),
+  seoTitle: september29UpdateMap[post.slug]?.seoTitle || seoTitleOverrides[post.slug] || cleanText(post.seoTitle),
   description: cleanText(post.description),
-  metaDescription: cleanText(post.metaDescription),
+  metaDescription: cleanText(september29UpdateMap[post.slug]?.metaDescription || post.metaDescription),
   opening: cleanText(post.opening),
 });
 
@@ -64,6 +67,7 @@ export const blogCollections = Object.freeze({
   financialPlanning: financeExpansionPosts.map(normalizePost),
   unitEconomics: unitEconomicsPosts.map(normalizePost),
   september28: september28Drafts.map(normalizePost),
+  september29: september29Posts.map(normalizePost),
 });
 
 export const blogPosts = Object.values(blogCollections)

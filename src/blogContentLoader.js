@@ -1,4 +1,5 @@
 import { blogListingData } from "./blogListingData.js";
+import { september29UpdateMap } from "./content/blogs/september29Updates.js";
 
 const metadata = Object.fromEntries(blogListingData.posts.map(post => [post.slug, post]));
 const loadedPosts = new Map();
@@ -13,6 +14,7 @@ const groupLoaders = {
   financeExpansion: () => import("./content/blogs/financeExpansion.js").then(module => module.financeExpansionPosts),
   unitEconomics: () => import("./content/blogs/unitEconomics.js").then(module => module.unitEconomicsPosts),
   september28: () => import("./content/blogs/september28.js").then(module => module.september28Drafts),
+  september29: () => import("./content/blogs/september29.js").then(module => module.september29Posts),
 };
 
 export async function loadBlogPost(slug) {
@@ -22,7 +24,7 @@ export async function loadBlogPost(slug) {
   const group = await groupLoaders[preview.group]();
   const post = group.find(candidate => candidate.slug === slug);
   if (!post) throw new Error(`Missing blog content for ${slug}`);
-  const article = { ...post, ...preview };
+  const article = { ...post, ...preview, ...september29UpdateMap[slug] };
   loadedPosts.set(slug, article);
   return article;
 }
