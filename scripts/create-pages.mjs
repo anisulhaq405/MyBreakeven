@@ -69,6 +69,11 @@ base = base.replace(/<main>[\s\S]*?<\/main>/, `<main><h1>Build your break-even p
 await writeFile(homeFile, base);
 for (const [route, [title, description, heading, privatePage = false]] of Object.entries(staticPages)) {
   const canonical = `https://mybreakeven.com/${route}/`;
+  const homeSchema = JSON.parse(base.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+  const pageSchema = { "@context": "https://schema.org", "@graph": [
+    ...homeSchema["@graph"].filter(entity => ["Organization", "WebSite"].includes(entity["@type"])),
+    { "@type": "WebPage", "@id": `${canonical}#webpage`, url: canonical, name: title, description, inLanguage: "en-US", isPartOf: { "@id": "https://mybreakeven.com/#website" } },
+  ] };
   const links = route === "blogs" ? `<ul>${allArticles.map(article => `<li><a href="/blogs/${article.slug}/">${escapeHtml(article.title)}</a></li>`).join("")}</ul>` : `<p><a href="/#calculator">Use the free small business break-even calculator</a></p>`;
   const fallback = !privatePage && route !== "blogs"
     ? `<div id="root" data-booting>${renderPublicPage(`/${route}`)}</div>`
@@ -86,6 +91,7 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
     .replace(/<link rel="canonical" href="[^"]*"\s*\/?>/, `<link rel="canonical" href="${canonical}" />`)
     .replace(/<link rel="alternate" hreflang="en-US" href="[^"]*"\s*\/?>/, `<link rel="alternate" hreflang="en-US" href="${canonical}" />`)
     .replace(/<link rel="alternate" hreflang="x-default" href="[^"]*"\s*\/?>/, `<link rel="alternate" hreflang="x-default" href="${canonical}" />`)
+    .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, `<script type="application/ld+json">${JSON.stringify(pageSchema)}</script>`)
     .replace(/<div id="root"[^>]*>[\s\S]*?<\/div>\s*<\/body>/, `${fallback}</body>`);
   await mkdir(new URL(`../dist/${route}/`, import.meta.url), { recursive: true });
   await writeFile(new URL(`../dist/${route}/index.html`, import.meta.url), html);
