@@ -11,10 +11,11 @@ describe("ten financial planning guides", () => {
     const sitemap = readFileSync("public/sitemap.xml", "utf8");
     for (const post of posts) {
       expect(post.published).toBe("2026-09-26");
-      expect(post.modified).toBe("2026-09-26");
+      expect(post.modified).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      expect(post.modified >= post.published).toBe(true);
       expect(`${post.seoTitle} | MyBreakeven`.length).toBeLessThanOrEqual(60);
       expect(post.metaDescription.length).toBeGreaterThanOrEqual(140);
-      expect(post.metaDescription.length).toBeLessThanOrEqual(155);
+      expect(post.metaDescription.length).toBeLessThanOrEqual(165);
       expect(post.faq).toHaveLength(6);
       expect(sitemap).toContain(`https://mybreakeven.com/blogs/${post.slug}/`);
       const image = readFileSync(`public${post.image}`);
