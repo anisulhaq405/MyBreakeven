@@ -1,4 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
+import React from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import { createServer } from "vite";
 import { blogPosts, relatedArticlesFor } from "../src/content/blogs/index.js";
 
 const calculators = {
@@ -28,7 +31,7 @@ const unoptimizedBase = await readFile(homeFile, "utf8");
 const googleFontStylesheet = /<link rel="stylesheet" href="(https:\/\/fonts\.googleapis\.com\/css2\?[^\"]+)"\s*\/>/;
 if (!googleFontStylesheet.test(unoptimizedBase)) throw new Error("Expected Google Fonts link in generated HTML");
 // Let the site render with its fallback font while the external font stylesheet loads.
-const base = unoptimizedBase.replace(googleFontStylesheet, (_link, url) =>
+let base = unoptimizedBase.replace(googleFontStylesheet, (_link, url) =>
   `<link rel="stylesheet" href="${url}" media="print" onload="this.media='all'" />` +
   `<noscript><link rel="stylesheet" href="${url}" /></noscript>`);
 await writeFile(homeFile, base);
@@ -44,7 +47,7 @@ const staticPages = {
   "contact-us": ["Contact MyBreakeven", "Contact MyBreakeven about calculator feedback, industry requests, partnerships or formula-backed business planning tools.", "Contact MyBreakeven"],
   "privacy-policy": ["Privacy Policy | MyBreakeven", "Read how MyBreakeven handles calculator data, website information and messages you send.", "Privacy Policy"],
   "terms-of-service": ["Terms of Service | MyBreakeven", "Read the terms for using MyBreakeven calculators, content and subscription features.", "Terms of Service"],
-  "refund-policy": ["Refund Policy | MyBreakeven", "Review the cancellation and refund policy for future MyBreakeven paid subscriptions.", "Refund Policy"],
+  "refund-policy": ["Refund Policy | MyBreakeven", "Review the cancellation and refund policy for MyBreakeven paid subscriptions.", "Refund Policy"],
   "cookie-policy": ["Cookie Policy | MyBreakeven", "Learn how MyBreakeven uses essential browser storage and cookies.", "Cookie Policy"],
   login: ["Log in to MyBreakeven", "Access your private MyBreakeven planning workspace.", "Log in to MyBreakeven", true],
   signup: ["Create a MyBreakeven account", "Create an optional account for saved business planning scenarios and reports.", "Create a MyBreakeven account", true],
@@ -52,10 +55,24 @@ const staticPages = {
   "reset-password": ["Choose a new MyBreakeven password", "Securely update your MyBreakeven account password.", "Choose a new password", true],
   dashboard: ["Your MyBreakeven dashboard", "Manage your private MyBreakeven account and planning workspace.", "Your private dashboard", true],
 };
+// Render public supporting pages from the same components used in the browser.
+const renderer = await createServer({ server: { middlewareMode: true, hmr: false, ws: false }, appType: "custom" });
+let PublicPage, HomeContent;
+try {
+  PublicPage = (await renderer.ssrLoadModule("/src/Pages.jsx")).default;
+  HomeContent = (await renderer.ssrLoadModule("/src/HomeSEO.jsx")).default;
+}
+finally { await renderer.close(); }
+const renderPublicPage = path => renderToStaticMarkup(React.createElement(PublicPage, { path }));
+const homeLinks = base.match(/<nav aria-label="Key pages">[\s\S]*?<\/nav>/)?.[0] || "";
+base = base.replace(/<main>[\s\S]*?<\/main>/, `<main><h1>Build your break-even plan.</h1><p>Choose your model and adjust the monthly assumptions.</p>${renderToStaticMarkup(React.createElement(HomeContent))}${homeLinks}</main>`);
+await writeFile(homeFile, base);
 for (const [route, [title, description, heading, privatePage = false]] of Object.entries(staticPages)) {
   const canonical = `https://mybreakeven.com/${route}/`;
   const links = route === "blogs" ? `<ul>${allArticles.map(article => `<li><a href="/blogs/${article.slug}/">${escapeHtml(article.title)}</a></li>`).join("")}</ul>` : `<p><a href="/#calculator">Use the free small business break-even calculator</a></p>`;
-  const fallback = `<div id="root" data-booting><main><h1>${escapeHtml(heading)}</h1><p>${escapeHtml(description)}</p>${links}</main></div>`;
+  const fallback = !privatePage && route !== "blogs"
+    ? `<div id="root" data-booting>${renderPublicPage(`/${route}`)}</div>`
+    : `<div id="root" data-booting><main><h1>${escapeHtml(heading)}</h1><p>${escapeHtml(description)}</p>${links}</main></div>`;
   const html = base
     .replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
     .replace(/<meta name="description" content="[^"]*"\s*\/?>/, `<meta name="description" content="${escapeHtml(description)}" />`)
@@ -91,7 +108,7 @@ for (const article of allArticles) {
   const faq = article.faq.map(item => `<h3>${escapeHtml(item.q)}</h3><p>${escapeHtml(item.a)}</p>`).join("");
   const related = article.html ? "" : relatedArticlesFor(article.slug).map(item => `<li><a href="/blogs/${item.slug}/">${escapeHtml(item.title)}</a></li>`).join("");
   const hubLink = article.html && !article.html.includes('href="/blogs/"') && !article.html.includes('href="https://mybreakeven.com/blogs/"') ? `<p><a href="/blogs/">Browse the MyBreakeven blog hub</a> for related planning guides.</p>` : "";
-  const fallback = `<div id="root" data-booting><main><article><nav><a href="/">Home</a> / <a href="/blogs/">Guides</a> / ${escapeHtml(article.tag)}</nav><h1>${escapeHtml(article.title)}</h1><p><time datetime="${article.published}">Published ${formatArticleDate(article.published)}</time> · Updated ${formatArticleDate(article.modified)}</p><p>${escapeHtml(article.description)}</p><p>${article.tags.map(tag => `<span>${escapeHtml(tag)}</span>`).join(" · ")}</p>${article.html ? "" : `<p>${escapeHtml(article.opening)}</p>`}<img src="${article.image}" alt="${escapeHtml(article.alt)}" width="1200" height="675"><section><h2>Calculator features</h2><ul>${article.features.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul></section>${sections}${hubLink}${article.html ? "" : `<figure><img src="${article.insideImage}" alt="${escapeHtml(article.insideAlt)}" width="1200" height="630"></figure><section><h2>Frequently asked questions</h2>${faq}</section><p><a href="/calculators/${article.calculatorSlug}/">Use the free ${escapeHtml(article.tag)} break-even calculator</a></p>`}<section><h2>Related break-even resources</h2><ul>${related}<li><a href="/#calculator">Free small business break-even calculator</a></li><li><a href="/#methodology">Transparent break-even calculation methodology</a></li></ul></section></article></main></div>`;
+  const fallback = `<div id="root" data-booting><main><article><nav><a href="/">Home</a> / <a href="/blogs/">Guides</a> / ${escapeHtml(article.tag)}</nav><h1>${escapeHtml(article.title)}</h1><p>Published by <a href="/about-us/">MyBreakeven</a>. Report a calculation or content issue to <a href="mailto:support@mybreakeven.com">support@mybreakeven.com</a>.</p><p><time datetime="${article.published}">Published ${formatArticleDate(article.published)}</time> · Updated ${formatArticleDate(article.modified)}</p><p>${escapeHtml(article.description)}</p><p>${article.tags.map(tag => `<span>${escapeHtml(tag)}</span>`).join(" · ")}</p>${article.html ? "" : `<p>${escapeHtml(article.opening)}</p>`}<img src="${article.image}" alt="${escapeHtml(article.alt)}" width="1200" height="675"><section><h2>Calculator features</h2><ul>${article.features.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul></section>${sections}${hubLink}${article.html ? "" : `<figure><img src="${article.insideImage}" alt="${escapeHtml(article.insideAlt)}" width="1200" height="630"></figure><section><h2>Frequently asked questions</h2>${faq}</section><p><a href="/calculators/${article.calculatorSlug}/">Use the free ${escapeHtml(article.tag)} break-even calculator</a></p>`}<section><h2>Related break-even resources</h2><ul>${related}<li><a href="/#calculator">Free small business break-even calculator</a></li><li><a href="/#methodology">Transparent break-even calculation methodology</a></li></ul></section></article></main></div>`;
   const html = base
     .replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
     .replace(/<meta name="description" content="[^"]*"\s*\/?>/, `<meta name="description" content="${escapeHtml(article.metaDescription)}" />`)
@@ -138,7 +155,16 @@ for (const [slug, [title, description]] of Object.entries(calculators)) {
     .replace(/<link rel="alternate" hreflang="en-US" href="[^"]*"\s*\/?>/, `<link rel="alternate" hreflang="en-US" href="${canonical}" />`)
     .replace(/<link rel="alternate" hreflang="x-default" href="[^"]*"\s*\/?>/, `<link rel="alternate" hreflang="x-default" href="${canonical}" />`)
     .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, `<script type="application/ld+json">${JSON.stringify(schema)}</script>`)
-    .replace(/<div id="root"[^>]*>[\s\S]*?<\/div>\s*<\/body>/, `<div id="root" data-booting><main><h1>${title.replace(" | MyBreakeven", "")}</h1><p>${description}</p><p>Use the free MyBreakeven calculator to test exact break-even revenue, required sales volume, customer demand and operating capacity.</p><a href="/?industry=${calculatorIndustries[slug]}#calculator">Use the ${escapeHtml(title.replace(" | MyBreakeven", ""))}</a></main></div></body>`);
+    .replace(/<div id="root"[^>]*>[\s\S]*?<\/div>\s*<\/body>/, `<div id="root" data-booting>${renderPublicPage(`/calculators/${slug}`)}</div></body>`);
   await mkdir(new URL(`../dist/${route}/`, import.meta.url), { recursive: true });
   await writeFile(new URL(`../dist/${route}/index.html`, import.meta.url), html);
 }
+
+// Keep discovery in sync with the public route and article registry.
+const publicUrls = ["https://mybreakeven.com/",
+  ...Object.entries(staticPages).filter(([, meta]) => !meta[3]).map(([route]) => `https://mybreakeven.com/${route}/`),
+  ...allArticles.map(article => `https://mybreakeven.com/blogs/${article.slug}/`),
+  ...Object.keys(calculators).map(slug => `https://mybreakeven.com/calculators/${slug}/`),
+];
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${publicUrls.map(url => `  <url><loc>${escapeHtml(url)}</loc></url>`).join("\n")}\n</urlset>\n`;
+await writeFile(new URL("../dist/sitemap.xml", import.meta.url), sitemap);

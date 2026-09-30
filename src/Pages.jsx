@@ -82,6 +82,10 @@ const About = () => (
         A spreadsheet may show that the math balances. The next question is whether you have enough hours, crew capacity and qualified demand to reach that target. MyBreakeven keeps those questions in one practical planning flow for owner-operators.
       </p>
     </section>
+    <section className="about-story" aria-label="Content responsibility">
+      <div><h2>Who publishes these guides</h2></div>
+      <p>MyBreakeven publishes the guides and calculator explanations on this site. Worked examples show stated planning assumptions; they are not customer results or a forecast for your business. Check the source links and formula definitions before applying a number. Send calculation errors, unclear assumptions or content corrections to <a href="mailto:support@mybreakeven.com">support@mybreakeven.com</a>.</p>
+    </section>
     <section className="about-principles" aria-label="How MyBreakeven works">
       <article>
         <span>01</span><Sparkles />
@@ -214,21 +218,21 @@ const legalPages = {
     title: "Privacy Policy",
     intro: "How MyBreakeven handles information when you use our calculators and website.",
     sections: [
-      ["Calculator data", "The free calculator currently runs in your browser. We do not receive or store the financial assumptions you enter unless a future account feature clearly asks you to save them."],
+      ["Calculator data", "The free calculator runs in your browser. Typing or changing financial assumptions does not send them to our servers. If you sign in and choose Save scenario, the scenario name, industry, currency and financial inputs are stored with your account in Supabase so you can reopen them. You can export or delete saved scenarios from your dashboard."],
       ["Website information", "Our hosting and security providers may process standard technical data such as IP address, browser type, device information, requested pages and timestamps to operate, protect and diagnose the website."],
       ["Messages you send", "If you contact us, we use the information in your message to reply, provide support and improve the product."],
       ["Optional accounts", "If you create an account, our authentication provider processes your email address, encrypted authentication credentials, verification status and security session data. MyBreakeven never receives your plain-text password."],
       ["Account controls", "You may request access, correction or deletion of account information by emailing support@mybreakeven.com. Authentication records may be retained where reasonably required for security, fraud prevention or legal compliance."],
       ["Analytics", "With your permission, Google Analytics measures pages viewed, approximate location, device and browser information, traffic sources and interactions. We do not send calculator inputs, account passwords or saved scenario contents to Google Analytics. You can reject optional analytics without losing access to the service."],
       ["Error monitoring", "We use Sentry to receive technical error details needed to diagnose failures. Default personally identifiable information, session replay, logs and performance tracing are disabled. Query strings, request headers, cookies, request bodies and user identity are removed before an error is sent."],
-      ["Service providers", "We use carefully selected providers for hosting, analytics, authentication, email and future payments. Each provider processes data for its stated service and under its own applicable terms."],
+      ["Service providers", "We use carefully selected providers for hosting, analytics, authentication, email and subscription payments through Polar. Each provider processes data for its stated service and under its own applicable terms."],
       ["Your choices", "You may ask about, correct or request deletion of personal information you have directly provided by emailing support@mybreakeven.com."],
     ],
   },
   "/terms-of-service": {
     eyebrow: "TERMS",
     title: "Terms of Service",
-    intro: "Rules for using MyBreakeven calculators, content and future subscription features.",
+    intro: "Rules for using MyBreakeven calculators, content and subscription features.",
     sections: [
       ["Planning tool", "MyBreakeven provides assumption-based planning estimates. Results are not tax, legal, accounting, lending or investment advice, and they are not a guarantee of revenue, profit or business performance."],
       ["Your responsibility", "You are responsible for the accuracy of your inputs and for reviewing important decisions with qualified professionals where appropriate."],
@@ -253,7 +257,7 @@ const legalPages = {
     title: "Cookie Policy",
     intro: "How browser storage and cookies may be used on MyBreakeven.",
     sections: [
-      ["Current use", "The free calculator does not require an account and currently keeps its calculation state in the active browser session rather than sending financial inputs to our servers."],
+      ["Current use", "The free calculator does not require an account. Its live inputs stay in the browser unless you sign in and choose Save scenario. Saved account scenarios are stored in Supabase. The Monthly Break-Even Monitor stores its entries in this browser; clearing site storage removes those local entries."],
       ["Account sessions", "Optional accounts use essential local storage and authentication tokens to keep users securely signed in, refresh sessions and protect private account routes. These essential technologies are not used for advertising."],
       ["Essential storage", "We may use essential cookies or similar browser storage for security, preferences, authentication and reliable site operation."],
       ["Optional analytics", "Google Analytics is disabled by default and loads only after you choose Accept analytics. If accepted, it may use cookies or similar identifiers to measure page views, interactions, approximate location, device and browser information, and traffic sources. Advertising personalization and Google Signals are disabled."],
@@ -269,7 +273,7 @@ const LegalPage = ({ page }) => (
       <span>{page.eyebrow}</span>
       <h1>{page.title}</h1>
       <p>{page.intro}</p>
-      <small>Effective September 13, 2026</small>
+      <small>Effective {page.title === "Privacy Policy" || page.title === "Cookie Policy" || page.title === "Terms of Service" ? "September 30, 2026" : "September 13, 2026"}</small>
     </header>
     <div className="legal-content">
       {page.sections.map(([heading, copy]) => (
@@ -287,7 +291,7 @@ export default function SecondaryPage({ path }) {
     "/contact-us": ["Contact MyBreakeven", "Contact MyBreakeven about calculator feedback, industry requests, partnerships or formula-backed business planning tools."],
     "/privacy-policy": ["Privacy Policy | MyBreakeven", "Read how MyBreakeven handles calculator data, website information and messages you send."],
     "/terms-of-service": ["Terms of Service | MyBreakeven", "Read the terms for using MyBreakeven calculators, content and subscription features."],
-    "/refund-policy": ["Refund Policy | MyBreakeven", "Review the cancellation and refund policy for future MyBreakeven paid subscriptions."],
+    "/refund-policy": ["Refund Policy | MyBreakeven", "Review the cancellation and refund policy for MyBreakeven paid subscriptions."],
     "/cookie-policy": ["Cookie Policy | MyBreakeven", "Learn how MyBreakeven uses essential browser storage and cookies."],
     "/login": ["Log in to MyBreakeven", "Access your private MyBreakeven planning workspace."],
     "/signup": ["Create a MyBreakeven account", "Create an optional account for saved business planning scenarios and reports."],

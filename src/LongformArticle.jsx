@@ -24,6 +24,7 @@ export default function LongformArticle({ article: a }) {
     <nav className="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/blogs/">Guides</a><span>›</span><span>{a.tag}</span></nav>
     <span>{a.tag} {guideType}</span><h1>{a.title}</h1>
     <div className="article-meta"><time dateTime={a.published}>Published {dateLabel(a.published)}</time><span>Updated {dateLabel(a.modified)}</span></div>
+    <p className="article-note">Published by <a href="/about-us/">MyBreakeven</a>. Report a calculation or content issue to <a href="mailto:support@mybreakeven.com">support@mybreakeven.com</a>.</p>
     <p className="article-lead">{a.description}</p>
     <div className="article-tags" aria-label="Article topics">{a.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
     <figure className="article-featured"><img src={a.image} alt={a.alt} width="1200" height="675" fetchPriority="high" decoding="async"/><figcaption>{a.imageCaption}</figcaption></figure>

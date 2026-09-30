@@ -1,4 +1,5 @@
 import React from "react";
+import { capacityDecision } from "./capacityDecision";
 const money = (n, currency) =>
   new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -8,6 +9,7 @@ const money = (n, currency) =>
   }).format(n || 0);
 export default function Insights({ result, input, industry, currency }) {
   if (!result.valid) return null;
+  const decision = capacityDecision(result);
   const total = input.price || 1,
     segments = [
       ["Materials", result.costs.materials, "#f59e0b"],
@@ -17,7 +19,7 @@ export default function Insights({ result, input, industry, currency }) {
       ["Fees", result.costs.fees, "#a78bfa"],
       ["Contribution", result.contribution, "#0f9f91"],
     ],
-    used = Math.min(100, (result.jobs / Math.max(1, result.capacity)) * 100),
+    used = Math.min(100, decision.utilization ?? 100),
     max = Math.max(
       ...result.scenarios.filter((x) => x.jobs).map((x) => x.jobs),
     );
@@ -64,7 +66,7 @@ export default function Insights({ result, input, industry, currency }) {
         <article>
           <header>
             <span>Capacity feasibility</span>
-            <strong>{used.toFixed(2)}% utilized</strong>
+            <strong>{decision.utilization === null ? "No delivery capacity" : `${decision.utilization.toFixed(2)}% of capacity required`}</strong>
           </header>
           <div className="gauge" style={{ "--used": `${used * 3.6}deg` }}>
             <div>
@@ -79,6 +81,7 @@ export default function Insights({ result, input, industry, currency }) {
               ? `Room for ${result.gap.toFixed(2)} more ${industry.unit}.`
               : `Short by ${Math.abs(result.gap).toFixed(2)} ${industry.unit}.`}
           </p>
+          <p>{result.wholeJobs} whole {industry.unit} required; capacity for {result.wholeCapacity}. {decision.fits ? `Whole-unit cushion: ${decision.wholeGap}.` : `Whole-unit shortfall: ${Math.abs(decision.wholeGap)}.`}</p>
         </article>
         <article>
           <header>
@@ -111,11 +114,7 @@ export default function Insights({ result, input, industry, currency }) {
       </div>
       <div className="decision">
         <strong>
-          {result.score >= 75
-            ? "Operationally feasible under these assumptions."
-            : result.score >= 50
-              ? "Feasible, but the operating cushion is limited."
-              : "The plan needs a price, cost, capacity or conversion change."}
+          {decision.summary}
         </strong>
         <span>
           Assumption-based planning result—not a guarantee or professional

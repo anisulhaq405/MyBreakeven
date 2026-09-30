@@ -17,7 +17,7 @@ const faqs = [
   ["Does the calculator include owner salary and target profit?", "Yes. You can keep either field at zero for a traditional break-even calculation, or include owner pay and a profit goal to calculate a more practical monthly revenue target."],
   ["Why does business capacity matter?", "A financial target is not feasible if your team cannot deliver the required orders, jobs, clients or appointments. The calculator compares required volume with productive team hours."],
   ["Can I use a currency other than US dollars?", "Yes. Select a supported currency before entering your figures. The calculator labels all amounts in that currency; it does not perform exchange-rate conversion."],
-  ["Are my financial figures saved?", "No. The free calculator runs in your browser and does not save or send the financial assumptions you enter."],
+  ["Are my financial figures saved?", "The free calculator runs in your browser. Inputs are not sent or saved automatically. If you sign in and choose Save scenario, that scenario is stored with your account and can be deleted from your dashboard."],
 ];
 
 export default function HomeSEO() {

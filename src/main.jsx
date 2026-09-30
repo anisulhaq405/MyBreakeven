@@ -101,7 +101,7 @@ function App() {
               </div>
               <div className="ai-signal">
                 <Sparkles />
-                <span><b>AI insight layer</b> Verified inputs · Explainable output</span>
+                <span><b>Formula-backed insights</b> Verified inputs · Explainable output</span>
               </div>
             <div className="dial">
               <div>
@@ -192,7 +192,7 @@ function App() {
                 <ShieldCheck />
                 <span>
                   <strong>Private calculation</strong>Your financial inputs are
-                  not sent or saved.
+                  not sent or saved unless you choose Save scenario.
                 </span>
               </div>
             </div>
@@ -240,7 +240,7 @@ function App() {
         <section className="industries" id="industries">
           <div>
             <span>BUILT AROUND HOW YOU WORK</span>
-            <h2>Eight focused business models. No generic spreadsheet.</h2>
+            <h2>Eight focused business models. Inputs for how you work.</h2>
           </div>
           <div className="chips">
             {Object.entries(industries).map(([key, item]) => (
