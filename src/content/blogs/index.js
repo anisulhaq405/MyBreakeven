@@ -1,3 +1,4 @@
+import { october01AuditUpdateMap } from "./october01AuditUpdates.js";
 import { articleList as foundationPosts, articles as foundationPostMap } from "./core.js";
 import { pricingPosts } from "./pricing.js";
 import { startupPosts } from "./startup.js";
@@ -56,6 +57,7 @@ const normalizePost = post => ({
   ...september29UpdateMap[post.slug],
   ...september30UpdateMap[post.slug],
   ...october01UpdateMap[post.slug],
+  ...october01AuditUpdateMap[post.slug],
   tag: canonicalTag(post.tag),
   seoTitle: october01UpdateMap[post.slug]?.seoTitle || september30UpdateMap[post.slug]?.seoTitle || september29UpdateMap[post.slug]?.seoTitle || seoTitleOverrides[post.slug] || cleanText(post.seoTitle),
   description: cleanText(post.description),

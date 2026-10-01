@@ -1,3 +1,4 @@
+import { october01AuditUpdateMap } from "./content/blogs/october01AuditUpdates.js";
 import { blogListingData } from "./blogListingData.js";
 import { september29UpdateMap } from "./content/blogs/september29Updates.js";
 import { september30UpdateMap } from "./content/blogs/september30Updates.js";
@@ -28,7 +29,7 @@ export async function loadBlogPost(slug) {
   const group = await groupLoaders[preview.group]();
   const post = group.find(candidate => candidate.slug === slug);
   if (!post) throw new Error(`Missing blog content for ${slug}`);
-  const article = { ...post, ...preview, ...september29UpdateMap[slug], ...september30UpdateMap[slug], ...october01UpdateMap[slug] };
+  const article = { ...post, ...preview, ...september29UpdateMap[slug], ...september30UpdateMap[slug], ...october01UpdateMap[slug], ...october01AuditUpdateMap[slug] };
   loadedPosts.set(slug, article);
   return article;
 }
