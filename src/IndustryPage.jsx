@@ -14,6 +14,13 @@ export const industryPages = {
   "salon-break-even-calculator": { key: "salon", title: "Salon Break-Even Calculator", lead: "Estimate appointments, revenue and customer inquiries using service price, product usage, stylist labor and chair capacity.", costs: "service products, stylist labor, disposables, laundry, payment fees and appointment acquisition", questions: ["How many salon appointments are needed to break even?", "What revenue covers rent and owner pay?", "Are stylist hours sufficient for the target appointments?"] },
 };
 
+const industryGuideSlugs = {
+  cleaning: "cleaning-business-break-even", landscaping: "landscaping-break-even",
+  photography: "photography-business-break-even", agency: "agency-break-even",
+  detailing: "mobile-detailing-break-even", ecommerce: "ecommerce-break-even",
+  restaurant: "restaurant-break-even", salon: "salon-break-even",
+};
+
 const money = (value) => new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 }).format(value);
 
 function answerQuestion(question, result, industry) {
@@ -26,7 +33,7 @@ function answerQuestion(question, result, industry) {
     return `The example requires ${result.wholeJobs} whole ${unit} and estimates capacity for ${result.wholeCapacity} whole ${unit} per month, using ${v.workers} team members, ${v.hoursPerWorker} hours each per week and ${v.utilizationPct}% productive time. Adjust those inputs to check your own delivery limit.`;
   }
   if (/leads|inquiries|bookings/i.test(question)) {
-    return `At the example ${v.conversionPct}% inquiry-to-${industry.singular} conversion rate, the model estimates at least ${result.wholeLeads} inquiries for the monthly target. Use your measured conversion rate for a more useful demand estimate.`;
+    return `At the example ${v.conversionPct}% inquiry-to-${industry.singular} conversion rate, the model estimates ${result.leads.toFixed(2)} inquiries for the exact fractional financial target (${result.wholeLeads} rounded up). Use your measured conversion rate for a more useful demand estimate.`;
   }
   return `At the example price of ${money(v.price)}, each ${industry.singular} contributes ${money(result.contribution)} after direct costs and fees. Covering ${money(result.fixedNeed)} in overhead, owner pay and target profit requires ${result.wholeJobs} whole ${unit}, or ${money(result.practicalRevenue)} in practical monthly sales. Replace these sample inputs with your figures.`;
 }
@@ -54,7 +61,7 @@ function IndustryQuickCalculator({ industry, industryKey }) {
     </div>
     {result.valid ? <div className="industry-quick-results" aria-live="polite">
       <div><span>Contribution per {industry.singular}</span><strong>{money(result.contribution)}</strong></div>
-      <div><span>Minimum whole {industry.unit}</span><strong>{result.wholeJobs.toLocaleString("en-US")}</strong></div>
+      <div><span>Whole {industry.unit} for your target</span><strong>{result.wholeJobs.toLocaleString("en-US")}</strong></div>
       <div><span>Monthly sales at that volume</span><strong>{money(result.practicalRevenue)}</strong></div>
       <p>At these assumptions, estimated delivery capacity is {result.wholeCapacity.toLocaleString("en-US")} whole {industry.unit} per month. {result.wholeCapacity < result.wholeJobs ? "The current capacity is below the required volume." : "The estimated capacity covers the required volume."} These are planning estimates, not a sales forecast.</p>
     </div> : <p className="industry-quick-error" role="status">{result.message}</p>}
@@ -77,17 +84,17 @@ export default function IndustryPage({ slug }) {
           <span>FREE INDUSTRY CALCULATOR</span>
           <h1>{page.title}</h1>
           <p>{page.lead}</p>
-          <a className="page-button industry-cta" href={page.key === "restaurant" || page.key === "ecommerce" ? "#industry-calculator" : `/?industry=${page.key}#calculator`}>Use the free calculator <ArrowRight /></a>
+          <a className="page-button industry-cta" href="#industry-calculator">Use the free calculator <ArrowRight /></a>
         </div>
         <aside>
           <small>EXAMPLE MODEL</small>
           <strong>{money(example.revenue)}</strong>
-          <span>sample break-even revenue, before rounding up to whole {industry.unit}</span>
+          <span>sample revenue target including owner pay and profit, before rounding up to whole {industry.unit}</span>
           <div><b>{example.jobs.toFixed(2)}</b> {industry.unit} required</div>
           <div><b>{example.wholeCapacity}</b> whole {industry.unit} capacity</div>
         </aside>
       </section>
-      {(page.key === "restaurant" || page.key === "ecommerce") && <IndustryQuickCalculator industry={industry} industryKey={page.key} />}
+      <IndustryQuickCalculator key={page.key} industry={industry} industryKey={page.key} />
       <section className="industry-content">
         <div className="industry-copy">
           <span>INDUSTRY-SPECIFIC UNIT ECONOMICS</span>
@@ -99,6 +106,16 @@ export default function IndustryPage({ slug }) {
           <article><BarChart3 /><h3>Exact financial target</h3><p>See fractional break-even volume, exact revenue and the minimum practical whole-unit target separately.</p></article>
           <article><CheckCircle2 /><h3>Operational feasibility</h3><p>Compare required {industry.unit} with estimated monthly delivery capacity before committing to the plan.</p></article>
           <article><ShieldCheck /><h3>Private and transparent</h3><p>Inputs stay in your browser, while the formula trace explains how each result was calculated.</p></article>
+        </div>
+        <div className="industry-copy">
+          <h2>Formula, assumptions and rounding</h2>
+          <p>Contribution per {industry.singular} = average price minus direct materials, labor, other variable costs, acquisition cost and percentage payment fees. Required monthly {industry.unit} = (operating overhead + owner pay + target profit) divided by contribution per {industry.singular}.</p>
+          <p>For a traditional operating break-even calculation, set owner pay and target profit to zero. Keep owner pay if you want the business to cover your compensation, and add profit only when calculating a profit target. The example values are illustrative USD inputs, not industry averages.</p>
+          <p>The example contribution is {money(example.contribution)} per {industry.singular}. The exact target is {example.jobs.toFixed(2)} {industry.unit}; rounding up gives {example.wholeJobs.toLocaleString("en-US")} whole {industry.unit} and {money(example.practicalRevenue)} in monthly sales. Costs entered per {industry.singular} must not also be included in monthly overhead.</p>
+          <p>Capacity uses team members × weekly hours × 52 / 12 × productive utilization ÷ delivery hours per {industry.singular}. Delivery hours mean total team labor hours per {industry.singular}, including preparation and travel where relevant. Whole-unit capacity rounds down, while required sales round up.</p>
+          <p>Inquiry estimates use your assumed conversion rate, not a prediction of demand. For recurring work, count existing customers separately from new customer acquisition. The full calculator supports other currency labels; it does not convert exchange rates.</p>
+          <p><a href={`/blogs/${industryGuideSlugs[page.key]}/`}>Read the {industry.short.toLowerCase()} break-even guide</a></p>
+          <p><a href="/#methodology">Read the calculation methodology</a> · <a href="/blogs/">Browse business planning guides</a></p>
         </div>
         <div className="industry-faq">
           <span>QUESTIONS THIS MODEL ANSWERS</span>
