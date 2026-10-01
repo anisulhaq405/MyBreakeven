@@ -12,6 +12,8 @@ import { september29Posts } from "./september29.js";
 import { september29UpdateMap } from "./september29Updates.js";
 import { september30Posts } from "./september30.js";
 import { september30UpdateMap } from "./september30Updates.js";
+import { october01Posts } from "./october01.js";
+import { october01UpdateMap } from "./october01Updates.js";
 
 const seoTitleOverrides = {
   "how-much-does-it-cost-to-start-a-cleaning-business": "Cleaning Business Startup Cost Guide",
@@ -53,10 +55,11 @@ const normalizePost = post => ({
   ...post,
   ...september29UpdateMap[post.slug],
   ...september30UpdateMap[post.slug],
+  ...october01UpdateMap[post.slug],
   tag: canonicalTag(post.tag),
-  seoTitle: september30UpdateMap[post.slug]?.seoTitle || september29UpdateMap[post.slug]?.seoTitle || seoTitleOverrides[post.slug] || cleanText(post.seoTitle),
+  seoTitle: october01UpdateMap[post.slug]?.seoTitle || september30UpdateMap[post.slug]?.seoTitle || september29UpdateMap[post.slug]?.seoTitle || seoTitleOverrides[post.slug] || cleanText(post.seoTitle),
   description: cleanText(post.description),
-  metaDescription: cleanText(september30UpdateMap[post.slug]?.metaDescription || september29UpdateMap[post.slug]?.metaDescription || post.metaDescription),
+  metaDescription: cleanText(october01UpdateMap[post.slug]?.metaDescription || september30UpdateMap[post.slug]?.metaDescription || september29UpdateMap[post.slug]?.metaDescription || post.metaDescription),
   opening: cleanText(post.opening),
 });
 
@@ -72,6 +75,7 @@ export const blogCollections = Object.freeze({
   september28: september28Drafts.map(normalizePost),
   september29: september29Posts.map(normalizePost),
   september30: september30Posts.map(normalizePost),
+  october01: october01Posts.map(normalizePost),
 });
 
 export const blogPosts = Object.values(blogCollections)
