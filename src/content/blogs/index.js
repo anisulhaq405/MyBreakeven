@@ -27,7 +27,7 @@ const seoTitleOverrides = {
   "agency-retainer-pricing": "Agency Retainer Pricing Guide",
   "how-to-price-products-for-ecommerce": "How to Price Ecommerce Products",
   "cleaning-business-break-even": "Cleaning Business Break-Even Guide",
-  "landscaping-break-even": "Landscaping Break-Even Guide",
+  "landscaping-break-even": "Landscaping Break-Even: Formula & Example",
   "photography-business-break-even": "Photography Break-Even Guide",
   "agency-break-even": "Agency Break-Even and Capacity Guide",
   "mobile-detailing-break-even": "Mobile Detailing Break-Even Guide",

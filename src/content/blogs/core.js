@@ -71,6 +71,39 @@ export const articles = {
   "salon-break-even": makeArticle({tag:"Salon",name:"Salon",singular:"appointment",unit:"appointments",calculatorSlug:"salon-break-even-calculator",title:"Salon Break-Even Calculator: Appointments, Service Mix and Stylist Capacity",description:"Find salon break-even appointments and revenue after products, stylist labor, laundry, disposables, fees and marketing.",variableSummary:"product usage, stylist labor, laundry, disposables, fees and booking acquisition",inputSummary:"weighted appointment value, product use, stylist labor, laundry and disposables, booking cost, overhead and productive stylist hours",inputs:["Weighted average appointment value across services","Product usage and direct stylist labor per appointment","Laundry, disposables and other service-level costs","Marketing cost per completed booking and payment fees","Rent, reception, utilities, software and monthly overhead","Stylist hours, average appointment duration, utilization and booking conversion"],exampleInputs:"$92 per appointment, $54.76 total variable cost and $15,800 monthly financial need",contribution:"$37.24",exactUnits:"424.27",wholeUnits:"425",exactRevenue:"$39,033.30",practicalRevenue:"$39,100",capacity:"399.90",inquiries:"1,116.51",mistakes:["Using a headline service price instead of a weighted service mix","Ignoring product usage, commission, laundry or booking fees","Treating all scheduled hours as sellable appointment time","Leaving cancellations and gaps out of utilization assumptions"],improvement:"Test rebooking, deposits, service mix, price adjustments, retail add-ons, product control and stylist scheduling."}),
 };
 
+// Keep the educational guide distinct from the interactive calculator route.
+const landscapingGuide = articles["landscaping-break-even"];
+Object.assign(landscapingGuide, {
+  title: "How to Do Break-Even Analysis for a Landscaping Business",
+  seoTitle: "Landscaping Break-Even: Formula & Example",
+  description: "Learn how to calculate landscaping break-even jobs with a worked example, separate owner-pay targets and a crew-capacity check.",
+  metaDescription: "Work through landscaping break-even analysis: classify costs, calculate contribution per job, round up job targets and check seasonal crew capacity.",
+  opening: "To do break-even analysis for a landscaping business, subtract job-level costs from your average job price, then divide monthly fixed overhead by the contribution left per job. Round up to a whole job and check whether your crew can deliver that volume. Add owner pay and target profit separately when planning the income you want the business to support.",
+  modified: "2026-10-01",
+  features: ["Separate fixed overhead from job-level costs", "Calculate contribution with a transparent worked example", "Distinguish operating break-even from owner pay and profit goals", "Check seasonal demand against crew labor-hour capacity"],
+});
+landscapingGuide.sections[0] = {
+  heading: "How to do landscaping break-even analysis step by step",
+  paragraphs: ["Use completed-job records and a representative month. The figures below are illustrative USD assumptions, not market prices or industry benchmarks."],
+  bullets: ["Choose one service or calculate a weighted average using the mix of jobs you actually sell.", "List monthly fixed overhead, such as insurance, storage, software and fixed vehicle commitments.", "Calculate costs that change per job: materials, direct labor, fuel, equipment use, acquisition and payment fees.", "Subtract those variable costs from the average job price to find contribution per job.", "Divide monthly overhead by contribution, then round up the required jobs.", "Add owner pay and optional profit as separate planning goals, then compare the target with crew capacity and seasonal demand."],
+};
+landscapingGuide.sections[2] = {
+  heading: "The formula: operating break-even versus your income target",
+  paragraphs: ["Contribution per job = average price − total variable cost per job. Operating break-even jobs = monthly fixed overhead ÷ contribution per job. An owner-pay and profit target uses (fixed overhead + owner pay + target profit) ÷ contribution instead. Round up only after calculating the full result.", "Count each expense once. If owner field labor is already included in direct labor per job, do not add that same labor again as owner pay. Include only additional compensation you want the business to support. Keep fixed advertising spend in overhead or allocate it per booked job, without counting the same spend twice."],
+};
+landscapingGuide.sections[3] = {
+  heading: "Worked example: a $320 landscaping job",
+  paragraphs: ["Assume a $320 average job price. Materials are $62, direct labor $96, fuel and equipment use $24, and acquisition $18 per completed job. A 2.9% payment fee adds $9.28. Total variable cost is $209.28, leaving $110.72 contribution per job.", "With $4,800 monthly overhead, operating break-even is $4,800 ÷ $110.72 = 43.35 jobs. Round up to 44 jobs, producing $14,080 in sales and $4,871.68 in contribution. That covers overhead under these assumptions; it does not also cover the separate owner-pay goal.", "Adding $5,000 in owner pay raises the monthly need to $9,800: $9,800 ÷ $110.72 = 88.51, rounded up to 89 jobs. Adding a further $1,500 profit goal raises the need to $11,300: 102.06 jobs, rounded up to 103 jobs and $32,960 in sales. The unrounded revenue target is $32,658.96.", "Four workers at 38 hours weekly, 52 ÷ 12 weeks per model month and 72% productive utilization supply 474.24 productive labor-hours. At five total worker-hours per job, capacity is 94.85 jobs, or 94 whole jobs. A two-person crew working 2.5 hours uses five worker-hours. The 103-job target exceeds this capacity; the 89-job owner-pay target fits the estimate but still needs demand and weather checks."],
+};
+landscapingGuide.sections.push({
+  heading: "Use the analysis for seasonal lawn care and mixed services",
+  paragraphs: ["Calculate active-season and slow-season months separately. A yearly average can hide a winter cash shortage. Keep a cash forecast for equipment purchases, loan principal, taxes and collection delays alongside this contribution model.", "Do not blend recurring mowing and material-heavy installation jobs with a simple unweighted average. Calculate each service contribution, then weight it by expected completed-job volume. Recheck the mix when weather or demand changes."],
+});
+landscapingGuide.faq[0] = {
+  q: "How do I calculate break-even for a landscaping business?",
+  a: "Subtract variable cost from average job price to find contribution per job, divide monthly fixed overhead by that contribution, and round up to a whole job. Add owner pay and target profit separately for an income target, then check crew capacity.",
+};
+
 export const articleList = Object.entries(articles).map(([slug, article]) => ({slug, ...article}));
 
 const relatedGuideSlugs = {
