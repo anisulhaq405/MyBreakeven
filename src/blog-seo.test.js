@@ -31,7 +31,7 @@ describe("industry guide SEO assets", () => {
       expect(article.tags.length).toBeGreaterThanOrEqual(4);
       expect(article.opening.length).toBeGreaterThan(120);
       expect(article.published).toBe("2026-09-10");
-      expect(article.modified).toBe("2026-09-13");
+      expect(article.modified).toBe(article.slug === "cleaning-business-break-even" ? "2026-10-01" : "2026-09-13");
     }
   });
 
