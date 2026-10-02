@@ -25,7 +25,7 @@ const groupFor = slug => {
   if (blogCollections.startup.some(post => post.slug === slug)) {
     return cafePosts.some(post => post.slug === slug) ? "cafe" : "startup";
   }
-  for (const [key, name] of [["profitability", "profitability"], ["volume", "volume"], ["concepts", "concepts"], ["financialPlanning", "financeExpansion"], ["unitEconomics", "unitEconomics"], ["september28", "september28"], ["september29", "september29"], ["september30", "september30"], ["october01", "october01"]]) {
+  for (const [key, name] of [["profitability", "profitability"], ["volume", "volume"], ["concepts", "concepts"], ["financialPlanning", "financeExpansion"], ["unitEconomics", "unitEconomics"], ["september28", "september28"], ["september29", "september29"], ["september30", "september30"], ["october01", "october01"], ["october02", "october02"]]) {
     if (blogCollections[key].some(post => post.slug === slug)) return name;
   }
   throw new Error(`No content module for ${slug}`);

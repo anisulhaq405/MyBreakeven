@@ -15,6 +15,8 @@ import { september30Posts } from "./september30.js";
 import { september30UpdateMap } from "./september30Updates.js";
 import { october01Posts } from "./october01.js";
 import { october01UpdateMap } from "./october01Updates.js";
+import { october02Posts } from "./october02.js";
+import { october02UpdateMap } from "./october02Updates.js";
 
 const seoTitleOverrides = {
   "how-much-does-it-cost-to-start-a-cleaning-business": "Cleaning Business Startup Cost Guide",
@@ -58,10 +60,11 @@ const normalizePost = post => ({
   ...september30UpdateMap[post.slug],
   ...october01UpdateMap[post.slug],
   ...october01AuditUpdateMap[post.slug],
+  ...october02UpdateMap[post.slug],
   tag: canonicalTag(post.tag),
-  seoTitle: october01UpdateMap[post.slug]?.seoTitle || september30UpdateMap[post.slug]?.seoTitle || september29UpdateMap[post.slug]?.seoTitle || seoTitleOverrides[post.slug] || cleanText(post.seoTitle),
+  seoTitle: october02UpdateMap[post.slug]?.seoTitle || october01UpdateMap[post.slug]?.seoTitle || september30UpdateMap[post.slug]?.seoTitle || september29UpdateMap[post.slug]?.seoTitle || seoTitleOverrides[post.slug] || cleanText(post.seoTitle),
   description: cleanText(post.description),
-  metaDescription: cleanText(october01UpdateMap[post.slug]?.metaDescription || september30UpdateMap[post.slug]?.metaDescription || september29UpdateMap[post.slug]?.metaDescription || post.metaDescription),
+  metaDescription: cleanText(october02UpdateMap[post.slug]?.metaDescription || october01UpdateMap[post.slug]?.metaDescription || september30UpdateMap[post.slug]?.metaDescription || september29UpdateMap[post.slug]?.metaDescription || post.metaDescription),
   opening: cleanText(post.opening),
 });
 
@@ -78,6 +81,7 @@ export const blogCollections = Object.freeze({
   september29: september29Posts.map(normalizePost),
   september30: september30Posts.map(normalizePost),
   october01: october01Posts.map(normalizePost),
+  october02: october02Posts.map(normalizePost),
 });
 
 export const blogPosts = Object.values(blogCollections)
