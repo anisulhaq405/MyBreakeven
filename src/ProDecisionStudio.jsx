@@ -2,13 +2,14 @@ import React, { useMemo, useState } from "react";
 import { BadgeDollarSign, CalendarRange, Layers3, Megaphone, Plus, ShieldCheck, Trash2, UserPlus, ChartNoAxesCombined } from "lucide-react";
 import { analyzeAcquisitionBreakEven, analyzeHireBreakEven, analyzeOfferMix, analyzePriceGuard, buildBreakEvenLadder, buildBreakEvenTimeline } from "./proDecisionEngine";
 import MonthlyMonitor from "./MonthlyMonitor";
+import PricingSuggestions from "./PricingSuggestions";
 
 const numeric = (value) => Number.isFinite(Number(value)) ? Number(value) : 0;
 const format = (value, currency, digits = 0) => new Intl.NumberFormat("en-US", {
   style: "currency", currency, maximumFractionDigits: digits,
 }).format(value || 0);
 
-export default function ProDecisionStudio({ input, result, industry, industryKey, currency, userId }) {
+export default function ProDecisionStudio({ input, result, industry, industryKey, currency, userId, plannedUnits }) {
   const baseVariable = input.materialCost + input.laborCost + input.otherVariableCost + input.acquisitionCost;
   const [active, setActive] = useState("mix");
   const [discount, setDiscount] = useState(10);
@@ -76,6 +77,7 @@ export default function ProDecisionStudio({ input, result, industry, industryKey
     </div>}
 
     {active === "price" && <div className="decision-panel price-guard">
+      <PricingSuggestions input={input} plannedUnits={plannedUnits} industry={industry} currency={currency} />
       <div className="panel-intro"><div><small>PRICE GUARD</small><h3>Know exactly what a discount has to earn back.</h3><p>Payment fees and all per-sale costs remain included.</p></div></div>
       <label className="decision-slider"><span>Test discount <strong>{discount}%</strong></span><input type="range" min="0" max="60" step="1" value={discount} onChange={(event) => setDiscount(Number(event.target.value))} /></label>
       <div className="decision-summary four">
