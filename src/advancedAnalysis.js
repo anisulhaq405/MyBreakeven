@@ -18,8 +18,9 @@ export function advancedAnalysis(input, result, options = {}) {
   const plannedProfit = plannedUnits.mul(baseContribution).minus(fixedBase);
   const marginSafetyRevenue = Decimal.max(0, plannedRevenue.minus(accountingRevenue));
   const marginSafetyPct = plannedRevenue.gt(0) ? marginSafetyRevenue.div(plannedRevenue).mul(100) : D(0);
-  const capacityPrice = D(result.capacity).gt(0)
-    ? fixedBase.plus(input.targetProfit).div(result.capacity).plus(variable).div(netRate)
+  const wholeCapacity = D(result.capacity).floor();
+  const capacityPrice = wholeCapacity.gt(0)
+    ? fixedBase.plus(input.targetProfit).div(wholeCapacity).plus(variable).div(netRate).toDecimalPlaces(2, Decimal.ROUND_CEIL)
     : null;
   const productiveHoursPerWorker = D(input.hoursPerWorker).mul(52).div(12).mul(D(input.utilizationPct).div(100));
   const additionalWorkers = result.gap < 0

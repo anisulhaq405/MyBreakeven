@@ -4,7 +4,7 @@ import { Activity, BarChart3, BrainCircuit, Gauge, LockKeyhole, Target } from "l
 import { advancedAnalysis } from "./advancedAnalysis";
 import ProDecisionStudio from "./ProDecisionStudio";
 
-const money=(n,c)=>new Intl.NumberFormat("en-US",{style:"currency",currency:c,maximumFractionDigits:0}).format(n||0);
+const money=(n,c)=>new Intl.NumberFormat("en-US",{style:"currency",currency:c,maximumFractionDigits:2}).format(n||0);
 const points=(values,w=640,h=190)=>{const min=Math.min(0,...values),max=Math.max(1,...values),span=max-min;return values.map((v,i)=>`${(i/(values.length-1))*w},${h-((v-min)/span)*h}`).join(" ")};
 
 export default function ProIntelligence({input,result,industry,industryKey,currency,isPro,userId}){
@@ -29,7 +29,7 @@ export default function ProIntelligence({input,result,industry,industryKey,curre
       <article><header><div><span>Capacity solver</span><strong>Can the team deliver?</strong></div></header><dl><div><dt>Capacity-safe minimum price</dt><dd>{analysis.capacityPrice?money(analysis.capacityPrice,currency):"Not available"}</dd></div><div><dt>Additional team members</dt><dd>{analysis.additionalWorkers ?? "Not available"}</dd></div><div><dt>Planned revenue</dt><dd>{money(analysis.plannedRevenue,currency)}</dd></div><div><dt>Safety cushion</dt><dd>{money(analysis.marginSafetyRevenue,currency)}</dd></div></dl></article>
       <article className="wide"><header><div><span>Price × volume</span><strong>Monthly profit heatmap</strong></div><small>Green profit · red loss</small></header><div className="heatmap"><div/><>{[-10,-5,0,5,10].map(x=><b key={x}>{x>0?"+":""}{x}% price</b>)}</>{analysis.heatmap.map(row=><React.Fragment key={row.volumeFactor}><b>{Math.round(row.volumeFactor*100)}% volume</b>{row.cells.map(cell=><span className={cell.profit>=0?"profit":"loss"} key={cell.priceChange}>{money(cell.profit,currency)}</span>)}</React.Fragment>)}</div></article>
     </div>
-    <ProDecisionStudio input={input} result={result} industry={industry} industryKey={industryKey} currency={currency} userId={userId} />
+    <ProDecisionStudio input={input} result={result} industry={industry} industryKey={industryKey} currency={currency} userId={userId} plannedUnits={plannedUnits} />
     <p className="intel-note">Analysis is based on your assumptions and formula engine outputs; it is not accounting, tax, lending or investment advice.</p>
   </section>;
 }
