@@ -2,6 +2,8 @@ import React, { useMemo, useState } from "react";
 import { ArrowRight, BarChart3, CheckCircle2, ShieldCheck } from "lucide-react";
 import { calculate } from "./engine";
 import { fieldLabels, industries } from "./industries";
+import CostBuilder from "./CostBuilder";
+import { builtFields } from "./costBuilder";
 
 export const industryPages = {
   "cleaning-business-break-even-calculator": { key: "cleaning", title: "Cleaning Business Break-Even Calculator", lead: "Calculate the monthly cleaning jobs, leads and team hours needed to cover overhead, owner pay and your profit goal.", costs: "cleaning supplies, direct labor, travel, equipment use, card fees and lead-generation cost", questions: ["How many cleaning jobs do I need to break even?", "Can my cleaners deliver the required monthly jobs?", "How many cleaning leads does my conversion rate require?"] },
@@ -54,11 +56,16 @@ function IndustryQuickCalculator({ industry, industryKey }) {
         <span>{label}</span>
         <span className="industry-quick-control">
           {suffix === "$" && <b aria-hidden="true">$</b>}
-          <input type="number" inputMode="decimal" min={options.min ?? 0} max={options.max} step={options.step ?? "0.01"} value={values[key]} onChange={event => setValues(current => ({ ...current, [key]: event.target.value }))} aria-invalid={values[key] === ""} />
+          <input type="number" inputMode="decimal" min={options.min ?? 0} max={options.max} step={options.step ?? "0.01"} value={values[key]} onChange={event => setValues(current => {
+            const next = { ...current, [key]: event.target.value };
+            if (builtFields.includes(key)) delete next.costBuilder;
+            return next;
+          })} aria-invalid={values[key] === ""} />
           {suffix && suffix !== "$" && <b aria-hidden="true">{suffix}</b>}
         </span>
       </label>)}
     </div>
+    <CostBuilder industryKey={industryKey} input={values} onApply={patch => setValues(current => ({ ...current, ...patch }))} />
     {result.valid ? <div className="industry-quick-results" aria-live="polite">
       <div><span>Contribution per {industry.singular}</span><strong>{money(result.contribution)}</strong></div>
       <div><span>Whole {industry.unit} for your target</span><strong>{result.wholeJobs.toLocaleString("en-US")}</strong></div>
