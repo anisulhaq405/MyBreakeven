@@ -11,6 +11,8 @@ import {
 import { calculate } from "./engine";
 import { fieldLabels, industries } from "./industries";
 import Insights from "./Insights";
+import CostBuilder from "./CostBuilder";
+import { builtFields } from "./costBuilder";
 import HomeBlogShowcase from "./HomeBlogShowcase";
 import { SiteFooter, SiteHeader } from "./SiteChrome";
 import HomeSEO from "./HomeSEO";
@@ -35,7 +37,11 @@ function App() {
   const industry = industries[industryKey],
     fields = fieldLabels(industry);
   const result = useMemo(() => calculate(input), [input]);
-  const set = (k, v) => setInput((s) => ({ ...s, [k]: v }));
+  const set = (k, v) => setInput((s) => {
+    const next = { ...s, [k]: v };
+    if (builtFields.includes(k) && (v === "" || Number(s[k]) !== Number(v))) delete next.costBuilder;
+    return next;
+  });
   const normalize = (k, value, options = {}) => {
     if (value === "") return;
     const parsed = Number(value);
@@ -188,6 +194,7 @@ function App() {
                   </label>
                 ))}
               </div>
+              <CostBuilder key={industryKey} industryKey={industryKey} input={input} currency={currency} onApply={patch => setInput(current => ({ ...current, ...patch }))} />
               <div className="privacy">
                 <ShieldCheck />
                 <span>

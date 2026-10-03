@@ -6,6 +6,7 @@ import { buildProReport } from "./reportBuilder";
 import ProIntelligence from "./ProIntelligence";
 import { pricingSuggestions } from "./pricingSuggestions";
 import { pricingReportRows } from "./pricingReport";
+import { appliedCostRows } from "./costBuilder";
 import { advancedAnalysis } from "./advancedAnalysis";
 import { buildDecisionBrief } from "./decisionBrief";
 const formatMoney = (n, currency) =>
@@ -100,6 +101,7 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
         s.result.score,
       ]),
       [],
+      ...(appliedCostRows(input).length ? [["Applied cost breakdown"], ...appliedCostRows(input), []] : []),
       ["Pricing plan"],
       ...pricingReportRows(input, plannedUnits, currency),
       ["Monthly growth assumption %", growth],
