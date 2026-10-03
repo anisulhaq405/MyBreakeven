@@ -201,7 +201,7 @@ function App() {
         <Insights result={result} input={input} industry={industry} currency={currency} />
         <div id="scenario-tools-anchor">
           {showTools && <Suspense fallback={<section className="scenario-tools" aria-label="Loading planning tools" />}>
-            <ScenarioTools result={result} input={input} industry={industry} industryKey={industryKey} currency={currency} />
+            <ScenarioTools key={industryKey} result={result} input={input} industry={industry} industryKey={industryKey} currency={currency} />
           </Suspense>}
         </div>
         <HomeBlogShowcase />

@@ -12,27 +12,33 @@ export function pricingSuggestions(input, plannedUnits) {
   if (!rate.gt(0) || d("utilizationPct").gt(100) || !d("hoursPerJob").gt(0)) {
     return { valid: false, message: "Payment fees must be below 100%, utilization at most 100%, and delivery hours above zero." };
   }
+  if (!d("price").gt(0) || !d("workers").gt(0) || !d("workers").isInteger()) return { valid: false, message: "Price must be above zero and team size must be a positive whole number." };
   const volume = new Decimal(plannedUnits);
   const variable = d("materialCost").plus(d("laborCost")).plus(d("otherVariableCost")).plus(d("acquisitionCost"));
   const operatingNeed = d("fixedCosts").plus(d("ownerPay"));
   const targetNeed = operatingNeed.plus(d("targetProfit"));
   const capacity = d("workers").mul(d("hoursPerWorker")).mul(52).div(12).mul(d("utilizationPct").div(100)).div(d("hoursPerJob")).floor();
-  const priceFor = need => variable.plus(need.div(volume)).div(rate).toDecimalPlaces(2, Decimal.ROUND_CEIL);
-  const rows = [
+  const feasibleVolume = Decimal.min(volume, capacity);
+  const priceFor = (need, units = volume) => variable.plus(need.div(units)).div(rate).toDecimalPlaces(2, Decimal.ROUND_CEIL);
+  const definitions = [
     ["Direct-cost floor", "Covers per-sale costs and fees only. No overhead or owner pay allowance.", new Decimal(0)],
     ["Sustainable price", "Covers per-sale costs, fees, monthly overhead and owner pay.", operatingNeed],
     ["Target-profit price", "Also funds your selected monthly target profit.", targetNeed],
-  ].map(([name, description, need]) => {
-    const price = priceFor(need);
+  ];
+  const buildRows = units => definitions.map(([name, description, need], index) => {
+    const price = priceFor(need, units);
     const contribution = price.mul(rate).minus(variable);
-    // At a zero-contribution floor, there is no finite sales target for positive need.
-    const requiredUnits = targetNeed.isZero() ? 0 : contribution.gt(0) ? targetNeed.div(contribution).ceil().toNumber() : null;
-    return { name, description, price: price.toNumber(), contribution: contribution.toNumber(), profit: volume.mul(contribution).minus(operatingNeed).toNumber(), requiredUnits, fitsCapacity: requiredUnits !== null && new Decimal(requiredUnits).lte(capacity) };
+    // Each level checks its OWN goal; a direct-cost floor is not a monthly sales plan.
+    const requiredUnits = index === 0 ? null : need.isZero() ? 0 : contribution.gt(0) ? need.div(contribution).ceil().toNumber() : null;
+    return { name, description, price: price.toNumber(), contribution: contribution.toNumber(), profit: units.mul(contribution).minus(operatingNeed).toNumber(), requiredUnits, fitsCapacity: index === 0 ? null : requiredUnits !== null && new Decimal(requiredUnits).lte(capacity) };
   });
+  const rows = buildRows(volume);
   const currentContribution = d("price").mul(rate).minus(variable);
   const currentRequiredUnits = targetNeed.isZero() ? 0 : currentContribution.gt(0) ? targetNeed.div(currentContribution).ceil().toNumber() : null;
   return {
     valid: true, plannedUnits: volume.toNumber(), wholeCapacity: capacity.toNumber(), plannedFitsCapacity: volume.lte(capacity),
+    feasibleUnits: feasibleVolume.toNumber(), feasibleRows: feasibleVolume.gt(0) ? buildRows(feasibleVolume) : [],
+    feasibleCurrentProfit: feasibleVolume.mul(currentContribution).minus(operatingNeed).toNumber(),
     variableCost: variable.toNumber(), operatingNeed: operatingNeed.toNumber(), targetNeed: targetNeed.toNumber(), rows,
     currentProfit: volume.mul(currentContribution).minus(operatingNeed).toNumber(), currentRequiredUnits,
     currentFitsCapacity: currentRequiredUnits !== null && new Decimal(currentRequiredUnits).lte(capacity),

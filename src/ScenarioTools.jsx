@@ -4,6 +4,8 @@ import { ClipboardCheck, Download, FileText, Save, Share2, TrendingUp } from "lu
 import { limitsFor, normalizePlan } from "./entitlements";
 import { buildProReport } from "./reportBuilder";
 import ProIntelligence from "./ProIntelligence";
+import { pricingSuggestions } from "./pricingSuggestions";
+import { pricingReportRows } from "./pricingReport";
 import { advancedAnalysis } from "./advancedAnalysis";
 import { buildDecisionBrief } from "./decisionBrief";
 const formatMoney = (n, currency) =>
@@ -17,6 +19,12 @@ const safe = (s) => String(s).replaceAll('"', '""');
 export default function ScenarioTools({ input, result, industry, industryKey, currency }) {
   const money = (n) => formatMoney(n, currency);
   const [drift, setDrift] = useState(10);
+  const [plannedUnits, setPlannedUnits] = useState(() => input.expectedMonthlyUnits ?? Math.max(1, pricingSuggestions(input, 1).wholeCapacity || 1));
+  const [growth, setGrowth] = useState(() => input.monthlyGrowthPct ?? 2);
+  useEffect(() => {
+    if (input.expectedMonthlyUnits !== undefined) setPlannedUnits(input.expectedMonthlyUnits);
+    if (input.monthlyGrowthPct !== undefined) setGrowth(input.monthlyGrowthPct);
+  }, [input.expectedMonthlyUnits, input.monthlyGrowthPct]);
   const [saveState, setSaveState] = useState({ loading: false, message: "", error: "" });
   const [briefMessage, setBriefMessage] = useState("");
   const [plan, setPlan] = useState("free");
@@ -74,7 +82,7 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
       }),
     [input, drift],
   );
-  const reportAnalysis = useMemo(() => advancedAnalysis(input, result), [input, result]);
+  const reportAnalysis = useMemo(() => advancedAnalysis(input, result, { plannedUnits, growthPct: growth }), [input, result, plannedUnits, growth]);
   const decisionBrief = useMemo(() => buildDecisionBrief({ input, result, analysis: reportAnalysis, industry, currency }), [input, result, reportAnalysis, industry, currency]);
   const csv = () => {
     const rows = [
@@ -91,6 +99,10 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
         s.result.leads,
         s.result.score,
       ]),
+      [],
+      ["Pricing plan"],
+      ...pricingReportRows(input, plannedUnits, currency),
+      ["Monthly growth assumption %", growth],
       [],
       ["Advanced Pro metrics"],
       ["Accounting break-even", reportAnalysis.accountingRevenue],
@@ -129,7 +141,7 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
   const print = () => {
     const w = window.open("", "_blank");
     if (!w) return;
-    w.document.write(buildProReport({ input, result, scenarios, analysis: reportAnalysis, brief: decisionBrief, industry, currency, engineVersion: FORMULA_ENGINE_VERSION }));
+    w.document.write(buildProReport({ input, result, scenarios, analysis: reportAnalysis, brief: decisionBrief, planning: { plannedUnits, growthPct: growth }, industry, currency, engineVersion: FORMULA_ENGINE_VERSION }));
     w.document.close();
     w.focus();
     w.print();
@@ -173,11 +185,11 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
       setSaveState({ loading: false, message: "", error: `${currentPlan === "pro" ? "Pro" : "Free"} plan limit reached (${currentLimits.savedScenarios} saved scenarios).` });
       return;
     }
-    const { error } = await supabase.from("saved_scenarios").insert({ name, industry_key: industryKey, currency, inputs: input, engine_version: FORMULA_ENGINE_VERSION });
+    const { error } = await supabase.from("saved_scenarios").insert({ name, industry_key: industryKey, currency, inputs: { ...input, expectedMonthlyUnits: plannedUnits, monthlyGrowthPct: growth }, engine_version: FORMULA_ENGINE_VERSION });
     const friendlyError = error?.message?.includes("PLAN_LIMIT_REACHED") ? `Plan limit reached (${currentLimits.savedScenarios} saved scenarios).` : error?.message;
     setSaveState(error ? { loading: false, message: "", error: friendlyError } : { loading: false, message: "Scenario saved. Open it from your dashboard.", error: "" });
   };
-  if (!result.valid) return null;
+  if (!result.valid) return isPro ? <ProIntelligence input={input} result={result} industry={industry} industryKey={industryKey} currency={currency} isPro={isPro} userId={userId} plannedUnits={plannedUnits} growth={growth} onPlannedUnitsChange={setPlannedUnits} onGrowthChange={setGrowth} /> : null;
   return (
     <section className="scenario-tools">
       <div className="tools-heading">
@@ -248,7 +260,7 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
         <div className="brief-actions">{decisionBrief.actions.map((action,index) => <article className={action.severity} key={action.title}><b>{String(index + 1).padStart(2,"0")}</b><div><strong>{action.title}</strong><p>{action.detail}</p></div></article>)}</div>
         <div className="brief-share"><button onClick={copyBrief}><Share2 /> Copy brief</button><button onClick={downloadBrief}><Download /> Download brief</button>{briefMessage && <span role="status">{briefMessage}</span>}</div>
       </section>}
-      <ProIntelligence input={input} result={result} industry={industry} industryKey={industryKey} currency={currency} isPro={isPro} userId={userId} />
+      <ProIntelligence input={input} result={result} industry={industry} industryKey={industryKey} currency={currency} isPro={isPro} userId={userId} plannedUnits={plannedUnits} growth={growth} onPlannedUnitsChange={setPlannedUnits} onGrowthChange={setGrowth} />
     </section>
   );
 }
