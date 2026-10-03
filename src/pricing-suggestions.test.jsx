@@ -8,6 +8,8 @@ import ProIntelligence from "./ProIntelligence";
 import { industries } from "./industries";
 import { calculate } from "./engine";
 import { advancedAnalysis } from "./advancedAnalysis";
+import { pricingReportRows } from "./pricingReport";
+import { buildProReport } from "./reportBuilder";
 
 const input = { ...industries.cleaning.values, price: 250, materialCost: 100, laborCost: 0, otherVariableCost: 0, acquisitionCost: 0, paymentFeePct: 3, fixedCosts: 3000, ownerPay: 2000, targetProfit: 1000, workers: 1, hoursPerWorker: 40, hoursPerJob: 2, utilizationPct: 100 };
 describe("pricing suggestions", () => {
@@ -42,7 +44,7 @@ describe("pricing suggestions", () => {
     const a = pricingSuggestions({ ...input, paymentFeePct: 0 }, 40);
     expect(a.rows[0].requiredUnits).toBeNull();
     const zero = pricingSuggestions({ ...input, fixedCosts: 0, ownerPay: 0, targetProfit: 0, paymentFeePct: 0 }, 40);
-    expect(zero.rows.every(r => r.requiredUnits === 0 && r.profit === 0)).toBe(true);
+    expect(zero.rows.slice(1).every(r => r.requiredUnits === 0 && r.profit === 0)).toBe(true);
   });
   it.each([0, -1, 1.5, NaN, Infinity, ""])("rejects invalid monthly volume %s", volume => {
     expect(pricingSuggestions(input, volume).valid).toBe(false);
@@ -59,17 +61,60 @@ describe("pricing suggestions", () => {
     expect(r.requiredUnits).toBeLessThanOrEqual(40);
     const html = renderToStaticMarkup(<PricingSuggestions input={base} plannedUnits={40} industry={industry} currency="USD" />);
     expect(html).toContain(`per ${industry.singular}`);
-    expect(html).toContain("Target-profit price");
+    expect(html).toContain("Also earn your target profit");
     expect(html).not.toMatch(/NaN|Infinity/);
   });
   it("renders the capacity warning and an actionable invalid input message", () => {
     const render = (volume, changes = {}) => renderToStaticMarkup(<PricingSuggestions input={{ ...input, ...changes }} plannedUnits={volume} industry={industries.cleaning} currency="EUR" />);
-    expect(render(40, { utilizationPct: 0 })).toContain("No whole sales can be delivered");
+    expect(render(40, { utilizationPct: 0 })).toContain("No whole jobs can be delivered");
     expect(render(0)).toContain('role="alert"');
     expect(render(40)).toContain("€257.74");
   });
   it("keeps suggestions behind the Pro dashboard", () => {
     const html = renderToStaticMarkup(<ProIntelligence input={input} result={calculate(input)} industry={industries.cleaning} currency="USD" isPro={false} />);
     expect(html).not.toContain("Sustainable price");
+  });
+  it("uses deliverable volume for both price and current profit in the screenshot case", () => {
+    const base = industries.cleaning.values;
+    const a = pricingSuggestions(base, 131);
+    expect(a.feasibleUnits).toBe(97);
+    expect(a.feasibleRows[2].price).toBe(193.30);
+    expect(a.feasibleCurrentProfit).toBeCloseTo(-252.34);
+    expect(a.rows[0].requiredUnits).toBeNull();
+    const html = renderToStaticMarkup(<PricingSuggestions input={base} plannedUnits={131} industry={industries.cleaning} currency="USD" />);
+    expect(html).toContain("$193.30");
+    expect(html).toContain("$252.34");
+    expect(html).not.toContain("2871288");
+    expect(html).not.toContain("$169.33");
+    expect(html).not.toContain("decrease of");
+  });
+  it("does not assume demand up to capacity when expected sales are lower", () => {
+    const a = pricingSuggestions(industries.cleaning.values, 80);
+    expect(a.feasibleUnits).toBe(80);
+    expect(a.feasibleRows[2].price).toBe(212.93);
+  });
+  it("checks the expense-covering price against its own goal", () => {
+    const base = { ...input, workers: 1, hoursPerWorker: 35, hoursPerJob: 3.5, utilizationPct: 100, fixedCosts: 5000, ownerPay: 0, targetProfit: 1000 };
+    const a = pricingSuggestions(base, 40);
+    expect(a.rows[1].requiredUnits).toBe(40);
+    expect(a.rows[1].fitsCapacity).toBe(true);
+  });
+  it("keeps loss-making current prices usable for a recovery plan", () => {
+    const base = { ...industries.cleaning.values, price: 90 };
+    const html = renderToStaticMarkup(<ProIntelligence input={base} result={calculate(base)} industry={industries.cleaning} plannedUnits={97} currency="USD" isPro />);
+    expect(html).toContain("$193.30");
+    expect(html).toContain("What should your price cover?");
+  });
+  it("rejects fractional teams and includes identical pricing assumptions in report rows", () => {
+    expect(pricingSuggestions({ ...input, workers: 1.5 }, 40).valid).toBe(false);
+    const base = industries.cleaning.values;
+    const rows = pricingReportRows(base, 80, "USD");
+    expect(rows).toContainEqual(["Expected monthly sales", 80]);
+    expect(rows).toContainEqual(["Minimum price: including target profit", "$212.93"]);
+    const result = calculate(base);
+    const html = buildProReport({ input: base, result, scenarios: [], analysis: advancedAnalysis(base, result, { plannedUnits: 80, growthPct: 4 }), planning: { plannedUnits: 80, growthPct: 4 }, industry: industries.cleaning, currency: "USD", engineVersion: "1.3.0" });
+    expect(html).toContain("$212.93");
+    expect(html).toContain("Growth assumption: 4%");
+    expect(html).not.toContain("2871288");
   });
 });
