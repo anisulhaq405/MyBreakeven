@@ -167,3 +167,7 @@ const publicUrls = ["https://mybreakeven.com/",
 ];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${publicUrls.map(url => `  <url><loc>${escapeHtml(url)}</loc></url>`).join("\n")}\n</urlset>\n`;
 await writeFile(new URL("../dist/sitemap.xml", import.meta.url), sitemap);
+
+// Public, revision-aware source for website-to-social automation.
+const { generateSocialFeed } = await import('./social-feed.mjs');
+await generateSocialFeed({ articles: allArticles, calculators, pages: staticPages, directory: new URL('../dist/', import.meta.url) });
