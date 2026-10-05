@@ -1461,8 +1461,9 @@
     },
     "https://mybreakeven.com/blogs/agency-billable-utilization-rate/|instagram": {
       "revision": "2a881b85b6906f7545892a9d9ec255351e0b21defaf3c6e09f7a0580da0b48ac",
-      "status": "attempting",
-      "attemptedAt": "2026-10-05T17:51:17.506Z"
+      "status": "published",
+      "postId": "17882191224624098",
+      "publishedAt": "2026-10-05T17:51:26.706Z"
     }
   }
 }
