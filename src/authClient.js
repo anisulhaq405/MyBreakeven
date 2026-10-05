@@ -1,6 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
+import { supabaseUrl as url } from "./authSession";
 
-const url = (import.meta.env.VITE_SUPABASE_URL || "https://wffkdujezksnzttxxqfs.supabase.co").trim();
 const publishableKey = (import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || "sb_publishable_Ot0yFXvL1EgrMo_tc12jcg_NZQVx_Eg").trim();
 
 export const authConfigured = Boolean(
