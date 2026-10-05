@@ -19,6 +19,7 @@ import HomeSEO from "./HomeSEO";
 import AnalyticsConsent from "./AnalyticsConsent";
 import { POLAR_CHECKOUT_URL } from "./billing";
 import "./styles.css";
+import "./fonts.css";
 import "./industries.css";
 import "./visuals.css";
 import "./home-presentation.css";
@@ -342,6 +343,11 @@ async function renderApp() {
 renderApp();
 if (import.meta.env.PROD) {
   const startMonitoring = () => { import("./sentry"); };
-  if ("requestIdleCallback" in window) window.requestIdleCallback(startMonitoring, { timeout: 3000 });
-  else window.setTimeout(startMonitoring, 1500);
+  const scheduleMonitoring = () => {
+    if ("requestIdleCallback" in window) window.requestIdleCallback(startMonitoring, { timeout: 3000 });
+    else window.setTimeout(startMonitoring, 1500);
+  };
+  // Finish the page's critical resources before downloading optional monitoring.
+  if (document.readyState === "complete") scheduleMonitoring();
+  else window.addEventListener("load", scheduleMonitoring, { once: true });
 }

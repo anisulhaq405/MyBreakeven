@@ -1,3 +1,4 @@
+import "./secondary-pages.css";
 import "./blogs-page.css";
 import "./about-contact.css";
 import React, { lazy, Suspense, useEffect, useState } from "react";

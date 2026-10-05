@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ArrowUpRight, CreditCard, LockKeyhole, Mail, Menu, ShieldCheck, X } from "lucide-react";
+import { authStorageKey, needsAccountClient } from "./authSession";
 
 export const primaryNavigation = [
   ["Calculator", "/#calculator"],
@@ -25,18 +26,29 @@ export function SiteHeader() {
   useEffect(() => {
     let active = true;
     let subscription;
-    import("./authClient").then(({ supabase }) => {
-      if (!active || !supabase) return;
-      supabase.auth.getSession().then(({ data }) => {
-        if (active) setSignedIn(Boolean(data.session));
+    let started = false;
+    const connect = () => {
+      if (started || !needsAccountClient(window.location)) return;
+      started = true;
+      import("./authClient").then(({ supabase }) => {
+        if (!active || !supabase) return;
+        supabase.auth.getSession().then(({ data }) => {
+          if (active) setSignedIn(Boolean(data.session));
+        });
+        const { data } = supabase.auth.onAuthStateChange((_event, session) => {
+          if (active) setSignedIn(Boolean(session));
+        });
+        subscription = data.subscription;
       });
-      const { data } = supabase.auth.onAuthStateChange((_event, session) => {
-        if (active) setSignedIn(Boolean(session));
-      });
-      subscription = data.subscription;
-    });
+    };
+    connect();
+    const onStorage = event => {
+      if (event.key === authStorageKey || event.key === null) connect();
+    };
+    window.addEventListener("storage", onStorage);
     return () => {
       active = false;
+      window.removeEventListener("storage", onStorage);
       subscription?.unsubscribe();
     };
   }, []);
