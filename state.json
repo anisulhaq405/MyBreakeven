@@ -327,11 +327,13 @@
     },
     "https://mybreakeven.com/blogs/ecommerce-break-even/|facebook": {
       "revision": "920610797c9194d855dd5f3e55437f34511670c492c1bddfb80f9e3b09cb989e",
-      "status": "baseline"
+      "status": "attempting",
+      "attemptedAt": "2026-10-05T17:56:26.444Z"
     },
     "https://mybreakeven.com/blogs/ecommerce-break-even/|instagram": {
       "revision": "920610797c9194d855dd5f3e55437f34511670c492c1bddfb80f9e3b09cb989e",
-      "status": "baseline"
+      "status": "attempting",
+      "attemptedAt": "2026-10-05T17:56:26.446Z"
     },
     "https://mybreakeven.com/blogs/ecommerce-break-even/|pinterest": {
       "revision": "920610797c9194d855dd5f3e55437f34511670c492c1bddfb80f9e3b09cb989e",
@@ -1035,11 +1037,13 @@
     },
     "https://mybreakeven.com/blogs/restaurant-break-even/|facebook": {
       "revision": "8183df6d4dd894900d3fdf75285345c7695b906873b1be3e838de4199c3a503f",
-      "status": "baseline"
+      "status": "attempting",
+      "attemptedAt": "2026-10-05T17:56:26.446Z"
     },
     "https://mybreakeven.com/blogs/restaurant-break-even/|instagram": {
       "revision": "8183df6d4dd894900d3fdf75285345c7695b906873b1be3e838de4199c3a503f",
-      "status": "baseline"
+      "status": "attempting",
+      "attemptedAt": "2026-10-05T17:56:26.446Z"
     },
     "https://mybreakeven.com/blogs/restaurant-break-even/|pinterest": {
       "revision": "8183df6d4dd894900d3fdf75285345c7695b906873b1be3e838de4199c3a503f",
@@ -1179,11 +1183,13 @@
     },
     "https://mybreakeven.com/blogs/salon-break-even/|facebook": {
       "revision": "99be67b354066e26952cb8d64df9fb31324d63a6ae78655a2b9ba10c24c6b12e",
-      "status": "baseline"
+      "status": "attempting",
+      "attemptedAt": "2026-10-05T17:56:26.446Z"
     },
     "https://mybreakeven.com/blogs/salon-break-even/|instagram": {
       "revision": "99be67b354066e26952cb8d64df9fb31324d63a6ae78655a2b9ba10c24c6b12e",
-      "status": "baseline"
+      "status": "attempting",
+      "attemptedAt": "2026-10-05T17:56:26.446Z"
     },
     "https://mybreakeven.com/blogs/salon-break-even/|pinterest": {
       "revision": "99be67b354066e26952cb8d64df9fb31324d63a6ae78655a2b9ba10c24c6b12e",
