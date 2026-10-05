@@ -1452,6 +1452,11 @@
     "https://mybreakeven.com/terms-of-service/|pinterest": {
       "revision": "bc93c39713cd2ac1e8e9cdbb7a6d46da463cf2511fc5a453f3dc56fed2878712",
       "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/agency-billable-utilization-rate/|facebook": {
+      "revision": "2a881b85b6906f7545892a9d9ec255351e0b21defaf3c6e09f7a0580da0b48ac",
+      "status": "attempting",
+      "attemptedAt": "2026-10-05T17:51:09.150Z"
     }
   }
 }
