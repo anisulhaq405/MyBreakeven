@@ -10,11 +10,12 @@ permissions:
 
 concurrency:
   group: hostinger-production
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
@@ -38,3 +39,10 @@ jobs:
           publish_branch: hostinger-deploy
           publish_dir: ./dist
           force_orphan: true
+
+      - name: Publish new and changed content to social accounts
+        env:
+          MAKE_SOCIAL_WEBHOOK_URL: ${{ secrets.MAKE_SOCIAL_WEBHOOK_URL }}
+          SOCIAL_REPOSITORY_URL: https://github.com/${{ github.repository }}.git
+          SOCIAL_FIRST_TEST_URL: https://mybreakeven.com/blogs/agency-billable-utilization-rate/
+        run: node scripts/publish-social.mjs

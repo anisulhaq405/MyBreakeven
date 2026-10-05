@@ -1,24 +1,14 @@
-# MyBreakeven social automation
+# MyBreakEven website-to-social publishing
 
-Status: website source prepared; social account authorization and Make scenario activation are still required. No social posts are sent by this code.
+Make scenario: https://eu1.make.com/3058803/scenarios/7785813
+Destinations verified: Facebook MyBreakeven, Instagram @mybreakevenapp, Pinterest MyBreakEven1; Pinterest board 1092263784567432487.
 
-Destinations: Facebook Page `mybreakevenapp`, Instagram `mybreakevenapp`, Pinterest `MyBreakEven1` (choose a destination board during connection).
+Every build produces revision-aware JSON/RSS feeds for articles, calculators and public pages. Local feature images become public 1200×630 JPEGs. Private account routes are excluded. Changes to authored content/images cause announcements; ordinary rebuilds do not. JavaScript-only calculator changes require an authored announcement. This is a snapshot, so intermediate edits between deployments collapse into the latest version.
 
-Every production build creates `/social-feed.json` and `/social-feed.xml`. JSON includes every article and public page, including calculators. Private account pages are excluded. A content revision changes when article content or its image changes, even when an editor forgets to change the modified date. Ordinary rebuilding does not generate a new revision. The feed is a current-state snapshot, not an historical event log; several edits between checks produce one latest-version announcement. CSS, private data and site infrastructure changes are not promotional content. Calculator code changes without visible page changes require an authored announcement.
+The production workflow waits until Hostinger serves the exact feed revision, then invokes Make separately for each destination. Configure repository secret MAKE_SOCIAL_WEBHOOK_URL. The URL is a credential; never put it in source. Social OAuth credentials stay in Make. Webhook route selection uses the learned kind field (facebook/instagram/pinterest). The response contains the platform post ID and revision.
 
-## Free Make setup
+Durable per-URL/per-destination state is stored in the separate social-publish-state Git branch. First execution seeds a baseline without archive flooding; only the configured SOCIAL_FIRST_TEST_URL is posted as a launch test. Published revisions are skipped on subsequent deployments. An attempted publication is reserved in Git BEFORE the HTTP call. A failed/ambiguous request is marked needs_review and is never automatically resent, since it may already have published. Other destinations still proceed. Reconcile Make execution history and the platform before resetting a failed record or recording its successful ID. Unresolved records make the workflow fail visibly, even if the site itself deployed successfully. Do not delete or overwrite the state branch.
 
-1. Connect Facebook Pages, Instagram for Business, and Pinterest using OAuth in Make. Verify the exact handles above. For the Facebook-login Instagram integration, use an eligible Instagram Business account linked to the Facebook Page. Confirm public images work for Instagram and Pinterest; image conversion/resizing may be needed for their requirements.
-2. Create one scheduled scenario. HTTP GET `https://mybreakeven.com/social-feed.json`, then iterate `items`. Use a data store keyed by canonical URL and destination. On first activation, seed existing revisions without posting the entire archive.
-3. Compare each destination's saved revision with the current item revision. If different, generate a new-content or updated-content announcement. Facebook uses title, description, canonical link and optional image; Instagram uses a supported image and caption (caption links are not clickable); Pinterest uses image, title, description, canonical destination URL, and selected board. Missing or invalid images leave Instagram/Pinterest pending rather than silently succeeding.
-4. Store the successful post ID and revision per destination only after that destination succeeds. Retry failures with backoff. An ambiguous publish timeout must be reconciled against the platform before retrying to avoid duplicates. One destination failing must not resend successful destinations.
-5. Test one real article on all three accounts, check the published URLs, then activate the schedule. Make's free plan currently has 1,000 credits/month and a 15-minute minimum interval; an hourly HTTP-only poll already costs about 720 credits/month, before iteration, data-store checks, and publishing. Do not promise this full-catalog polling scenario fits free credits. Prefer a deployment webhook sending only changed items if the posting volume is substantial; that requires a separately configured deployment integration and persistent baseline. Free quotas are not unlimited.
+Production concurrency is serialized. Git push permission for the state branch is required. Live-site delay has a 30-minute limit; no posts are sent before the exact feed is live. Missing JPEGs remain pending. No automatic retries after an uncertain publish. This avoids duplicates but means failures require review. Build/website failure before publication does not announce unavailable content.
 
-## Activation requirements
-
-- Make account and social OAuth authorizations.
-- Pinterest destination board.
-- Approved initial baseline (future publications and updates, no archive flood).
-- Scenario credit estimate at the actual daily volume; select webhook delivery or self-hosting if the free quota is insufficient.
-
-Never put social access tokens in public source, browser code, or this feed. A feed or RSS reader alone does not enable automatic social publishing.
+Make credits are consumed only for events, with a publishing action and webhook response per destination plus the trigger. Actual quota depends on volume; no unlimited-free guarantee. Instagram caption links are plain text. Keep Make scenario active and social OAuth current. Never rerun the one-time board creation scenario.

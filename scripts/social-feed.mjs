@@ -1,5 +1,7 @@
 import { createHash } from 'node:crypto';
 import { readFile, writeFile } from 'node:fs/promises';
+import { mkdir } from 'node:fs/promises';
+import sharp from 'sharp';
 
 const origin = 'https://mybreakeven.com';
 const xml = value => String(value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&apos;');
@@ -8,11 +10,15 @@ export const revisionFor = value => createHash('sha256').update(JSON.stringify(v
 export async function generateSocialFeed({ articles, calculators, pages, directory }) {
   const items = [];
   async function add({ route, title, description, image, kind, content, published = null, modified = null }) {
-    const imageUrl = image ? new URL(image, origin).href : null;
+    let imageUrl = image ? new URL(image, origin).href : null;
     let imageRevision = null;
     if (imageUrl?.startsWith(`${origin}/`)) {
       const bytes = await readFile(new URL(`.${new URL(imageUrl).pathname}`, directory));
       imageRevision = createHash('sha256').update(bytes).digest('hex');
+      await mkdir(new URL('images/social/', directory), { recursive: true });
+      const name = `${imageRevision}.jpg`;
+      await sharp(bytes).rotate().resize(1200, 630, { fit: 'contain', background: '#ffffff' }).flatten({ background: '#ffffff' }).jpeg({ quality: 88 }).toFile(new URL(`images/social/${name}`, directory).pathname);
+      imageUrl = `${origin}/images/social/${name}`;
     }
     const url = `${origin}/${route}${route ? '/' : ''}`;
     const revision = revisionFor({ title, description, image: imageUrl, imageRevision, content });
