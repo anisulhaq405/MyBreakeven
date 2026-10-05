@@ -80,6 +80,12 @@ export function SiteHeader() {
   );
 }
 
+const socialProfiles = [
+  ["Pinterest", "https://www.pinterest.com/MyBreakEven1/", "pinterest"],
+  ["Facebook", "https://www.facebook.com/mybreakevenapp", "facebook"],
+  ["Instagram", "https://www.instagram.com/mybreakevenapp/", "instagram"],
+];
+
 export function SiteFooter() {
   return (
     <footer>
@@ -98,6 +104,14 @@ export function SiteFooter() {
             <span className="footer-trust"><ShieldCheck /> Transparent formulas</span>
             <span className="footer-trust"><LockKeyhole /> Private by default</span>
           </div>
+          <nav className="footer-social" aria-label="MyBreakeven social media">
+            {socialProfiles.map(([name, href, icon]) => (
+              <a key={name} href={href} target="_blank" rel="noopener noreferrer" aria-label={`${name} (opens in a new tab)`}>
+                <img src={`/social/${icon}.svg`} width="22" height="22" alt="" loading="lazy" />
+                <span>{name}</span>
+              </a>
+            ))}
+          </nav>
           <a className="footer-support" href="mailto:support@mybreakeven.com"><Mail /> support@mybreakeven.com</a>
         </div>
         <nav className="footer-links" aria-label="Product links">
