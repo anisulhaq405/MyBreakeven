@@ -1039,13 +1039,15 @@
     },
     "https://mybreakeven.com/blogs/restaurant-break-even/|facebook": {
       "revision": "8183df6d4dd894900d3fdf75285345c7695b906873b1be3e838de4199c3a503f",
-      "status": "attempting",
-      "attemptedAt": "2026-10-05T17:56:26.446Z"
+      "status": "published",
+      "postId": "1437362339452872_122094409389509539",
+      "publishedAt": "2026-10-05T17:57:38.510222+00:00"
     },
     "https://mybreakeven.com/blogs/restaurant-break-even/|instagram": {
       "revision": "8183df6d4dd894900d3fdf75285345c7695b906873b1be3e838de4199c3a503f",
-      "status": "attempting",
-      "attemptedAt": "2026-10-05T17:56:26.446Z"
+      "status": "published",
+      "postId": "18013880825976121",
+      "publishedAt": "2026-10-05T17:57:56.749896+00:00"
     },
     "https://mybreakeven.com/blogs/restaurant-break-even/|pinterest": {
       "revision": "8183df6d4dd894900d3fdf75285345c7695b906873b1be3e838de4199c3a503f",
