@@ -1,0 +1,1457 @@
+{
+  "version": 1,
+  "records": {
+    "https://mybreakeven.com/|facebook": {
+      "revision": "fbcb5005632334a8dc6a06dce90286c306f79ef36d11fa1dd7ab3985562eb233",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/|instagram": {
+      "revision": "fbcb5005632334a8dc6a06dce90286c306f79ef36d11fa1dd7ab3985562eb233",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/|pinterest": {
+      "revision": "fbcb5005632334a8dc6a06dce90286c306f79ef36d11fa1dd7ab3985562eb233",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/about-us/|facebook": {
+      "revision": "e5755bb2d45cc58e6f7f11d755d1e2ab0ab8c80c4ac75cc4a00d601149f7302d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/about-us/|instagram": {
+      "revision": "e5755bb2d45cc58e6f7f11d755d1e2ab0ab8c80c4ac75cc4a00d601149f7302d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/about-us/|pinterest": {
+      "revision": "e5755bb2d45cc58e6f7f11d755d1e2ab0ab8c80c4ac75cc4a00d601149f7302d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/|facebook": {
+      "revision": "a77b54e1e5178535529d1338eb82696eb2c4a57a5b3eff0966ad907c8987463d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/|instagram": {
+      "revision": "a77b54e1e5178535529d1338eb82696eb2c4a57a5b3eff0966ad907c8987463d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/|pinterest": {
+      "revision": "a77b54e1e5178535529d1338eb82696eb2c4a57a5b3eff0966ad907c8987463d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/agency-break-even/|facebook": {
+      "revision": "d817b36b521b0ec04a8db6c40e6e2957b4be0984588b843436e77c4090226e2f",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/agency-break-even/|instagram": {
+      "revision": "d817b36b521b0ec04a8db6c40e6e2957b4be0984588b843436e77c4090226e2f",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/agency-break-even/|pinterest": {
+      "revision": "d817b36b521b0ec04a8db6c40e6e2957b4be0984588b843436e77c4090226e2f",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/agency-client-profitability/|facebook": {
+      "revision": "5632be212b90117b9b1bbd9d760cdeb3e35e89bb2a82369e9ebd1ef886f4bbef",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/agency-client-profitability/|instagram": {
+      "revision": "5632be212b90117b9b1bbd9d760cdeb3e35e89bb2a82369e9ebd1ef886f4bbef",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/agency-client-profitability/|pinterest": {
+      "revision": "5632be212b90117b9b1bbd9d760cdeb3e35e89bb2a82369e9ebd1ef886f4bbef",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/agency-profit-margin/|facebook": {
+      "revision": "861198a4ceb92e722a68bcadfcfbc61787435348eb572e65c9b34df68dafbbd7",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/agency-profit-margin/|instagram": {
+      "revision": "861198a4ceb92e722a68bcadfcfbc61787435348eb572e65c9b34df68dafbbd7",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/agency-profit-margin/|pinterest": {
+      "revision": "861198a4ceb92e722a68bcadfcfbc61787435348eb572e65c9b34df68dafbbd7",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/agency-retainer-pricing/|facebook": {
+      "revision": "20396b35c82c70f0eeed19531a59001809a199dd4ae5904cdff364ca71b33b42",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/agency-retainer-pricing/|instagram": {
+      "revision": "20396b35c82c70f0eeed19531a59001809a199dd4ae5904cdff364ca71b33b42",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/agency-retainer-pricing/|pinterest": {
+      "revision": "20396b35c82c70f0eeed19531a59001809a199dd4ae5904cdff364ca71b33b42",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/break-even-analysis-example/|facebook": {
+      "revision": "225476c63c68a0ebd69696223aa0ccdb28af07796f34ed2b202891653ff27027",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/break-even-analysis-example/|instagram": {
+      "revision": "225476c63c68a0ebd69696223aa0ccdb28af07796f34ed2b202891653ff27027",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/break-even-analysis-example/|pinterest": {
+      "revision": "225476c63c68a0ebd69696223aa0ccdb28af07796f34ed2b202891653ff27027",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/break-even-formula-units-dollars/|facebook": {
+      "revision": "5305d88444bbfc312a673526a0b7657014fd7d4512b980e6cb1d998878370738",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/break-even-formula-units-dollars/|instagram": {
+      "revision": "5305d88444bbfc312a673526a0b7657014fd7d4512b980e6cb1d998878370738",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/break-even-formula-units-dollars/|pinterest": {
+      "revision": "5305d88444bbfc312a673526a0b7657014fd7d4512b980e6cb1d998878370738",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/break-even-multiple-products-sales-mix/|facebook": {
+      "revision": "51132fbc8e1bba4b429e01d9eb6234029a0defc0b190ca38036d72e99240e15b",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/break-even-multiple-products-sales-mix/|instagram": {
+      "revision": "51132fbc8e1bba4b429e01d9eb6234029a0defc0b190ca38036d72e99240e15b",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/break-even-multiple-products-sales-mix/|pinterest": {
+      "revision": "51132fbc8e1bba4b429e01d9eb6234029a0defc0b190ca38036d72e99240e15b",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/break-even-roas-formula/|facebook": {
+      "revision": "6884174f39b00eee84ddf7b0fd71a3d20906dbbf92a0a156e99aeebed6a742ea",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/break-even-roas-formula/|instagram": {
+      "revision": "6884174f39b00eee84ddf7b0fd71a3d20906dbbf92a0a156e99aeebed6a742ea",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/break-even-roas-formula/|pinterest": {
+      "revision": "6884174f39b00eee84ddf7b0fd71a3d20906dbbf92a0a156e99aeebed6a742ea",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/cafe-opening-costs/|facebook": {
+      "revision": "c1292bad6c3d2f07f9ff4f79e097a524bf718f2833ae8aafbcdefe9257efe096",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/cafe-opening-costs/|instagram": {
+      "revision": "c1292bad6c3d2f07f9ff4f79e097a524bf718f2833ae8aafbcdefe9257efe096",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/cafe-opening-costs/|pinterest": {
+      "revision": "c1292bad6c3d2f07f9ff4f79e097a524bf718f2833ae8aafbcdefe9257efe096",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/calculate-break-even-point/|facebook": {
+      "revision": "ad52e85b6cb1836c3b93546dcff308012a0d6e8136b1b65429e5434357c4b614",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/calculate-break-even-point/|instagram": {
+      "revision": "ad52e85b6cb1836c3b93546dcff308012a0d6e8136b1b65429e5434357c4b614",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/calculate-break-even-point/|pinterest": {
+      "revision": "ad52e85b6cb1836c3b93546dcff308012a0d6e8136b1b65429e5434357c4b614",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/calculate-contribution-margin/|facebook": {
+      "revision": "1011cec2347811281a78c87caf82653260e9ed9cc598f9beaf169dd6638f234d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/calculate-contribution-margin/|instagram": {
+      "revision": "1011cec2347811281a78c87caf82653260e9ed9cc598f9beaf169dd6638f234d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/calculate-contribution-margin/|pinterest": {
+      "revision": "1011cec2347811281a78c87caf82653260e9ed9cc598f9beaf169dd6638f234d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/car-detailing-prices-list/|facebook": {
+      "revision": "f1bddfad34ef42beeace5559b1fbaea1152c9e5c6bc662a065e16b7c1f2a2fbf",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/car-detailing-prices-list/|instagram": {
+      "revision": "f1bddfad34ef42beeace5559b1fbaea1152c9e5c6bc662a065e16b7c1f2a2fbf",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/car-detailing-prices-list/|pinterest": {
+      "revision": "f1bddfad34ef42beeace5559b1fbaea1152c9e5c6bc662a065e16b7c1f2a2fbf",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/cash-flow-break-even-vs-profit-break-even/|facebook": {
+      "revision": "b1daca23cc3dcd0b1b54d3abbb15a2212eb2e7d2ee71ec9bb31dbfa7bab3be2e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/cash-flow-break-even-vs-profit-break-even/|instagram": {
+      "revision": "b1daca23cc3dcd0b1b54d3abbb15a2212eb2e7d2ee71ec9bb31dbfa7bab3be2e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/cash-flow-break-even-vs-profit-break-even/|pinterest": {
+      "revision": "b1daca23cc3dcd0b1b54d3abbb15a2212eb2e7d2ee71ec9bb31dbfa7bab3be2e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/ceramic-coating-profit-margin/|facebook": {
+      "revision": "e7ca674e7721c56bfe3c0061b9bfd4698b995546e9bf7943b253769359a3f8e5",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/ceramic-coating-profit-margin/|instagram": {
+      "revision": "e7ca674e7721c56bfe3c0061b9bfd4698b995546e9bf7943b253769359a3f8e5",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/ceramic-coating-profit-margin/|pinterest": {
+      "revision": "e7ca674e7721c56bfe3c0061b9bfd4698b995546e9bf7943b253769359a3f8e5",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/cleaning-business-break-even/|facebook": {
+      "revision": "5ff69addf02b430cd9a8d20c50bfce6e3f955fa6645a86037d87fd42399aedc5",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/cleaning-business-break-even/|instagram": {
+      "revision": "5ff69addf02b430cd9a8d20c50bfce6e3f955fa6645a86037d87fd42399aedc5",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/cleaning-business-break-even/|pinterest": {
+      "revision": "5ff69addf02b430cd9a8d20c50bfce6e3f955fa6645a86037d87fd42399aedc5",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/cleaning-business-client-churn-cost/|facebook": {
+      "revision": "f03b832123a8446ce09c72b104cf74ff93aaff6a5507b0eba6fff088541bad08",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/cleaning-business-client-churn-cost/|instagram": {
+      "revision": "f03b832123a8446ce09c72b104cf74ff93aaff6a5507b0eba6fff088541bad08",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/cleaning-business-client-churn-cost/|pinterest": {
+      "revision": "f03b832123a8446ce09c72b104cf74ff93aaff6a5507b0eba6fff088541bad08",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/cleaning-business-monthly-expenses/|facebook": {
+      "revision": "aeaf7954fbe077cfad14a395adbccfa3222e9d98b9d6bfeeba43ce6ee11c6217",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/cleaning-business-monthly-expenses/|instagram": {
+      "revision": "aeaf7954fbe077cfad14a395adbccfa3222e9d98b9d6bfeeba43ce6ee11c6217",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/cleaning-business-monthly-expenses/|pinterest": {
+      "revision": "aeaf7954fbe077cfad14a395adbccfa3222e9d98b9d6bfeeba43ce6ee11c6217",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/coffee-shop-business-plan/|facebook": {
+      "revision": "07b6c97272319967c3c6d4df92e56b14b29a16f07a6337dbdcba4f45fa637780",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/coffee-shop-business-plan/|instagram": {
+      "revision": "07b6c97272319967c3c6d4df92e56b14b29a16f07a6337dbdcba4f45fa637780",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/coffee-shop-business-plan/|pinterest": {
+      "revision": "07b6c97272319967c3c6d4df92e56b14b29a16f07a6337dbdcba4f45fa637780",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/commercial-cleaning-contract-bid/|facebook": {
+      "revision": "c01fc7b70a44b20febe1b8a6acdf2688cfd71a381ee51a37a24be3f619d99766",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/commercial-cleaning-contract-bid/|instagram": {
+      "revision": "c01fc7b70a44b20febe1b8a6acdf2688cfd71a381ee51a37a24be3f619d99766",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/commercial-cleaning-contract-bid/|pinterest": {
+      "revision": "c01fc7b70a44b20febe1b8a6acdf2688cfd71a381ee51a37a24be3f619d99766",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/commercial-cleaning-contract-price-increase/|facebook": {
+      "revision": "c6f1e443d12514f4211e90653204595edfe39cc78fb12e08eee6ad5390e93593",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/commercial-cleaning-contract-price-increase/|instagram": {
+      "revision": "c6f1e443d12514f4211e90653204595edfe39cc78fb12e08eee6ad5390e93593",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/commercial-cleaning-contract-price-increase/|pinterest": {
+      "revision": "c6f1e443d12514f4211e90653204595edfe39cc78fb12e08eee6ad5390e93593",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/contribution-margin-vs-gross-margin/|facebook": {
+      "revision": "c0676612e0aa18e8d32cdd39be1cb6b5778a342d8dcc30561073e4ae0358748c",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/contribution-margin-vs-gross-margin/|instagram": {
+      "revision": "c0676612e0aa18e8d32cdd39be1cb6b5778a342d8dcc30561073e4ae0358748c",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/contribution-margin-vs-gross-margin/|pinterest": {
+      "revision": "c0676612e0aa18e8d32cdd39be1cb6b5778a342d8dcc30561073e4ae0358748c",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/contribution-margin-vs-profit-margin/|facebook": {
+      "revision": "8d0bb75565e3037b082c33429cdba8962a8650552d5e1a7015c8ceb661629fd1",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/contribution-margin-vs-profit-margin/|instagram": {
+      "revision": "8d0bb75565e3037b082c33429cdba8962a8650552d5e1a7015c8ceb661629fd1",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/contribution-margin-vs-profit-margin/|pinterest": {
+      "revision": "8d0bb75565e3037b082c33429cdba8962a8650552d5e1a7015c8ceb661629fd1",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/corporate-headshot-pricing/|facebook": {
+      "revision": "50be10375f14ed69a38fe6fc363f8c6233b73d2912d240db431c026d2c7831bb",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/corporate-headshot-pricing/|instagram": {
+      "revision": "50be10375f14ed69a38fe6fc363f8c6233b73d2912d240db431c026d2c7831bb",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/corporate-headshot-pricing/|pinterest": {
+      "revision": "50be10375f14ed69a38fe6fc363f8c6233b73d2912d240db431c026d2c7831bb",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/discount-break-even-sales-volume/|facebook": {
+      "revision": "4f7a0ca785f9c66884269795fd40d65aaa480d5ae5be0a71c1f72c99e60e113a",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/discount-break-even-sales-volume/|instagram": {
+      "revision": "4f7a0ca785f9c66884269795fd40d65aaa480d5ae5be0a71c1f72c99e60e113a",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/discount-break-even-sales-volume/|pinterest": {
+      "revision": "4f7a0ca785f9c66884269795fd40d65aaa480d5ae5be0a71c1f72c99e60e113a",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/ecommerce-break-even/|facebook": {
+      "revision": "920610797c9194d855dd5f3e55437f34511670c492c1bddfb80f9e3b09cb989e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/ecommerce-break-even/|instagram": {
+      "revision": "920610797c9194d855dd5f3e55437f34511670c492c1bddfb80f9e3b09cb989e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/ecommerce-break-even/|pinterest": {
+      "revision": "920610797c9194d855dd5f3e55437f34511670c492c1bddfb80f9e3b09cb989e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/ecommerce-chargeback-cost-per-order/|facebook": {
+      "revision": "52f81a1448c7c4bea7f3d7bfb0c37182f6795b2b4cd6c92c858ac327247d0267",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/ecommerce-chargeback-cost-per-order/|instagram": {
+      "revision": "52f81a1448c7c4bea7f3d7bfb0c37182f6795b2b4cd6c92c858ac327247d0267",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/ecommerce-chargeback-cost-per-order/|pinterest": {
+      "revision": "52f81a1448c7c4bea7f3d7bfb0c37182f6795b2b4cd6c92c858ac327247d0267",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/ecommerce-orders-per-day-profitable/|facebook": {
+      "revision": "ce2e7fb549201a93d473caec4db457211c83c5063d50401ce2f190e54ff82620",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/ecommerce-orders-per-day-profitable/|instagram": {
+      "revision": "ce2e7fb549201a93d473caec4db457211c83c5063d50401ce2f190e54ff82620",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/ecommerce-orders-per-day-profitable/|pinterest": {
+      "revision": "ce2e7fb549201a93d473caec4db457211c83c5063d50401ce2f190e54ff82620",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/ecommerce-profit-margin/|facebook": {
+      "revision": "53b0b356dcb633ef4f4c9e06962bafe32cb86de80a18df144ef5e054dce7b89d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/ecommerce-profit-margin/|instagram": {
+      "revision": "53b0b356dcb633ef4f4c9e06962bafe32cb86de80a18df144ef5e054dce7b89d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/ecommerce-profit-margin/|pinterest": {
+      "revision": "53b0b356dcb633ef4f4c9e06962bafe32cb86de80a18df144ef5e054dce7b89d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/ecommerce-return-cost-per-order/|facebook": {
+      "revision": "320c5d4b7faf6a12de5518c868bc9420bfac025b22c3c4478acf15d15b986472",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/ecommerce-return-cost-per-order/|instagram": {
+      "revision": "320c5d4b7faf6a12de5518c868bc9420bfac025b22c3c4478acf15d15b986472",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/ecommerce-return-cost-per-order/|pinterest": {
+      "revision": "320c5d4b7faf6a12de5518c868bc9420bfac025b22c3c4478acf15d15b986472",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/ecommerce-shipping-costs/|facebook": {
+      "revision": "93b92c90d12ce7b492fee9aad06bd50388badea57a2db1fe009260b7e124782d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/ecommerce-shipping-costs/|instagram": {
+      "revision": "93b92c90d12ce7b492fee9aad06bd50388badea57a2db1fe009260b7e124782d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/ecommerce-shipping-costs/|pinterest": {
+      "revision": "93b92c90d12ce7b492fee9aad06bd50388badea57a2db1fe009260b7e124782d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/fixed-vs-variable-costs/|facebook": {
+      "revision": "837c5332c61f52124ddcba2b6ee1db9e374d0b0ac87aebd5bd1c853e8f8cc022",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/fixed-vs-variable-costs/|instagram": {
+      "revision": "837c5332c61f52124ddcba2b6ee1db9e374d0b0ac87aebd5bd1c853e8f8cc022",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/fixed-vs-variable-costs/|pinterest": {
+      "revision": "837c5332c61f52124ddcba2b6ee1db9e374d0b0ac87aebd5bd1c853e8f8cc022",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/fleet-detailing-contract-pricing/|facebook": {
+      "revision": "ed1d296f2137b19a6405c24d028c376258f6866a1a2e449536fda88051e07f4e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/fleet-detailing-contract-pricing/|instagram": {
+      "revision": "ed1d296f2137b19a6405c24d028c376258f6866a1a2e449536fda88051e07f4e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/fleet-detailing-contract-pricing/|pinterest": {
+      "revision": "ed1d296f2137b19a6405c24d028c376258f6866a1a2e449536fda88051e07f4e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/free-shipping-threshold-profit/|facebook": {
+      "revision": "a35165e494549304a65afba42a4c7700841772aa49458894125e2325457639d6",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/free-shipping-threshold-profit/|instagram": {
+      "revision": "a35165e494549304a65afba42a4c7700841772aa49458894125e2325457639d6",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/free-shipping-threshold-profit/|pinterest": {
+      "revision": "a35165e494549304a65afba42a4c7700841772aa49458894125e2325457639d6",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/hair-color-service-cost-per-appointment/|facebook": {
+      "revision": "c81baea672c3a4586c742f1055eb8f0bf79435c4795e3545090b7e3e9a101bb6",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/hair-color-service-cost-per-appointment/|instagram": {
+      "revision": "c81baea672c3a4586c742f1055eb8f0bf79435c4795e3545090b7e3e9a101bb6",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/hair-color-service-cost-per-appointment/|pinterest": {
+      "revision": "c81baea672c3a4586c742f1055eb8f0bf79435c4795e3545090b7e3e9a101bb6",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-many-agency-retainer-clients/|facebook": {
+      "revision": "582864b508a52955a5de6189747cf114ac6f0b85dc8ad754efaeb0888799b557",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-many-agency-retainer-clients/|instagram": {
+      "revision": "582864b508a52955a5de6189747cf114ac6f0b85dc8ad754efaeb0888799b557",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-many-agency-retainer-clients/|pinterest": {
+      "revision": "582864b508a52955a5de6189747cf114ac6f0b85dc8ad754efaeb0888799b557",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-many-cleaning-clients-5000/|facebook": {
+      "revision": "1dc456ad17e3e27ab947306b30d85daa0afaaceb8494b14d89de5c214d293706",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-many-cleaning-clients-5000/|instagram": {
+      "revision": "1dc456ad17e3e27ab947306b30d85daa0afaaceb8494b14d89de5c214d293706",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-many-cleaning-clients-5000/|pinterest": {
+      "revision": "1dc456ad17e3e27ab947306b30d85daa0afaaceb8494b14d89de5c214d293706",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-many-customers-can-you-lose-after-raising-prices/|facebook": {
+      "revision": "8a5c413037519889cd4d098751125070d078ba0c5998864aed662feab753e2ed",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-many-customers-can-you-lose-after-raising-prices/|instagram": {
+      "revision": "8a5c413037519889cd4d098751125070d078ba0c5998864aed662feab753e2ed",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-many-customers-can-you-lose-after-raising-prices/|pinterest": {
+      "revision": "8a5c413037519889cd4d098751125070d078ba0c5998864aed662feab753e2ed",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-many-detailing-jobs-week/|facebook": {
+      "revision": "0d9d4934420b563aa3262afee76a7625769193dae5d84c7278dd7a871024dee4",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-many-detailing-jobs-week/|instagram": {
+      "revision": "0d9d4934420b563aa3262afee76a7625769193dae5d84c7278dd7a871024dee4",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-many-detailing-jobs-week/|pinterest": {
+      "revision": "0d9d4934420b563aa3262afee76a7625769193dae5d84c7278dd7a871024dee4",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-many-lawns-100k/|facebook": {
+      "revision": "5eaa95c2184139214f3c5313468480342dfa75405c71104fdabbacc8b3278fc9",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-many-lawns-100k/|instagram": {
+      "revision": "5eaa95c2184139214f3c5313468480342dfa75405c71104fdabbacc8b3278fc9",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-many-lawns-100k/|pinterest": {
+      "revision": "5eaa95c2184139214f3c5313468480342dfa75405c71104fdabbacc8b3278fc9",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-many-photography-clients-month/|facebook": {
+      "revision": "d8c7b284fc187539c3cc1b124b5b58ffe6a13bf1d8506f518b09c29b60c9c7ca",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-many-photography-clients-month/|instagram": {
+      "revision": "d8c7b284fc187539c3cc1b124b5b58ffe6a13bf1d8506f518b09c29b60c9c7ca",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-many-photography-clients-month/|pinterest": {
+      "revision": "d8c7b284fc187539c3cc1b124b5b58ffe6a13bf1d8506f518b09c29b60c9c7ca",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-does-it-cost-to-open-a-restaurant/|facebook": {
+      "revision": "aa587faa82dac1c3acf50ee1a6e01cb28944cbb4de770ff9fd091988ebe365fb",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-does-it-cost-to-open-a-restaurant/|instagram": {
+      "revision": "aa587faa82dac1c3acf50ee1a6e01cb28944cbb4de770ff9fd091988ebe365fb",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-does-it-cost-to-open-a-restaurant/|pinterest": {
+      "revision": "aa587faa82dac1c3acf50ee1a6e01cb28944cbb4de770ff9fd091988ebe365fb",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-does-it-cost-to-open-a-salon/|facebook": {
+      "revision": "4730dcdf2d53b818684ee6c6f57c77a509b900cb9d904bb5f5f9d68978ee23e6",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-does-it-cost-to-open-a-salon/|instagram": {
+      "revision": "4730dcdf2d53b818684ee6c6f57c77a509b900cb9d904bb5f5f9d68978ee23e6",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-does-it-cost-to-open-a-salon/|pinterest": {
+      "revision": "4730dcdf2d53b818684ee6c6f57c77a509b900cb9d904bb5f5f9d68978ee23e6",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-cleaning-business/|facebook": {
+      "revision": "01f4734d1609ca5ddde34fd3bc4a39d495dbcde5ae20ef36042fa332b90f509b",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-cleaning-business/|instagram": {
+      "revision": "01f4734d1609ca5ddde34fd3bc4a39d495dbcde5ae20ef36042fa332b90f509b",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-cleaning-business/|pinterest": {
+      "revision": "01f4734d1609ca5ddde34fd3bc4a39d495dbcde5ae20ef36042fa332b90f509b",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-landscaping-business/|facebook": {
+      "revision": "c09e6658c5d09c9b4f3b44bb9c76b98e9b89681fa787e5d5eb8e156dc7e4f703",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-landscaping-business/|instagram": {
+      "revision": "c09e6658c5d09c9b4f3b44bb9c76b98e9b89681fa787e5d5eb8e156dc7e4f703",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-landscaping-business/|pinterest": {
+      "revision": "c09e6658c5d09c9b4f3b44bb9c76b98e9b89681fa787e5d5eb8e156dc7e4f703",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-marketing-agency/|facebook": {
+      "revision": "ab9ac478c818ade386cc1e33b520082d253a7a014d316f61919ba61c22a50727",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-marketing-agency/|instagram": {
+      "revision": "ab9ac478c818ade386cc1e33b520082d253a7a014d316f61919ba61c22a50727",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-marketing-agency/|pinterest": {
+      "revision": "ab9ac478c818ade386cc1e33b520082d253a7a014d316f61919ba61c22a50727",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-photography-business/|facebook": {
+      "revision": "ebde7a067b0e1fe68b24811a98ebca58904ad93828916f41b74f8f3af2302efe",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-photography-business/|instagram": {
+      "revision": "ebde7a067b0e1fe68b24811a98ebca58904ad93828916f41b74f8f3af2302efe",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-photography-business/|pinterest": {
+      "revision": "ebde7a067b0e1fe68b24811a98ebca58904ad93828916f41b74f8f3af2302efe",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-an-ecommerce-store/|facebook": {
+      "revision": "2ca0c8f8e6ab3b48bb6e0abf3c556d33763583394ba5cf965037ddb2692a7d1e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-an-ecommerce-store/|instagram": {
+      "revision": "2ca0c8f8e6ab3b48bb6e0abf3c556d33763583394ba5cf965037ddb2692a7d1e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-an-ecommerce-store/|pinterest": {
+      "revision": "2ca0c8f8e6ab3b48bb6e0abf3c556d33763583394ba5cf965037ddb2692a7d1e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-to-charge-for-house-cleaning/|facebook": {
+      "revision": "c16b285b9717dd338a973f1db383a0f241f6ef7438e8926f8ec082e50ac77a0e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-to-charge-for-house-cleaning/|instagram": {
+      "revision": "c16b285b9717dd338a973f1db383a0f241f6ef7438e8926f8ec082e50ac77a0e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-much-to-charge-for-house-cleaning/|pinterest": {
+      "revision": "c16b285b9717dd338a973f1db383a0f241f6ef7438e8926f8ec082e50ac77a0e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-to-price-products-for-ecommerce/|facebook": {
+      "revision": "de82c92f0834508be6ebbf6dff8019e5c9ebc02ebf58e69193846f63b24a1a71",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-to-price-products-for-ecommerce/|instagram": {
+      "revision": "de82c92f0834508be6ebbf6dff8019e5c9ebc02ebf58e69193846f63b24a1a71",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-to-price-products-for-ecommerce/|pinterest": {
+      "revision": "de82c92f0834508be6ebbf6dff8019e5c9ebc02ebf58e69193846f63b24a1a71",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-to-start-coffee-shop/|facebook": {
+      "revision": "612eac111420ade31351b3d5f4b1d72b0b73bcf8eb12b0aeb9bb8db8fdad21e9",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-to-start-coffee-shop/|instagram": {
+      "revision": "612eac111420ade31351b3d5f4b1d72b0b73bcf8eb12b0aeb9bb8db8fdad21e9",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-to-start-coffee-shop/|pinterest": {
+      "revision": "612eac111420ade31351b3d5f4b1d72b0b73bcf8eb12b0aeb9bb8db8fdad21e9",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-to-start-restaurant/|facebook": {
+      "revision": "2da0eeaf5feacb49ead1b807d3b8b039fcf98916f1b6005a6d49a376235dbf04",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-to-start-restaurant/|instagram": {
+      "revision": "2da0eeaf5feacb49ead1b807d3b8b039fcf98916f1b6005a6d49a376235dbf04",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/how-to-start-restaurant/|pinterest": {
+      "revision": "2da0eeaf5feacb49ead1b807d3b8b039fcf98916f1b6005a6d49a376235dbf04",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/is-a-cleaning-business-profitable/|facebook": {
+      "revision": "c0c5271c826777a324a6414e1e6825ea3f7012d0a76592a59139c9a1daa08606",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/is-a-cleaning-business-profitable/|instagram": {
+      "revision": "c0c5271c826777a324a6414e1e6825ea3f7012d0a76592a59139c9a1daa08606",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/is-a-cleaning-business-profitable/|pinterest": {
+      "revision": "c0c5271c826777a324a6414e1e6825ea3f7012d0a76592a59139c9a1daa08606",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/is-mobile-detailing-profitable/|facebook": {
+      "revision": "5af5068fcaf754c99542f3ea137474bc0a06a72ce570fe54b50fa8c52b2ce793",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/is-mobile-detailing-profitable/|instagram": {
+      "revision": "5af5068fcaf754c99542f3ea137474bc0a06a72ce570fe54b50fa8c52b2ce793",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/is-mobile-detailing-profitable/|pinterest": {
+      "revision": "5af5068fcaf754c99542f3ea137474bc0a06a72ce570fe54b50fa8c52b2ce793",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-break-even/|facebook": {
+      "revision": "40427ea91aba3e853277cfdc8d20fda6dcee4e5045a078cf8cf05b8df301f483",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-break-even/|instagram": {
+      "revision": "40427ea91aba3e853277cfdc8d20fda6dcee4e5045a078cf8cf05b8df301f483",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-break-even/|pinterest": {
+      "revision": "40427ea91aba3e853277cfdc8d20fda6dcee4e5045a078cf8cf05b8df301f483",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-business-profit-margin/|facebook": {
+      "revision": "5bb25f77b21d695996053dfb0fb1eaf81af83308549baccb8b995e50fcd721ea",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-business-profit-margin/|instagram": {
+      "revision": "5bb25f77b21d695996053dfb0fb1eaf81af83308549baccb8b995e50fcd721ea",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-business-profit-margin/|pinterest": {
+      "revision": "5bb25f77b21d695996053dfb0fb1eaf81af83308549baccb8b995e50fcd721ea",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-crew-utilization/|facebook": {
+      "revision": "d193f570031640c734bcb9fd8aea93bc5a0d3c118045958ac41fb262f74bfc2e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-crew-utilization/|instagram": {
+      "revision": "d193f570031640c734bcb9fd8aea93bc5a0d3c118045958ac41fb262f74bfc2e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-crew-utilization/|pinterest": {
+      "revision": "d193f570031640c734bcb9fd8aea93bc5a0d3c118045958ac41fb262f74bfc2e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-equipment-cost-per-hour/|facebook": {
+      "revision": "ef57bce6fcf4b7be45377e5877bcfe910a32c34cd5e963a7a1bb8635565fda75",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-equipment-cost-per-hour/|instagram": {
+      "revision": "ef57bce6fcf4b7be45377e5877bcfe910a32c34cd5e963a7a1bb8635565fda75",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-equipment-cost-per-hour/|pinterest": {
+      "revision": "ef57bce6fcf4b7be45377e5877bcfe910a32c34cd5e963a7a1bb8635565fda75",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-job-costing-estimate-vs-actual/|facebook": {
+      "revision": "a91a4f03e1c9434f325122c27928234951235179e207595412391ef6c0fad2a4",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-job-costing-estimate-vs-actual/|instagram": {
+      "revision": "a91a4f03e1c9434f325122c27928234951235179e207595412391ef6c0fad2a4",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-job-costing-estimate-vs-actual/|pinterest": {
+      "revision": "a91a4f03e1c9434f325122c27928234951235179e207595412391ef6c0fad2a4",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-maintenance-contract-pricing/|facebook": {
+      "revision": "e7ea1ef7e71ca88c7bd574fe6bb02310c5c067b2567c6e459cac3b67c48a7828",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-maintenance-contract-pricing/|instagram": {
+      "revision": "e7ea1ef7e71ca88c7bd574fe6bb02310c5c067b2567c6e459cac3b67c48a7828",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-maintenance-contract-pricing/|pinterest": {
+      "revision": "e7ea1ef7e71ca88c7bd574fe6bb02310c5c067b2567c6e459cac3b67c48a7828",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-route-density-profit/|facebook": {
+      "revision": "44df51d881ffc5ddd0831d5391ba620aa2084e556224aa6b9b8f9cf7d35b6582",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-route-density-profit/|instagram": {
+      "revision": "44df51d881ffc5ddd0831d5391ba620aa2084e556224aa6b9b8f9cf7d35b6582",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-route-density-profit/|pinterest": {
+      "revision": "44df51d881ffc5ddd0831d5391ba620aa2084e556224aa6b9b8f9cf7d35b6582",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-seasonal-break-even/|facebook": {
+      "revision": "ff0db7089706ee03b12eb388ff22c64e036e32228c402a6e7dea83a6e0af055a",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-seasonal-break-even/|instagram": {
+      "revision": "ff0db7089706ee03b12eb388ff22c64e036e32228c402a6e7dea83a6e0af055a",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/landscaping-seasonal-break-even/|pinterest": {
+      "revision": "ff0db7089706ee03b12eb388ff22c64e036e32228c402a6e7dea83a6e0af055a",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/lawn-care-pricing-per-acre/|facebook": {
+      "revision": "018fd7ec46de5785b9bd6183a81594a264440519e162b7f6b022965e88a2c19b",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/lawn-care-pricing-per-acre/|instagram": {
+      "revision": "018fd7ec46de5785b9bd6183a81594a264440519e162b7f6b022965e88a2c19b",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/lawn-care-pricing-per-acre/|pinterest": {
+      "revision": "018fd7ec46de5785b9bd6183a81594a264440519e162b7f6b022965e88a2c19b",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/lower-break-even-point/|facebook": {
+      "revision": "1a39b8d53a7b8df42399eb5bd30090071179ccc9d4392965072ca2deffbe7ebb",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/lower-break-even-point/|instagram": {
+      "revision": "1a39b8d53a7b8df42399eb5bd30090071179ccc9d4392965072ca2deffbe7ebb",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/lower-break-even-point/|pinterest": {
+      "revision": "1a39b8d53a7b8df42399eb5bd30090071179ccc9d4392965072ca2deffbe7ebb",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/margin-of-safety-business/|facebook": {
+      "revision": "969486ba5350ffb0291a48c8dc0616931f886df3dba673c98d2827c93d521e06",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/margin-of-safety-business/|instagram": {
+      "revision": "969486ba5350ffb0291a48c8dc0616931f886df3dba673c98d2827c93d521e06",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/margin-of-safety-business/|pinterest": {
+      "revision": "969486ba5350ffb0291a48c8dc0616931f886df3dba673c98d2827c93d521e06",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/margin-vs-markup/|facebook": {
+      "revision": "05d28f9c9d9fff42a8875d06d8623acfa633b9b8f073cda8fdea83efd57bd28d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/margin-vs-markup/|instagram": {
+      "revision": "05d28f9c9d9fff42a8875d06d8623acfa633b9b8f073cda8fdea83efd57bd28d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/margin-vs-markup/|pinterest": {
+      "revision": "05d28f9c9d9fff42a8875d06d8623acfa633b9b8f073cda8fdea83efd57bd28d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/mobile-detailing-break-even/|facebook": {
+      "revision": "c5b8daa3edc9c01d0c49bcf44f70d1c79a6909a4cacfeb1bc351c7f9f3f9ae70",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/mobile-detailing-break-even/|instagram": {
+      "revision": "c5b8daa3edc9c01d0c49bcf44f70d1c79a6909a4cacfeb1bc351c7f9f3f9ae70",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/mobile-detailing-break-even/|pinterest": {
+      "revision": "c5b8daa3edc9c01d0c49bcf44f70d1c79a6909a4cacfeb1bc351c7f9f3f9ae70",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/mobile-detailing-business-startup-cost/|facebook": {
+      "revision": "5d1b714422d5defc5ef8c89a7330c98508a68352f7a436f0bce6e8d519c2f565",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/mobile-detailing-business-startup-cost/|instagram": {
+      "revision": "5d1b714422d5defc5ef8c89a7330c98508a68352f7a436f0bce6e8d519c2f565",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/mobile-detailing-business-startup-cost/|pinterest": {
+      "revision": "5d1b714422d5defc5ef8c89a7330c98508a68352f7a436f0bce6e8d519c2f565",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/mobile-detailing-maintenance-plan-pricing/|facebook": {
+      "revision": "e0d50eb1e2d9effc367cdcc624b93d9a4c3ca140ed315d78545e8da7f188efe1",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/mobile-detailing-maintenance-plan-pricing/|instagram": {
+      "revision": "e0d50eb1e2d9effc367cdcc624b93d9a4c3ca140ed315d78545e8da7f188efe1",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/mobile-detailing-maintenance-plan-pricing/|pinterest": {
+      "revision": "e0d50eb1e2d9effc367cdcc624b93d9a4c3ca140ed315d78545e8da7f188efe1",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/mobile-detailing-travel-fee/|facebook": {
+      "revision": "8ef0a93ad7d83e177879bd870b7df4496da1ccc5c74af4f4165472dbec5bd6b5",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/mobile-detailing-travel-fee/|instagram": {
+      "revision": "8ef0a93ad7d83e177879bd870b7df4496da1ccc5c74af4f4165472dbec5bd6b5",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/mobile-detailing-travel-fee/|pinterest": {
+      "revision": "8ef0a93ad7d83e177879bd870b7df4496da1ccc5c74af4f4165472dbec5bd6b5",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/move-out-cleaning-job-cost/|facebook": {
+      "revision": "e1b77715ffed888d7c5103a0d62e2691d073a8f73911b3f1d7a4bbeb364b1f90",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/move-out-cleaning-job-cost/|instagram": {
+      "revision": "e1b77715ffed888d7c5103a0d62e2691d073a8f73911b3f1d7a4bbeb364b1f90",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/move-out-cleaning-job-cost/|pinterest": {
+      "revision": "e1b77715ffed888d7c5103a0d62e2691d073a8f73911b3f1d7a4bbeb364b1f90",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/mulch-installation-job-cost/|facebook": {
+      "revision": "0b765a034149273c42a94a1d0ccd414c0225f31e70cd3effad331d81fceef59f",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/mulch-installation-job-cost/|instagram": {
+      "revision": "0b765a034149273c42a94a1d0ccd414c0225f31e70cd3effad331d81fceef59f",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/mulch-installation-job-cost/|pinterest": {
+      "revision": "0b765a034149273c42a94a1d0ccd414c0225f31e70cd3effad331d81fceef59f",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/operating-leverage-small-business/|facebook": {
+      "revision": "a3eb87078d8cad116cf6e626a1729add6b557737b270bf9c4c3d782032264d31",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/operating-leverage-small-business/|instagram": {
+      "revision": "a3eb87078d8cad116cf6e626a1729add6b557737b270bf9c4c3d782032264d31",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/operating-leverage-small-business/|pinterest": {
+      "revision": "a3eb87078d8cad116cf6e626a1729add6b557737b270bf9c4c3d782032264d31",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/paint-correction-labor-hours-pricing/|facebook": {
+      "revision": "d6478e8e9aa0aa207b8ed1c38133d1fd1a9fbdfae72716959961355cef425d7e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/paint-correction-labor-hours-pricing/|instagram": {
+      "revision": "d6478e8e9aa0aa207b8ed1c38133d1fd1a9fbdfae72716959961355cef425d7e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/paint-correction-labor-hours-pricing/|pinterest": {
+      "revision": "d6478e8e9aa0aa207b8ed1c38133d1fd1a9fbdfae72716959961355cef425d7e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/photography-business-break-even/|facebook": {
+      "revision": "bc98fc17965dc81ed735c4cef677125a1014e1086d6ca0faaee5675788f6aff1",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/photography-business-break-even/|instagram": {
+      "revision": "bc98fc17965dc81ed735c4cef677125a1014e1086d6ca0faaee5675788f6aff1",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/photography-business-break-even/|pinterest": {
+      "revision": "bc98fc17965dc81ed735c4cef677125a1014e1086d6ca0faaee5675788f6aff1",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/photography-business-profit-margin/|facebook": {
+      "revision": "2978d886b59a821c3790d759d977241f7c37d6381c2a495431f94ad882551429",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/photography-business-profit-margin/|instagram": {
+      "revision": "2978d886b59a821c3790d759d977241f7c37d6381c2a495431f94ad882551429",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/photography-business-profit-margin/|pinterest": {
+      "revision": "2978d886b59a821c3790d759d977241f7c37d6381c2a495431f94ad882551429",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/photography-cost-per-session-editing/|facebook": {
+      "revision": "02bcb457c21c168f92fe4efde574494741bc2a73213f17fed20714b137fcf90d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/photography-cost-per-session-editing/|instagram": {
+      "revision": "02bcb457c21c168f92fe4efde574494741bc2a73213f17fed20714b137fcf90d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/photography-cost-per-session-editing/|pinterest": {
+      "revision": "02bcb457c21c168f92fe4efde574494741bc2a73213f17fed20714b137fcf90d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/photography-mini-session-profit/|facebook": {
+      "revision": "730e8d4925ad4b721414a95ec5c2b4480551d632e6ef6e050cf1b0414708cd7f",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/photography-mini-session-profit/|instagram": {
+      "revision": "730e8d4925ad4b721414a95ec5c2b4480551d632e6ef6e050cf1b0414708cd7f",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/photography-mini-session-profit/|pinterest": {
+      "revision": "730e8d4925ad4b721414a95ec5c2b4480551d632e6ef6e050cf1b0414708cd7f",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/photography-pricing-packages/|facebook": {
+      "revision": "9d05fe84d7f63d29fff64ddb605fea8d74e3d4e0207abc631c609ea8b8dadd4a",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/photography-pricing-packages/|instagram": {
+      "revision": "9d05fe84d7f63d29fff64ddb605fea8d74e3d4e0207abc631c609ea8b8dadd4a",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/photography-pricing-packages/|pinterest": {
+      "revision": "9d05fe84d7f63d29fff64ddb605fea8d74e3d4e0207abc631c609ea8b8dadd4a",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/photography-second-shooter-cost/|facebook": {
+      "revision": "b0ca97661e21d474507555440ef14b7747e0b0836610c8654051fcaec1b6d1a5",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/photography-second-shooter-cost/|instagram": {
+      "revision": "b0ca97661e21d474507555440ef14b7747e0b0836610c8654051fcaec1b6d1a5",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/photography-second-shooter-cost/|pinterest": {
+      "revision": "b0ca97661e21d474507555440ef14b7747e0b0836610c8654051fcaec1b6d1a5",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/photography-usage-licensing-pricing/|facebook": {
+      "revision": "46fb88e002732ae3145c198d984fc549a447dac5ad4c86bf6c971adb3c90884d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/photography-usage-licensing-pricing/|instagram": {
+      "revision": "46fb88e002732ae3145c198d984fc549a447dac5ad4c86bf6c971adb3c90884d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/photography-usage-licensing-pricing/|pinterest": {
+      "revision": "46fb88e002732ae3145c198d984fc549a447dac5ad4c86bf6c971adb3c90884d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/post-construction-cleaning-estimate/|facebook": {
+      "revision": "1bfcb234696f182cafefb6fdf5d4a3179b55845bde6fbefacdb93f2e42f7e083",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/post-construction-cleaning-estimate/|instagram": {
+      "revision": "1bfcb234696f182cafefb6fdf5d4a3179b55845bde6fbefacdb93f2e42f7e083",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/post-construction-cleaning-estimate/|pinterest": {
+      "revision": "1bfcb234696f182cafefb6fdf5d4a3179b55845bde6fbefacdb93f2e42f7e083",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/product-photography-pricing-per-image/|facebook": {
+      "revision": "470697f32973c1d9f1f4b7cdff72e2806ee0ed8014df41591fcfc166b1dc3fc3",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/product-photography-pricing-per-image/|instagram": {
+      "revision": "470697f32973c1d9f1f4b7cdff72e2806ee0ed8014df41591fcfc166b1dc3fc3",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/product-photography-pricing-per-image/|pinterest": {
+      "revision": "470697f32973c1d9f1f4b7cdff72e2806ee0ed8014df41591fcfc166b1dc3fc3",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/recurring-vs-one-time-cleaning-profitability/|facebook": {
+      "revision": "72d81f453bbedcf74ea037eb7e866d95ca0e85a788faa51a27f7171f02096200",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/recurring-vs-one-time-cleaning-profitability/|instagram": {
+      "revision": "72d81f453bbedcf74ea037eb7e866d95ca0e85a788faa51a27f7171f02096200",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/recurring-vs-one-time-cleaning-profitability/|pinterest": {
+      "revision": "72d81f453bbedcf74ea037eb7e866d95ca0e85a788faa51a27f7171f02096200",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-break-even/|facebook": {
+      "revision": "8183df6d4dd894900d3fdf75285345c7695b906873b1be3e838de4199c3a503f",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-break-even/|instagram": {
+      "revision": "8183df6d4dd894900d3fdf75285345c7695b906873b1be3e838de4199c3a503f",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-break-even/|pinterest": {
+      "revision": "8183df6d4dd894900d3fdf75285345c7695b906873b1be3e838de4199c3a503f",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-budgeting/|facebook": {
+      "revision": "c51f39ebef6d92b8444cb44e6475839737fda7cc248f7191deec470301a4d033",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-budgeting/|instagram": {
+      "revision": "c51f39ebef6d92b8444cb44e6475839737fda7cc248f7191deec470301a4d033",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-budgeting/|pinterest": {
+      "revision": "c51f39ebef6d92b8444cb44e6475839737fda7cc248f7191deec470301a4d033",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-business-plan/|facebook": {
+      "revision": "99a25bdf2de70efdc63bbd70f4cce2aae1c30ce9760303958eac4aeedc7f17f1",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-business-plan/|instagram": {
+      "revision": "99a25bdf2de70efdc63bbd70f4cce2aae1c30ce9760303958eac4aeedc7f17f1",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-business-plan/|pinterest": {
+      "revision": "99a25bdf2de70efdc63bbd70f4cce2aae1c30ce9760303958eac4aeedc7f17f1",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-covers-per-night-break-even/|facebook": {
+      "revision": "b42dc16779828f7c6311645ae3f19024df29d1f0abfe5c8226f6d326f6f62a17",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-covers-per-night-break-even/|instagram": {
+      "revision": "b42dc16779828f7c6311645ae3f19024df29d1f0abfe5c8226f6d326f6f62a17",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-covers-per-night-break-even/|pinterest": {
+      "revision": "b42dc16779828f7c6311645ae3f19024df29d1f0abfe5c8226f6d326f6f62a17",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-delivery-app-commission-profit-per-order/|facebook": {
+      "revision": "92a202deed5c89b41ff9ff12430f9e0940fb9cb2484f6fa59c17cea13b39617d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-delivery-app-commission-profit-per-order/|instagram": {
+      "revision": "92a202deed5c89b41ff9ff12430f9e0940fb9cb2484f6fa59c17cea13b39617d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-delivery-app-commission-profit-per-order/|pinterest": {
+      "revision": "92a202deed5c89b41ff9ff12430f9e0940fb9cb2484f6fa59c17cea13b39617d",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-food-cost-percentage/|facebook": {
+      "revision": "721b245d589b3713d9fa32615465ae1c048f50fd279f77c9ebd2c78f8ac87a36",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-food-cost-percentage/|instagram": {
+      "revision": "721b245d589b3713d9fa32615465ae1c048f50fd279f77c9ebd2c78f8ac87a36",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-food-cost-percentage/|pinterest": {
+      "revision": "721b245d589b3713d9fa32615465ae1c048f50fd279f77c9ebd2c78f8ac87a36",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-labor-cost-percentage/|facebook": {
+      "revision": "18d3671633e5b0a8b3d4dc4310d988b4d5b02f221e5d01570160e78412ec815b",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-labor-cost-percentage/|instagram": {
+      "revision": "18d3671633e5b0a8b3d4dc4310d988b4d5b02f221e5d01570160e78412ec815b",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-labor-cost-percentage/|pinterest": {
+      "revision": "18d3671633e5b0a8b3d4dc4310d988b4d5b02f221e5d01570160e78412ec815b",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-menu-pricing-formula/|facebook": {
+      "revision": "6fce7be0040e777fa44dd66178e00c93e7f30ff457fcd7b24186dd65d1ac9c98",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-menu-pricing-formula/|instagram": {
+      "revision": "6fce7be0040e777fa44dd66178e00c93e7f30ff457fcd7b24186dd65d1ac9c98",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-menu-pricing-formula/|pinterest": {
+      "revision": "6fce7be0040e777fa44dd66178e00c93e7f30ff457fcd7b24186dd65d1ac9c98",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-prime-cost/|facebook": {
+      "revision": "6a7cf55e6cc9513acb0ffa5d72427628e68a9622a66d47ce498e410750469ea5",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-prime-cost/|instagram": {
+      "revision": "6a7cf55e6cc9513acb0ffa5d72427628e68a9622a66d47ce498e410750469ea5",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-prime-cost/|pinterest": {
+      "revision": "6a7cf55e6cc9513acb0ffa5d72427628e68a9622a66d47ce498e410750469ea5",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-profit-margin-average/|facebook": {
+      "revision": "6e43fa5a1b80c422831c522243606a9ff412ce83b5b6f5bd2e2c687209069c39",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-profit-margin-average/|instagram": {
+      "revision": "6e43fa5a1b80c422831c522243606a9ff412ce83b5b6f5bd2e2c687209069c39",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-profit-margin-average/|pinterest": {
+      "revision": "6e43fa5a1b80c422831c522243606a9ff412ce83b5b6f5bd2e2c687209069c39",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-sales-forecast/|facebook": {
+      "revision": "bd1c9c6018b11b1a0318b0e9538ca1fbf653d8f5f03c7d6ce4499e743eb35bc6",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-sales-forecast/|instagram": {
+      "revision": "bd1c9c6018b11b1a0318b0e9538ca1fbf653d8f5f03c7d6ce4499e743eb35bc6",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/restaurant-sales-forecast/|pinterest": {
+      "revision": "bd1c9c6018b11b1a0318b0e9538ca1fbf653d8f5f03c7d6ce4499e743eb35bc6",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/salon-booth-rent-vs-commission-owner/|facebook": {
+      "revision": "4e650b12ec51ee5620cb83debf1c29977eb639a41e7a6fab03df96719dc21c3f",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/salon-booth-rent-vs-commission-owner/|instagram": {
+      "revision": "4e650b12ec51ee5620cb83debf1c29977eb639a41e7a6fab03df96719dc21c3f",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/salon-booth-rent-vs-commission-owner/|pinterest": {
+      "revision": "4e650b12ec51ee5620cb83debf1c29977eb639a41e7a6fab03df96719dc21c3f",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/salon-break-even/|facebook": {
+      "revision": "99be67b354066e26952cb8d64df9fb31324d63a6ae78655a2b9ba10c24c6b12e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/salon-break-even/|instagram": {
+      "revision": "99be67b354066e26952cb8d64df9fb31324d63a6ae78655a2b9ba10c24c6b12e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/salon-break-even/|pinterest": {
+      "revision": "99be67b354066e26952cb8d64df9fb31324d63a6ae78655a2b9ba10c24c6b12e",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/salon-clients-per-day-break-even/|facebook": {
+      "revision": "71209d005438fdc7e4c0ba355eb7d94aeac3cfcc231cc62bc59964fe759e1982",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/salon-clients-per-day-break-even/|instagram": {
+      "revision": "71209d005438fdc7e4c0ba355eb7d94aeac3cfcc231cc62bc59964fe759e1982",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/salon-clients-per-day-break-even/|pinterest": {
+      "revision": "71209d005438fdc7e4c0ba355eb7d94aeac3cfcc231cc62bc59964fe759e1982",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/salon-membership-pricing/|facebook": {
+      "revision": "b96448bfb5176e2ba53b2ed77e4432386fb13efd3149b80c99e854c613eeb77f",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/salon-membership-pricing/|instagram": {
+      "revision": "b96448bfb5176e2ba53b2ed77e4432386fb13efd3149b80c99e854c613eeb77f",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/salon-membership-pricing/|pinterest": {
+      "revision": "b96448bfb5176e2ba53b2ed77e4432386fb13efd3149b80c99e854c613eeb77f",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/salon-profit-margin/|facebook": {
+      "revision": "dcb9f9dce553b5fdac29b2d2c91dbbb12c0ad917f44feeb74b1055620d657d4a",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/salon-profit-margin/|instagram": {
+      "revision": "dcb9f9dce553b5fdac29b2d2c91dbbb12c0ad917f44feeb74b1055620d657d4a",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/salon-profit-margin/|pinterest": {
+      "revision": "dcb9f9dce553b5fdac29b2d2c91dbbb12c0ad917f44feeb74b1055620d657d4a",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/salon-retail-product-profit-margin/|facebook": {
+      "revision": "74472bdc0eea79f0da160f44a7e5ddde0a5123763c9fd63d78c47004ada3bc26",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/salon-retail-product-profit-margin/|instagram": {
+      "revision": "74472bdc0eea79f0da160f44a7e5ddde0a5123763c9fd63d78c47004ada3bc26",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/salon-retail-product-profit-margin/|pinterest": {
+      "revision": "74472bdc0eea79f0da160f44a7e5ddde0a5123763c9fd63d78c47004ada3bc26",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/salon-service-pricing/|facebook": {
+      "revision": "be6917f50feb79567f109651995788c12855abc2875b1540afcdf79c8fe06d12",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/salon-service-pricing/|instagram": {
+      "revision": "be6917f50feb79567f109651995788c12855abc2875b1540afcdf79c8fe06d12",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/salon-service-pricing/|pinterest": {
+      "revision": "be6917f50feb79567f109651995788c12855abc2875b1540afcdf79c8fe06d12",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/snow-removal-pricing/|facebook": {
+      "revision": "a58dacc01fc31ef9538fd11095f51d028f06b854703de6115f827b7f10a07efb",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/snow-removal-pricing/|instagram": {
+      "revision": "a58dacc01fc31ef9538fd11095f51d028f06b854703de6115f827b7f10a07efb",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/snow-removal-pricing/|pinterest": {
+      "revision": "a58dacc01fc31ef9538fd11095f51d028f06b854703de6115f827b7f10a07efb",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/target-profit-sales-formula/|facebook": {
+      "revision": "330db1031b379a6b0c30747abfda76eed5322d737ee7a95255697ed24beff1ad",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/target-profit-sales-formula/|instagram": {
+      "revision": "330db1031b379a6b0c30747abfda76eed5322d737ee7a95255697ed24beff1ad",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/blogs/target-profit-sales-formula/|pinterest": {
+      "revision": "330db1031b379a6b0c30747abfda76eed5322d737ee7a95255697ed24beff1ad",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/agency-break-even-calculator/|facebook": {
+      "revision": "fe0d8c123580599ac8397862330a568cb37d5dc3dad51cdde4f8dcd4d7504253",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/agency-break-even-calculator/|instagram": {
+      "revision": "fe0d8c123580599ac8397862330a568cb37d5dc3dad51cdde4f8dcd4d7504253",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/agency-break-even-calculator/|pinterest": {
+      "revision": "fe0d8c123580599ac8397862330a568cb37d5dc3dad51cdde4f8dcd4d7504253",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/cleaning-business-break-even-calculator/|facebook": {
+      "revision": "2783e86ee5a8b0b1389d816fa70c0b0bc8e90caa5a2187f598234cd37f622725",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/cleaning-business-break-even-calculator/|instagram": {
+      "revision": "2783e86ee5a8b0b1389d816fa70c0b0bc8e90caa5a2187f598234cd37f622725",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/cleaning-business-break-even-calculator/|pinterest": {
+      "revision": "2783e86ee5a8b0b1389d816fa70c0b0bc8e90caa5a2187f598234cd37f622725",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/ecommerce-break-even-calculator/|facebook": {
+      "revision": "7845cdd02866fd829e83abeb49ef851ad3bfe3eef44a7756bdf1bc296245d5d0",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/ecommerce-break-even-calculator/|instagram": {
+      "revision": "7845cdd02866fd829e83abeb49ef851ad3bfe3eef44a7756bdf1bc296245d5d0",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/ecommerce-break-even-calculator/|pinterest": {
+      "revision": "7845cdd02866fd829e83abeb49ef851ad3bfe3eef44a7756bdf1bc296245d5d0",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/landscaping-break-even-calculator/|facebook": {
+      "revision": "d891b183e182254c062137f7fbe1ca344b2651bd5e9b2ed029582bc809cf0a17",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/landscaping-break-even-calculator/|instagram": {
+      "revision": "d891b183e182254c062137f7fbe1ca344b2651bd5e9b2ed029582bc809cf0a17",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/landscaping-break-even-calculator/|pinterest": {
+      "revision": "d891b183e182254c062137f7fbe1ca344b2651bd5e9b2ed029582bc809cf0a17",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/mobile-detailing-break-even-calculator/|facebook": {
+      "revision": "31a0b7b020e0c6fb70bb8fba78cabe0461bb39775536476fc502bdefda953854",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/mobile-detailing-break-even-calculator/|instagram": {
+      "revision": "31a0b7b020e0c6fb70bb8fba78cabe0461bb39775536476fc502bdefda953854",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/mobile-detailing-break-even-calculator/|pinterest": {
+      "revision": "31a0b7b020e0c6fb70bb8fba78cabe0461bb39775536476fc502bdefda953854",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/photography-business-break-even-calculator/|facebook": {
+      "revision": "ead75639ec8260a2f184c9133926efccfd3361d69385f4b26ef296f87e2f5dfb",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/photography-business-break-even-calculator/|instagram": {
+      "revision": "ead75639ec8260a2f184c9133926efccfd3361d69385f4b26ef296f87e2f5dfb",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/photography-business-break-even-calculator/|pinterest": {
+      "revision": "ead75639ec8260a2f184c9133926efccfd3361d69385f4b26ef296f87e2f5dfb",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/restaurant-break-even-calculator/|facebook": {
+      "revision": "11dd98097bca87d164dbb183f7318d37d82b957e1081be6eefe598d1d36cefa3",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/restaurant-break-even-calculator/|instagram": {
+      "revision": "11dd98097bca87d164dbb183f7318d37d82b957e1081be6eefe598d1d36cefa3",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/restaurant-break-even-calculator/|pinterest": {
+      "revision": "11dd98097bca87d164dbb183f7318d37d82b957e1081be6eefe598d1d36cefa3",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/salon-break-even-calculator/|facebook": {
+      "revision": "2e2b0735c42e005e18da2b11360dbb3d6fbfb7baceda39f7466eedcbf15e47d2",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/salon-break-even-calculator/|instagram": {
+      "revision": "2e2b0735c42e005e18da2b11360dbb3d6fbfb7baceda39f7466eedcbf15e47d2",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/calculators/salon-break-even-calculator/|pinterest": {
+      "revision": "2e2b0735c42e005e18da2b11360dbb3d6fbfb7baceda39f7466eedcbf15e47d2",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/contact-us/|facebook": {
+      "revision": "605a8a56a0173aff6565e4e04610b52b9ab5eb5429debc98ee60301d63f6165a",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/contact-us/|instagram": {
+      "revision": "605a8a56a0173aff6565e4e04610b52b9ab5eb5429debc98ee60301d63f6165a",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/contact-us/|pinterest": {
+      "revision": "605a8a56a0173aff6565e4e04610b52b9ab5eb5429debc98ee60301d63f6165a",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/cookie-policy/|facebook": {
+      "revision": "38115f62a4370e313ce88f12d1e9c3329d5b3a12d70666a88f7fb322bbc35c14",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/cookie-policy/|instagram": {
+      "revision": "38115f62a4370e313ce88f12d1e9c3329d5b3a12d70666a88f7fb322bbc35c14",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/cookie-policy/|pinterest": {
+      "revision": "38115f62a4370e313ce88f12d1e9c3329d5b3a12d70666a88f7fb322bbc35c14",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/pricing/|facebook": {
+      "revision": "a09794e7a43c5a7bb531a3f616e3fdb5c8f241666bbc7f93d60c8499c57963f5",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/pricing/|instagram": {
+      "revision": "a09794e7a43c5a7bb531a3f616e3fdb5c8f241666bbc7f93d60c8499c57963f5",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/pricing/|pinterest": {
+      "revision": "a09794e7a43c5a7bb531a3f616e3fdb5c8f241666bbc7f93d60c8499c57963f5",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/privacy-policy/|facebook": {
+      "revision": "d3d47819a0f481ba2b349526a3d9ed00fb3ba738f7463cd995506369aad7599f",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/privacy-policy/|instagram": {
+      "revision": "d3d47819a0f481ba2b349526a3d9ed00fb3ba738f7463cd995506369aad7599f",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/privacy-policy/|pinterest": {
+      "revision": "d3d47819a0f481ba2b349526a3d9ed00fb3ba738f7463cd995506369aad7599f",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/pro-user-guide/|facebook": {
+      "revision": "d212f638069ca06b091bdb687b4e0de6a055a909973b1da1438c2b8c5778c217",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/pro-user-guide/|instagram": {
+      "revision": "d212f638069ca06b091bdb687b4e0de6a055a909973b1da1438c2b8c5778c217",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/pro-user-guide/|pinterest": {
+      "revision": "d212f638069ca06b091bdb687b4e0de6a055a909973b1da1438c2b8c5778c217",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/refund-policy/|facebook": {
+      "revision": "f734a9485477e4703d2c9b3fb82f9384a151b54dd5aca483b3de5420f8679e95",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/refund-policy/|instagram": {
+      "revision": "f734a9485477e4703d2c9b3fb82f9384a151b54dd5aca483b3de5420f8679e95",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/refund-policy/|pinterest": {
+      "revision": "f734a9485477e4703d2c9b3fb82f9384a151b54dd5aca483b3de5420f8679e95",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/terms-of-service/|facebook": {
+      "revision": "bc93c39713cd2ac1e8e9cdbb7a6d46da463cf2511fc5a453f3dc56fed2878712",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/terms-of-service/|instagram": {
+      "revision": "bc93c39713cd2ac1e8e9cdbb7a6d46da463cf2511fc5a453f3dc56fed2878712",
+      "status": "baseline"
+    },
+    "https://mybreakeven.com/terms-of-service/|pinterest": {
+      "revision": "bc93c39713cd2ac1e8e9cdbb7a6d46da463cf2511fc5a453f3dc56fed2878712",
+      "status": "baseline"
+    }
+  }
+}
