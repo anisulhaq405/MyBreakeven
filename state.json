@@ -1702,6 +1702,11 @@
       "status": "published",
       "postId": "17887846470477579",
       "publishedAt": "2026-10-06T18:09:13.175Z"
+    },
+    "https://mybreakeven.com/calculators/cash-runway-calculator/|facebook": {
+      "revision": "302ab3bf33e8cc1e21b00ac7cfd200b8db299ba35d1224bd3cf4bad9b3fc52bd",
+      "status": "attempting",
+      "attemptedAt": "2026-10-06T18:09:14.344Z"
     }
   }
 }
