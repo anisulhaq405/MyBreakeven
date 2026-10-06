@@ -1,4 +1,3 @@
-import "./site-navigation.css";
 import React, { useEffect, useState } from "react";
 import { ArrowUpRight, LockKeyhole, Mail, Menu, X } from "lucide-react";
 import { authStorageKey, needsAccountClient } from "./authSession";
@@ -64,7 +63,7 @@ export function SiteHeader() {
     <header>
       <Logo />
       <nav className={mobileOpen ? "open" : ""} id="main-navigation" aria-label="Main navigation">
-        {primaryNavigation.map(([label, href]) => <a key={label} href={href} className={href === "/tools/" ? "free-tools-nav-link" : undefined} onClick={() => setMobileOpen(false)}>{label}</a>)}
+        {primaryNavigation.map(([label, href]) => <a key={label} href={href} onClick={() => setMobileOpen(false)}>{label}</a>)}
       </nav>
       <div className="header-actions">
         <a className="account-link" href={signedIn ? "/dashboard/" : "/login/"}>{signedIn ? "Dashboard" : "Sign In"}</a>

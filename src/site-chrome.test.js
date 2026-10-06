@@ -52,8 +52,9 @@ describe("shared site chrome", () => {
     }
   });
 
-  it("keeps crawler fallback content hidden during JavaScript boot", () => {
-    expect(generator.match(/id=\"root\" data-booting/g)?.length).toBeGreaterThanOrEqual(3);
-    expect(generator).not.toMatch(/const fallback = `<div id="root">/);
+  it("serves supporting pages visibly before React starts", () => {
+    expect(generator).toContain('data-prerendered="true"');
+    expect(generator).toContain('renderToString(React.createElement(PublicPage');
+    expect(chrome).not.toContain('free-tools-nav-link');
   });
 });
