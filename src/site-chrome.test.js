@@ -9,10 +9,10 @@ const generator = readFileSync(new URL("../scripts/create-pages.mjs", import.met
 const sitemap = readFileSync(new URL("../public/sitemap.xml", import.meta.url), "utf8");
 
 describe("shared site chrome", () => {
-  it("keeps the six-item menu with free tools next to the calculator", () => {
+  it("keeps the six-item menu with business calculators next to the calculator", () => {
     expect(primaryNavigation).toEqual([
       ["Calculator", "/#calculator"],
-      ["Free Tools", "/tools/"],
+      ["Business Calculators", "/tools/"],
       ["Pricing", "/pricing/"],
       ["Blogs", "/blogs/"],
       ["About Us", "/about-us/"],

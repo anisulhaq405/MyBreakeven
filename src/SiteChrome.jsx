@@ -4,7 +4,7 @@ import { authStorageKey, needsAccountClient } from "./authSession";
 
 export const primaryNavigation = [
   ["Calculator", "/#calculator"],
-  ["Free Tools", "/tools/"],
+  ["Business Calculators", "/tools/"],
   ["Pricing", "/pricing/"],
   ["Blogs", "/blogs/"],
   ["About Us", "/about-us/"],

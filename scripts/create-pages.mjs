@@ -36,7 +36,7 @@ const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll(
 const allArticles = blogPosts;
 const formatArticleDate = (value) => new Date(`${value}T12:00:00Z`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
 const staticPages = {
-  tools: ["Free Business Calculators | MyBreakeven", "Free business tools for pricing, ad returns, hourly rates and cash runway. Calculate clear targets, explore worked guides and plan without an account.", "Free business calculators"],
+  tools: ["Free Business Calculators: Profit, Pricing & Costs | MyBreakeven", "Explore free business calculators for profit, pricing, service costs, advertising and cash. Use clear formulas and worked guides without signing up.", "Free business calculators"],
   "pro-user-guide": ["MyBreakeven Pro Calculator User Guide", "Step-by-step guide to MyBreakeven Pro: enter costs, read break-even results, use advanced analysis, save scenarios and export reports.", "MyBreakeven Pro calculator user guide"],
   pricing: ["MyBreakeven Pricing: Free & Pro Business Planning", "Compare MyBreakeven Free and Pro plans for industry break-even calculators, saved scenarios, cost-drift analysis, comparisons and reports.", "MyBreakeven Free and Pro pricing"],
   blogs: ["Small Business Break-Even Guides | MyBreakeven", "Read practical break-even guides for cleaning, landscaping, photography, agencies, mobile detailing, e-commerce, restaurants and salons.", "Industry break-even calculator guides"],
@@ -147,7 +147,7 @@ for (const [slug, [title, description]] of Object.entries(calculators)) {
     { "@type": "WebApplication", "@id": `${canonical}#calculator`, name: title.replace(" | MyBreakeven", ""), url: canonical, applicationCategory: "BusinessApplication", operatingSystem: "Any web browser", isAccessibleForFree: true, description, ...(tool ? {image: `https://mybreakeven.com${tool.image}`, featureList: tool.features, mainEntityOfPage: {"@id": `${canonical}#webpage`}} : {}), offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
     { "@type": "BreadcrumbList", itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://mybreakeven.com/" },
-      { "@type": "ListItem", position: 2, name: tool ? "Free tools" : "Calculators", item: tool ? "https://mybreakeven.com/tools/" : "https://mybreakeven.com/#industries" },
+      { "@type": "ListItem", position: 2, name: tool ? "Business calculators" : "Calculators", item: tool ? "https://mybreakeven.com/tools/" : "https://mybreakeven.com/#industries" },
       { "@type": "ListItem", position: 3, name: title.replace(" | MyBreakeven", ""), item: canonical }
     ] }
   ] };
