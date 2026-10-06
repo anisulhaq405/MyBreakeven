@@ -1544,8 +1544,9 @@
       "publishedAt": "2026-10-06T18:46:47.305Z"
     },
     "https://mybreakeven.com/terms-of-service/|instagram": {
-      "revision": "bc93c39713cd2ac1e8e9cdbb7a6d46da463cf2511fc5a453f3dc56fed2878712",
-      "status": "baseline"
+      "revision": "14455c5739783cb1ef6c6ddcc4b3dcf64d1a39185d945d9c3ccb0697f541928b",
+      "status": "attempting",
+      "attemptedAt": "2026-10-06T18:46:48.470Z"
     },
     "https://mybreakeven.com/terms-of-service/|pinterest": {
       "revision": "bc93c39713cd2ac1e8e9cdbb7a6d46da463cf2511fc5a453f3dc56fed2878712",
