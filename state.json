@@ -1697,8 +1697,9 @@
     },
     "https://mybreakeven.com/tools/|facebook": {
       "revision": "2a4cf98833179308eecfea80081a213dabeb456bc6d239abd9425fcce4a0fc60",
-      "status": "attempting",
-      "attemptedAt": "2026-10-06T18:12:39.310Z"
+      "status": "published",
+      "postId": "1437362339452872_122094979563509539",
+      "publishedAt": "2026-10-06T18:12:45.527Z"
     },
     "https://mybreakeven.com/tools/|instagram": {
       "revision": "790f77364f1af4223f57e4b860093fa59ca0f5ad7a83a048f5c6a9dd54c518f9",
