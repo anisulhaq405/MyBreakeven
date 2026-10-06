@@ -1486,6 +1486,11 @@
       "revision": "2a881b85b6906f7545892a9d9ec255351e0b21defaf3c6e09f7a0580da0b48ac",
       "status": "needs_review",
       "attemptedAt": "2026-10-05T17:51:27.946Z"
+    },
+    "https://mybreakeven.com/blogs/agency-scope-creep-cost/|facebook": {
+      "revision": "786e82d04c1f87d07c3e72a0e49806533a0bea0cac005c91c1ab783bc8677409",
+      "status": "attempting",
+      "attemptedAt": "2026-10-06T06:16:55.858Z"
     }
   }
 }
