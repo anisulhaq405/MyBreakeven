@@ -12,6 +12,7 @@ import { october02UpdateMap } from "./content/blogs/october02Updates.js";
 const metadata = Object.fromEntries(blogListingData.posts.map(post => [post.slug, post]));
 const loadedPosts = new Map();
 const groupLoaders = {
+  october06Supplement: () => import("./content/blogs/october06Supplement.js").then(module => module.october06SupplementPosts),
   october06: () => import("./content/blogs/october06.js").then(module => module.october06Posts),
   core: () => import("./content/blogs/core.js").then(module => module.articleList),
   pricing: () => import("./content/blogs/pricing.js").then(module => module.pricingPosts),

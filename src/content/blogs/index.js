@@ -1,3 +1,4 @@
+import { october06SupplementPosts } from "./october06Supplement.js";
 import { october06Posts } from "./october06.js";
 import { october06UpdateMap } from "./october06Updates.js";
 import { october05Posts } from "./october05.js";
@@ -97,6 +98,7 @@ export const blogCollections = Object.freeze({
   october03: october03Posts.map(normalizePost),
   october04: october04Posts.map(normalizePost),
   october05: october05Posts.map(normalizePost),
+  october06Supplement: october06SupplementPosts.map(normalizePost),
   october06: october06Posts.map(normalizePost),
 });
 
