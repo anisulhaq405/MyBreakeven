@@ -1619,8 +1619,9 @@
     },
     "https://mybreakeven.com/blogs/landscaping-subcontractor-cost/|instagram": {
       "revision": "51e96684631ec86a529055bcc589fdafb86bda550148ee7c8af7fe81a2b540f1",
-      "status": "attempting",
-      "attemptedAt": "2026-10-06T13:04:31.173Z"
+      "status": "published",
+      "postId": "18123432592920618",
+      "publishedAt": "2026-10-06T13:04:50.268Z"
     }
   }
 }
