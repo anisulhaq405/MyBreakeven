@@ -1,3 +1,4 @@
+import { october06UpdateMap } from "./content/blogs/october06Updates.js";
 import { october05UpdateMap } from "./content/blogs/october05Updates.js";
 import { october04UpdateMap } from "./content/blogs/october04Updates.js";
 import { october03UpdateMap } from "./content/blogs/october03Updates.js";
@@ -11,6 +12,7 @@ import { october02UpdateMap } from "./content/blogs/october02Updates.js";
 const metadata = Object.fromEntries(blogListingData.posts.map(post => [post.slug, post]));
 const loadedPosts = new Map();
 const groupLoaders = {
+  october06: () => import("./content/blogs/october06.js").then(module => module.october06Posts),
   core: () => import("./content/blogs/core.js").then(module => module.articleList),
   pricing: () => import("./content/blogs/pricing.js").then(module => module.pricingPosts),
   startup: () => import("./content/blogs/startup.js").then(module => module.startupPosts),
@@ -37,7 +39,7 @@ export async function loadBlogPost(slug) {
   const group = await groupLoaders[preview.group]();
   const post = group.find(candidate => candidate.slug === slug);
   if (!post) throw new Error(`Missing blog content for ${slug}`);
-  const article = { ...post, ...preview, ...september29UpdateMap[slug], ...september30UpdateMap[slug], ...october01UpdateMap[slug], ...october01AuditUpdateMap[slug], ...october02UpdateMap[slug], ...october03UpdateMap[slug], ...october04UpdateMap[slug], ...october05UpdateMap[slug] };
+  const article = { ...post, ...preview, ...september29UpdateMap[slug], ...september30UpdateMap[slug], ...october01UpdateMap[slug], ...october01AuditUpdateMap[slug], ...october02UpdateMap[slug], ...october03UpdateMap[slug], ...october04UpdateMap[slug], ...october05UpdateMap[slug], ...october06UpdateMap[slug] };
   loadedPosts.set(slug, article);
   return article;
 }
