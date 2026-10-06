@@ -1523,8 +1523,9 @@
     },
     "https://mybreakeven.com/refund-policy/|facebook": {
       "revision": "3d93cd2fbeeef0ba550a43a0938f247308a805c4d82870271b7335f5dd4bb093",
-      "status": "attempting",
-      "attemptedAt": "2026-10-06T18:46:25.276Z"
+      "status": "published",
+      "postId": "1437362339452872_122094995613509539",
+      "publishedAt": "2026-10-06T18:46:30.554Z"
     },
     "https://mybreakeven.com/refund-policy/|instagram": {
       "revision": "f734a9485477e4703d2c9b3fb82f9384a151b54dd5aca483b3de5420f8679e95",
