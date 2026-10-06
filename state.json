@@ -1586,6 +1586,11 @@
       "revision": "bf64ae850ba380e2484966faac0c5b9c146420e8007df8dcaf9269d2655014f7",
       "status": "needs_review",
       "attemptedAt": "2026-10-06T06:20:28.961Z"
+    },
+    "https://mybreakeven.com/blogs/catering-quote-profit/|facebook": {
+      "revision": "ee056c50027543c86d2dd069b5387c2a7e2bc2a77f4e6513ca611dae557ae9fa",
+      "status": "attempting",
+      "attemptedAt": "2026-10-06T13:03:39.294Z"
     }
   }
 }
