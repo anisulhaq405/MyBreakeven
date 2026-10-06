@@ -330,8 +330,9 @@
     },
     "https://mybreakeven.com/blogs/discount-break-even-sales-volume/|instagram": {
       "revision": "20026af5c9caebf9f270a94650ad847a9241eb8d34693b41f7f37bd162e4a3d5",
-      "status": "attempting",
-      "attemptedAt": "2026-10-06T17:39:44.902Z"
+      "status": "published",
+      "postId": "18637440067019945",
+      "publishedAt": "2026-10-06T17:40:05.860Z"
     },
     "https://mybreakeven.com/blogs/discount-break-even-sales-volume/|pinterest": {
       "revision": "4f7a0ca785f9c66884269795fd40d65aaa480d5ae5be0a71c1f72c99e60e113a",
