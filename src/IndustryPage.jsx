@@ -18,6 +18,8 @@ export const industryPages = {
   "salon-break-even-calculator": { key: "salon", title: "Salon Break-Even Calculator", lead: "Estimate appointments, revenue and customer inquiries using service price, product usage, stylist labor and chair capacity.", costs: "service products, stylist labor, disposables, laundry, payment fees and appointment acquisition", questions: ["How many salon appointments are needed to break even?", "What revenue covers rent and owner pay?", "Are stylist hours sufficient for the target appointments?"] },
 };
 
+const operationalLinks = {"cleaning": ["cleaning-contract-profit-calculator", "Cleaning Contract Profit Calculator"], "landscaping": ["lawn-route-profit-calculator", "Lawn Route Profit Calculator"], "detailing": ["detailing-chemical-cost-calculator", "Detailing Chemical Cost Calculator"], "salon": ["hair-color-product-cost-calculator", "Hair Color Product Cost Calculator"], "ecommerce": ["ecommerce-return-cost-calculator", "Ecommerce Return Cost Calculator"]};
+
 const industryGuideSlugs = {
   cleaning: "cleaning-business-break-even", landscaping: "landscaping-break-even",
   photography: "photography-business-break-even", agency: "agency-break-even",
@@ -88,7 +90,7 @@ export default function IndustryPage({ slug }) {
   const example = calculate(industry.values);
   return (
     <div className="industry-tool-theme" style={toolThemes[page.key]}>
-      <section className="industry-hero">
+      {operationalLinks[page.key] && <aside className="tool-related"><p>Check a specific cost decision: <a href={`/calculators/${operationalLinks[page.key][0]}/`}>{operationalLinks[page.key][1]}</a>.</p></aside>}<section className="industry-hero">
         <div>
           <span>FREE INDUSTRY CALCULATOR</span>
           <h1>{page.title}</h1>

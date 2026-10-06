@@ -1,4 +1,10 @@
 export const toolThemes = {
+"cleaning-contract-profit-calculator":{"--tool-accent": "#7c4a22", "--tool-soft": "#fff6ed", "--tool-dark": "#3e2514", "--tool-radius": "10px"},
+"lawn-route-profit-calculator":{"--tool-accent": "#315a96", "--tool-soft": "#f0f5fc", "--tool-dark": "#142e52", "--tool-radius": "14px"},
+"detailing-chemical-cost-calculator":{"--tool-accent": "#57571b", "--tool-soft": "#fbfbe9", "--tool-dark": "#30300f", "--tool-radius": "18px"},
+"hair-color-product-cost-calculator":{"--tool-accent": "#8b3f70", "--tool-soft": "#fcf0f8", "--tool-dark": "#48243b", "--tool-radius": "22px"},
+"ecommerce-return-cost-calculator":{"--tool-accent": "#99412d", "--tool-soft": "#fff2ef", "--tool-dark": "#502217", "--tool-radius": "26px"},
+
   "discount-break-even-calculator": {
     "--tool-accent": "#9a3412",
     "--tool-soft": "#fff2e7",
