@@ -1354,8 +1354,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/calculators/ecommerce-break-even-calculator/|facebook": {
-      "revision": "7845cdd02866fd829e83abeb49ef851ad3bfe3eef44a7756bdf1bc296245d5d0",
-      "status": "baseline"
+      "revision": "caefb6f1dd860596803f15f7edb7b54c782e9a9ad8158112d540e89e00aeaeb9",
+      "status": "attempting",
+      "attemptedAt": "2026-10-06T18:10:19.172Z"
     },
     "https://mybreakeven.com/calculators/ecommerce-break-even-calculator/|instagram": {
       "revision": "7845cdd02866fd829e83abeb49ef851ad3bfe3eef44a7756bdf1bc296245d5d0",
