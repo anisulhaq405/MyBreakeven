@@ -8,10 +8,11 @@ const main = readFileSync(new URL("./main.jsx", import.meta.url), "utf8");
 const generator = readFileSync(new URL("../scripts/create-pages.mjs", import.meta.url), "utf8");
 const sitemap = readFileSync(new URL("../public/sitemap.xml", import.meta.url), "utf8");
 
-describe("locked site chrome", () => {
-  it("keeps the approved five-item primary menu", () => {
+describe("shared site chrome", () => {
+  it("keeps the six-item menu with free tools next to the calculator", () => {
     expect(primaryNavigation).toEqual([
       ["Calculator", "/#calculator"],
+      ["Free Tools", "/tools/"],
       ["Pricing", "/pricing/"],
       ["Blogs", "/blogs/"],
       ["About Us", "/about-us/"],
@@ -19,8 +20,8 @@ describe("locked site chrome", () => {
     ]);
   });
 
-  it("keeps account access separate from the locked primary menu", () => {
-    expect(primaryNavigation).toHaveLength(5);
+  it("keeps account access separate from the primary menu", () => {
+    expect(primaryNavigation).toHaveLength(6);
     expect(chrome).toContain('className="account-link"');
     expect(chrome).toContain('signedIn ? "/dashboard/" : "/login/"');
     expect(chrome).toContain('signedIn ? "Dashboard" : "Sign In"');

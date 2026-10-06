@@ -1,0 +1,6 @@
+
+/* Give the free tools a clear, crawlable entry beside the main calculator. */
+header > nav a.free-tools-nav-link{display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid #dcd7fc;border-radius:10px;background:#eeeafe;color:#5142b4;font-weight:750;white-space:nowrap}
+header > nav a.free-tools-nav-link:hover,header > nav a.free-tools-nav-link:focus-visible{background:#e2dcfc;color:#3d2e96}
+@media(min-width:801px) and (max-width:1050px){header > nav{gap:12px}header > nav a.free-tools-nav-link{padding:0 8px}}
+@media(max-width:800px){header > nav a.free-tools-nav-link{min-height:44px;padding:0 16px}header > nav{box-sizing:border-box}}
