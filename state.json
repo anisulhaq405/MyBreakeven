@@ -1772,6 +1772,11 @@
       "revision": "68e0a8cca44990db27edb74b99e640b6073b36bcee56af3dd8a082bf0a3fd211",
       "status": "needs_review",
       "attemptedAt": "2026-10-06T18:10:43.060Z"
+    },
+    "https://mybreakeven.com/calculators/cleaning-contract-profit-calculator/|facebook": {
+      "revision": "d95d0a490a9d77e8dd0f3bcbff984be02422ace54f1535335ec372a766e50c1f",
+      "status": "attempting",
+      "attemptedAt": "2026-10-06T19:12:41.080Z"
     }
   }
 }
