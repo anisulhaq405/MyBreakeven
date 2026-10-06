@@ -1743,10 +1743,9 @@
       "publishedAt": "2026-10-06T18:28:00.262Z"
     },
     "https://mybreakeven.com/calculators/hourly-rate-calculator/|facebook": {
-      "revision": "68e0a8cca44990db27edb74b99e640b6073b36bcee56af3dd8a082bf0a3fd211",
-      "status": "published",
-      "postId": "1437362339452872_122094978237509539",
-      "publishedAt": "2026-10-06T18:10:42.009Z"
+      "revision": "cafb706cd562221dcbe9f24050dd1319e48611d5b88b1609cc4cad754de6abe1",
+      "status": "attempting",
+      "attemptedAt": "2026-10-06T18:28:21.634Z"
     },
     "https://mybreakeven.com/calculators/hourly-rate-calculator/|instagram": {
       "revision": "68e0a8cca44990db27edb74b99e640b6073b36bcee56af3dd8a082bf0a3fd211",
