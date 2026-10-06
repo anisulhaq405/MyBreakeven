@@ -1659,8 +1659,9 @@
     },
     "https://mybreakeven.com/tools/|instagram": {
       "revision": "2bce618da220a3dc38d1c0e520c6f3f0a82523a99e11e9c1639961772d40a7a7",
-      "status": "attempting",
-      "attemptedAt": "2026-10-06T16:35:19.325Z"
+      "status": "published",
+      "postId": "18443625472132117",
+      "publishedAt": "2026-10-06T16:35:29.721Z"
     }
   }
 }
