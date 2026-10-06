@@ -36,7 +36,7 @@ const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll(
 const allArticles = blogPosts;
 const formatArticleDate = (value) => new Date(`${value}T12:00:00Z`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
 const staticPages = {
-  tools: ["Free Business Calculators | MyBreakeven", "Test pricing decisions with free business calculators. Compare contribution, fees, sales volume and capacity without an account.", "Free business calculators"],
+  tools: ["Free Business Calculators | MyBreakeven", "Free business tools for pricing, ad returns, hourly rates and cash runway. Calculate clear targets, explore worked guides and plan without an account.", "Free business calculators"],
   "pro-user-guide": ["MyBreakeven Pro Calculator User Guide", "Step-by-step guide to MyBreakeven Pro: enter costs, read break-even results, use advanced analysis, save scenarios and export reports.", "MyBreakeven Pro calculator user guide"],
   pricing: ["MyBreakeven Pricing: Free & Pro Business Planning", "Compare MyBreakeven Free and Pro plans for industry break-even calculators, saved scenarios, cost-drift analysis, comparisons and reports.", "MyBreakeven Free and Pro pricing"],
   blogs: ["Small Business Break-Even Guides | MyBreakeven", "Read practical break-even guides for cleaning, landscaping, photography, agencies, mobile detailing, e-commerce, restaurants and salons.", "Industry break-even calculator guides"],
@@ -139,6 +139,9 @@ for (const [slug, [title, description]] of Object.entries(calculators)) {
   const route = `calculators/${slug}`;
   const canonical = `https://mybreakeven.com/${route}/`;
   const tool = freeTools[slug];
+  const industryImageKeys = {"cleaning-business-break-even-calculator":"cleaning", "landscaping-break-even-calculator":"landscaping", "photography-business-break-even-calculator":"photography", "agency-break-even-calculator":"agency", "mobile-detailing-break-even-calculator":"detailing", "ecommerce-break-even-calculator":"ecommerce", "restaurant-break-even-calculator":"restaurant", "salon-break-even-calculator":"salon"};
+  const pageImage = tool?.image || `/images/tools/${industryImageKeys[slug]}-break-even.webp`;
+  const pageImageAlt = tool?.alt || `${title.replace(" | MyBreakeven", "")} planning model: direct costs, contribution, monthly target and capacity.`;
   const schema = { "@context": "https://schema.org", "@graph": [
     { "@type": "WebPage", "@id": `${canonical}#webpage`, url: canonical, name: title, description, ...(tool ? {primaryImageOfPage: {"@type": "ImageObject", url: `https://mybreakeven.com${tool.image}`, width: 1200, height: 675}, dateModified: "2026-10-06", publisher: {"@id": "https://mybreakeven.com/#organization"}} : {}), inLanguage: "en-US", isPartOf: { "@id": "https://mybreakeven.com/#website" } },
     { "@type": "WebApplication", "@id": `${canonical}#calculator`, name: title.replace(" | MyBreakeven", ""), url: canonical, applicationCategory: "BusinessApplication", operatingSystem: "Any web browser", isAccessibleForFree: true, description, ...(tool ? {image: `https://mybreakeven.com${tool.image}`, featureList: tool.features, mainEntityOfPage: {"@id": `${canonical}#webpage`}} : {}), offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
@@ -162,12 +165,12 @@ for (const [slug, [title, description]] of Object.entries(calculators)) {
     .replace(/<link rel="alternate" hreflang="x-default" href="[^"]*"\s*\/?>/, `<link rel="alternate" hreflang="x-default" href="${canonical}" />`)
     .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, `<script type="application/ld+json">${JSON.stringify(schema)}</script>`)
     .replace(/<div id="root"[^>]*>[\s\S]*?<\/div>\s*<\/body>/, `<div id="root" data-booting>${renderPublicPage(`/calculators/${slug}`)}</div></body>`);
-  if (tool) html = html
-    .replaceAll("https://mybreakeven.com/mybreakeven-social-preview.png", `https://mybreakeven.com${tool.image}`)
+  html = html
+    .replaceAll("https://mybreakeven.com/mybreakeven-social-preview.png", `https://mybreakeven.com${pageImage}`)
     .replace(/<meta property="og:image:type" content="[^"]*"\s*\/?>/, `<meta property="og:image:type" content="image/webp" />`)
     .replace(/<meta property="og:image:height" content="[^"]*"\s*\/?>/, `<meta property="og:image:height" content="675" />`)
-    .replace(/<meta property="og:image:alt" content="[^"]*"\s*\/?>/, `<meta property="og:image:alt" content="${escapeHtml(tool.alt)}" />`)
-    .replace(/<meta name="twitter:image:alt" content="[^"]*"\s*\/?>/, `<meta name="twitter:image:alt" content="${escapeHtml(tool.alt)}" />`);
+    .replace(/<meta property="og:image:alt" content="[^"]*"\s*\/?>/, `<meta property="og:image:alt" content="${escapeHtml(pageImageAlt)}" />`)
+    .replace(/<meta name="twitter:image:alt" content="[^"]*"\s*\/?>/, `<meta name="twitter:image:alt" content="${escapeHtml(pageImageAlt)}" />`);
   await mkdir(new URL(`../dist/${route}/`, import.meta.url), { recursive: true });
   await writeFile(new URL(`../dist/${route}/index.html`, import.meta.url), html);
 }
