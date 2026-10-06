@@ -1241,8 +1241,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/salon-profit-margin/|facebook": {
-      "revision": "dcb9f9dce553b5fdac29b2d2c91dbbb12c0ad917f44feeb74b1055620d657d4a",
-      "status": "baseline"
+      "revision": "23a6756679a2871ac22a047ee2f345848a7cc1a20854e9b9aea8f3cacf4fa57b",
+      "status": "attempting",
+      "attemptedAt": "2026-10-06T06:20:38.869Z"
     },
     "https://mybreakeven.com/blogs/salon-profit-margin/|instagram": {
       "revision": "dcb9f9dce553b5fdac29b2d2c91dbbb12c0ad917f44feeb74b1055620d657d4a",
