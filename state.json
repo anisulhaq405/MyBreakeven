@@ -1625,8 +1625,9 @@
     },
     "https://mybreakeven.com/blogs/salon-no-show-cost/|facebook": {
       "revision": "c68e05a44f3721f4f22e77d6b40c9522b4b58b5eeae9fed643aaf854fa991d1d",
-      "status": "attempting",
-      "attemptedAt": "2026-10-06T13:04:51.374Z"
+      "status": "published",
+      "postId": "1437362339452872_122094816393509539",
+      "publishedAt": "2026-10-06T13:04:59.020Z"
     }
   }
 }
