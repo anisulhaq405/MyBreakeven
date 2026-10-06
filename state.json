@@ -27,8 +27,9 @@
     },
     "https://mybreakeven.com/blogs/|facebook": {
       "revision": "89a988428d97c028a278561084fbd334f410a1d8ab00a1df4301aeede575b157",
-      "status": "attempting",
-      "attemptedAt": "2026-10-06T06:05:53.075Z"
+      "status": "published",
+      "postId": "1437362339452872_122094614781509539",
+      "publishedAt": "2026-10-06T06:06:00.233Z"
     },
     "https://mybreakeven.com/blogs/|instagram": {
       "revision": "a77b54e1e5178535529d1338eb82696eb2c4a57a5b3eff0966ad907c8987463d",
