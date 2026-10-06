@@ -8,10 +8,9 @@
       "publishedAt": "2026-10-06T19:12:12.901Z"
     },
     "https://mybreakeven.com/|instagram": {
-      "revision": "3aafa083079b8d7306daac0580a54c18f93e2eaae562b027d5d29cbef9bd5dba",
-      "status": "published",
-      "postId": "17879213433548555",
-      "publishedAt": "2026-10-06T18:07:36.191Z"
+      "revision": "d441cc28f481b8d7a75252ae735d8d40d85ef89a0309770e5a68f2e6df548582",
+      "status": "attempting",
+      "attemptedAt": "2026-10-06T19:12:14.165Z"
     },
     "https://mybreakeven.com/|pinterest": {
       "revision": "fbcb5005632334a8dc6a06dce90286c306f79ef36d11fa1dd7ab3985562eb233",
