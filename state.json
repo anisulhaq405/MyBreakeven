@@ -1738,8 +1738,9 @@
     },
     "https://mybreakeven.com/calculators/cash-runway-calculator/|instagram": {
       "revision": "ecf03c12ff83576cc57d8b5a3da46c9a2e7e5c1ce42b8c20425dacb793aab74a",
-      "status": "attempting",
-      "attemptedAt": "2026-10-06T18:27:52.061Z"
+      "status": "published",
+      "postId": "18016048370745253",
+      "publishedAt": "2026-10-06T18:28:00.262Z"
     },
     "https://mybreakeven.com/calculators/hourly-rate-calculator/|facebook": {
       "revision": "68e0a8cca44990db27edb74b99e640b6073b36bcee56af3dd8a082bf0a3fd211",
