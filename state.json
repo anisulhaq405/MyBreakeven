@@ -1564,6 +1564,11 @@
       "revision": "bbb3022eb2887979e1e6d960783f9bba54465cd49f49a6df0309a3d4a4d5bde3",
       "status": "needs_review",
       "attemptedAt": "2026-10-06T06:19:07.474Z"
+    },
+    "https://mybreakeven.com/blogs/retail-break-even-analysis/|facebook": {
+      "revision": "bf64ae850ba380e2484966faac0c5b9c146420e8007df8dcaf9269d2655014f7",
+      "status": "attempting",
+      "attemptedAt": "2026-10-06T06:20:06.702Z"
     }
   }
 }
