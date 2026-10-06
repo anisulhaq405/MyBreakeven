@@ -1579,7 +1579,7 @@
     },
     "https://mybreakeven.com/blogs/retail-break-even-analysis/|pinterest": {
       "revision": "bf64ae850ba380e2484966faac0c5b9c146420e8007df8dcaf9269d2655014f7",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-06T06:20:28.961Z"
     }
   }
