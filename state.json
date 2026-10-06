@@ -611,8 +611,9 @@
       "publishedAt": "2026-10-06T06:19:33.922Z"
     },
     "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-an-ecommerce-store/|pinterest": {
-      "revision": "2ca0c8f8e6ab3b48bb6e0abf3c556d33763583394ba5cf965037ddb2692a7d1e",
-      "status": "baseline"
+      "revision": "8066250a49190c7492118c1433fc7365b55a205b962942fbc94a820fe24d637b",
+      "status": "attempting",
+      "attemptedAt": "2026-10-06T06:19:35.078Z"
     },
     "https://mybreakeven.com/blogs/how-much-to-charge-for-house-cleaning/|facebook": {
       "revision": "c16b285b9717dd338a973f1db383a0f241f6ef7438e8926f8ec082e50ac77a0e",
