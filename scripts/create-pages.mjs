@@ -138,15 +138,17 @@ for (const article of allArticles) {
 for (const [slug, [title, description]] of Object.entries(calculators)) {
   const route = `calculators/${slug}`;
   const canonical = `https://mybreakeven.com/${route}/`;
+  const tool = freeTools[slug];
   const schema = { "@context": "https://schema.org", "@graph": [
-    { "@type": "WebPage", "@id": `${canonical}#webpage`, url: canonical, name: title, description, inLanguage: "en-US", isPartOf: { "@id": "https://mybreakeven.com/#website" } },
-    { "@type": "WebApplication", "@id": `${canonical}#calculator`, name: title.replace(" | MyBreakeven", ""), url: canonical, applicationCategory: "BusinessApplication", operatingSystem: "Any web browser", isAccessibleForFree: true, description, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
+    { "@type": "WebPage", "@id": `${canonical}#webpage`, url: canonical, name: title, description, ...(tool ? {primaryImageOfPage: {"@type": "ImageObject", url: `https://mybreakeven.com${tool.image}`, width: 1200, height: 675}, dateModified: "2026-10-06", publisher: {"@id": "https://mybreakeven.com/#organization"}} : {}), inLanguage: "en-US", isPartOf: { "@id": "https://mybreakeven.com/#website" } },
+    { "@type": "WebApplication", "@id": `${canonical}#calculator`, name: title.replace(" | MyBreakeven", ""), url: canonical, applicationCategory: "BusinessApplication", operatingSystem: "Any web browser", isAccessibleForFree: true, description, ...(tool ? {image: `https://mybreakeven.com${tool.image}`, featureList: tool.features, mainEntityOfPage: {"@id": `${canonical}#webpage`}} : {}), offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
     { "@type": "BreadcrumbList", itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://mybreakeven.com/" },
-      { "@type": "ListItem", position: 2, name: "Calculators", item: "https://mybreakeven.com/#industries" },
+      { "@type": "ListItem", position: 2, name: tool ? "Free tools" : "Calculators", item: tool ? "https://mybreakeven.com/tools/" : "https://mybreakeven.com/#industries" },
       { "@type": "ListItem", position: 3, name: title.replace(" | MyBreakeven", ""), item: canonical }
     ] }
   ] };
+  if (tool) schema["@graph"].push({"@type": "FAQPage", mainEntity: tool.faq.map(([q,a]) => ({"@type": "Question", name:q, acceptedAnswer:{"@type":"Answer", text:a}}))});
   let html = base
     .replace(/<title>.*?<\/title>/, `<title>${title}</title>`)
     .replace(/<meta name="description" content="[^"]*"\s*\/?>/, `<meta name="description" content="${description}" />`)
@@ -160,6 +162,12 @@ for (const [slug, [title, description]] of Object.entries(calculators)) {
     .replace(/<link rel="alternate" hreflang="x-default" href="[^"]*"\s*\/?>/, `<link rel="alternate" hreflang="x-default" href="${canonical}" />`)
     .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, `<script type="application/ld+json">${JSON.stringify(schema)}</script>`)
     .replace(/<div id="root"[^>]*>[\s\S]*?<\/div>\s*<\/body>/, `<div id="root" data-booting>${renderPublicPage(`/calculators/${slug}`)}</div></body>`);
+  if (tool) html = html
+    .replaceAll("https://mybreakeven.com/mybreakeven-social-preview.png", `https://mybreakeven.com${tool.image}`)
+    .replace(/<meta property="og:image:type" content="[^"]*"\s*\/?>/, `<meta property="og:image:type" content="image/webp" />`)
+    .replace(/<meta property="og:image:height" content="[^"]*"\s*\/?>/, `<meta property="og:image:height" content="675" />`)
+    .replace(/<meta property="og:image:alt" content="[^"]*"\s*\/?>/, `<meta property="og:image:alt" content="${escapeHtml(tool.alt)}" />`)
+    .replace(/<meta name="twitter:image:alt" content="[^"]*"\s*\/?>/, `<meta name="twitter:image:alt" content="${escapeHtml(tool.alt)}" />`);
   await mkdir(new URL(`../dist/${route}/`, import.meta.url), { recursive: true });
   await writeFile(new URL(`../dist/${route}/index.html`, import.meta.url), html);
 }
