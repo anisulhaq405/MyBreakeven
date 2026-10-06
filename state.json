@@ -1498,6 +1498,11 @@
       "status": "published",
       "postId": "18112397132603344",
       "publishedAt": "2026-10-06T06:17:27.729Z"
+    },
+    "https://mybreakeven.com/blogs/agency-scope-creep-cost/|pinterest": {
+      "revision": "786e82d04c1f87d07c3e72a0e49806533a0bea0cac005c91c1ab783bc8677409",
+      "status": "attempting",
+      "attemptedAt": "2026-10-06T06:17:28.953Z"
     }
   }
 }
