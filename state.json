@@ -600,8 +600,9 @@
     },
     "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-an-ecommerce-store/|facebook": {
       "revision": "8066250a49190c7492118c1433fc7365b55a205b962942fbc94a820fe24d637b",
-      "status": "attempting",
-      "attemptedAt": "2026-10-06T06:19:17.210Z"
+      "status": "published",
+      "postId": "1437362339452872_122094617637509539",
+      "publishedAt": "2026-10-06T06:19:22.743Z"
     },
     "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-an-ecommerce-store/|instagram": {
       "revision": "2ca0c8f8e6ab3b48bb6e0abf3c556d33763583394ba5cf965037ddb2692a7d1e",
