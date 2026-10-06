@@ -7,6 +7,22 @@ import { capacityDecision } from "./capacityDecision";
 import Insights from "./Insights";
 
 describe("capacity decision", () => {
+  it("explains invalid inputs instead of silently hiding the results", () => {
+    const input = { ...industries.cleaning.values, price: 0 };
+    const result = calculate(input);
+    const html = renderToStaticMarkup(<Insights result={result} input={input} industry={industries.cleaning} currency="USD" />);
+    expect(html).toContain('role="status"');
+    expect(html).toContain(result.message);
+    expect(html).not.toContain("Capacity feasibility");
+  });
+  it("shows the engine explanation when sales have no positive contribution", () => {
+    const input = { ...industries.cleaning.values, price: 50, laborCost: 100 };
+    const result = calculate(input);
+    const html = renderToStaticMarkup(<Insights result={result} input={input} industry={industries.cleaning} currency="USD" />);
+    expect(result.inputError).not.toBe(true);
+    expect(html).toContain(result.message);
+    expect(html).toContain("Review your calculator inputs");
+  });
   it("does not call the default overloaded cleaning plan feasible", () => {
     const input = industries.cleaning.values;
     const result = calculate(input);
