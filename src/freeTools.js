@@ -1,3 +1,4 @@
+import { operationalTools } from './operationalTools.js';
 import { businessTools } from './businessTools.js';
 import { toolThemes } from './toolThemes.js';
 import { freeToolGuides } from './freeToolGuides.js';
@@ -18,4 +19,4 @@ const pricingTools = {
   },
 };
 
-export const freeTools = Object.fromEntries(Object.entries({...pricingTools,...businessTools}).map(([slug,tool])=>[slug,{...tool,theme:toolThemes[slug],category:tool.category || "Pricing & contribution"}]));
+export const freeTools = Object.fromEntries(Object.entries({...pricingTools,...businessTools,...operationalTools}).map(([slug,tool])=>[slug,{...tool,theme:toolThemes[slug],category:tool.category || "Pricing & contribution"}]));

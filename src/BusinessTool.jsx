@@ -1,16 +1,18 @@
 import CurrencySelector from './CurrencySelector';
 import React,{useMemo,useState} from 'react';
+import {calculateOperationalTool} from './operationalToolEngine';
 import {calculateBusinessTool} from './businessToolEngine';
 import FreeToolGuide from './FreeToolGuide';
 export default function BusinessTool({tool,slug}){
  const [input,setInput]=useState({...tool.defaults}),[currency,setCurrency]=useState('USD');
- const r=useMemo(()=>calculateBusinessTool(input,tool.mode),[input,tool.mode]);
+ const r=useMemo(()=>(tool.fields && !["roas","hourly","runway"].includes(tool.mode)?calculateOperationalTool:calculateBusinessTool)(input,tool.mode),[input,tool.mode]);
  const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency,currencyDisplay:'code',minimumFractionDigits:2,maximumFractionDigits:2}).format(n);
  const num=n=>new Intl.NumberFormat('en-US',{maximumFractionDigits:2}).format(n);
  const metric=(label,value)=><div key={label}><small>{label}</small><strong>{value}</strong></div>;
  const field=([key,label,help,step='0.01'])=><label className="tool-field" key={key}><span>{label}</span><input type="number" min="0" step={step} value={input[key]} onChange={e=>setInput(s=>({...s,[key]:e.target.value}))} aria-describedby={`help-${key}`}/><small id={`help-${key}`}>{help}</small></label>;
  let headline,metrics,verdict;
  if(r.valid){
+  if(r.metrics){headline=money(r.main);metrics=r.metrics.map(([label,value,type])=>metric(label,type==='money'?money(value):type==='percent'?`${num(value)}%`:num(value)));verdict=tool.assumptions;}
   if(tool.mode==='roas'){headline=r.breakEven===null?'No recoverable ROAS':`≈ ${num(r.breakEven)}× ROAS`;metrics=[metric('Your actual ROAS',`${num(r.actual)}×`),metric('Contribution before ads / order',money(r.contribution)),metric('Contribution after ads',money(r.profit)),metric('Maximum CPA before overhead',money(r.maxCPA))];verdict=r.breakEven===null?'Order economics leave no positive contribution before advertising. Review price, direct cost and fees.':r.profit>=0?'Your entered revenue covers direct costs, fees and ad spend. Fixed overhead is still outside this comparison.':'Your entered revenue does not cover direct costs, fees and ad spend.';}
   if(tool.mode==='hourly'){headline=`${money(r.rate)} / hour`;metrics=[metric('Annual billable hours',num(r.annualHours)),metric('Average billable hours / month',num(r.monthlyHours)),metric('Annual revenue at this rate',money(r.annualRevenue)),metric('Monthly amount after fees & overhead',money(r.monthlyNet))];verdict='This minimum billing rate funds your entered owner income and profit buffer before personal income tax. It assumes you sell every modeled billable hour.';}
   if(tool.mode==='runway'){headline=r.runway===null?'No depletion at this pace':`${num(r.runway)} months`;metrics=[metric('Cash above reserve',money(r.usable)),metric(r.burn>=0?'Monthly net cash burn':'Monthly net cash surplus',money(Math.abs(r.burn))),metric(`Cash after ${input.months} months`,money(r.endingCash)),metric('Extra cash needed to protect reserve',money(r.extraNeeded))];verdict=r.usable===0?'Your cash is already at the reserve boundary. This reports zero room above reserve today.':r.burn<=0?'Monthly cash receipts cover the entered payments. This constant-flow scenario has no depletion horizon; it is not a guarantee.':`You can fund ${num(r.fullMonths)} full months above the reserve under the entered constant cash flows.`;}
