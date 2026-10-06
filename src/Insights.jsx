@@ -8,7 +8,16 @@ const money = (n, currency) =>
     maximumFractionDigits: 2,
   }).format(n || 0);
 export default function Insights({ result, input, industry, currency }) {
-  if (!result.valid) return null;
+  if (!result.valid) return (
+    <section className="insights" aria-label="Calculator needs review">
+      <div className="insights-title">
+        <span>CHECK YOUR ASSUMPTIONS</span>
+        <h2>Review your calculator inputs</h2>
+        <p role="status">{result.message}</p>
+        <p>Adjust the fields above to see your contribution, sales target and capacity results.</p>
+      </div>
+    </section>
+  );
   const decision = capacityDecision(result);
   const total = input.price || 1,
     segments = [
