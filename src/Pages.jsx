@@ -1,4 +1,6 @@
 import "./secondary-pages.css";
+import FreeTool, { FreeToolsHub } from "./FreeTools";
+import { freeTools } from "./freeTools";
 import "./blogs-page.css";
 import "./about-contact.css";
 import React, { lazy, Suspense, useEffect, useState } from "react";
@@ -285,6 +287,8 @@ const LegalPage = ({ page }) => (
 );
 export default function SecondaryPage({ path }) {
   const pageMeta = {
+    "/tools": ["Free Business Calculators | MyBreakeven", "Test pricing decisions with free business calculators. Compare contribution, fees, sales volume and capacity without an account."],
+    ...Object.fromEntries(Object.entries(freeTools).map(([slug, tool]) => [`/calculators/${slug}`, [tool.title, tool.description]])),
     "/pro-user-guide": ["MyBreakeven Pro Calculator User Guide", "Step-by-step guide to MyBreakeven Pro: enter costs, read break-even results, use advanced analysis, save scenarios and export reports."],
     "/pricing": ["MyBreakeven Pricing: Free & Pro Business Planning", "Compare MyBreakeven Free and Pro plans for industry break-even calculators, saved scenarios, cost-drift analysis, comparisons and reports."],
     "/blogs": ["Small Business Break-Even Guides | MyBreakeven", "Read practical break-even guides for cleaning, landscaping, photography, agencies, mobile detailing, e-commerce, restaurants and salons."],
@@ -310,7 +314,7 @@ export default function SecondaryPage({ path }) {
   const slug = path.startsWith("/blogs/") ? path.split("/")[2] : null;
   const calculatorSlug = path.startsWith("/calculators/") ? path.split("/")[2] : null;
   const authPaths = ["/login", "/signup", "/forgot-password", "/reset-password"];
-  const content = calculatorSlug && industryPages[calculatorSlug] ? <IndustryPage slug={calculatorSlug} /> : slug ? <BlogArticle slug={slug} /> :
+  const content = path === "/tools" ? <FreeToolsHub /> : calculatorSlug && freeTools[calculatorSlug] ? <FreeTool slug={calculatorSlug} /> : calculatorSlug && industryPages[calculatorSlug] ? <IndustryPage slug={calculatorSlug} /> : slug ? <BlogArticle slug={slug} /> :
     authPaths.includes(path) ? <Suspense fallback={<p className="route-loading">Loading secure account…</p>}><AuthPage path={path} /></Suspense> : path === "/dashboard" ? <Suspense fallback={<p className="route-loading">Loading secure workspace…</p>}><DashboardPage /></Suspense> :
     path === "/pro-user-guide" ? <ProUserGuide /> : path === "/pricing" ? (
       <Pricing />
