@@ -53,7 +53,9 @@ async function save(message) {
     }
   }
 }
-const destinations = ['facebook', 'instagram', 'pinterest'];
+// Keep the failing Pinterest channel pending without delaying working channels.
+const destinations = ['facebook', 'instagram'];
+if (process.env.SOCIAL_PINTEREST_ENABLED === 'true') destinations.push('pinterest');
 if (!remote) {
   for (const item of feed.items) for (const destination of destinations) {
     if (item.url === process.env.SOCIAL_FIRST_TEST_URL) continue;
