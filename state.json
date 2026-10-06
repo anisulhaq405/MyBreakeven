@@ -1666,10 +1666,9 @@
       "publishedAt": "2026-10-06T17:41:11.971Z"
     },
     "https://mybreakeven.com/tools/|instagram": {
-      "revision": "8724a66436fc9fb9d5fdae7ef71cc14addcade5fecf20838e7b814e91b1bc579",
-      "status": "published",
-      "postId": "17933072133141864",
-      "publishedAt": "2026-10-06T16:44:00.940Z"
+      "revision": "790f77364f1af4223f57e4b860093fa59ca0f5ad7a83a048f5c6a9dd54c518f9",
+      "status": "attempting",
+      "attemptedAt": "2026-10-06T17:41:12.936Z"
     },
     "https://mybreakeven.com/calculators/price-increase-calculator/|facebook": {
       "revision": "4eeeaf8c75f3fb33d2e9d9288cc786758120db7b479b3116ce90336ab087e1ff",
