@@ -1,3 +1,4 @@
+import { freeTools } from "../src/freeTools.js";
 import { articleFaq } from "../src/articleFaq.js";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import React from "react";
@@ -6,6 +7,7 @@ import { createServer } from "vite";
 import { blogPosts, relatedArticlesFor } from "../src/content/blogs/index.js";
 
 const calculators = {
+  ...Object.fromEntries(Object.entries(freeTools).map(([slug, tool]) => [slug, [tool.title, tool.description]])),
   "cleaning-business-break-even-calculator": ["Cleaning Business Break-Even Calculator | MyBreakeven", "Calculate cleaning jobs, monthly revenue, leads and team capacity needed to break even after labor, supplies, travel, equipment and marketing costs."],
   "landscaping-break-even-calculator": ["Landscaping Break-Even Calculator | MyBreakeven", "Calculate landscaping and lawn-care jobs, revenue, leads and crew capacity needed after labor, materials, fuel, equipment and marketing costs."],
   "photography-business-break-even-calculator": ["Photography Business Break-Even Calculator | MyBreakeven", "Calculate photography sessions, revenue, bookings and delivery capacity needed after editing, travel, labor, studio and marketing costs."],
@@ -34,6 +36,7 @@ const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll(
 const allArticles = blogPosts;
 const formatArticleDate = (value) => new Date(`${value}T12:00:00Z`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
 const staticPages = {
+  tools: ["Free Business Calculators | MyBreakeven", "Test pricing decisions with free business calculators. Compare contribution, fees, sales volume and capacity without an account.", "Free business calculators"],
   "pro-user-guide": ["MyBreakeven Pro Calculator User Guide", "Step-by-step guide to MyBreakeven Pro: enter costs, read break-even results, use advanced analysis, save scenarios and export reports.", "MyBreakeven Pro calculator user guide"],
   pricing: ["MyBreakeven Pricing: Free & Pro Business Planning", "Compare MyBreakeven Free and Pro plans for industry break-even calculators, saved scenarios, cost-drift analysis, comparisons and reports.", "MyBreakeven Free and Pro pricing"],
   blogs: ["Small Business Break-Even Guides | MyBreakeven", "Read practical break-even guides for cleaning, landscaping, photography, agencies, mobile detailing, e-commerce, restaurants and salons.", "Industry break-even calculator guides"],
