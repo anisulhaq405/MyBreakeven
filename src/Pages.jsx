@@ -287,7 +287,7 @@ const LegalPage = ({ page }) => (
 );
 export default function SecondaryPage({ path }) {
   const pageMeta = {
-    "/tools": ["Free Business Calculators | MyBreakeven", "Test pricing decisions with free business calculators. Compare contribution, fees, sales volume and capacity without an account."],
+    "/tools": ["Free Business Calculators: Profit, Pricing & Costs | MyBreakeven", "Explore free business calculators for profit, pricing, service costs, advertising and cash. Use clear formulas and worked guides without signing up."],
     ...Object.fromEntries(Object.entries(freeTools).map(([slug, tool]) => [`/calculators/${slug}`, [tool.title, tool.description]])),
     "/pro-user-guide": ["MyBreakeven Pro Calculator User Guide", "Step-by-step guide to MyBreakeven Pro: enter costs, read break-even results, use advanced analysis, save scenarios and export reports."],
     "/pricing": ["MyBreakeven Pricing: Free & Pro Business Planning", "Compare MyBreakeven Free and Pro plans for industry break-even calculators, saved scenarios, cost-drift analysis, comparisons and reports."],
