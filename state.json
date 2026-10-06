@@ -1143,8 +1143,9 @@
     },
     "https://mybreakeven.com/blogs/restaurant-menu-pricing-formula/|instagram": {
       "revision": "7e347edd8fdf262090215284000ad6dbca09ac52ec19ff4c5e198935c926b9e1",
-      "status": "attempting",
-      "attemptedAt": "2026-10-06T06:19:45.419Z"
+      "status": "published",
+      "postId": "18418693291158689",
+      "publishedAt": "2026-10-06T06:19:55.840Z"
     },
     "https://mybreakeven.com/blogs/restaurant-menu-pricing-formula/|pinterest": {
       "revision": "6fce7be0040e777fa44dd66178e00c93e7f30ff457fcd7b24186dd65d1ac9c98",
