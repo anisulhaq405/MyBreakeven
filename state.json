@@ -1338,8 +1338,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/calculators/cleaning-business-break-even-calculator/|facebook": {
-      "revision": "2783e86ee5a8b0b1389d816fa70c0b0bc8e90caa5a2187f598234cd37f622725",
-      "status": "baseline"
+      "revision": "0491a6d1b67b32d3f1789f6a922a84fb4fe47565d609302dc7369349b9c306a9",
+      "status": "attempting",
+      "attemptedAt": "2026-10-06T18:09:31.142Z"
     },
     "https://mybreakeven.com/calculators/cleaning-business-break-even-calculator/|instagram": {
       "revision": "2783e86ee5a8b0b1389d816fa70c0b0bc8e90caa5a2187f598234cd37f622725",
