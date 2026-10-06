@@ -40,7 +40,17 @@ async function save(message) {
   git('add', 'state.json');
   if (git('status', '--porcelain')) {
     git('commit', '-m', message);
-    git('push', 'origin', 'HEAD:refs/heads/social-publish-state');
+    for (let attempt = 0; ; attempt++) {
+      try {
+        git('push', 'origin', 'HEAD:refs/heads/social-publish-state');
+        break;
+      } catch (error) {
+        // Retry only the same state commit, never the social publication.
+        // Never force-push or discard another writer's publication records.
+        if (attempt >= 2) throw error;
+        await new Promise(resolve => setTimeout(resolve, 2000 * (attempt + 1)));
+      }
+    }
   }
 }
 const destinations = ['facebook', 'instagram', 'pinterest'];
