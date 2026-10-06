@@ -1722,6 +1722,11 @@
       "status": "published",
       "postId": "17896732206407143",
       "publishedAt": "2026-10-06T18:09:29.975Z"
+    },
+    "https://mybreakeven.com/calculators/hourly-rate-calculator/|facebook": {
+      "revision": "68e0a8cca44990db27edb74b99e640b6073b36bcee56af3dd8a082bf0a3fd211",
+      "status": "attempting",
+      "attemptedAt": "2026-10-06T18:10:36.537Z"
     }
   }
 }
