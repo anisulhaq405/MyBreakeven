@@ -1532,6 +1532,11 @@
       "status": "published",
       "postId": "17982180263902656",
       "publishedAt": "2026-10-06T06:18:36.816Z"
+    },
+    "https://mybreakeven.com/blogs/ecommerce-bundle-pricing-profit/|pinterest": {
+      "revision": "8915e0ec308bd2438edfd7fc953ad6161d4a5752df0001ad993153fd3ee8c4ee",
+      "status": "attempting",
+      "attemptedAt": "2026-10-06T06:18:37.989Z"
     }
   }
 }
