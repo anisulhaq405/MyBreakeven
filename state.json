@@ -1370,8 +1370,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/calculators/landscaping-break-even-calculator/|facebook": {
-      "revision": "d891b183e182254c062137f7fbe1ca344b2651bd5e9b2ed029582bc809cf0a17",
-      "status": "baseline"
+      "revision": "a5c168c13a01e593cff119164ebacf2cfb0afe0d505e84193825951f5d254161",
+      "status": "attempting",
+      "attemptedAt": "2026-10-06T18:10:54.039Z"
     },
     "https://mybreakeven.com/calculators/landscaping-break-even-calculator/|instagram": {
       "revision": "d891b183e182254c062137f7fbe1ca344b2651bd5e9b2ed029582bc809cf0a17",
