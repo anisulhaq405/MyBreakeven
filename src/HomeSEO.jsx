@@ -24,7 +24,7 @@ const faqs = [
 export default function HomeSEO() {
   return (
     <section className="seo-content" aria-labelledby="seo-heading">
-      <div className="seo-section"><h2>Free pricing tools</h2><p>Test one pricing decision before building your full business plan.</p><ul>{Object.entries(freeTools).map(([slug,tool]) => <li key={slug}><a href={`/calculators/${slug}/`}>{tool.name}</a></li>)}</ul><a href="/tools/">Explore free business tools</a></div>
+      <div className="seo-section"><h2>Free business planning tools</h2><p>Check pricing, ad returns, billable hours and cash before building your full business plan.</p><ul>{Object.entries(freeTools).map(([slug,tool]) => <li key={slug}><a href={`/calculators/${slug}/`}>{tool.name}</a></li>)}</ul><a href="/tools/">Explore free business tools</a></div>
       <div className="seo-intro">
         <span>SMALL BUSINESS BREAK-EVEN ANALYSIS</span>
         <h2 id="seo-heading">A free break-even calculator built for real operating decisions</h2>

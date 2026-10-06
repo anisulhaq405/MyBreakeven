@@ -1,3 +1,5 @@
+import { toolThemes } from './toolThemes.js';
+import './tool-themes.css';
 import React, { lazy, Suspense, useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
@@ -94,7 +96,7 @@ function App() {
     <>
       <a className="skip-link" href="#main-content">Skip to main content</a>
       <SiteHeader />
-      <main id="main-content">
+      <main id="main-content" className="home-tool-theme" style={toolThemes.home}>
         <section className="intro calculator-hero" id="calculator">
           <div className="hero-visual">
             <span className="orbit orbit-one" />

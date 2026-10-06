@@ -1,5 +1,7 @@
+import { businessTools } from './businessTools.js';
+import { toolThemes } from './toolThemes.js';
 import { freeToolGuides } from './freeToolGuides.js';
-export const freeTools = {
+const pricingTools = {
   'discount-break-even-calculator': {
     ...freeToolGuides['discount-break-even-calculator'],mode:'discount',name:'Discount Break-Even Calculator',title:'Discount Break-Even Calculator | MyBreakeven',
     description:'Calculate extra sales needed to recover a discount after variable costs and payment fees. Compare your sales estimate with whole-unit monthly capacity.',
@@ -15,3 +17,5 @@ export const freeTools = {
     defaults:{price:100,cost:60,newCost:'',fee:3,volume:100,change:10,expected:10,capacity:150},
   },
 };
+
+export const freeTools = Object.fromEntries(Object.entries({...pricingTools,...businessTools}).map(([slug,tool])=>[slug,{...tool,theme:toolThemes[slug],category:tool.category || "Pricing & contribution"}]));

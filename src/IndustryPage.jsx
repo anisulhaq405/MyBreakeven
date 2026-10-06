@@ -1,3 +1,5 @@
+import { toolThemes } from './toolThemes.js';
+import './tool-themes.css';
 import React, { useMemo, useState } from "react";
 import { ArrowRight, BarChart3, CheckCircle2, ShieldCheck } from "lucide-react";
 import { calculate } from "./engine";
@@ -85,7 +87,7 @@ export default function IndustryPage({ slug }) {
   const industry = industries[page.key];
   const example = calculate(industry.values);
   return (
-    <>
+    <div className="industry-tool-theme" style={toolThemes[page.key]}>
       <section className="industry-hero">
         <div>
           <span>FREE INDUSTRY CALCULATOR</span>
@@ -101,8 +103,10 @@ export default function IndustryPage({ slug }) {
           <div><b>{example.wholeCapacity}</b> whole {industry.unit} capacity</div>
         </aside>
       </section>
+      <figure className="industry-tool-feature"><img src={`/images/tools/${page.key}-break-even.webp`} alt={`${industry.short} break-even planning: direct costs, contribution, monthly sales target and working capacity.`} width="1200" height="675" decoding="async"/><figcaption>A {industry.short.toLowerCase()} planning model: use your own price, costs and delivery capacity.</figcaption></figure>
       <IndustryQuickCalculator key={page.key} industry={industry} industryKey={page.key} />
       <section className="industry-content">
+        <div className="industry-copy"><h2>Check the next business decision</h2><p>{page.key === "ecommerce" ? <a href="/calculators/break-even-roas-calculator/">Calculate break-even ad returns after order costs and fees</a> : page.key === "agency" || page.key === "photography" ? <a href="/calculators/hourly-rate-calculator/">Calculate a billing rate from income and billable hours</a> : <a href="/calculators/discount-break-even-calculator/">Check how many extra sales a discount needs</a>} before changing your plan. Use the <a href="/calculators/cash-runway-calculator/">cash runway calculator</a> to compare available cash with expected receipts and payments.</p></div>
         <div className="industry-copy">
           <span>INDUSTRY-SPECIFIC UNIT ECONOMICS</span>
           <h2>What this {industry.short.toLowerCase()} break-even analysis includes</h2>
@@ -130,6 +134,6 @@ export default function IndustryPage({ slug }) {
           {page.questions.map((question) => <details key={question}><summary>{question}</summary><p>{answerQuestion(question, example, industry)}</p></details>)}
         </div>
       </section>
-    </>
+    </div>
   );
 }
