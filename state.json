@@ -1469,8 +1469,9 @@
     },
     "https://mybreakeven.com/cookie-policy/|instagram": {
       "revision": "2f63ddc8c50fcb21949bbe9f4adbe2a284f8c266b6ff45b4dec3377d7d7ba8c8",
-      "status": "attempting",
-      "attemptedAt": "2026-10-06T18:45:37.611Z"
+      "status": "published",
+      "postId": "18096953618428810",
+      "publishedAt": "2026-10-06T18:45:46.990Z"
     },
     "https://mybreakeven.com/cookie-policy/|pinterest": {
       "revision": "38115f62a4370e313ce88f12d1e9c3329d5b3a12d70666a88f7fb322bbc35c14",
