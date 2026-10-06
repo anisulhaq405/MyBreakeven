@@ -1546,8 +1546,9 @@
     },
     "https://mybreakeven.com/blogs/freelance-business-plan-financials/|instagram": {
       "revision": "bbb3022eb2887979e1e6d960783f9bba54465cd49f49a6df0309a3d4a4d5bde3",
-      "status": "attempting",
-      "attemptedAt": "2026-10-06T06:18:59.113Z"
+      "status": "published",
+      "postId": "18166061884479662",
+      "publishedAt": "2026-10-06T06:19:06.346Z"
     }
   }
 }
