@@ -10,7 +10,7 @@ export const freeToolGuides = {
       "Round required sales upward to whole completed sales.",
       "Check the required and expected sales against optional monthly capacity.",
       "Try preset scenarios or compare 5%, 10%, 15% and 20% changes.",
-      "Choose USD, GBP, EUR, CAD, AUD or PKR labels. Currency selection does not convert amounts.",
+      "Search by country, currency name or code, then choose your currency. Currency selection does not convert amounts.",
       "See the discount boundary where contribution becomes zero."
     ],
     "sections": [
@@ -138,7 +138,7 @@ export const freeToolGuides = {
       "Round required sales upward to whole completed sales.",
       "Check the required and expected sales against optional monthly capacity.",
       "Try preset scenarios or compare 5%, 10%, 15% and 20% changes.",
-      "Choose USD, GBP, EUR, CAD, AUD or PKR labels. Currency selection does not convert amounts.",
+      "Search by country, currency name or code, then choose your currency. Currency selection does not convert amounts.",
       "Enter revised variable cost when materials, labor or fulfillment costs change.",
       "Find the maximum whole-sale loss that preserves the baseline, or the extra sales needed when costs rise too far."
     ],

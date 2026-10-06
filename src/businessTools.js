@@ -51,7 +51,7 @@ export const businessTools = {
     "features": [
       "Instant results as you change inputs, with plain-language explanations.",
       "A checked example, transparent formula and step-by-step input guide.",
-      "USD, GBP, EUR, CAD, AUD and PKR labels; no exchange-rate conversion.",
+      "Searchable global currency labels, including USD, GBP, EUR, CAD and AUD; no exchange-rate conversion.",
       "No signup required; calculation inputs remain in this browser tab.",
       "Break-even and target ROAS from your actual order cost mix.",
       "Maximum ad cost per order and contribution after advertising."
@@ -208,7 +208,7 @@ export const businessTools = {
     "features": [
       "Instant results as you change inputs, with plain-language explanations.",
       "A checked example, transparent formula and step-by-step input guide.",
-      "USD, GBP, EUR, CAD, AUD and PKR labels; no exchange-rate conversion.",
+      "Searchable global currency labels, including USD, GBP, EUR, CAD and AUD; no exchange-rate conversion.",
       "No signup required; calculation inputs remain in this browser tab.",
       "Billable-time and working-week adjustments for realistic annual capacity.",
       "A rate rounded upward to the next cent, with monthly and annual checks."
@@ -348,7 +348,7 @@ export const businessTools = {
     "features": [
       "Instant results as you change inputs, with plain-language explanations.",
       "A checked example, transparent formula and step-by-step input guide.",
-      "USD, GBP, EUR, CAD, AUD and PKR labels; no exchange-rate conversion.",
+      "Searchable global currency labels, including USD, GBP, EUR, CAD and AUD; no exchange-rate conversion.",
       "No signup required; calculation inputs remain in this browser tab.",
       "Protected reserve, net burn and full-month runway in one view.",
       "A month-by-month constant-flow cash table and horizon funding gap."
