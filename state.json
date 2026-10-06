@@ -1660,10 +1660,9 @@
       "publishedAt": "2026-10-06T17:40:38.761Z"
     },
     "https://mybreakeven.com/tools/|facebook": {
-      "revision": "8724a66436fc9fb9d5fdae7ef71cc14addcade5fecf20838e7b814e91b1bc579",
-      "status": "published",
-      "postId": "1437362339452872_122094924345509539",
-      "publishedAt": "2026-10-06T16:43:51.319Z"
+      "revision": "790f77364f1af4223f57e4b860093fa59ca0f5ad7a83a048f5c6a9dd54c518f9",
+      "status": "attempting",
+      "attemptedAt": "2026-10-06T17:41:06.961Z"
     },
     "https://mybreakeven.com/tools/|instagram": {
       "revision": "8724a66436fc9fb9d5fdae7ef71cc14addcade5fecf20838e7b814e91b1bc579",
