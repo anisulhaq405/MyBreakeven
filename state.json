@@ -1715,8 +1715,9 @@
     },
     "https://mybreakeven.com/calculators/price-increase-calculator/|instagram": {
       "revision": "847395c9a7321839ecc2cce00063c7fc3e1bae6fa1a65313f47ff7510a8b64d2",
-      "status": "attempting",
-      "attemptedAt": "2026-10-06T18:19:21.582Z"
+      "status": "published",
+      "postId": "18597389638071975",
+      "publishedAt": "2026-10-06T18:19:28.558Z"
     },
     "https://mybreakeven.com/calculators/break-even-roas-calculator/|facebook": {
       "revision": "a597945f540d611c7a21d0b6e7daafcec966ca85b5d67264bf71335a484fcace",
