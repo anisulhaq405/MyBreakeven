@@ -1,7 +1,6 @@
 import { toolThemes } from './toolThemes.js';
 import './tool-themes.css';
 import React, { lazy, Suspense, useEffect, useLayoutEffect, useMemo, useState } from "react";
-import { createRoot } from "react-dom/client";
 import {
   BarChart3,
   BriefcaseBusiness,
@@ -18,18 +17,15 @@ import { builtFields } from "./costBuilder";
 import HomeBlogShowcase from "./HomeBlogShowcase";
 import { SiteFooter, SiteHeader } from "./SiteChrome";
 import HomeSEO from "./HomeSEO";
-import AnalyticsConsent from "./AnalyticsConsent";
 import { POLAR_CHECKOUT_URL } from "./billing";
 import "./styles.css";
 import "./fonts.css";
 import "./industries.css";
 import "./visuals.css";
 import "./home-presentation.css";
-const SecondaryPage = lazy(() => import("./Pages"));
-let preparedBlogPage = null;
 const ScenarioTools = lazy(() => import("./ScenarioTools"));
 const quantity = (n) => new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 }).format(n || 0);
-function App() {
+export default function App() {
   const [showTools, setShowTools] = useState(false);
   const initialIndustry = new URLSearchParams(window.location.search).get("industry");
   const startingIndustry = industries[initialIndustry] ? initialIndustry : "cleaning";
@@ -85,13 +81,6 @@ function App() {
     observer.observe(target);
     return () => observer.disconnect();
   }, [path]);
-  if (path !== "/") {
-    if (preparedBlogPage) {
-      const BlogPage = preparedBlogPage;
-      return <BlogPage path={path} />;
-    }
-    return <Suspense fallback={<main className="page-hero"><h1>Loading page…</h1></main>}><SecondaryPage path={path} /></Suspense>;
-  }
   return (
     <>
       <a className="skip-link" href="#main-content">Skip to main content</a>
@@ -316,40 +305,4 @@ function App() {
       <SiteFooter />
     </>
   );
-}
-const rootElement = document.getElementById("root");
-function RevealAfterRender() {
-  useLayoutEffect(() => {
-    rootElement.removeAttribute("data-booting");
-  }, []);
-  return null;
-}
-async function renderApp() {
-  const path = window.location.pathname.replace(/\/$/, "") || "/";
-  if (path === "/blogs" || path.startsWith("/blogs/")) {
-    // Article HTML is already in the document for crawlers. Keep the initial
-    // screen hidden until its route and content are ready to render together.
-    const slug = path.startsWith("/blogs/") ? path.split("/")[2] : null;
-    try {
-      const [pageModule] = await Promise.all([
-        import("./Pages"),
-        ...(slug ? [import("./blogContentLoader.js").then(({ loadBlogPost }) => loadBlogPost(slug))] : []),
-      ]);
-      preparedBlogPage = pageModule.default;
-    } catch {
-      // The normal route fallback still handles a failed chunk request.
-    }
-  }
-  createRoot(rootElement).render(<><App /><AnalyticsConsent /><RevealAfterRender /></>);
-}
-renderApp();
-if (import.meta.env.PROD) {
-  const startMonitoring = () => { import("./sentry"); };
-  const scheduleMonitoring = () => {
-    if ("requestIdleCallback" in window) window.requestIdleCallback(startMonitoring, { timeout: 3000 });
-    else window.setTimeout(startMonitoring, 1500);
-  };
-  // Finish the page's critical resources before downloading optional monitoring.
-  if (document.readyState === "complete") scheduleMonitoring();
-  else window.addEventListener("load", scheduleMonitoring, { once: true });
 }

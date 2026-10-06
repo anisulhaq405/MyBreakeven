@@ -2,7 +2,7 @@ import { freeTools } from "../src/freeTools.js";
 import { articleFaq } from "../src/articleFaq.js";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import React from "react";
-import { renderToStaticMarkup } from "react-dom/server";
+import { renderToStaticMarkup, renderToString } from "react-dom/server";
 import { createServer } from "vite";
 import { blogPosts, relatedArticlesFor } from "../src/content/blogs/index.js";
 
@@ -60,7 +60,7 @@ try {
   HomeContent = (await renderer.ssrLoadModule("/src/HomeSEO.jsx")).default;
 }
 finally { await renderer.close(); }
-const renderPublicPage = path => renderToStaticMarkup(React.createElement(PublicPage, { path }));
+const renderPublicPage = path => renderToString(React.createElement(PublicPage, { path }));
 const homeLinks = base.match(/<nav aria-label="Key pages">[\s\S]*?<\/nav>/)?.[0] || "";
 base = base.replace(/<main>[\s\S]*?<\/main>/, `<main><h1>Build your break-even plan.</h1><p>Choose your model and adjust the monthly assumptions.</p>${renderToStaticMarkup(React.createElement(HomeContent))}${homeLinks}</main>`);
 await writeFile(homeFile, base);
@@ -73,7 +73,7 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
   ] };
   const links = route === "blogs" ? `<ul>${allArticles.map(article => `<li><a href="/blogs/${article.slug}/">${escapeHtml(article.title)}</a></li>`).join("")}</ul>` : `<p><a href="/#calculator">Use the free small business break-even calculator</a></p>`;
   const fallback = !privatePage && route !== "blogs"
-    ? `<div id="root" data-booting>${renderPublicPage(`/${route}`)}</div>`
+    ? `<div id="root" data-prerendered="true">${renderPublicPage(`/${route}`)}</div>`
     : `<div id="root" data-booting><main><h1>${escapeHtml(heading)}</h1><p>${escapeHtml(description)}</p>${links}</main></div>`;
   const html = base
     .replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
@@ -164,7 +164,7 @@ for (const [slug, [title, description]] of Object.entries(calculators)) {
     .replace(/<link rel="alternate" hreflang="en-US" href="[^"]*"\s*\/?>/, `<link rel="alternate" hreflang="en-US" href="${canonical}" />`)
     .replace(/<link rel="alternate" hreflang="x-default" href="[^"]*"\s*\/?>/, `<link rel="alternate" hreflang="x-default" href="${canonical}" />`)
     .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, `<script type="application/ld+json">${JSON.stringify(schema)}</script>`)
-    .replace(/<div id="root"[^>]*>[\s\S]*?<\/div>\s*<\/body>/, `<div id="root" data-booting>${renderPublicPage(`/calculators/${slug}`)}</div></body>`);
+    .replace(/<div id="root"[^>]*>[\s\S]*?<\/div>\s*<\/body>/, `<div id="root" data-prerendered="true">${renderPublicPage(`/calculators/${slug}`)}</div></body>`);
   html = html
     .replaceAll("https://mybreakeven.com/mybreakeven-social-preview.png", `https://mybreakeven.com${pageImage}`)
     .replace(/<meta property="og:image:type" content="[^"]*"\s*\/?>/, `<meta property="og:image:type" content="image/webp" />`)
@@ -187,3 +187,32 @@ await writeFile(new URL("../dist/sitemap.xml", import.meta.url), sitemap);
 // Public, revision-aware source for website-to-social automation.
 const { generateSocialFeed } = await import('./social-feed.mjs');
 await generateSocialFeed({ articles: allArticles, calculators, pages: staticPages, directory: new URL('../dist/', import.meta.url) });
+
+// Discover the actual hashed route chunks at build time, so the browser can
+// fetch route code and styles in parallel with the small startup module.
+const manifest = JSON.parse(await readFile(new URL('../dist/.vite/manifest.json', import.meta.url), 'utf8'));
+const { readdir } = await import('node:fs/promises');
+async function preloadRouteFiles(directory) {
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    const file = new URL(entry.name + (entry.isDirectory() ? '/' : ''), directory);
+    if (entry.isDirectory()) { await preloadRouteFiles(file); continue; }
+    if (entry.name !== 'index.html') continue;
+    const home = file.href === homeFile.href;
+    const routeKey = home ? 'src/main.jsx' : 'src/Pages.jsx';
+    const assets = new Map(), visited = new Set();
+    function collect(key) {
+      if (visited.has(key) || !manifest[key]) return;
+      visited.add(key);
+      const item = manifest[key];
+      assets.set(item.file, 'modulepreload');
+      for (const css of item.css || []) assets.set(css, 'stylesheet');
+      for (const dependency of item.imports || []) collect(dependency);
+    }
+    collect(routeKey);
+    const html = await readFile(file, 'utf8');
+    const links = [...assets].filter(([asset]) => !html.includes(`href="/${asset}"`))
+      .map(([asset, rel]) => `<link rel="${rel}" href="/${asset}"${rel === 'modulepreload' ? ' crossorigin' : ''}>`).join('\n');
+    await writeFile(file, html.replace('</head>', `${links}\n</head>`));
+  }
+}
+await preloadRouteFiles(new URL('../dist/', import.meta.url));
