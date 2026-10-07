@@ -634,8 +634,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-photography-business/|facebook": {
-      "revision": "ebde7a067b0e1fe68b24811a98ebca58904ad93828916f41b74f8f3af2302efe",
-      "status": "baseline"
+      "revision": "c37c75fb4e6bbc8d44e6d366a1160c53b6ff597f5c14faf4b8dc4d6da106346d",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T11:02:47.553Z"
     },
     "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-photography-business/|instagram": {
       "revision": "ebde7a067b0e1fe68b24811a98ebca58904ad93828916f41b74f8f3af2302efe",
