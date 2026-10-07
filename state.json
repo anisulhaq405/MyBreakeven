@@ -1362,7 +1362,7 @@
     },
     "https://mybreakeven.com/blogs/salon-service-pricing/|instagram": {
       "revision": "e391d56f76c7a9cb7451b2b75f5d6149a70281b2b31739a24ddae2f2c1eb45ba",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-07T13:04:50.498Z"
     },
     "https://mybreakeven.com/blogs/salon-service-pricing/|pinterest": {
