@@ -1941,6 +1941,11 @@
       "revision": "3ec415001ff736d0739a886085bf7472d882024dd04e4e70a826ac4e48dc9bac",
       "status": "needs_review",
       "attemptedAt": "2026-10-07T11:00:47.432Z"
+    },
+    "https://mybreakeven.com/blogs/inventory-reorder-point-cash-flow/|facebook": {
+      "revision": "75df4c94b225af3b013b0e4baa6bfd4a5ee63cfb4a0a96fac297600da2fbffd0",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T11:03:05.000Z"
     }
   }
 }
