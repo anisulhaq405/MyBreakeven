@@ -1280,7 +1280,7 @@
     },
     "https://mybreakeven.com/blogs/salon-break-even/|facebook": {
       "revision": "a2560af210893ad1eb051d1b64c3ecad9a79827a26847e2bb07b132be617defc",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-07T11:45:53.599Z"
     },
     "https://mybreakeven.com/blogs/salon-break-even/|instagram": {
