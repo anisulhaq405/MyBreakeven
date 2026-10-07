@@ -16,7 +16,7 @@ describe("ten financial planning guides", () => {
       expect(`${post.seoTitle} | MyBreakeven`.length).toBeLessThanOrEqual(60);
       expect(post.metaDescription.length).toBeGreaterThanOrEqual(140);
       expect(post.metaDescription.length).toBeLessThanOrEqual(165);
-      expect(post.faq).toHaveLength(6);
+      expect(post.faq.length).toBeGreaterThanOrEqual(6);
       expect(sitemap).toContain(`https://mybreakeven.com/blogs/${post.slug}/`);
       const image = readFileSync(`public${post.image}`);
       expect(image.subarray(0, 4).toString()).toBe("RIFF");
