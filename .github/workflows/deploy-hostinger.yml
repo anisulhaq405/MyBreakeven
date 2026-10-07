@@ -40,4 +40,9 @@ jobs:
           publish_dir: ./dist
           force_orphan: true
 
-      # Social delivery is paused: this release is authorized for site publication only.
+      - name: Publish new and changed content to social accounts
+        env:
+          MAKE_SOCIAL_WEBHOOK_URL: ${{ secrets.MAKE_SOCIAL_WEBHOOK_URL }}
+          SOCIAL_REPOSITORY_URL: https://github.com/${{ github.repository }}.git
+          SOCIAL_FIRST_TEST_URL: https://mybreakeven.com/blogs/agency-billable-utilization-rate/
+        run: node scripts/publish-social.mjs

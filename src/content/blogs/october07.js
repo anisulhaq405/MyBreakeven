@@ -45,9 +45,9 @@ export const october07Posts = [
       "Cost planning",
       "Worked examples"
     ],
-    "image": "/images/blog/agency-client-concentration-revenue-risk-editorial.webp",
-    "alt": "Original planning diagram for agency client concentration: revenue, contribution and cash, showing the decision inputs and cost boundary.",
-    "imageCaption": "Original MyBreakeven planning illustration. Read the worked examples below for fictional inputs and checked arithmetic.",
+    "image": "/images/blog/agency-client-concentration-revenue-risk-cover-oct07.webp",
+    "alt": "Agency owner reviewing client folders and a laptop to assess dependence on large accounts.",
+    "imageCaption": "AI-generated editorial illustration of this business topic; not a real customer or business.",
     "features": [
       "Worked contribution calculations using explicit fictional inputs.",
       "Complete cost boundaries and capacity assumptions.",
@@ -101,9 +101,9 @@ export const october07Posts = [
       "Cost planning",
       "Worked examples"
     ],
-    "image": "/images/blog/agency-employee-vs-freelancer-break-even-editorial.webp",
-    "alt": "Original planning diagram for agency employee vs freelancer: find the workload threshold, showing the decision inputs and cost boundary.",
-    "imageCaption": "Original MyBreakeven planning illustration. Read the worked examples below for fictional inputs and checked arithmetic.",
+    "image": "/images/blog/agency-employee-vs-freelancer-break-even-cover-oct07.webp",
+    "alt": "Office employee and independent freelancer in their respective workspaces.",
+    "imageCaption": "AI-generated editorial illustration of this business topic; not a real customer or business.",
     "features": [
       "Worked contribution calculations using explicit fictional inputs.",
       "Complete cost boundaries and capacity assumptions.",
@@ -157,9 +157,9 @@ export const october07Posts = [
       "Cost planning",
       "Worked examples"
     ],
-    "image": "/images/blog/agency-project-vs-retainer-profitability-editorial.webp",
-    "alt": "Original planning diagram for agency project vs retainer profitability: count the hours, showing the decision inputs and cost boundary.",
-    "imageCaption": "Original MyBreakeven planning illustration. Read the worked examples below for fictional inputs and checked arithmetic.",
+    "image": "/images/blog/agency-project-vs-retainer-profitability-cover-oct07.webp",
+    "alt": "Agency project folder beside a monthly calendar and recurring client files.",
+    "imageCaption": "AI-generated editorial illustration of this business topic; not a real customer or business.",
     "features": [
       "Worked contribution calculations using explicit fictional inputs.",
       "Complete cost boundaries and capacity assumptions.",
@@ -213,9 +213,9 @@ export const october07Posts = [
       "Cost planning",
       "Worked examples"
     ],
-    "image": "/images/blog/amazon-marketplace-vs-own-store-profit-per-order-editorial.webp",
-    "alt": "Original planning diagram for amazon vs your own store: compare contribution per order, showing the decision inputs and cost boundary.",
-    "imageCaption": "Original MyBreakeven planning illustration. Read the worked examples below for fictional inputs and checked arithmetic.",
+    "image": "/images/blog/amazon-marketplace-vs-own-store-profit-per-order-cover-oct07.webp",
+    "alt": "Ecommerce seller comparing marketplace parcels and independent-store packing workflows.",
+    "imageCaption": "AI-generated editorial illustration of this business topic; not a real customer or business.",
     "features": [
       "Worked contribution calculations using explicit fictional inputs.",
       "Complete cost boundaries and capacity assumptions.",
@@ -269,9 +269,9 @@ export const october07Posts = [
       "Cost planning",
       "Worked examples"
     ],
-    "image": "/images/blog/bridal-hair-and-makeup-package-pricing-for-salons-editorial.webp",
-    "alt": "Original planning diagram for bridal hair and makeup pricing: cost the whole booking, showing the decision inputs and cost boundary.",
-    "imageCaption": "Original MyBreakeven planning illustration. Read the worked examples below for fictional inputs and checked arithmetic.",
+    "image": "/images/blog/bridal-hair-and-makeup-package-pricing-for-salons-cover-oct07.webp",
+    "alt": "Bridal stylist arranging makeup tools beside a bride in a salon.",
+    "imageCaption": "AI-generated editorial illustration of this business topic; not a real customer or business.",
     "features": [
       "Worked contribution calculations using explicit fictional inputs.",
       "Complete cost boundaries and capacity assumptions.",
@@ -325,9 +325,9 @@ export const october07Posts = [
       "Cost planning",
       "Worked examples"
     ],
-    "image": "/images/blog/coffee-shop-drink-contribution-margin-editorial.webp",
-    "alt": "Original planning diagram for coffee shop drink contribution margin: cost each cup, showing the decision inputs and cost boundary.",
-    "imageCaption": "Original MyBreakeven planning illustration. Read the worked examples below for fictional inputs and checked arithmetic.",
+    "image": "/images/blog/coffee-shop-drink-contribution-margin-cover-oct07.webp",
+    "alt": "Barista weighing coffee beans beside an espresso machine and prepared drinks.",
+    "imageCaption": "AI-generated editorial illustration of this business topic; not a real customer or business.",
     "features": [
       "Worked contribution calculations using explicit fictional inputs.",
       "Complete cost boundaries and capacity assumptions.",
@@ -381,9 +381,9 @@ export const october07Posts = [
       "Cost planning",
       "Worked examples"
     ],
-    "image": "/images/blog/ecommerce-inventory-holding-cost-per-sku-editorial.webp",
-    "alt": "Original planning diagram for inventory holding cost per sku: price the stock you keep, showing the decision inputs and cost boundary.",
-    "imageCaption": "Original MyBreakeven planning illustration. Read the worked examples below for fictional inputs and checked arithmetic.",
+    "image": "/images/blog/ecommerce-inventory-holding-cost-per-sku-cover-oct07.webp",
+    "alt": "Ecommerce warehouse owner checking stock bins and boxed inventory.",
+    "imageCaption": "AI-generated editorial illustration of this business topic; not a real customer or business.",
     "features": [
       "Worked contribution calculations using explicit fictional inputs.",
       "Complete cost boundaries and capacity assumptions.",
@@ -437,9 +437,9 @@ export const october07Posts = [
       "Cost planning",
       "Worked examples"
     ],
-    "image": "/images/blog/inventory-reorder-point-cash-flow-editorial.webp",
-    "alt": "Original planning diagram for inventory reorder point: protect stock and cash together, showing the decision inputs and cost boundary.",
-    "imageCaption": "Original MyBreakeven planning illustration. Read the worked examples below for fictional inputs and checked arithmetic.",
+    "image": "/images/blog/inventory-reorder-point-cash-flow-cover-oct07.webp",
+    "alt": "Inventory manager inspecting a low-stock shelf beside replenishment cartons.",
+    "imageCaption": "AI-generated editorial illustration of this business topic; not a real customer or business.",
     "features": [
       "Worked contribution calculations using explicit fictional inputs.",
       "Complete cost boundaries and capacity assumptions.",
@@ -499,9 +499,9 @@ export const october07Posts = [
       "Photography",
       "Photography Print Package Profit"
     ],
-    "image": "/images/blog/photography-print-package-profit-editorial.webp",
-    "alt": "Photo album, print box and mounted prints being inspected on a photographer’s table.",
-    "imageCaption": "Generated editorial image illustrating this guide; not a photograph of a real customer or business."
+    "image": "/images/blog/photography-print-package-profit-cover-oct07.webp",
+    "alt": "Photographer arranging an album, mounted prints and a print package.",
+    "imageCaption": "AI-generated editorial illustration of this business topic; not a real customer or business."
   },
   {
     "slug": "restaurant-menu-engineering-contribution-margin",
@@ -549,9 +549,9 @@ export const october07Posts = [
       "Cost planning",
       "Worked examples"
     ],
-    "image": "/images/blog/restaurant-menu-engineering-contribution-margin-editorial.webp",
-    "alt": "Original planning diagram for menu engineering: contribution, popularity and kitchen time, showing the decision inputs and cost boundary.",
-    "imageCaption": "Original MyBreakeven planning illustration. Read the worked examples below for fictional inputs and checked arithmetic.",
+    "image": "/images/blog/restaurant-menu-engineering-contribution-margin-cover-oct07.webp",
+    "alt": "Chef and restaurant manager reviewing plated dishes and a menu clipboard.",
+    "imageCaption": "AI-generated editorial illustration of this business topic; not a real customer or business.",
     "features": [
       "Worked contribution calculations using explicit fictional inputs.",
       "Complete cost boundaries and capacity assumptions.",
@@ -605,9 +605,9 @@ export const october07Posts = [
       "Cost planning",
       "Worked examples"
     ],
-    "image": "/images/blog/restaurant-private-event-minimum-spend-editorial.webp",
-    "alt": "Original planning diagram for restaurant private-event minimum spend: price the space, showing the decision inputs and cost boundary.",
-    "imageCaption": "Original MyBreakeven planning illustration. Read the worked examples below for fictional inputs and checked arithmetic.",
+    "image": "/images/blog/restaurant-private-event-minimum-spend-cover-oct07.webp",
+    "alt": "Restaurant manager preparing a private dining room for a reserved event.",
+    "imageCaption": "AI-generated editorial illustration of this business topic; not a real customer or business.",
     "features": [
       "Worked contribution calculations using explicit fictional inputs.",
       "Complete cost boundaries and capacity assumptions.",
@@ -661,9 +661,9 @@ export const october07Posts = [
       "Cost planning",
       "Worked examples"
     ],
-    "image": "/images/blog/restaurant-takeout-vs-dine-in-profit-per-order-editorial.webp",
-    "alt": "Original planning diagram for takeout vs dine-in profit: compare the whole order, showing the decision inputs and cost boundary.",
-    "imageCaption": "Original MyBreakeven planning illustration. Read the worked examples below for fictional inputs and checked arithmetic.",
+    "image": "/images/blog/restaurant-takeout-vs-dine-in-profit-per-order-cover-oct07.webp",
+    "alt": "Plated dine-in meal beside packaged takeaway food on a restaurant counter.",
+    "imageCaption": "AI-generated editorial illustration of this business topic; not a real customer or business.",
     "features": [
       "Worked contribution calculations using explicit fictional inputs.",
       "Complete cost boundaries and capacity assumptions.",
@@ -717,9 +717,9 @@ export const october07Posts = [
       "Cost planning",
       "Worked examples"
     ],
-    "image": "/images/blog/subscription-box-churn-break-even-editorial.webp",
-    "alt": "Original planning diagram for subscription box churn and break-even: count active orders, showing the decision inputs and cost boundary.",
-    "imageCaption": "Original MyBreakeven planning illustration. Read the worked examples below for fictional inputs and checked arithmetic.",
+    "image": "/images/blog/subscription-box-churn-break-even-cover-oct07.webp",
+    "alt": "Subscription business owner preparing recurring monthly product boxes.",
+    "imageCaption": "AI-generated editorial illustration of this business topic; not a real customer or business.",
     "features": [
       "Worked contribution calculations using explicit fictional inputs.",
       "Complete cost boundaries and capacity assumptions.",
