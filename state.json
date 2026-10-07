@@ -1911,7 +1911,7 @@
     },
     "https://mybreakeven.com/blogs/coffee-shop-drink-contribution-margin/|instagram": {
       "revision": "dcc4ecef359865e8de4a7634f975d22aaa97f6eb768076ecbbb9c6bd86255658",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-07T10:59:32.624Z"
     }
   }
