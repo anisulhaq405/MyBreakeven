@@ -133,8 +133,9 @@
       "publishedAt": "2026-10-07T10:56:45.904Z"
     },
     "https://mybreakeven.com/blogs/break-even-multiple-products-sales-mix/|instagram": {
-      "revision": "51132fbc8e1bba4b429e01d9eb6234029a0defc0b190ca38036d72e99240e15b",
-      "status": "baseline"
+      "revision": "e8fdf8ba4760578e09eb3ff8aba5afc291709d2098558912580ab6926fcd887b",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T10:56:47.164Z"
     },
     "https://mybreakeven.com/blogs/break-even-multiple-products-sales-mix/|pinterest": {
       "revision": "51132fbc8e1bba4b429e01d9eb6234029a0defc0b190ca38036d72e99240e15b",
