@@ -1902,6 +1902,11 @@
       "revision": "78a8d19eb3145434ab12ed8af1015c210dc2dadd4b4832e851d041a8e10d081b",
       "status": "needs_review",
       "attemptedAt": "2026-10-07T10:57:32.317Z"
+    },
+    "https://mybreakeven.com/blogs/coffee-shop-drink-contribution-margin/|facebook": {
+      "revision": "dcc4ecef359865e8de4a7634f975d22aaa97f6eb768076ecbbb9c6bd86255658",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T10:59:25.803Z"
     }
   }
 }
