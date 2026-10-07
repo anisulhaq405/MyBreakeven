@@ -196,8 +196,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/car-detailing-prices-list/|facebook": {
-      "revision": "f1bddfad34ef42beeace5559b1fbaea1152c9e5c6bc662a065e16b7c1f2a2fbf",
-      "status": "baseline"
+      "revision": "56d530ac23374646ae9fa5d6f9fb65338cccb65803d2654dcb91e4f65b398e6c",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T10:58:15.647Z"
     },
     "https://mybreakeven.com/blogs/car-detailing-prices-list/|instagram": {
       "revision": "f1bddfad34ef42beeace5559b1fbaea1152c9e5c6bc662a065e16b7c1f2a2fbf",
