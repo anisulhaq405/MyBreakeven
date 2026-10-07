@@ -1949,7 +1949,7 @@
     },
     "https://mybreakeven.com/blogs/inventory-reorder-point-cash-flow/|instagram": {
       "revision": "75df4c94b225af3b013b0e4baa6bfd4a5ee63cfb4a0a96fac297600da2fbffd0",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-07T11:03:07.929Z"
     }
   }
