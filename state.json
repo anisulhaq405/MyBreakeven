@@ -2008,6 +2008,11 @@
       "revision": "f1f58e83d98bf72ddc63a74a47da6905fe7e975fec62a20c48bf5b5931cc519e",
       "status": "needs_review",
       "attemptedAt": "2026-10-07T11:04:40.625Z"
+    },
+    "https://mybreakeven.com/blogs/subscription-box-churn-break-even/|instagram": {
+      "revision": "f1f58e83d98bf72ddc63a74a47da6905fe7e975fec62a20c48bf5b5931cc519e",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T11:04:44.851Z"
     }
   }
 }
