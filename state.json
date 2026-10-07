@@ -1845,8 +1845,9 @@
     },
     "https://mybreakeven.com/blogs/agency-employee-vs-freelancer-break-even/|facebook": {
       "revision": "8fe2977264441415956ad6cd636750ae7d069f58430d9113e295af42803a42f5",
-      "status": "attempting",
-      "attemptedAt": "2026-10-07T10:54:37.046Z"
+      "status": "published",
+      "postId": "1437362339452872_122095372545509539",
+      "publishedAt": "2026-10-07T10:54:42.443Z"
     }
   }
 }
