@@ -10,7 +10,7 @@ describe("Day 4 volume-to-income guides", () => {
     expect(new Set(posts.map(post => post.slug)).size).toBe(8);
     for (const post of posts) {
       expect(post.published).toBe("2026-09-22");
-      expect(post.modified).toBe("2026-09-22");
+      expect(post.modified).toBe(["salon-clients-per-day-break-even", "how-many-cleaning-clients-5000"].includes(post.slug) ? "2026-10-07" : "2026-09-22");
     }
   });
 

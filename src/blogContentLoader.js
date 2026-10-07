@@ -42,7 +42,8 @@ export async function loadBlogPost(slug) {
   const post = group.find(candidate => candidate.slug === slug);
   if (!post) throw new Error(`Missing blog content for ${slug}`);
   const october07UpdateMap = preview.modified === "2026-10-07" && preview.group !== "october07" ? (await import("./content/blogs/october07Updates.js")).october07UpdateMap : {};
-  const article = { ...post, ...preview, ...september29UpdateMap[slug], ...september30UpdateMap[slug], ...october01UpdateMap[slug], ...october01AuditUpdateMap[slug], ...october02UpdateMap[slug], ...october03UpdateMap[slug], ...october04UpdateMap[slug], ...october05UpdateMap[slug], ...october06UpdateMap[slug], ...october07UpdateMap[slug] };
+  const recovery = preview.modified === "2026-10-07" ? (await import("./content/blogs/october07RecoveryUpdates.js")).october07RecoveryUpdateMap : {};
+  const article = { ...post, ...preview, ...september29UpdateMap[slug], ...september30UpdateMap[slug], ...october01UpdateMap[slug], ...october01AuditUpdateMap[slug], ...october02UpdateMap[slug], ...october03UpdateMap[slug], ...october04UpdateMap[slug], ...october05UpdateMap[slug], ...october06UpdateMap[slug], ...october07UpdateMap[slug], ...recovery[slug] };
   loadedPosts.set(slug, article);
   return article;
 }
