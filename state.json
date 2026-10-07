@@ -1044,8 +1044,9 @@
       "attemptedAt": "2026-10-07T11:03:50.111Z"
     },
     "https://mybreakeven.com/blogs/photography-pricing-packages/|instagram": {
-      "revision": "9d05fe84d7f63d29fff64ddb605fea8d74e3d4e0207abc631c609ea8b8dadd4a",
-      "status": "baseline"
+      "revision": "65036b36e2736b03278343ae7188e0fec23c797e9ecc96f4b199cd79eb03ce2c",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T11:03:52.882Z"
     },
     "https://mybreakeven.com/blogs/photography-pricing-packages/|pinterest": {
       "revision": "9d05fe84d7f63d29fff64ddb605fea8d74e3d4e0207abc631c609ea8b8dadd4a",
