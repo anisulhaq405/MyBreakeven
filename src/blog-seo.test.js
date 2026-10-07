@@ -31,7 +31,7 @@ describe("industry guide SEO assets", () => {
       expect(article.tags.length).toBeGreaterThanOrEqual(4);
       expect(article.opening.length).toBeGreaterThan(120);
       expect(article.published).toBe("2026-09-10");
-      expect(article.modified).toBe(["ecommerce-break-even", "landscaping-break-even", "restaurant-break-even"].includes(article.slug) ? "2026-10-07" : ["mobile-detailing-break-even", "salon-break-even"].includes(article.slug) ? "2026-10-04" : article.slug === "restaurant-break-even" ? "2026-10-03" : article.slug === "landscaping-break-even" ? "2026-10-02" : article.slug === "cleaning-business-break-even" ? "2026-10-01" : "2026-09-13");
+      expect(article.modified).toBe(["ecommerce-break-even", "landscaping-break-even", "restaurant-break-even", "salon-break-even", "mobile-detailing-break-even"].includes(article.slug) ? "2026-10-07" : ["mobile-detailing-break-even", "salon-break-even"].includes(article.slug) ? "2026-10-04" : article.slug === "restaurant-break-even" ? "2026-10-03" : article.slug === "landscaping-break-even" ? "2026-10-02" : article.slug === "cleaning-business-break-even" ? "2026-10-01" : "2026-09-13");
     }
   });
 
