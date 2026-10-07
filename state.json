@@ -863,8 +863,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/margin-of-safety-business/|facebook": {
-      "revision": "969486ba5350ffb0291a48c8dc0616931f886df3dba673c98d2827c93d521e06",
-      "status": "baseline"
+      "revision": "b02cb21e7cda551b2c03ccec5536cbd3fe832af6562511106aba95ba4d62cb02",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T11:03:16.485Z"
     },
     "https://mybreakeven.com/blogs/margin-of-safety-business/|instagram": {
       "revision": "969486ba5350ffb0291a48c8dc0616931f886df3dba673c98d2827c93d521e06",
