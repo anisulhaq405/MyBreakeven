@@ -449,8 +449,9 @@
       "publishedAt": "2026-10-07T11:01:43.262Z"
     },
     "https://mybreakeven.com/blogs/fixed-vs-variable-costs/|instagram": {
-      "revision": "837c5332c61f52124ddcba2b6ee1db9e374d0b0ac87aebd5bd1c853e8f8cc022",
-      "status": "baseline"
+      "revision": "92b298a87531cddf60086aa72bb3476adfea40b221a9fbf3b948504c1437b218",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T11:01:44.472Z"
     },
     "https://mybreakeven.com/blogs/fixed-vs-variable-costs/|pinterest": {
       "revision": "837c5332c61f52124ddcba2b6ee1db9e374d0b0ac87aebd5bd1c853e8f8cc022",
