@@ -322,8 +322,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/contribution-margin-vs-profit-margin/|facebook": {
-      "revision": "8d0bb75565e3037b082c33429cdba8962a8650552d5e1a7015c8ceb661629fd1",
-      "status": "baseline"
+      "revision": "4c3f914fc60ecc4ac426186ea0b7907a4b2bff6cf8db46db524092b8284ede33",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T10:59:49.760Z"
     },
     "https://mybreakeven.com/blogs/contribution-margin-vs-profit-margin/|instagram": {
       "revision": "8d0bb75565e3037b082c33429cdba8962a8650552d5e1a7015c8ceb661629fd1",
