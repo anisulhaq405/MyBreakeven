@@ -169,8 +169,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/calculate-break-even-point/|facebook": {
-      "revision": "ad52e85b6cb1836c3b93546dcff308012a0d6e8136b1b65429e5434357c4b614",
-      "status": "baseline"
+      "revision": "980e45535027117f97ede4755bd92dba2625214192b9aec0fb2bafc1a3ddeff1",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T10:57:49.329Z"
     },
     "https://mybreakeven.com/blogs/calculate-break-even-point/|instagram": {
       "revision": "ad52e85b6cb1836c3b93546dcff308012a0d6e8136b1b65429e5434357c4b614",
