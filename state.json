@@ -559,8 +559,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/how-many-photography-clients-month/|facebook": {
-      "revision": "d8c7b284fc187539c3cc1b124b5b58ffe6a13bf1d8506f518b09c29b60c9c7ca",
-      "status": "baseline"
+      "revision": "63479ec831024f2633e4a8f8891245a7ad87be3d83dfe483ba98ab9879b869e6",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T13:04:18.845Z"
     },
     "https://mybreakeven.com/blogs/how-many-photography-clients-month/|instagram": {
       "revision": "d8c7b284fc187539c3cc1b124b5b58ffe6a13bf1d8506f518b09c29b60c9c7ca",
