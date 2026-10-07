@@ -2,9 +2,9 @@ import { freeTools } from "../src/freeTools.js";
 import { articleFaq } from "../src/articleFaq.js";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import React from "react";
-import { renderToStaticMarkup, renderToString } from "react-dom/server";
+import { renderToString } from "react-dom/server";
 import { createServer } from "vite";
-import { blogPosts, relatedArticlesFor } from "../src/content/blogs/index.js";
+import { blogPosts } from "../src/content/blogs/index.js";
 
 const calculators = {
   ...Object.fromEntries(Object.entries(freeTools).map(([slug, tool]) => [slug, [tool.title, tool.description]])),
@@ -34,7 +34,6 @@ let base = await readFile(homeFile, "utf8");
 
 const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 const allArticles = blogPosts;
-const formatArticleDate = (value) => new Date(`${value}T12:00:00Z`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
 const staticPages = {
   tools: ["Free Business Calculators: Profit, Pricing & Costs | MyBreakeven", "Explore free business calculators for profit, pricing, service costs, advertising and cash. Use clear formulas and worked guides without signing up.", "Free business calculators"],
   "pro-user-guide": ["MyBreakeven Pro Calculator User Guide", "Step-by-step guide to MyBreakeven Pro: enter costs, read break-even results, use advanced analysis, save scenarios and export reports.", "MyBreakeven Pro calculator user guide"],
@@ -57,12 +56,11 @@ const renderer = await createServer({ server: { middlewareMode: true, hmr: false
 let PublicPage, HomeContent;
 try {
   PublicPage = (await renderer.ssrLoadModule("/src/Pages.jsx")).default;
-  HomeContent = (await renderer.ssrLoadModule("/src/HomeSEO.jsx")).default;
+  HomeContent = (await renderer.ssrLoadModule("/src/main.jsx")).default;
 }
 finally { await renderer.close(); }
-const renderPublicPage = path => renderToString(React.createElement(PublicPage, { path }));
-const homeLinks = base.match(/<nav aria-label="Key pages">[\s\S]*?<\/nav>/)?.[0] || "";
-base = base.replace(/<main>[\s\S]*?<\/main>/, `<main><h1>Build your break-even plan.</h1><p>Choose your model and adjust the monthly assumptions.</p>${renderToStaticMarkup(React.createElement(HomeContent))}${homeLinks}</main>`);
+const renderPublicPage = (path, initialArticle) => renderToString(React.createElement(PublicPage, { path, initialArticle }));
+base = base.replace(/<div id="root"[^>]*>[\s\S]*?<\/div>\s*<\/body>/, `<div id="root" data-prerendered="true">${renderToString(React.createElement(HomeContent))}</div></body>`);
 await writeFile(homeFile, base);
 for (const [route, [title, description, heading, privatePage = false]] of Object.entries(staticPages)) {
   const canonical = `https://mybreakeven.com/${route}/`;
@@ -72,7 +70,7 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
     { "@type": "WebPage", "@id": `${canonical}#webpage`, url: canonical, name: title, description, inLanguage: "en-US", isPartOf: { "@id": "https://mybreakeven.com/#website" } },
   ] };
   const links = route === "blogs" ? `<ul>${allArticles.map(article => `<li><a href="/blogs/${article.slug}/">${escapeHtml(article.title)}</a></li>`).join("")}</ul>` : `<p><a href="/#calculator">Use the free small business break-even calculator</a></p>`;
-  const fallback = !privatePage && route !== "blogs"
+  const fallback = !privatePage
     ? `<div id="root" data-prerendered="true">${renderPublicPage(`/${route}`)}</div>`
     : `<div id="root" data-booting><main><h1>${escapeHtml(heading)}</h1><p>${escapeHtml(description)}</p>${links}</main></div>`;
   const html = base
@@ -108,11 +106,7 @@ for (const article of allArticles) {
       { "@type": "ListItem", position: 3, name: article.title, item: canonical }
     ] }
   ] };
-  const sections = article.html ? article.html : article.sections.map(section => `<section><h2>${escapeHtml(section.heading)}</h2>${(section.paragraphs || []).map(p => `<p>${escapeHtml(p)}</p>`).join("")}${section.bullets ? `<ul>${section.bullets.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : ""}</section>`).join("");
-  const faq = resolvedFaq.items.map(item => `<h3>${escapeHtml(item.q)}</h3><p>${escapeHtml(item.a)}</p>`).join("");
-  const related = article.html ? "" : relatedArticlesFor(article.slug).map(item => `<li><a href="/blogs/${item.slug}/">${escapeHtml(item.title)}</a></li>`).join("");
-  const hubLink = article.html && !article.html.includes('href="/blogs/"') && !article.html.includes('href="https://mybreakeven.com/blogs/"') ? `<p><a href="/blogs/">Browse the MyBreakeven blog hub</a> for related planning guides.</p>` : "";
-  const fallback = `<div id="root" data-booting><main><article><nav><a href="/">Home</a> / <a href="/blogs/">Guides</a> / ${escapeHtml(article.tag)}</nav><h1>${escapeHtml(article.title)}</h1><p>Published by <a href="/about-us/">MyBreakeven</a>. Report a calculation or content issue to <a href="mailto:support@mybreakeven.com">support@mybreakeven.com</a>.</p><p><time datetime="${article.published}">Published ${formatArticleDate(article.published)}</time> · Updated ${formatArticleDate(article.modified)}</p><p>${escapeHtml(article.description)}</p><p>${article.tags.map(tag => `<span>${escapeHtml(tag)}</span>`).join(" · ")}</p>${article.html ? "" : `<p>${escapeHtml(article.opening)}</p>`}<img src="${article.image}" alt="${escapeHtml(article.alt)}" width="1200" height="675"><section><h2>Calculator features</h2><ul>${article.features.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul></section>${sections}${article.html && !resolvedFaq.inline && resolvedFaq.items.length ? `<section><h2>Frequently asked questions</h2>${faq}</section>` : ""}${hubLink}${article.html ? "" : `<figure><img src="${article.insideImage}" alt="${escapeHtml(article.insideAlt)}" width="1200" height="630"></figure><section><h2>Frequently asked questions</h2>${faq}</section><p><a href="/calculators/${article.calculatorSlug}/">Use the free ${escapeHtml(article.tag)} break-even calculator</a></p>`}<section><h2>Related break-even resources</h2><ul>${related}<li><a href="/#calculator">Free small business break-even calculator</a></li><li><a href="/#methodology">Transparent break-even calculation methodology</a></li></ul></section></article></main></div>`;
+  const fallback = `<div id="root" data-prerendered="true">${renderPublicPage(`/${route}`, article)}</div>`;
   const html = base
     .replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
     .replace(/<meta name="description" content="[^"]*"\s*\/?>/, `<meta name="description" content="${escapeHtml(article.metaDescription)}" />`)
@@ -181,7 +175,8 @@ const publicUrls = ["https://mybreakeven.com/",
   ...allArticles.map(article => `https://mybreakeven.com/blogs/${article.slug}/`),
   ...Object.keys(calculators).map(slug => `https://mybreakeven.com/calculators/${slug}/`),
 ];
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${publicUrls.map(url => `  <url><loc>${escapeHtml(url)}</loc></url>`).join("\n")}\n</urlset>\n`;
+const articleModified = new Map(allArticles.map(article => [`https://mybreakeven.com/blogs/${article.slug}/`, article.modified]));
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${publicUrls.map(url => `  <url><loc>${escapeHtml(url)}</loc>${articleModified.has(url) ? `<lastmod>${escapeHtml(articleModified.get(url))}</lastmod>` : ""}</url>`).join("\n")}\n</urlset>\n`;
 await writeFile(new URL("../dist/sitemap.xml", import.meta.url), sitemap);
 
 // Public, revision-aware source for website-to-social automation.
