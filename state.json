@@ -741,8 +741,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/landscaping-break-even/|facebook": {
-      "revision": "40427ea91aba3e853277cfdc8d20fda6dcee4e5045a078cf8cf05b8df301f483",
-      "status": "baseline"
+      "revision": "224d6a110720b7b4a88bd4314eefc0323373d5a7a3b91655a07edd5e26ac39cb",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T11:03:10.748Z"
     },
     "https://mybreakeven.com/blogs/landscaping-break-even/|instagram": {
       "revision": "40427ea91aba3e853277cfdc8d20fda6dcee4e5045a078cf8cf05b8df301f483",
