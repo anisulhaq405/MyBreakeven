@@ -1886,8 +1886,9 @@
     },
     "https://mybreakeven.com/blogs/bridal-hair-and-makeup-package-pricing-for-salons/|facebook": {
       "revision": "78a8d19eb3145434ab12ed8af1015c210dc2dadd4b4832e851d041a8e10d081b",
-      "status": "attempting",
-      "attemptedAt": "2026-10-07T10:57:25.158Z"
+      "status": "published",
+      "postId": "1437362339452872_122095375239509539",
+      "publishedAt": "2026-10-07T10:57:31.040Z"
     }
   }
 }
