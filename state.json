@@ -1867,6 +1867,11 @@
       "revision": "d8d6a72f52597f3925e8f89d685ea2a0f1d6d0af8b01eed8792d4464b1b66491",
       "status": "needs_review",
       "attemptedAt": "2026-10-07T10:55:29.611Z"
+    },
+    "https://mybreakeven.com/blogs/amazon-marketplace-vs-own-store-profit-per-order/|facebook": {
+      "revision": "2e2e315f6d2049b2c0192418e86ae9a0c9a406a6dd46cd4b0a03ca80094a4aca",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T10:55:52.114Z"
     }
   }
 }
