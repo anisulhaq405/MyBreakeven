@@ -1837,7 +1837,7 @@
     },
     "https://mybreakeven.com/blogs/agency-client-concentration-revenue-risk/|instagram": {
       "revision": "f9839d14322ea81d6953747909f9509a7a07d315daab475db101843095df04a4",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-07T10:54:04.614Z"
     }
   }
