@@ -1279,10 +1279,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/salon-break-even/|facebook": {
-      "revision": "99be67b354066e26952cb8d64df9fb31324d63a6ae78655a2b9ba10c24c6b12e",
-      "status": "published",
-      "postId": "1437362339452872_122094410343509539",
-      "publishedAt": "2026-10-05T17:58:10.372402+00:00"
+      "revision": "a2560af210893ad1eb051d1b64c3ecad9a79827a26847e2bb07b132be617defc",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T11:45:53.599Z"
     },
     "https://mybreakeven.com/blogs/salon-break-even/|instagram": {
       "revision": "99be67b354066e26952cb8d64df9fb31324d63a6ae78655a2b9ba10c24c6b12e",
