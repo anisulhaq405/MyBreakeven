@@ -371,10 +371,9 @@
       "publishedAt": "2026-10-07T11:00:27.089Z"
     },
     "https://mybreakeven.com/blogs/ecommerce-break-even/|instagram": {
-      "revision": "920610797c9194d855dd5f3e55437f34511670c492c1bddfb80f9e3b09cb989e",
-      "status": "published",
-      "postId": "18091179647274128",
-      "publishedAt": "2026-10-05T17:57:22.996461+00:00"
+      "revision": "def85db0ba69f6320c4ed0553620d04028dba5d29804223c8520753811a8d93e",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T11:00:28.323Z"
     },
     "https://mybreakeven.com/blogs/ecommerce-break-even/|pinterest": {
       "revision": "920610797c9194d855dd5f3e55437f34511670c492c1bddfb80f9e3b09cb989e",
