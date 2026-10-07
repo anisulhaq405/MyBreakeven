@@ -758,8 +758,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/landscaping-business-profit-margin/|facebook": {
-      "revision": "5bb25f77b21d695996053dfb0fb1eaf81af83308549baccb8b995e50fcd721ea",
-      "status": "baseline"
+      "revision": "1944c6dd229d96acd42540d6780be139232a6302d85ccd0a9b5bb2af89dc44dd",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T11:45:34.088Z"
     },
     "https://mybreakeven.com/blogs/landscaping-business-profit-margin/|instagram": {
       "revision": "5bb25f77b21d695996053dfb0fb1eaf81af83308549baccb8b995e50fcd721ea",
