@@ -679,8 +679,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/how-to-price-products-for-ecommerce/|facebook": {
-      "revision": "de82c92f0834508be6ebbf6dff8019e5c9ebc02ebf58e69193846f63b24a1a71",
-      "status": "baseline"
+      "revision": "f9f0c2796f6049b5d53f357e7d0fd02bca4be2e065c188bc6bbc20d21e1b78be",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T11:02:59.100Z"
     },
     "https://mybreakeven.com/blogs/how-to-price-products-for-ecommerce/|instagram": {
       "revision": "de82c92f0834508be6ebbf6dff8019e5c9ebc02ebf58e69193846f63b24a1a71",
