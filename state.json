@@ -511,7 +511,7 @@
     },
     "https://mybreakeven.com/blogs/how-many-cleaning-clients-5000/|instagram": {
       "revision": "fe95669d7f605a513ceaba6acf4f74c0bb1b10f7a85db784fb79adebba51e344",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-07T11:45:26.802Z"
     },
     "https://mybreakeven.com/blogs/how-many-cleaning-clients-5000/|pinterest": {
