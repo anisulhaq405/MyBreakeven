@@ -1975,6 +1975,11 @@
       "revision": "ed76df6278cf6966020f673383d2abb856190ac2d8d57bca60faeafb9c1ac36c",
       "status": "needs_review",
       "attemptedAt": "2026-10-07T11:03:58.676Z"
+    },
+    "https://mybreakeven.com/blogs/restaurant-menu-engineering-contribution-margin/|facebook": {
+      "revision": "4584fdfd1eac5980538f3661b3cb0ccae4ffd0ab45203ab72d0a96beda6bbbb8",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T11:04:18.357Z"
     }
   }
 }
