@@ -901,8 +901,9 @@
       "attemptedAt": "2026-10-07T11:45:44.195Z"
     },
     "https://mybreakeven.com/blogs/mobile-detailing-break-even/|instagram": {
-      "revision": "c5b8daa3edc9c01d0c49bcf44f70d1c79a6909a4cacfeb1bc351c7f9f3f9ae70",
-      "status": "baseline"
+      "revision": "c765d1b094ef17089b1ee2737cf18943f9d04505a1a4f81a08496a7633e1c04c",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T11:45:46.499Z"
     },
     "https://mybreakeven.com/blogs/mobile-detailing-break-even/|pinterest": {
       "revision": "c5b8daa3edc9c01d0c49bcf44f70d1c79a6909a4cacfeb1bc351c7f9f3f9ae70",
