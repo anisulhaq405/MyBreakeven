@@ -386,7 +386,7 @@ export const operationalTools = {
     "image": "/images/tools/detailing-chemical-cost-calculator.webp",
     "alt": "Detailing chemical cost per car with dilution and waste illustrated with inputs and a checked result.",
     "caption": "Illustrative planning inputs, not industry benchmarks. A $40, 1,000 mL concentrate bottle mixed at 9:1 yields 10,000 mL of prepared solution. Applying 500 mL per car with 10% prepared-liquid waste consumes 555.56 mL and costs $2.22 per car. Usable yield is 18 cars per bottle.",
-    "assumptions": "All liquid volumes are in mL. Dilution is water-to-concentrate. Waste is a share of prepared volume, not an uplift on application volume. Water, bottles, labor and other chemicals are excluded. This is a cost calculation, not mixing or safety advice; follow the label.",
+    "assumptions": "Use mL or US fluid ounces consistently for all liquid volumes; the unit selector converts both quantities. Dilution is water-to-concentrate. Waste is a share of prepared volume, not an uplift on application volume. Water, bottles, labor and other chemicals are excluded. This is a cost calculation, not mixing or safety advice; follow the label.",
     "sections": [
       {
         "id": "how-to-use",
@@ -395,7 +395,7 @@ export const operationalTools = {
           "Start with one consistent service, route, product recipe or order cohort. Use invoice costs and measured operating records rather than a generic industry rate. The reset figures are a fictional example for checking the method."
         ],
         "steps": [
-          "Enter the actual concentrate invoice cost and bottle size in mL.",
+          "Enter the actual concentrate invoice cost and bottle size in mL or US fluid ounces.",
           "Read dilution as water parts to one concentrate part; manufacturer conventions can differ.",
           "Measure final mixed solution applied to a typical car.",
           "Use observed discarded solution as the waste share; repeat for each product and add costs."
@@ -421,7 +421,7 @@ export const operationalTools = {
         "id": "interpret-results",
         "title": "Use the result in your next business decision",
         "paragraphs": [
-          "All liquid volumes are in mL. Dilution is water-to-concentrate. Waste is a share of prepared volume, not an uplift on application volume. Water, bottles, labor and other chemicals are excluded. This is a cost calculation, not mixing or safety advice; follow the label.",
+          "Use mL or US fluid ounces consistently for all liquid volumes; the unit selector converts both quantities. Dilution is water-to-concentrate. Waste is a share of prepared volume, not an uplift on application volume. Water, bottles, labor and other chemicals are excluded. This is a cost calculation, not mixing or safety advice; follow the label.",
           "Change one input at a time and compare the result with the original example. Check the largest cost driver against actual records before changing pricing. Carry the relevant cost or contribution into the linked industry break-even calculator; it adds the broader monthly business target."
         ]
       },
@@ -447,7 +447,7 @@ export const operationalTools = {
       ],
       [
         "Does this include all business expenses?",
-        "All liquid volumes are in mL. Dilution is water-to-concentrate. Waste is a share of prepared volume, not an uplift on application volume. Water, bottles, labor and other chemicals are excluded. This is a cost calculation, not mixing or safety advice; follow the label."
+        "Use mL or US fluid ounces consistently for all liquid volumes; the unit selector converts both quantities. Dilution is water-to-concentrate. Waste is a share of prepared volume, not an uplift on application volume. Water, bottles, labor and other chemicals are excluded. This is a cost calculation, not mixing or safety advice; follow the label."
       ],
       [
         "Can I change the currency?",

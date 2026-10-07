@@ -1,3 +1,5 @@
+import { october07Posts } from "./october07.js";
+import { october07UpdateMap } from "./october07Updates.js";
 import { october06SupplementPosts } from "./october06Supplement.js";
 import { october06Posts } from "./october06.js";
 import { october06UpdateMap } from "./october06Updates.js";
@@ -74,11 +76,12 @@ const normalizePost = post => ({
   ...october04UpdateMap[post.slug],
   ...october05UpdateMap[post.slug],
   ...october06UpdateMap[post.slug],
+  ...october07UpdateMap[post.slug],
   tag: canonicalTag(post.tag),
-  seoTitle: october06UpdateMap[post.slug]?.seoTitle || october05UpdateMap[post.slug]?.seoTitle || october04UpdateMap[post.slug]?.seoTitle || october03UpdateMap[post.slug]?.seoTitle || october02UpdateMap[post.slug]?.seoTitle || october01UpdateMap[post.slug]?.seoTitle || september30UpdateMap[post.slug]?.seoTitle || september29UpdateMap[post.slug]?.seoTitle || seoTitleOverrides[post.slug] || cleanText(post.seoTitle),
-  description: cleanText(october06UpdateMap[post.slug]?.metaDescription || october05UpdateMap[post.slug]?.metaDescription || october04UpdateMap[post.slug]?.metaDescription || october03UpdateMap[post.slug]?.metaDescription || post.description),
-  metaDescription: cleanText(october06UpdateMap[post.slug]?.metaDescription || october05UpdateMap[post.slug]?.metaDescription || october04UpdateMap[post.slug]?.metaDescription || october03UpdateMap[post.slug]?.metaDescription || october02UpdateMap[post.slug]?.metaDescription || october01UpdateMap[post.slug]?.metaDescription || september30UpdateMap[post.slug]?.metaDescription || september29UpdateMap[post.slug]?.metaDescription || post.metaDescription),
-  opening: cleanText(october06UpdateMap[post.slug]?.opening || october05UpdateMap[post.slug]?.opening || october04UpdateMap[post.slug]?.opening || october03UpdateMap[post.slug]?.opening || post.opening),
+  seoTitle: october07UpdateMap[post.slug]?.seoTitle || october06UpdateMap[post.slug]?.seoTitle || october05UpdateMap[post.slug]?.seoTitle || october04UpdateMap[post.slug]?.seoTitle || october03UpdateMap[post.slug]?.seoTitle || october02UpdateMap[post.slug]?.seoTitle || october01UpdateMap[post.slug]?.seoTitle || september30UpdateMap[post.slug]?.seoTitle || september29UpdateMap[post.slug]?.seoTitle || seoTitleOverrides[post.slug] || cleanText(post.seoTitle),
+  description: cleanText(october07UpdateMap[post.slug]?.metaDescription || october06UpdateMap[post.slug]?.metaDescription || october05UpdateMap[post.slug]?.metaDescription || october04UpdateMap[post.slug]?.metaDescription || october03UpdateMap[post.slug]?.metaDescription || post.description),
+  metaDescription: cleanText(october07UpdateMap[post.slug]?.metaDescription || october06UpdateMap[post.slug]?.metaDescription || october05UpdateMap[post.slug]?.metaDescription || october04UpdateMap[post.slug]?.metaDescription || october03UpdateMap[post.slug]?.metaDescription || october02UpdateMap[post.slug]?.metaDescription || october01UpdateMap[post.slug]?.metaDescription || september30UpdateMap[post.slug]?.metaDescription || september29UpdateMap[post.slug]?.metaDescription || post.metaDescription),
+  opening: cleanText(october07UpdateMap[post.slug]?.opening || october06UpdateMap[post.slug]?.opening || october05UpdateMap[post.slug]?.opening || october04UpdateMap[post.slug]?.opening || october03UpdateMap[post.slug]?.opening || post.opening),
 });
 
 export const blogCollections = Object.freeze({
@@ -100,6 +103,7 @@ export const blogCollections = Object.freeze({
   october05: october05Posts.map(normalizePost),
   october06Supplement: october06SupplementPosts.map(normalizePost),
   october06: october06Posts.map(normalizePost),
+  october07: october07Posts.map(normalizePost),
 });
 
 export const blogPosts = Object.values(blogCollections)

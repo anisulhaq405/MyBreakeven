@@ -6,6 +6,8 @@ export function calculateOperationalTool(input,mode){
  if(!tool)return {valid:false,message:'Unknown tool.'};
  const keys=Object.keys(tool.defaults);
  if(keys.some(k=>input[k]===''||input[k]==null||!Number.isFinite(Number(input[k]))||Number(input[k])<0||Number(input[k])>1e12))return {valid:false,message:'Enter a non-negative number up to 1 trillion in every field.'};
+ if(input.liquidUnit && !['mL','US fl oz'].includes(input.liquidUnit))return {valid:false,message:'Choose mL or US fluid ounces for liquid quantities.'};
+ const unit=input.liquidUnit || 'mL';
  const v=Object.fromEntries(keys.map(k=>[k,new D(input[k])])); const pct=n=>n.div(100); let o;
  if(mode==='cleaningContract'){
  if(v.price.lte(0)||v.target.gte(100))return {valid:false,message:'Contract fee must be above zero and target margin below 100%.'};
@@ -19,7 +21,7 @@ export function calculateOperationalTool(input,mode){
  }else if(mode==='chemical'){
  if(v.size.lte(0)||v.use.lte(0)||v.waste.gte(100))return {valid:false,message:'Bottle and applied volume must be above zero; waste must be below 100%.'};
  const prepared=v.size.times(v.water.plus(1)),usable=prepared.times(new D(1).minus(pct(v.waste))),cost=v.price.times(v.use).div(usable);
- o={main:cost,metrics:[['Prepared solution (mL)',prepared,'number'],['Usable solution (mL)',usable,'number'],['Car equivalents per bottle',usable.div(v.use),'number'],['Prepared volume consumed / car (mL)',v.use.div(new D(1).minus(pct(v.waste))),'number']]};
+ o={main:cost,metrics:[[`Prepared solution (${unit})`,prepared,'number'],[`Usable solution (${unit})`,usable,'number'],['Car equivalents per bottle',usable.div(v.use),'number'],[`Prepared volume consumed / car (${unit})`,v.use.div(new D(1).minus(pct(v.waste))),'number']]};
  }else if(mode==='hairColor'){
  if(v.colorSize.lte(0)||v.developerSize.lte(0)||v.waste.gt(100)||!v.services.isInteger())return {valid:false,message:'Pack quantities must be positive, waste 0–100%, and monthly services a whole number.'};
  const color=v.colorPrice.times(v.colorUse).div(v.colorSize),developer=v.developerPrice.times(v.developerUse).div(v.developerSize),cost=color.plus(developer);
