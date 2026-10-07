@@ -58,8 +58,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/agency-client-profitability/|facebook": {
-      "revision": "5632be212b90117b9b1bbd9d760cdeb3e35e89bb2a82369e9ebd1ef886f4bbef",
-      "status": "baseline"
+      "revision": "3620de46e964fa4b74d32e726bcc5e5ffb8e71006a1f1d474a37f1cf02f1136b",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T10:54:19.319Z"
     },
     "https://mybreakeven.com/blogs/agency-client-profitability/|instagram": {
       "revision": "5632be212b90117b9b1bbd9d760cdeb3e35e89bb2a82369e9ebd1ef886f4bbef",
