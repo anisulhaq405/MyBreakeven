@@ -260,8 +260,9 @@
     },
     "https://mybreakeven.com/blogs/cleaning-business-monthly-expenses/|facebook": {
       "revision": "a408683d8ec951defcb999118230609718f1f78d49d3a6f8f23a70acec6ffece",
-      "status": "attempting",
-      "attemptedAt": "2026-10-07T10:59:00.214Z"
+      "status": "published",
+      "postId": "1437362339452872_122095376505509539",
+      "publishedAt": "2026-10-07T10:59:15.069Z"
     },
     "https://mybreakeven.com/blogs/cleaning-business-monthly-expenses/|instagram": {
       "revision": "aeaf7954fbe077cfad14a395adbccfa3222e9d98b9d6bfeeba43ce6ee11c6217",
