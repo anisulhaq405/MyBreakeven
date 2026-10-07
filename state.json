@@ -1915,6 +1915,11 @@
       "revision": "dcc4ecef359865e8de4a7634f975d22aaa97f6eb768076ecbbb9c6bd86255658",
       "status": "needs_review",
       "attemptedAt": "2026-10-07T10:59:32.624Z"
+    },
+    "https://mybreakeven.com/blogs/ecommerce-inventory-holding-cost-per-sku/|facebook": {
+      "revision": "3ec415001ff736d0739a886085bf7472d882024dd04e4e70a826ac4e48dc9bac",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T11:00:39.818Z"
     }
   }
 }
