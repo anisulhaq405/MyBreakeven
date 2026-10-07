@@ -1298,8 +1298,9 @@
       "attemptedAt": "2026-10-07T11:45:58.175Z"
     },
     "https://mybreakeven.com/blogs/salon-clients-per-day-break-even/|instagram": {
-      "revision": "71209d005438fdc7e4c0ba355eb7d94aeac3cfcc231cc62bc59964fe759e1982",
-      "status": "baseline"
+      "revision": "c6b9f24273c319848c8b58c95a1a5ee0150bc713138b29f2305c305e86506c7a",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T11:46:00.576Z"
     },
     "https://mybreakeven.com/blogs/salon-clients-per-day-break-even/|pinterest": {
       "revision": "71209d005438fdc7e4c0ba355eb7d94aeac3cfcc231cc62bc59964fe759e1982",
