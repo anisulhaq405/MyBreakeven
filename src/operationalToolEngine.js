@@ -31,5 +31,7 @@ export function calculateOperationalTool(input,mode){
  const inventory=v.product.times(new D(1).minus(pct(v.recovery))),cost=inventory.plus(v.outbound).plus(v.reverse).plus(v.handling).plus(v.fees),returns=v.orders.times(pct(v.rate));
  o={main:cost.times(pct(v.rate)),metrics:[['Expected returns / month',returns,'number'],['Inventory cost lost / return',inventory,'money'],['Cost per returned order',cost,'money'],['Monthly return cost burden',cost.times(returns),'money']]};
  }
- return {valid:true,main:o.main.toNumber(),metrics:o.metrics.map(([label,value,type])=>[label,value.toNumber(),type])};
+ const result={valid:true,main:o.main.toNumber(),metrics:o.metrics.map(([label,value,type])=>[label,value.toNumber(),type])};
+ if(!Number.isFinite(result.main)||result.metrics.some(([,value])=>!Number.isFinite(value)))return {valid:false,message:'These values are too large to report. Use a larger positive quantity or smaller costs.'};
+ return result;
 }

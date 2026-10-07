@@ -3,6 +3,8 @@ import {calculateOperationalTool as calc} from './operationalToolEngine';
 import {operationalTools} from './operationalTools';
 const d=mode=>Object.values(operationalTools).find(t=>t.mode===mode).defaults;
 describe('focused operating cost decisions',()=>{
+ it('rejects liquid ratios too large to display safely',()=>expect(calc({...d('chemical'),size:'1e-999'},'chemical').valid).toBe(false));
+ it('rejects color stock ratios too large to display safely',()=>expect(calc({...d('hairColor'),colorSize:'1e-999'},'hairColor').valid).toBe(false));
  it('annualizes weekly cleaning visits and rounds the target quote upward',()=>{const r=calc(d('cleaningContract'),'cleaningContract');expect(r.main).toBe(692);expect(r.metrics[0][1]).toBe(13);expect(r.metrics[3][1]).toBe(2277.34);});
  it('charges crew person-hours but reports profit per elapsed route hour',()=>{const r=calc(d('lawnRoute'),'lawnRoute');expect(r.main).toBe(334);expect(r.metrics[1][1]).toBe(220);expect(r.metrics[2][1]).toBe(66.8);});
  it('uses water:concentrate ratio and reduces usable yield for waste',()=>{const r=calc(d('chemical'),'chemical');expect(r.main).toBeCloseTo(40/18);expect(r.metrics[2][1]).toBe(18);});
