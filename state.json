@@ -100,8 +100,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/break-even-analysis-example/|facebook": {
-      "revision": "225476c63c68a0ebd69696223aa0ccdb28af07796f34ed2b202891653ff27027",
-      "status": "baseline"
+      "revision": "077c0456824fd52ab26ba8683d1ca9791324c120710e83517dae8ccef7776b05",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T10:56:23.330Z"
     },
     "https://mybreakeven.com/blogs/break-even-analysis-example/|instagram": {
       "revision": "225476c63c68a0ebd69696223aa0ccdb28af07796f34ed2b202891653ff27027",
