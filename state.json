@@ -180,8 +180,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/calculate-contribution-margin/|facebook": {
-      "revision": "1011cec2347811281a78c87caf82653260e9ed9cc598f9beaf169dd6638f234d",
-      "status": "baseline"
+      "revision": "92f1f197a612b4789b9f0b8fad96a514e65675ec86f8f7020f9a7008e6af8d27",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T13:03:59.120Z"
     },
     "https://mybreakeven.com/blogs/calculate-contribution-margin/|instagram": {
       "revision": "1011cec2347811281a78c87caf82653260e9ed9cc598f9beaf169dd6638f234d",
