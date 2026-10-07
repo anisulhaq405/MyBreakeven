@@ -608,8 +608,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-landscaping-business/|facebook": {
-      "revision": "c09e6658c5d09c9b4f3b44bb9c76b98e9b89681fa787e5d5eb8e156dc7e4f703",
-      "status": "baseline"
+      "revision": "d78e12e78042d06926d71c5943fb12520d4a1845807a28631b302b610e438a3b",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T11:02:41.701Z"
     },
     "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-landscaping-business/|instagram": {
       "revision": "c09e6658c5d09c9b4f3b44bb9c76b98e9b89681fa787e5d5eb8e156dc7e4f703",
