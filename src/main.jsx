@@ -26,8 +26,8 @@ import "./home-presentation.css";
 const ScenarioTools = lazy(() => import("./ScenarioTools"));
 const quantity = (n) => new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 }).format(n || 0);
 export default function App() {
-  const [showTools, setShowTools] = useState(false);
-  const initialIndustry = new URLSearchParams(window.location.search).get("industry");
+  const [showTools, setShowTools] = useState(() => typeof window !== "undefined" && window.location.hash === "#pro-analysis");
+  const initialIndustry = new URLSearchParams(typeof window === "undefined" ? "" : window.location.search).get("industry");
   const startingIndustry = industries[initialIndustry] ? initialIndustry : "cleaning";
   const [industryKey, setIndustryKey] = useState(startingIndustry),
     [input, setInput] = useState(industries[startingIndustry].values),
@@ -65,7 +65,7 @@ export default function App() {
       requestAnimationFrame(() => document.getElementById("calculator")?.scrollIntoView());
     });
   }, []);
-  const path = window.location.pathname.replace(/\/$/, "") || "/";
+  const path = typeof window === "undefined" ? "/" : window.location.pathname.replace(/\/$/, "") || "/";
   useEffect(() => {
     if (path !== "/") return;
     const target = document.getElementById("scenario-tools-anchor");

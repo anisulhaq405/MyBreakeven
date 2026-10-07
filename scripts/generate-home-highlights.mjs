@@ -1,4 +1,4 @@
-import { writeFile } from "node:fs/promises";
+import { mkdir, readdir, unlink, writeFile } from "node:fs/promises";
 import { blogCollections, blogLibrarySummary, blogPosts } from "../src/content/blogs/index.js";
 import { cafePosts } from "../src/content/blogs/cafe.js";
 
@@ -37,3 +37,14 @@ const listing = blogPosts.map(post => ({
 }));
 await writeFile(new URL("../src/blogListingData.js", import.meta.url),
   `// Generated from the blog registry before dev and build.\nexport const blogListingData = ${JSON.stringify({posts:listing,modelCount:blogLibrarySummary.modelCount})};\n`);
+
+// Resolve historical updates at build time and load only the requested guide.
+const articleDirectory = new URL("../src/content/generated/", import.meta.url);
+await mkdir(articleDirectory, { recursive: true });
+const articleFiles = new Set(blogPosts.map(post => `${post.slug}.json`));
+for (const name of await readdir(articleDirectory)) {
+  if (name.endsWith(".json") && !articleFiles.has(name)) await unlink(new URL(name, articleDirectory));
+}
+await Promise.all(blogPosts.map(post => writeFile(
+  new URL(`${post.slug}.json`, articleDirectory), JSON.stringify(post),
+)));

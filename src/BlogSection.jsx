@@ -7,8 +7,7 @@ const dateLabel = value => new Date(`${value}T12:00:00Z`).toLocaleDateString("en
 
 const initialQuery = () => typeof window === "undefined" ? "" : new URLSearchParams(window.location.search).get("q") || "";
 
-export default function BlogSection() {
-  const isHub = typeof window !== "undefined" && window.location.pathname.startsWith("/blogs");
+export default function BlogSection({ isHub = false } = {}) {
   const [query, setQuery] = useState(initialQuery);
   const [tag, setTag] = useState("All");
   const tags = useMemo(() => ["All", ...new Set(blogPosts.map(post => post.tag))], []);

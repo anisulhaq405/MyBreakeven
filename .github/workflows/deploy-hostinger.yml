@@ -32,6 +32,9 @@ jobs:
       - name: Build production site
         run: npm run build
 
+      - name: Audit rendered routes and internal links
+        run: python3 scripts/audit-built-site.py --output /tmp/site-inventory.json
+
       - name: Publish ready-to-serve files
         uses: peaceiris/actions-gh-pages@v4
         with:

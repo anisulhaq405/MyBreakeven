@@ -1,0 +1,1461 @@
+{
+  "captured_utc": "2026-10-07T12:29:54.866534+00:00",
+  "route_count": 160,
+  "sitemap_count": 155,
+  "live": false,
+  "issues": [],
+  "deferred_interactive_anchors": [
+    [
+      "fragment",
+      "/pro-user-guide/",
+      "/#pro-analysis"
+    ],
+    [
+      "fragment",
+      "/pro-user-guide/",
+      "/#pro-analysis"
+    ]
+  ],
+  "routes": [
+    {
+      "path": "/",
+      "title": "Free Small Business Break-Even Calculator | MyBreakeven",
+      "canonical": "https://mybreakeven.com/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 159,
+      "sitemap": true
+    },
+    {
+      "path": "/about-us/",
+      "title": "About MyBreakeven | Formula-Backed Business Planning",
+      "canonical": "https://mybreakeven.com/about-us/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 154,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/",
+      "title": "Small Business Break-Even Guides | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 154,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/agency-billable-utilization-rate/",
+      "title": "Agency Utilization: Hours and Clients | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/agency-billable-utilization-rate/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 8,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/agency-break-even/",
+      "title": "Agency Break-Even and Capacity Guide | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/agency-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/agency-client-concentration-revenue-risk/",
+      "title": "Agency Client Concentration and Revenue Risk | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/agency-client-concentration-revenue-risk/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 2,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/agency-client-profitability/",
+      "title": "Client Profitability Analysis for Agencies | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/agency-client-profitability/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 9,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/agency-employee-vs-freelancer-break-even/",
+      "title": "Agency Employee vs Freelancer Break-Even | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/agency-employee-vs-freelancer-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 2,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/agency-profit-margin/",
+      "title": "Agency Profit Margin: Payroll and Capacity | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/agency-profit-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/agency-project-vs-retainer-profitability/",
+      "title": "Agency Project vs Retainer Profitability | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/agency-project-vs-retainer-profitability/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 2,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/agency-retainer-pricing/",
+      "title": "Agency Retainer Pricing Guide | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/agency-retainer-pricing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 8,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/agency-scope-creep-cost/",
+      "title": "Agency Scope Creep Cost | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/agency-scope-creep-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/amazon-marketplace-vs-own-store-profit-per-order/",
+      "title": "Amazon vs Own Store Profit per Order | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/amazon-marketplace-vs-own-store-profit-per-order/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/break-even-analysis-example/",
+      "title": "Break-Even Analysis Example and Template | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/break-even-analysis-example/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/break-even-formula-units-dollars/",
+      "title": "Break-Even Formula: Units and Dollars | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/break-even-formula-units-dollars/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/break-even-multiple-products-sales-mix/",
+      "title": "Break-Even for Multiple Products: Sales Mix | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/break-even-multiple-products-sales-mix/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/break-even-roas-formula/",
+      "title": "Break-Even ROAS Formula for Ecommerce | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/break-even-roas-formula/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/bridal-hair-and-makeup-package-pricing-for-salons/",
+      "title": "Bridal Hair and Makeup Package Pricing | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/bridal-hair-and-makeup-package-pricing-for-salons/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/cafe-opening-costs/",
+      "title": "Caf\u00e9 Opening Costs: Budget and Break-Even | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/cafe-opening-costs/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/calculate-break-even-point/",
+      "title": "Calculate Break-Even Point: Units and Sales | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/calculate-break-even-point/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/calculate-contribution-margin/",
+      "title": "Calculate Contribution Margin: Costs and Mix | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/calculate-contribution-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 8,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/car-detailing-prices-list/",
+      "title": "Car Detailing Price List: Costs and Scope | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/car-detailing-prices-list/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 9,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/cash-flow-break-even-vs-profit-break-even/",
+      "title": "Cash-Flow vs Profit Break-Even | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/cash-flow-break-even-vs-profit-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/cash-flow-forecast-vs-break-even/",
+      "title": "Small Business Cash Flow Forecast | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/cash-flow-forecast-vs-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/catering-quote-profit/",
+      "title": "Catering Quote Profit: Costs and Capacity | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/catering-quote-profit/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/ceramic-coating-profit-margin/",
+      "title": "Ceramic Coating Profit Margin | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/ceramic-coating-profit-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/cleaning-business-break-even/",
+      "title": "Cleaning Business Break-Even Guide | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/cleaning-business-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/cleaning-business-client-churn-cost/",
+      "title": "Cleaning Business Client Churn Cost | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/cleaning-business-client-churn-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/cleaning-business-monthly-expenses/",
+      "title": "Cleaning Monthly Expenses: Payroll and Jobs | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/cleaning-business-monthly-expenses/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 11,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/cleaning-minimum-booking-charge/",
+      "title": "Cleaning Minimum Booking Charge | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/cleaning-minimum-booking-charge/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 2,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/coffee-shop-business-plan/",
+      "title": "Coffee Shop Business Plan: Example & Template | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/coffee-shop-business-plan/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/coffee-shop-drink-contribution-margin/",
+      "title": "Coffee Shop Drink Contribution Margin | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/coffee-shop-drink-contribution-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/commercial-cleaning-contract-bid/",
+      "title": "How to Bid a Commercial Cleaning Contract | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/commercial-cleaning-contract-bid/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/commercial-cleaning-contract-price-increase/",
+      "title": "Commercial Cleaning Contract Price Increase | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/commercial-cleaning-contract-price-increase/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/contribution-margin-vs-gross-margin/",
+      "title": "Contribution Margin vs Gross Margin | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/contribution-margin-vs-gross-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/contribution-margin-vs-profit-margin/",
+      "title": "Contribution Margin vs Profit Margin | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/contribution-margin-vs-profit-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/corporate-headshot-pricing/",
+      "title": "Corporate Headshot Pricing | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/corporate-headshot-pricing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/discount-break-even-sales-volume/",
+      "title": "Discount Break-Even Sales Volume | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/discount-break-even-sales-volume/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/ecommerce-break-even/",
+      "title": "Ecommerce Break-Even: Orders and Capacity | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/ecommerce-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/ecommerce-bundle-pricing-profit/",
+      "title": "Ecommerce Bundle Pricing and Profit | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/ecommerce-bundle-pricing-profit/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/ecommerce-chargeback-cost-per-order/",
+      "title": "Ecommerce Chargeback Cost per Order | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/ecommerce-chargeback-cost-per-order/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/ecommerce-inventory-holding-cost-per-sku/",
+      "title": "Inventory Holding Cost per SKU | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/ecommerce-inventory-holding-cost-per-sku/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/ecommerce-orders-per-day-profitable/",
+      "title": "Ecommerce Orders Per Day to Be Profitable | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/ecommerce-orders-per-day-profitable/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/ecommerce-profit-margin/",
+      "title": "Ecommerce Profit Margin: Orders to Overhead | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/ecommerce-profit-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 9,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/ecommerce-return-cost-per-order/",
+      "title": "Ecommerce Return Cost per Order Guide | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/ecommerce-return-cost-per-order/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 11,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/ecommerce-shipping-costs/",
+      "title": "E-commerce Shipping Costs: Pricing Formula | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/ecommerce-shipping-costs/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 8,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/fixed-vs-variable-costs/",
+      "title": "Fixed vs Variable Costs: Per-Unit Formula | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/fixed-vs-variable-costs/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 10,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/fleet-detailing-contract-pricing/",
+      "title": "Fleet Detailing Contract Pricing: Worked Quote | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/fleet-detailing-contract-pricing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/free-shipping-threshold-profit/",
+      "title": "Profitable Free Shipping Threshold | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/free-shipping-threshold-profit/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/freelance-business-plan-financials/",
+      "title": "Freelance Business Plan: Financials | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/freelance-business-plan-financials/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/hair-color-service-cost-per-appointment/",
+      "title": "Hair Color Service Cost per Appointment | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/hair-color-service-cost-per-appointment/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-many-agency-retainer-clients/",
+      "title": "How Many Retainer Clients Does an Agency Need? | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/how-many-agency-retainer-clients/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 2,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-many-cleaning-clients-5000/",
+      "title": "How Many Cleaning Clients for $5,000 a Month? | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/how-many-cleaning-clients-5000/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-many-customers-can-you-lose-after-raising-prices/",
+      "title": "Price Increase: Customer Loss Break-Even | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/how-many-customers-can-you-lose-after-raising-prices/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-many-detailing-jobs-week/",
+      "title": "Detailing Jobs Per Week to Go Full Time | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/how-many-detailing-jobs-week/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-many-lawns-100k/",
+      "title": "How Many Lawns to Make $100k? | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/how-many-lawns-100k/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-many-photography-clients-month/",
+      "title": "How Many Photography Clients Per Month? | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/how-many-photography-clients-month/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-much-does-it-cost-to-open-a-restaurant/",
+      "title": "Restaurant Startup Costs & Opening Cash Plan | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/how-much-does-it-cost-to-open-a-restaurant/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 7,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-much-does-it-cost-to-open-a-salon/",
+      "title": "How Much Does It Cost to Open a Salon? | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/how-much-does-it-cost-to-open-a-salon/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-much-does-it-cost-to-start-a-cleaning-business/",
+      "title": "Cleaning Business Startup Cost Guide | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-cleaning-business/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-much-does-it-cost-to-start-a-landscaping-business/",
+      "title": "Landscaping Startup Costs and Cash Budget | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-landscaping-business/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-much-does-it-cost-to-start-a-marketing-agency/",
+      "title": "Marketing Agency Startup Cost Guide | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-marketing-agency/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-much-does-it-cost-to-start-a-photography-business/",
+      "title": "Photography Business Startup Cost Guide | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-photography-business/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-much-does-it-cost-to-start-an-ecommerce-store/",
+      "title": "Ecommerce Store Startup Cost Guide | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-an-ecommerce-store/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-much-to-charge-for-house-cleaning/",
+      "title": "House Cleaning Pricing Formula and Quote | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/how-much-to-charge-for-house-cleaning/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 9,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-to-price-products-for-ecommerce/",
+      "title": "Ecommerce Pricing: Costs, Fees and Margin | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/how-to-price-products-for-ecommerce/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 9,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-to-start-coffee-shop/",
+      "title": "How to Start a Coffee Shop: Practical Steps | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/how-to-start-coffee-shop/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 2,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-to-start-restaurant/",
+      "title": "How to Start a Restaurant: Step-by-Step Guide | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/how-to-start-restaurant/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 2,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/inventory-reorder-point-cash-flow/",
+      "title": "Inventory Reorder Point and Cash Flow | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/inventory-reorder-point-cash-flow/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/is-a-cleaning-business-profitable/",
+      "title": "Is a Cleaning Business Profitable? | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/is-a-cleaning-business-profitable/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/is-mobile-detailing-profitable/",
+      "title": "Is Mobile Detailing Profitable? A US Guide | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/is-mobile-detailing-profitable/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/landscaping-break-even/",
+      "title": "Landscaping Break-Even: Jobs and Capacity | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 8,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/landscaping-business-profit-margin/",
+      "title": "Landscaping Business Profit Margin | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-business-profit-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/landscaping-crew-utilization/",
+      "title": "Landscaping Crew Utilization | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-crew-utilization/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/landscaping-equipment-cost-per-hour/",
+      "title": "Landscaping Equipment Cost per Hour | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-equipment-cost-per-hour/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/landscaping-job-costing-estimate-vs-actual/",
+      "title": "Landscaping Job Costing: Estimate vs Actual | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-job-costing-estimate-vs-actual/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 7,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/landscaping-maintenance-contract-pricing/",
+      "title": "Landscaping Maintenance Contract Pricing | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-maintenance-contract-pricing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/landscaping-route-density-profit/",
+      "title": "Landscaping Route Density and Job Profit | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-route-density-profit/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/landscaping-seasonal-break-even/",
+      "title": "Landscaping Seasonal Break-Even Guide | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-seasonal-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 7,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/landscaping-subcontractor-cost/",
+      "title": "Landscaping Subcontractor Cost | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-subcontractor-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 2,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/lawn-care-pricing-per-acre/",
+      "title": "Lawn Care Pricing Per Acre: Set Your Rates | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/lawn-care-pricing-per-acre/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/lower-break-even-point/",
+      "title": "How to Lower Your Break-Even Point | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/lower-break-even-point/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/margin-of-safety-business/",
+      "title": "Margin of Safety Formula: Units and Sales | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/margin-of-safety-business/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 2,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/margin-vs-markup/",
+      "title": "Margin vs Markup: Key Difference | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/margin-vs-markup/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 7,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/mobile-detailing-break-even/",
+      "title": "Mobile Detailing Break-Even Guide | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/mobile-detailing-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 9,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/mobile-detailing-business-startup-cost/",
+      "title": "Mobile Detailing Startup Cost Guide | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/mobile-detailing-business-startup-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 2,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/mobile-detailing-maintenance-plan-pricing/",
+      "title": "Mobile Detailing Maintenance Plan Pricing | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/mobile-detailing-maintenance-plan-pricing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/mobile-detailing-travel-fee/",
+      "title": "Mobile Detailing Travel Fee | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/mobile-detailing-travel-fee/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 2,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/move-out-cleaning-job-cost/",
+      "title": "Move-Out Cleaning Job Cost and Pricing | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/move-out-cleaning-job-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/mulch-installation-job-cost/",
+      "title": "Mulch Installation Job Cost | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/mulch-installation-job-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 2,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/operating-leverage-small-business/",
+      "title": "Operating Leverage Formula and Example | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/operating-leverage-small-business/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/paint-correction-labor-hours-pricing/",
+      "title": "Paint Correction Labor Hours and Pricing | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/paint-correction-labor-hours-pricing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/photography-business-break-even/",
+      "title": "Photography Break-Even Guide | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/photography-business-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/photography-business-profit-margin/",
+      "title": "Photography Business Profit Margin | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/photography-business-profit-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/photography-cost-per-session-editing/",
+      "title": "Photography Cost per Session and Editing | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/photography-cost-per-session-editing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 8,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/photography-mini-session-profit/",
+      "title": "Photography Mini Session Profit Guide | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/photography-mini-session-profit/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 2,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/photography-pricing-packages/",
+      "title": "Photography Package Pricing: Cost and Margin | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/photography-pricing-packages/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 10,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/photography-print-package-profit/",
+      "title": "Photography Print Package Profit | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/photography-print-package-profit/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 2,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/photography-second-shooter-cost/",
+      "title": "Photography Second-Shooter Cost | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/photography-second-shooter-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 2,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/photography-usage-licensing-pricing/",
+      "title": "Photography Usage Licensing Pricing | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/photography-usage-licensing-pricing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 2,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/post-construction-cleaning-estimate/",
+      "title": "Post-Construction Cleaning Job Estimate | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/post-construction-cleaning-estimate/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/product-photography-pricing-per-image/",
+      "title": "Product Photography Pricing per Image | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/product-photography-pricing-per-image/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/recurring-vs-one-time-cleaning-profitability/",
+      "title": "Recurring vs One-Time Cleaning Profit | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/recurring-vs-one-time-cleaning-profitability/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-break-even/",
+      "title": "Restaurant Break-Even: Orders and Capacity | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-budgeting/",
+      "title": "Restaurant Budgeting: Plan and Template | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-budgeting/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 10,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-business-plan/",
+      "title": "Restaurant Business Plan: Example & Template | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-business-plan/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-covers-per-night-break-even/",
+      "title": "Restaurant Covers Needed Per Night | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-covers-per-night-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 7,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-delivery-app-commission-profit-per-order/",
+      "title": "Delivery App Commission: Profit per Order | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-delivery-app-commission-profit-per-order/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-food-cost-percentage/",
+      "title": "Restaurant Food Cost Percentage Formula | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-food-cost-percentage/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 11,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-labor-cost-percentage/",
+      "title": "Restaurant Labor Cost Percentage: Formula | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-labor-cost-percentage/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-menu-engineering-contribution-margin/",
+      "title": "Menu Engineering Contribution Margin | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-menu-engineering-contribution-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-menu-pricing-formula/",
+      "title": "Restaurant Menu Pricing Formula | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-menu-pricing-formula/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 8,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-prime-cost/",
+      "title": "Restaurant Prime Cost: Formula and Examples | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-prime-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-private-event-minimum-spend/",
+      "title": "Restaurant Private Event Minimum Spend | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-private-event-minimum-spend/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-profit-margin-average/",
+      "title": "Restaurant Profit Margins: What to Expect | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-profit-margin-average/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-sales-forecast/",
+      "title": "Restaurant Sales Forecast: Monthly Example | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-sales-forecast/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-takeout-vs-dine-in-profit-per-order/",
+      "title": "Takeout vs Dine-In Profit per Order | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-takeout-vs-dine-in-profit-per-order/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/retail-break-even-analysis/",
+      "title": "Retail Store Break-Even Analysis | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/retail-break-even-analysis/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/salon-booth-rent-vs-commission-owner/",
+      "title": "Salon Booth Rent vs Commission: Owner Math | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/salon-booth-rent-vs-commission-owner/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/salon-break-even/",
+      "title": "Salon Break-Even and Pricing Guide | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/salon-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 7,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/salon-clients-per-day-break-even/",
+      "title": "Salon Clients Per Day to Break Even | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/salon-clients-per-day-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/salon-membership-pricing/",
+      "title": "Salon Membership Pricing | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/salon-membership-pricing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/salon-no-show-cost/",
+      "title": "Salon No-Show Cost and Contribution | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/salon-no-show-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/salon-profit-margin/",
+      "title": "Salon Profit Margin After Owner Pay | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/salon-profit-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/salon-retail-product-profit-margin/",
+      "title": "Salon Retail Product Profit Margin | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/salon-retail-product-profit-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 2,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/salon-service-pricing/",
+      "title": "Salon Service Pricing Guide | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/salon-service-pricing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 10,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/snow-removal-pricing/",
+      "title": "Snow Removal Pricing | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/snow-removal-pricing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 2,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/subscription-box-churn-break-even/",
+      "title": "Subscription Box Churn and Break-Even | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/subscription-box-churn-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/target-profit-sales-formula/",
+      "title": "Target Profit Formula: Sales and Units | MyBreakeven",
+      "canonical": "https://mybreakeven.com/blogs/target-profit-sales-formula/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/agency-break-even-calculator/",
+      "title": "Agency & Freelancer Break-Even Calculator | MyBreakeven",
+      "canonical": "https://mybreakeven.com/calculators/agency-break-even-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 16,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/break-even-roas-calculator/",
+      "title": "Break-Even ROAS Calculator | MyBreakeven",
+      "canonical": "https://mybreakeven.com/calculators/break-even-roas-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/cash-runway-calculator/",
+      "title": "Cash Runway Calculator for Small Business | MyBreakeven",
+      "canonical": "https://mybreakeven.com/calculators/cash-runway-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 11,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/cleaning-business-break-even-calculator/",
+      "title": "Cleaning Business Break-Even Calculator | MyBreakeven",
+      "canonical": "https://mybreakeven.com/calculators/cleaning-business-break-even-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 17,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/cleaning-contract-profit-calculator/",
+      "title": "Cleaning Contract Profit Calculator | MyBreakeven",
+      "canonical": "https://mybreakeven.com/calculators/cleaning-contract-profit-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/detailing-chemical-cost-calculator/",
+      "title": "Detailing Chemical Cost Calculator | MyBreakeven",
+      "canonical": "https://mybreakeven.com/calculators/detailing-chemical-cost-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/discount-break-even-calculator/",
+      "title": "Discount Break-Even Calculator | MyBreakeven",
+      "canonical": "https://mybreakeven.com/calculators/discount-break-even-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 9,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/ecommerce-break-even-calculator/",
+      "title": "E-commerce Break-Even Calculator | MyBreakeven",
+      "canonical": "https://mybreakeven.com/calculators/ecommerce-break-even-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 22,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/ecommerce-return-cost-calculator/",
+      "title": "Ecommerce Return Cost Calculator | MyBreakeven",
+      "canonical": "https://mybreakeven.com/calculators/ecommerce-return-cost-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/hair-color-product-cost-calculator/",
+      "title": "Hair Color Product Cost Calculator | MyBreakeven",
+      "canonical": "https://mybreakeven.com/calculators/hair-color-product-cost-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/hourly-rate-calculator/",
+      "title": "Hourly Rate Calculator for Freelancers | MyBreakeven",
+      "canonical": "https://mybreakeven.com/calculators/hourly-rate-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/landscaping-break-even-calculator/",
+      "title": "Landscaping Break-Even Calculator | MyBreakeven",
+      "canonical": "https://mybreakeven.com/calculators/landscaping-break-even-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 16,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/lawn-route-profit-calculator/",
+      "title": "Lawn Route Profit Calculator | MyBreakeven",
+      "canonical": "https://mybreakeven.com/calculators/lawn-route-profit-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/mobile-detailing-break-even-calculator/",
+      "title": "Mobile Detailing Break-Even Calculator | MyBreakeven",
+      "canonical": "https://mybreakeven.com/calculators/mobile-detailing-break-even-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 12,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/photography-business-break-even-calculator/",
+      "title": "Photography Business Break-Even Calculator | MyBreakeven",
+      "canonical": "https://mybreakeven.com/calculators/photography-business-break-even-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 13,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/price-increase-calculator/",
+      "title": "Price Increase Calculator: Customer Loss | MyBreakeven",
+      "canonical": "https://mybreakeven.com/calculators/price-increase-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 10,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/restaurant-break-even-calculator/",
+      "title": "Restaurant Break-Even Calculator | MyBreakeven",
+      "canonical": "https://mybreakeven.com/calculators/restaurant-break-even-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 22,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/salon-break-even-calculator/",
+      "title": "Salon Break-Even Calculator | MyBreakeven",
+      "canonical": "https://mybreakeven.com/calculators/salon-break-even-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 13,
+      "sitemap": true
+    },
+    {
+      "path": "/contact-us/",
+      "title": "Contact MyBreakeven",
+      "canonical": "https://mybreakeven.com/contact-us/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 154,
+      "sitemap": true
+    },
+    {
+      "path": "/cookie-policy/",
+      "title": "Cookie Policy | MyBreakeven",
+      "canonical": "https://mybreakeven.com/cookie-policy/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 154,
+      "sitemap": true
+    },
+    {
+      "path": "/dashboard/",
+      "title": "Your MyBreakeven dashboard",
+      "canonical": "https://mybreakeven.com/dashboard/",
+      "robots": "noindex,nofollow",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": false
+    },
+    {
+      "path": "/forgot-password/",
+      "title": "Reset your MyBreakeven password",
+      "canonical": "https://mybreakeven.com/forgot-password/",
+      "robots": "noindex,nofollow",
+      "h1": 1,
+      "inbound": 0,
+      "sitemap": false
+    },
+    {
+      "path": "/login/",
+      "title": "Log in to MyBreakeven",
+      "canonical": "https://mybreakeven.com/login/",
+      "robots": "noindex,nofollow",
+      "h1": 1,
+      "inbound": 155,
+      "sitemap": false
+    },
+    {
+      "path": "/pricing/",
+      "title": "MyBreakeven Pricing: Free & Pro Business Planning",
+      "canonical": "https://mybreakeven.com/pricing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 154,
+      "sitemap": true
+    },
+    {
+      "path": "/privacy-policy/",
+      "title": "Privacy Policy | MyBreakeven",
+      "canonical": "https://mybreakeven.com/privacy-policy/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 154,
+      "sitemap": true
+    },
+    {
+      "path": "/pro-user-guide/",
+      "title": "MyBreakeven Pro Calculator User Guide",
+      "canonical": "https://mybreakeven.com/pro-user-guide/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/refund-policy/",
+      "title": "Refund Policy | MyBreakeven",
+      "canonical": "https://mybreakeven.com/refund-policy/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 154,
+      "sitemap": true
+    },
+    {
+      "path": "/reset-password/",
+      "title": "Choose a new MyBreakeven password",
+      "canonical": "https://mybreakeven.com/reset-password/",
+      "robots": "noindex,nofollow",
+      "h1": 1,
+      "inbound": 0,
+      "sitemap": false
+    },
+    {
+      "path": "/signup/",
+      "title": "Create a MyBreakeven account",
+      "canonical": "https://mybreakeven.com/signup/",
+      "robots": "noindex,nofollow",
+      "h1": 1,
+      "inbound": 0,
+      "sitemap": false
+    },
+    {
+      "path": "/terms-of-service/",
+      "title": "Terms of Service | MyBreakeven",
+      "canonical": "https://mybreakeven.com/terms-of-service/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 154,
+      "sitemap": true
+    },
+    {
+      "path": "/tools/",
+      "title": "Free Business Calculators: Profit, Pricing & Costs | MyBreakeven",
+      "canonical": "https://mybreakeven.com/tools/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 154,
+      "sitemap": true
+    }
+  ]
+}

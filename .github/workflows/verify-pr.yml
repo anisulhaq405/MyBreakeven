@@ -20,6 +20,8 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
+      - name: Audit rendered routes and internal links
+        run: python3 scripts/audit-built-site.py --output /tmp/site-inventory.json
       - name: Verify industry calculator HTML links
         run: |
           node --input-type=module <<'EOF'
