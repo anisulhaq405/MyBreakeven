@@ -1,3 +1,4 @@
+import { articleGuideType } from "./articleGuideType.js";
 import React, { useEffect } from "react";
 import { articleFaq } from "./articleFaq.js";
 
@@ -5,15 +6,7 @@ const dateLabel = value => new Date(`${value}T12:00:00Z`).toLocaleDateString("en
 
 export default function LongformArticle({ article: a }) {
   const slug = a?.slug;
-  const guideType = a?.cluster === "concepts"
-    ? "PRACTICAL GUIDE"
-    : a?.cluster === "financial planning"
-    ? "BUSINESS PLANNING GUIDE"
-    : a?.cluster === "profitability"
-    ? "PROFITABILITY GUIDE"
-    : a?.cluster?.startsWith("startup")
-      ? "STARTUP COST GUIDE"
-      : "PRICING GUIDE";
+  const guideType = articleGuideType(a);
   useEffect(() => {
     if (!a) return;
     document.title = `${a.seoTitle} | MyBreakeven`;
