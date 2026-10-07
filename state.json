@@ -70,10 +70,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/agency-profit-margin/|facebook": {
-      "revision": "6d1464394c6121699d3448227ff664a41d88f01f376c6626ae27bdb543ece90b",
-      "status": "published",
-      "postId": "1437362339452872_122095372851509539",
-      "publishedAt": "2026-10-07T10:55:05.135Z"
+      "revision": "abc118e064ae82472dad997114c5e9c510c6e9be8498b1ee1c1a1b75a99a03f9",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T13:03:45.978Z"
     },
     "https://mybreakeven.com/blogs/agency-profit-margin/|instagram": {
       "revision": "6d1464394c6121699d3448227ff664a41d88f01f376c6626ae27bdb543ece90b",
