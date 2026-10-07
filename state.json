@@ -1978,7 +1978,7 @@
     },
     "https://mybreakeven.com/blogs/restaurant-menu-engineering-contribution-margin/|facebook": {
       "revision": "4584fdfd1eac5980538f3661b3cb0ccae4ffd0ab45203ab72d0a96beda6bbbb8",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-07T11:04:18.357Z"
     }
   }
