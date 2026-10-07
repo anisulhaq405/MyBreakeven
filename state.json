@@ -571,7 +571,7 @@
     },
     "https://mybreakeven.com/blogs/how-much-does-it-cost-to-open-a-restaurant/|facebook": {
       "revision": "0ca1289a0ea84490590a5321fb5e6c3d8d74b9411f1b2ae31306d4104978a12b",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-07T11:02:21.428Z"
     },
     "https://mybreakeven.com/blogs/how-much-does-it-cost-to-open-a-restaurant/|instagram": {
