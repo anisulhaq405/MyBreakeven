@@ -1194,8 +1194,9 @@
       "attemptedAt": "2026-10-07T11:04:12.863Z"
     },
     "https://mybreakeven.com/blogs/restaurant-labor-cost-percentage/|instagram": {
-      "revision": "18d3671633e5b0a8b3d4dc4310d988b4d5b02f221e5d01570160e78412ec815b",
-      "status": "baseline"
+      "revision": "222fa239333def11ef78051f1db0930efe0e511dff4510e6cf4015a16054ad88",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T11:04:15.636Z"
     },
     "https://mybreakeven.com/blogs/restaurant-labor-cost-percentage/|pinterest": {
       "revision": "18d3671633e5b0a8b3d4dc4310d988b4d5b02f221e5d01570160e78412ec815b",
