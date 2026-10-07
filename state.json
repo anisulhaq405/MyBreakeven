@@ -1993,7 +1993,7 @@
     },
     "https://mybreakeven.com/blogs/restaurant-private-event-minimum-spend/|instagram": {
       "revision": "2ee13e39cca90c0a2186477b98933cb16ffef7f3b3bd4ab4e742fee1cabeb0bc",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-07T11:04:27.061Z"
     }
   }
