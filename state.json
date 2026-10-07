@@ -1175,8 +1175,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/restaurant-food-cost-percentage/|facebook": {
-      "revision": "721b245d589b3713d9fa32615465ae1c048f50fd279f77c9ebd2c78f8ac87a36",
-      "status": "baseline"
+      "revision": "e2234f91607a46adec40e9cc2ba2b8e0fc37c465f87503b909937f57958cee0e",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T11:04:07.357Z"
     },
     "https://mybreakeven.com/blogs/restaurant-food-cost-percentage/|instagram": {
       "revision": "721b245d589b3713d9fa32615465ae1c048f50fd279f77c9ebd2c78f8ac87a36",
