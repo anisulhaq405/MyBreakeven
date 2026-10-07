@@ -110,8 +110,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/break-even-formula-units-dollars/|facebook": {
-      "revision": "5305d88444bbfc312a673526a0b7657014fd7d4512b980e6cb1d998878370738",
-      "status": "baseline"
+      "revision": "002758406b04a0d6002023bc8d331d05b88f78dea0a24f0383efe4053c94f3cd",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T13:03:51.701Z"
     },
     "https://mybreakeven.com/blogs/break-even-formula-units-dollars/|instagram": {
       "revision": "5305d88444bbfc312a673526a0b7657014fd7d4512b980e6cb1d998878370738",
