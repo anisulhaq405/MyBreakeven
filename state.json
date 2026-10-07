@@ -893,8 +893,9 @@
       "attemptedAt": "2026-10-07T13:04:29.093Z"
     },
     "https://mybreakeven.com/blogs/margin-vs-markup/|instagram": {
-      "revision": "05d28f9c9d9fff42a8875d06d8623acfa633b9b8f073cda8fdea83efd57bd28d",
-      "status": "baseline"
+      "revision": "a7cac3b99613d14075aed52abd1d4ae26b488ce4dcad93fa49c32cf215791181",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T13:04:31.453Z"
     },
     "https://mybreakeven.com/blogs/margin-vs-markup/|pinterest": {
       "revision": "05d28f9c9d9fff42a8875d06d8623acfa633b9b8f073cda8fdea83efd57bd28d",
