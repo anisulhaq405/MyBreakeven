@@ -533,8 +533,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/how-many-detailing-jobs-week/|facebook": {
-      "revision": "0d9d4934420b563aa3262afee76a7625769193dae5d84c7278dd7a871024dee4",
-      "status": "baseline"
+      "revision": "28f9b7dc051399d00b8413386217d16fc834b818e651439e0a95cf672b0eec3f",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T13:04:13.926Z"
     },
     "https://mybreakeven.com/blogs/how-many-detailing-jobs-week/|instagram": {
       "revision": "0d9d4934420b563aa3262afee76a7625769193dae5d84c7278dd7a871024dee4",
