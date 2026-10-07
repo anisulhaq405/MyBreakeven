@@ -1985,6 +1985,11 @@
       "revision": "4584fdfd1eac5980538f3661b3cb0ccae4ffd0ab45203ab72d0a96beda6bbbb8",
       "status": "needs_review",
       "attemptedAt": "2026-10-07T11:04:21.430Z"
+    },
+    "https://mybreakeven.com/blogs/restaurant-private-event-minimum-spend/|facebook": {
+      "revision": "2ee13e39cca90c0a2186477b98933cb16ffef7f3b3bd4ab4e742fee1cabeb0bc",
+      "status": "attempting",
+      "attemptedAt": "2026-10-07T11:04:24.194Z"
     }
   }
 }
