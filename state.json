@@ -1998,7 +1998,7 @@
     },
     "https://mybreakeven.com/blogs/restaurant-takeout-vs-dine-in-profit-per-order/|facebook": {
       "revision": "d67ed18d62f6e217513f376c76ab976ec372ef510d7fdb9fea69336ef40f240e",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-07T11:04:29.667Z"
     }
   }
