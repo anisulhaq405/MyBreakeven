@@ -1452,10 +1452,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/calculators/mobile-detailing-break-even-calculator/|facebook": {
-      "revision": "b6206125413d026eedfe1fce785c3e959f3dfd15caf32ac23a1259d3bf94575a",
-      "status": "published",
-      "postId": "1437362339452872_122095006605509539",
-      "publishedAt": "2026-10-06T19:14:56.581Z"
+      "revision": "8e29311e9267c25529197d7b08926729fcdcf5998ca38d6cdff33285d052541c",
+      "status": "attempting",
+      "attemptedAt": "2026-10-08T04:50:49.420Z"
     },
     "https://mybreakeven.com/calculators/mobile-detailing-break-even-calculator/|instagram": {
       "revision": "b6206125413d026eedfe1fce785c3e959f3dfd15caf32ac23a1259d3bf94575a",
