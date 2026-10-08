@@ -7,7 +7,7 @@ const { featured, supporting, guideCount } = homeBlogData;
 
 const topics = [
   ["Break-even", "break-even"],
-  ["Pricing", "pricing"],
+  ["Pricing guides", "pricing"],
   ["Startup costs", "startup"],
   ["Profit margins", "profit"],
 ];

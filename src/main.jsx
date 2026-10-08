@@ -177,7 +177,7 @@ export default function App() {
               <div className="panel-head">
                 <div>
                   <span className="step">01</span>
-                  <h3>{industry.short} operating model</h3>
+                  <h2>{industry.short} operating model</h2>
                 </div>
                 <button onClick={() => setInput({ ...industry.values })}>
                   Reset example
