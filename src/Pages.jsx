@@ -1,3 +1,4 @@
+import { trackProductEvent } from "./productAnalytics";
 import "./secondary-pages.css";
 import FreeTool, { FreeToolsHub } from "./FreeTools";
 import { freeTools } from "./freeTools";
@@ -44,7 +45,7 @@ const Pricing = () => (
           <p>Advanced planning for active owners and teams.</p>
           <ul><li>Up to 100 saved scenarios</li><li>Pro Command Center with search, filters and portfolio KPIs</li><li>Executive Decision Brief with shareable action plan</li><li>Offer Mix Studio for multiple products and services</li><li>Price Guard and discount recovery analysis</li><li>Customer Acquisition Break-Even and CAC payback</li><li>Hire Break-Even and staffing utilization</li><li>Startup recovery and break-even timeline</li><li>Monthly Break-Even Monitor (saved in this browser)</li><li>Profit forecast, margin of safety and capacity solver</li><li>Saved-plan cost drift and risk sensitivity</li><li>Compare 3 plans side by side</li><li>CSV and professional PDF reports</li></ul>
           <a href="/pro-user-guide/">How to use every Pro feature</a>
-          <a className="page-button" href={POLAR_CHECKOUT_URL}>
+          <a className="page-button" href={POLAR_CHECKOUT_URL} onClick={() => trackProductEvent("pro_checkout_click")}>
             Upgrade to Pro
           </a>
         </article>
@@ -221,7 +222,7 @@ const legalPages = {
     title: "Privacy Policy",
     intro: "How MyBreakeven handles information when you use our calculators and website.",
     sections: [
-      ["Calculator data", "The free calculator runs in your browser. Typing or changing financial assumptions does not send them to our servers. If you sign in and choose Save scenario, the scenario name, industry, currency and financial inputs are stored with your account in Supabase so you can reopen them. You can export or delete saved scenarios from your dashboard."],
+      ["Calculator data", "The free calculator runs in your browser. Typing or changing financial assumptions does not send them to our servers. Choosing Continue with these numbers uses same-tab session storage for a temporary handoff to the full calculator; it expires after five minutes and is removed when opened. If you sign in and choose Save scenario, the scenario name, industry, currency and financial inputs are stored with your account in Supabase so you can reopen them. You can export or delete saved scenarios from your dashboard."],
       ["Website information", "Our hosting and security providers may process standard technical data such as IP address, browser type, device information, requested pages and timestamps to operate, protect and diagnose the website."],
       ["Messages you send", "If you contact us, we use the information in your message to reply, provide support and improve the product."],
       ["Optional accounts", "If you create an account, our authentication provider processes your email address, encrypted authentication credentials, verification status and security session data. MyBreakeven never receives your plain-text password."],
@@ -260,7 +261,7 @@ const legalPages = {
     title: "Cookie Policy",
     intro: "How browser storage and cookies may be used on MyBreakeven.",
     sections: [
-      ["Current use", "The free calculator does not require an account. Its live inputs stay in the browser unless you sign in and choose Save scenario. Saved account scenarios are stored in Supabase. The Monthly Break-Even Monitor stores its entries in this browser; clearing site storage removes those local entries."],
+      ["Current use", "The free calculator does not require an account. Its live inputs stay in the browser unless you sign in and choose Save scenario. Continue with these numbers uses temporary same-tab session storage, expires after five minutes and is removed when the full calculator opens. Saved account scenarios are stored in Supabase. The Monthly Break-Even Monitor stores its entries in this browser; clearing site storage removes those local entries."],
       ["Account sessions", "Optional accounts use essential local storage and authentication tokens to keep users securely signed in, refresh sessions and protect private account routes. These essential technologies are not used for advertising."],
       ["Essential storage", "We may use essential cookies or similar browser storage for security, preferences, authentication and reliable site operation."],
       ["Optional analytics", "Google Analytics is disabled by default and loads only after you choose Accept analytics. If accepted, it may use cookies or similar identifiers to measure page views, interactions, approximate location, device and browser information, and traffic sources. Advertising personalization and Google Signals are disabled."],

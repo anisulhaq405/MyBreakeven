@@ -1,3 +1,4 @@
+import { trackProductEvent } from "./productAnalytics";
 import React, { useEffect, useMemo, useState } from "react";
 import { calculate, FORMULA_ENGINE_VERSION } from "./engine";
 import { ClipboardCheck, Download, FileText, Save, Share2, TrendingUp } from "lucide-react";
@@ -107,10 +108,10 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
       ["Monthly growth assumption %", growth],
       [],
       ["Advanced Pro metrics"],
-      ["Accounting break-even", reportAnalysis.accountingRevenue],
+      ["Costs + owner-pay revenue", reportAnalysis.accountingRevenue],
       ["Target-profit revenue", reportAnalysis.targetRevenue],
       ["Planned monthly revenue", reportAnalysis.plannedRevenue],
-      ["Planned monthly profit", reportAnalysis.plannedProfit],
+      ["Profit after owner pay", reportAnalysis.plannedProfit],
       ["Margin of safety %", reportAnalysis.marginSafetyPct],
       ["Capacity-safe minimum price", reportAnalysis.capacityPrice],
       ["Additional team members", reportAnalysis.additionalWorkers],
@@ -188,6 +189,7 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
       return;
     }
     const { error } = await supabase.from("saved_scenarios").insert({ name, industry_key: industryKey, currency, inputs: { ...input, expectedMonthlyUnits: plannedUnits, monthlyGrowthPct: growth }, engine_version: FORMULA_ENGINE_VERSION });
+    if (!error) trackProductEvent("scenario_saved", industryKey);
     const friendlyError = error?.message?.includes("PLAN_LIMIT_REACHED") ? `Plan limit reached (${currentLimits.savedScenarios} saved scenarios).` : error?.message;
     setSaveState(error ? { loading: false, message: "", error: friendlyError } : { loading: false, message: "Scenario saved. Open it from your dashboard.", error: "" });
   };
@@ -200,10 +202,10 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
           <h2>{isPro ? "Compare scenarios and stress-test rising costs" : "Save your plan and unlock deeper analysis"}</h2>
         </div>
         <div className="export-actions">
-          <button onClick={saveScenario} disabled={saveState.loading}>
+          <button onClick={saveScenario} disabled={saveState.loading || !reportAnalysis.valid}>
             <Save /> {saveState.loading ? "Saving…" : "Save scenario"}
           </button>
-          {limits.exports ? <><button onClick={csv}><Download /> Download CSV</button><button className="primary" onClick={print}><FileText /> Print / Save PDF</button></> : <a className="tool-upgrade" href="/pricing/">Unlock CSV &amp; PDF with Pro</a>}
+          {limits.exports ? <><button onClick={csv} disabled={!reportAnalysis.valid}><Download /> Download CSV</button><button className="primary" onClick={print} disabled={!reportAnalysis.valid}><FileText /> Print / Save PDF</button></> : <a className="tool-upgrade" href="/pricing/">Unlock CSV &amp; PDF with Pro</a>}
         </div>
       </div>
       {saveState.error && <p className="tool-message error" role="alert">{saveState.error} {saveState.error.startsWith("Log in") && <a href="/login/">Log in</a>}</p>}

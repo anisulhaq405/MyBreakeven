@@ -1,8 +1,10 @@
+import { trackProductEvent } from "./productAnalytics";
 const salonPlanningSection = {"heading": "Test salon appointments against productive chair hours", "text": "Use complete appointment worker-hours and actual available productive time. Suppose a salon needs $6,000 contribution each month and leaves $60 per appointment. It needs 100 appointments. If each requires 1.5 delivery hours, that is 150 hours of work. A plan with only 135 productive hours has capacity for 90 whole appointments and does not fit the target.\n\nRetail purchases can add contribution, but they should not be treated as extra chair appointments. Model the service mix and product economics consistently. No-shows can consume reserved time without producing the planned paid service. Track cancellations and rebooked slots rather than assuming every diary entry creates revenue.\n\nOwner pay remains explicit in the monthly amount to cover. A booth-rental arrangement and an employee-service arrangement have different revenue and cost boundaries; avoid mixing their fields. The calculator shows an assumption-based capacity and contribution test, not a guarantee of appointment demand or salon profitability.", "question": "Does a full diary prove the salon covers its costs?", "answer": "No. Entries can include unpaid gaps, no-shows and services with different contribution. Compare paid delivered appointments, their costs and productive hours with the monthly requirement."};
 import { toolThemes } from './toolThemes.js';
 import './tool-themes.css';
 import React, { useMemo, useState } from "react";
 import { ArrowRight, BarChart3, CheckCircle2, ShieldCheck } from "lucide-react";
+import { stageCalculatorPlan } from "./calculatorTransfer";
 import { calculate } from "./engine";
 import { fieldLabels, industries } from "./industries";
 import CostBuilder from "./CostBuilder";
@@ -49,6 +51,7 @@ function IndustryQuickCalculator({ industry, industryKey }) {
   const [values, setValues] = useState(() => ({ ...industry.values }));
   const result = useMemo(() => calculate(values), [values]);
   const fields = fieldLabels(industry);
+  const [transferError, setTransferError] = useState("");
 
   return <section className="industry-quick-calculator" id="industry-calculator" aria-labelledby="industry-calculator-title">
     <div className="industry-quick-intro">
@@ -75,12 +78,22 @@ function IndustryQuickCalculator({ industry, industryKey }) {
       <div><span>Contribution per {industry.singular}</span><strong>{money(result.contribution)}</strong></div>
       <div><span>Whole {industry.unit} for your target</span><strong>{result.wholeJobs.toLocaleString("en-US")}</strong></div>
       <div><span>Monthly sales at that volume</span><strong>{money(result.practicalRevenue)}</strong></div>
+      <p>The whole-unit target needs approximately {result.practicalLeads.toLocaleString("en-US")} inquiries at your assumed conversion rate. This is a planning requirement, not a demand forecast.</p>
       <p>At these assumptions, estimated delivery capacity is {result.wholeCapacity.toLocaleString("en-US")} whole {industry.unit} per month. {result.wholeCapacity < result.wholeJobs ? "The current capacity is below the required volume." : "The estimated capacity covers the required volume."} These are planning estimates, not a sales forecast.</p>
     </div> : <p className="industry-quick-error" role="status">{result.message}</p>}
     <div className="industry-quick-actions">
       <button type="button" onClick={() => setValues({ ...industry.values })}>Reset example</button>
-      <a href={`/?industry=${industryKey}#calculator`}>Open full calculator and Pro analysis <ArrowRight /></a>
+      <a href={`/?industry=${industryKey}&from=industry#calculator`} onClick={event => {
+        let saved = false;
+        try { saved = stageCalculatorPlan(industryKey, values, window.sessionStorage); } catch { /* Storage can be disabled. */ }
+        if (saved) trackProductEvent("calculator_continue", industryKey);
+        if (!saved) {
+          event.preventDefault();
+          setTransferError(result.valid ? "Your browser could not carry these inputs. Allow session storage or keep using this calculator; your edited numbers are still here." : "Correct the inputs above before continuing with this plan.");
+        }
+      }}>Continue with these numbers in the full calculator <ArrowRight /></a>
     </div>
+    {transferError && <p className="industry-quick-error" role="status">{transferError}</p>}
   </section>;
 }
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, LockKeyhole, Mail, Menu, X } from "lucide-react";
 import { authStorageKey, needsAccountClient } from "./authSession";
 
@@ -21,6 +21,7 @@ export function Logo({ light = false }) {
 }
 
 export function SiteHeader() {
+  const menuButton = useRef(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [signedIn, setSignedIn] = useState(false);
 
@@ -59,6 +60,18 @@ export function SiteHeader() {
     return () => document.body.classList.remove("mobile-menu-open");
   }, [mobileOpen]);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const closeOnEscape = event => {
+      if (event.key === "Escape") { setMobileOpen(false); menuButton.current?.focus(); }
+    };
+    const desktop = window.matchMedia("(min-width: 801px)");
+    const closeOnDesktop = event => { if (event.matches) setMobileOpen(false); };
+    document.addEventListener("keydown", closeOnEscape);
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => { document.removeEventListener("keydown", closeOnEscape); desktop.removeEventListener("change", closeOnDesktop); };
+  }, [mobileOpen]);
+
   return (
     <header>
       <Logo />
@@ -68,6 +81,7 @@ export function SiteHeader() {
       <div className="header-actions">
         <a className="account-link" href={signedIn ? "/dashboard/" : "/login/"}>{signedIn ? "Dashboard" : "Sign In"}</a>
         <button
+          ref={menuButton}
           className="menu"
           type="button"
           aria-label={mobileOpen ? "Close navigation" : "Open navigation"}

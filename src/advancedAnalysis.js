@@ -6,6 +6,12 @@ const num = (value) => D(value).toNumber();
 
 export function advancedAnalysis(input, result, options = {}) {
   if (!result?.valid) return { valid: false };
+  const requestedUnits = options.plannedUnits ?? Math.ceil(result.jobs * 1.15);
+  const requestedGrowth = options.growthPct ?? 2;
+  if (!["number", "string"].includes(typeof requestedUnits) || (typeof requestedUnits === "string" && requestedUnits.trim() === "") || !Number.isSafeInteger(Number(requestedUnits)) || Number(requestedUnits) < 0 ||
+      !["number", "string"].includes(typeof requestedGrowth) || (typeof requestedGrowth === "string" && requestedGrowth.trim() === "") || !Number.isFinite(Number(requestedGrowth)) || Number(requestedGrowth) < -25 || Number(requestedGrowth) > 50) {
+    return { valid: false, message: "Enter a non-negative whole monthly sales plan and a monthly growth rate from −25% to 50%." };
+  }
   const variable = D(input.materialCost).plus(input.laborCost).plus(input.otherVariableCost).plus(input.acquisitionCost);
   const feeRate = D(input.paymentFeePct).div(100);
   const netRate = D(1).minus(feeRate);
@@ -13,7 +19,7 @@ export function advancedAnalysis(input, result, options = {}) {
   const baseContribution = D(input.price).mul(netRate).minus(variable);
   const accountingUnits = fixedBase.div(baseContribution);
   const accountingRevenue = accountingUnits.mul(input.price);
-  const plannedUnits = D(options.plannedUnits ?? Math.ceil(result.jobs * 1.15));
+  const plannedUnits = D(Number(requestedUnits));
   const plannedRevenue = plannedUnits.mul(input.price);
   const plannedProfit = plannedUnits.mul(baseContribution).minus(fixedBase);
   const marginSafetyRevenue = Decimal.max(0, plannedRevenue.minus(accountingRevenue));
@@ -23,9 +29,9 @@ export function advancedAnalysis(input, result, options = {}) {
     ? fixedBase.plus(input.targetProfit).div(wholeCapacity).plus(variable).div(netRate).toDecimalPlaces(2, Decimal.ROUND_CEIL)
     : null;
   const productiveHoursPerWorker = D(input.hoursPerWorker).mul(52).div(12).mul(D(input.utilizationPct).div(100));
-  const additionalWorkers = result.gap < 0
+  const additionalWorkers = result.wholeJobs > result.wholeCapacity
     ? productiveHoursPerWorker.gt(0)
-      ? D(Math.abs(result.gap)).mul(input.hoursPerJob).div(productiveHoursPerWorker).ceil()
+      ? D(result.wholeJobs).mul(input.hoursPerJob).minus(D(result.capacity).mul(input.hoursPerJob)).div(productiveHoursPerWorker).ceil()
       : null
     : D(0);
 

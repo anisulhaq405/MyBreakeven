@@ -16,6 +16,7 @@ export default function Insights({ result, input, industry, currency }) {
         <p role="status">{result.message}</p>
         <p>Adjust the fields above to see your contribution, sales target and capacity results.</p>
       </div>
+      <a className="planning-next-step" href="#pro-analysis">Save your plan or explore Pro analysis →</a>
     </section>
   );
   const decision = capacityDecision(result);
@@ -107,7 +108,7 @@ export default function Insights({ result, input, industry, currency }) {
                 <i>
                   <b
                     style={{
-                      height: `${s.jobs ? Math.min(100, (s.jobs / max) * 100) : 100}%`,
+                      height: `${s.jobs === null ? 100 : max > 0 ? Math.min(100, (s.jobs / max) * 100) : 0}%`,
                     }}
                   />
                 </i>
@@ -121,6 +122,7 @@ export default function Insights({ result, input, industry, currency }) {
           </p>
         </article>
       </div>
+      <p className="practical-demand">Plan for <strong>{result.wholeJobs.toLocaleString("en-US")} whole {industry.unit}</strong> and approximately <strong>{result.practicalLeads.toLocaleString("en-US")} inquiries</strong> at your entered conversion rate. Required inquiries for the exact fractional financial target are {result.leads.toFixed(2)}. Demand is an assumption, not a forecast.</p>
       <div className="decision">
         <strong>
           {decision.summary}
@@ -130,6 +132,7 @@ export default function Insights({ result, input, industry, currency }) {
           advice.
         </span>
       </div>
+      <a className="planning-next-step" href="#pro-analysis">Save your plan or explore Pro analysis →</a>
     </section>
   );
 }
