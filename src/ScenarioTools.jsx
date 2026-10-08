@@ -28,6 +28,8 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
     if (input.monthlyGrowthPct !== undefined) setGrowth(input.monthlyGrowthPct);
   }, [input.expectedMonthlyUnits, input.monthlyGrowthPct]);
   const [saveState, setSaveState] = useState({ loading: false, message: "", error: "" });
+  const [showSaveForm, setShowSaveForm] = useState(false);
+  const [scenarioName, setScenarioName] = useState("");
   const [briefMessage, setBriefMessage] = useState("");
   const [plan, setPlan] = useState("free");
   const [userId, setUserId] = useState(null);
@@ -166,9 +168,11 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
     URL.revokeObjectURL(link.href);
     setBriefMessage("Decision brief downloaded.");
   };
-  const saveScenario = async () => {
-    const name = window.prompt("Name this scenario", `${industry.short} plan – ${new Date().toLocaleDateString("en-US")}`)?.trim();
-    if (!name) return;
+  const saveScenario = async (event) => {
+    event.preventDefault();
+    if (saveState.loading || !reportAnalysis.valid) return;
+    const name = scenarioName.trim();
+    if (!name) return setSaveState({ loading: false, message: "", error: "Enter a scenario name." });
     if (name.length > 80) return setSaveState({ loading: false, message: "", error: "Use a name with 80 characters or fewer." });
     setSaveState({ loading: true, message: "", error: "" });
     const { supabase } = await import("./authClient");
@@ -192,6 +196,7 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
     if (!error) trackProductEvent("scenario_saved", industryKey);
     const friendlyError = error?.message?.includes("PLAN_LIMIT_REACHED") ? `Plan limit reached (${currentLimits.savedScenarios} saved scenarios).` : error?.message;
     setSaveState(error ? { loading: false, message: "", error: friendlyError } : { loading: false, message: "Scenario saved. Open it from your dashboard.", error: "" });
+    if (!error) setShowSaveForm(false);
   };
   if (!result.valid) return isPro ? <ProIntelligence input={input} result={result} industry={industry} industryKey={industryKey} currency={currency} isPro={isPro} userId={userId} plannedUnits={plannedUnits} growth={growth} onPlannedUnitsChange={setPlannedUnits} onGrowthChange={setGrowth} /> : null;
   return (
@@ -202,12 +207,18 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
           <h2>{isPro ? "Compare scenarios and stress-test rising costs" : "Save your plan and unlock deeper analysis"}</h2>
         </div>
         <div className="export-actions">
-          <button onClick={saveScenario} disabled={saveState.loading || !reportAnalysis.valid}>
+          <button onClick={() => { setScenarioName(`${industry.short} plan – ${new Date().toLocaleDateString("en-US")}`); setShowSaveForm(true); setSaveState({ loading: false, message: "", error: "" }); }} aria-expanded={showSaveForm} aria-controls="save-scenario-form" disabled={saveState.loading || !reportAnalysis.valid}>
             <Save /> {saveState.loading ? "Saving…" : "Save scenario"}
           </button>
           {limits.exports ? <><button onClick={csv} disabled={!reportAnalysis.valid}><Download /> Download CSV</button><button className="primary" onClick={print} disabled={!reportAnalysis.valid}><FileText /> Print / Save PDF</button></> : <a className="tool-upgrade" href="/pricing/">Unlock CSV &amp; PDF with Pro</a>}
         </div>
       </div>
+      {showSaveForm && <form id="save-scenario-form" className="export-actions" onSubmit={saveScenario}>
+        <label htmlFor="scenario-name">Scenario name</label>
+        <input id="scenario-name" type="text" value={scenarioName} onChange={(event) => setScenarioName(event.target.value)} maxLength={80} required autoFocus disabled={saveState.loading} />
+        <button type="submit" disabled={saveState.loading || !reportAnalysis.valid}>{saveState.loading ? "Saving…" : "Save plan"}</button>
+        <button type="button" disabled={saveState.loading} onClick={() => setShowSaveForm(false)}>Cancel</button>
+      </form>}
       {saveState.error && <p className="tool-message error" role="alert">{saveState.error} {saveState.error.startsWith("Log in") && <a href="/login/">Log in</a>}</p>}
       {saveState.message && <p className="tool-message success" role="status">{saveState.message} <a href="/dashboard/">View dashboard</a></p>}
       <div className="scenario-table">
