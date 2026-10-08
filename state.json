@@ -1480,10 +1480,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/calculators/restaurant-break-even-calculator/|facebook": {
-      "revision": "60d552282252f841f60fc2d7efdec09d7b4a436c38899639259cce0c01da3659",
-      "status": "published",
-      "postId": "1437362339452872_122094994665509539",
-      "publishedAt": "2026-10-06T18:45:04.916Z"
+      "revision": "a2a9fa095517ff41cb84fee3bb65132d2fbf068af6d3e765ca0a41e860d3b84f",
+      "status": "attempting",
+      "attemptedAt": "2026-10-08T04:50:58.037Z"
     },
     "https://mybreakeven.com/calculators/restaurant-break-even-calculator/|instagram": {
       "revision": "60d552282252f841f60fc2d7efdec09d7b4a436c38899639259cce0c01da3659",
