@@ -1448,8 +1448,8 @@ footer.compact-footer{padding:32px max(24px,calc((100% - 1180px)/2)) 20px}
 .mini-head .review { color: #ffd5d7; background: #823b4a; }
 
 /* Readable small text on the report's pale backgrounds. */
-.insights-title span { color: #09665e; }
-.insights-title p, .insight-grid header span, .insight-grid article > p,
+.insights .insights-title span { color: #09665e; }
+.insights .insights-title p, .insights .insight-grid header span, .insights .insight-grid article > p,
 .proof article p { color: #4a5a6c; }
 .insight-grid article > p.negative { color: #9f2636; }
 .insight-grid article > p.positive { color: #08675f; }
