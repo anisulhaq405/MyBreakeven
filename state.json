@@ -1521,7 +1521,7 @@
     },
     "https://mybreakeven.com/cookie-policy/|facebook": {
       "revision": "008c2f73fd11b1feff5085ac1797a50b46bf72f7860850e29323e6411d0f3eab",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-08T04:51:02.204Z"
     },
     "https://mybreakeven.com/cookie-policy/|instagram": {
