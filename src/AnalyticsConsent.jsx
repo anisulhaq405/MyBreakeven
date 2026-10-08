@@ -39,7 +39,7 @@ export default function AnalyticsConsent() {
   if (choice) return null;
 
   return (
-    <aside className="analytics-consent" aria-label="Analytics cookie choices" role="dialog" aria-live="polite">
+    <div className="analytics-consent" aria-label="Analytics cookie choices" role="dialog" aria-live="polite">
       <div>
         <strong>Your privacy choices</strong>
         <p>We use optional Google Analytics to understand visits and improve MyBreakeven. It loads only if you accept.</p>
@@ -49,6 +49,6 @@ export default function AnalyticsConsent() {
         <button type="button" className="consent-reject" onClick={() => decide("rejected")}>Reject analytics</button>
         <button type="button" className="consent-accept" onClick={() => decide("accepted")}>Accept analytics</button>
       </div>
-    </aside>
+    </div>
   );
 }
