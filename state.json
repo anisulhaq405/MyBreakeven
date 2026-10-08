@@ -1764,7 +1764,7 @@
     },
     "https://mybreakeven.com/tools/|facebook": {
       "revision": "ab4a4295571a9cb24d7931815a18e80adc1351ff811481aa4d3e533e70de9119",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-08T19:06:41.763Z"
     },
     "https://mybreakeven.com/tools/|instagram": {
