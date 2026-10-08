@@ -1,6 +1,6 @@
 import Decimal from "decimal.js";
 
-export const FORMULA_ENGINE_VERSION = "1.3.0";
+export const FORMULA_ENGINE_VERSION = "1.3.1";
 
 Decimal.set({ precision: 40, rounding: Decimal.ROUND_HALF_UP });
 
@@ -17,15 +17,13 @@ const decimal = (value) => {
 const output = (value) => value.toNumber();
 
 export const calculate = (raw) => {
-  const i = Object.fromEntries(
-    Object.entries(raw).map(([key, value]) => [key, decimal(value)]),
-  );
   const required = [
     "price", "materialCost", "laborCost", "otherVariableCost",
     "acquisitionCost", "fixedCosts", "ownerPay",
     "targetProfit", "paymentFeePct", "workers", "hoursPerWorker",
     "hoursPerJob", "utilizationPct", "conversionPct",
   ];
+  const i = Object.fromEntries(required.map(key => [key, decimal(raw?.[key])]));
   if (required.some((key) => i[key] === null)) {
     return { valid: false, inputError: true, message: "Complete every field with a valid number." };
   }
@@ -71,6 +69,7 @@ export const calculate = (raw) => {
   const wholeCapacity = capacity.floor();
   const leads = jobs.div(i.conversionPct.div(hundred));
   const wholeLeads = leads.ceil();
+  const practicalLeads = wholeJobs.div(i.conversionPct.div(hundred)).ceil();
   const gap = capacity.minus(jobs);
   const gapRatioAdjustment = gap.div(Decimal.max(1, jobs)).mul(30);
   const score = Decimal.max(
@@ -101,8 +100,15 @@ export const calculate = (raw) => {
       .minus(i.acquisitionCost);
     if (!scenarioContribution.gt(0)) return { change, jobs: null, wholeJobs: null };
     const exactJobs = fixedNeed.div(scenarioContribution);
+    if (exactJobs.gt(Number.MAX_SAFE_INTEGER)) return { change, jobs: null, wholeJobs: null };
     return { change, jobs: output(exactJobs), wholeJobs: exactJobs.ceil().toNumber() };
   });
+
+  const displayed = [contribution, fixedNeed, jobs, revenue, practicalRevenue, capacity, leads, practicalLeads, gap];
+  if (displayed.some(value => !Number.isFinite(value.toNumber())) ||
+      [wholeJobs, wholeCapacity, practicalLeads].some(value => value.gt(Number.MAX_SAFE_INTEGER))) {
+    return { valid: false, inputError: true, message: "These values exceed the supported calculation range. Reduce the amounts or review the contribution and delivery assumptions." };
+  }
 
   return {
     valid: true,
@@ -116,6 +122,7 @@ export const calculate = (raw) => {
     wholeCapacity: wholeCapacity.toNumber(),
     leads: output(leads),
     wholeLeads: wholeLeads.toNumber(),
+    practicalLeads: practicalLeads.toNumber(),
     gap: output(gap),
     score: score.toNumber(),
     marginPct: output(contribution.div(i.price).mul(hundred)),

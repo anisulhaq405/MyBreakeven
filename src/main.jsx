@@ -1,3 +1,4 @@
+import { trackProductEvent } from "./productAnalytics";
 import { toolThemes } from './toolThemes.js';
 import './tool-themes.css';
 import React, { lazy, Suspense, useEffect, useLayoutEffect, useMemo, useState } from "react";
@@ -9,7 +10,9 @@ import {
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
-import { calculate } from "./engine";
+import { capacityDecision } from "./capacityDecision";
+import { initialCalculatorPlan } from "./calculatorTransfer";
+import { calculate, FORMULA_ENGINE_VERSION } from "./engine";
 import { fieldLabels, industries } from "./industries";
 import Insights from "./Insights";
 import CostBuilder from "./CostBuilder";
@@ -26,16 +29,17 @@ import "./home-presentation.css";
 const ScenarioTools = lazy(() => import("./ScenarioTools"));
 const quantity = (n) => new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 }).format(n || 0);
 export default function App() {
+  const [loadError, setLoadError] = useState("");
   const [showTools, setShowTools] = useState(() => typeof window !== "undefined" && window.location.hash === "#pro-analysis");
-  const initialIndustry = new URLSearchParams(typeof window === "undefined" ? "" : window.location.search).get("industry");
-  const startingIndustry = industries[initialIndustry] ? initialIndustry : "cleaning";
-  const [industryKey, setIndustryKey] = useState(startingIndustry),
-    [input, setInput] = useState(industries[startingIndustry].values),
+  const [initialPlan] = useState(() => initialCalculatorPlan(typeof window === "undefined" ? null : window));
+  const [industryKey, setIndustryKey] = useState(initialPlan.industryKey),
+    [input, setInput] = useState(initialPlan.input),
     [currency, setCurrency] = useState("USD");
   const currencySymbol = new Intl.NumberFormat("en-US", { style: "currency", currency, currencyDisplay: "narrowSymbol" }).formatToParts(0).find(p => p.type === "currency")?.value || currency;
   const industry = industries[industryKey],
     fields = fieldLabels(industry);
   const result = useMemo(() => calculate(input), [input]);
+  const decision = result.valid ? capacityDecision(result) : null;
   const set = (k, v) => setInput((s) => {
     const next = { ...s, [k]: v };
     if (builtFields.includes(k) && (v === "" || Number(s[k]) !== Number(v))) delete next.costBuilder;
@@ -49,6 +53,7 @@ export default function App() {
     set(k, Math.min(options.max ?? Number.POSITIVE_INFINITY, Math.max(options.min ?? 0, stepped)));
   };
   const choose = (k) => {
+    if (!Object.hasOwn(industries, k)) return;
     setIndustryKey(k);
     setInput({ ...industries[k].values });
   };
@@ -58,7 +63,13 @@ export default function App() {
     import("./authClient").then(async ({ supabase }) => {
       if (!supabase) return;
       const { data } = await supabase.from("saved_scenarios").select("industry_key,currency,inputs").eq("id", scenarioId).single();
-      if (!data || !industries[data.industry_key]) return;
+      if (!data || !Object.hasOwn(industries, data.industry_key)) return;
+      if (!data.inputs || calculate(data.inputs).inputError) {
+        setLoadError("This saved plan has missing or invalid inputs. The current calculator is unchanged; check the saved record in your dashboard.");
+        return;
+      }
+      try { new Intl.NumberFormat("en-US", { style: "currency", currency: data.currency }); }
+      catch { setLoadError("This saved plan uses an unsupported currency. The current calculator is unchanged."); return; }
       setIndustryKey(data.industry_key);
       setInput(data.inputs);
       setCurrency(data.currency);
@@ -81,6 +92,11 @@ export default function App() {
     observer.observe(target);
     return () => observer.disconnect();
   }, [path]);
+  useEffect(() => {
+    const openPro = () => { if (window.location.hash === "#pro-analysis") setShowTools(true); };
+    window.addEventListener("hashchange", openPro);
+    return () => window.removeEventListener("hashchange", openPro);
+  }, []);
   return (
     <>
       <a className="skip-link" href="#main-content">Skip to main content</a>
@@ -93,13 +109,13 @@ export default function App() {
             <div className="mini-card">
               <div className="mini-head">
               <span>{industry.short} feasibility</span>
-              <span className="good">
-                {result.valid && result.gap >= 0 ? "FEASIBLE" : "REVIEW"}
+              <span className={result.valid && decision.fits ? "good" : "review"}>
+                {result.valid && decision.fits ? "FEASIBLE" : "REVIEW"}
               </span>
               </div>
               <div className="ai-signal">
                 <Sparkles />
-                <span><b>Formula-backed insights</b> Verified inputs · Explainable output</span>
+                <span><b>Formula-backed insights</b> Your assumptions · Explainable output</span>
               </div>
             <div className="dial">
               <div>
@@ -109,14 +125,14 @@ export default function App() {
             </div>
             <div className="mini-grid">
               <span>
-                {industry.unit} needed
-                <strong>{result.valid ? quantity(result.jobs) : "—"}</strong>
+                Monthly {industry.unit} target
+                <strong>{result.valid ? quantity(result.wholeJobs) : "—"}</strong>
               </span>
               <span>
-                Capacity<strong>{result.valid ? quantity(result.capacity) : "—"}</strong>
+                Capacity<strong>{result.valid ? quantity(result.wholeCapacity) : "—"}</strong>
               </span>
               <span>
-                <BarChart3 /> Inquiries<strong>{result.valid ? quantity(result.leads) : "—"}</strong>
+                <BarChart3 /> Inquiries for whole target<strong>{result.valid ? quantity(result.practicalLeads) : "—"}</strong>
               </span>
             </div>
             <p>
@@ -134,6 +150,9 @@ export default function App() {
               </div>
               <span className="live-pill"><i /> Live</span>
             </div>
+            {initialPlan.transferUnavailable && <p className="calculator-transfer-note" role="status">The temporary plan was unavailable or expired. Example inputs are shown; return to your industry page to carry the edited plan again.</p>}
+            {loadError && <p className="calculator-transfer-note" role="status">{loadError}</p>}
+            {initialPlan.transferred && <p className="calculator-transfer-note" role="status">Your edited industry plan is loaded. Continue adjusting the same numbers below.</p>}
             <div className="calculator-selectors">
               <label>
                 <span><BriefcaseBusiness /> Business model</span>
@@ -191,7 +210,7 @@ export default function App() {
                 <ShieldCheck />
                 <span>
                   <strong>Private calculation</strong>Your financial inputs are
-                  not sent or saved unless you choose Save scenario.
+                  kept in this browser. Save scenario stores a plan in your account.
                 </span>
               </div>
             </div>
@@ -267,7 +286,7 @@ export default function App() {
             </p>
           </div>
           <div className="code">
-            <small>FORMULA TRACE · ENGINE v1.3.0</small>
+            <small>FORMULA TRACE · ENGINE v{FORMULA_ENGINE_VERSION}</small>
             <code>contribution = price - direct_costs - fees</code>
             <code>exact_units = fixed_need / contribution</code>
             <code>required_inquiries = exact_units / conversion</code>
@@ -297,7 +316,7 @@ export default function App() {
                 Advanced charts, profit forecasts, risk sensitivity, capacity
                 planning, 100 saved scenarios and downloadable reports.
               </p>
-              <button onClick={() => { location.href = POLAR_CHECKOUT_URL; }}>Upgrade to Pro</button>
+              <button onClick={() => { trackProductEvent("pro_checkout_click", industryKey); location.href = POLAR_CHECKOUT_URL; }}>Upgrade to Pro</button>
             </article>
           </div>
         </section>

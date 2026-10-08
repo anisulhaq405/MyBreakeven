@@ -1,3 +1,4 @@
+import { startFragmentNavigation } from "./fragmentNavigation";
 import React,{useLayoutEffect} from 'react';
 import {createRoot,hydrateRoot} from 'react-dom/client';
 import AnalyticsConsent from './AnalyticsConsent';
@@ -33,22 +34,7 @@ async function renderApp(){
   consentRoot.id='analytics-consent-root';
   document.body.appendChild(consentRoot);
   createRoot(consentRoot).render(<AnalyticsConsent/>);
-  // A guide can link to a section that is rendered by a lazy component.
-  // Reapply the native fragment once that section exists, without polling.
-  const fragment=decodeURIComponent(window.location.hash.slice(1));
-  if(fragment){
-   const scrollToFragment=()=>{
-    const target=document.getElementById(fragment);
-    if(!target)return false;
-    target.scrollIntoView();
-    return true;
-   };
-   if(!scrollToFragment()){
-    const observer=new MutationObserver(()=>{if(scrollToFragment())observer.disconnect();});
-    observer.observe(rootElement,{childList:true,subtree:true});
-    window.setTimeout(()=>observer.disconnect(),10000);
-   }
-  }
+  startFragmentNavigation(window, rootElement);
  }catch(error){
   rootElement.removeAttribute('data-booting');
   console.error('Page initialization failed; server content remains available.',error);

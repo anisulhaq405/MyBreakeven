@@ -27,7 +27,7 @@ for (const [slug, page] of Object.entries(industryPages)) {
     const expected = calculate(industries[page.key].values);
     expect((html.match(/type="number"/g) || []).length).toBe(14);
     expect(html).toContain('href="#industry-calculator"');
-    expect(html).toContain(`/?industry=${page.key}#calculator`);
+    expect(html).toContain(`/?industry=${page.key}&amp;from=industry#calculator`);
     expect(html).toContain(expected.practicalRevenue.toLocaleString("en-US", { style: "currency", currency: "USD" }));
     expect(html).toContain("set owner pay and target profit to zero");
     expect(html).toContain("Formula, assumptions and rounding");

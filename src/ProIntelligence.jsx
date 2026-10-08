@@ -1,3 +1,4 @@
+import { trackProductEvent } from "./productAnalytics";
 import "./pro-intelligence.css";
 import React, { useMemo } from "react";
 import { Activity, BarChart3, BrainCircuit, Gauge, LockKeyhole, Target } from "lucide-react";
@@ -10,20 +11,22 @@ const points=(values,w=640,h=190)=>{const min=Math.min(0,...values),max=Math.max
 
 export default function ProIntelligence({input,result,industry,industryKey,currency,isPro,userId,plannedUnits=Math.max(1,result.wholeCapacity || 1),growth=2,onPlannedUnitsChange,onGrowthChange}){
   const analysis=useMemo(()=>advancedAnalysis(input,result,{plannedUnits,growthPct:growth}),[input,result,plannedUnits,growth]);
-  if(!isPro) return <section id="pro-analysis" className="pro-intel locked-intel"><LockKeyhole/><div><span>PRO INTELLIGENCE</span><h2>See the decision behind the break-even number</h2><p>Unlock Offer Mix, Price Guard, Acquisition, Hire, Timeline and Monthly Monitor tools—plus forecasting, risk sensitivity and advanced charts.</p><a href="/pricing/">Explore Pro — $9.99/month</a></div></section>;
-  if (!analysis.valid) return <section id="pro-analysis" className="pro-intel"><p>Review the current price and calculator inputs. You can still calculate a cost-based price using valid costs and delivery capacity below.</p><PricingSuggestions input={input} plannedUnits={plannedUnits} industry={industry} currency={currency} onPlannedUnitsChange={onPlannedUnitsChange} /></section>;
+  const controls = <div className="intel-controls"><label>Expected monthly {industry.unit}<input type="number" min="0" step="1" value={plannedUnits} onChange={e=>onPlannedUnitsChange?.(e.target.value === "" ? "" : Number(e.target.value))} /></label><label>Monthly growth rate<input type="number" min="-25" max="50" step="0.5" value={growth} onChange={e=>onGrowthChange?.(e.target.value === "" ? "" : Number(e.target.value))}/><b>%</b></label></div>;
+  if(!isPro) return <section id="pro-analysis" className="pro-intel locked-intel"><LockKeyhole/><div><span>PRO INTELLIGENCE</span><h2>See the decision behind the break-even number</h2><p>Unlock Offer Mix, Price Guard, Acquisition, Hire, Timeline and Monthly Monitor tools—plus forecasting, risk sensitivity and advanced charts.</p><a href="/pricing/" onClick={() => trackProductEvent("pro_pricing_view", industryKey)}>Explore Pro — $9.99/month</a></div></section>;
+  if (!result.valid) return <section id="pro-analysis" className="pro-intel"><p>Review the current price and calculator inputs. You can still calculate a cost-based price using valid costs and delivery capacity below.</p><PricingSuggestions input={input} plannedUnits={plannedUnits} industry={industry} currency={currency} onPlannedUnitsChange={onPlannedUnitsChange} /></section>;
+  if (!analysis.valid) return <section id="pro-analysis" className="pro-intel"><h2>Review your sales forecast</h2>{controls}<p role="status">{analysis.message}</p></section>;
   const maxImpact=Math.max(1,...analysis.drivers.map(x=>Math.abs(x.impact ?? 0)));
   const profits=analysis.forecast.map(x=>x.profit);
   return <section id="pro-analysis" className="pro-intel">
     <header><div><span>PRO INTELLIGENCE</span><h2>Advanced break-even decision dashboard</h2><p>Move from one target to a tested operating plan. <a href="/pro-user-guide/" className="pro-intel-guide-link">Visual step-by-step guide</a></p></div><BrainCircuit/></header>
     <div className="intel-kpis">
-      <article><Target/><small>Accounting break-even</small><strong>{money(analysis.accountingRevenue,currency)}</strong></article>
+      <article><Target/><small>Costs + owner-pay revenue</small><strong>{money(analysis.accountingRevenue,currency)}</strong></article>
       <article><Activity/><small>Target-profit revenue</small><strong>{money(analysis.targetRevenue,currency)}</strong></article>
       <article><Gauge/><small>Margin of safety</small><strong>{analysis.marginSafetyPct.toFixed(1)}%</strong></article>
-      <article><BarChart3/><small>Planned profit (if volume delivered)</small><strong>{money(analysis.plannedProfit,currency)}</strong></article>
+      <article><BarChart3/><small>Profit after owner pay (if delivered)</small><strong>{money(analysis.plannedProfit,currency)}</strong></article>
     </div>
-    <div className="intel-controls"><label>Expected monthly {industry.unit}<input type="number" min="0" step="1" value={plannedUnits} onChange={e=>onPlannedUnitsChange?.(e.target.value === "" ? "" : Number(e.target.value))} /></label><label>Monthly growth rate<input type="number" min="-25" max="50" step="0.5" value={growth} onChange={e=>onGrowthChange?.(Number(e.target.value))}/><b>%</b></label></div>
-    <p className="intel-note">Expected sales are an editable planning assumption. Forecast profit requires the displayed sales to be delivered. {analysis.forecast.some(row => row.units > result.wholeCapacity) ? "Some forecast months exceed entered delivery capacity; more capacity would be required." : ""}</p>
+    {controls}
+    <p className="intel-note">Profit is shown after direct costs, fixed overhead and the owner pay entered above, before personal taxes. Expected sales are an editable planning assumption. Forecast profit requires the displayed sales to be delivered. {analysis.forecast.some(row => row.units > result.wholeCapacity) ? "Some forecast months exceed entered delivery capacity; more capacity would be required." : ""}</p>
     <div className="intel-grid">
       <article className="wide"><header><div><span>12-month outlook</span><strong>Profit forecast</strong></div><small>{growth}% monthly growth</small></header><svg viewBox="0 0 640 220" role="img" aria-label="Twelve month profit forecast"><line x1="0" y1="190" x2="640" y2="190"/><polyline points={points(profits)} /><g>{profits.map((v,i)=><circle key={i} cx={(i/11)*640} cy={Number(points(profits).split(" ")[i].split(",")[1])} r="4"><title>{`Month ${i+1}: ${money(v,currency)}`}</title></circle>)}</g></svg><div className="chart-axis"><span>Month 1</span><span>Month 12 · {money(profits[11],currency)}</span></div></article>
       <article><header><div><span>Risk sensitivity</span><strong>Biggest break-even drivers</strong></div></header><div className="tornado">{analysis.drivers.slice(0,6).map(d=><div key={d.name}><label><span>{d.name}</span><b>{d.impact === null ? "Not viable" : `${d.impact >= 0 ? "+" : ""}${d.impact.toFixed(1)}%`}</b></label><i><b style={{width:`${Math.min(100,(d.impact === null ? maxImpact : Math.abs(d.impact))/maxImpact*100)}%`}}/></i></div>)}</div></article>
