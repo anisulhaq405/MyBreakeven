@@ -1520,10 +1520,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/cookie-policy/|facebook": {
-      "revision": "2f63ddc8c50fcb21949bbe9f4adbe2a284f8c266b6ff45b4dec3377d7d7ba8c8",
-      "status": "published",
-      "postId": "1437362339452872_122094995073509539",
-      "publishedAt": "2026-10-06T18:45:36.445Z"
+      "revision": "008c2f73fd11b1feff5085ac1797a50b46bf72f7860850e29323e6411d0f3eab",
+      "status": "attempting",
+      "attemptedAt": "2026-10-08T04:51:02.204Z"
     },
     "https://mybreakeven.com/cookie-policy/|instagram": {
       "revision": "2f63ddc8c50fcb21949bbe9f4adbe2a284f8c266b6ff45b4dec3377d7d7ba8c8",
