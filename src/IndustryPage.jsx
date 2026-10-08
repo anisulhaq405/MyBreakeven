@@ -104,7 +104,7 @@ export default function IndustryPage({ slug }) {
   const example = calculate(industry.values);
   return (
     <div className="industry-tool-theme" style={toolThemes[page.key]}>
-      {operationalLinks[page.key] && <aside className="tool-related"><p>Check a specific cost decision: <a href={`/calculators/${operationalLinks[page.key][0]}/`}>{operationalLinks[page.key][1]}</a>.</p></aside>}<section className="industry-hero">
+      {operationalLinks[page.key] && <aside className="tool-related"><p>Check a specific cost decision: <a href={`/calculators/${operationalLinks[page.key][0]}/`}>{operationalLinks[page.key][1]}</a>.</p></aside>}{page.key === 'salon' && <aside className="tool-related"><p>Measure repeat-visit economics with the <a href="/calculators/salon-rebooking-calculator/">salon rebooking calculator</a>, then separate missed revenue from contribution using the <a href="/calculators/salon-no-show-profit-loss-calculator/">no-show profit loss calculator</a>.</p></aside>}{page.key === 'detailing' && <aside className="tool-related"><p>Compare nearby and distant jobs with the <a href="/calculators/mobile-detailing-travel-profit-calculator/">mobile detailing travel profit calculator</a> before accepting a lower hourly return.</p></aside>}<section className="industry-hero">
         <div>
           <span>FREE INDUSTRY CALCULATOR</span>
           <h1>{page.title}</h1>

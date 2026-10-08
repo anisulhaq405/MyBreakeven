@@ -9,7 +9,7 @@ import FreeToolGuide from './FreeToolGuide';
 import BusinessTool from './BusinessTool';
 const count=n=>new Intl.NumberFormat('en-US',{maximumFractionDigits:0}).format(n);
 const hubGroups = ['All calculators', 'Pricing & profit', 'Service costs', 'Ads & ecommerce', 'Cash & income'];
-const hubGroup = mode => ['discount','increase','cleaningContract','lawnRoute'].includes(mode) ? 'Pricing & profit' : ['chemical','hairColor'].includes(mode) ? 'Service costs' : ['roas','returns'].includes(mode) ? 'Ads & ecommerce' : 'Cash & income';
+const hubGroup = mode => ['discount','increase','cleaningContract','lawnRoute','rebooking','noShow','travelProfit'].includes(mode) ? 'Pricing & profit' : ['chemical','hairColor'].includes(mode) ? 'Service costs' : ['roas','returns'].includes(mode) ? 'Ads & ecommerce' : 'Cash & income';
 export function FreeToolsHub(){
  const [query,setQuery]=useState(''),[group,setGroup]=useState('All calculators');
  const tools=Object.entries(freeTools);

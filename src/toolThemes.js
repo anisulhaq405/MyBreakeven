@@ -1,4 +1,8 @@
 export const toolThemes = {
+"salon-rebooking-calculator":{"--tool-accent": "#be185d", "--tool-soft": "#fff1f7", "--tool-dark": "#500724", "--tool-radius": "22px"},
+"salon-no-show-profit-loss-calculator":{"--tool-accent": "#be185d", "--tool-soft": "#fff1f7", "--tool-dark": "#500724", "--tool-radius": "22px"},
+"mobile-detailing-travel-profit-calculator":{"--tool-accent": "#0369a1", "--tool-soft": "#edf8ff", "--tool-dark": "#082f49", "--tool-radius": "22px"},
+
 "cleaning-contract-profit-calculator":{"--tool-accent": "#7c4a22", "--tool-soft": "#fff6ed", "--tool-dark": "#3e2514", "--tool-radius": "10px"},
 "lawn-route-profit-calculator":{"--tool-accent": "#315a96", "--tool-soft": "#f0f5fc", "--tool-dark": "#142e52", "--tool-radius": "14px"},
 "detailing-chemical-cost-calculator":{"--tool-accent": "#57571b", "--tool-soft": "#fbfbe9", "--tool-dark": "#30300f", "--tool-radius": "18px"},
