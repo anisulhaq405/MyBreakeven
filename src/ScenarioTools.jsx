@@ -94,7 +94,7 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
       ["Business", industry.name],
       ["Currency", currency],
       ["Engine", FORMULA_ENGINE_VERSION],
-      ["Scenario", "Revenue", industry.unit, "Capacity", "Inquiries", "Score"],
+      ["Scenario", "Exact revenue", `Exact ${industry.unit}`, "Exact capacity", "Exact fractional-target inquiries", "Score", `Whole ${industry.unit}`, "Whole capacity", "Inquiries for whole target"],
       ...scenarios.map((s) => [
         s.name,
         s.result.revenue,
@@ -102,6 +102,9 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
         s.result.capacity,
         s.result.leads,
         s.result.score,
+        s.result.wholeJobs,
+        s.result.wholeCapacity,
+        s.result.practicalLeads,
       ]),
       [],
       ...(appliedCostRows(input).length ? [["Applied cost breakdown"], ...appliedCostRows(input), []] : []),
@@ -126,7 +129,9 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
       ...reportAnalysis.drivers.map((driver) => [driver.name, driver.impact, driver.viable ? "Yes" : "No"]),
       [],
       ["12-month forecast"],
-      ["Month", industry.unit, "Revenue", "Profit"],
+      ["Forecast requires delivered sales; demand is an assumption, not a prediction."],
+      ...(reportAnalysis.forecast.some(month => month.units > result.wholeCapacity) ? [["Some forecast months exceed entered delivery capacity; more capacity would be required."]] : []),
+      ["Month", `Exact ${industry.unit}`, "Revenue", "Profit after owner pay"],
       ...reportAnalysis.forecast.map((month) => [month.month, month.units, month.revenue, month.profit]),
     ];
     const blob = new Blob(
