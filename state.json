@@ -2023,7 +2023,7 @@
     },
     "https://mybreakeven.com/calculators/salon-rebooking-calculator/|facebook": {
       "revision": "5cd8a5fa2b192d836e8fe7bc3241f894d644a95210fc2a5807cc58a04ec754e6",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-08T19:06:36.375Z"
     }
   }
