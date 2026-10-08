@@ -1,3 +1,4 @@
+import { october08ExistingUpdateMap } from "./october08ExistingUpdates.js";
 import { october07ContentUpdateMap } from "./october07ContentUpdates.js";
 import { october07RecoveryUpdateMap } from "./october07RecoveryUpdates.js";
 import { october07Posts } from "./october07.js";
@@ -81,6 +82,7 @@ const normalizePost = post => ({
   ...october07UpdateMap[post.slug],
   ...october07RecoveryUpdateMap[post.slug],
   ...october07ContentUpdateMap[post.slug],
+  ...october08ExistingUpdateMap[post.slug],
   tag: canonicalTag(post.tag),
   seoTitle: october07RecoveryUpdateMap[post.slug]?.seoTitle || october07UpdateMap[post.slug]?.seoTitle || october06UpdateMap[post.slug]?.seoTitle || october05UpdateMap[post.slug]?.seoTitle || october04UpdateMap[post.slug]?.seoTitle || october03UpdateMap[post.slug]?.seoTitle || october02UpdateMap[post.slug]?.seoTitle || october01UpdateMap[post.slug]?.seoTitle || september30UpdateMap[post.slug]?.seoTitle || september29UpdateMap[post.slug]?.seoTitle || seoTitleOverrides[post.slug] || cleanText(post.seoTitle),
   description: cleanText(october07RecoveryUpdateMap[post.slug]?.metaDescription || october07UpdateMap[post.slug]?.metaDescription || october06UpdateMap[post.slug]?.metaDescription || october05UpdateMap[post.slug]?.metaDescription || october04UpdateMap[post.slug]?.metaDescription || october03UpdateMap[post.slug]?.metaDescription || post.description),
