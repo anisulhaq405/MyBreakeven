@@ -38,7 +38,7 @@ jobs:
           };
           for (const [slug, industry] of Object.entries(mappings)) {
             const html = readFileSync(`dist/calculators/${slug}/index.html`, 'utf8');
-            if (!html.includes(`href="/?industry=${industry}#calculator"`)) {
+            if (!html.includes(`href="/?industry=${industry}&amp;from=industry#calculator"`)) {
               throw new Error(`Incorrect static calculator link for ${slug}`);
             }
           }
