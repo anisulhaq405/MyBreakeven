@@ -1,3 +1,4 @@
+import { salonClusters } from "../src/salonCluster.js";
 import { mobileDetailingClusters } from "../src/mobileDetailingCluster.js";
 import { landscapingClusters } from "../src/landscapingCluster.js";
 import { cleaningClusters } from "../src/cleaningCluster.js";
@@ -38,6 +39,7 @@ let base = await readFile(homeFile, "utf8");
 const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 const allArticles = blogPosts;
 const staticPages = {
+  "guides/salon-business": ["Salon Business Planning Guides | MyBreakeven", "Explore salon service pricing, product costs, no-shows, memberships, booth rent and chair capacity. Find eleven worked guides and four free calculators.", "Salon business planning guides"],
   "guides/mobile-detailing-business": ["Mobile Detailing Business Guides | MyBreakeven", "Explore mobile detailing pricing, fleet contracts, travel costs, cancellations and refill capacity. Find worked guides and three free business calculators.", "Mobile detailing business planning guides"],
   "guides/landscaping-business": ["Landscaping Business Planning Guides | MyBreakeven", "Explore landscaping pricing, job costs, maintenance contracts, routes and crew capacity. Find worked planning guides and two free business calculators.", "Landscaping business planning guides"],
   "guides/cleaning-business": ["Cleaning Business Planning Guides | MyBreakeven", "Explore cleaning business pricing, contract bids, operating costs, recurring clients and break-even. Find worked guides and free calculators.", "Cleaning business planning guides"],
@@ -86,6 +88,12 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
     page["@type"] = "CollectionPage";
     page.mainEntity = {"@type":"ItemList", itemListElement: landscapingClusters.flatMap(group => group.slugs).map((slug, i) => ({"@type":"ListItem", position:i+1, url:`https://mybreakeven.com/blogs/${slug}/`, name:allArticles.find(article => article.slug === slug).title}))};
     pageSchema["@graph"].push({"@type":"BreadcrumbList", itemListElement:[{"@type":"ListItem",position:1,name:"Home",item:"https://mybreakeven.com/"},{"@type":"ListItem",position:2,name:"Guides",item:"https://mybreakeven.com/blogs/"},{"@type":"ListItem",position:3,name:"Landscaping business planning",item:canonical}]});
+  }
+  if (route === "guides/salon-business") {
+    const page = pageSchema["@graph"].find(entity => entity["@type"] === "WebPage");
+    page["@type"] = "CollectionPage";
+    page.mainEntity = {"@type":"ItemList", itemListElement: salonClusters.flatMap(group => group.slugs).map((slug, i) => ({"@type":"ListItem", position:i+1, url:`https://mybreakeven.com/blogs/${slug}/`, name:allArticles.find(article => article.slug === slug).title}))};
+    pageSchema["@graph"].push({"@type":"BreadcrumbList", itemListElement:[{"@type":"ListItem",position:1,name:"Home",item:"https://mybreakeven.com/"},{"@type":"ListItem",position:2,name:"Guides",item:"https://mybreakeven.com/blogs/"},{"@type":"ListItem",position:3,name:"Salon business planning",item:canonical}]});
   }
   if (route === "guides/mobile-detailing-business") {
     const page = pageSchema["@graph"].find(entity => entity["@type"] === "WebPage");
