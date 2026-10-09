@@ -2036,6 +2036,11 @@
       "revision": "3175b2130ec00e2230f9bf2ea7109aa68953d326a0ecacf61188a48e43f8eec4",
       "status": "needs_review",
       "attemptedAt": "2026-10-09T07:30:30.384Z"
+    },
+    "https://mybreakeven.com/blogs/cleaning-client-acquisition-payback/|facebook": {
+      "revision": "c02a0255e9147dd42d10110acfeded0f7d6fcd5e7c9c40c76457422ee20c06fd",
+      "status": "attempting",
+      "attemptedAt": "2026-10-09T07:45:19.683Z"
     }
   }
 }
