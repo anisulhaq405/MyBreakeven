@@ -2136,6 +2136,11 @@
       "revision": "ce1c90626d5da8d7f8150338be1d4e5e0ab05661eb8460e4586de6fc34cac6d8",
       "status": "needs_review",
       "attemptedAt": "2026-10-09T11:34:21.110Z"
+    },
+    "https://mybreakeven.com/guides/restaurant-business/|facebook": {
+      "revision": "f1f5ff4afe2259fab2a879b7311edf6fb71fb1600f00c41c8f7d9fde865690b9",
+      "status": "attempting",
+      "attemptedAt": "2026-10-09T12:11:23.042Z"
     }
   }
 }
