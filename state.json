@@ -2026,6 +2026,11 @@
       "revision": "5cd8a5fa2b192d836e8fe7bc3241f894d644a95210fc2a5807cc58a04ec754e6",
       "status": "needs_review",
       "attemptedAt": "2026-10-08T19:06:39.039Z"
+    },
+    "https://mybreakeven.com/guides/cleaning-business/|facebook": {
+      "revision": "3175b2130ec00e2230f9bf2ea7109aa68953d326a0ecacf61188a48e43f8eec4",
+      "status": "attempting",
+      "attemptedAt": "2026-10-09T07:30:27.143Z"
     }
   }
 }
