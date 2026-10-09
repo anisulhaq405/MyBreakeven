@@ -2116,6 +2116,11 @@
       "revision": "4bd91996c8d408820cfe1f89cd0271e91ba058d7507ca5d4941cbdc95711cf8f",
       "status": "needs_review",
       "attemptedAt": "2026-10-09T10:07:49.336Z"
+    },
+    "https://mybreakeven.com/guides/mobile-detailing-business/|facebook": {
+      "revision": "3a8c7418f82e902b7abf4205ce2321e46979f99bb0a8f31a27bbe42d4a9113f3",
+      "status": "attempting",
+      "attemptedAt": "2026-10-09T10:07:52.365Z"
     }
   }
 }
