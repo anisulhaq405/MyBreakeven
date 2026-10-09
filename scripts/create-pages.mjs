@@ -1,3 +1,4 @@
+import { ecommerceClusters } from "../src/ecommerceCluster.js";
 import { photographyClusters } from "../src/photographyCluster.js";
 import { restaurantClusters } from "../src/restaurantCluster.js";
 import { salonClusters } from "../src/salonCluster.js";
@@ -41,6 +42,7 @@ let base = await readFile(homeFile, "utf8");
 const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 const allArticles = blogPosts;
 const staticPages = {
+  "guides/ecommerce-business": ["E-commerce Business Guides | MyBreakeven", "Explore ecommerce product pricing, returns, shipping, advertising and inventory cash. Find sixteen worked guides and three business calculators.", "E-commerce business planning guides"],
   "guides/photography-business": ["Photography Business Guides | MyBreakeven", "Explore photography packages, editing costs, commercial assignments, prints and delivery capacity. Find twelve worked guides and a free break-even tool.", "Photography business planning guides"],
   "guides/restaurant-business": ["Restaurant Business Guides | MyBreakeven", "Explore restaurant startup, food and labor costs, menu pricing, delivery, events and capacity. Find twenty-one worked guides and a free break-even tool.", "Restaurant business planning guides"],
   "guides/salon-business": ["Salon Business Planning Guides | MyBreakeven", "Explore salon service pricing, product costs, no-shows, memberships, booth rent and chair capacity. Find eleven worked guides and four free calculators.", "Salon business planning guides"],
@@ -92,6 +94,12 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
     page["@type"] = "CollectionPage";
     page.mainEntity = {"@type":"ItemList", itemListElement: landscapingClusters.flatMap(group => group.slugs).map((slug, i) => ({"@type":"ListItem", position:i+1, url:`https://mybreakeven.com/blogs/${slug}/`, name:allArticles.find(article => article.slug === slug).title}))};
     pageSchema["@graph"].push({"@type":"BreadcrumbList", itemListElement:[{"@type":"ListItem",position:1,name:"Home",item:"https://mybreakeven.com/"},{"@type":"ListItem",position:2,name:"Guides",item:"https://mybreakeven.com/blogs/"},{"@type":"ListItem",position:3,name:"Landscaping business planning",item:canonical}]});
+  }
+  if (route === "guides/ecommerce-business") {
+    const page = pageSchema["@graph"].find(entity => entity["@type"] === "WebPage");
+    page["@type"] = "CollectionPage";
+    page.mainEntity = {"@type":"ItemList", itemListElement: ecommerceClusters.flatMap(group => group.slugs).map((slug, i) => ({"@type":"ListItem", position:i+1, url:`https://mybreakeven.com/blogs/${slug}/`, name:allArticles.find(article => article.slug === slug).title}))};
+    pageSchema["@graph"].push({"@type":"BreadcrumbList", itemListElement:[{"@type":"ListItem",position:1,name:"Home",item:"https://mybreakeven.com/"},{"@type":"ListItem",position:2,name:"Guides",item:"https://mybreakeven.com/blogs/"},{"@type":"ListItem",position:3,name:"E-commerce business planning",item:canonical}]});
   }
   if (route === "guides/photography-business") {
     const page = pageSchema["@graph"].find(entity => entity["@type"] === "WebPage");
