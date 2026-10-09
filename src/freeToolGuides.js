@@ -1,7 +1,7 @@
 export const freeToolGuides = {
   "discount-break-even-calculator": {
-    "image": "/images/tools/discount-break-even-calculator-orange.webp",
-    "alt": "Discount planning example: a $100 sale reduced to $90 needs 136 monthly sales to preserve contribution from 100 sales.",
+    "image": "/images/tools/discount-break-even-calculator-modern-cover.webp",
+    "alt": "Retail products beside a discount tag and coins in a warm orange boutique setting",
     "caption": "Illustrative starting scenario: $60 variable cost and a 3% payment fee. A 10% discount needs 36 additional sales to preserve contribution.",
     "quick": "A discount break-even calculator finds the extra sales needed to preserve your current contribution after lowering your price. Divide current monthly contribution by the discounted contribution per sale, then round up. A 10% discount on a $100 sale with $60 variable cost and a 3% fee needs 136 sales instead of 100.",
     "features": [
@@ -128,8 +128,8 @@ export const freeToolGuides = {
     ]
   },
   "price-increase-calculator": {
-    "image": "/images/tools/price-increase-calculator-blue.webp",
-    "alt": "Price increase planning example: raising a $100 sale to $110 requires 80 of the original 100 monthly sales to preserve contribution.",
+    "image": "/images/tools/price-increase-calculator-modern-cover.webp",
+    "alt": "Premium retail display with an upward price arrow and a shopping bag",
     "caption": "Illustrative starting scenario: $60 variable cost and a 3% payment fee. A 10% price increase can absorb a loss of 20 whole sales.",
     "quick": "A price increase calculator compares contribution before and after raising prices, then finds the minimum sales needed to preserve your current monthly contribution. At $100 price, $60 variable cost and a 3% fee, a 10% increase needs 80 of the original 100 sales. Losing 20 whole sales still preserves contribution.",
     "features": [
