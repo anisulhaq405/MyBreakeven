@@ -24,9 +24,10 @@ describe("central blog registry", () => {
       "october06",
       "october07",
       "october09Cleaning",
+      "october09Landscaping",
     ]);
-    expect(blogPosts).toHaveLength(129);
-    expect(Object.keys(blogPostMap)).toHaveLength(129);
+    expect(blogPosts).toHaveLength(131);
+    expect(Object.keys(blogPostMap)).toHaveLength(131);
     expect(blogLibrarySummary.guideCount).toBe(blogPosts.length);
     expect(blogLibrarySummary.modelCount).toBe(blogModels.length);
     expect(blogModels).toHaveLength(8);
