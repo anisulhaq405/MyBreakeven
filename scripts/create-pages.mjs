@@ -1,3 +1,4 @@
+import { landscapingClusters } from "../src/landscapingCluster.js";
 import { cleaningClusters } from "../src/cleaningCluster.js";
 import { freeTools } from "../src/freeTools.js";
 import { articleFaq } from "../src/articleFaq.js";
@@ -36,6 +37,7 @@ let base = await readFile(homeFile, "utf8");
 const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 const allArticles = blogPosts;
 const staticPages = {
+  "guides/landscaping-business": ["Landscaping Business Planning Guides | MyBreakeven", "Explore landscaping pricing, job costs, maintenance contracts, routes and crew capacity. Find worked planning guides and two free business calculators.", "Landscaping business planning guides"],
   "guides/cleaning-business": ["Cleaning Business Planning Guides | MyBreakeven", "Explore cleaning business pricing, contract bids, operating costs, recurring clients and break-even. Find worked guides and free calculators.", "Cleaning business planning guides"],
   tools: ["Free Business Calculators: Profit, Pricing & Costs | MyBreakeven", "Explore free business calculators for profit, pricing, service costs, advertising and cash. Use clear formulas and worked guides without signing up.", "Free business calculators"],
   "pro-user-guide": ["MyBreakeven Pro Calculator User Guide", "Step-by-step guide to MyBreakeven Pro: enter costs, read break-even results, use advanced analysis, save scenarios and export reports.", "MyBreakeven Pro calculator user guide"],
@@ -77,6 +79,12 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
     page.mainEntity = {"@type":"ItemList", itemListElement: cleaningClusters.flatMap(c => c.slugs).map((slug, i) => ({"@type":"ListItem", position:i+1, url:`https://mybreakeven.com/blogs/${slug}/`, name:allArticles.find(a=>a.slug===slug).title}))};
     pageSchema["@graph"].push({"@type":"BreadcrumbList", itemListElement:[{"@type":"ListItem",position:1,name:"Home",item:"https://mybreakeven.com/"},{"@type":"ListItem",position:2,name:"Guides",item:"https://mybreakeven.com/blogs/"},{"@type":"ListItem",position:3,name:"Cleaning business planning",item:canonical}]});
   }
+  if (route === "guides/landscaping-business") {
+    const page = pageSchema["@graph"].find(entity => entity["@type"] === "WebPage");
+    page["@type"] = "CollectionPage";
+    page.mainEntity = {"@type":"ItemList", itemListElement: landscapingClusters.flatMap(group => group.slugs).map((slug, i) => ({"@type":"ListItem", position:i+1, url:`https://mybreakeven.com/blogs/${slug}/`, name:allArticles.find(article => article.slug === slug).title}))};
+    pageSchema["@graph"].push({"@type":"BreadcrumbList", itemListElement:[{"@type":"ListItem",position:1,name:"Home",item:"https://mybreakeven.com/"},{"@type":"ListItem",position:2,name:"Guides",item:"https://mybreakeven.com/blogs/"},{"@type":"ListItem",position:3,name:"Landscaping business planning",item:canonical}]});
+  }
   const links = route === "blogs" ? `<ul>${allArticles.map(article => `<li><a href="/blogs/${article.slug}/">${escapeHtml(article.title)}</a></li>`).join("")}</ul>` : `<p><a href="/#calculator">Use the free small business break-even calculator</a></p>`;
   const fallback = !privatePage
     ? `<div id="root" data-prerendered="true">${renderPublicPage(`/${route}`)}</div>`
@@ -96,8 +104,13 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
     .replace(/<link rel="alternate" hreflang="x-default" href="[^"]*"\s*\/?>/, `<link rel="alternate" hreflang="x-default" href="${canonical}" />`)
     .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, `<script type="application/ld+json">${JSON.stringify(pageSchema)}</script>`)
     .replace(/<div id="root"[^>]*>[\s\S]*?<\/div>\s*<\/body>/, `${fallback}</body>`);
+  const publicHtml = route === "guides/landscaping-business"
+    ? html.replace(/<meta property="og:image" content="[^"]*"\s*\/?>/, '<meta property="og:image" content="https://mybreakeven.com/images/tools/lawn-route-profit-calculator-modern-cover.webp" />')
+      .replace(/<meta name="twitter:image" content="[^"]*"\s*\/?>/, '<meta name="twitter:image" content="https://mybreakeven.com/images/tools/lawn-route-profit-calculator-modern-cover.webp" />')
+      .replace(/<meta property="og:image:alt" content="[^"]*"\s*\/?>/, '<meta property="og:image:alt" content="Lawn care worker, service truck and illustrated route markers" />')
+    : html;
   await mkdir(new URL(`../dist/${route}/`, import.meta.url), { recursive: true });
-  await writeFile(new URL(`../dist/${route}/index.html`, import.meta.url), html);
+  await writeFile(new URL(`../dist/${route}/index.html`, import.meta.url), publicHtml);
 }
 for (const article of allArticles) {
   const route = `blogs/${article.slug}`;
