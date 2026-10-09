@@ -1,3 +1,4 @@
+import AgencyCluster, { AgencyClusterLink } from './AgencyCluster.jsx';
 import EcommerceCluster, { EcommerceClusterLink } from './EcommerceCluster.jsx';
 import PhotographyCluster, { PhotographyClusterLink } from './PhotographyCluster.jsx';
 import RestaurantCluster, { RestaurantClusterLink } from './RestaurantCluster.jsx';
@@ -295,6 +296,7 @@ const LegalPage = ({ page }) => (
 );
 export default function SecondaryPage({ path, initialArticle }) {
   const pageMeta = {
+    "/guides/agency-business": ["Agency Business Guides | MyBreakeven", "Explore agency retainer pricing, scope costs, staffing, utilization, client risk and cash. Find thirteen worked guides and three planning calculators."],
     "/guides/ecommerce-business": ["E-commerce Business Guides | MyBreakeven", "Explore ecommerce product pricing, returns, shipping, advertising and inventory cash. Find sixteen worked guides and three business calculators."],
     "/guides/photography-business": ["Photography Business Guides | MyBreakeven", "Explore photography packages, editing costs, commercial assignments, prints and delivery capacity. Find twelve worked guides and a free break-even tool."],
     "/guides/restaurant-business": ["Restaurant Business Guides | MyBreakeven", "Explore restaurant startup, food and labor costs, menu pricing, delivery, events and capacity. Find twenty-one worked guides and a free break-even tool."],
@@ -329,7 +331,7 @@ export default function SecondaryPage({ path, initialArticle }) {
   const slug = path.startsWith("/blogs/") ? path.split("/")[2] : null;
   const calculatorSlug = path.startsWith("/calculators/") ? path.split("/")[2] : null;
   const authPaths = ["/login", "/signup", "/forgot-password", "/reset-password"];
-  const content = path === "/guides/ecommerce-business" ? <EcommerceCluster /> : path === "/guides/photography-business" ? <PhotographyCluster /> : path === "/guides/restaurant-business" ? <RestaurantCluster /> : path === "/guides/salon-business" ? <SalonCluster /> : path === "/guides/mobile-detailing-business" ? <MobileDetailingCluster /> : path === "/guides/landscaping-business" ? <LandscapingCluster /> : path === "/guides/cleaning-business" ? <CleaningCluster /> : path === "/tools" ? <FreeToolsHub /> : calculatorSlug && freeTools[calculatorSlug] ? <FreeTool slug={calculatorSlug} /> : calculatorSlug && industryPages[calculatorSlug] ? <IndustryPage slug={calculatorSlug} /> : slug ? <BlogArticle slug={slug} initialArticle={initialArticle} /> :
+  const content = path === "/guides/agency-business" ? <AgencyCluster /> : path === "/guides/ecommerce-business" ? <EcommerceCluster /> : path === "/guides/photography-business" ? <PhotographyCluster /> : path === "/guides/restaurant-business" ? <RestaurantCluster /> : path === "/guides/salon-business" ? <SalonCluster /> : path === "/guides/mobile-detailing-business" ? <MobileDetailingCluster /> : path === "/guides/landscaping-business" ? <LandscapingCluster /> : path === "/guides/cleaning-business" ? <CleaningCluster /> : path === "/tools" ? <FreeToolsHub /> : calculatorSlug && freeTools[calculatorSlug] ? <FreeTool slug={calculatorSlug} /> : calculatorSlug && industryPages[calculatorSlug] ? <IndustryPage slug={calculatorSlug} /> : slug ? <BlogArticle slug={slug} initialArticle={initialArticle} /> :
     authPaths.includes(path) ? <Suspense fallback={<p className="route-loading">Loading secure account…</p>}><AuthPage path={path} /></Suspense> : path === "/dashboard" ? <Suspense fallback={<p className="route-loading">Loading secure workspace…</p>}><DashboardPage /></Suspense> :
     path === "/pro-user-guide" ? <ProUserGuide /> : path === "/pricing" ? (
       <Pricing />
@@ -348,7 +350,7 @@ export default function SecondaryPage({ path, initialArticle }) {
             <p><span>Pricing</span><span>Startup</span><span>Margins</span><span>Break-even</span></p>
           </div>
         </section>
-        <EcommerceClusterLink /><PhotographyClusterLink /><RestaurantClusterLink /><SalonClusterLink /><CleaningClusterLink /><LandscapingClusterLink /><MobileDetailingClusterLink /><BlogSection isHub />
+        <AgencyClusterLink /><EcommerceClusterLink /><PhotographyClusterLink /><RestaurantClusterLink /><SalonClusterLink /><CleaningClusterLink /><LandscapingClusterLink /><MobileDetailingClusterLink /><BlogSection isHub />
       </div>
     ) : path === "/about-us" ? (
       <About />
