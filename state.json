@@ -2146,6 +2146,11 @@
       "revision": "f1f5ff4afe2259fab2a879b7311edf6fb71fb1600f00c41c8f7d9fde865690b9",
       "status": "needs_review",
       "attemptedAt": "2026-10-09T12:11:26.584Z"
+    },
+    "https://mybreakeven.com/guides/photography-business/|facebook": {
+      "revision": "cc47d253887cc1ade4576d911048738495f416fff5f025674ceb66957a74df02",
+      "status": "attempting",
+      "attemptedAt": "2026-10-09T13:07:15.865Z"
     }
   }
 }
