@@ -1,0 +1,20 @@
+import React from 'react';
+import { blogListingData } from './blogListingData.js';
+import { mobileDetailingClusters, mobileDetailingClusterPath } from './mobileDetailingCluster.js';
+import './mobile-detailing-cluster.css';
+
+export function MobileDetailingClusterLink() {
+  return <nav className="detailing-cluster-link" aria-label="Mobile detailing topic navigation"><a href={mobileDetailingClusterPath}>Explore mobile detailing business planning guides</a><span>Packages, routes, supplies and break-even</span></nav>;
+}
+
+export default function MobileDetailingCluster() {
+  const posts = new Map(blogListingData.posts.map(post => [post.slug, post]));
+  return <div className="detailing-cluster">
+    <nav className="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/blogs/">Guides</a><span>›</span><span>Mobile detailing business planning</span></nav>
+    <section className="detailing-cluster-hero"><div><span className="detailing-eyebrow">MOBILE DETAILING BUSINESS PLANNING</span><h1>Mobile detailing guides for pricing, routes and capacity</h1><p>Build a package quote, review a fleet account or check whether the day's route can fund your target. Choose the guide for the decision, then work with your own prices, costs and available hours.</p><a className="page-button" href="#detailing-decisions">Find my next decision</a></div><img src="/images/tools/mobile-detailing-travel-profit-calculator-cover.webp" alt="Mobile detailing van and a car with illustrated route markers and a clock" width="1200" height="675" fetchPriority="high" decoding="async"/></section>
+    <section className="detailing-calculator-links" aria-labelledby="detailing-tools-title"><h2 id="detailing-tools-title">Run your own numbers</h2><div><a href="/calculators/mobile-detailing-break-even-calculator/"><strong>Plan the whole business →</strong><span>Required monthly jobs, revenue, owner pay and productive capacity.</span></a><a href="/calculators/mobile-detailing-travel-profit-calculator/"><strong>Compare two route decisions →</strong><span>Nearby versus distant jobs after occupied time, entered costs and fees.</span></a><a href="/calculators/detailing-chemical-cost-calculator/"><strong>Cost the products →</strong><span>Concentrate price, dilution, measured use and waste per car.</span></a></div><p>A chemical estimate covers one supply cost. A job comparison needs its complete delivery time and costs. The monthly plan also includes business commitments and the work you can actually deliver.</p></section>
+    <nav className="detailing-topic-index" aria-label="Mobile detailing decisions">{mobileDetailingClusters.map(group => <a key={group.id} href={'#' + group.id}>{group.title}</a>)}</nav>
+    <div className="detailing-cluster-grid" id="detailing-decisions">{mobileDetailingClusters.map(group => <section key={group.id} id={group.id} className="detailing-cluster-card"><h2>{group.title}</h2><p>{group.description}</p><ul>{group.slugs.map(slug => {const post = posts.get(slug);return <li key={slug}><a href={'/blogs/' + slug + '/'}>{post.title}</a><p>{post.description}</p></li>;})}</ul></section>)}</div>
+    <section className="detailing-scope"><h2>Connect the ticket price to the complete working day</h2><p>Include normal setup, pack-down and paid travel consistently. A two-person hour is two worker-hours; vehicle expense is separate from paid time in the vehicle. Put each supply, equipment and overhead allowance in one place.</p><p>A cancelled stop can change the remaining route's cost. A refill can remove an appointment from the day even when the customer price leaves positive contribution. Use the route guides for those event checks before carrying the assumptions into a monthly target.</p><p>The worked figures are hypothetical planning examples, not local market rates or predicted results. The tools use your inputs and do not guarantee bookings, route access or payment collection.</p><a href="/blogs/">Browse all business planning guides</a></section>
+  </div>;
+}

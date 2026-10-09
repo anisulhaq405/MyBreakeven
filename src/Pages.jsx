@@ -1,3 +1,4 @@
+import MobileDetailingCluster, { MobileDetailingClusterLink } from './MobileDetailingCluster.jsx';
 import LandscapingCluster, { LandscapingClusterLink } from './LandscapingCluster.jsx';
 import CleaningCluster, { CleaningClusterLink } from './CleaningCluster.jsx';
 import { trackProductEvent } from "./productAnalytics";
@@ -290,6 +291,7 @@ const LegalPage = ({ page }) => (
 );
 export default function SecondaryPage({ path, initialArticle }) {
   const pageMeta = {
+    "/guides/mobile-detailing-business": ["Mobile Detailing Business Guides | MyBreakeven", "Explore mobile detailing pricing, fleet contracts, travel costs, cancellations and refill capacity. Find worked guides and three free business calculators."],
     "/guides/landscaping-business": ["Landscaping Business Planning Guides | MyBreakeven", "Explore landscaping pricing, job costs, maintenance contracts, routes and crew capacity. Find worked planning guides and two free business calculators."],
     "/guides/cleaning-business": ["Cleaning Business Planning Guides | MyBreakeven", "Explore cleaning business pricing, contract bids, operating costs, recurring clients and break-even. Find worked guides and free calculators."],
     "/tools": ["Free Business Calculators: Profit, Pricing & Costs | MyBreakeven", "Explore free business calculators for profit, pricing, service costs, advertising and cash. Use clear formulas and worked guides without signing up."],
@@ -319,7 +321,7 @@ export default function SecondaryPage({ path, initialArticle }) {
   const slug = path.startsWith("/blogs/") ? path.split("/")[2] : null;
   const calculatorSlug = path.startsWith("/calculators/") ? path.split("/")[2] : null;
   const authPaths = ["/login", "/signup", "/forgot-password", "/reset-password"];
-  const content = path === "/guides/landscaping-business" ? <LandscapingCluster /> : path === "/guides/cleaning-business" ? <CleaningCluster /> : path === "/tools" ? <FreeToolsHub /> : calculatorSlug && freeTools[calculatorSlug] ? <FreeTool slug={calculatorSlug} /> : calculatorSlug && industryPages[calculatorSlug] ? <IndustryPage slug={calculatorSlug} /> : slug ? <BlogArticle slug={slug} initialArticle={initialArticle} /> :
+  const content = path === "/guides/mobile-detailing-business" ? <MobileDetailingCluster /> : path === "/guides/landscaping-business" ? <LandscapingCluster /> : path === "/guides/cleaning-business" ? <CleaningCluster /> : path === "/tools" ? <FreeToolsHub /> : calculatorSlug && freeTools[calculatorSlug] ? <FreeTool slug={calculatorSlug} /> : calculatorSlug && industryPages[calculatorSlug] ? <IndustryPage slug={calculatorSlug} /> : slug ? <BlogArticle slug={slug} initialArticle={initialArticle} /> :
     authPaths.includes(path) ? <Suspense fallback={<p className="route-loading">Loading secure account…</p>}><AuthPage path={path} /></Suspense> : path === "/dashboard" ? <Suspense fallback={<p className="route-loading">Loading secure workspace…</p>}><DashboardPage /></Suspense> :
     path === "/pro-user-guide" ? <ProUserGuide /> : path === "/pricing" ? (
       <Pricing />
@@ -338,7 +340,7 @@ export default function SecondaryPage({ path, initialArticle }) {
             <p><span>Pricing</span><span>Startup</span><span>Margins</span><span>Break-even</span></p>
           </div>
         </section>
-        <CleaningClusterLink /><LandscapingClusterLink /><BlogSection isHub />
+        <CleaningClusterLink /><LandscapingClusterLink /><MobileDetailingClusterLink /><BlogSection isHub />
       </div>
     ) : path === "/about-us" ? (
       <About />

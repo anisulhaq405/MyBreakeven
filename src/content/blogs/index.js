@@ -1,3 +1,4 @@
+import { october09DetailingPosts } from "./october09Detailing.js";
 import { october09LandscapingPosts } from "./october09Landscaping.js";
 import { october09CleaningPosts } from "./october09Cleaning.js";
 import { october08ExistingUpdateMap } from "./october08ExistingUpdates.js";
@@ -114,6 +115,7 @@ export const blogCollections = Object.freeze({
   october07: october07Posts.map(normalizePost),
   october09Cleaning: october09CleaningPosts.map(normalizePost),
   october09Landscaping: october09LandscapingPosts.map(normalizePost),
+  october09Detailing: october09DetailingPosts.map(normalizePost),
 });
 
 export const blogPosts = Object.values(blogCollections)
