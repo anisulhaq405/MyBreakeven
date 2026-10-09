@@ -1,3 +1,4 @@
+import { cleaningClusters } from "../src/cleaningCluster.js";
 import { freeTools } from "../src/freeTools.js";
 import { articleFaq } from "../src/articleFaq.js";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
@@ -35,6 +36,7 @@ let base = await readFile(homeFile, "utf8");
 const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 const allArticles = blogPosts;
 const staticPages = {
+  "guides/cleaning-business": ["Cleaning Business Planning Guides | MyBreakeven", "Explore cleaning business pricing, contract bids, operating costs, recurring clients and break-even. Find worked guides and free calculators.", "Cleaning business planning guides"],
   tools: ["Free Business Calculators: Profit, Pricing & Costs | MyBreakeven", "Explore free business calculators for profit, pricing, service costs, advertising and cash. Use clear formulas and worked guides without signing up.", "Free business calculators"],
   "pro-user-guide": ["MyBreakeven Pro Calculator User Guide", "Step-by-step guide to MyBreakeven Pro: enter costs, read break-even results, use advanced analysis, save scenarios and export reports.", "MyBreakeven Pro calculator user guide"],
   pricing: ["MyBreakeven Pricing: Free & Pro Business Planning", "Compare MyBreakeven Free and Pro plans for industry break-even calculators, saved scenarios, cost-drift analysis, comparisons and reports.", "MyBreakeven Free and Pro pricing"],
@@ -69,6 +71,12 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
     ...homeSchema["@graph"].filter(entity => ["Organization", "WebSite"].includes(entity["@type"])),
     { "@type": "WebPage", "@id": `${canonical}#webpage`, url: canonical, name: title, description, inLanguage: "en-US", isPartOf: { "@id": "https://mybreakeven.com/#website" } },
   ] };
+  if (route === "guides/cleaning-business") {
+    const page = pageSchema["@graph"].find(e => e["@type"] === "WebPage");
+    page["@type"] = "CollectionPage";
+    page.mainEntity = {"@type":"ItemList", itemListElement: cleaningClusters.flatMap(c => c.slugs).map((slug, i) => ({"@type":"ListItem", position:i+1, url:`https://mybreakeven.com/blogs/${slug}/`, name:allArticles.find(a=>a.slug===slug).title}))};
+    pageSchema["@graph"].push({"@type":"BreadcrumbList", itemListElement:[{"@type":"ListItem",position:1,name:"Home",item:"https://mybreakeven.com/"},{"@type":"ListItem",position:2,name:"Guides",item:"https://mybreakeven.com/blogs/"},{"@type":"ListItem",position:3,name:"Cleaning business planning",item:canonical}]});
+  }
   const links = route === "blogs" ? `<ul>${allArticles.map(article => `<li><a href="/blogs/${article.slug}/">${escapeHtml(article.title)}</a></li>`).join("")}</ul>` : `<p><a href="/#calculator">Use the free small business break-even calculator</a></p>`;
   const fallback = !privatePage
     ? `<div id="root" data-prerendered="true">${renderPublicPage(`/${route}`)}</div>`

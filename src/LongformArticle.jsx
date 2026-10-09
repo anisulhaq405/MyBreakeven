@@ -1,3 +1,4 @@
+import { CleaningClusterLink } from './CleaningCluster.jsx';
 import { articleGuideType } from "./articleGuideType.js";
 import React, { useEffect } from "react";
 import { articleFaq } from "./articleFaq.js";
@@ -17,6 +18,7 @@ export default function LongformArticle({ article: a }) {
   const faq = articleFaq(a);
   return <article className="article-page">
     <nav className="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/blogs/">Guides</a><span>›</span><span>{a.tag}</span></nav>
+    {a.tag === "Cleaning" && <CleaningClusterLink />}
     <span>{a.tag} {guideType}</span><h1>{a.title}</h1>
     <div className="article-meta"><time dateTime={a.published}>Published {dateLabel(a.published)}</time><span>Updated {dateLabel(a.modified)}</span></div>
     <p className="article-note">Published by <a href="/about-us/">MyBreakeven</a>. Report a calculation or content issue to <a href="mailto:support@mybreakeven.com">support@mybreakeven.com</a>.</p>
