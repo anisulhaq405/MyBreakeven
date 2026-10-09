@@ -2129,7 +2129,7 @@
     },
     "https://mybreakeven.com/guides/salon-business/|facebook": {
       "revision": "ce1c90626d5da8d7f8150338be1d4e5e0ab05661eb8460e4586de6fc34cac6d8",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-09T11:34:18.574Z"
     }
   }
