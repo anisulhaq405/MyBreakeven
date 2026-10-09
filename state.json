@@ -2049,7 +2049,7 @@
     },
     "https://mybreakeven.com/blogs/cleaning-contract-payroll-cash-gap/|facebook": {
       "revision": "78bbe177009546cb10d61b212f6fed445772d9ec689bc549d007ff1bfaba0cf5",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-09T07:45:27.316Z"
     }
   }
