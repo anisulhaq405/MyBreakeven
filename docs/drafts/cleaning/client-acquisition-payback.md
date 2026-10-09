@@ -1,6 +1,19 @@
-import { CleaningClusterLink } from './CleaningCluster.jsx';
-import { trackProductEvent } from "./productAnalytics";
-const salonPlanningSection = {"heading": "Test salon appointments against productive chair hours", "text": "Use complete appointment worker-hours and actual available productive time. Suppose a salon needs $6,000 contribution each month and leaves $60 per appointment. It needs 100 appointments. If each requires 1.5 delivery hours, that is 150 hours of work. A plan with only 135 productive hours has capacity for 90 whole appointments and does not fit the target.\n\nRetail purchases can add contribution, but they should not be treated as extra chair appointments. Model the service mix and product economics consistently. No-shows can consume reserved time without producing the planned paid service. Track cancellations and rebooked slots rather than assuming every diary entry creates revenue.\n\nOwner pay remains explicit in the monthly amount to cover. A booth-rental arrangement and an employee-service arrangement have different…12344 tokens truncated… actual collections and costs because cancellations, discounts and unpaid invoices can delay or prevent recovery.
+---
+status: unpublished; release only after results review
+proposed_slug: cleaning-client-acquisition-payback
+title: Cleaning Client Acquisition Cost: When It Pays Back
+meta_description: Calculate cleaning client acquisition cost and paid visits to recovery. Compare campaign cohorts with contribution, discounts and actual collections.
+primary_intent: How many paid visits recover the cost of acquiring a cleaning client?
+keyword_candidates: cleaning client acquisition cost; cleaning customer acquisition payback; cleaning marketing cost per client
+---
+
+# Cleaning Client Acquisition Cost: When It Pays Back
+
+A marketing campaign can bring new cleaning clients without recovering its cost quickly. The first invoice is not all available to repay advertising: labour, supplies, travel and payment fees still need covering. This guide follows a group of newly acquired clients from acquisition spending to collected visit contribution. It answers when that spending is recovered. It does not prescribe an advertising budget or assume every customer stays forever. All amounts and client counts below are hypothetical, not market benchmarks.
+
+## Quick answer
+
+Divide defined acquisition spending by the new clients it acquired to calculate customer acquisition cost. Then divide that cost by contribution from a completed, paid visit to estimate visits to payback. Round up for whole visits. Check the cohort’s actual collections and costs because cancellations, discounts and unpaid invoices can delay or prevent recovery.
 
 ## Define the cohort before calculating a result
 

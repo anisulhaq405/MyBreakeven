@@ -1,3 +1,4 @@
+import { CleaningClusterLink } from './CleaningCluster.jsx';
 import React,{useEffect,useState}from"react";
 import LongformArticle from "./LongformArticle.jsx";
 import { getLoadedBlogPost, loadBlogPost, relatedBlogPosts } from "./blogContentLoader.js";
@@ -19,6 +20,7 @@ export default function BlogArticle({slug,initialArticle}){
   if(a.html)return <LongformArticle article={a} />;
   return <article className="article-page">
     <nav className="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/blogs/">Guides</a><span>›</span><span>{a.tag}</span></nav>
+    {a.tag === "Cleaning" && <CleaningClusterLink />}
     <span>{a.tag} BREAK-EVEN GUIDE</span><h1>{a.title}</h1>
     <div className="article-meta"><time dateTime={a.published}>Published {new Date(`${a.published}T12:00:00Z`).toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric",timeZone:"UTC"})}</time><span>Updated {new Date(`${a.modified}T12:00:00Z`).toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric",timeZone:"UTC"})}</span></div>
     <p className="article-note">Published by <a href="/about-us/">MyBreakeven</a>. Report a calculation or content issue to <a href="mailto:support@mybreakeven.com">support@mybreakeven.com</a>.</p>
