@@ -1,15 +1,14 @@
 ---
-status: unpublished; release only after results review
-proposed_slug: cleaning-estimate-vs-actual-job-cost
-title: Cleaning Job Cost: Compare Your Estimate With Actuals
+status: published
+slug: cleaning-estimate-vs-actual-job-cost
+published: 2026-10-09
+seo_title: Cleaning Job Cost: Estimate vs Actual
 meta_description: Compare a completed cleaning job with its estimate. Track worker hours, supplies, travel and fees to explain lost contribution and improve future quotes.
-primary_intent: Why did a completed cleaning job earn less than estimated?
-keyword_candidates: cleaning estimate vs actual cost; cleaning job cost variance; actual cleaning job profitability
 ---
 
 # Cleaning Job Cost: Compare Your Estimate With Actuals
 
-You quoted a cleaning job, completed it and collected payment. The next useful question is whether the work used the time and supplies you expected. A quote can look sensible before service yet leave less contribution after extra worker hours, additional travel or a return visit. This guide reconciles one completed job against its estimate. It does not repeat a house-cleaning price list. The example uses fictional costs so you can follow the method without treating them as local market rates.
+Compare a completed cleaning job with its accepted estimate by reconciling revenue, worker hours and each variable cost. The difference shows how much contribution changed and which items caused the change. A quote can look sensible before service yet leave less contribution after extra worker hours, additional travel or a return visit. This guide reconciles one completed job against its estimate. It does not repeat a house-cleaning price list. The example uses fictional USD costs so you can follow the method without treating them as local market rates.
 
 ## Quick answer
 
@@ -71,7 +70,7 @@ For an uncharged extra, record what happened and why no additional revenue was c
 
 A return visit should remain attached to the original job where that is the work it corrects. Recording it as a new zero-revenue job may hide the cost from the original quote review. Include its time, transport and consumables in the reconciliation, with an explanation of the agreed accounting treatment where needed.
 
-## How to run your numbers
+## How to run your own numbers
 
 Use the [cleaning business break-even calculator](/calculators/cleaning-business-break-even-calculator/) to test what your observed contribution per visit means for monthly volume. Enter representative completed-job economics rather than copying one unusually easy or difficult visit across the whole schedule.
 
@@ -120,8 +119,18 @@ Yes, with context. Worker hours, contribution and scope notes can help, but a si
 
 No. It is a completed-job reconciliation method that feeds better assumptions into existing quoting and break-even tools.
 
+
+
+## Closing takeaways
+
+- Preserve the original accepted estimate.
+- Compare the same scope and cost boundary in both columns.
+- Explain material variances before changing the next quote.
+
+If the job is complete but collection is still pending, use the [cleaning contract payroll cash-gap guide](/blogs/cleaning-contract-payroll-cash-gap/) for the separate payment-timing question.
+
 Explore the [Cleaning planning hub](/guides/cleaning-business/) and [all business guides](/blogs/).
 
-## Editorial notes
+## Assumptions
 
-All figures are original hypothetical examples. The arithmetic is a management comparison, not a tax-accounting rule. Ownership boundary: estimate versus completed-job actuals, not initial quote construction. No industry average, search volume or keyword difficulty is asserted. Draft remains outside the live publishing registry and sitemap.
+All job figures are hypothetical USD examples. The variance formulas reconcile the stated inputs; they are a management comparison rather than a tax-accounting rule.

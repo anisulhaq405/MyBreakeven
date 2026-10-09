@@ -25,7 +25,7 @@ const groupFor = slug => {
   if (blogCollections.startup.some(post => post.slug === slug)) {
     return cafePosts.some(post => post.slug === slug) ? "cafe" : "startup";
   }
-  for (const [key, name] of [["october07", "october07"], ["profitability", "profitability"], ["volume", "volume"], ["concepts", "concepts"], ["financialPlanning", "financeExpansion"], ["unitEconomics", "unitEconomics"], ["september28", "september28"], ["september29", "september29"], ["september30", "september30"], ["october01", "october01"], ["october02", "october02"], ["october03", "october03"], ["october04", "october04"], ["october05", "october05"], ["october06", "october06"], ["october06Supplement", "october06Supplement"]]) {
+  for (const [key, name] of [["october09Cleaning", "october09Cleaning"], ["october07", "october07"], ["profitability", "profitability"], ["volume", "volume"], ["concepts", "concepts"], ["financialPlanning", "financeExpansion"], ["unitEconomics", "unitEconomics"], ["september28", "september28"], ["september29", "september29"], ["september30", "september30"], ["october01", "october01"], ["october02", "october02"], ["october03", "october03"], ["october04", "october04"], ["october05", "october05"], ["october06", "october06"], ["october06Supplement", "october06Supplement"]]) {
     if (blogCollections[key].some(post => post.slug === slug)) return name;
   }
   throw new Error(`No content module for ${slug}`);
