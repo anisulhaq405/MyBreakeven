@@ -1,3 +1,4 @@
+import { MobileDetailingClusterLink } from './MobileDetailingCluster.jsx';
 import { LandscapingClusterLink } from './LandscapingCluster.jsx';
 import { CleaningClusterLink } from './CleaningCluster.jsx';
 import { articleGuideType } from "./articleGuideType.js";
@@ -19,7 +20,7 @@ export default function LongformArticle({ article: a }) {
   const faq = articleFaq(a);
   return <article className="article-page">
     <nav className="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/blogs/">Guides</a><span>›</span><span>{a.tag}</span></nav>
-    {a.tag === "Cleaning" && <CleaningClusterLink />}{a.tag === "Landscaping" && <LandscapingClusterLink />}
+    {a.tag === "Cleaning" && <CleaningClusterLink />}{a.tag === "Landscaping" && <LandscapingClusterLink />}{a.tag === "Mobile Detailing" && <MobileDetailingClusterLink />}
     <span>{a.tag} {guideType}</span><h1>{a.title}</h1>
     <div className="article-meta"><time dateTime={a.published}>Published {dateLabel(a.published)}</time><span>Updated {dateLabel(a.modified)}</span></div>
     <p className="article-note">Published by <a href="/about-us/">MyBreakeven</a>. Report a calculation or content issue to <a href="mailto:support@mybreakeven.com">support@mybreakeven.com</a>.</p>
