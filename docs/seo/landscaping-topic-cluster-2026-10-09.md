@@ -1,8 +1,8 @@
 # Landscaping topic cluster — 9 October 2026
 
-Approved phase: organize 14 existing guides into six decision groups, connect two existing calculators and add contextual hub return links. Article text, dates and financial engines remain unchanged.
+Phase 1 organized 14 existing guides into six groups. This revision adds two researched guides to job cost control, bringing the hub to 16 guides and two calculators. Earlier article text/dates and financial engines remain unchanged.
 
-Hub: `/guides/landscaping-business/`. One primary intent and two supporting phrases per guide: 14 intents and 28 variations, 42 mapped phrases. Variations share a destination; they are not separate pages or an exact-match repetition quota. No measured volume, difficulty, indexing, traffic or AI-citation data is available.
+Hub: `/guides/landscaping-business/`. One primary intent and two supporting phrases per guide: 16 intents and 32 variations, 48 mapped phrases. Variations share a destination; they are not separate pages or an exact-match repetition quota. No measured volume, difficulty, indexing, traffic or AI-citation data is available.
 
 | Group | Guide slug | Primary intent | Supporting phrases |
 |---|---|---|---|
@@ -21,11 +21,14 @@ Hub: `/guides/landscaping-business/`. One primary intent and two supporting phra
 | Break-even, seasons and income targets | landscaping-seasonal-break-even | landscaping seasonal break even | landscaping slow month reserve; active season jobs covering annual overhead |
 | Break-even, seasons and income targets | how-many-lawns-100k | how many lawns to make 100k | lawn customer count for income goal; lawns needed for annual revenue target |
 
-## Two researched gap briefs, not published articles
+| Job cost control | landscaping-change-order-cost | landscaping change order cost | landscaping change order credits; extra landscape work price |
+| Job cost control | landscaping-plant-warranty-cost | landscaping plant warranty cost | plant replacement cost allowance; landscaping warranty return visit cost |
 
-1. **Landscaping change-order cost.** Proposed slug `landscaping-change-order-cost`. Explain incremental added materials/hours, avoided costs, customer credits, remobilization, fees, net contribution and schedule impact. Preserve original estimate. Completed-job variance stays with the existing estimate-versus-actual guide; initial quoting stays with service-pricing guides. Require three independently recalculated hypothetical scenarios, source checks, original image, visible FAQ/schema match and complete metadata before publication. Do not prescribe legal approval or payment terms.
+## Research briefs implemented in this revision
 
-2. **Landscaping plant-warranty cost.** Proposed slug `landscaping-plant-warranty-cost`. Use covered replacement counts, complete delivery cost, shared return-visit cost, supplier credits and repeated-claim sensitivity. Separate expected cost from cash funding and revenue allowance. No invented failure rate, universal warranty percentage, contract term or plant-care advice. Equipment replacement and subcontractor rework remain with their existing owners. Same full editorial and technical checks before publication.
+1. **Landscaping change-order cost.** Proposed slug `landscaping-change-order-cost`. Explain incremental added materials/hours, avoided costs, customer credits, remobilization, fees, net contribution and schedule impact. Preserve original estimate. Completed-job variance stays with the existing estimate-versus-actual guide; initial quoting stays with service-pricing guides. The guide includes three independently recalculated hypothetical scenarios, an industry source, original image, six visible FAQs and matching schema/metadata. Do not prescribe legal approval or payment terms.
+
+2. **Landscaping plant-warranty cost.** Proposed slug `landscaping-plant-warranty-cost`. Use covered replacement counts, complete delivery cost, shared return-visit cost, supplier credits and repeated-claim sensitivity. Separate expected cost from cash funding and revenue allowance. No invented failure rate, universal warranty percentage, contract term or plant-care advice. Equipment replacement and subcontractor rework remain with their existing owners. The guide includes replacement-count/visit sensitivity, a specimen example and cash timeline, with source, image, six FAQs and matching metadata.
 
 Rain-delay backlog recovery remains deferred: existing crew, route and seasonal articles already address weather capacity. A generic extra article would overlap.
 
@@ -39,6 +42,10 @@ Rain-delay backlog recovery remains deferred: existing crew, route and seasonal 
 
 ## Acceptance and follow-up
 
-Verify tests, production build, site audit, six groups, 14 unique destinations, two tool links, all contextual inbound links, one H1, self-canonical, indexable robots, consistent title/description/social image, CollectionPage/ItemList and breadcrumbs, sitemap entry and responsive browser layouts. Compare remote files before merging; verify live HTML after deployment.
+Verify tests, production build, site audit, six groups, 16 unique destinations, two tool links, all contextual inbound links, one H1, self-canonical, indexable robots, consistent title/description/social image, CollectionPage/ItemList and breadcrumbs, sitemap entry and responsive browser layouts. Compare remote files before merging; verify live HTML after deployment.
 
 Recent article bodies and dates stay stable while results develop. Review indexing before visibility; check actual query/impression/click/calculator-handoff data at 2/4/8 weeks if available. Do not infer rankings or cannibalization from HTTP 200 or two related URLs alone. Rollback: revert the isolated hub change and redeploy.
+
+## Validation for the two-article revision
+
+456 existing tests in 42 files pass. Production build and rendered-site audit pass (170 routes, 165 sitemap URLs). Worked cost/contribution, fee-rounding, worker-hour and cash examples independently checked with Decimal arithmetic. Two distinct topic-specific imagegen covers saved under `public/images/blog/`; article dates are 9 October 2026. Mobile/desktop rendering and live verification accompany deployment.
