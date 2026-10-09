@@ -2166,6 +2166,11 @@
       "revision": "311bae991d426de25519358850ddcae4fcac5ca0e3cc2d1cae61397b309e057f",
       "status": "needs_review",
       "attemptedAt": "2026-10-09T19:05:56.038Z"
+    },
+    "https://mybreakeven.com/guides/agency-business/|facebook": {
+      "revision": "ad8d582822725d1a0f83124e11a91c4314f82e1f8ae703f2a694d32542e9aa95",
+      "status": "attempting",
+      "attemptedAt": "2026-10-09T19:28:11.744Z"
     }
   }
 }
