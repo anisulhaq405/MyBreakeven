@@ -2109,7 +2109,7 @@
     },
     "https://mybreakeven.com/blogs/mobile-detailing-water-refill-cost/|facebook": {
       "revision": "4bd91996c8d408820cfe1f89cd0271e91ba058d7507ca5d4941cbdc95711cf8f",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-09T10:07:46.675Z"
     }
   }
