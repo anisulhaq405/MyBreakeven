@@ -1,15 +1,14 @@
 ---
-status: unpublished; release only after results review
-proposed_slug: cleaning-contract-payroll-cash-gap
-title: Cleaning Contract Cash Gap: Payroll Before Payment
+status: published
+slug: cleaning-contract-payroll-cash-gap
+published: 2026-10-09
+seo_title: Cleaning Contract Cash Gap and Payroll
 meta_description: Map cleaning contract receipts against payroll dates. Calculate the lowest cash balance, test late payment and plan the reserve before work starts.
-primary_intent: Can I fund payroll before a cleaning account pays?
-keyword_candidates: cleaning contract cash flow; cleaning payroll cash gap; commercial cleaning payment terms
 ---
 
 # Cleaning Contract Cash Gap: Payroll Before Payment
 
-A cleaning account can leave enough contribution on paper and still create a cash shortage before its first payment arrives. Your crew’s pay dates do not automatically follow the customer’s invoice schedule. Supplies and mobilisation purchases may also fall due before any receipt. This guide builds a dated cash schedule for that gap. It does not set a market price or recommend a loan. Every dollar amount below is hypothetical; replace it with your contract, payroll schedule and available cash.
+A cleaning account can leave enough contribution on paper and still create a cash shortage before its first payment arrives. Your crew’s pay dates do not automatically follow the customer’s invoice schedule. Supplies and mobilisation purchases may also fall due before any receipt. This guide builds a dated cash schedule for that gap. It does not set a market price or recommend a loan. Every USD amount below is hypothetical; replace it with your contract, payroll schedule and available cash.
 
 ## Quick answer
 
@@ -70,7 +69,7 @@ The lowest balance is now $1,200, above the chosen reserve. Total receipts and p
 
 Also run a downside case in which the second receipt slips by one payroll cycle. Carry all real payments forward while moving only that receipt. If the forecast fails, identify the specific event causing the breach rather than writing “cash flow risk” beside a monthly total.
 
-## How to run your numbers
+## How to run your own numbers
 
 First use the [cleaning business break-even calculator](/calculators/cleaning-business-break-even-calculator/) to assess whether visit contribution and expected volume support your monthly costs. Then build the dated ledger separately. The calculator’s monthly result does not forecast invoice clearance or payroll dates.
 
@@ -117,10 +116,18 @@ No. It helps assess service economics. A dated cash ledger is needed to model th
 
 Update it when work scope, payroll, billing approval or expected collection changes. Reconcile it with actual bank movements after each cycle.
 
+
+
+## Closing takeaways
+
+- Place receipts and payments on their actual expected dates.
+- Check the lowest balance, including same-day payment order.
+- Test late collection before committing usable cash to more work.
+
+Use [completed-job cost reconciliation](/blogs/cleaning-estimate-vs-actual-job-cost/) to replace estimated service payments with observed job costs before updating the next schedule.
+
 Explore the [Cleaning planning hub](/guides/cleaning-business/) and [all business guides](/blogs/).
 
-## Source and editorial notes
+## Sources and assumptions
 
-- [business.gov.au: Set up a cash flow statement](https://business.gov.au/finance/cash-flow/set-up-a-cash-flow-statement): general ledger structure only; checked 9 October 2026.
-- All scenarios, reserve choices and calculations are original hypothetical examples, not industry benchmarks.
-- Ownership boundary: dated collections versus payroll. Pricing, startup cost totals and monthly break-even remain with existing pages. No search volume or keyword difficulty is asserted. Draft is excluded from the publishing registry and sitemap.
+[business.gov.au: Set up a cash flow statement](https://business.gov.au/finance/cash-flow/set-up-a-cash-flow-statement). General cash-ledger structure; checked 9 October 2026. The weekly cleaning scenarios and reserve choices are hypothetical examples created for this guide.

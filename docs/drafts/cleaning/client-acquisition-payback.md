@@ -1,15 +1,14 @@
 ---
-status: unpublished; release only after results review
-proposed_slug: cleaning-client-acquisition-payback
-title: Cleaning Client Acquisition Cost: When It Pays Back
+status: published
+slug: cleaning-client-acquisition-payback
+published: 2026-10-09
+seo_title: Cleaning Client Acquisition Cost and Payback
 meta_description: Calculate cleaning client acquisition cost and paid visits to recovery. Compare campaign cohorts with contribution, discounts and actual collections.
-primary_intent: How many paid visits recover the cost of acquiring a cleaning client?
-keyword_candidates: cleaning client acquisition cost; cleaning customer acquisition payback; cleaning marketing cost per client
 ---
 
 # Cleaning Client Acquisition Cost: When It Pays Back
 
-A marketing campaign can bring new cleaning clients without recovering its cost quickly. The first invoice is not all available to repay advertising: labour, supplies, travel and payment fees still need covering. This guide follows a group of newly acquired clients from acquisition spending to collected visit contribution. It answers when that spending is recovered. It does not prescribe an advertising budget or assume every customer stays forever. All amounts and client counts below are hypothetical, not market benchmarks.
+Cleaning client acquisition cost is defined acquisition spending divided by the new clients it brings. Estimate paid visits to recovery by dividing that cost by visit contribution, after labour, supplies, travel and fees. This guide follows a group of newly acquired clients from acquisition spending to collected visit contribution. It answers when that spending is recovered. It does not prescribe an advertising budget or assume every customer stays forever. All USD amounts and client counts below are hypothetical, not market benchmarks.
 
 ## Quick answer
 
@@ -85,7 +84,7 @@ That five-visit result applies only while every visit has the lower contribution
 
 A lower acquisition cost may still be unattractive if the promotion reduces contribution substantially. Compare the full recovery record, not only cost per lead or a campaign’s reported bookings. Use the actual fees charged, especially where the processor includes a fixed transaction charge as well as a percentage.
 
-## How to run your numbers
+## How to run your own numbers
 
 Use the [cleaning business break-even calculator](/calculators/cleaning-business-break-even-calculator/) for the monthly volume needed to cover overhead with realistic visit contribution. It does not attribute advertising channels or track acquisition cohorts.
 
@@ -132,10 +131,19 @@ You can model future scenarios separately, but an assumed lifetime does not repl
 
 The example measures acquisition recovery from contribution before shared overhead. Label that limit. A broader profit analysis must account for overhead consistently without counting it twice.
 
+
+
+## Closing takeaways
+
+- Define acquisition spending and new clients consistently.
+- Recover spending from visit contribution rather than revenue.
+- Track every client in the cohort, including early departures.
+- Compare cohorts at a stated age and collection cutoff.
+
+Use [cleaning job cost reconciliation](/blogs/cleaning-estimate-vs-actual-job-cost/) to replace the assumed service cost with completed-job evidence.
+
 Explore the [Cleaning planning hub](/guides/cleaning-business/) and [all business guides](/blogs/).
 
-## Source and editorial notes
+## Sources and assumptions
 
-- [BDC: Customer acquisition cost](https://www.bdc.ca/en/articles-tools/entrepreneur-toolkit/templates-business-guides/glossary/customer-acquisition-cost): general acquisition-cost definition only; checked 9 October 2026.
-- All figures, cohort outcomes and recovery calculations are original hypothetical examples. No search volume, keyword difficulty or industry benchmark is asserted.
-- Ownership boundary: new-client acquisition spending recovery; existing retention and quoting pages retain their separate intents. Draft is excluded from the live registry and sitemap.
+[BDC: Customer acquisition cost](https://www.bdc.ca/en/articles-tools/entrepreneur-toolkit/templates-business-guides/glossary/customer-acquisition-cost). General acquisition-cost definition; checked 9 October 2026. The cleaning visit costs and cohort outcomes are hypothetical examples created for this guide.
