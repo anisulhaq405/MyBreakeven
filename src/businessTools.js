@@ -58,8 +58,8 @@ export const businessTools = {
     ],
     "guide": "/blogs/break-even-roas-formula/",
     "guideLabel": "Break-even ROAS formula and ecommerce examples",
-    "image": "/images/tools/break-even-roas-calculator.webp",
-    "alt": "Ad planning example: an $80 order leaves 42% contribution and needs 2.38 times return on ad spend before fixed overhead.",
+    "image": "/images/tools/break-even-roas-calculator-modern-cover.webp",
+    "alt": "Advertising workspace with a laptop, megaphone icon and ecommerce parcel",
     "caption": "Illustrative order economics: $80 order value, $44 direct cost and a 3% fee. This is a campaign contribution threshold, not whole-business break-even.",
     "assumptions": "The model uses a stable average order value and direct cost mix. Percentage fees are unchanged. Revenue and spend must use the same attribution window. It excludes fixed overhead, owner pay, taxes and unentered retention costs. Refunds must already be reflected in net revenue and your cost allowance. Attribution does not prove incremental sales.",
     "sections": [
@@ -215,8 +215,8 @@ export const businessTools = {
     ],
     "guide": "/calculators/agency-break-even-calculator/",
     "guideLabel": "Agency and freelancer business break-even calculator",
-    "image": "/images/tools/hourly-rate-calculator.webp",
-    "alt": "Freelance pricing example: 966 annual billable hours require a $64.04 hourly rate to fund a $60,000 annual need after a 3% fee.",
+    "image": "/images/tools/hourly-rate-calculator-modern-cover.webp",
+    "alt": "Freelance workspace with a laptop, clock and notebook in violet tones",
     "caption": "Illustrative scenario: 35 working hours per week, 46 working weeks and 60% billable time. Income targets are before personal income tax.",
     "assumptions": "The model assumes all planned billable hours are sold and collected at one rate. Monthly income, overhead and profit targets are annualized over 12 months. It excludes unentered per-project costs, unpaid invoices, tax calculations and changes in workload. The fee applies to all billed revenue. Currency selection changes labels only.",
     "sections": [
@@ -355,8 +355,8 @@ export const businessTools = {
     ],
     "guide": "/blogs/cash-flow-forecast-vs-break-even/",
     "guideLabel": "Cash-flow forecasts versus break-even planning",
-    "image": "/images/tools/cash-runway-calculator.webp",
-    "alt": "Cash planning example: $24,000 above reserve and $3,000 monthly cash burn provide eight months of runway.",
+    "image": "/images/tools/cash-runway-calculator-modern-cover.webp",
+    "alt": "Business cash reserve jar and coin stacks beside a calendar icon",
     "caption": "Illustrative constant-flow projection: $30,000 starting cash, $6,000 reserve, $7,000 receipts and $10,000 payments each month.",
     "assumptions": "Receipts and payments stay constant and are evenly spread for the fractional-month runway estimate. The model excludes unentered one-off purchases, new financing and seasonal changes. It reports time to your reserve, not a legal insolvency date. A monthly ending balance can miss an earlier payment shortfall within that month. Use a dated cash-flow forecast for actual payment scheduling.",
     "sections": [
