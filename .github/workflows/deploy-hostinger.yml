@@ -44,6 +44,7 @@ jobs:
           force_orphan: true
 
       - name: Publish new and changed content to social accounts
+        if: ${{ !contains(github.event.head_commit.message, '[skip social]') }}
         env:
           MAKE_SOCIAL_WEBHOOK_URL: ${{ secrets.MAKE_SOCIAL_WEBHOOK_URL }}
           SOCIAL_REPOSITORY_URL: https://github.com/${{ github.repository }}.git
