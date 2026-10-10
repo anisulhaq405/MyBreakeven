@@ -162,6 +162,25 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
       .replace(/<meta name="twitter:image" content="[^"]*"\s*\/?>/, '<meta name="twitter:image" content="https://mybreakeven.com/images/tools/mobile-detailing-travel-profit-calculator-cover.webp" />')
       .replace(/<meta property="og:image:alt" content="[^"]*"\s*\/?>/, '<meta property="og:image:alt" content="Mobile detailing van, car and illustrated route markers" />');
   }
+  const clusterImages = {
+    "guides/cleaning-business": ["/images/tools/cleaning-break-even.webp", "Cleaning business planning illustration"],
+    "guides/salon-business": ["/images/tools/salon-rebooking-calculator-cover.webp", "Salon appointment and repeat-visit planning illustration"],
+    "guides/restaurant-business": ["/images/tools/restaurant-break-even.webp", "Restaurant business planning illustration"],
+    "guides/photography-business": ["/images/tools/photography-break-even.webp", "Photography business planning illustration"],
+    "guides/ecommerce-business": ["/images/tools/ecommerce-break-even.webp", "E-commerce business planning illustration"],
+    "guides/agency-business": ["/images/tools/agency-break-even.webp", "Agency business planning illustration"],
+  };
+  if (clusterImages[route]) {
+    const [image, alt] = clusterImages[route];
+    publicHtml = publicHtml
+      .replace(/<meta property="og:image" content="[^"]*"\s*\/?>/, `<meta property="og:image" content="https://mybreakeven.com${image}" />`)
+      .replace(/<meta name="twitter:image" content="[^"]*"\s*\/?>/, `<meta name="twitter:image" content="https://mybreakeven.com${image}" />`)
+      .replace(/<meta property="og:image:alt" content="[^"]*"\s*\/?>/, `<meta property="og:image:alt" content="${alt}" />`);
+  }
+  if (route.startsWith("guides/")) {
+    publicHtml = publicHtml.replace(/<meta property="og:image:type" content="[^"]*"\s*\/?>/, '<meta property="og:image:type" content="image/webp" />')
+      .replace(/<meta property="og:image:height" content="[^"]*"\s*\/?>/, '<meta property="og:image:height" content="675" />');
+  }
   await mkdir(new URL(`../dist/${route}/`, import.meta.url), { recursive: true });
   await writeFile(new URL(`../dist/${route}/index.html`, import.meta.url), publicHtml);
 }
@@ -171,7 +190,7 @@ for (const article of allArticles) {
   const title = `${article.seoTitle} | MyBreakeven`;
   const resolvedFaq = articleFaq(article);
   const schema = { "@context": "https://schema.org", "@graph": [
-    { "@type": "BlogPosting", "@id": `${canonical}#article`, headline: article.title, description: article.metaDescription, image: { "@type": "ImageObject", url: `https://mybreakeven.com${article.image}`, width: 1200, height: 675 }, datePublished: article.published, dateModified: article.modified, keywords: article.tags.join(", "), mainEntityOfPage: { "@id": `${canonical}#webpage` }, author: { "@type": "Organization", name: "MyBreakeven", url: "https://mybreakeven.com/" }, publisher: { "@id": "https://mybreakeven.com/#organization" }, about: article.about || `${article.name} break-even calculation`, inLanguage: "en-US" },
+    { "@type": "BlogPosting", "@id": `${canonical}#article`, headline: article.title, description: article.metaDescription, image: { "@type": "ImageObject", url: `https://mybreakeven.com${article.image}`, width: 1200, height: 675 }, datePublished: article.published, dateModified: article.modified, keywords: article.tags.join(", "), mainEntityOfPage: { "@id": `${canonical}#webpage` }, author: { "@type": "Organization", name: "MyBreakeven", url: "https://mybreakeven.com/" }, publisher: { "@id": "https://mybreakeven.com/#organization" }, about: article.about || `${article.tag} business planning`, inLanguage: "en-US" },
     { "@type": "WebPage", "@id": `${canonical}#webpage`, url: canonical, name: title, description: article.metaDescription, isPartOf: { "@id": "https://mybreakeven.com/#website" } },
     { "@type": "FAQPage", mainEntity: resolvedFaq.items.map(item => ({ "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a } })) },
     { "@type": "BreadcrumbList", itemListElement: [

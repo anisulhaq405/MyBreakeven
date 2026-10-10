@@ -1,3 +1,4 @@
+import ClusterRelatedReading from './ClusterRelatedReading.jsx';
 import { AgencyClusterLink } from './AgencyCluster.jsx';
 import { EcommerceClusterLink } from './EcommerceCluster.jsx';
 import { PhotographyClusterLink } from './PhotographyCluster.jsx';
@@ -35,6 +36,7 @@ export default function LongformArticle({ article: a }) {
     <div className="day1-markdown" dangerouslySetInnerHTML={{ __html: a.html }} />
     {!faq.inline && faq.items.length > 0 && <section className="article-faq"><h2>Frequently asked questions</h2>{faq.items.map(item => <details key={item.q}><summary>{item.q}</summary><p>{item.a}</p></details>)}</section>}
     {!a.html.includes('href="/blogs/"') && !a.html.includes('href="https://mybreakeven.com/blogs/"') && <p><a href="/blogs/">Browse the MyBreakeven blog hub</a> for related planning guides.</p>}
+    <ClusterRelatedReading article={a} />
     <p className="article-note">Planning estimates only—not accounting, tax, legal or lending advice.</p>
   </article>;
 }

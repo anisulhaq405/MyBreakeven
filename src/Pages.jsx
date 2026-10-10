@@ -1,3 +1,4 @@
+import ClusterDirectory from './ClusterDirectory.jsx';
 import AgencyCluster, { AgencyClusterLink } from './AgencyCluster.jsx';
 import EcommerceCluster, { EcommerceClusterLink } from './EcommerceCluster.jsx';
 import PhotographyCluster, { PhotographyClusterLink } from './PhotographyCluster.jsx';
@@ -350,7 +351,7 @@ export default function SecondaryPage({ path, initialArticle }) {
             <p><span>Pricing</span><span>Startup</span><span>Margins</span><span>Break-even</span></p>
           </div>
         </section>
-        <AgencyClusterLink /><EcommerceClusterLink /><PhotographyClusterLink /><RestaurantClusterLink /><SalonClusterLink /><CleaningClusterLink /><LandscapingClusterLink /><MobileDetailingClusterLink /><BlogSection isHub />
+        <ClusterDirectory /><BlogSection isHub />
       </div>
     ) : path === "/about-us" ? (
       <About />
