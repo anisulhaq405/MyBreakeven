@@ -1,3 +1,5 @@
+import AuthorityPage from './AuthorityPages.jsx';
+import { authorityPages } from './authorityResources.js';
 import ClusterDirectory from './ClusterDirectory.jsx';
 import AgencyCluster, { AgencyClusterLink } from './AgencyCluster.jsx';
 import EcommerceCluster, { EcommerceClusterLink } from './EcommerceCluster.jsx';
@@ -97,7 +99,7 @@ const About = () => (
     </section>
     <section className="about-story" aria-label="Content responsibility">
       <div><h2>Who publishes these guides</h2></div>
-      <p>MyBreakeven publishes the guides and calculator explanations on this site. Worked examples show stated planning assumptions; they are not customer results or a forecast for your business. Check the source links and formula definitions before applying a number. Send calculation errors, unclear assumptions or content corrections to <a href="mailto:support@mybreakeven.com">support@mybreakeven.com</a>.</p>
+      <p>MyBreakeven publishes the guides and calculator explanations on this site. <a href="/founder/">Anis Ul Haq is the founder</a>. Worked examples show stated planning assumptions; they are not customer results or a forecast for your business. Read the <a href="/editorial-policy/">editorial and correction standards</a> and <a href="/calculation-methodology/">calculation methodology</a>. Send calculation errors, unclear assumptions or content corrections to <a href="mailto:support@mybreakeven.com">support@mybreakeven.com</a>.</p>
     </section>
     <section className="about-principles" aria-label="How MyBreakeven works">
       <article>
@@ -297,6 +299,7 @@ const LegalPage = ({ page }) => (
 );
 export default function SecondaryPage({ path, initialArticle }) {
   const pageMeta = {
+    ...Object.fromEntries(Object.entries(authorityPages).map(([route, meta]) => [`/${route}`, meta])),
     "/guides/agency-business": ["Agency Business Guides | MyBreakeven", "Explore agency retainer pricing, scope costs, staffing, utilization, client risk and cash. Find thirteen worked guides and three planning calculators."],
     "/guides/ecommerce-business": ["E-commerce Business Guides | MyBreakeven", "Explore ecommerce product pricing, returns, shipping, advertising and inventory cash. Find sixteen worked guides and three business calculators."],
     "/guides/photography-business": ["Photography Business Guides | MyBreakeven", "Explore photography packages, editing costs, commercial assignments, prints and delivery capacity. Find twelve worked guides and a free break-even tool."],
@@ -332,7 +335,7 @@ export default function SecondaryPage({ path, initialArticle }) {
   const slug = path.startsWith("/blogs/") ? path.split("/")[2] : null;
   const calculatorSlug = path.startsWith("/calculators/") ? path.split("/")[2] : null;
   const authPaths = ["/login", "/signup", "/forgot-password", "/reset-password"];
-  const content = path === "/guides/agency-business" ? <AgencyCluster /> : path === "/guides/ecommerce-business" ? <EcommerceCluster /> : path === "/guides/photography-business" ? <PhotographyCluster /> : path === "/guides/restaurant-business" ? <RestaurantCluster /> : path === "/guides/salon-business" ? <SalonCluster /> : path === "/guides/mobile-detailing-business" ? <MobileDetailingCluster /> : path === "/guides/landscaping-business" ? <LandscapingCluster /> : path === "/guides/cleaning-business" ? <CleaningCluster /> : path === "/tools" ? <FreeToolsHub /> : calculatorSlug && freeTools[calculatorSlug] ? <FreeTool slug={calculatorSlug} /> : calculatorSlug && industryPages[calculatorSlug] ? <IndustryPage slug={calculatorSlug} /> : slug ? <BlogArticle slug={slug} initialArticle={initialArticle} /> :
+  const content = authorityPages[path.slice(1)] ? <AuthorityPage path={path} /> : path === "/guides/agency-business" ? <AgencyCluster /> : path === "/guides/ecommerce-business" ? <EcommerceCluster /> : path === "/guides/photography-business" ? <PhotographyCluster /> : path === "/guides/restaurant-business" ? <RestaurantCluster /> : path === "/guides/salon-business" ? <SalonCluster /> : path === "/guides/mobile-detailing-business" ? <MobileDetailingCluster /> : path === "/guides/landscaping-business" ? <LandscapingCluster /> : path === "/guides/cleaning-business" ? <CleaningCluster /> : path === "/tools" ? <FreeToolsHub /> : calculatorSlug && freeTools[calculatorSlug] ? <FreeTool slug={calculatorSlug} /> : calculatorSlug && industryPages[calculatorSlug] ? <IndustryPage slug={calculatorSlug} /> : slug ? <BlogArticle slug={slug} initialArticle={initialArticle} /> :
     authPaths.includes(path) ? <Suspense fallback={<p className="route-loading">Loading secure account…</p>}><AuthPage path={path} /></Suspense> : path === "/dashboard" ? <Suspense fallback={<p className="route-loading">Loading secure workspace…</p>}><DashboardPage /></Suspense> :
     path === "/pro-user-guide" ? <ProUserGuide /> : path === "/pricing" ? (
       <Pricing />

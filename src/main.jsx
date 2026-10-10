@@ -284,6 +284,7 @@ export default function App() {
               engine version. AI may explain verified results later; it will
               never invent or calculate your numbers.
             </p>
+            <p><a href="/calculation-methodology/">Read the formulas, rounding rules and limitations</a></p>
           </div>
           <div className="code">
             <small>FORMULA TRACE · ENGINE v{FORMULA_ENGINE_VERSION}</small>

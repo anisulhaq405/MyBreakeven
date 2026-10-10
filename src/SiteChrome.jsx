@@ -113,6 +113,7 @@ export function SiteFooter() {
         </div>
         <nav className="compact-footer-nav" aria-label="Product links">
           {primaryNavigation.map(([label, href]) => <a key={label} href={href}>{label}</a>)}
+          <a href="/resources/">Resources and methods</a>
         </nav>
         <div className="compact-footer-connect">
           <a className="compact-footer-cta" href="/#calculator">Try the free calculator <ArrowUpRight /></a>
