@@ -19,3 +19,6 @@ Live deliverable: two guided interactive examples at /calculator-walkthroughs/, 
 80–100s: open real agency tool and explain scope/delivery-hours sensitivity.
 
 Capture the actual browser UI, add captions matching the calculation, and use original/authorized audio. Review numbers, mobile readability and captions before upload. A future video page must have an actual playable file and matching metadata; do not create a dummy embed.
+
+## Published captured demonstrations
+Two silent 40-second MP4 demonstrations use four captured live UI steps per model, ten seconds per step. They are captured-step presentations, not continuous screen recordings. The interactive walkthrough supplies the equivalent accessible explanation. Narrated video production remains optional.
