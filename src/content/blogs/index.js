@@ -1,3 +1,4 @@
+import { applyOctober10CohortReview } from "./october10CohortReview.js";
 import { october10FormattingUpdateMap } from "./october10FormattingUpdates.js";
 import { october09DetailingPosts } from "./october09Detailing.js";
 import { october09LandscapingPosts } from "./october09Landscaping.js";
@@ -72,7 +73,7 @@ const canonicalTag = value => {
   return canonicalTags[tag?.toLowerCase()] || tag;
 };
 
-const normalizePost = post => ({
+const normalizePost = post => applyOctober10CohortReview({
   ...post,
   ...september29UpdateMap[post.slug],
   ...september30UpdateMap[post.slug],
