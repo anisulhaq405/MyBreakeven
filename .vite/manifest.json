@@ -1,0 +1,1138 @@
+{
+  "_CostBuilder-AVwpSBwC.js": {
+    "file": "assets/CostBuilder-AVwpSBwC.js",
+    "name": "CostBuilder",
+    "imports": [
+      "index.html",
+      "_industries-CEEyh3zb.js"
+    ],
+    "dynamicImports": [
+      "src/authClient.js"
+    ],
+    "css": [
+      "assets/CostBuilder-B-0ZQeGh.css"
+    ]
+  },
+  "_CostBuilder-B-0ZQeGh.css": {
+    "file": "assets/CostBuilder-B-0ZQeGh.css",
+    "src": "_CostBuilder-B-0ZQeGh.css"
+  },
+  "_blogContentLoader-C0s5QtMq.js": {
+    "file": "assets/blogContentLoader-C0s5QtMq.js",
+    "name": "blogContentLoader",
+    "imports": [
+      "index.html"
+    ],
+    "dynamicImports": [
+      "src/content/generated/agency-billable-utilization-rate.json",
+      "src/content/generated/agency-break-even.json",
+      "src/content/generated/agency-client-concentration-revenue-risk.json",
+      "src/content/generated/agency-client-profitability.json",
+      "src/content/generated/agency-employee-vs-freelancer-break-even.json",
+      "src/content/generated/agency-profit-margin.json",
+      "src/content/generated/agency-project-vs-retainer-profitability.json",
+      "src/content/generated/agency-retainer-pricing.json",
+      "src/content/generated/agency-scope-creep-cost.json",
+      "src/content/generated/amazon-marketplace-vs-own-store-profit-per-order.json",
+      "src/content/generated/break-even-analysis-example.json",
+      "src/content/generated/break-even-formula-units-dollars.json",
+      "src/content/generated/break-even-multiple-products-sales-mix.json",
+      "src/content/generated/break-even-roas-formula.json",
+      "src/content/generated/bridal-hair-and-makeup-package-pricing-for-salons.json",
+      "src/content/generated/cafe-opening-costs.json",
+      "src/content/generated/calculate-break-even-point.json",
+      "src/content/generated/calculate-contribution-margin.json",
+      "src/content/generated/car-detailing-prices-list.json",
+      "src/content/generated/cash-flow-break-even-vs-profit-break-even.json",
+      "src/content/generated/cash-flow-forecast-vs-break-even.json",
+      "src/content/generated/catering-quote-profit.json",
+      "src/content/generated/ceramic-coating-profit-margin.json",
+      "src/content/generated/cleaning-business-break-even.json",
+      "src/content/generated/cleaning-business-client-churn-cost.json",
+      "src/content/generated/cleaning-business-monthly-expenses.json",
+      "src/content/generated/cleaning-client-acquisition-payback.json",
+      "src/content/generated/cleaning-contract-payroll-cash-gap.json",
+      "src/content/generated/cleaning-estimate-vs-actual-job-cost.json",
+      "src/content/generated/cleaning-minimum-booking-charge.json",
+      "src/content/generated/coffee-shop-business-plan.json",
+      "src/content/generated/coffee-shop-drink-contribution-margin.json",
+      "src/content/generated/commercial-cleaning-contract-bid.json",
+      "src/content/generated/commercial-cleaning-contract-price-increase.json",
+      "src/content/generated/contribution-margin-vs-gross-margin.json",
+      "src/content/generated/contribution-margin-vs-profit-margin.json",
+      "src/content/generated/corporate-headshot-pricing.json",
+      "src/content/generated/discount-break-even-sales-volume.json",
+      "src/content/generated/ecommerce-break-even.json",
+      "src/content/generated/ecommerce-bundle-pricing-profit.json",
+      "src/content/generated/ecommerce-chargeback-cost-per-order.json",
+      "src/content/generated/ecommerce-inventory-holding-cost-per-sku.json",
+      "src/content/generated/ecommerce-orders-per-day-profitable.json",
+      "src/content/generated/ecommerce-profit-margin.json",
+      "src/content/generated/ecommerce-return-cost-per-order.json",
+      "src/content/generated/ecommerce-shipping-costs.json",
+      "src/content/generated/fixed-vs-variable-costs.json",
+      "src/content/generated/fleet-detailing-contract-pricing.json",
+      "src/content/generated/free-shipping-threshold-profit.json",
+      "src/content/generated/freelance-business-plan-financials.json",
+      "src/content/generated/hair-color-service-cost-per-appointment.json",
+      "src/content/generated/how-many-agency-retainer-clients.json",
+      "src/content/generated/how-many-cleaning-clients-5000.json",
+      "src/content/generated/how-many-customers-can-you-lose-after-raising-prices.json",
+      "src/content/generated/how-many-detailing-jobs-week.json",
+      "src/content/generated/how-many-lawns-100k.json",
+      "src/content/generated/how-many-photography-clients-month.json",
+      "src/content/generated/how-much-does-it-cost-to-open-a-restaurant.json",
+      "src/content/generated/how-much-does-it-cost-to-open-a-salon.json",
+      "src/content/generated/how-much-does-it-cost-to-start-a-cleaning-business.json",
+      "src/content/generated/how-much-does-it-cost-to-start-a-landscaping-business.json",
+      "src/content/generated/how-much-does-it-cost-to-start-a-marketing-agency.json",
+      "src/content/generated/how-much-does-it-cost-to-start-a-photography-business.json",
+      "src/content/generated/how-much-does-it-cost-to-start-an-ecommerce-store.json",
+      "src/content/generated/how-much-to-charge-for-house-cleaning.json",
+      "src/content/generated/how-to-price-products-for-ecommerce.json",
+      "src/content/generated/how-to-start-coffee-shop.json",
+      "src/content/generated/how-to-start-restaurant.json",
+      "src/content/generated/inventory-reorder-point-cash-flow.json",
+      "src/content/generated/is-a-cleaning-business-profitable.json",
+      "src/content/generated/is-mobile-detailing-profitable.json",
+      "src/content/generated/landscaping-break-even.json",
+      "src/content/generated/landscaping-business-profit-margin.json",
+      "src/content/generated/landscaping-change-order-cost.json",
+      "src/content/generated/landscaping-crew-utilization.json",
+      "src/content/generated/landscaping-equipment-cost-per-hour.json",
+      "src/content/generated/landscaping-job-costing-estimate-vs-actual.json",
+      "src/content/generated/landscaping-maintenance-contract-pricing.json",
+      "src/content/generated/landscaping-plant-warranty-cost.json",
+      "src/content/generated/landscaping-route-density-profit.json",
+      "src/content/generated/landscaping-seasonal-break-even.json",
+      "src/content/generated/landscaping-subcontractor-cost.json",
+      "src/content/generated/lawn-care-pricing-per-acre.json",
+      "src/content/generated/lower-break-even-point.json",
+      "src/content/generated/margin-of-safety-business.json",
+      "src/content/generated/margin-vs-markup.json",
+      "src/content/generated/mobile-detailing-break-even.json",
+      "src/content/generated/mobile-detailing-business-startup-cost.json",
+      "src/content/generated/mobile-detailing-cancellation-cost.json",
+      "src/content/generated/mobile-detailing-maintenance-plan-pricing.json",
+      "src/content/generated/mobile-detailing-travel-fee.json",
+      "src/content/generated/mobile-detailing-water-refill-cost.json",
+      "src/content/generated/move-out-cleaning-job-cost.json",
+      "src/content/generated/mulch-installation-job-cost.json",
+      "src/content/generated/operating-leverage-small-business.json",
+      "src/content/generated/paint-correction-labor-hours-pricing.json",
+      "src/content/generated/photography-business-break-even.json",
+      "src/content/generated/photography-business-profit-margin.json",
+      "src/content/generated/photography-cost-per-session-editing.json",
+      "src/content/generated/photography-mini-session-profit.json",
+      "src/content/generated/photography-pricing-packages.json",
+      "src/content/generated/photography-print-package-profit.json",
+      "src/content/generated/photography-second-shooter-cost.json",
+      "src/content/generated/photography-usage-licensing-pricing.json",
+      "src/content/generated/post-construction-cleaning-estimate.json",
+      "src/content/generated/product-photography-pricing-per-image.json",
+      "src/content/generated/recurring-vs-one-time-cleaning-profitability.json",
+      "src/content/generated/restaurant-break-even.json",
+      "src/content/generated/restaurant-budgeting.json",
+      "src/content/generated/restaurant-business-plan.json",
+      "src/content/generated/restaurant-covers-per-night-break-even.json",
+      "src/content/generated/restaurant-delivery-app-commission-profit-per-order.json",
+      "src/content/generated/restaurant-food-cost-percentage.json",
+      "src/content/generated/restaurant-labor-cost-percentage.json",
+      "src/content/generated/restaurant-menu-engineering-contribution-margin.json",
+      "src/content/generated/restaurant-menu-pricing-formula.json",
+      "src/content/generated/restaurant-prime-cost.json",
+      "src/content/generated/restaurant-private-event-minimum-spend.json",
+      "src/content/generated/restaurant-profit-margin-average.json",
+      "src/content/generated/restaurant-sales-forecast.json",
+      "src/content/generated/restaurant-takeout-vs-dine-in-profit-per-order.json",
+      "src/content/generated/retail-break-even-analysis.json",
+      "src/content/generated/salon-booth-rent-vs-commission-owner.json",
+      "src/content/generated/salon-break-even.json",
+      "src/content/generated/salon-clients-per-day-break-even.json",
+      "src/content/generated/salon-membership-pricing.json",
+      "src/content/generated/salon-no-show-cost.json",
+      "src/content/generated/salon-profit-margin.json",
+      "src/content/generated/salon-retail-product-profit-margin.json",
+      "src/content/generated/salon-service-pricing.json",
+      "src/content/generated/snow-removal-pricing.json",
+      "src/content/generated/subscription-box-churn-break-even.json",
+      "src/content/generated/target-profit-sales-formula.json"
+    ]
+  },
+  "_entitlements-C9yUlAVa.js": {
+    "file": "assets/entitlements-C9yUlAVa.js",
+    "name": "entitlements",
+    "imports": [
+      "_industries-CEEyh3zb.js"
+    ]
+  },
+  "_industries-CEEyh3zb.js": {
+    "file": "assets/industries-CEEyh3zb.js",
+    "name": "industries",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "index.html": {
+    "file": "assets/index-DUuJ1o8h.js",
+    "name": "index",
+    "src": "index.html",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/main.jsx",
+      "src/Pages.jsx",
+      "_blogContentLoader-C0s5QtMq.js",
+      "src/sentry.js"
+    ],
+    "css": [
+      "assets/index-CcfOXKNR.css"
+    ],
+    "assets": [
+      "assets/inter-cyrillic-ext-BOeWTOD4.woff2",
+      "assets/inter-cyrillic-DqGufNeO.woff2",
+      "assets/inter-greek-ext-DlzME5K_.woff2",
+      "assets/inter-greek-CkhJZR-_.woff2",
+      "assets/inter-vietnamese-CBcvBZtf.woff2",
+      "assets/inter-latin-ext-DO1Apj_S.woff2",
+      "assets/inter-latin-Dx4kXJAl.woff2",
+      "assets/sora-latin-ext-rqDZ1P7Z.woff2",
+      "assets/sora-latin-BUlRykrX.woff2"
+    ]
+  },
+  "node_modules/@supabase/node-fetch/browser.js": {
+    "file": "assets/browser-Cc4jqywu.js",
+    "name": "browser",
+    "src": "node_modules/@supabase/node-fetch/browser.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/authClient.js"
+    ]
+  },
+  "src/AuthPages.jsx": {
+    "file": "assets/AuthPages-BuEYkLZG.js",
+    "name": "AuthPages",
+    "src": "src/AuthPages.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_industries-CEEyh3zb.js",
+      "_entitlements-C9yUlAVa.js",
+      "_CostBuilder-AVwpSBwC.js",
+      "src/authClient.js",
+      "src/Pages.jsx"
+    ],
+    "css": [
+      "assets/AuthPages-CWBVeRrC.css"
+    ]
+  },
+  "src/Pages.jsx": {
+    "file": "assets/Pages-8A3wugTL.js",
+    "name": "Pages",
+    "src": "src/Pages.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_industries-CEEyh3zb.js",
+      "_CostBuilder-AVwpSBwC.js",
+      "_blogContentLoader-C0s5QtMq.js"
+    ],
+    "dynamicImports": [
+      "src/AuthPages.jsx"
+    ],
+    "css": [
+      "assets/Pages-q2QLjc91.css"
+    ]
+  },
+  "src/ScenarioTools.jsx": {
+    "file": "assets/ScenarioTools-DlCaqnj2.js",
+    "name": "ScenarioTools",
+    "src": "src/ScenarioTools.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_industries-CEEyh3zb.js",
+      "_entitlements-C9yUlAVa.js",
+      "_CostBuilder-AVwpSBwC.js"
+    ],
+    "dynamicImports": [
+      "src/authClient.js"
+    ],
+    "css": [
+      "assets/ScenarioTools-B_xya1-k.css"
+    ]
+  },
+  "src/authClient.js": {
+    "file": "assets/authClient-B_Nx1IeM.js",
+    "name": "authClient",
+    "src": "src/authClient.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_CostBuilder-AVwpSBwC.js"
+    ],
+    "dynamicImports": [
+      "node_modules/@supabase/node-fetch/browser.js"
+    ]
+  },
+  "src/content/generated/agency-billable-utilization-rate.json": {
+    "file": "assets/agency-billable-utilization-rate-BVUyVWXT.js",
+    "name": "agency-billable-utilization-rate",
+    "src": "src/content/generated/agency-billable-utilization-rate.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/agency-break-even.json": {
+    "file": "assets/agency-break-even-Cv_17gU0.js",
+    "name": "agency-break-even",
+    "src": "src/content/generated/agency-break-even.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/agency-client-concentration-revenue-risk.json": {
+    "file": "assets/agency-client-concentration-revenue-risk-DC6hz7FO.js",
+    "name": "agency-client-concentration-revenue-risk",
+    "src": "src/content/generated/agency-client-concentration-revenue-risk.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/agency-client-profitability.json": {
+    "file": "assets/agency-client-profitability-CycYrf17.js",
+    "name": "agency-client-profitability",
+    "src": "src/content/generated/agency-client-profitability.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/agency-employee-vs-freelancer-break-even.json": {
+    "file": "assets/agency-employee-vs-freelancer-break-even-CGFvfgJD.js",
+    "name": "agency-employee-vs-freelancer-break-even",
+    "src": "src/content/generated/agency-employee-vs-freelancer-break-even.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/agency-profit-margin.json": {
+    "file": "assets/agency-profit-margin-B1xmgGSz.js",
+    "name": "agency-profit-margin",
+    "src": "src/content/generated/agency-profit-margin.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/agency-project-vs-retainer-profitability.json": {
+    "file": "assets/agency-project-vs-retainer-profitability-C8BAXi6o.js",
+    "name": "agency-project-vs-retainer-profitability",
+    "src": "src/content/generated/agency-project-vs-retainer-profitability.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/agency-retainer-pricing.json": {
+    "file": "assets/agency-retainer-pricing-yfMWRrcp.js",
+    "name": "agency-retainer-pricing",
+    "src": "src/content/generated/agency-retainer-pricing.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/agency-scope-creep-cost.json": {
+    "file": "assets/agency-scope-creep-cost-CaQALlVU.js",
+    "name": "agency-scope-creep-cost",
+    "src": "src/content/generated/agency-scope-creep-cost.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/amazon-marketplace-vs-own-store-profit-per-order.json": {
+    "file": "assets/amazon-marketplace-vs-own-store-profit-per-order-BvrZUinp.js",
+    "name": "amazon-marketplace-vs-own-store-profit-per-order",
+    "src": "src/content/generated/amazon-marketplace-vs-own-store-profit-per-order.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/break-even-analysis-example.json": {
+    "file": "assets/break-even-analysis-example-DIcdwpxq.js",
+    "name": "break-even-analysis-example",
+    "src": "src/content/generated/break-even-analysis-example.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/break-even-formula-units-dollars.json": {
+    "file": "assets/break-even-formula-units-dollars-BvbIWvTu.js",
+    "name": "break-even-formula-units-dollars",
+    "src": "src/content/generated/break-even-formula-units-dollars.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/break-even-multiple-products-sales-mix.json": {
+    "file": "assets/break-even-multiple-products-sales-mix-KrVN--PE.js",
+    "name": "break-even-multiple-products-sales-mix",
+    "src": "src/content/generated/break-even-multiple-products-sales-mix.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/break-even-roas-formula.json": {
+    "file": "assets/break-even-roas-formula-CMnb4NqC.js",
+    "name": "break-even-roas-formula",
+    "src": "src/content/generated/break-even-roas-formula.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/bridal-hair-and-makeup-package-pricing-for-salons.json": {
+    "file": "assets/bridal-hair-and-makeup-package-pricing-for-salons-BAZpHwVv.js",
+    "name": "bridal-hair-and-makeup-package-pricing-for-salons",
+    "src": "src/content/generated/bridal-hair-and-makeup-package-pricing-for-salons.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/cafe-opening-costs.json": {
+    "file": "assets/cafe-opening-costs-D_i9yjJa.js",
+    "name": "cafe-opening-costs",
+    "src": "src/content/generated/cafe-opening-costs.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/calculate-break-even-point.json": {
+    "file": "assets/calculate-break-even-point-CCdLNuEN.js",
+    "name": "calculate-break-even-point",
+    "src": "src/content/generated/calculate-break-even-point.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/calculate-contribution-margin.json": {
+    "file": "assets/calculate-contribution-margin-FizVl836.js",
+    "name": "calculate-contribution-margin",
+    "src": "src/content/generated/calculate-contribution-margin.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/car-detailing-prices-list.json": {
+    "file": "assets/car-detailing-prices-list-Bi6R8rRA.js",
+    "name": "car-detailing-prices-list",
+    "src": "src/content/generated/car-detailing-prices-list.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/cash-flow-break-even-vs-profit-break-even.json": {
+    "file": "assets/cash-flow-break-even-vs-profit-break-even-BzGnzuL7.js",
+    "name": "cash-flow-break-even-vs-profit-break-even",
+    "src": "src/content/generated/cash-flow-break-even-vs-profit-break-even.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/cash-flow-forecast-vs-break-even.json": {
+    "file": "assets/cash-flow-forecast-vs-break-even-B6SNdAJM.js",
+    "name": "cash-flow-forecast-vs-break-even",
+    "src": "src/content/generated/cash-flow-forecast-vs-break-even.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/catering-quote-profit.json": {
+    "file": "assets/catering-quote-profit-LmwC0jx2.js",
+    "name": "catering-quote-profit",
+    "src": "src/content/generated/catering-quote-profit.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/ceramic-coating-profit-margin.json": {
+    "file": "assets/ceramic-coating-profit-margin-CX4l_rM-.js",
+    "name": "ceramic-coating-profit-margin",
+    "src": "src/content/generated/ceramic-coating-profit-margin.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/cleaning-business-break-even.json": {
+    "file": "assets/cleaning-business-break-even-DVx7D4tB.js",
+    "name": "cleaning-business-break-even",
+    "src": "src/content/generated/cleaning-business-break-even.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/cleaning-business-client-churn-cost.json": {
+    "file": "assets/cleaning-business-client-churn-cost-DjSeDkn9.js",
+    "name": "cleaning-business-client-churn-cost",
+    "src": "src/content/generated/cleaning-business-client-churn-cost.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/cleaning-business-monthly-expenses.json": {
+    "file": "assets/cleaning-business-monthly-expenses-BzG6Fyqd.js",
+    "name": "cleaning-business-monthly-expenses",
+    "src": "src/content/generated/cleaning-business-monthly-expenses.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/cleaning-client-acquisition-payback.json": {
+    "file": "assets/cleaning-client-acquisition-payback-BZJZUOK5.js",
+    "name": "cleaning-client-acquisition-payback",
+    "src": "src/content/generated/cleaning-client-acquisition-payback.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/cleaning-contract-payroll-cash-gap.json": {
+    "file": "assets/cleaning-contract-payroll-cash-gap-BdZpGcoC.js",
+    "name": "cleaning-contract-payroll-cash-gap",
+    "src": "src/content/generated/cleaning-contract-payroll-cash-gap.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/cleaning-estimate-vs-actual-job-cost.json": {
+    "file": "assets/cleaning-estimate-vs-actual-job-cost-DIeruR4o.js",
+    "name": "cleaning-estimate-vs-actual-job-cost",
+    "src": "src/content/generated/cleaning-estimate-vs-actual-job-cost.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/cleaning-minimum-booking-charge.json": {
+    "file": "assets/cleaning-minimum-booking-charge-Dy39ivBi.js",
+    "name": "cleaning-minimum-booking-charge",
+    "src": "src/content/generated/cleaning-minimum-booking-charge.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/coffee-shop-business-plan.json": {
+    "file": "assets/coffee-shop-business-plan-BgskqIjj.js",
+    "name": "coffee-shop-business-plan",
+    "src": "src/content/generated/coffee-shop-business-plan.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/coffee-shop-drink-contribution-margin.json": {
+    "file": "assets/coffee-shop-drink-contribution-margin-s0tRzQH0.js",
+    "name": "coffee-shop-drink-contribution-margin",
+    "src": "src/content/generated/coffee-shop-drink-contribution-margin.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/commercial-cleaning-contract-bid.json": {
+    "file": "assets/commercial-cleaning-contract-bid-Dol7rVCx.js",
+    "name": "commercial-cleaning-contract-bid",
+    "src": "src/content/generated/commercial-cleaning-contract-bid.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/commercial-cleaning-contract-price-increase.json": {
+    "file": "assets/commercial-cleaning-contract-price-increase-DzWf_dyL.js",
+    "name": "commercial-cleaning-contract-price-increase",
+    "src": "src/content/generated/commercial-cleaning-contract-price-increase.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/contribution-margin-vs-gross-margin.json": {
+    "file": "assets/contribution-margin-vs-gross-margin-BtxFikDI.js",
+    "name": "contribution-margin-vs-gross-margin",
+    "src": "src/content/generated/contribution-margin-vs-gross-margin.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/contribution-margin-vs-profit-margin.json": {
+    "file": "assets/contribution-margin-vs-profit-margin-CbCZAfyu.js",
+    "name": "contribution-margin-vs-profit-margin",
+    "src": "src/content/generated/contribution-margin-vs-profit-margin.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/corporate-headshot-pricing.json": {
+    "file": "assets/corporate-headshot-pricing-CvaVlPNx.js",
+    "name": "corporate-headshot-pricing",
+    "src": "src/content/generated/corporate-headshot-pricing.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/discount-break-even-sales-volume.json": {
+    "file": "assets/discount-break-even-sales-volume-Celoqjq0.js",
+    "name": "discount-break-even-sales-volume",
+    "src": "src/content/generated/discount-break-even-sales-volume.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/ecommerce-break-even.json": {
+    "file": "assets/ecommerce-break-even-CiPFfYVC.js",
+    "name": "ecommerce-break-even",
+    "src": "src/content/generated/ecommerce-break-even.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/ecommerce-bundle-pricing-profit.json": {
+    "file": "assets/ecommerce-bundle-pricing-profit-dwCM8ZUP.js",
+    "name": "ecommerce-bundle-pricing-profit",
+    "src": "src/content/generated/ecommerce-bundle-pricing-profit.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/ecommerce-chargeback-cost-per-order.json": {
+    "file": "assets/ecommerce-chargeback-cost-per-order-gHHAyEnV.js",
+    "name": "ecommerce-chargeback-cost-per-order",
+    "src": "src/content/generated/ecommerce-chargeback-cost-per-order.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/ecommerce-inventory-holding-cost-per-sku.json": {
+    "file": "assets/ecommerce-inventory-holding-cost-per-sku-D5G2dpIo.js",
+    "name": "ecommerce-inventory-holding-cost-per-sku",
+    "src": "src/content/generated/ecommerce-inventory-holding-cost-per-sku.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/ecommerce-orders-per-day-profitable.json": {
+    "file": "assets/ecommerce-orders-per-day-profitable-3uyAad_j.js",
+    "name": "ecommerce-orders-per-day-profitable",
+    "src": "src/content/generated/ecommerce-orders-per-day-profitable.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/ecommerce-profit-margin.json": {
+    "file": "assets/ecommerce-profit-margin-fdxzpf1L.js",
+    "name": "ecommerce-profit-margin",
+    "src": "src/content/generated/ecommerce-profit-margin.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/ecommerce-return-cost-per-order.json": {
+    "file": "assets/ecommerce-return-cost-per-order-C6C2J7d8.js",
+    "name": "ecommerce-return-cost-per-order",
+    "src": "src/content/generated/ecommerce-return-cost-per-order.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/ecommerce-shipping-costs.json": {
+    "file": "assets/ecommerce-shipping-costs-B_zFx1Q1.js",
+    "name": "ecommerce-shipping-costs",
+    "src": "src/content/generated/ecommerce-shipping-costs.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/fixed-vs-variable-costs.json": {
+    "file": "assets/fixed-vs-variable-costs-BJyDO7yi.js",
+    "name": "fixed-vs-variable-costs",
+    "src": "src/content/generated/fixed-vs-variable-costs.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/fleet-detailing-contract-pricing.json": {
+    "file": "assets/fleet-detailing-contract-pricing-rswArAw2.js",
+    "name": "fleet-detailing-contract-pricing",
+    "src": "src/content/generated/fleet-detailing-contract-pricing.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/free-shipping-threshold-profit.json": {
+    "file": "assets/free-shipping-threshold-profit-ByVLQKpw.js",
+    "name": "free-shipping-threshold-profit",
+    "src": "src/content/generated/free-shipping-threshold-profit.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/freelance-business-plan-financials.json": {
+    "file": "assets/freelance-business-plan-financials-DTaFwC2e.js",
+    "name": "freelance-business-plan-financials",
+    "src": "src/content/generated/freelance-business-plan-financials.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/hair-color-service-cost-per-appointment.json": {
+    "file": "assets/hair-color-service-cost-per-appointment-y6_Xfjbp.js",
+    "name": "hair-color-service-cost-per-appointment",
+    "src": "src/content/generated/hair-color-service-cost-per-appointment.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/how-many-agency-retainer-clients.json": {
+    "file": "assets/how-many-agency-retainer-clients-CxFL0c-k.js",
+    "name": "how-many-agency-retainer-clients",
+    "src": "src/content/generated/how-many-agency-retainer-clients.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/how-many-cleaning-clients-5000.json": {
+    "file": "assets/how-many-cleaning-clients-5000-CDdmxYf7.js",
+    "name": "how-many-cleaning-clients-5000",
+    "src": "src/content/generated/how-many-cleaning-clients-5000.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/how-many-customers-can-you-lose-after-raising-prices.json": {
+    "file": "assets/how-many-customers-can-you-lose-after-raising-prices-CWr_UQ74.js",
+    "name": "how-many-customers-can-you-lose-after-raising-prices",
+    "src": "src/content/generated/how-many-customers-can-you-lose-after-raising-prices.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/how-many-detailing-jobs-week.json": {
+    "file": "assets/how-many-detailing-jobs-week--1s07Er4.js",
+    "name": "how-many-detailing-jobs-week",
+    "src": "src/content/generated/how-many-detailing-jobs-week.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/how-many-lawns-100k.json": {
+    "file": "assets/how-many-lawns-100k-Cp9HkfiN.js",
+    "name": "how-many-lawns-100k",
+    "src": "src/content/generated/how-many-lawns-100k.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/how-many-photography-clients-month.json": {
+    "file": "assets/how-many-photography-clients-month-CyOqIX3t.js",
+    "name": "how-many-photography-clients-month",
+    "src": "src/content/generated/how-many-photography-clients-month.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/how-much-does-it-cost-to-open-a-restaurant.json": {
+    "file": "assets/how-much-does-it-cost-to-open-a-restaurant-v_BaEoHb.js",
+    "name": "how-much-does-it-cost-to-open-a-restaurant",
+    "src": "src/content/generated/how-much-does-it-cost-to-open-a-restaurant.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/how-much-does-it-cost-to-open-a-salon.json": {
+    "file": "assets/how-much-does-it-cost-to-open-a-salon-BoUgnmDw.js",
+    "name": "how-much-does-it-cost-to-open-a-salon",
+    "src": "src/content/generated/how-much-does-it-cost-to-open-a-salon.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/how-much-does-it-cost-to-start-a-cleaning-business.json": {
+    "file": "assets/how-much-does-it-cost-to-start-a-cleaning-business-BN_qGFdi.js",
+    "name": "how-much-does-it-cost-to-start-a-cleaning-business",
+    "src": "src/content/generated/how-much-does-it-cost-to-start-a-cleaning-business.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/how-much-does-it-cost-to-start-a-landscaping-business.json": {
+    "file": "assets/how-much-does-it-cost-to-start-a-landscaping-business-UpmLHyLZ.js",
+    "name": "how-much-does-it-cost-to-start-a-landscaping-business",
+    "src": "src/content/generated/how-much-does-it-cost-to-start-a-landscaping-business.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/how-much-does-it-cost-to-start-a-marketing-agency.json": {
+    "file": "assets/how-much-does-it-cost-to-start-a-marketing-agency-BDX7q3rk.js",
+    "name": "how-much-does-it-cost-to-start-a-marketing-agency",
+    "src": "src/content/generated/how-much-does-it-cost-to-start-a-marketing-agency.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/how-much-does-it-cost-to-start-a-photography-business.json": {
+    "file": "assets/how-much-does-it-cost-to-start-a-photography-business-CxtpVjNR.js",
+    "name": "how-much-does-it-cost-to-start-a-photography-business",
+    "src": "src/content/generated/how-much-does-it-cost-to-start-a-photography-business.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/how-much-does-it-cost-to-start-an-ecommerce-store.json": {
+    "file": "assets/how-much-does-it-cost-to-start-an-ecommerce-store-D8o1TX5w.js",
+    "name": "how-much-does-it-cost-to-start-an-ecommerce-store",
+    "src": "src/content/generated/how-much-does-it-cost-to-start-an-ecommerce-store.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/how-much-to-charge-for-house-cleaning.json": {
+    "file": "assets/how-much-to-charge-for-house-cleaning-DlafjSoZ.js",
+    "name": "how-much-to-charge-for-house-cleaning",
+    "src": "src/content/generated/how-much-to-charge-for-house-cleaning.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/how-to-price-products-for-ecommerce.json": {
+    "file": "assets/how-to-price-products-for-ecommerce-CItLq2AA.js",
+    "name": "how-to-price-products-for-ecommerce",
+    "src": "src/content/generated/how-to-price-products-for-ecommerce.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/how-to-start-coffee-shop.json": {
+    "file": "assets/how-to-start-coffee-shop-CZeLWm1J.js",
+    "name": "how-to-start-coffee-shop",
+    "src": "src/content/generated/how-to-start-coffee-shop.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/how-to-start-restaurant.json": {
+    "file": "assets/how-to-start-restaurant-B_FXfzjh.js",
+    "name": "how-to-start-restaurant",
+    "src": "src/content/generated/how-to-start-restaurant.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/inventory-reorder-point-cash-flow.json": {
+    "file": "assets/inventory-reorder-point-cash-flow-CG1aj7LD.js",
+    "name": "inventory-reorder-point-cash-flow",
+    "src": "src/content/generated/inventory-reorder-point-cash-flow.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/is-a-cleaning-business-profitable.json": {
+    "file": "assets/is-a-cleaning-business-profitable-Bn-aqPWL.js",
+    "name": "is-a-cleaning-business-profitable",
+    "src": "src/content/generated/is-a-cleaning-business-profitable.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/is-mobile-detailing-profitable.json": {
+    "file": "assets/is-mobile-detailing-profitable-C3-VWPgh.js",
+    "name": "is-mobile-detailing-profitable",
+    "src": "src/content/generated/is-mobile-detailing-profitable.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/landscaping-break-even.json": {
+    "file": "assets/landscaping-break-even-B1aXZNxX.js",
+    "name": "landscaping-break-even",
+    "src": "src/content/generated/landscaping-break-even.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/landscaping-business-profit-margin.json": {
+    "file": "assets/landscaping-business-profit-margin-aVu-N0fe.js",
+    "name": "landscaping-business-profit-margin",
+    "src": "src/content/generated/landscaping-business-profit-margin.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/landscaping-change-order-cost.json": {
+    "file": "assets/landscaping-change-order-cost-DfzgSePG.js",
+    "name": "landscaping-change-order-cost",
+    "src": "src/content/generated/landscaping-change-order-cost.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/landscaping-crew-utilization.json": {
+    "file": "assets/landscaping-crew-utilization-BVgaACK6.js",
+    "name": "landscaping-crew-utilization",
+    "src": "src/content/generated/landscaping-crew-utilization.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/landscaping-equipment-cost-per-hour.json": {
+    "file": "assets/landscaping-equipment-cost-per-hour-8jQ3E-z4.js",
+    "name": "landscaping-equipment-cost-per-hour",
+    "src": "src/content/generated/landscaping-equipment-cost-per-hour.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/landscaping-job-costing-estimate-vs-actual.json": {
+    "file": "assets/landscaping-job-costing-estimate-vs-actual-BIVl_yRi.js",
+    "name": "landscaping-job-costing-estimate-vs-actual",
+    "src": "src/content/generated/landscaping-job-costing-estimate-vs-actual.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/landscaping-maintenance-contract-pricing.json": {
+    "file": "assets/landscaping-maintenance-contract-pricing-Didnsbd7.js",
+    "name": "landscaping-maintenance-contract-pricing",
+    "src": "src/content/generated/landscaping-maintenance-contract-pricing.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/landscaping-plant-warranty-cost.json": {
+    "file": "assets/landscaping-plant-warranty-cost-D18oFdpV.js",
+    "name": "landscaping-plant-warranty-cost",
+    "src": "src/content/generated/landscaping-plant-warranty-cost.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/landscaping-route-density-profit.json": {
+    "file": "assets/landscaping-route-density-profit-B5KtAR79.js",
+    "name": "landscaping-route-density-profit",
+    "src": "src/content/generated/landscaping-route-density-profit.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/landscaping-seasonal-break-even.json": {
+    "file": "assets/landscaping-seasonal-break-even-CaLaXmHg.js",
+    "name": "landscaping-seasonal-break-even",
+    "src": "src/content/generated/landscaping-seasonal-break-even.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/landscaping-subcontractor-cost.json": {
+    "file": "assets/landscaping-subcontractor-cost-9BdKZkVd.js",
+    "name": "landscaping-subcontractor-cost",
+    "src": "src/content/generated/landscaping-subcontractor-cost.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/lawn-care-pricing-per-acre.json": {
+    "file": "assets/lawn-care-pricing-per-acre-DhHBI0Nm.js",
+    "name": "lawn-care-pricing-per-acre",
+    "src": "src/content/generated/lawn-care-pricing-per-acre.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/lower-break-even-point.json": {
+    "file": "assets/lower-break-even-point-CTrrzovI.js",
+    "name": "lower-break-even-point",
+    "src": "src/content/generated/lower-break-even-point.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/margin-of-safety-business.json": {
+    "file": "assets/margin-of-safety-business-BeQsrGH1.js",
+    "name": "margin-of-safety-business",
+    "src": "src/content/generated/margin-of-safety-business.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/margin-vs-markup.json": {
+    "file": "assets/margin-vs-markup-BLU-oxjN.js",
+    "name": "margin-vs-markup",
+    "src": "src/content/generated/margin-vs-markup.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/mobile-detailing-break-even.json": {
+    "file": "assets/mobile-detailing-break-even-BVnALEG3.js",
+    "name": "mobile-detailing-break-even",
+    "src": "src/content/generated/mobile-detailing-break-even.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/mobile-detailing-business-startup-cost.json": {
+    "file": "assets/mobile-detailing-business-startup-cost-C6Zq_97g.js",
+    "name": "mobile-detailing-business-startup-cost",
+    "src": "src/content/generated/mobile-detailing-business-startup-cost.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/mobile-detailing-cancellation-cost.json": {
+    "file": "assets/mobile-detailing-cancellation-cost-D-65ezfP.js",
+    "name": "mobile-detailing-cancellation-cost",
+    "src": "src/content/generated/mobile-detailing-cancellation-cost.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/mobile-detailing-maintenance-plan-pricing.json": {
+    "file": "assets/mobile-detailing-maintenance-plan-pricing-Dg_H9yr4.js",
+    "name": "mobile-detailing-maintenance-plan-pricing",
+    "src": "src/content/generated/mobile-detailing-maintenance-plan-pricing.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/mobile-detailing-travel-fee.json": {
+    "file": "assets/mobile-detailing-travel-fee-ClQyj9Xd.js",
+    "name": "mobile-detailing-travel-fee",
+    "src": "src/content/generated/mobile-detailing-travel-fee.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/mobile-detailing-water-refill-cost.json": {
+    "file": "assets/mobile-detailing-water-refill-cost-DWQEYqM6.js",
+    "name": "mobile-detailing-water-refill-cost",
+    "src": "src/content/generated/mobile-detailing-water-refill-cost.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/move-out-cleaning-job-cost.json": {
+    "file": "assets/move-out-cleaning-job-cost-DB_uhj6Q.js",
+    "name": "move-out-cleaning-job-cost",
+    "src": "src/content/generated/move-out-cleaning-job-cost.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/mulch-installation-job-cost.json": {
+    "file": "assets/mulch-installation-job-cost-DQCmtQYO.js",
+    "name": "mulch-installation-job-cost",
+    "src": "src/content/generated/mulch-installation-job-cost.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/operating-leverage-small-business.json": {
+    "file": "assets/operating-leverage-small-business-BXxSfXUl.js",
+    "name": "operating-leverage-small-business",
+    "src": "src/content/generated/operating-leverage-small-business.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/paint-correction-labor-hours-pricing.json": {
+    "file": "assets/paint-correction-labor-hours-pricing-IHnmCkEs.js",
+    "name": "paint-correction-labor-hours-pricing",
+    "src": "src/content/generated/paint-correction-labor-hours-pricing.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/photography-business-break-even.json": {
+    "file": "assets/photography-business-break-even-CkgqE5I0.js",
+    "name": "photography-business-break-even",
+    "src": "src/content/generated/photography-business-break-even.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/photography-business-profit-margin.json": {
+    "file": "assets/photography-business-profit-margin-B-bzFwny.js",
+    "name": "photography-business-profit-margin",
+    "src": "src/content/generated/photography-business-profit-margin.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/photography-cost-per-session-editing.json": {
+    "file": "assets/photography-cost-per-session-editing-fyIfe-Ko.js",
+    "name": "photography-cost-per-session-editing",
+    "src": "src/content/generated/photography-cost-per-session-editing.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/photography-mini-session-profit.json": {
+    "file": "assets/photography-mini-session-profit-fwUioxS7.js",
+    "name": "photography-mini-session-profit",
+    "src": "src/content/generated/photography-mini-session-profit.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/photography-pricing-packages.json": {
+    "file": "assets/photography-pricing-packages-D_O69p2t.js",
+    "name": "photography-pricing-packages",
+    "src": "src/content/generated/photography-pricing-packages.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/photography-print-package-profit.json": {
+    "file": "assets/photography-print-package-profit-TG-C0-QL.js",
+    "name": "photography-print-package-profit",
+    "src": "src/content/generated/photography-print-package-profit.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/photography-second-shooter-cost.json": {
+    "file": "assets/photography-second-shooter-cost-CaF0TUPw.js",
+    "name": "photography-second-shooter-cost",
+    "src": "src/content/generated/photography-second-shooter-cost.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/photography-usage-licensing-pricing.json": {
+    "file": "assets/photography-usage-licensing-pricing-BLslWjDq.js",
+    "name": "photography-usage-licensing-pricing",
+    "src": "src/content/generated/photography-usage-licensing-pricing.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/post-construction-cleaning-estimate.json": {
+    "file": "assets/post-construction-cleaning-estimate-CCvnXWhm.js",
+    "name": "post-construction-cleaning-estimate",
+    "src": "src/content/generated/post-construction-cleaning-estimate.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/product-photography-pricing-per-image.json": {
+    "file": "assets/product-photography-pricing-per-image-BLy5ZVxJ.js",
+    "name": "product-photography-pricing-per-image",
+    "src": "src/content/generated/product-photography-pricing-per-image.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/recurring-vs-one-time-cleaning-profitability.json": {
+    "file": "assets/recurring-vs-one-time-cleaning-profitability-BKnq8S_0.js",
+    "name": "recurring-vs-one-time-cleaning-profitability",
+    "src": "src/content/generated/recurring-vs-one-time-cleaning-profitability.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/restaurant-break-even.json": {
+    "file": "assets/restaurant-break-even-tmaJM_mw.js",
+    "name": "restaurant-break-even",
+    "src": "src/content/generated/restaurant-break-even.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/restaurant-budgeting.json": {
+    "file": "assets/restaurant-budgeting-C2Cx0TBw.js",
+    "name": "restaurant-budgeting",
+    "src": "src/content/generated/restaurant-budgeting.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/restaurant-business-plan.json": {
+    "file": "assets/restaurant-business-plan-BxXinXXp.js",
+    "name": "restaurant-business-plan",
+    "src": "src/content/generated/restaurant-business-plan.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/restaurant-covers-per-night-break-even.json": {
+    "file": "assets/restaurant-covers-per-night-break-even-CbDRpWis.js",
+    "name": "restaurant-covers-per-night-break-even",
+    "src": "src/content/generated/restaurant-covers-per-night-break-even.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/restaurant-delivery-app-commission-profit-per-order.json": {
+    "file": "assets/restaurant-delivery-app-commission-profit-per-order-7GdDjiIa.js",
+    "name": "restaurant-delivery-app-commission-profit-per-order",
+    "src": "src/content/generated/restaurant-delivery-app-commission-profit-per-order.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/restaurant-food-cost-percentage.json": {
+    "file": "assets/restaurant-food-cost-percentage-DE3dqAVv.js",
+    "name": "restaurant-food-cost-percentage",
+    "src": "src/content/generated/restaurant-food-cost-percentage.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/restaurant-labor-cost-percentage.json": {
+    "file": "assets/restaurant-labor-cost-percentage-Bf9gwbrh.js",
+    "name": "restaurant-labor-cost-percentage",
+    "src": "src/content/generated/restaurant-labor-cost-percentage.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/restaurant-menu-engineering-contribution-margin.json": {
+    "file": "assets/restaurant-menu-engineering-contribution-margin-DUSo7v93.js",
+    "name": "restaurant-menu-engineering-contribution-margin",
+    "src": "src/content/generated/restaurant-menu-engineering-contribution-margin.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/restaurant-menu-pricing-formula.json": {
+    "file": "assets/restaurant-menu-pricing-formula-ACqFCQIj.js",
+    "name": "restaurant-menu-pricing-formula",
+    "src": "src/content/generated/restaurant-menu-pricing-formula.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/restaurant-prime-cost.json": {
+    "file": "assets/restaurant-prime-cost-Ho3F766y.js",
+    "name": "restaurant-prime-cost",
+    "src": "src/content/generated/restaurant-prime-cost.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/restaurant-private-event-minimum-spend.json": {
+    "file": "assets/restaurant-private-event-minimum-spend-Ayk1RB-5.js",
+    "name": "restaurant-private-event-minimum-spend",
+    "src": "src/content/generated/restaurant-private-event-minimum-spend.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/restaurant-profit-margin-average.json": {
+    "file": "assets/restaurant-profit-margin-average-C61Phvcv.js",
+    "name": "restaurant-profit-margin-average",
+    "src": "src/content/generated/restaurant-profit-margin-average.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/restaurant-sales-forecast.json": {
+    "file": "assets/restaurant-sales-forecast-DAp2349o.js",
+    "name": "restaurant-sales-forecast",
+    "src": "src/content/generated/restaurant-sales-forecast.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/restaurant-takeout-vs-dine-in-profit-per-order.json": {
+    "file": "assets/restaurant-takeout-vs-dine-in-profit-per-order-CYhZJQ0T.js",
+    "name": "restaurant-takeout-vs-dine-in-profit-per-order",
+    "src": "src/content/generated/restaurant-takeout-vs-dine-in-profit-per-order.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/retail-break-even-analysis.json": {
+    "file": "assets/retail-break-even-analysis-D-dWN-Yq.js",
+    "name": "retail-break-even-analysis",
+    "src": "src/content/generated/retail-break-even-analysis.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/salon-booth-rent-vs-commission-owner.json": {
+    "file": "assets/salon-booth-rent-vs-commission-owner-Cpj-C6SS.js",
+    "name": "salon-booth-rent-vs-commission-owner",
+    "src": "src/content/generated/salon-booth-rent-vs-commission-owner.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/salon-break-even.json": {
+    "file": "assets/salon-break-even-BglZpNA9.js",
+    "name": "salon-break-even",
+    "src": "src/content/generated/salon-break-even.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/salon-clients-per-day-break-even.json": {
+    "file": "assets/salon-clients-per-day-break-even-Dkw_iGXH.js",
+    "name": "salon-clients-per-day-break-even",
+    "src": "src/content/generated/salon-clients-per-day-break-even.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/salon-membership-pricing.json": {
+    "file": "assets/salon-membership-pricing-B7nSWtJW.js",
+    "name": "salon-membership-pricing",
+    "src": "src/content/generated/salon-membership-pricing.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/salon-no-show-cost.json": {
+    "file": "assets/salon-no-show-cost-BfXgz9g1.js",
+    "name": "salon-no-show-cost",
+    "src": "src/content/generated/salon-no-show-cost.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/salon-profit-margin.json": {
+    "file": "assets/salon-profit-margin-DT2Rc9Af.js",
+    "name": "salon-profit-margin",
+    "src": "src/content/generated/salon-profit-margin.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/salon-retail-product-profit-margin.json": {
+    "file": "assets/salon-retail-product-profit-margin-v0Jw1fQ1.js",
+    "name": "salon-retail-product-profit-margin",
+    "src": "src/content/generated/salon-retail-product-profit-margin.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/salon-service-pricing.json": {
+    "file": "assets/salon-service-pricing-DrbjNKvs.js",
+    "name": "salon-service-pricing",
+    "src": "src/content/generated/salon-service-pricing.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/snow-removal-pricing.json": {
+    "file": "assets/snow-removal-pricing-jNQkNlQw.js",
+    "name": "snow-removal-pricing",
+    "src": "src/content/generated/snow-removal-pricing.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/subscription-box-churn-break-even.json": {
+    "file": "assets/subscription-box-churn-break-even-DsG91q92.js",
+    "name": "subscription-box-churn-break-even",
+    "src": "src/content/generated/subscription-box-churn-break-even.json",
+    "isDynamicEntry": true
+  },
+  "src/content/generated/target-profit-sales-formula.json": {
+    "file": "assets/target-profit-sales-formula-42atcmiL.js",
+    "name": "target-profit-sales-formula",
+    "src": "src/content/generated/target-profit-sales-formula.json",
+    "isDynamicEntry": true
+  },
+  "src/fonts/inter-cyrillic-ext.woff2": {
+    "file": "assets/inter-cyrillic-ext-BOeWTOD4.woff2",
+    "src": "src/fonts/inter-cyrillic-ext.woff2"
+  },
+  "src/fonts/inter-cyrillic.woff2": {
+    "file": "assets/inter-cyrillic-DqGufNeO.woff2",
+    "src": "src/fonts/inter-cyrillic.woff2"
+  },
+  "src/fonts/inter-greek-ext.woff2": {
+    "file": "assets/inter-greek-ext-DlzME5K_.woff2",
+    "src": "src/fonts/inter-greek-ext.woff2"
+  },
+  "src/fonts/inter-greek.woff2": {
+    "file": "assets/inter-greek-CkhJZR-_.woff2",
+    "src": "src/fonts/inter-greek.woff2"
+  },
+  "src/fonts/inter-latin-ext.woff2": {
+    "file": "assets/inter-latin-ext-DO1Apj_S.woff2",
+    "src": "src/fonts/inter-latin-ext.woff2"
+  },
+  "src/fonts/inter-latin.woff2": {
+    "file": "assets/inter-latin-Dx4kXJAl.woff2",
+    "src": "src/fonts/inter-latin.woff2"
+  },
+  "src/fonts/inter-vietnamese.woff2": {
+    "file": "assets/inter-vietnamese-CBcvBZtf.woff2",
+    "src": "src/fonts/inter-vietnamese.woff2"
+  },
+  "src/fonts/sora-latin-ext.woff2": {
+    "file": "assets/sora-latin-ext-rqDZ1P7Z.woff2",
+    "src": "src/fonts/sora-latin-ext.woff2"
+  },
+  "src/fonts/sora-latin.woff2": {
+    "file": "assets/sora-latin-BUlRykrX.woff2",
+    "src": "src/fonts/sora-latin.woff2"
+  },
+  "src/main.jsx": {
+    "file": "assets/main-DfvFZHGX.js",
+    "name": "main",
+    "src": "src/main.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_industries-CEEyh3zb.js",
+      "_CostBuilder-AVwpSBwC.js"
+    ],
+    "dynamicImports": [
+      "src/ScenarioTools.jsx",
+      "src/authClient.js"
+    ],
+    "css": [
+      "assets/main-DoRbkAOx.css"
+    ]
+  },
+  "src/sentry.js": {
+    "file": "assets/sentry-CQedlf8s.js",
+    "name": "sentry",
+    "src": "src/sentry.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ]
+  }
+}

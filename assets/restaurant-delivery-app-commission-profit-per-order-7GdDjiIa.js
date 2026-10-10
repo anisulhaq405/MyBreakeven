@@ -1,0 +1,206 @@
+var e={slug:`restaurant-delivery-app-commission-profit-per-order`,tag:`Restaurant`,name:`Restaurant`,cluster:`unitEconomics`,title:`Delivery App Commission: Restaurant Profit per Order`,seoTitle:`Delivery App Commission: Profit per Order`,description:`Calculate restaurant delivery contribution after commission, food, packaging, labor and promotions. Compare prices, direct pickup and kitchen capacity.`,metaDescription:`Calculate restaurant delivery contribution after commission, food, packaging, labor and promotions. Compare prices, direct pickup and kitchen capacity.`,image:`/images/blog/restaurant-delivery-app-commission-profit-per-order-editorial.webp`,alt:`Takeaway meal and kraft packaging on a restaurant counter beside a phone and blank receipt.`,imageCaption:`AI-generated illustrative food and packaging scene for delivery-order costing.`,published:`2026-10-02`,modified:`2026-10-02`,opening:`Restaurant delivery profit per order starts with contribution after the commission and costs caused by that order. Subtract food, packaging, incremental labor, merchant-funded promotions and expected refunds or remakes. Then compare the remaining contribution with monthly costs and kitchen capacity. The fictional USD example below uses a 25% commission assumption; your actual merchant agreement and settlement statement determine the fee rate, fee basis and whether payment processing is already included.`,unit:`orders`,singular:`order`,calculatorSlug:`restaurant-break-even-calculator`,tags:[`Restaurant`,`Delivery App Commission`],features:[`Checked illustrative calculations`,`Explicit cost and timing assumptions`,`A practical capacity check`],html:`<p>Restaurant delivery profit per order starts with contribution after the commission and costs caused by that order. Subtract food, packaging, incremental labor, merchant-funded promotions and expected refunds or remakes. Then compare the remaining contribution with monthly costs and kitchen capacity. The fictional USD example below uses a 25% commission assumption; your actual merchant agreement and settlement statement determine the fee rate, fee basis and whether payment processing is already included.</p>
+<blockquote><p><strong>Quick answer:</strong> A $30 delivery order with $7.50 commission, $9 food, $1.20 packaging, $3.60 incremental labor, a $2 merchant promotion and a $0.70 remake allowance contributes $6. That is a 20% contribution margin before fixed overhead. It is not $6 of final profit unless all other relevant business costs have already been covered.</p></blockquote>
+<h2 id="calculate-the-order-from-its-settlement-basis">Calculate the order from its settlement basis</h2>
+<p><strong>Contribution per order</strong> is the money an order leaves toward the restaurant's monthly bills. <strong>Settlement</strong> is the platform's record of what it credits and deducts before paying you. Use that record to check the fees instead of relying on the menu price alone.</p>
+<p>Start with the restaurant's food-order revenue, not the customer's total payment if that total includes amounts the restaurant does not retain. Keep taxes, customer-paid delivery charges, tips, refunds and other settlement adjustments identifiable. Confirm which amount the platform uses to calculate commission.</p>
+<p>The example assumes a $30 menu subtotal, a 25% commission on that subtotal, and a $2 promotion funded by the merchant. It also assumes the commission already includes the processing cost for this platform order. There is no additional card-processing fee in the calculation.</p>
+<div class="article-table-scroll"><table>
+<thead>
+<tr class="header">
+<th>Delivery-order item</th>
+<th>Calculation</th>
+<th style="text-align: right;">Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Menu subtotal retained before costs</td>
+<td>Stated order price</td>
+<td style="text-align: right;">$30</td>
+</tr>
+<tr class="even">
+<td>Platform commission</td>
+<td>$30 × 25%</td>
+<td style="text-align: right;">$7.50</td>
+</tr>
+<tr class="odd">
+<td>Food ingredients</td>
+<td>Recipe cost</td>
+<td style="text-align: right;">$9</td>
+</tr>
+<tr class="even">
+<td>Packaging</td>
+<td>Containers and bag</td>
+<td style="text-align: right;">$1.20</td>
+</tr>
+<tr class="odd">
+<td>Incremental labor</td>
+<td>Order-linked work</td>
+<td style="text-align: right;">$3.60</td>
+</tr>
+<tr class="even">
+<td>Merchant-funded promotion</td>
+<td>Restaurant's cost</td>
+<td style="text-align: right;">$2</td>
+</tr>
+<tr class="odd">
+<td>Remake and refund allowance</td>
+<td>Planning allowance</td>
+<td style="text-align: right;">$0.70</td>
+</tr>
+<tr class="even">
+<td>Total modeled order costs</td>
+<td>Sum of cost lines</td>
+<td style="text-align: right;">$24</td>
+</tr>
+<tr class="odd">
+<td>Contribution</td>
+<td>$30 − $24</td>
+<td style="text-align: right;">$6</td>
+</tr>
+</tbody>
+</table></div>
+<p>The $0.70 allowance should be replaced with a measured average for your own orders. Do not deduct a planning allowance and the same actual refund again in a reconciliation. Recipe cost should include the ingredients used to deliver the portion; general monthly overhead belongs elsewhere unless you have explicitly chosen a different boundary.</p>
+<p>DoorDash's official <a href="https://merchants.doordash.com/en-us/blog/new-partnership-plans">merchant partnership-plan information</a> describes different commission arrangements and processing treatment. Use the terms that apply to your account instead of treating the illustrative 25% as a universal delivery-platform rate.</p>
+<h2 id="solve-for-a-contribution-target">Solve for a contribution target</h2>
+<p>Costs before the percentage commission total <strong>$9 + $1.20 + $3.60 + $2 + $0.70 = $16.50</strong>. At a 25% commission, the restaurant retains 75% of the assumed subtotal before those costs.</p>
+<p>To obtain $9 contribution per order under the same assumptions:</p>
+<p><strong>Price = ($16.50 + $9) ÷ (1 − 0.25) = $34.</strong></p>
+<p>At $34, commission becomes $8.50. Contribution is <strong>$34 − $8.50 − $16.50 = $9</strong>. The price rises by $4, but contribution rises by $3 because the commission also increases.</p>
+<p>This is a mathematical scenario, not a recommendation to change your platform prices. Check your merchant agreement, menu-pricing restrictions, customer demand and portion consistency before making a change. A higher contribution per order can still produce a lower monthly result if the order count falls enough.</p>
+<p>The formula also depends on the commission basis remaining as stated. If a fee applies after a merchant discount, or a promotion has a different reimbursement treatment, use the actual settlement formula. Do not silently subtract the promotion twice from both revenue and costs.</p>
+<h2 id="compare-delivery-and-direct-pickup-consistently">Compare delivery and direct pickup consistently</h2>
+<p>A direct-pickup order has a different cost structure. In this illustration it sells for $30, uses the same food, packaging, labor and remake allowance, has a 3% processing fee, and has no merchant-funded promotion. Those modeled costs total $15.40, leaving $14.60 contribution.</p>
+<div class="article-table-scroll"><table>
+<thead>
+<tr class="header">
+<th>Scenario</th>
+<th style="text-align: right;">Price</th>
+<th style="text-align: right;">Modeled order costs</th>
+<th style="text-align: right;">Contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Delivery, 25% commission</td>
+<td style="text-align: right;">$30</td>
+<td style="text-align: right;">$24</td>
+<td style="text-align: right;">$6</td>
+</tr>
+<tr class="even">
+<td>Delivery at revised price</td>
+<td style="text-align: right;">$34</td>
+<td style="text-align: right;">$25</td>
+<td style="text-align: right;">$9</td>
+</tr>
+<tr class="odd">
+<td>Direct pickup, before acquisition spending</td>
+<td style="text-align: right;">$30</td>
+<td style="text-align: right;">$15.40</td>
+<td style="text-align: right;">$14.60</td>
+</tr>
+<tr class="even">
+<td>Direct pickup with $4 acquisition cost</td>
+<td style="text-align: right;">$30</td>
+<td style="text-align: right;">$19.40</td>
+<td style="text-align: right;">$10.60</td>
+</tr>
+</tbody>
+</table></div>
+<p>The direct channel is not automatically free to operate. Advertising, ordering software, handoff labor or other order-linked costs may apply. If it takes $4 of incremental acquisition spending per direct order, contribution falls to $10.60. A monthly software subscription might instead be fixed; include it once under the chosen boundary.</p>
+<p>The comparison does not prove that delivery customers would otherwise place direct orders. Record channel-specific demand and the marketing required to generate it. Removing a channel can remove orders rather than migrate them. Use evidence from your own customers instead of equating lower fees with guaranteed higher total profit.</p>
+<h2 id="check-the-monthly-goal-and-kitchen-capacity">Check the monthly goal and kitchen capacity</h2>
+<p>Suppose fixed monthly costs are $6,000 and an additional owner-pay goal is $2,000. A business relying entirely on this modeled order stream needs $8,000 of contribution.</p>
+<ul>
+<li>At $6 per delivery order: <strong>$8,000 ÷ $6 = 1,333.33</strong>, rounded up to <strong>1,334 orders</strong>.</li>
+<li>At $9 per revised-price delivery order: <strong>$8,000 ÷ $9 = 888.89</strong>, rounded up to <strong>889 orders</strong>.</li>
+<li>At $14.60 per direct-pickup order before acquisition spending: <strong>$8,000 ÷ $14.60 = 547.95</strong>, rounded up to <strong>548 orders</strong>.</li>
+</ul>
+<p>If direct pickup actually needs the $4 acquisition allowance, use $10.60 contribution instead; required orders become <strong>755</strong>. Comparable demand and timing still need verification.</p>
+<p>Now assume the kitchen has 12 incremental production hours per week available for these orders. Using 52 weeks divided by 12 months gives 52 hours per average month. Each order uses 0.12 staff hour, equivalent to 7.2 minutes in this simplified model. That allows <strong>52 ÷ 0.12 = 433.33</strong>, or <strong>433 whole orders</strong>.</p>
+<p>At $6 contribution, 433 orders produce $2,598. The channel cannot cover the full $8,000 target under those capacity assumptions. It may also face a tighter peak-time constraint than the monthly hours suggest. Check when orders arrive, which station is limited and whether extra work delays other profitable orders.</p>
+<h2 id="separate-an-incremental-channel-from-the-whole-restaurant">Separate an incremental channel from the whole restaurant</h2>
+<p>If dine-in and other channels already cover the restaurant's fixed costs, an additional delivery order should not be charged the same rent again as a newly incurred variable cost. Compare its contribution with incremental expenses and any contribution displaced elsewhere.</p>
+<p>For example, a stated incremental channel target of $1,200 would require <strong>$1,200 ÷ $6 = 200 orders</strong>. That fits within the 433-order capacity assumption. The result differs because the question is different: covering an incremental target versus supporting the entire business through delivery.</p>
+<p>This does not make low-contribution orders harmless. Extra staff, software, kitchen equipment or support may create new fixed costs when volume grows. Add those costs to the scenario where they occur. Also check whether the nominal spare time is available during the delivery-demand window.</p>
+<h2 id="how-to-run-your-own-numbers">How to run your own numbers</h2>
+<p>Use settlement statements and recipe records for a representative order or basket. Identify retained revenue, the commission basis, packaging, order-linked labor, promotions, refunds and processing treatment. Reconcile a sample of actual orders before forecasting a month.</p>
+<p>Use the <a href="https://mybreakeven.com/calculators/restaurant-break-even-calculator/">restaurant break-even calculator</a> with the base order's costs split into the actual fields.</p>
+<div class="article-table-scroll"><table>
+<thead>
+<tr class="header">
+<th>Calculator field</th>
+<th style="text-align: right;">Base delivery order</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Average price per order</td>
+<td style="text-align: right;">$30</td>
+</tr>
+<tr class="even">
+<td>Materials / product cost per order</td>
+<td style="text-align: right;">$9</td>
+</tr>
+<tr class="odd">
+<td>Direct labor per order</td>
+<td style="text-align: right;">$3.60</td>
+</tr>
+<tr class="even">
+<td>Packaging + delivery commission per order</td>
+<td style="text-align: right;">$1.90 packaging and remake allowance</td>
+</tr>
+<tr class="odd">
+<td>Promotion cost per order</td>
+<td style="text-align: right;">$2</td>
+</tr>
+<tr class="even">
+<td>Payment and platform fees</td>
+<td style="text-align: right;">25% commission, including processing in this example</td>
+</tr>
+<tr class="odd">
+<td>Monthly operating overhead</td>
+<td style="text-align: right;">$6,000</td>
+</tr>
+<tr class="even">
+<td>Monthly owner pay</td>
+<td style="text-align: right;">$2,000 additional pay</td>
+</tr>
+<tr class="odd">
+<td>Target monthly profit</td>
+<td style="text-align: right;">$0</td>
+</tr>
+</tbody>
+</table></div>
+<p>Use the percentage field for commission and leave it out of the dollar-cost line, despite that line's broad label. Entering $7.50 there as well would count commission twice. Contribution should be $6 and the financial target 1,334 whole orders. Check kitchen hours separately. The calculator supports other currencies; all figures here are USD.</p>
+<p>Read <a href="/blogs/restaurant-menu-pricing-formula/">restaurant menu pricing</a> for the price calculation, <a href="/blogs/restaurant-food-cost-percentage/">restaurant food cost percentage</a> for recipe-cost boundaries, and <a href="/blogs/restaurant-sales-forecast/">restaurant sales forecasting</a> for building a demand assumption.</p>
+<h2 id="mistakes-that-hide-delivery-costs">Mistakes that hide delivery costs</h2>
+<ul>
+<li>Applying commission to the wrong subtotal. The merchant settlement terms determine the basis.</li>
+<li>Adding card processing when it is already bundled. Check the agreement and statement before adding another fee.</li>
+<li>Treating merchant-funded discounts as platform-funded. Record who actually pays for the offer.</li>
+<li>Deducting both an expected refund allowance and the same actual refunds. Reconcile the allowance against results.</li>
+<li>Calling order contribution final profit. Monthly overhead and any new channel costs still matter.</li>
+<li>Assuming direct demand or spare kitchen capacity without evidence. A financially attractive order still needs a deliverable schedule.</li>
+</ul>
+<h2 id="faqs">FAQs</h2>
+<h3 id="is-a-25-commission-standard-for-every-delivery-app">Is a 25% commission standard for every delivery app?</h3>
+<p>No. It is an illustrative assumption in this calculation. Platforms, plans and account terms can differ, so use your own agreement and settlement statement for both the rate and the fee basis.</p>
+<h3 id="should-i-add-a-payment-processing-fee-to-commission">Should I add a payment-processing fee to commission?</h3>
+<p>Only if it is a separate cost under your arrangement. Some plans include processing within the stated commission or fee. Adding it again would understate contribution.</p>
+<h3 id="is-contribution-the-same-as-restaurant-profit">Is contribution the same as restaurant profit?</h3>
+<p>No. Contribution is revenue less the modeled order-linked costs. The restaurant's total contribution must also cover fixed costs, and accounting profit depends on the complete expense record.</p>
+<h3 id="does-raising-the-delivery-price-guarantee-more-profit">Does raising the delivery price guarantee more profit?</h3>
+<p>No. It increases contribution per order under the stated cost assumptions, but demand may change and contract restrictions may apply. Compare total monthly contribution at realistic order counts.</p>
+<h3 id="should-i-switch-every-order-to-direct-pickup">Should I switch every order to direct pickup?</h3>
+<p>Compare the full direct-channel cost and the demand you can actually generate. Direct ordering may require acquisition spending, software and support. Customers from one channel do not automatically move to another.</p>
+<h3 id="how-should-i-handle-refunds-in-the-model">How should I handle refunds in the model?</h3>
+<p>Use a measured allowance for planning, or reconcile actual net revenue and costs for historical results. Keep refunds, remakes and fee reimbursements identifiable. Avoid charging the same loss twice.</p>
+<h2 id="review-each-channel-on-the-same-basis">Review each channel on the same basis</h2>
+<ul>
+<li>Reconcile revenue and fees against settlement statements.</li>
+<li>Include packaging, labor and merchant-funded offers once.</li>
+<li>Compare total contribution at supported order counts.</li>
+<li>Test incremental costs and peak kitchen capacity before expanding.</li>
+</ul>
+<p>Explore more worked examples in the <a href="/blogs/">MyBreakeven blog hub</a>.</p>`,faq:[{q:`Is a 25% commission standard for every delivery app?`,a:`No. It is an illustrative assumption in this calculation. Platforms, plans and account terms can differ, so use your own agreement and settlement statement for both the rate and the fee basis.`},{q:`Should I add a payment-processing fee to commission?`,a:`Only if it is a separate cost under your arrangement. Some plans include processing within the stated commission or fee. Adding it again would understate contribution.`},{q:`Is contribution the same as restaurant profit?`,a:`No. Contribution is revenue less the modeled order-linked costs. The restaurant's total contribution must also cover fixed costs, and accounting profit depends on the complete expense record.`},{q:`Does raising the delivery price guarantee more profit?`,a:`No. It increases contribution per order under the stated cost assumptions, but demand may change and contract restrictions may apply. Compare total monthly contribution at realistic order counts.`},{q:`Should I switch every order to direct pickup?`,a:`Compare the full direct-channel cost and the demand you can actually generate. Direct ordering may require acquisition spending, software and support. Customers from one channel do not automatically move to another.`},{q:`How should I handle refunds in the model?`,a:`Use a measured allowance for planning, or reconcile actual net revenue and costs for historical results. Keep refunds, remakes and fee reimbursements identifiable. Avoid charging the same loss twice.`}]};export{e as default};

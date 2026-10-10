@@ -1,0 +1,136 @@
+var e={slug:`salon-membership-pricing`,tag:`Salon`,name:`Salon`,cluster:`pricing`,title:`Salon Membership Pricing: Can the Diary Handle the Offer?`,seoTitle:`Salon Membership Pricing`,description:`Price salon memberships from redeemed visits, delivery costs and fees. Compare member-months with appointments and reserve capacity for promised services.`,metaDescription:`Price salon memberships from redeemed visits, delivery costs and fees. Compare member-months with appointments and reserve capacity for promised services.`,image:`/images/blog/salon-membership-pricing-editorial.webp`,alt:`Stylist separating a seated client’s hair in a salon with other appointment chairs behind.`,imageCaption:`Generated editorial image illustrating the work discussed in this guide; not a photograph of a real customer or business.`,published:`2026-10-05`,modified:`2026-10-10`,opening:`A $90 monthly membership leaves $45.30 toward overhead and owner income when the included visit costs $42 and the payment fee is 3%. If members redeem more visits, the same collection has to pay for more work.`,unit:`appointments`,singular:`appointment`,calculatorSlug:`salon-break-even-calculator`,tags:[`Salon`,`Salon Membership Pricing`],features:[`Explicit fictional assumptions and checked arithmetic`,`Costs and delivery hours tied to a complete planning unit`,`Rounded job targets compared with delivery capacity`],html:`<p>A $90 monthly membership leaves $45.30 toward overhead and owner income when the included visit costs $42 and the payment fee is 3%. If members redeem more visits, the same collection has to pay for more work.</p>
+<p>Before choosing the price, write down what members can book. One visit, a service credit and a rollover allowance create different demands on the diary. The USD examples below follow those visits as well as the cash, so you can check the offer against the appointments your team can deliver.</p>
+<h2 id="quick-answer">Quick answer</h2>
+<p>Define the included service, monthly collection, redemption rules and appointment time before setting a price. Calculate expected delivery cost from redeemed visits, then subtract payment fees and any member acquisition cost. Test full use as well as lower use. Reserve enough capacity for the promised visits and state the customer rules clearly before enrollment.</p>
+<h2 id="write-down-exactly-what-the-monthly-payment-buys">Write down exactly what the monthly payment buys</h2>
+<p>“One service a month” leaves several questions open. Which service? What happens if the client chooses a longer one? Can an unused visit be taken next month? Resolve those questions before estimating cost, because each answer changes the appointments you may have to provide.</p>
+<p>Start with a named included service and its normal worker time. If the offer is a dollar credit instead, list the services it can buy and use their expected mix. A credit that can buy either a short visit or part of a lengthy treatment needs a different calculation from one fixed service.</p>
+<p>Keep any upgrade separate on the visit record: extra charge, extra materials and extra worker-hours. Membership revenue does not cover the longer appointment automatically. When a payment is refunded or a booking is canceled, record what happened to both the cash and the customer's remaining benefit.</p>
+<p>Use three counts in the monthly review: active paying members, collected payments and completed redeemed visits. Ten new sign-ups do not necessarily mean ten more paying accounts next month. A booked appointment also does not become a redeemed service until it is delivered according to the offer's rules.</p>
+<p>Check the diary before taking more enrollments. If members mostly request Saturday mornings, spare Tuesday hours will not resolve the queue. Keep capacity by service length, suitable stylist and the booking windows the offer promises. That makes an enrollment limit easier to explain and review.</p>
+<h2 id="cost-the-included-visit-first">Cost the included visit first</h2>
+<p>The base offer collects $90 per member each month and allows one 1.5-hour service visit. Delivery costs for that visit are:</p>
+<div class="article-table-scroll"><table>
+<thead>
+<tr class="header">
+<th>Input</th>
+<th style="text-align: right;">Example amount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Materials per completed visit</td>
+<td style="text-align: right;">$10</td>
+</tr>
+<tr class="even">
+<td>Paid direct labor per completed visit</td>
+<td style="text-align: right;">$27</td>
+</tr>
+<tr class="odd">
+<td>Other variable cost per completed visit</td>
+<td style="text-align: right;">$5</td>
+</tr>
+<tr class="even">
+<td>Total delivery cost before collection fee</td>
+<td style="text-align: right;">$42</td>
+</tr>
+<tr class="odd">
+<td>Fee on $90 monthly collection at 3%</td>
+<td style="text-align: right;">$2.70</td>
+</tr>
+<tr class="even">
+<td>Remaining contribution at one visit</td>
+<td style="text-align: right;">$45.30</td>
+</tr>
+</tbody>
+</table></div>
+<p>Member acquisition is set to zero in this first calculation to isolate delivery. Zero is an assumption, not a claim that acquiring members is free. If enrollment costs $20 and your planning period spreads that cost over four paid months, the assumed monthly allocation is $5 and contribution falls to $40.30. Keep the actual upfront cash payment visible separately.</p>
+<p>Materials and paid direct labor follow the redeemed visit. Monthly rent and software remain fixed costs. Owner pay represents the remaining income goal in this example; do not also pay for the owner's identical hours through the direct labor entry. If members use more staff time for booking or support, record it in the relevant cost and capacity assumptions.</p>
+<h2 id="compare-redemption-behavior-before-promising-a-price">Compare redemption behavior before promising a price</h2>
+<div class="article-table-scroll"><table>
+<thead>
+<tr class="header">
+<th>Scenario per member-month</th>
+<th style="text-align: right;">Redeemed visits</th>
+<th style="text-align: right;">Collected revenue</th>
+<th style="text-align: right;">Delivery cost</th>
+<th style="text-align: right;">Fee</th>
+<th style="text-align: right;">Contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lower current redemption</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">$90</td>
+<td style="text-align: right;">$31.50</td>
+<td style="text-align: right;">$2.70</td>
+<td style="text-align: right;">$55.80</td>
+</tr>
+<tr class="even">
+<td>Full one-visit use</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">$90</td>
+<td style="text-align: right;">$42.00</td>
+<td style="text-align: right;">$2.70</td>
+<td style="text-align: right;">$45.30</td>
+</tr>
+<tr class="odd">
+<td>Rollover-heavy month</td>
+<td style="text-align: right;">1.25</td>
+<td style="text-align: right;">$90</td>
+<td style="text-align: right;">$52.50</td>
+<td style="text-align: right;">$2.70</td>
+<td style="text-align: right;">$34.80</td>
+</tr>
+</tbody>
+</table></div>
+<p>The 1.25-visit case only applies if the actual offer allows those redemptions, such as previously earned visits rolling into a later month. It is not possible under a strict one-visit limit with no rollover. Explain the rule rather than mixing incompatible offers in the same forecast.</p>
+<p>At 100 active paying members, the full-use case collects $9,000 and leaves $4,530 before fixed costs and owner income. The rollover-heavy month still collects $9,000 but leaves only $3,480 and requires 125 visits instead of 100. Revenue stayed unchanged while the work and contribution changed materially.</p>
+<p>Lower observed use can improve current-period contribution, but do not make a promise affordable only by assuming customers will skip the included benefit. Test the obligation you are offering. Track how unused rights affect future service demand if your rules permit them to accumulate.</p>
+<h2 id="calculate-a-price-from-a-chosen-contribution-goal">Calculate a price from a chosen contribution goal</h2>
+<p>If the included visit costs $42 and you want $45 contribution per fully used member-month, a fee-adjusted price is ($42 + $45) ÷ 0.97 = <strong>$89.70, rounded upward to the next cent</strong>. A rounded $90 collection produces the $45.30 result above.</p>
+<p>If you allow a scenario with 1.25 redeemed visits and still want $45 contribution, the delivery cost becomes $52.50. Required price becomes ($52.50 + $45) ÷ 0.97 = <strong>$100.52, rounded upward to the next cent</strong>. This is a scenario calculation, not a suggested unilateral change to an existing customer agreement.</p>
+<p>Customer value also matters. Compare the actual included service and benefits with the ordinary appointment offer. A membership whose rules are hard to understand can create disputes even if its spreadsheet is profitable. Present the included service, payment timing, booking process and relevant limits together where customers decide to enroll.</p>
+<h2 id="translate-member-months-into-appointments-carefully">Translate member-months into appointments carefully</h2>
+<p>The salon calculator uses appointments as its unit. At full one-visit use, a $90 member-month maps to one $90 appointment. At 0.75 visits, the planning revenue per redeemed appointment is $90 ÷ 0.75 = $120. At 1.25 visits, it is $90 ÷ 1.25 = $72. These are allocated planning values, not extra charges made at the appointment.</p>
+<p>The resulting appointment contribution is $74.40, $45.30 and $27.84 respectively when the delivery costs remain $42. Multiplying by the corresponding visit count returns $55.80, $45.30 and $34.80 per member-month. Keep both views so the model's appointment requirement is not confused with the number of paying members.</p>
+<p>This simplified allocation is useful for operational planning. It does not decide how collections should be recognized in accounting records or how unused services should be treated. Keep collected cash, delivered visits and any outstanding customer benefits visible in separate records.</p>
+<h2 id="check-membership-demand-against-stylist-hours">Check membership demand against stylist hours</h2>
+<p>Assume fixed costs $6,000, owner pay $3,000 and target profit $1,000, giving a $10,000 monthly goal. At full use, $10,000 ÷ $45.30 = 220.75, rounded up to <strong>221 member-months</strong>, each requiring one visit. At 1.25 visits, the member-month requirement rises to 288, requiring 360 visits for those whole members.</p>
+<p>Three workers at 30 weekly hours each and 75% utilization provide 292.5 monthly delivery hours. At 1.5 hours per visit, capacity is 195 whole visits. The full-use scenario already exceeds that capacity, and the rollover-heavy case exceeds it by much more. If regular nonmember appointments share those hours, subtract their committed workload before allocating membership places.</p>
+<p>Monthly totals can also hide a peak-time problem. Members might request the same evenings or weekends. Track available appointment slots by the actual service length and worker skill, not just the sum of all opening hours. A cap on active memberships can be an operational decision when based on the promised service workload.</p>
+<h2 id="run-the-full-use-scenario-in-the-calculator">Run the full-use scenario in the calculator</h2>
+<p>Open the <a href="/calculators/salon-break-even-calculator/">salon break-even calculator</a>. Enter price $90, material cost $10, labor cost $27, other variable cost $5, acquisition cost $0 and payment fee 3%. Use fixed costs $6,000, owner pay $3,000 and target profit $1,000, with three workers, 30 weekly hours each, 1.5 hours per appointment and 75% utilization.</p>
+<p>You can use another supported currency for your own inputs; keep every amount in the same currency.</p>
+<p>The result should show $45.30 contribution, 221 required appointments and 195 whole-appointment capacity. For a redemption sensitivity test, use the allocated appointment revenue described above. Translate the result back to member-months and round members up when deciding how many whole paying accounts would be needed.</p>
+<h2 id="check-these-assumptions-before-enrolling-members">Check these assumptions before enrolling members</h2>
+<ul>
+<li>Counting collection as earned profit. Fees, delivery and any remaining service obligation still matter.</li>
+<li>Assuming every offer has the same redemption limit. Rollover and credit rules change the workload.</li>
+<li>Mixing members and appointments. State which unit each price, cost and result uses.</li>
+<li>Leaving regular customers out of capacity. Both customer groups compete for the same staff hours.</li>
+<li>Relying on unused benefits to make the offer viable. Test full use of the actual promise before setting enrollment targets.</li>
+</ul>
+<h2 id="faqs">FAQs</h2>
+<h3 id="should-i-price-from-average-use-or-the-full-included-visit">Should I price from average use or the full included visit?</h3>
+<p>Start by costing full use of the service you promise. You can also review observed average redemption, but a viable full-use case gives you a clearer view of the commitment you are selling.</p>
+<h3 id="how-do-i-include-rolled-over-visits">How do I include rolled-over visits?</h3>
+<p>Count them in the month you expect to deliver them and check the extra cost and appointment time. The 1.25-visit example applies only to an offer whose rules allow those additional redemptions.</p>
+<h3 id="what-does-120-per-appointment-mean-in-the-lower-use-case">What does $120 per appointment mean in the lower-use case?</h3>
+<p>It allocates the $90 member collection across 0.75 redeemed visits for planning. The customer still pays the stated membership charge; $120 is not an extra appointment bill.</p>
+<h3 id="where-should-i-put-the-cost-of-enrolling-a-member">Where should I put the cost of enrolling a member?</h3>
+<p>State how you spread it across the paid months used in the plan. Keep the upfront payment in the cash record too, especially if members leave earlier than the period you assumed.</p>
+<h3 id="can-i-use-all-spare-salon-hours-for-memberships">Can I use all spare salon hours for memberships?</h3>
+<p>First subtract work already committed to regular appointments. Then check the remaining slots by service length, worker skill and the times members can actually book.</p>
+<h3 id="which-figures-should-i-review-each-month">Which figures should I review each month?</h3>
+<p>Compare paying accounts, collections, redemptions, unused benefits and delivered worker-hours. Together they show whether the offer is leaving enough contribution and whether future bookings are accumulating.</p>
+<h2 id="takeaways">Takeaways</h2>
+<ul>
+<li>Cost the exact service and redemption rules you offer.</li>
+<li>Keep paying members, collections and completed visits separate.</li>
+<li>Test full use and any permitted rollover before setting an enrollment target.</li>
+<li>Reserve suitable appointment slots alongside regular customers' work.</li>
+</ul>
+<p>Continue with the <a href="/blogs/salon-service-pricing/">salon service pricing guide</a>, <a href="/blogs/salon-clients-per-day-break-even/">salon clients per day guide</a> and <a href="/blogs/salon-break-even/">salon break-even guide</a>. Browse the <a href="/blogs/">business guides</a> for more examples.</p>
+`,faq:[{q:`Should I price from average use or the full included visit?`,a:`Start by costing full use of the service you promise. You can also review observed average redemption, but a viable full-use case gives you a clearer view of the commitment you are selling.`},{q:`How do I include rolled-over visits?`,a:`Count them in the month you expect to deliver them and check the extra cost and appointment time. The 1.25-visit example applies only to an offer whose rules allow those additional redemptions.`},{q:`What does $120 per appointment mean in the lower-use case?`,a:`It allocates the $90 member collection across 0.75 redeemed visits for planning. The customer still pays the stated membership charge; $120 is not an extra appointment bill.`},{q:`Where should I put the cost of enrolling a member?`,a:`State how you spread it across the paid months used in the plan. Keep the upfront payment in the cash record too, especially if members leave earlier than the period you assumed.`},{q:`Can I use all spare salon hours for memberships?`,a:`First subtract work already committed to regular appointments. Then check the remaining slots by service length, worker skill and the times members can actually book.`},{q:`Which figures should I review each month?`,a:`Compare paying accounts, collections, redemptions, unused benefits and delivered worker-hours. Together they show whether the offer is leaving enough contribution and whether future bookings are accumulating.`}]};export{e as default};
