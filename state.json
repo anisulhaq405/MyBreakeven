@@ -1007,8 +1007,9 @@
       "attemptedAt": "2026-10-11T04:50:39.720Z"
     },
     "https://mybreakeven.com/blogs/paint-correction-labor-hours-pricing/|instagram": {
-      "revision": "d6478e8e9aa0aa207b8ed1c38133d1fd1a9fbdfae72716959961355cef425d7e",
-      "status": "baseline"
+      "revision": "9a4b7981cfbfcc10d221c85ea6058ca329cd31739e939a0d9c900bc49a311008",
+      "status": "attempting",
+      "attemptedAt": "2026-10-11T04:50:42.017Z"
     },
     "https://mybreakeven.com/blogs/paint-correction-labor-hours-pricing/|pinterest": {
       "revision": "d6478e8e9aa0aa207b8ed1c38133d1fd1a9fbdfae72716959961355cef425d7e",
