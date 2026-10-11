@@ -4,9 +4,9 @@ export const businessTools = {
     "name": "Break-Even ROAS Calculator",
     "category": "Advertising",
     "resultLabel": "Break-even ROAS before fixed overhead",
-    "title": "Break-Even ROAS Calculator | MyBreakeven",
+    "title": "Break-Even ROAS Calculator: Margin, Fees & CPA",
     "description": "Calculate break-even ROAS after product costs and fees. Compare ad performance, maximum CPA and the ROAS needed for your contribution target.",
-    "intro": "Find the ad return your order economics need. Compare your actual ROAS with the contribution left after delivery costs, fees and advertising.",
+    "intro": "Use this break-even ROAS calculator to find the ad return your order economics need. Compare actual ROAS, maximum CPA and contribution after delivery costs, fees and advertising.",
     "defaults": {
       "price": 80,
       "cost": 44,
