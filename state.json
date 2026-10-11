@@ -469,8 +469,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/free-shipping-threshold-profit/|facebook": {
-      "revision": "a35165e494549304a65afba42a4c7700841772aa49458894125e2325457639d6",
-      "status": "baseline"
+      "revision": "e0b78bbd0d6748ed37efb42409fa9dcb4cf3a44aa627a62927bd00df1c137eaf",
+      "status": "attempting",
+      "attemptedAt": "2026-10-11T04:50:18.845Z"
     },
     "https://mybreakeven.com/blogs/free-shipping-threshold-profit/|instagram": {
       "revision": "a35165e494549304a65afba42a4c7700841772aa49458894125e2325457639d6",
