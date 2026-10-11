@@ -2194,6 +2194,11 @@
       "revision": "ad8d582822725d1a0f83124e11a91c4314f82e1f8ae703f2a694d32542e9aa95",
       "status": "needs_review",
       "attemptedAt": "2026-10-09T19:28:15.223Z"
+    },
+    "https://mybreakeven.com/calculation-methodology/|facebook": {
+      "revision": "f8cf19c254deedefa19a97b1b3ec58428075d8b102f8a2f8baea2786d10c8d3c",
+      "status": "attempting",
+      "attemptedAt": "2026-10-11T04:51:16.330Z"
     }
   }
 }
