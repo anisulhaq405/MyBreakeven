@@ -2244,6 +2244,11 @@
       "revision": "8aaa79c6e51408be63e12b0ade05c76a4d3eedbd789b44070d47bd9b3b852a20",
       "status": "needs_review",
       "attemptedAt": "2026-10-11T04:51:55.955Z"
+    },
+    "https://mybreakeven.com/resources/cleaning-job-cost-worksheet/|facebook": {
+      "revision": "99fa933d4ab42684ea190ef6819e37666066ed7e9623986e5ef8f576e7a39f1e",
+      "status": "attempting",
+      "attemptedAt": "2026-10-11T04:51:58.259Z"
     }
   }
 }
