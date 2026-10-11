@@ -1,4 +1,4 @@
-import { trackProductEvent } from "./productAnalytics";
+import { createCalculatorUseTracker, trackProductEvent } from "./productAnalytics";
 import { toolThemes } from './toolThemes.js';
 import './tool-themes.css';
 import React, { lazy, Suspense, useEffect, useLayoutEffect, useMemo, useState } from "react";
@@ -39,6 +39,7 @@ export default function App() {
   const industry = industries[industryKey],
     fields = fieldLabels(industry);
   const result = useMemo(() => calculate(input), [input]);
+  const [recordCalculatorUse] = useState(() => createCalculatorUseTracker());
   const decision = result.valid ? capacityDecision(result) : null;
   const set = (k, v) => setInput((s) => {
     const next = { ...s, [k]: v };
@@ -196,7 +197,7 @@ export default function App() {
                         step={options.step ?? "0.01"}
                         inputMode="decimal"
                         value={input[key]}
-                        onChange={(e) => set(key, e.target.value)}
+                        onChange={(e) => { recordCalculatorUse(industryKey); set(key, e.target.value); }}
                         onBlur={(e) => normalize(key, e.target.value, options)}
                         aria-invalid={input[key] === ""}
                       />
@@ -205,7 +206,7 @@ export default function App() {
                   </label>
                 ))}
               </div>
-              <CostBuilder key={industryKey} industryKey={industryKey} input={input} currency={currency} onApply={patch => setInput(current => ({ ...current, ...patch }))} />
+              <CostBuilder key={industryKey} industryKey={industryKey} input={input} currency={currency} onApply={patch => { recordCalculatorUse(industryKey); setInput(current => ({ ...current, ...patch })); }} />
               <div className="privacy">
                 <ShieldCheck />
                 <span>

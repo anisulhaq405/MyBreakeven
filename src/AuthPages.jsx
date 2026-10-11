@@ -1,3 +1,4 @@
+import { trackProductEvent } from "./productAnalytics";
 import "./pro-dashboard-entry.css";
 import React, { useEffect, useMemo, useState } from "react";
 import { Activity, CheckCircle2, CreditCard, Download, ExternalLink, Eye, EyeOff, KeyRound, LogOut, Mail, Pencil, Search, ShieldCheck, SlidersHorizontal, Trash2, UserRound } from "lucide-react";
@@ -75,6 +76,7 @@ export function AuthPage({ path }) {
       else if (mode === "reset") result = await withTimeout(supabase.auth.updateUser({ password }));
       else result = await withTimeout(supabase.auth.signInWithPassword({ email, password }));
       if (result.error) return setStatus({ loading: false, error: friendlyAuthError(result.error, "We could not complete that request. Please check your details and try again."), message: "" });
+      if (mode === "signup") trackProductEvent("signup_request_accepted");
       if (mode === "login" || mode === "reset") window.location.assign("/dashboard/");
       else setStatus({ loading: false, error: "", message: mode === "signup" ? "Check your email to verify your account." : "If an account exists, a secure reset link has been sent." });
     } catch (error) {
