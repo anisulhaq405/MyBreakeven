@@ -65,7 +65,7 @@ export function applyOctober11FullReview(post) {
       const rows = [...raw.matchAll(/\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|/g)].map(match => [match[1], match[2]]);
       if (rows.length < 3 || !/^:?-+:?$/.test(rows[1][0]) || !/^:?-+:?$/.test(rows[1][1])) throw new Error('Invalid budget table: ' + post.slug);
       tableCount += 1;
-      return `<div class="article-table-scroll"><table><caption>Illustrative ${rows[0][1].toLowerCase()} in USD</caption><thead><tr>${rows[0].map(cell => `<th scope="col">${cell}</th>`).join('')}</tr></thead><tbody>${rows.slice(2).map(row => `<tr><th scope="row">${row[0]}</th><td>${row[1]}</td></tr>`).join('')}</tbody></table></div>`;
+      return `<div class="article-table-scroll"><table><caption>Illustrative ${/monthly/i.test(rows[0].join(" ")) ? "monthly" : "startup"} budget (USD)</caption><thead><tr>${rows[0].map(cell => `<th scope="col">${cell}</th>`).join('')}</tr></thead><tbody>${rows.slice(2).map(row => `<tr><th scope="row">${row[0]}</th><td>${row[1]}</td></tr>`).join('')}</tbody></table></div>`;
     });
     const expected = post.slug === 'how-much-does-it-cost-to-open-a-salon' ? 1 : 2;
     if (tableCount !== expected) throw new Error('Missing budget table: ' + post.slug);
