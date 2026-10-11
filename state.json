@@ -223,8 +223,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/ceramic-coating-profit-margin/|facebook": {
-      "revision": "e7ca674e7721c56bfe3c0061b9bfd4698b995546e9bf7943b253769359a3f8e5",
-      "status": "baseline"
+      "revision": "e997ac3d0edd07e835fbdcc499145edcf1abd374c0e4ad6ee38cf536d8c956e6",
+      "status": "attempting",
+      "attemptedAt": "2026-10-11T04:50:14.221Z"
     },
     "https://mybreakeven.com/blogs/ceramic-coating-profit-margin/|instagram": {
       "revision": "e7ca674e7721c56bfe3c0061b9bfd4698b995546e9bf7943b253769359a3f8e5",
