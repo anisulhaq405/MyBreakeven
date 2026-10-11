@@ -979,8 +979,9 @@
       "attemptedAt": "2026-10-11T04:50:35.022Z"
     },
     "https://mybreakeven.com/blogs/mulch-installation-job-cost/|instagram": {
-      "revision": "0b765a034149273c42a94a1d0ccd414c0225f31e70cd3effad331d81fceef59f",
-      "status": "baseline"
+      "revision": "549b9b6abfa9c3d4cccdde8681c7ac0573ab82dc1726dff532559aa6aae1a7d8",
+      "status": "attempting",
+      "attemptedAt": "2026-10-11T04:50:37.238Z"
     },
     "https://mybreakeven.com/blogs/mulch-installation-job-cost/|pinterest": {
       "revision": "0b765a034149273c42a94a1d0ccd414c0225f31e70cd3effad331d81fceef59f",
