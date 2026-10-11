@@ -1,3 +1,4 @@
+import { applyOctober12Enrichment } from "./october12Enrichment.js";
 import { applyOctober11FullReview } from "./october11FullReview.js";
 import { applyOctober11KeywordPlan } from "./october11KeywordPlan.js";
 import { applyOctober11RestaurantReview } from "./october11RestaurantReview.js";
@@ -76,7 +77,7 @@ const canonicalTag = value => {
   return canonicalTags[tag?.toLowerCase()] || tag;
 };
 
-const normalizePost = post => applyOctober11FullReview(applyOctober11KeywordPlan(applyOctober11RestaurantReview(applyOctober10CohortReview({
+const normalizePost = post => applyOctober12Enrichment(applyOctober11FullReview(applyOctober11KeywordPlan(applyOctober11RestaurantReview(applyOctober10CohortReview({
   ...post,
   ...september29UpdateMap[post.slug],
   ...september30UpdateMap[post.slug],
@@ -97,7 +98,7 @@ const normalizePost = post => applyOctober11FullReview(applyOctober11KeywordPlan
   description: cleanText(october07RecoveryUpdateMap[post.slug]?.metaDescription || october07UpdateMap[post.slug]?.metaDescription || october06UpdateMap[post.slug]?.metaDescription || october05UpdateMap[post.slug]?.metaDescription || october04UpdateMap[post.slug]?.metaDescription || october03UpdateMap[post.slug]?.metaDescription || post.description),
   metaDescription: cleanText(october07RecoveryUpdateMap[post.slug]?.metaDescription || october07UpdateMap[post.slug]?.metaDescription || october06UpdateMap[post.slug]?.metaDescription || october05UpdateMap[post.slug]?.metaDescription || october04UpdateMap[post.slug]?.metaDescription || october03UpdateMap[post.slug]?.metaDescription || october02UpdateMap[post.slug]?.metaDescription || october01UpdateMap[post.slug]?.metaDescription || september30UpdateMap[post.slug]?.metaDescription || september29UpdateMap[post.slug]?.metaDescription || post.metaDescription),
   opening: cleanText(october07RecoveryUpdateMap[post.slug]?.opening || october07UpdateMap[post.slug]?.opening || october06UpdateMap[post.slug]?.opening || october05UpdateMap[post.slug]?.opening || october04UpdateMap[post.slug]?.opening || october03UpdateMap[post.slug]?.opening || post.opening),
-}))));
+})))));
 
 export const blogCollections = Object.freeze({
   foundation: foundationPosts.map(normalizePost),
