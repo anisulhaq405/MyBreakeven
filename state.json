@@ -948,8 +948,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/mobile-detailing-travel-fee/|facebook": {
-      "revision": "8ef0a93ad7d83e177879bd870b7df4496da1ccc5c74af4f4165472dbec5bd6b5",
-      "status": "baseline"
+      "revision": "3a4663729a60c2eec68708b9e1cfb7267ea8b13ca519941284b96bd09f0195e6",
+      "status": "attempting",
+      "attemptedAt": "2026-10-11T04:50:23.879Z"
     },
     "https://mybreakeven.com/blogs/mobile-detailing-travel-fee/|instagram": {
       "revision": "8ef0a93ad7d83e177879bd870b7df4496da1ccc5c74af4f4165472dbec5bd6b5",
