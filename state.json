@@ -1161,8 +1161,9 @@
       "attemptedAt": "2026-10-11T04:50:53.422Z"
     },
     "https://mybreakeven.com/blogs/restaurant-budgeting/|instagram": {
-      "revision": "c51f39ebef6d92b8444cb44e6475839737fda7cc248f7191deec470301a4d033",
-      "status": "baseline"
+      "revision": "50b55668a91dfbdde0a59c6811ed16b271ead48cd7b09d755f51598bb3bd2112",
+      "status": "attempting",
+      "attemptedAt": "2026-10-11T04:50:55.862Z"
     },
     "https://mybreakeven.com/blogs/restaurant-budgeting/|pinterest": {
       "revision": "c51f39ebef6d92b8444cb44e6475839737fda7cc248f7191deec470301a4d033",
