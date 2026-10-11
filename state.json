@@ -1360,8 +1360,9 @@
       "attemptedAt": "2026-10-06T06:20:55.317Z"
     },
     "https://mybreakeven.com/blogs/salon-retail-product-profit-margin/|facebook": {
-      "revision": "74472bdc0eea79f0da160f44a7e5ddde0a5123763c9fd63d78c47004ada3bc26",
-      "status": "baseline"
+      "revision": "311bd24e79a93ae52d68966eff10aa841336e6a705aebda5301647cb8e42c2d5",
+      "status": "attempting",
+      "attemptedAt": "2026-10-11T04:51:11.762Z"
     },
     "https://mybreakeven.com/blogs/salon-retail-product-profit-margin/|instagram": {
       "revision": "74472bdc0eea79f0da160f44a7e5ddde0a5123763c9fd63d78c47004ada3bc26",
