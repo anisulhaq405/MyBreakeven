@@ -65,7 +65,7 @@ function IndustryQuickCalculator({ industry, industryKey }) {
   return <section className="industry-quick-calculator" id="industry-calculator" aria-labelledby="industry-calculator-title">
     <div className="industry-quick-intro">
       <span>TRY YOUR OWN NUMBERS · USD</span>
-      <h2 id="industry-calculator-title">Calculate your {industry.short.toLowerCase()} break-even point</h2>
+      <h2 id="industry-calculator-title">Calculate your {(industry.short === "Agencies" ? "Agency" : industry.short).toLowerCase()} break-even point</h2>
       <p>Replace the example inputs below. Results update in your browser as you type. Enter monthly totals for overhead, owner pay and target profit; enter direct costs per {industry.singular} separately.</p>
     </div>
     <div className="industry-quick-fields">
@@ -137,7 +137,7 @@ export default function IndustryPage({ slug }) {
         <div className="industry-copy"><h2>Check the next business decision</h2><p>{page.key === "ecommerce" ? <a href="/calculators/break-even-roas-calculator/">Calculate break-even ad returns after order costs and fees</a> : page.key === "agency" || page.key === "photography" ? <a href="/calculators/hourly-rate-calculator/">Calculate a billing rate from income and billable hours</a> : <a href="/calculators/discount-break-even-calculator/">Check how many extra sales a discount needs</a>} before changing your plan. Use the <a href="/calculators/cash-runway-calculator/">cash runway calculator</a> to compare available cash with expected receipts and payments.</p></div>
         <div className="industry-copy">
           <span>INDUSTRY-SPECIFIC UNIT ECONOMICS</span>
-          <h2>What this {industry.short.toLowerCase()} break-even analysis includes</h2>
+          <h2>What this {(industry.short === "Agencies" ? "Agency" : industry.short).toLowerCase()} break-even analysis includes</h2>
           <p>This model calculates contribution per {industry.singular} after {page.costs}. It then determines the exact volume and revenue required to cover monthly operating overhead, owner compensation and an optional target profit.</p>
           <p>Because a financial target is useful only when the business can deliver it, MyBreakeven also compares required volume with productive team hours and estimates the customer inquiries needed at your conversion rate.</p>
         </div>
@@ -158,7 +158,7 @@ export default function IndustryPage({ slug }) {
         </div>
         {page.key === "salon" && <section className="industry-copy"><h2>{salonPlanningSection.heading}</h2>{salonPlanningSection.text.split("\n\n").map(p=><p key={p}>{p}</p>)}<h3>{salonPlanningSection.question}</h3><p>{salonPlanningSection.answer}</p></section>}<div className="industry-faq">
           <span>QUESTIONS THIS MODEL ANSWERS</span>
-          <h2>{industry.short} break-even questions</h2>
+          <h2>{industry.short === "Agencies" ? "Agency" : industry.short} break-even questions</h2>
           {page.questions.map((question) => <details key={question}><summary>{question}</summary><p>{answerQuestion(question, example, industry)}</p></details>)}
         </div>
       </section>

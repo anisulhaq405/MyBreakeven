@@ -13,10 +13,15 @@ class Page(HTMLParser):
         super().__init__()
         self.links, self.assets, self.canonicals, self.robots = [], [], [], []
         self.ids, self.title, self.h1, self.in_title = set(), '', 0, False
+        self.descriptions, self.images, self.language, self.viewport = [], [], None, False
         self.schemas, self.in_schema, self.schema_text = [], False, ''
         self.feed(html)
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
+        if tag == 'html': self.language = a.get('lang')
+        if tag == 'meta' and a.get('name') == 'description': self.descriptions.append(a.get('content', ''))
+        if tag == 'meta' and a.get('name') == 'viewport': self.viewport = True
+        if tag == 'img': self.images.append(a)
         if 'id' in a: self.ids.add(a['id'])
         if tag == 'a' and a.get('href'): self.links.append(a['href'])
         if tag in ('img', 'script') and a.get('src'): self.assets.append(a['src'])
@@ -52,6 +57,12 @@ for path, page in pages.items():
     if page.canonicals != [host + path]: issues.append(['canonical', path, page.canonicals])
     if page.h1 != 1: issues.append(['h1', path, page.h1])
     if not page.title: issues.append(['title', path])
+    if len(page.descriptions) != 1 or not page.descriptions[0].strip(): issues.append(['description', path])
+    if not page.language: issues.append(['language', path])
+    if not page.viewport: issues.append(['viewport', path])
+    for image in page.images:
+        if 'alt' not in image: issues.append(['image-alt', path, image.get('src')])
+        if not image.get('width') or not image.get('height'): issues.append(['image-dimensions', path, image.get('src')])
     if not page.robots: issues.append(['robots', path])
     if not page.schemas or None in page.schemas: issues.append(['schema-json', path])
     for href in page.links:
@@ -68,13 +79,18 @@ for path, page in pages.items():
     for asset in page.assets:
         link = urlsplit(asset)
         if not link.netloc and not (root / link.path.lstrip('/')).is_file(): issues.append(['missing-asset', path, asset])
+for label, values in [('title', {path:p.title for path,p in pages.items()}), ('description', {path:p.descriptions[0] if p.descriptions else '' for path,p in pages.items()})]:
+    duplicates = collections.defaultdict(list)
+    for path, value in values.items(): duplicates[value].append(path)
+    for value, paths in duplicates.items():
+        if value and len(paths) > 1: issues.append(['duplicate-' + label, paths])
 for url in urls:
     path = urlsplit(url).path
     if path not in pages: issues.append(['sitemap-missing', path]); continue
     if pages[path].canonicals != [url] or any('noindex' in value for value in pages[path].robots): issues.append(['sitemap-signals', path])
     if path != '/' and not inbound[path]: issues.append(['orphan', path])
 if len(urls) != len(set(urls)): issues.append(['duplicate-sitemap-url'])
-rows = [dict(path=path, title=p.title, canonical=p.canonicals[0] if p.canonicals else '', robots=';'.join(p.robots), h1=p.h1, inbound=len(inbound[path]), sitemap=host + path in urls) for path, p in sorted(pages.items())]
+rows = [dict(path=path, title=p.title, description=p.descriptions[0] if p.descriptions else '', canonical=p.canonicals[0] if p.canonicals else '', robots=';'.join(p.robots), h1=p.h1, inbound=len(inbound[path]), sitemap=host + path in urls) for path, p in sorted(pages.items())]
 
 def live(row):
     url = host + row['path']
@@ -97,7 +113,7 @@ output.parent.mkdir(parents=True, exist_ok=True)
 output.write_text(json.dumps(result, indent=2) + '\n')
 with output.with_suffix('.csv').open('w', newline='') as file:
     fields = list(dict.fromkeys(key for row in rows for key in row))
-    writer = csv.DictWriter(file, fieldnames=fields)
+    writer = csv.DictWriter(file, fieldnames=fields, lineterminator="\n")
     writer.writeheader(); writer.writerows(rows)
 print(json.dumps({key:result[key] for key in ('route_count','sitemap_count','live','issues','deferred_interactive_anchors')}, indent=2))
 raise SystemExit(bool(issues))
