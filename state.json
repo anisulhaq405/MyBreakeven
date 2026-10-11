@@ -2214,6 +2214,11 @@
       "revision": "da3734d5e21935a32922d29faaea1b7ba21d18b30eec26a00dd9267d64e4e5e3",
       "status": "needs_review",
       "attemptedAt": "2026-10-11T04:51:23.433Z"
+    },
+    "https://mybreakeven.com/editorial-policy/|facebook": {
+      "revision": "85a67ac5420ddd26787a94a2f2e4742ffaa374ada0389f72b3c26193f1215eea",
+      "status": "attempting",
+      "attemptedAt": "2026-10-11T04:51:25.733Z"
     }
   }
 }
