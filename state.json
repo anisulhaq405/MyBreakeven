@@ -1329,8 +1329,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/salon-membership-pricing/|facebook": {
-      "revision": "b96448bfb5176e2ba53b2ed77e4432386fb13efd3149b80c99e854c613eeb77f",
-      "status": "baseline"
+      "revision": "3717816312bdb81961ab213e588f599a9ff2c78510535ecb7a4af40fb3209555",
+      "status": "attempting",
+      "attemptedAt": "2026-10-11T04:50:58.159Z"
     },
     "https://mybreakeven.com/blogs/salon-membership-pricing/|instagram": {
       "revision": "b96448bfb5176e2ba53b2ed77e4432386fb13efd3149b80c99e854c613eeb77f",
