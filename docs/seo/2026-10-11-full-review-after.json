@@ -1,0 +1,1876 @@
+{
+  "captured_utc": "2026-10-11T18:45:09.660312+00:00",
+  "route_count": 185,
+  "sitemap_count": 180,
+  "live": false,
+  "issues": [],
+  "deferred_interactive_anchors": [
+    [
+      "fragment",
+      "/",
+      "#pro-analysis"
+    ],
+    [
+      "fragment",
+      "/pro-user-guide/",
+      "/#pro-analysis"
+    ],
+    [
+      "fragment",
+      "/pro-user-guide/",
+      "/#pro-analysis"
+    ]
+  ],
+  "routes": [
+    {
+      "path": "/",
+      "title": "Free Small Business Break-Even Calculator | MyBreakeven",
+      "description": "Calculate break-even revenue, required sales, team capacity and customer demand with free, private, formula-backed calculators for eight business models.",
+      "canonical": "https://mybreakeven.com/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 184,
+      "sitemap": true
+    },
+    {
+      "path": "/about-us/",
+      "title": "About MyBreakeven | Formula-Backed Business Planning",
+      "description": "Learn how MyBreakeven turns contribution margin, sales demand and operating capacity into transparent business planning estimates.",
+      "canonical": "https://mybreakeven.com/about-us/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 179,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/",
+      "title": "Small Business Break-Even Guides | MyBreakeven",
+      "description": "Read practical break-even guides for cleaning, landscaping, photography, agencies, mobile detailing, e-commerce, restaurants and salons.",
+      "canonical": "https://mybreakeven.com/blogs/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 179,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/agency-billable-utilization-rate/",
+      "title": "Agency Utilization Rate: Hours & Capacity | MyBreakeven",
+      "description": "Calculate agency billable utilization with a clear hour denominator. Reconcile retainers, scope overruns and payroll against monthly client capacity.",
+      "canonical": "https://mybreakeven.com/blogs/agency-billable-utilization-rate/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 12,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/agency-break-even/",
+      "title": "Agency Break-Even and Capacity Guide | MyBreakeven",
+      "description": "Calculate agency retainer clients and revenue needed after delivery labor, contractors, software, sales costs and realistic team capacity.",
+      "canonical": "https://mybreakeven.com/blogs/agency-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/agency-client-concentration-revenue-risk/",
+      "title": "Agency Client Concentration and Revenue Risk | MyBreakeven",
+      "description": "Measure agency client concentration in revenue, contribution and unpaid invoices. Model client loss, replacement work, cash timing and delivery capacity.",
+      "canonical": "https://mybreakeven.com/blogs/agency-client-concentration-revenue-risk/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/agency-client-profitability/",
+      "title": "Client Profitability Analysis for Agencies | MyBreakeven",
+      "description": "Build a client-level P&L from retainer revenue, real team hours, contractors and overhead. See when scope creep turns a busy account weak on paper.",
+      "canonical": "https://mybreakeven.com/blogs/agency-client-profitability/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 12,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/agency-employee-vs-freelancer-break-even/",
+      "title": "Agency Employee vs Freelancer Break-Even | MyBreakeven",
+      "description": "Compare employee and freelancer costs for the same agency work. Calculate workload thresholds, productive capacity, minimum terms and onboarding costs.",
+      "canonical": "https://mybreakeven.com/blogs/agency-employee-vs-freelancer-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/agency-profit-margin/",
+      "title": "Agency Profit Margin: Payroll and Capacity | MyBreakeven",
+      "description": "Calculate agency profit margin with committed payroll, client costs and owner pay. Test a lost retainer and check whether the monthly client target fits.",
+      "canonical": "https://mybreakeven.com/blogs/agency-profit-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 10,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/agency-project-vs-retainer-profitability/",
+      "title": "Agency Project vs Retainer Profitability | MyBreakeven",
+      "description": "Compare project and retainer contribution using complete delivery hours, fees and scope. Test extra work, monthly capacity and mixed client workloads.",
+      "canonical": "https://mybreakeven.com/blogs/agency-project-vs-retainer-profitability/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/agency-retainer-pricing/",
+      "title": "Agency Retainer Pricing Guide | MyBreakeven",
+      "description": "Set agency retainer pricing from real delivery costs, owner pay, fees, and profit so each monthly client supports a workable business model.",
+      "canonical": "https://mybreakeven.com/blogs/agency-retainer-pricing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 8,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/agency-scope-creep-cost/",
+      "title": "Agency Scope Creep Cost | MyBreakeven",
+      "description": "Measure agency scope creep from extra worker-hours, costs and fees. Compare unpaid additions, revised quotes, client contribution and delivery capacity.",
+      "canonical": "https://mybreakeven.com/blogs/agency-scope-creep-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/amazon-marketplace-vs-own-store-profit-per-order/",
+      "title": "Amazon vs Own Store Profit per Order | MyBreakeven",
+      "description": "Compare marketplace and own-store contribution after product, fulfillment, fees and acquisition. Test channel volume and fixed costs with clear examples.",
+      "canonical": "https://mybreakeven.com/blogs/amazon-marketplace-vs-own-store-profit-per-order/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/break-even-analysis-example/",
+      "title": "Break-Even Analysis Example and Template | MyBreakeven",
+      "description": "Use a simple break-even analysis template to enter price, variable costs and monthly overhead. Check a service example and two sales scenarios.",
+      "canonical": "https://mybreakeven.com/blogs/break-even-analysis-example/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/break-even-formula-units-dollars/",
+      "title": "Break-Even Formula: Units and Dollars | MyBreakeven",
+      "description": "Learn the break-even point formula in units and dollars, with clear examples, cost assumptions, common mistakes, and practical steps to calculate it.",
+      "canonical": "https://mybreakeven.com/blogs/break-even-formula-units-dollars/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/break-even-multiple-products-sales-mix/",
+      "title": "Break-Even for Multiple Products: Sales Mix | MyBreakeven",
+      "description": "Calculate break-even for multiple products using contribution margins and a realistic sales mix. See a checked example and learn when the answer changes.",
+      "canonical": "https://mybreakeven.com/blogs/break-even-multiple-products-sales-mix/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/break-even-roas-formula/",
+      "title": "Break-Even ROAS Formula for Ecommerce | MyBreakeven",
+      "description": "Find the ROAS an order needs to cover ad spend after product cost, shipping, fees and returns. Includes a checked $100-order example and scenarios.",
+      "canonical": "https://mybreakeven.com/blogs/break-even-roas-formula/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 7,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/bridal-hair-and-makeup-package-pricing-for-salons/",
+      "title": "Bridal Hair and Makeup Package Pricing | MyBreakeven",
+      "description": "Price bridal hair and makeup from trials, products, travel and total artist hours. Test package scope, added services and the contribution needed.",
+      "canonical": "https://mybreakeven.com/blogs/bridal-hair-and-makeup-package-pricing-for-salons/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/cafe-opening-costs/",
+      "title": "Caf\u00e9 Opening Costs: Budget and Break-Even | MyBreakeven",
+      "description": "Plan caf\u00e9 opening costs, working cash, and daily break-even orders with three clear coffee shop budget examples and a capacity check.",
+      "canonical": "https://mybreakeven.com/blogs/cafe-opening-costs/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 7,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/calculate-break-even-point/",
+      "title": "Calculate Break-Even Point: Units and Sales | MyBreakeven",
+      "description": "Calculate business break-even in units and sales with a checked monthly example. Include owner pay once, round whole jobs up and test delivery capacity.",
+      "canonical": "https://mybreakeven.com/blogs/calculate-break-even-point/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/calculate-contribution-margin/",
+      "title": "Calculate Contribution Margin: Costs and Mix | MyBreakeven",
+      "description": "Calculate contribution margin in dollars and percent using net sales and variable costs. Reconcile product mix, fees, returns and fulfilment capacity.",
+      "canonical": "https://mybreakeven.com/blogs/calculate-contribution-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 8,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/car-detailing-prices-list/",
+      "title": "Car Detailing Price List: Costs and Scope | MyBreakeven",
+      "description": "Build a detailing price list from scope, supplies, labor, travel and fees. Compare repeat visits, larger services, extra work and route capacity.",
+      "canonical": "https://mybreakeven.com/blogs/car-detailing-prices-list/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 12,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/cash-flow-break-even-vs-profit-break-even/",
+      "title": "Cash-Flow vs Profit Break-Even | MyBreakeven",
+      "description": "Compare profit break-even with cash needed to pay this month's bills. Work through invoice delays, equipment purchases and a small-business cash bridge.",
+      "canonical": "https://mybreakeven.com/blogs/cash-flow-break-even-vs-profit-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/cash-flow-forecast-vs-break-even/",
+      "title": "Small Business Cash Flow Forecast | MyBreakeven",
+      "description": "Build a weekly cash flow forecast from opening cash, receipts and payments. Test late invoices, find the deepest shortfall and compare operating profit.",
+      "canonical": "https://mybreakeven.com/blogs/cash-flow-forecast-vs-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/catering-quote-profit/",
+      "title": "Catering Quote Profit: Costs and Capacity | MyBreakeven",
+      "description": "Cost a catering quote from ingredients, event labor, transport and rentals. Compare guest counts, added service, monthly targets and worker-hours.",
+      "canonical": "https://mybreakeven.com/blogs/catering-quote-profit/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/ceramic-coating-profit-margin/",
+      "title": "Ceramic Coating Profit Margin | MyBreakeven",
+      "description": "Calculate ceramic coating contribution from preparation labor, materials and fees. Compare heavier scopes, monthly job targets and worker capacity.",
+      "canonical": "https://mybreakeven.com/blogs/ceramic-coating-profit-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/cleaning-business-break-even/",
+      "title": "Cleaning Business Break-Even Guide | MyBreakeven",
+      "description": "Calculate cleaning jobs, revenue, leads and crew capacity needed to break even after labor, supplies, travel, overhead and marketing costs.",
+      "canonical": "https://mybreakeven.com/blogs/cleaning-business-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/cleaning-business-client-churn-cost/",
+      "title": "Cleaning Business Client Churn Cost | MyBreakeven",
+      "description": "Calculate cleaning client churn cost using lost contribution, replacement spending and the booking gap. Separate avoidable labor from payroll still owed.",
+      "canonical": "https://mybreakeven.com/blogs/cleaning-business-client-churn-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/cleaning-business-monthly-expenses/",
+      "title": "Cleaning Business Expenses & Monthly Budget | MyBreakeven",
+      "description": "Budget cleaning monthly expenses with paid labor, job costs and fixed overhead. Reconcile payroll against productive hours and test lost bookings.",
+      "canonical": "https://mybreakeven.com/blogs/cleaning-business-monthly-expenses/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 15,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/cleaning-client-acquisition-payback/",
+      "title": "Cleaning Client Acquisition Cost and Payback | MyBreakeven",
+      "description": "Calculate cleaning client acquisition cost and paid visits to recovery. Compare campaign cohorts with contribution, discounts and actual collections.",
+      "canonical": "https://mybreakeven.com/blogs/cleaning-client-acquisition-payback/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/cleaning-contract-payroll-cash-gap/",
+      "title": "Cleaning Contract Cash Gap and Payroll | MyBreakeven",
+      "description": "Map cleaning contract receipts against payroll dates. Calculate the lowest cash balance, test late payment and plan the reserve before work starts.",
+      "canonical": "https://mybreakeven.com/blogs/cleaning-contract-payroll-cash-gap/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/cleaning-estimate-vs-actual-job-cost/",
+      "title": "Cleaning Job Cost: Estimate vs Actual | MyBreakeven",
+      "description": "Compare a completed cleaning job with its estimate. Track worker hours, supplies, travel and fees to explain lost contribution and improve future quotes.",
+      "canonical": "https://mybreakeven.com/blogs/cleaning-estimate-vs-actual-job-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 8,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/cleaning-minimum-booking-charge/",
+      "title": "Cleaning Minimum Booking Charge | MyBreakeven",
+      "description": "Build a cleaning minimum charge from labor, travel, supplies and fees. Test short visits, repeat routes, owner pay and whole-visit delivery capacity.",
+      "canonical": "https://mybreakeven.com/blogs/cleaning-minimum-booking-charge/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/coffee-shop-business-plan/",
+      "title": "Coffee Shop Business Plan: Example & Template | MyBreakeven",
+      "description": "Build a coffee shop business plan with a usable outline, monthly order model, startup cash and capacity check. Download the editable planning workbook.",
+      "canonical": "https://mybreakeven.com/blogs/coffee-shop-business-plan/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/coffee-shop-drink-contribution-margin/",
+      "title": "Coffee Shop Drink Contribution Margin | MyBreakeven",
+      "description": "Calculate coffee drink contribution from recipes, packaging and fees. Compare discounts, delivery orders and the sales needed to cover monthly costs.",
+      "canonical": "https://mybreakeven.com/blogs/coffee-shop-drink-contribution-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/commercial-cleaning-contract-bid/",
+      "title": "How to Bid a Commercial Cleaning Contract | MyBreakeven",
+      "description": "Bid a commercial cleaning contract from scope, paid labor hours, supplies and margin. Follow a worked office example and test the monthly price.",
+      "canonical": "https://mybreakeven.com/blogs/commercial-cleaning-contract-bid/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/commercial-cleaning-contract-price-increase/",
+      "title": "Commercial Cleaning Contract Price Increase | MyBreakeven",
+      "description": "Calculate a commercial cleaning contract price increase from labor, supplies and fees. Compare renewal options, scope changes and account contribution.",
+      "canonical": "https://mybreakeven.com/blogs/commercial-cleaning-contract-price-increase/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/contribution-margin-vs-gross-margin/",
+      "title": "Contribution Margin vs Gross Margin | MyBreakeven",
+      "description": "Compare contribution margin vs gross margin with clear formulas, worked examples, and guidance on choosing the right metric for break-even decisions.",
+      "canonical": "https://mybreakeven.com/blogs/contribution-margin-vs-gross-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/contribution-margin-vs-profit-margin/",
+      "title": "Contribution Margin vs Profit Margin | MyBreakeven",
+      "description": "Separate contribution margin from operating and net profit margin. Reconcile an example and see which number supports pricing or overhead decisions.",
+      "canonical": "https://mybreakeven.com/blogs/contribution-margin-vs-profit-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/corporate-headshot-pricing/",
+      "title": "Corporate Headshot Pricing | MyBreakeven",
+      "description": "Calculate corporate headshot pricing from setup, employee count and editing time. Compare booking sizes, minimum fees and photographer delivery capacity.",
+      "canonical": "https://mybreakeven.com/blogs/corporate-headshot-pricing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/discount-break-even-sales-volume/",
+      "title": "Discount Break-Even Sales Volume | MyBreakeven",
+      "description": "Calculate the extra sales a discount needs to preserve contribution. Compare three offers, fees and the capacity required before launching a sale.",
+      "canonical": "https://mybreakeven.com/blogs/discount-break-even-sales-volume/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/ecommerce-break-even/",
+      "title": "Ecommerce Break-Even: Orders and Capacity | MyBreakeven",
+      "description": "Calculate ecommerce break-even orders after product, shipping, returns and ad costs. Compare discounts, acquisition, owner pay and packing capacity.",
+      "canonical": "https://mybreakeven.com/blogs/ecommerce-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/ecommerce-bundle-pricing-profit/",
+      "title": "Ecommerce Bundle Pricing and Profit | MyBreakeven",
+      "description": "Price ecommerce bundles from products, shipping, packing and fees. Compare replaced orders, stacked discounts, monthly profit goals and fulfillment time.",
+      "canonical": "https://mybreakeven.com/blogs/ecommerce-bundle-pricing-profit/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/ecommerce-chargeback-cost-per-order/",
+      "title": "Ecommerce Chargeback Cost per Order | MyBreakeven",
+      "description": "Calculate ecommerce chargeback cost per order from lost sales, dispute fees and unrecovered goods. See the full effect on margin and break-even.",
+      "canonical": "https://mybreakeven.com/blogs/ecommerce-chargeback-cost-per-order/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/ecommerce-inventory-holding-cost-per-sku/",
+      "title": "Inventory Holding Cost per SKU | MyBreakeven",
+      "description": "Calculate inventory holding cost per SKU from storage, handling and losses. Separate cash costs from assumptions and test order size and clearance.",
+      "canonical": "https://mybreakeven.com/blogs/ecommerce-inventory-holding-cost-per-sku/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/ecommerce-orders-per-day-profitable/",
+      "title": "Ecommerce Orders Per Day to Be Profitable | MyBreakeven",
+      "description": "Calculate ecommerce orders per day to be profitable from income goals, contribution margin, fixed costs, fulfillment capacity, and realistic scenarios.",
+      "canonical": "https://mybreakeven.com/blogs/ecommerce-orders-per-day-profitable/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 7,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/ecommerce-profit-margin/",
+      "title": "Ecommerce Profit Margin: Orders to Overhead | MyBreakeven",
+      "description": "Calculate ecommerce contribution and operating profit from net sales, fees, returns and overhead. Reconcile a monthly example before judging your margin.",
+      "canonical": "https://mybreakeven.com/blogs/ecommerce-profit-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 12,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/ecommerce-return-cost-per-order/",
+      "title": "Ecommerce Return Cost per Order Guide | MyBreakeven",
+      "description": "Calculate ecommerce return cost per order from refunds, freight, fees and lost resale value. Use worked examples to protect contribution margin.",
+      "canonical": "https://mybreakeven.com/blogs/ecommerce-return-cost-per-order/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 12,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/ecommerce-shipping-costs/",
+      "title": "E-commerce Shipping Costs: Pricing Formula | MyBreakeven",
+      "description": "Calculate e-commerce shipping costs with parcel rates, packaging, handling and shipping charged to buyers. Compare free, flat-rate and paid shipping.",
+      "canonical": "https://mybreakeven.com/blogs/ecommerce-shipping-costs/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 10,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/fixed-vs-variable-costs/",
+      "title": "Fixed vs Variable Costs: Per-Unit Formula | MyBreakeven",
+      "description": "Separate fixed and variable costs, calculate variable cost per unit from real job records, and test the break-even point with a clear worked example.",
+      "canonical": "https://mybreakeven.com/blogs/fixed-vs-variable-costs/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 10,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/fleet-detailing-contract-pricing/",
+      "title": "Fleet Detailing Contract Pricing: Worked Quote | MyBreakeven",
+      "description": "Price a fleet detailing contract from vehicles, visit frequency, technician hours, supplies and route costs. Check a worked quote and fifth-visit risk.",
+      "canonical": "https://mybreakeven.com/blogs/fleet-detailing-contract-pricing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/free-shipping-threshold-profit/",
+      "title": "Profitable Free Shipping Threshold | MyBreakeven",
+      "description": "Calculate a free shipping threshold from product margin, fees and order costs. Compare basket mix, heavier parcels, return costs and fulfillment capacity.",
+      "canonical": "https://mybreakeven.com/blogs/free-shipping-threshold-profit/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 7,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/freelance-business-plan-financials/",
+      "title": "Freelance Business Plan: Financials | MyBreakeven",
+      "description": "Build freelance financials from project price, costs, owner pay and delivery hours. Compare income goals with capacity and keep payment timing separate.",
+      "canonical": "https://mybreakeven.com/blogs/freelance-business-plan-financials/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/hair-color-service-cost-per-appointment/",
+      "title": "Hair Color Service Cost per Appointment | MyBreakeven",
+      "description": "Cost a hair color appointment from product usage, paid stylist time and fees. Compare root, long-hair and correction scopes before setting a salon price.",
+      "canonical": "https://mybreakeven.com/blogs/hair-color-service-cost-per-appointment/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-many-agency-retainer-clients/",
+      "title": "How Many Retainer Clients Does an Agency Need? | MyBreakeven",
+      "description": "Learn how many retainer clients your agency needs to break even or hit an income goal, with contribution math, capacity checks, and worked examples.",
+      "canonical": "https://mybreakeven.com/blogs/how-many-agency-retainer-clients/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-many-cleaning-clients-5000/",
+      "title": "How Many Cleaning Clients for $5,000 a Month? | MyBreakeven",
+      "description": "Calculate cleaning clients needed for $5,000 in sales or pre-tax profit. Compare recurring prices, contribution, travel hours and route capacity.",
+      "canonical": "https://mybreakeven.com/blogs/how-many-cleaning-clients-5000/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 7,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-many-customers-can-you-lose-after-raising-prices/",
+      "title": "Price Increase: Customer Loss Break-Even | MyBreakeven",
+      "description": "Find the customer loss a price increase can absorb while preserving contribution. Check service examples, changing costs and whole-customer rounding.",
+      "canonical": "https://mybreakeven.com/blogs/how-many-customers-can-you-lose-after-raising-prices/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-many-detailing-jobs-week/",
+      "title": "Detailing Jobs Per Week to Go Full Time | MyBreakeven",
+      "description": "Learn how many detailing jobs per week you need to cover owner pay, overhead, taxes, and capacity limits with practical mobile detailing examples.",
+      "canonical": "https://mybreakeven.com/blogs/how-many-detailing-jobs-week/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-many-lawns-100k/",
+      "title": "How Many Lawns to Make $100k? | MyBreakeven",
+      "description": "Learn how many lawns to make $100k, with pricing, margin, route-capacity math, worked examples, and a practical owner-operator planning method.",
+      "canonical": "https://mybreakeven.com/blogs/how-many-lawns-100k/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-many-photography-clients-month/",
+      "title": "How Many Photography Clients Per Month? | MyBreakeven",
+      "description": "Learn how many photography clients per month you need to break even, pay yourself, and profit\u2014using contribution, capacity, travel, and seasonality.",
+      "canonical": "https://mybreakeven.com/blogs/how-many-photography-clients-month/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-much-does-it-cost-to-open-a-restaurant/",
+      "title": "Restaurant Startup Costs & Opening Cash Plan | MyBreakeven",
+      "description": "Build a restaurant opening budget from scoped purchases, deposits and operating cash. Test slower sales, contribution changes and delivery capacity.",
+      "canonical": "https://mybreakeven.com/blogs/how-much-does-it-cost-to-open-a-restaurant/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 9,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-much-does-it-cost-to-open-a-salon/",
+      "title": "How Much Does It Cost to Open a Salon? | MyBreakeven",
+      "description": "Estimate salon opening costs by separating setup cash, monthly fixed costs, owner pay, target profit, and break-even sales before signing a lease.",
+      "canonical": "https://mybreakeven.com/blogs/how-much-does-it-cost-to-open-a-salon/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-much-does-it-cost-to-start-a-cleaning-business/",
+      "title": "Cleaning Business Startup Cost Guide | MyBreakeven",
+      "description": "Estimate cleaning startup costs by separating one-time cash, monthly fixed costs, owner pay, profit, break-even sales, and cash flow for your plan.",
+      "canonical": "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-cleaning-business/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-much-does-it-cost-to-start-a-landscaping-business/",
+      "title": "Landscaping Startup Costs and Cash Budget | MyBreakeven",
+      "description": "Build a landscaping startup budget from opening purchases, monthly costs and ramp cash needs. Compare slower sales, payment timing and worker capacity.",
+      "canonical": "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-landscaping-business/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-much-does-it-cost-to-start-a-marketing-agency/",
+      "title": "Marketing Agency Startup Cost Guide | MyBreakeven",
+      "description": "Learn the cost to start a marketing agency, separate startup cash from monthly break-even, and work out owner pay, margin, and profit targets.",
+      "canonical": "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-marketing-agency/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-much-does-it-cost-to-start-a-photography-business/",
+      "title": "Photography Business Startup Cost Guide | MyBreakeven",
+      "description": "Estimate the cost to start a photography business with gear, monthly costs, owner pay, profit, and booking examples you can adapt for your plan.",
+      "canonical": "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-photography-business/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-much-does-it-cost-to-start-an-ecommerce-store/",
+      "title": "Ecommerce Store Startup Cost Guide | MyBreakeven",
+      "description": "Budget ecommerce startup costs for setup, inventory and a slower sales ramp. Compare a new store with an online extension and check fulfillment capacity.",
+      "canonical": "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-an-ecommerce-store/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 7,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-much-to-charge-for-house-cleaning/",
+      "title": "House Cleaning Pricing Formula and Quote | MyBreakeven",
+      "description": "Build a house cleaning quote from paid crew-hours, supplies, travel, fees and overhead. Check a worked flat-price example before you send it.",
+      "canonical": "https://mybreakeven.com/blogs/how-much-to-charge-for-house-cleaning/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 13,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-to-price-products-for-ecommerce/",
+      "title": "Ecommerce Pricing: Costs, Fees and Margin | MyBreakeven",
+      "description": "Price ecommerce products from order costs, fees and a contribution target. Compare a direct-cost floor with a sustainable price and fulfilment capacity.",
+      "canonical": "https://mybreakeven.com/blogs/how-to-price-products-for-ecommerce/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 10,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-to-start-coffee-shop/",
+      "title": "How to Start a Coffee Shop: Practical Steps | MyBreakeven",
+      "description": "Start a coffee shop with a local demand check, lease and permit review, menu and staffing plan, and a capacity-tested monthly sales target with real costs.",
+      "canonical": "https://mybreakeven.com/blogs/how-to-start-coffee-shop/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/how-to-start-restaurant/",
+      "title": "How to Start a Restaurant: Step-by-Step Guide | MyBreakeven",
+      "description": "Plan a restaurant opening around customer demand, location approvals, a costed menu and staffing. Check the sales needed before signing a lease.",
+      "canonical": "https://mybreakeven.com/blogs/how-to-start-restaurant/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/inventory-reorder-point-cash-flow/",
+      "title": "Inventory Reorder Point and Cash Flow | MyBreakeven",
+      "description": "Calculate a reorder point from demand, lead time and safety stock. Check inventory position, supplier minimums and the cash required for replenishment.",
+      "canonical": "https://mybreakeven.com/blogs/inventory-reorder-point-cash-flow/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/is-a-cleaning-business-profitable/",
+      "title": "Is a Cleaning Business Profitable? | MyBreakeven",
+      "description": "Test cleaning business profit from visit contribution, monthly bills and owner pay. Compare labor overruns, recurring work, re-cleans and staff capacity.",
+      "canonical": "https://mybreakeven.com/blogs/is-a-cleaning-business-profitable/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 7,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/is-mobile-detailing-profitable/",
+      "title": "Is Mobile Detailing Profitable? A US Guide | MyBreakeven",
+      "description": "Learn if mobile detailing is profitable by testing pricing, margins, fuel, travel, utilization, owner pay, break-even jobs and real capacity.",
+      "canonical": "https://mybreakeven.com/blogs/is-mobile-detailing-profitable/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/landscaping-break-even/",
+      "title": "Landscaping Break-Even: Jobs and Capacity | MyBreakeven",
+      "description": "Calculate landscaping break-even jobs from price, costs and crew capacity. Test a whole-job shortfall, price-sensitive fees and added staffing costs.",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 10,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/landscaping-business-profit-margin/",
+      "title": "Landscaping Business Profit Margin | MyBreakeven",
+      "description": "Calculate landscaping profit margin with direct costs, fees, overhead and owner pay. Compare price changes, monthly job goals and delivery capacity.",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-business-profit-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/landscaping-change-order-cost/",
+      "title": "Landscaping Change Order Cost | MyBreakeven",
+      "description": "Calculate landscaping change-order cost after credits, extra labor, materials and fees. Check revised contribution and added crew hours before quoting.",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-change-order-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/landscaping-crew-utilization/",
+      "title": "Landscaping Crew Utilization | MyBreakeven",
+      "description": "Measure landscaping crew utilization with consistent worker-hours. Test routes, paid time and staffing against deliverable jobs and your monthly goal.",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-crew-utilization/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 8,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/landscaping-equipment-cost-per-hour/",
+      "title": "Landscaping Equipment Cost per Hour | MyBreakeven",
+      "description": "Calculate landscaping equipment cost per hour from ownership, fuel and maintenance. Price machine use once, then check job contribution and crew capacity.",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-equipment-cost-per-hour/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 9,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/landscaping-job-costing-estimate-vs-actual/",
+      "title": "Landscaping Job Costing: Estimate vs Actual | MyBreakeven",
+      "description": "Compare a landscaping job estimate with actual crew hours, materials and equipment costs. Follow a checked example to price the next job better.",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-job-costing-estimate-vs-actual/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 10,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/landscaping-maintenance-contract-pricing/",
+      "title": "Landscaping Maintenance Contract Pricing | MyBreakeven",
+      "description": "Build landscaping maintenance contract pricing from annual visits, labor and seasonal tasks. Test scope changes, monthly billing and peak crew capacity.",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-maintenance-contract-pricing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/landscaping-plant-warranty-cost/",
+      "title": "Landscaping Plant Warranty Cost | MyBreakeven",
+      "description": "Budget landscaping plant-warranty costs using covered replacements, labor, shared visits and supplier credits. Test cash needs and crew hours clearly.",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-plant-warranty-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/landscaping-route-density-profit/",
+      "title": "Landscaping Route Density and Job Profit | MyBreakeven",
+      "description": "See how travel time changes landscaping route profit. Calculate contribution per stop, visits per day and monthly break-even with worked examples.",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-route-density-profit/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 8,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/landscaping-seasonal-break-even/",
+      "title": "Landscaping Seasonal Break-Even Guide | MyBreakeven",
+      "description": "Find landscaping seasonal break-even across busy and slow months. Calculate required jobs, winter cash needs and a practical annual reserve.",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-seasonal-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 11,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/landscaping-subcontractor-cost/",
+      "title": "Landscaping Subcontractor Cost | MyBreakeven",
+      "description": "Compare landscaping subcontractor cost with in-house delivery. Include coordination, materials, fees, freed hours and separate supplier capacity.",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-subcontractor-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/lawn-care-pricing-per-acre/",
+      "title": "Lawn Care Pricing Per Acre: Set Your Rates | MyBreakeven",
+      "description": "Learn lawn care pricing per acre with cost-based formulas, real examples, minimum charges, and a capacity check for profitable quotes and profit goals.",
+      "canonical": "https://mybreakeven.com/blogs/lawn-care-pricing-per-acre/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 7,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/lower-break-even-point/",
+      "title": "How to Lower Your Break-Even Point | MyBreakeven",
+      "description": "Learn how to lower your break-even point with clear formulas, practical cost and pricing changes, worked examples, and a simple planning method.",
+      "canonical": "https://mybreakeven.com/blogs/lower-break-even-point/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/margin-of-safety-business/",
+      "title": "Margin of Safety Formula: Units and Sales | MyBreakeven",
+      "description": "Measure how far sales can fall before your business reaches break-even. Calculate the cushion in units, dollars and percent with a checked example.",
+      "canonical": "https://mybreakeven.com/blogs/margin-of-safety-business/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 2,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/margin-vs-markup/",
+      "title": "Margin vs Markup: Key Difference | MyBreakeven",
+      "description": "Learn margin vs markup with clear formulas, realistic examples, and pricing steps so you can set prices accurately and avoid costly mistakes.",
+      "canonical": "https://mybreakeven.com/blogs/margin-vs-markup/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 7,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/mobile-detailing-break-even/",
+      "title": "Mobile Detailing Break-Even Guide | MyBreakeven",
+      "description": "Calculate mobile detailing break-even from job contribution, route travel and worker-hours. Compare price changes, service scope and monthly capacity.",
+      "canonical": "https://mybreakeven.com/blogs/mobile-detailing-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 11,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/mobile-detailing-business-startup-cost/",
+      "title": "Mobile Detailing Startup Cost Guide | MyBreakeven",
+      "description": "Estimate mobile detailing business startup cost, monthly break-even sales, owner pay, and equipment needs with clear worked examples before launch.",
+      "canonical": "https://mybreakeven.com/blogs/mobile-detailing-business-startup-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/mobile-detailing-cancellation-cost/",
+      "title": "Mobile Detailing Cancellation Cost | MyBreakeven",
+      "description": "Calculate mobile detailing cancellation loss after avoided costs, retained travel and replacement bookings. Compare route contribution and committed pay.",
+      "canonical": "https://mybreakeven.com/blogs/mobile-detailing-cancellation-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/mobile-detailing-maintenance-plan-pricing/",
+      "title": "Mobile Detailing Maintenance Plan Pricing | MyBreakeven",
+      "description": "Price mobile detailing maintenance plans using visit frequency, labor, supplies and travel. See monthly examples and protect your recurring margin.",
+      "canonical": "https://mybreakeven.com/blogs/mobile-detailing-maintenance-plan-pricing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/mobile-detailing-travel-fee/",
+      "title": "Mobile Detailing Travel Fee | MyBreakeven",
+      "description": "Calculate a mobile detailing travel fee from extra labor, vehicle cost and payment fees. Compare remote bookings, shared routes and monthly capacity.",
+      "canonical": "https://mybreakeven.com/blogs/mobile-detailing-travel-fee/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/mobile-detailing-water-refill-cost/",
+      "title": "Mobile Detailing Water Refill Cost | MyBreakeven",
+      "description": "Calculate mobile detailing refill costs from paid time, detours and water charges. Check measured water use, route contribution and whole-job capacity.",
+      "canonical": "https://mybreakeven.com/blogs/mobile-detailing-water-refill-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/move-out-cleaning-job-cost/",
+      "title": "Move-Out Cleaning Job Cost and Pricing | MyBreakeven",
+      "description": "Calculate move-out cleaning job cost from paid labor, supplies, travel and fees. Build a scope-based quote, test overruns and check monthly capacity.",
+      "canonical": "https://mybreakeven.com/blogs/move-out-cleaning-job-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 7,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/mulch-installation-job-cost/",
+      "title": "Mulch Installation Job Cost | MyBreakeven",
+      "description": "Calculate mulch volume, purchased yards, delivery and worker-hours. Build a scope-based quote and test preparation overruns against profit and capacity.",
+      "canonical": "https://mybreakeven.com/blogs/mulch-installation-job-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/operating-leverage-small-business/",
+      "title": "Operating Leverage Formula and Example | MyBreakeven",
+      "description": "Calculate degree of operating leverage from contribution and operating profit. See how a 10% sales change moves profit in a checked service example.",
+      "canonical": "https://mybreakeven.com/blogs/operating-leverage-small-business/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/paint-correction-labor-hours-pricing/",
+      "title": "Paint Correction Labor Hours and Pricing | MyBreakeven",
+      "description": "Price paint correction from inspected scope, worker-hours, direct costs and fees. Compare overruns, contribution per hour and monthly job capacity.",
+      "canonical": "https://mybreakeven.com/blogs/paint-correction-labor-hours-pricing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/photography-business-break-even/",
+      "title": "Photography Break-Even Guide | MyBreakeven",
+      "description": "Calculate photography sessions, revenue and inquiries needed after shooting, editing, travel, studio, delivery and marketing costs.",
+      "canonical": "https://mybreakeven.com/blogs/photography-business-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/photography-business-profit-margin/",
+      "title": "Photography Business Profit Margin | MyBreakeven",
+      "description": "Calculate photography profit margin after session costs, overhead and owner pay. Compare quiet months, higher prices and longer editing workloads.",
+      "canonical": "https://mybreakeven.com/blogs/photography-business-profit-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 8,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/photography-cost-per-session-editing/",
+      "title": "Photography Cost per Session and Editing | MyBreakeven",
+      "description": "Price a photography session using shoot, editing, travel and delivery time. Calculate contribution and the bookings your schedule can actually fulfill.",
+      "canonical": "https://mybreakeven.com/blogs/photography-cost-per-session-editing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 9,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/photography-mini-session-profit/",
+      "title": "Photography Mini Session Profit Guide | MyBreakeven",
+      "description": "Price photography mini sessions with booked slots, editing, owner time and event costs. See a checked example and the bookings needed to cover the day.",
+      "canonical": "https://mybreakeven.com/blogs/photography-mini-session-profit/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/photography-pricing-packages/",
+      "title": "Photography Pricing Packages: Cost & Profit | MyBreakeven",
+      "description": "Compare two photography packages using shoot time, editing, travel, gallery costs, processing fees and overhead. Keep each scope profitable.",
+      "canonical": "https://mybreakeven.com/blogs/photography-pricing-packages/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 11,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/photography-print-package-profit/",
+      "title": "Photography Print Package Profit | MyBreakeven",
+      "description": "Calculate album and print-package contribution after lab costs, design time, shipping and fees. Test attachment, revisions and product capacity.",
+      "canonical": "https://mybreakeven.com/blogs/photography-print-package-profit/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/photography-second-shooter-cost/",
+      "title": "Photography Second-Shooter Cost | MyBreakeven",
+      "description": "Calculate second-shooter cost with travel, processing and payment fees. Compare package prices and check the lead photographer\u2019s delivery capacity.",
+      "canonical": "https://mybreakeven.com/blogs/photography-second-shooter-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/photography-usage-licensing-pricing/",
+      "title": "Photography Usage Licensing Pricing | MyBreakeven",
+      "description": "Separate photography production and proposed usage fees. Compare scoped offers, incremental reuse costs and contribution against monthly delivery capacity.",
+      "canonical": "https://mybreakeven.com/blogs/photography-usage-licensing-pricing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/post-construction-cleaning-estimate/",
+      "title": "Post-Construction Cleaning Job Estimate | MyBreakeven",
+      "description": "Estimate a post-construction clean from a site walk, crew hours, supplies, access and scope. Follow a worked bid with a practical client checklist.",
+      "canonical": "https://mybreakeven.com/blogs/post-construction-cleaning-estimate/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 6,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/product-photography-pricing-per-image/",
+      "title": "Product Photography Pricing per Image | MyBreakeven",
+      "description": "Build product photography pricing per image from setup, styling and retouching. Compare batch sizes, revision costs and assignment delivery capacity.",
+      "canonical": "https://mybreakeven.com/blogs/product-photography-pricing-per-image/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/recurring-vs-one-time-cleaning-profitability/",
+      "title": "Recurring vs One-Time Cleaning Profit | MyBreakeven",
+      "description": "Compare recurring and one-time cleaning using contribution per paid staff hour. Model acquisition costs, monthly service mix, overruns and capacity.",
+      "canonical": "https://mybreakeven.com/blogs/recurring-vs-one-time-cleaning-profitability/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 8,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-break-even/",
+      "title": "Restaurant Break-Even: Orders and Capacity | MyBreakeven",
+      "description": "Calculate restaurant break-even orders from food, labor and channel costs. Separate owner pay from overhead, then check kitchen capacity and fees.",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 9,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-budgeting/",
+      "title": "Restaurant Budget Template: Excel & Example | MyBreakeven",
+      "description": "Download an editable restaurant budget template for Excel. Plan sales, food costs, loaded payroll and overhead, then compare budget with actual results.",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-budgeting/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 11,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-business-plan/",
+      "title": "Restaurant Business Plan: Example & Template | MyBreakeven",
+      "description": "Create a restaurant business plan with an editable outline, order forecast, opening cash estimate and break-even math. Download a usable example workbook.",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-business-plan/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-covers-per-night-break-even/",
+      "title": "Restaurant Covers Needed Per Night | MyBreakeven",
+      "description": "Learn how to calculate restaurant covers needed to break even per night, then test seats, turns, margins, staffing, seasonality, and delivery capacity.",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-covers-per-night-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 8,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-delivery-app-commission-profit-per-order/",
+      "title": "Delivery App Commission: Profit per Order | MyBreakeven",
+      "description": "Calculate restaurant delivery contribution after commission, food, packaging, labor and promotions. Compare prices, direct pickup and kitchen capacity.",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-delivery-app-commission-profit-per-order/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-food-cost-percentage/",
+      "title": "Restaurant Food Cost Percentage Formula | MyBreakeven",
+      "description": "Calculate restaurant food cost percentage from inventory, purchases and food sales. Compare the result with recipe costs to spot a real variance.",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-food-cost-percentage/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 13,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-labor-cost-percentage/",
+      "title": "Restaurant Labor Cost Percentage: Formula | MyBreakeven",
+      "description": "Calculate restaurant labor cost percentage, then test a shift schedule against forecast orders, loaded payroll and staffing thresholds. Includes worked numbers.",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-labor-cost-percentage/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 8,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-menu-engineering-contribution-margin/",
+      "title": "Menu Engineering Contribution Margin | MyBreakeven",
+      "description": "Compare restaurant dishes by contribution, popularity and kitchen time. Test menu prices, recipe changes and discounts with transparent worked examples.",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-menu-engineering-contribution-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-menu-pricing-formula/",
+      "title": "Restaurant Menu Pricing Formula | MyBreakeven",
+      "description": "Price restaurant menu items from usable portions, waste, packaging and fees. Compare order contribution, monthly targets and kitchen worker-hour capacity.",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-menu-pricing-formula/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 9,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-prime-cost/",
+      "title": "Restaurant Prime Cost: Formula and Examples | MyBreakeven",
+      "description": "Calculate restaurant prime cost from food and beverage COGS plus loaded labor. Compare three sales cases and connect the result to monthly break-even.",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-prime-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 7,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-private-event-minimum-spend/",
+      "title": "Restaurant Private Event Minimum Spend | MyBreakeven",
+      "description": "Calculate a restaurant event minimum from displaced sales contribution, setup costs and menu mix. Test guest counts, timing and the revenue floor.",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-private-event-minimum-spend/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-profit-margin-average/",
+      "title": "Restaurant Profit Margins: What to Expect | MyBreakeven",
+      "description": "Learn the restaurant profit margin average using gross versus net margin, owner take-home, break-even math, capacity and realistic US examples.",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-profit-margin-average/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 8,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-sales-forecast/",
+      "title": "Restaurant Sales Forecast: Monthly Example | MyBreakeven",
+      "description": "Build a restaurant sales forecast from lunch and dinner orders, average checks and trading days. Compare slow and discounted scenarios and capacity.",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-sales-forecast/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 10,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-takeout-vs-dine-in-profit-per-order/",
+      "title": "Takeout vs Dine-In Profit per Order | MyBreakeven",
+      "description": "Compare takeout and dine-in contribution after ingredients, packaging, labor and fees. Test quiet-night orders, peak capacity and platform pricing.",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-takeout-vs-dine-in-profit-per-order/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/retail-break-even-analysis/",
+      "title": "Retail Store Break-Even Analysis | MyBreakeven",
+      "description": "Calculate retail break-even from receipts, stock cost, fees and owner pay. Compare discounts, customer traffic, staffing capacity and inventory cash.",
+      "canonical": "https://mybreakeven.com/blogs/retail-break-even-analysis/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/salon-booth-rent-vs-commission-owner/",
+      "title": "Salon Booth Rent vs Commission: Owner Math | MyBreakeven",
+      "description": "Compare salon booth rent and commission from the owner's view. Work out occupied-chair income, service costs and the break-even crossover point.",
+      "canonical": "https://mybreakeven.com/blogs/salon-booth-rent-vs-commission-owner/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/salon-break-even/",
+      "title": "Salon Break-Even and Pricing Guide | MyBreakeven",
+      "description": "Calculate salon break-even from service contribution and stylist hours. Compare appointment mixes, owner pay and whole-job capacity before planning.",
+      "canonical": "https://mybreakeven.com/blogs/salon-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 10,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/salon-clients-per-day-break-even/",
+      "title": "Salon Clients Per Day to Break Even | MyBreakeven",
+      "description": "Calculate salon clients per day from contribution and owner-pay goals. Compare completed appointments, cancellations and chair hours before booking more.",
+      "canonical": "https://mybreakeven.com/blogs/salon-clients-per-day-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 8,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/salon-membership-pricing/",
+      "title": "Salon Membership Pricing | MyBreakeven",
+      "description": "Price salon memberships from redeemed visits, delivery costs and fees. Compare member-months with appointments and reserve capacity for promised services.",
+      "canonical": "https://mybreakeven.com/blogs/salon-membership-pricing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/salon-no-show-cost/",
+      "title": "Salon No-Show Cost and Contribution | MyBreakeven",
+      "description": "Calculate salon no-show cost from avoided expenses, sunk acquisition and collected fees. Compare replacements, owner pay and completed appointments.",
+      "canonical": "https://mybreakeven.com/blogs/salon-no-show-cost/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/salon-profit-margin/",
+      "title": "Salon Profit Margin After Owner Pay | MyBreakeven",
+      "description": "Calculate salon profit after appointment costs, fees, overhead and owner pay. Compare price changes, longer services, retail sales and team capacity.",
+      "canonical": "https://mybreakeven.com/blogs/salon-profit-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 8,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/salon-retail-product-profit-margin/",
+      "title": "Salon Retail Product Profit Margin | MyBreakeven",
+      "description": "Calculate salon retail margin after product cost, fees, commission and losses. Translate retail sales into appointment contribution and check stock cash.",
+      "canonical": "https://mybreakeven.com/blogs/salon-retail-product-profit-margin/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/salon-service-pricing/",
+      "title": "Salon Service Pricing Guide | MyBreakeven",
+      "description": "Learn salon service pricing with a cost-based formula, worked examples and break-even checks so your rates cover labor, products and overhead.",
+      "canonical": "https://mybreakeven.com/blogs/salon-service-pricing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 11,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/snow-removal-pricing/",
+      "title": "Snow Removal Pricing | MyBreakeven",
+      "description": "Price snow removal from visit costs, seasonal commitments and fees. Compare snowfall workloads, customer offers and route capacity before quoting.",
+      "canonical": "https://mybreakeven.com/blogs/snow-removal-pricing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 3,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/subscription-box-churn-break-even/",
+      "title": "Subscription Box Churn and Break-Even | MyBreakeven",
+      "description": "Calculate subscription box break-even from paid shipments, costs and churn. Test replacement spending, growth acquisition and the contribution needed.",
+      "canonical": "https://mybreakeven.com/blogs/subscription-box-churn-break-even/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/blogs/target-profit-sales-formula/",
+      "title": "Target Profit Formula: Sales and Units | MyBreakeven",
+      "description": "Calculate the sales and units needed for a target profit after variable costs, overhead and owner pay. Follow a checked service-business example.",
+      "canonical": "https://mybreakeven.com/blogs/target-profit-sales-formula/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/calculation-methodology/",
+      "title": "Calculation Methodology | MyBreakeven",
+      "description": "Understand MyBreakeven contribution, monthly targets, rounding, capacity and lead calculations. Reproduce a worked example and inspect the limits.",
+      "canonical": "https://mybreakeven.com/calculation-methodology/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 21,
+      "sitemap": true
+    },
+    {
+      "path": "/calculator-walkthroughs/",
+      "title": "Calculator Walkthroughs | MyBreakeven",
+      "description": "Follow cleaning and agency planning examples from inputs to contribution, monthly sales targets and capacity. See exactly which assumptions matter.",
+      "canonical": "https://mybreakeven.com/calculator-walkthroughs/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 2,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/agency-break-even-calculator/",
+      "title": "Agency & Freelancer Break-Even Calculator | MyBreakeven",
+      "description": "Calculate retainer clients, monthly revenue, qualified leads and delivery capacity needed after labor, contractor, software and acquisition costs.",
+      "canonical": "https://mybreakeven.com/calculators/agency-break-even-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 17,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/break-even-roas-calculator/",
+      "title": "Break-Even ROAS Calculator: Margin, Fees & CPA",
+      "description": "Calculate break-even ROAS after product costs and fees. Compare ad performance, maximum CPA and the ROAS needed for your contribution target.",
+      "canonical": "https://mybreakeven.com/calculators/break-even-roas-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/cash-runway-calculator/",
+      "title": "Cash Runway Calculator for Small Business | MyBreakeven",
+      "description": "Calculate cash runway after a reserve buffer using monthly cash receipts and payments. View a cash projection and the funding gap for your planning horizon.",
+      "canonical": "https://mybreakeven.com/calculators/cash-runway-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 12,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/cleaning-business-break-even-calculator/",
+      "title": "Cleaning Business Break-Even Calculator | MyBreakeven",
+      "description": "Calculate cleaning jobs, monthly revenue, leads and team capacity needed to break even after labor, supplies, travel, equipment and marketing costs.",
+      "canonical": "https://mybreakeven.com/calculators/cleaning-business-break-even-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 24,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/cleaning-contract-profit-calculator/",
+      "title": "Cleaning Contract Profit Calculator | MyBreakeven",
+      "description": "Commercial cleaning contract profit after labor and overhead. Calculate with your own costs, view a checked example and use the result in your business break-even plan.",
+      "canonical": "https://mybreakeven.com/calculators/cleaning-contract-profit-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/detailing-chemical-cost-calculator/",
+      "title": "Detailing Chemical Cost Calculator | MyBreakeven",
+      "description": "Detailing chemical cost per car with dilution and waste. Calculate with your own costs, view a checked example and use the result in your business break-even plan.",
+      "canonical": "https://mybreakeven.com/calculators/detailing-chemical-cost-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/discount-break-even-calculator/",
+      "title": "Discount Break-Even Calculator | MyBreakeven",
+      "description": "Calculate extra sales needed to recover a discount after variable costs and payment fees. Compare your sales estimate with whole-unit monthly capacity.",
+      "canonical": "https://mybreakeven.com/calculators/discount-break-even-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 9,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/ecommerce-break-even-calculator/",
+      "title": "E-commerce Break-Even Calculator | MyBreakeven",
+      "description": "Calculate exact break-even orders and revenue after COGS, fulfillment, shipping subsidy, returns, platform fees and customer acquisition costs.",
+      "canonical": "https://mybreakeven.com/calculators/ecommerce-break-even-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 23,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/ecommerce-return-cost-calculator/",
+      "title": "Ecommerce Return Cost Calculator | MyBreakeven",
+      "description": "Ecommerce return allowance per order with inventory recovery. Calculate with your own costs, view a checked example and use the result in your business break-even plan.",
+      "canonical": "https://mybreakeven.com/calculators/ecommerce-return-cost-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/hair-color-product-cost-calculator/",
+      "title": "Hair Color Product Cost Calculator | MyBreakeven",
+      "description": "Hair color product cost per service and mixed-product waste. Calculate with your own costs, view a checked example and use the result in your business break-even plan.",
+      "canonical": "https://mybreakeven.com/calculators/hair-color-product-cost-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/hourly-rate-calculator/",
+      "title": "Hourly Rate Calculator for Freelancers | MyBreakeven",
+      "description": "Calculate a freelance hourly rate from income, overhead, working weeks, billable time and fees. Check annual hours and the revenue your plan needs.",
+      "canonical": "https://mybreakeven.com/calculators/hourly-rate-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 7,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/landscaping-break-even-calculator/",
+      "title": "Landscaping Break-Even Calculator | MyBreakeven",
+      "description": "Calculate landscaping and lawn-care jobs, revenue, leads and crew capacity needed after labor, materials, fuel, equipment and marketing costs.",
+      "canonical": "https://mybreakeven.com/calculators/landscaping-break-even-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 19,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/lawn-route-profit-calculator/",
+      "title": "Lawn Route Profit Calculator | MyBreakeven",
+      "description": "Lawn care route profit per hour after crew and driving costs. Calculate with your own costs, view a checked example and use the result in your business break-even plan.",
+      "canonical": "https://mybreakeven.com/calculators/lawn-route-profit-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/mobile-detailing-break-even-calculator/",
+      "title": "Mobile Detailing Break-Even Calculator | MyBreakeven",
+      "description": "Calculate mobile detailing jobs, revenue, bookings and technician capacity after supplies, labor, travel, equipment and marketing costs.",
+      "canonical": "https://mybreakeven.com/calculators/mobile-detailing-break-even-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 16,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/mobile-detailing-travel-profit-calculator/",
+      "title": "Mobile Detailing Travel Profit Calculator | MyBreakeven",
+      "description": "Compare two mobile detailing jobs after travel time, vehicle costs and fees. Calculate hourly earnings and the extra surcharge needed to meet your target.",
+      "canonical": "https://mybreakeven.com/calculators/mobile-detailing-travel-profit-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 4,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/photography-business-break-even-calculator/",
+      "title": "Photography Business Break-Even Calculator | MyBreakeven",
+      "description": "Calculate photography sessions, revenue, bookings and delivery capacity needed after editing, travel, labor, studio and marketing costs.",
+      "canonical": "https://mybreakeven.com/calculators/photography-business-break-even-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 14,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/price-increase-calculator/",
+      "title": "Price Increase Calculator: Customer Loss | MyBreakeven",
+      "description": "Calculate customer loss a price increase can absorb after costs and fees. Compare revenue, contribution, revised costs and required monthly sales.",
+      "canonical": "https://mybreakeven.com/calculators/price-increase-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 10,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/restaurant-break-even-calculator/",
+      "title": "Restaurant Break-Even Calculator | MyBreakeven",
+      "description": "Calculate restaurant break-even revenue and orders after food, direct labor, packaging, delivery commissions, promotion and monthly overhead.",
+      "canonical": "https://mybreakeven.com/calculators/restaurant-break-even-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 23,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/salon-break-even-calculator/",
+      "title": "Salon Break-Even Calculator | MyBreakeven",
+      "description": "Calculate salon appointments, revenue, customer inquiries and stylist capacity after products, labor, disposables, laundry and marketing costs.",
+      "canonical": "https://mybreakeven.com/calculators/salon-break-even-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 16,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/salon-no-show-profit-loss-calculator/",
+      "title": "Salon No-Show Profit Loss Calculator | MyBreakeven",
+      "description": "Calculate salon no-show revenue and contribution loss after refilled slots, retained fees and avoidable costs. Test your own recovery scenario for free.",
+      "canonical": "https://mybreakeven.com/calculators/salon-no-show-profit-loss-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/calculators/salon-rebooking-calculator/",
+      "title": "Salon Rebooking Calculator | MyBreakeven",
+      "description": "Calculate salon rebooking revenue and contribution with attendance and spare-capacity limits. Free tool with transparent formulas and worked examples.",
+      "canonical": "https://mybreakeven.com/calculators/salon-rebooking-calculator/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 5,
+      "sitemap": true
+    },
+    {
+      "path": "/contact-us/",
+      "title": "Contact MyBreakeven",
+      "description": "Contact MyBreakeven about calculator feedback, industry requests, partnerships or formula-backed business planning tools.",
+      "canonical": "https://mybreakeven.com/contact-us/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 179,
+      "sitemap": true
+    },
+    {
+      "path": "/cookie-policy/",
+      "title": "Cookie Policy | MyBreakeven",
+      "description": "Learn how MyBreakeven uses essential browser storage and cookies.",
+      "canonical": "https://mybreakeven.com/cookie-policy/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 179,
+      "sitemap": true
+    },
+    {
+      "path": "/dashboard/",
+      "title": "Your MyBreakeven dashboard",
+      "description": "Manage your private MyBreakeven account and planning workspace.",
+      "canonical": "https://mybreakeven.com/dashboard/",
+      "robots": "noindex,nofollow",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": false
+    },
+    {
+      "path": "/editorial-policy/",
+      "title": "Editorial and Corrections Policy | MyBreakeven",
+      "description": "See how MyBreakeven labels examples, checks calculations, attributes content and handles corrections. Learn what a review date does and does not mean.",
+      "canonical": "https://mybreakeven.com/editorial-policy/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 153,
+      "sitemap": true
+    },
+    {
+      "path": "/forgot-password/",
+      "title": "Reset your MyBreakeven password",
+      "description": "Request a secure password-reset link for your MyBreakeven account.",
+      "canonical": "https://mybreakeven.com/forgot-password/",
+      "robots": "noindex,nofollow",
+      "h1": 1,
+      "inbound": 0,
+      "sitemap": false
+    },
+    {
+      "path": "/founder/",
+      "title": "Anis Ul Haq | Founder & SaaS Developer",
+      "description": "Meet Anis Ul Haq, founder and SaaS developer. Explore his work in web apps, AI automation, technical SEO, e-commerce and business planning tools.",
+      "canonical": "https://mybreakeven.com/founder/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 7,
+      "sitemap": true
+    },
+    {
+      "path": "/guides/agency-business/",
+      "title": "Agency Business Guides | MyBreakeven",
+      "description": "Explore agency retainer pricing, scope costs, staffing, utilization, client risk and cash. Find thirteen worked guides and three planning calculators.",
+      "canonical": "https://mybreakeven.com/guides/agency-business/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 15,
+      "sitemap": true
+    },
+    {
+      "path": "/guides/cleaning-business/",
+      "title": "Cleaning Business Planning Guides | MyBreakeven",
+      "description": "Explore cleaning business pricing, contract bids, operating costs, recurring clients and break-even. Find worked guides and free calculators.",
+      "canonical": "https://mybreakeven.com/guides/cleaning-business/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 19,
+      "sitemap": true
+    },
+    {
+      "path": "/guides/ecommerce-business/",
+      "title": "E-commerce Business Guides | MyBreakeven",
+      "description": "Explore ecommerce product pricing, returns, shipping, advertising and inventory cash. Find sixteen worked guides and three business calculators.",
+      "canonical": "https://mybreakeven.com/guides/ecommerce-business/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 19,
+      "sitemap": true
+    },
+    {
+      "path": "/guides/landscaping-business/",
+      "title": "Landscaping Business Planning Guides | MyBreakeven",
+      "description": "Explore landscaping pricing, job costs, maintenance contracts, routes and crew capacity. Find worked planning guides and two free business calculators.",
+      "canonical": "https://mybreakeven.com/guides/landscaping-business/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 19,
+      "sitemap": true
+    },
+    {
+      "path": "/guides/mobile-detailing-business/",
+      "title": "Mobile Detailing Business Guides | MyBreakeven",
+      "description": "Explore mobile detailing pricing, fleet contracts, travel costs, cancellations and refill capacity. Find worked guides and three free business calculators.",
+      "canonical": "https://mybreakeven.com/guides/mobile-detailing-business/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 16,
+      "sitemap": true
+    },
+    {
+      "path": "/guides/photography-business/",
+      "title": "Photography Business Guides | MyBreakeven",
+      "description": "Explore photography packages, editing costs, commercial assignments, prints and delivery capacity. Find twelve worked guides and a free break-even tool.",
+      "canonical": "https://mybreakeven.com/guides/photography-business/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 14,
+      "sitemap": true
+    },
+    {
+      "path": "/guides/restaurant-business/",
+      "title": "Restaurant Business Guides | MyBreakeven",
+      "description": "Explore restaurant startup, food and labor costs, menu pricing, delivery, events and capacity. Find twenty-one worked guides and a free break-even tool.",
+      "canonical": "https://mybreakeven.com/guides/restaurant-business/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 23,
+      "sitemap": true
+    },
+    {
+      "path": "/guides/salon-business/",
+      "title": "Salon Business Planning Guides | MyBreakeven",
+      "description": "Explore salon service pricing, product costs, no-shows, memberships, booth rent and chair capacity. Find eleven worked guides and four free calculators.",
+      "canonical": "https://mybreakeven.com/guides/salon-business/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 16,
+      "sitemap": true
+    },
+    {
+      "path": "/login/",
+      "title": "Log in to MyBreakeven",
+      "description": "Access your private MyBreakeven planning workspace.",
+      "canonical": "https://mybreakeven.com/login/",
+      "robots": "noindex,nofollow",
+      "h1": 1,
+      "inbound": 180,
+      "sitemap": false
+    },
+    {
+      "path": "/pricing/",
+      "title": "MyBreakeven Pricing: Free & Pro Business Planning",
+      "description": "Compare MyBreakeven Free and Pro plans for industry break-even calculators, saved scenarios, cost-drift analysis, comparisons and reports.",
+      "canonical": "https://mybreakeven.com/pricing/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 179,
+      "sitemap": true
+    },
+    {
+      "path": "/privacy-policy/",
+      "title": "Privacy Policy | MyBreakeven",
+      "description": "Read how MyBreakeven handles calculator data, website information and messages you send.",
+      "canonical": "https://mybreakeven.com/privacy-policy/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 179,
+      "sitemap": true
+    },
+    {
+      "path": "/pro-user-guide/",
+      "title": "MyBreakeven Pro Calculator User Guide",
+      "description": "Step-by-step guide to MyBreakeven Pro: enter costs, read break-even results, use advanced analysis, save scenarios and export reports.",
+      "canonical": "https://mybreakeven.com/pro-user-guide/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 1,
+      "sitemap": true
+    },
+    {
+      "path": "/refund-policy/",
+      "title": "Refund Policy | MyBreakeven",
+      "description": "Review the cancellation and refund policy for MyBreakeven paid subscriptions.",
+      "canonical": "https://mybreakeven.com/refund-policy/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 179,
+      "sitemap": true
+    },
+    {
+      "path": "/reset-password/",
+      "title": "Choose a new MyBreakeven password",
+      "description": "Securely update your MyBreakeven account password.",
+      "canonical": "https://mybreakeven.com/reset-password/",
+      "robots": "noindex,nofollow",
+      "h1": 1,
+      "inbound": 0,
+      "sitemap": false
+    },
+    {
+      "path": "/resources/",
+      "title": "Business Planning Resources | MyBreakeven",
+      "description": "Download cleaning monthly-budget and job-cost worksheets, follow calculation walkthroughs and inspect MyBreakeven methods. Free resources without an account.",
+      "canonical": "https://mybreakeven.com/resources/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 179,
+      "sitemap": true
+    },
+    {
+      "path": "/resources/cleaning-business-budget-template/",
+      "title": "Cleaning Business Budget Template: Monthly Plan",
+      "description": "Download a monthly cleaning and janitorial budget template for Excel. Compare bookings, payroll, overhead and owner pay, then check job targets against capacity.",
+      "canonical": "https://mybreakeven.com/resources/cleaning-business-budget-template/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 2,
+      "sitemap": true
+    },
+    {
+      "path": "/resources/cleaning-job-cost-worksheet/",
+      "title": "Cleaning Job Cost Worksheet | MyBreakeven",
+      "description": "Compare quoted and actual cleaning labor, supplies, travel and fees. Download a free editable worksheet with a blank job sheet and labelled example.",
+      "canonical": "https://mybreakeven.com/resources/cleaning-job-cost-worksheet/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 7,
+      "sitemap": true
+    },
+    {
+      "path": "/signup/",
+      "title": "Create a MyBreakeven account",
+      "description": "Create an optional account for saved business planning scenarios and reports.",
+      "canonical": "https://mybreakeven.com/signup/",
+      "robots": "noindex,nofollow",
+      "h1": 1,
+      "inbound": 0,
+      "sitemap": false
+    },
+    {
+      "path": "/terms-of-service/",
+      "title": "Terms of Service | MyBreakeven",
+      "description": "Read the terms for using MyBreakeven calculators, content and subscription features.",
+      "canonical": "https://mybreakeven.com/terms-of-service/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 179,
+      "sitemap": true
+    },
+    {
+      "path": "/tools/",
+      "title": "Free Business Calculators: Profit & Pricing | MyBreakeven",
+      "description": "Explore free business calculators for profit, pricing, service costs, advertising and cash. Use clear formulas and worked guides without signing up.",
+      "canonical": "https://mybreakeven.com/tools/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "inbound": 179,
+      "sitemap": true
+    }
+  ]
+}

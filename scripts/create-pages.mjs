@@ -1,3 +1,5 @@
+import { homeFaq } from "../src/homeFaq.js";
+import { blogImageDimensions } from "../src/blogImageDimensions.js";
 import { authorityPages } from "../src/authorityResources.js";
 import { agencyClusters } from "../src/agencyCluster.js";
 import { ecommerceClusters } from "../src/ecommerceCluster.js";
@@ -40,6 +42,12 @@ const calculatorIndustries = {
 
 const homeFile = new URL("../dist/index.html", import.meta.url);
 let base = await readFile(homeFile, "utf8");
+base = base.replace(/(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/, (_, open, raw, close) => {
+  const schema = JSON.parse(raw);
+  const faq = schema["@graph"].find(entity => entity["@type"] === "FAQPage");
+  faq.mainEntity = homeFaq.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } }));
+  return open + JSON.stringify(schema) + close;
+});
 
 const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 const allArticles = blogPosts;
@@ -53,7 +61,7 @@ const staticPages = {
   "guides/mobile-detailing-business": ["Mobile Detailing Business Guides | MyBreakeven", "Explore mobile detailing pricing, fleet contracts, travel costs, cancellations and refill capacity. Find worked guides and three free business calculators.", "Mobile detailing business planning guides"],
   "guides/landscaping-business": ["Landscaping Business Planning Guides | MyBreakeven", "Explore landscaping pricing, job costs, maintenance contracts, routes and crew capacity. Find worked planning guides and two free business calculators.", "Landscaping business planning guides"],
   "guides/cleaning-business": ["Cleaning Business Planning Guides | MyBreakeven", "Explore cleaning business pricing, contract bids, operating costs, recurring clients and break-even. Find worked guides and free calculators.", "Cleaning business planning guides"],
-  tools: ["Free Business Calculators: Profit, Pricing & Costs | MyBreakeven", "Explore free business calculators for profit, pricing, service costs, advertising and cash. Use clear formulas and worked guides without signing up.", "Free business calculators"],
+  tools: ["Free Business Calculators: Profit & Pricing | MyBreakeven", "Explore free business calculators for profit, pricing, service costs, advertising and cash. Use clear formulas and worked guides without signing up.", "Free business calculators"],
   "pro-user-guide": ["MyBreakeven Pro Calculator User Guide", "Step-by-step guide to MyBreakeven Pro: enter costs, read break-even results, use advanced analysis, save scenarios and export reports.", "MyBreakeven Pro calculator user guide"],
   pricing: ["MyBreakeven Pricing: Free & Pro Business Planning", "Compare MyBreakeven Free and Pro plans for industry break-even calculators, saved scenarios, cost-drift analysis, comparisons and reports.", "MyBreakeven Free and Pro pricing"],
   blogs: ["Small Business Break-Even Guides | MyBreakeven", "Read practical break-even guides for cleaning, landscaping, photography, agencies, mobile detailing, e-commerce, restaurants and salons.", "Industry break-even calculator guides"],
@@ -209,7 +217,7 @@ for (const article of allArticles) {
   const title = `${article.seoTitle} | MyBreakeven`;
   const resolvedFaq = articleFaq(article);
   const schema = { "@context": "https://schema.org", "@graph": [
-    { "@type": "BlogPosting", "@id": `${canonical}#article`, headline: article.title, description: article.metaDescription, image: { "@type": "ImageObject", url: `https://mybreakeven.com${article.image}`, width: 1200, height: 675 }, datePublished: article.published, dateModified: article.modified, keywords: article.tags.join(", "), mainEntityOfPage: { "@id": `${canonical}#webpage` }, author: { "@type": "Organization", name: "MyBreakeven", url: "https://mybreakeven.com/" }, publisher: { "@id": "https://mybreakeven.com/#organization" }, about: article.about || `${article.tag} business planning`, inLanguage: "en-US" },
+    { "@type": "BlogPosting", "@id": `${canonical}#article`, headline: article.title, description: article.metaDescription, image: { "@type": "ImageObject", url: `https://mybreakeven.com${article.image}`, ...(blogImageDimensions[article.image] || { width: 1200, height: 675 }) }, datePublished: article.published, dateModified: article.modified, keywords: article.tags.join(", "), mainEntityOfPage: { "@id": `${canonical}#webpage` }, author: { "@type": "Organization", name: "MyBreakeven", url: "https://mybreakeven.com/" }, publisher: { "@id": "https://mybreakeven.com/#organization" }, about: article.about || `${article.tag} business planning`, inLanguage: "en-US" },
     { "@type": "WebPage", "@id": `${canonical}#webpage`, url: canonical, name: title, description: article.metaDescription, isPartOf: { "@id": "https://mybreakeven.com/#website" } },
     { "@type": "FAQPage", mainEntity: resolvedFaq.items.map(item => ({ "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a } })) },
     { "@type": "BreadcrumbList", itemListElement: [
@@ -227,7 +235,8 @@ for (const article of allArticles) {
     .replace(/<meta property="og:url" content="[^"]*"\s*\/?>/, `<meta property="og:url" content="${canonical}" />`)
     .replaceAll("https://mybreakeven.com/mybreakeven-social-preview.png", `https://mybreakeven.com${article.image}`)
     .replace(/<meta property="og:image:type" content="[^"]*"\s*\/?>/, `<meta property="og:image:type" content="${article.image.endsWith(".png") ? "image/png" : "image/webp"}" />`)
-    .replace(/<meta property="og:image:height" content="[^"]*"\s*\/?>/, `<meta property="og:image:height" content="675" />`)
+    .replace(/<meta property="og:image:height" content="[^"]*"\s*\/?>/, `<meta property="og:image:height" content="${blogImageDimensions[article.image]?.height || 675}" />`)
+    .replace(/<meta property="og:image:width" content="[^"]*"\s*\/?>/, `<meta property="og:image:width" content="${blogImageDimensions[article.image]?.width || 1200}" />`)
     .replace(/<meta property="og:image:alt" content="[^"]*"\s*\/?>/, `<meta property="og:image:alt" content="${escapeHtml(article.alt)}" />`)
     .replace(/<meta name="twitter:image:alt" content="[^"]*"\s*\/?>/, `<meta name="twitter:image:alt" content="${escapeHtml(article.alt)}" />`)
     .replace(/<meta name="twitter:title" content="[^"]*"\s*\/?>/, `<meta name="twitter:title" content="${escapeHtml(title)}" />`)
@@ -275,6 +284,7 @@ for (const [slug, [title, description]] of Object.entries(calculators)) {
     .replaceAll("https://mybreakeven.com/mybreakeven-social-preview.png", `https://mybreakeven.com${pageImage}`)
     .replace(/<meta property="og:image:type" content="[^"]*"\s*\/?>/, `<meta property="og:image:type" content="image/webp" />`)
     .replace(/<meta property="og:image:height" content="[^"]*"\s*\/?>/, `<meta property="og:image:height" content="675" />`)
+    .replace(/<meta property="og:image:width" content="[^"]*"\s*\/?>/, `<meta property="og:image:width" content="1200" />`)
     .replace(/<meta property="og:image:alt" content="[^"]*"\s*\/?>/, `<meta property="og:image:alt" content="${escapeHtml(pageImageAlt)}" />`)
     .replace(/<meta name="twitter:image:alt" content="[^"]*"\s*\/?>/, `<meta name="twitter:image:alt" content="${escapeHtml(pageImageAlt)}" />`);
   await mkdir(new URL(`../dist/${route}/`, import.meta.url), { recursive: true });

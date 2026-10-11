@@ -1,3 +1,4 @@
+import { homeFaq as faqs } from "./homeFaq.js";
 import React from "react";
 import { freeTools } from "./freeTools";
 
@@ -12,14 +13,7 @@ const models = [
   ["Salon business", "Estimate appointments required using service price, product usage, stylist labor and utilization.", "salon-break-even-calculator"],
 ];
 
-const faqs = [
-  ["What is a break-even point?", "A break-even point is the sales level where total revenue equals total fixed and variable costs. At that point, the business has no operating profit or loss under the assumptions entered."],
-  ["How do I calculate break-even revenue?", "MyBreakeven first calculates contribution per sale: average selling price minus direct costs, acquisition cost and payment fees. It then divides monthly fixed costs, owner pay and target profit by that contribution and multiplies the required units by the average price."],
-  ["Does the calculator include owner salary and target profit?", "Yes. You can keep either field at zero for a traditional break-even calculation, or include owner pay and a profit goal to calculate a more practical monthly revenue target."],
-  ["Why does business capacity matter?", "A financial target is not feasible if your team cannot deliver the required orders, jobs, clients or appointments. The calculator compares required volume with productive team hours."],
-  ["Can I use a currency other than US dollars?", "Yes. Select a supported currency before entering your figures. The calculator labels all amounts in that currency; it does not perform exchange-rate conversion."],
-  ["Are my financial figures saved?", "The free calculator runs in your browser. Inputs are not sent or saved automatically. Choosing Continue with these numbers carries a temporary plan to the full calculator in the same browser tab; the handoff expires after five minutes and is removed when opened. If you sign in and choose Save scenario, that scenario is stored with your account and can be deleted from your dashboard."],
-];
+
 
 export default function HomeSEO() {
   return (
