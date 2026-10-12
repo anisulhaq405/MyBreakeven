@@ -69,9 +69,11 @@ export function applyOctober12RankingReview(post) {
     const start=match.index+match[0].length;
     const rest=html.slice(start);
     const next=rest.search(/<h2[^>]*>/);
-    const at=next<0?html.length:start+next;
+    const notes=html.indexOf('<aside class="article-note">',start);
+    const at=Math.min(next<0?html.length:start+next,notes<0?html.length:notes);
     html=html.slice(0,at)+extraFaq.map(item=>`<h3>${item.q}</h3><p>${item.a}</p>`).join('')+html.slice(at);
     faq.push(...extraFaq);
+    html=replace(html,'<aside class="article-note">','<h2>Publishing notes</h2><aside class="article-note">');
   }
   const description=post.slug==='restaurant-profit-margin-average'?'Compare restaurant profit benchmarks with operating and net margins, owner pay and checked examples. Build your own sales, cost and break-even plan.':post.description;
   return {...post,html,faq,description,metaDescription:post.slug==='restaurant-profit-margin-average'?description:post.metaDescription,modified:'2026-10-12'};
