@@ -1,3 +1,5 @@
+import { industryPages, industryInputGuidance, industryFieldHelp, industryCalculatorFaq } from './industryCalculatorContent.js';
+export { industryPages } from './industryCalculatorContent.js';
 import { AgencyClusterLink } from './AgencyCluster.jsx';
 import { EcommerceClusterLink } from './EcommerceCluster.jsx';
 import { PhotographyClusterLink } from './PhotographyCluster.jsx';
@@ -18,16 +20,7 @@ import { fieldLabels, industries } from "./industries";
 import CostBuilder from "./CostBuilder";
 import { builtFields } from "./costBuilder";
 
-export const industryPages = {
-  "cleaning-business-break-even-calculator": { key: "cleaning", title: "Cleaning Business Break-Even Calculator", lead: "Calculate the monthly cleaning jobs, leads and team hours needed to cover overhead, owner pay and your profit goal.", costs: "cleaning supplies, direct labor, travel, equipment use, card fees and lead-generation cost", questions: ["How many cleaning jobs do I need to break even?", "Can my cleaners deliver the required monthly jobs?", "How many cleaning leads does my conversion rate require?"] },
-  "landscaping-break-even-calculator": { key: "landscaping", title: "Landscaping Break-Even Calculator", lead: "Enter your landscaping job price and costs to calculate monthly job targets, revenue and crew capacity. Set owner pay and target profit to zero to check operating break-even.", costs: "plants and materials, crew labor, fuel, equipment use, payment fees and customer acquisition", questions: ["How many landscaping jobs cover monthly overhead?", "Is current crew capacity enough for the target?", "How does average job price change break-even volume?"] },
-  "photography-business-break-even-calculator": { key: "photography", title: "Photography Business Break-Even Calculator", lead: "Turn session pricing, editing time, travel, booking costs and studio overhead into an exact monthly session target.", costs: "session materials, photographer labor, editing, gallery delivery, travel, payment fees and booking acquisition", questions: ["How many photography sessions do I need each month?", "Does editing time create a capacity gap?", "What average session price supports owner pay?"] },
-  "agency-break-even-calculator": { key: "agency", title: "Agency and Freelancer Break-Even Calculator", lead: "Calculate required retainers, client leads and delivery capacity using contractor costs, software, labor and acquisition assumptions.", costs: "delivery labor, contractors, client software, payment fees and sales acquisition", questions: ["How many retainer clients cover agency overhead?", "How much delivery capacity does the team have?", "How many qualified leads are needed to win the target clients?"] },
-  "mobile-detailing-break-even-calculator": { key: "detailing", title: "Mobile Detailing Break-Even Calculator", lead: "Estimate required detailing jobs and bookings after supplies, technician labor, travel, equipment and local marketing costs.", costs: "detailing products, technician labor, water, travel, equipment use, fees and booked-job acquisition", questions: ["How many detailing jobs are needed to break even?", "Can the mobile team serve enough vehicles?", "How does price affect monthly booking requirements?"] },
-  "ecommerce-break-even-calculator": { key: "ecommerce", title: "E-commerce Break-Even Calculator", lead: "Calculate exact break-even orders and revenue after COGS, fulfillment, shipping subsidy, returns, platform fees and paid acquisition.", costs: "COGS, fulfillment labor, shipping subsidy, return allowance, payment or platform fees and customer acquisition cost", questions: ["How many e-commerce orders are needed to break even?", "What revenue covers overhead and advertising?", "How do returns and shipping affect contribution margin?"] },
-  "restaurant-break-even-calculator": { key: "restaurant", title: "Restaurant Break-Even Calculator", lead: "Convert average check, food cost, direct labor, packaging, delivery commission and overhead into required monthly orders.", costs: "food and ingredients, direct labor, packaging, delivery commissions, card fees and promotion", questions: ["How many restaurant orders cover monthly fixed costs?", "What sales revenue reaches break-even?", "Can kitchen and service capacity handle required demand?"] },
-  "salon-break-even-calculator": { key: "salon", title: "Salon Break-Even Calculator", lead: "Estimate appointments, revenue and customer inquiries using service price, product usage, stylist labor and chair capacity.", costs: "service products, stylist labor, disposables, laundry, payment fees and appointment acquisition", questions: ["How many salon appointments are needed to break even?", "What revenue covers rent and owner pay?", "Are stylist hours sufficient for the target appointments?"] },
-};
+
 
 const operationalLinks = {"cleaning": ["cleaning-contract-profit-calculator", "Cleaning Contract Profit Calculator"], "landscaping": ["lawn-route-profit-calculator", "Lawn Route Profit Calculator"], "detailing": ["detailing-chemical-cost-calculator", "Detailing Chemical Cost Calculator"], "salon": ["hair-color-product-cost-calculator", "Hair Color Product Cost Calculator"], "ecommerce": ["ecommerce-return-cost-calculator", "Ecommerce Return Cost Calculator"]};
 
@@ -40,20 +33,6 @@ const industryGuideSlugs = {
 
 const money = (value) => new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 }).format(value);
 
-function answerQuestion(question, result, industry) {
-  const unit = industry.unit;
-  const v = industry.values;
-  if (/price|returns|shipping/i.test(question)) {
-    return `In this example, each ${industry.singular} contributes ${money(result.contribution)} after direct costs and fees. Changing the price or a per-${industry.singular} cost changes that contribution and therefore the number of ${unit} needed. Enter your own assumptions to see the effect.`;
-  }
-  if (/capacity|crew|team|cleaners|editing|kitchen|stylist|mobile|handle|serve/i.test(question)) {
-    return `The example requires ${result.wholeJobs} whole ${unit} and estimates capacity for ${result.wholeCapacity} whole ${unit} per month, using ${v.workers} team members, ${v.hoursPerWorker} hours each per week and ${v.utilizationPct}% productive time. Adjust those inputs to check your own delivery limit.`;
-  }
-  if (/leads|inquiries|bookings/i.test(question)) {
-    return `At the example ${v.conversionPct}% inquiry-to-${industry.singular} conversion rate, the model estimates ${result.leads.toFixed(2)} inquiries for the exact fractional financial target (${result.wholeLeads} rounded up). Use your measured conversion rate for a more useful demand estimate.`;
-  }
-  return `At the example price of ${money(v.price)}, each ${industry.singular} contributes ${money(result.contribution)} after direct costs and fees. Covering ${money(result.fixedNeed)} in overhead, owner pay and target profit requires ${result.wholeJobs} whole ${unit}, or ${money(result.practicalRevenue)} in practical monthly sales. Replace these sample inputs with your figures.`;
-}
 
 function IndustryQuickCalculator({ industry, industryKey }) {
   const [values, setValues] = useState(() => ({ ...industry.values }));
@@ -80,9 +59,10 @@ function IndustryQuickCalculator({ industry, industryKey }) {
             const next = { ...current, [key]: value };
             if (builtFields.includes(key)) delete next.costBuilder;
             return next;
-          }); }} aria-invalid={values[key] === ""} />
+          }); }} aria-invalid={values[key] === ""} aria-describedby={`industry-help-${key}`} />
           {suffix && suffix !== "$" && <b aria-hidden="true">{suffix}</b>}
         </span>
+        <small id={`industry-help-${key}`}>{industryFieldHelp[key]}</small>
       </label>)}
     </div>
     <CostBuilder industryKey={industryKey} input={values} onApply={patch => { recordCalculatorUse(industryKey); setValues(current => ({ ...current, ...patch })); }} />
@@ -132,8 +112,11 @@ export default function IndustryPage({ slug }) {
         </aside>
       </section>
       <figure className="industry-tool-feature"><img src={`/images/tools/${page.key}-break-even.webp`} alt={`${industry.short} break-even planning: direct costs, contribution, monthly sales target and working capacity.`} width="1200" height="675" decoding="async"/><figcaption>A {industry.short.toLowerCase()} planning model: use your own price, costs and delivery capacity.</figcaption></figure>
+
+      <nav className="tool-guide-nav industry-page-nav" aria-label="Calculator page sections"><a href="#industry-calculator">Calculator</a><a href="#input-records">Input records</a><a href="#calculation-method">Formula</a><a href="#industry-questions">FAQs</a></nav>
       <IndustryQuickCalculator key={page.key} industry={industry} industryKey={page.key} />
       <section className="industry-content">
+      <section className="industry-copy" id="input-records"><h2>Gather the records for your {industry.short.toLowerCase()} plan</h2><p>Use one consistent completed-sale unit and reporting period. Replace illustrative defaults with records you can reconcile.</p><div className="tool-table-wrap"><table><caption>Input records and cost boundaries</caption><thead><tr><th scope="col">Input group</th><th scope="col">Record to use</th><th scope="col">Boundary to check</th></tr></thead><tbody>{industryInputGuidance[page.key].records.map(row=><tr key={row[0]}><th scope="row">{row[0]}</th><td>{row[1]}</td><td>{row[2]}</td></tr>)}</tbody></table></div><p>{industryInputGuidance[page.key].pitfall}</p></section>
         <div className="industry-copy"><h2>Check the next business decision</h2><p>{page.key === "ecommerce" ? <a href="/calculators/break-even-roas-calculator/">Calculate break-even ad returns after order costs and fees</a> : page.key === "agency" || page.key === "photography" ? <a href="/calculators/hourly-rate-calculator/">Calculate a billing rate from income and billable hours</a> : <a href="/calculators/discount-break-even-calculator/">Check how many extra sales a discount needs</a>} before changing your plan. Use the <a href="/calculators/cash-runway-calculator/">cash runway calculator</a> to compare available cash with expected receipts and payments.</p></div>
         <div className="industry-copy">
           <span>INDUSTRY-SPECIFIC UNIT ECONOMICS</span>
@@ -146,7 +129,7 @@ export default function IndustryPage({ slug }) {
           <article><CheckCircle2 /><h3>Operational feasibility</h3><p>Compare required {industry.unit} with estimated monthly delivery capacity before committing to the plan.</p></article>
           <article><ShieldCheck /><h3>Private and transparent</h3><p>Inputs stay in your browser, while the formula trace explains how each result was calculated.</p></article>
         </div>
-        <div className="industry-copy">
+        <div className="industry-copy" id="calculation-method">
           <h2>Formula, assumptions and rounding</h2>
           <p>Contribution per {industry.singular} = average price minus direct materials, labor, other variable costs, acquisition cost and percentage payment fees. Required monthly {industry.unit} = (operating overhead + owner pay + target profit) divided by contribution per {industry.singular}.</p>
           <p>For a traditional operating break-even calculation, set owner pay and target profit to zero. Keep owner pay if you want the business to cover your compensation, and add profit only when calculating a profit target. The example values are illustrative USD inputs, not industry averages.</p>
@@ -156,11 +139,12 @@ export default function IndustryPage({ slug }) {
           <p><a href={`/blogs/${industryGuideSlugs[page.key]}/`}>Read the {industry.short.toLowerCase()} break-even guide</a></p>
           <p><a href="/#methodology">Read the calculation methodology</a> · <a href="/blogs/">Browse business planning guides</a></p>
         </div>
-        {page.key === "salon" && <section className="industry-copy"><h2>{salonPlanningSection.heading}</h2>{salonPlanningSection.text.split("\n\n").map(p=><p key={p}>{p}</p>)}<h3>{salonPlanningSection.question}</h3><p>{salonPlanningSection.answer}</p></section>}<div className="industry-faq">
+        {page.key === "salon" && <section className="industry-copy"><h2>{salonPlanningSection.heading}</h2>{salonPlanningSection.text.split("\n\n").map(p=><p key={p}>{p}</p>)}<h3>{salonPlanningSection.question}</h3><p>{salonPlanningSection.answer}</p></section>}<div className="industry-faq" id="industry-questions">
           <span>QUESTIONS THIS MODEL ANSWERS</span>
           <h2>{industry.short === "Agencies" ? "Agency" : industry.short} break-even questions</h2>
-          {page.questions.map((question) => <details key={question}><summary>{question}</summary><p>{answerQuestion(question, example, industry)}</p></details>)}
+          {industryCalculatorFaq(page.key).map(([question,answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}
         </div>
+        <section className="industry-copy" id="next-step-checklist"><h2>Review the target before changing your plan</h2><ol><li>Record the entered unit, period and cost boundary alongside the result.</li><li>Compare required whole sales with both capacity and evidence of demand.</li><li>Run a downside case using a lower realized price or higher delivery cost. Add new commitments if the operating range changes.</li><li>Check a dated cash forecast before treating a profitable target as available cash.</li></ol>{industryInputGuidance[page.key].links.map(([label,url])=><p key={url}><a href={url}>{label}</a></p>)}<p>Method and example inputs reviewed October 13, 2026. <a href="/calculation-methodology/">Calculation methodology</a> · <a href="/editorial-policy/">Editorial standards and corrections</a>. The <a href="https://legacy.sba.gov/business-guide/plan-your-business/calculate-your-startup-costs/break-even-point">SBA break-even explanation</a> covers the basic fixed-cost/contribution method; owner pay, profit targets and productive-hour checks are explicit additions in this model.</p></section>
       </section>
     </div>
   );

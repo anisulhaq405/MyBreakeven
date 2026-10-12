@@ -1,3 +1,4 @@
+import { completeCalculatorPage } from './calculatorPageReview.js';
 import {decisionTools} from './decisionTools.js';
 import { operationalTools } from './operationalTools.js';
 import { businessTools } from './businessTools.js';
@@ -20,4 +21,4 @@ const pricingTools = {
   },
 };
 
-export const freeTools = Object.fromEntries(Object.entries({...pricingTools,...businessTools,...operationalTools,...decisionTools}).map(([slug,tool])=>[slug,{...tool,theme:toolThemes[slug],category:tool.category || "Pricing & contribution"}]));
+export const freeTools = Object.fromEntries(Object.entries({...pricingTools,...businessTools,...operationalTools,...decisionTools}).map(([slug,tool])=>[slug,completeCalculatorPage(slug,{...tool,theme:toolThemes[slug],category:tool.category || "Pricing & contribution"})]));
