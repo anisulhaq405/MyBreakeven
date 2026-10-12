@@ -45,6 +45,8 @@ export const ecommerceClusters = [
     "title": "Stock holding and replenishment cash",
     "description": "Keep inventory position, carrying cost and payment timing visible.",
     "slugs": [
+      "how-to-calculate-cost-of-goods-sold",
+      "how-to-calculate-working-capital",
       "ecommerce-inventory-holding-cost-per-sku",
       "inventory-reorder-point-cash-flow"
     ]

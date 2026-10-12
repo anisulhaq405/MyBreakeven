@@ -45,7 +45,9 @@ export const agencyClusters = [
     "description": "Keep revenue dependence, contribution risk and the cash calendar separate.",
     "slugs": [
       "agency-client-concentration-revenue-risk",
-      "cash-flow-forecast-vs-break-even"
+      "cash-flow-forecast-vs-break-even",
+      "how-to-calculate-working-capital",
+      "how-to-calculate-days-sales-outstanding"
     ]
   }
 ];
