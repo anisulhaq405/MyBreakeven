@@ -320,3 +320,4 @@
 .pricing .pro strong{color:#fff}
 .pricing button:focus-visible{outline:3px solid #6757eb;outline-offset:3px}
 @media(max-width:620px){.pricing{padding:78px 18px 85px}.pricing>div{grid-template-columns:1fr}.pricing article{padding:27px}}
+.article-table-scroll .article-records-table td:last-child{text-align:left;white-space:normal}
