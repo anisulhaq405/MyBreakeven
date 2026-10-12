@@ -1,0 +1,27 @@
+import {describe,it,expect} from 'vitest';
+import {calculateRecipe as recipe,calculateFoodPeriod as period,calculateMenuPrice as menu} from './foodCostEngine';
+import {recipeExample,cakeExample,foodPeriodExample,menuExample} from './foodCalculatorDefaults';
+const row={name:'Ingredient',cost:24,pack:5,packUnit:'lb',used:1.5,useUnit:'lb',yield:80};
+describe('shared food costing engine',()=>{
+ it('reconciles pack yield with edible portions',()=>{const r=recipe({...recipeExample,ingredients:[row],servings:12});expect(r.batchIngredients).toBe(9);expect(r.ingredient).toBe(.75)});
+ it('converts compatible mass quantities without using displayed rounding',()=>{const r=recipe({...recipeExample,ingredients:[{...row,cost:16,pack:1,packUnit:'lb',used:1,useUnit:'oz',yield:100}],servings:1});expect(r.ingredient).toBe(1)});
+ it('converts US fluid volume and rejects a mass/volume assumption',()=>{const r=recipe({...recipeExample,ingredients:[{...row,cost:10,pack:10,packUnit:'US fl oz',used:29.5735295625,useUnit:'mL',yield:100}],servings:1});expect(r.ingredient).toBe(1);expect(recipe({...recipeExample,ingredients:[{...row,useUnit:'mL'}]}).valid).toBe(false)});
+ it('allocates batch labor and per-unit packaging only once',()=>{const r=recipe(recipeExample);expect(r.batchIngredients).toBe(3.2);expect(r.variable).toBe(2.15);expect(r.contribution).toBe(1.73);expect(r.foodPct).toBe(10);expect(r.contributionPct).toBe(43.25)});
+ it('does not call whole-cake contribution net profit',()=>{const r=recipe(cakeExample);expect(r.ingredient).toBe(19.7);expect(r.variable).toBe(82.7);expect(r.contribution).toBe(43.4)});
+ it('allows usage across several purchase packs',()=>expect(recipe({...recipeExample,ingredients:[{...row,used:8}],servings:1}).ingredient).toBe(48));
+ it('retains cost with zero price while percentages are undefined',()=>{const r=recipe({...recipeExample,price:0});expect(r.valid).toBe(true);expect(r.foodPct).toBeNull();expect(r.contribution).toBe(-2.15)});
+ for(const patch of [{servings:0},{servings:1.5},{labor:-1},{fee:100},{price:''},{price:Infinity},{ingredients:[]},{ingredients:[{...row,yield:0}]},{ingredients:[{...row,yield:101}]},{ingredients:[{...row,pack:0}]},{ingredients:[{...row,useUnit:'unknown'}]}])it(`rejects invalid recipe ${JSON.stringify(patch)}`,()=>expect(recipe({...recipeExample,...patch}).valid).toBe(false));
+ it('reconciles actual usage, theoretical usage and percentage-point gap',()=>{const r=period(foodPeriodExample);expect(r.used).toBe(20000);expect(r.variance).toBe(1800);expect(r.variancePoints).toBe(3);expect(r.foodPct).toBeCloseTo(33.333333)});
+ it('distinguishes unknown theoretical usage from a deliberate zero',()=>{expect(period({...foodPeriodExample,theoretical:''}).variance).toBeNull();expect(period({...foodPeriodExample,theoretical:0}).variance).toBe(20000)});
+ it('retains a negative variance rather than promising waste savings',()=>expect(period({...foodPeriodExample,theoretical:22000}).variance).toBe(-2000));
+ it('deducts supplier credits once',()=>expect(period({...foodPeriodExample,credits:1000}).used).toBe(19000));
+ for(const patch of [{sales:0},{closing:30000},{purchases:-1},{sales:''},{theoretical:NaN}])it(`rejects invalid period ${JSON.stringify(patch)}`,()=>expect(period({...foodPeriodExample,...patch}).valid).toBe(false));
+ it('separates ingredient price from full contribution margin',()=>{const r=menu(menuExample);expect(r.foodPrice).toBe(20);expect(r.foodPriceContribution).toBe(9.4);expect(r.marginPrice).toBe(23.81);expect(r.marginPriceContribution).toBe(13.0957)});
+ it('checks whole-unit capacity using 52/12 and positive contribution',()=>{const r=menu(menuExample);expect(r.wholeCapacity).toBe(1733);expect(r.required).toBe(1764);expect(r.fits).toBe(false);expect(r.monthlyResult).toBe(-722)});
+ it('rounds capacity price upward to fund the requirement at whole capacity',()=>{const r=menu(menuExample);expect(r.capacityPrice).toBe(22.21);expect((r.capacityPrice*.97-10)*r.wholeCapacity).toBeGreaterThanOrEqual(20000);expect(((r.capacityPrice-.01)*.97-10)*r.wholeCapacity).toBeLessThan(20000)});
+ it('does not hide an expected-sales capacity breach',()=>expect(menu({...menuExample,volume:1800}).plannedFits).toBe(false));
+ it('does not invent a finite recovery target with nonpositive contribution',()=>{for(const price of [0,10])expect(menu({...menuExample,price}).required).toBeNull()});
+ it('reports zero capacity without dividing by zero',()=>{const r=menu({...menuExample,weeklyCapacity:0});expect(r.capacityPrice).toBeNull();expect(r.fits).toBe(false)});
+ it('supports the funded cake scope without duplicating the priced owner labor',()=>{const cost=recipe(cakeExample);const r=menu({...menuExample,ingredient:cost.ingredient,labor:cost.labor,packaging:cost.packaging,other:cost.other,price:130,fixed:400,ownerPay:0,profitTarget:1800,weeklyCapacity:10,volume:40});expect(r.need).toBe(2200);expect(r.required).toBe(51);expect(r.wholeCapacity).toBe(43);expect(r.fits).toBe(false)});
+ for(const patch of [{fee:100},{fee:45,marginTarget:55},{foodTarget:0},{marginTarget:100},{volume:2.5},{fixed:-1},{price:''},{weeklyCapacity:Infinity}])it(`rejects invalid menu ${JSON.stringify(patch)}`,()=>expect(menu({...menuExample,...patch}).valid).toBe(false));
+});
