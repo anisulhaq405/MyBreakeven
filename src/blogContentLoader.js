@@ -27,5 +27,10 @@ export function getLoadedBlogPost(slug) {
 export function relatedBlogPosts(slug, limit = 3) {
   const current = metadata[slug];
   if (!current) return [];
+  if (slug === 'landscaping-break-even') {
+    // Link the records needed by this analysis rather than the newest articles.
+    return ['landscaping-job-costing-estimate-vs-actual', 'landscaping-crew-utilization', 'landscaping-equipment-cost-per-hour']
+      .map(relatedSlug => metadata[relatedSlug]).filter(Boolean).slice(0, limit);
+  }
   return blogListingData.posts.filter(post => post.slug !== slug && post.tag === current.tag).slice(0, limit);
 }
