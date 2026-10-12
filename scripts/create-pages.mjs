@@ -54,8 +54,8 @@ const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll(
 const allArticles = blogPosts;
 const staticPages = {
   ...authorityPages,
-  "guides/agency-business": ["Agency Business Guides | MyBreakeven", "Explore agency retainer pricing, scope costs, staffing, utilization, client risk and cash. Find thirteen worked guides and three planning calculators.", "Agency business planning guides"],
-  "guides/ecommerce-business": ["E-commerce Business Guides | MyBreakeven", "Explore ecommerce product pricing, returns, shipping, advertising and inventory cash. Find sixteen worked guides and three business calculators.", "E-commerce business planning guides"],
+  "guides/agency-business": ["Agency Business Guides | MyBreakeven", "Explore agency retainer pricing, scope costs, staffing, utilization, client risk and cash. Find fifteen worked guides and three planning calculators.", "Agency business planning guides"],
+  "guides/ecommerce-business": ["E-commerce Business Guides | MyBreakeven", "Explore ecommerce product pricing, returns, shipping, advertising and inventory cash. Find eighteen worked guides and three business calculators.", "E-commerce business planning guides"],
   "guides/photography-business": ["Photography Business Guides | MyBreakeven", "Explore photography packages, editing costs, commercial assignments, prints and delivery capacity. Find twelve worked guides and a free break-even tool.", "Photography business planning guides"],
   "guides/restaurant-business": ["Restaurant Business Guides | MyBreakeven", "Explore restaurant startup, food and labor costs, menu pricing, delivery, events and capacity. Find twenty-one worked guides and a free break-even tool.", "Restaurant business planning guides"],
   "guides/salon-business": ["Salon Business Planning Guides | MyBreakeven", "Explore salon service pricing, product costs, no-shows, memberships, booth rent and chair capacity. Find eleven worked guides and four free calculators.", "Salon business planning guides"],
