@@ -321,3 +321,14 @@
 .pricing button:focus-visible{outline:3px solid #6757eb;outline-offset:3px}
 @media(max-width:620px){.pricing{padding:78px 18px 85px}.pricing>div{grid-template-columns:1fr}.pricing article{padding:27px}}
 .article-table-scroll .article-records-table td:last-child{text-align:left;white-space:normal}
+
+/* Calculator records remain readable without widening the page on small screens. */
+.industry-page-nav{max-width:1132px;margin:0 auto 24px;padding:0 24px}
+.industry-copy .tool-table-wrap{max-width:100%;overflow-x:auto;margin:20px 0}
+.industry-copy table{width:100%;min-width:560px;border-collapse:collapse;font-size:14px;line-height:1.6}
+.industry-copy caption{text-align:left;font-weight:700;margin-bottom:12px;color:#26344d}
+.industry-copy th,.industry-copy td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid #dce0ef}
+.industry-copy thead th{background:#f5f6fc}
+.industry-quick-fields label>small{display:block;margin-top:7px;color:#53647a;font-weight:400;font-size:12px;line-height:1.5}
+#next-step-checklist{margin-top:40px}
+#next-step-checklist li{color:#53647a;line-height:1.8;margin-bottom:8px}
