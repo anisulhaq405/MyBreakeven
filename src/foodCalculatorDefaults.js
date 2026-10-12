@@ -1,0 +1,5 @@
+export const recipeExample={ingredients:[{name:'Flour',cost:12,pack:5,packUnit:'kg',used:500,useUnit:'g',yield:100},{name:'Sugar',cost:4,pack:1,packUnit:'kg',used:200,useUnit:'g',yield:100},{name:'Butter',cost:6,pack:500,packUnit:'g',used:100,useUnit:'g',yield:100}],servings:8,labor:12,packaging:.25,other:0,price:4,fee:3};
+export const cakeExample={ingredients:[{name:'Flour',cost:4,pack:1000,packUnit:'g',used:500,useUnit:'g',yield:100},{name:'Sugar',cost:3,pack:1000,packUnit:'g',used:300,useUnit:'g',yield:100},{name:'Butter',cost:8,pack:500,packUnit:'g',used:300,useUnit:'g',yield:100},{name:'Decoration kit',cost:12,pack:1,packUnit:'each',used:1,useUnit:'each',yield:100}],servings:1,labor:54,packaging:4,other:5,price:130,fee:3};
+export const foodPeriodExample={opening:8000,purchases:18000,credits:0,closing:6000,sales:60000,theoretical:18200};
+export const menuExample={ingredient:6,labor:3,packaging:1,other:0,fee:3,foodTarget:30,marginTarget:55,price:22,fixed:20000,ownerPay:0,profitTarget:0,volume:1700,weeklyCapacity:400};
+export const foodPageSlugs=['recipe-cost-calculator','food-cost-calculator','menu-pricing-calculator'];

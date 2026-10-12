@@ -63,3 +63,13 @@ The current downside/base/upside comparison changes price by -10%, 0% and +10%. 
 - Currency selection relabels values and does not perform foreign-exchange conversion.
 - The feasibility score is a product heuristic, not a financial formula or probability of success.
 - The engineering regression fixtures preserve deterministic behavior but have not yet received CPA/accountant approval.
+
+## Food workflow engine 1.0.0 — independent module, 2026-10-13
+
+`src/foodCostEngine.js` is separate from the locked industry engine and existing decision-tool engines. It uses a cloned Decimal context at 40-digit precision. Existing formulas, defaults and rounding are unchanged.
+
+- Recipe: compatible usable ingredient quantity / (pack quantity × yield rate) × pack cost; total ingredients divided by whole selling units. Batch labor and other costs divide once; packaging is already per unit. No mass/volume density assumption.
+- Period usage: opening + purchases − supplier credits − closing. Food ratio divides by positive food sales; optional theoretical variance uses the same sales base. Stock usage is not proof that every outflow was a normal paid sale.
+- Menu: ingredient-target price and full variable contribution-target price are distinct. Percentage fees reduce retained price. Required units ceil; monthly capacity floor(weekly × 52/12). Capacity funding floor uses the whole-unit capacity and rounds price upward to cents.
+- Contributions and funding targets are not accounting net profit. Owner labor already in variable cost must not be repeated in owner pay. The whole-cake transfer uses additional profit beyond entered labor, not a repeated wage.
+- `foodCostEngine.test.js` and `foodCostTransfer.test.js` cover conversion, yield, boundaries, rounding, negative results, capacity and guarded one-time transfer. Example defaults and guide calculations are hypothetical, not market benchmarks.
