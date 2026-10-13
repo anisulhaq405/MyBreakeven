@@ -1,0 +1,58 @@
+[
+  {
+    "key": "recipe-cost-calculator",
+    "folder": "tools",
+    "scene": "Top-down editorial photograph of recipe costing: flour, butter and sugar in separate bowls beside a digital kitchen scale, a blank recipe notebook and a simple calculator, one finished small cake on the edge. Clearly about weighing recipe ingredients and costing one batch.",
+    "destination": "public/images/tools/recipe-cost-calculator-feature-20261013.webp",
+    "method": "built-in imagegen"
+  },
+  {
+    "key": "food-cost-calculator",
+    "folder": "tools",
+    "scene": "Editorial photograph inside a restaurant pantry: measured food inventory on shelves, a staff member counting produce bins with a clipboard, unopened supplier boxes and a kitchen scale. Clearly about beginning and ending food inventory, purchased food and inventory reconciliation, not menu prices.",
+    "destination": "public/images/tools/food-cost-calculator-feature-20261013.webp",
+    "method": "built-in imagegen"
+  },
+  {
+    "key": "menu-pricing-calculator",
+    "folder": "tools",
+    "scene": "Editorial photograph of a restaurant owner reviewing a single plated meal beside an open blank menu, calculator and cost notebook at a quiet restaurant table. Clearly about choosing a selling price for a prepared menu item and its costs.",
+    "destination": "public/images/tools/menu-pricing-calculator-feature-20261013.webp",
+    "method": "built-in imagegen"
+  },
+  {
+    "key": "how-to-calculate-days-sales-outstanding",
+    "folder": "blog",
+    "scene": "Close-up editorial photograph of a small-business invoice follow-up desk: several unpaid invoice documents represented by blank ruled paper, calendar with empty date squares, calculator, and a business owner hand sorting invoices beside a laptop. Visual emphasis on waiting for customer payments and elapsed days.",
+    "destination": "public/images/blog/how-to-calculate-days-sales-outstanding-feature-20261013.webp",
+    "method": "built-in imagegen"
+  },
+  {
+    "key": "cash-flow-break-even-vs-profit-break-even",
+    "folder": "blog",
+    "scene": "Editorial conceptual still-life photograph of two separate financial realities on a small business desk: on one side a sales ledger notebook and receipt stack; on the other a nearly empty transparent cash box with a few coins and an open payment calendar. A clear visual distinction between recorded sales/profit and spendable cash timing. No invoices as the main focus.",
+    "destination": "public/images/blog/cash-flow-break-even-vs-profit-break-even-feature-20261013.webp",
+    "method": "built-in imagegen"
+  },
+  {
+    "key": "how-to-calculate-cost-of-goods-sold",
+    "folder": "blog",
+    "scene": "Editorial photograph of a small ecommerce shop worktable: product units in stock, an open shipping carton, one sold item being packed, a stock-cost ledger notebook and calculator. Focus on inventory moving into goods sold and its purchase cost, not storage rent.",
+    "destination": "public/images/blog/how-to-calculate-cost-of-goods-sold-feature-20261013.webp",
+    "method": "built-in imagegen"
+  },
+  {
+    "key": "how-to-calculate-working-capital",
+    "folder": "blog",
+    "scene": "Editorial photograph of a small business working-capital review: business owner at a desk reviewing available cash in an open cash tray, unpaid customer invoice sheets, merchandise stock box and supplier bill sheets arranged as four distinct tangible elements, laptop and notebook. Focus on short-term resources versus payment commitments.",
+    "destination": "public/images/blog/how-to-calculate-working-capital-feature-20261013.webp",
+    "method": "built-in imagegen"
+  },
+  {
+    "key": "cafe-opening-costs",
+    "folder": "blog",
+    "scene": "Wide editorial photograph of a small cafe before opening: espresso machine, grinders, unopened cups and supply boxes, two cafe stools, owner hand reviewing startup equipment checklist and calculator on counter. Clearly cafe startup costs, no full-service restaurant dining scene.",
+    "destination": "public/images/blog/cafe-opening-costs-feature-20261013.webp",
+    "method": "built-in imagegen"
+  }
+]
