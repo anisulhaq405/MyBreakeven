@@ -13,6 +13,7 @@ import React, { useEffect } from "react";
 import { articleFaq } from "./articleFaq.js";
 import { responsiveFeatureProps } from './responsiveFeatureImages.js';
 import './new-content-navigation.css';
+import MarginMarkupWidget from './MarginMarkupWidget.jsx';
 
 const dateLabel = value => new Date(`${value}T12:00:00Z`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
 
@@ -36,7 +37,8 @@ export default function LongformArticle({ article: a }) {
     <p className="article-lead">{a.description}</p>
     <div className="article-tags" aria-label="Article topics">{a.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
     {a.sectionLinks&&<nav className="article-section-nav" aria-label="Guide sections">{a.sectionLinks.map(([id,label])=><a key={id} href={`#${id}`}>{label}</a>)}</nav>}
-    <figure className="article-featured"><img src={a.image} {...responsiveFeatureProps(a.image)} alt={a.alt} width={blogImageDimensions[a.image]?.width || 1200} height={blogImageDimensions[a.image]?.height || 675} fetchPriority="high" decoding="async"/><figcaption>{a.imageCaption}</figcaption></figure>
+    {slug==='margin-vs-markup'&&<MarginMarkupWidget/>}
+    <figure className="article-featured"><img src={a.image} {...responsiveFeatureProps(a.image)} alt={a.alt} width={blogImageDimensions[a.image]?.width || 1200} height={blogImageDimensions[a.image]?.height || 675} fetchPriority={slug==='margin-vs-markup'?undefined:'high'} loading={slug==='margin-vs-markup'?'lazy':undefined} decoding="async"/><figcaption>{a.imageCaption}</figcaption></figure>
     <div className="day1-markdown" dangerouslySetInnerHTML={{ __html: a.html }} />
     {!faq.inline && faq.items.length > 0 && <section className="article-faq" id={a.sectionLinks?'guide-faqs':undefined}><h2>Frequently asked questions</h2>{faq.items.map(item => <details key={item.q}><summary>{item.q}</summary><p>{item.a}</p></details>)}</section>}
     {!a.html.includes('href="/blogs/"') && !a.html.includes('href="https://mybreakeven.com/blogs/"') && <p><a href="/blogs/">Browse the MyBreakeven blog hub</a> for related planning guides.</p>}

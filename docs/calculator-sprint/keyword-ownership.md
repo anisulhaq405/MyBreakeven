@@ -28,3 +28,7 @@ Titles/H1s retain their distinct primary tool intent. Full HTML, self-canonicals
 Liquid reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9 (US customary volume differs from imperial fluid ounces and from mass ounces).
 
 GSC connector unavailable in this run: no current indexing, impressions, clicks, CTR, position or search-demand baseline claimed. Later comparisons require exact page/query filters and equal periods, with 14/28-day checks measured from actual deployment. Phase 2 remains the calculator-guide and reciprocal-link audit; the separately authorized publication of saved blog drafts does not mark Phase 2 complete.
+
+## Margin/markup owner — 13 October 2026
+
+`/blogs/margin-vs-markup/#margin-calculator` owns the embedded markup-versus-margin calculation intent alongside its formulas and examples. The widget compares both denominators, discount effects, target pricing and a rounded discount-adjusted list-price floor. It does not create a duplicate standalone calculator URL. Discount break-even and price-increase pages link to this widget for the denominator check; their existing volume-recovery and customer-loss intents remain distinct.
