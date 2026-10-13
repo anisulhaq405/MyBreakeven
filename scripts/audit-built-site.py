@@ -25,7 +25,13 @@ class Page(HTMLParser):
         if 'id' in a: self.ids.add(a['id'])
         if tag == 'a' and a.get('href'): self.links.append(a['href'])
         if tag in ('img', 'script') and a.get('src'): self.assets.append(a['src'])
-        if tag == 'link' and a.get('rel') in ('stylesheet', 'modulepreload', 'preload'): self.assets.append(a.get('href', ''))
+        if tag == 'link' and a.get('rel') in ('stylesheet', 'modulepreload', 'preload') and a.get('href'): self.assets.append(a['href'])
+        # React can preload responsive images with imagesrcset and no href.
+        # Check each local candidate as well as the fallback src.
+        if tag in ('img', 'link'):
+            for candidate in a.get('srcset', a.get('imagesrcset', '')).split(','):
+                parts = candidate.strip().split()
+                if parts and parts[0].startswith('/'): self.assets.append(parts[0])
         if tag == 'link' and a.get('rel') == 'canonical': self.canonicals.append(a.get('href'))
         if tag == 'meta' and a.get('name') == 'robots': self.robots.append(a.get('content', ''))
         if tag == 'h1': self.h1 += 1
