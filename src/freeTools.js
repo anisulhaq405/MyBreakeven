@@ -1,3 +1,4 @@
+import {connectPlanningTool} from './planningConnections.js';
 import {planningTools} from './planningTools.js';
 import { foodTools } from './foodTools.js';
 import { completeCalculatorPage } from './calculatorPageReview.js';
@@ -23,4 +24,4 @@ const pricingTools = {
   },
 };
 
-export const freeTools = Object.fromEntries(Object.entries({...pricingTools,...businessTools,...operationalTools,...decisionTools,...foodTools,...planningTools}).map(([slug,tool])=>[slug,completeCalculatorPage(slug,{...tool,theme:tool.theme || toolThemes[slug],category:tool.category || "Pricing & contribution"})]));
+export const freeTools = Object.fromEntries(Object.entries({...pricingTools,...businessTools,...operationalTools,...decisionTools,...foodTools,...planningTools}).map(([slug,tool])=>[slug,connectPlanningTool(slug,completeCalculatorPage(slug,{...tool,theme:tool.theme || toolThemes[slug],category:tool.category || "Pricing & contribution"}))]));

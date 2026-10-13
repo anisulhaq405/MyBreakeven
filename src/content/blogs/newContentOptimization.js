@@ -1,3 +1,4 @@
+import {connectPlanningGuide} from '../../planningConnections.js';
 const plans={
  'margin-vs-markup':{
   seoTitle:'Margin vs Markup: Calculator & Formula',
@@ -21,6 +22,7 @@ const plans={
  },
 };
 export function optimizeNewContent(post){
+ post=connectPlanningGuide(post);
  const plan=plans[post.slug];
  if(!plan){
  const links={
