@@ -2,7 +2,7 @@
 
 Prepared 13 October 2026 for the intended 14 October morning release (Asia/Karachi).
 
-Status: draft branch / draft pull request only. Do not merge or deploy on 13 October. Production deployment triggers on pushes to main, so storing this branch does not publish it.
+Release authorization update: the user requested immediate publication on 13 October at 23:49 Asia/Karachi, superseding the original morning hold. Modified date is now 2026-10-13. Production deployment triggers on pushes to main.
 
 ## Scope
 

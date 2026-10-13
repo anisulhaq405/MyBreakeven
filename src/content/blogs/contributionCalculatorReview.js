@@ -12,8 +12,7 @@ export function applyContributionCalculatorReview(post) {
     metaDescription: description,
     opening: 'Contribution margin per unit is selling price minus variable costs for that same unit. Use the calculator to include selling fees once, then follow the examples below.',
     primaryKeyword: 'contribution margin per unit calculator',
-    // Intended release date. Recheck this against the actual merge date before publishing.
-    modified: '2026-10-14',
+    modified: '2026-10-13',
     html: `<h2 id="contribution-cost-boundaries">Per-unit formula and cost boundaries</h2>
 <p><strong>Contribution per unit = selling price − other variable costs − (selling price × percentage fee ÷ 100) − fixed transaction fee per unit.</strong> Contribution margin percentage = contribution per unit ÷ selling price × 100. Price must be positive for this percentage. Fixed overhead is deducted later when you evaluate the monthly operating result.</p>
 <p>Choose one consistent unit: a product, an order or a completed job. If an order contains several products, do not subtract a whole order's transaction fee from each product. Allocate the fee or calculate the complete order. Use retained selling revenue after discounts and match every cost to that same sale.</p>
