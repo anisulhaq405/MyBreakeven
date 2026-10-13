@@ -1,5 +1,5 @@
 const optimized = new Set([
-  'recipe-cost-calculator','food-cost-calculator','menu-pricing-calculator',
+  'recipe-cost-calculator','food-cost-calculator','menu-pricing-calculator','employee-cost-calculator','cash-flow-forecast-template',
   'how-to-calculate-cost-of-goods-sold','how-to-calculate-working-capital','how-to-calculate-days-sales-outstanding',
 ].map(slug=>`${slug}-feature-20261013.webp`));
 export function responsiveFeatureProps(image, card=false){

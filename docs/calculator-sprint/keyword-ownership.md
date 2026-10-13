@@ -32,3 +32,10 @@ GSC connector unavailable in this run: no current indexing, impressions, clicks,
 ## Margin/markup owner — 13 October 2026
 
 `/blogs/margin-vs-markup/#margin-calculator` owns the embedded markup-versus-margin calculation intent alongside its formulas and examples. The widget compares both denominators, discount effects, target pricing and a rounded discount-adjusted list-price floor. It does not create a duplicate standalone calculator URL. Discount break-even and price-increase pages link to this widget for the denominator check; their existing volume-recovery and customer-loss intents remain distinct.
+
+## Staffing and cash owners — 13 October 2026
+
+- `/calculators/employee-cost-calculator/`: employee cost calculator, true annual employer cost, first-year hiring cost and cost per productive hour. Existing employee-vs-freelancer and utilization guides provide context. No automatic country tax rates.
+- `/calculators/cash-flow-forecast-template/`: cash flow forecast template, dated 13-week cash receipts/payments, collection delay and reserve gap; XLSX base template and CSV scenario snapshot. Distinct from constant-monthly-burn runway and profit break-even.
+
+The existing margin guide widget remains the owner for markup vs margin calculator; these two pages complete the next two researched intents. New pages are discoverable in `/tools/`, generated sitemap and four contextual existing guides. No organic ranking or indexing uplift is asserted by this release.
