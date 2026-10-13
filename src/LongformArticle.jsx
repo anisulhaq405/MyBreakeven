@@ -11,6 +11,8 @@ import { CleaningClusterLink } from './CleaningCluster.jsx';
 import { articleGuideType } from "./articleGuideType.js";
 import React, { useEffect } from "react";
 import { articleFaq } from "./articleFaq.js";
+import { responsiveFeatureProps } from './responsiveFeatureImages.js';
+import './new-content-navigation.css';
 
 const dateLabel = value => new Date(`${value}T12:00:00Z`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
 
@@ -25,7 +27,7 @@ export default function LongformArticle({ article: a }) {
   }, [a, slug]);
   if (!a) return <section className="page-hero"><h1>Guide not found</h1><a href="/blogs/">Return to blogs</a></section>;
   const faq = articleFaq(a);
-  return <article className="article-page">
+  return <article className={`article-page${a.sectionLinks?' article-with-section-nav':''}`}>
     <nav className="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/blogs/">Guides</a><span>›</span><span>{a.tag}</span></nav>
     {a.tag === "Agency" && <AgencyClusterLink />}{a.tag === "E-commerce" && <EcommerceClusterLink />}{a.tag === "Photography" && <PhotographyClusterLink />}{a.tag === "Restaurant" && <RestaurantClusterLink />}{a.tag === "Salon" && <SalonClusterLink />}{a.tag === "Cleaning" && <CleaningClusterLink />}{a.tag === "Landscaping" && <LandscapingClusterLink />}{a.tag === "Mobile Detailing" && <MobileDetailingClusterLink />}
     <span>{a.tag} {guideType}</span><h1>{a.title}</h1>
@@ -33,9 +35,10 @@ export default function LongformArticle({ article: a }) {
     <p className="article-note">Published by <a href="/about-us/">MyBreakeven</a>. <a href="/editorial-policy/">Editorial standards and corrections</a>. Report a calculation or content issue to <a href="mailto:support@mybreakeven.com">support@mybreakeven.com</a>.</p>
     <p className="article-lead">{a.description}</p>
     <div className="article-tags" aria-label="Article topics">{a.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
-    <figure className="article-featured"><img src={a.image} alt={a.alt} width={blogImageDimensions[a.image]?.width || 1200} height={blogImageDimensions[a.image]?.height || 675} fetchPriority="high" decoding="async"/><figcaption>{a.imageCaption}</figcaption></figure>
+    {a.sectionLinks&&<nav className="article-section-nav" aria-label="Guide sections">{a.sectionLinks.map(([id,label])=><a key={id} href={`#${id}`}>{label}</a>)}</nav>}
+    <figure className="article-featured"><img src={a.image} {...responsiveFeatureProps(a.image)} alt={a.alt} width={blogImageDimensions[a.image]?.width || 1200} height={blogImageDimensions[a.image]?.height || 675} fetchPriority="high" decoding="async"/><figcaption>{a.imageCaption}</figcaption></figure>
     <div className="day1-markdown" dangerouslySetInnerHTML={{ __html: a.html }} />
-    {!faq.inline && faq.items.length > 0 && <section className="article-faq"><h2>Frequently asked questions</h2>{faq.items.map(item => <details key={item.q}><summary>{item.q}</summary><p>{item.a}</p></details>)}</section>}
+    {!faq.inline && faq.items.length > 0 && <section className="article-faq" id={a.sectionLinks?'guide-faqs':undefined}><h2>Frequently asked questions</h2>{faq.items.map(item => <details key={item.q}><summary>{item.q}</summary><p>{item.a}</p></details>)}</section>}
     {!a.html.includes('href="/blogs/"') && !a.html.includes('href="https://mybreakeven.com/blogs/"') && <p><a href="/blogs/">Browse the MyBreakeven blog hub</a> for related planning guides.</p>}
     <ClusterRelatedReading article={a} />
     <p className="article-note">Planning estimates only—not accounting, tax, legal or lending advice.</p>
