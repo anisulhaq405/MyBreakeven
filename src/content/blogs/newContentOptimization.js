@@ -22,7 +22,16 @@ const plans={
 };
 export function optimizeNewContent(post){
  const plan=plans[post.slug];
- if(!plan)return post;
+ if(!plan){
+ const links={
+  'agency-employee-vs-freelancer-break-even':['employee-cost-calculator','Calculate recurring employee cost, first-year hiring cost and cost per productive hour'],
+  'agency-billable-utilization-rate':['employee-cost-calculator','Test how productive hours change employee cost and hiring recovery'],
+  'cash-flow-forecast-vs-break-even':['cash-flow-forecast-template','Build a dated 13-week cash forecast and download the free template'],
+  'cleaning-contract-payroll-cash-gap':['cash-flow-forecast-template','Test payroll and customer collection dates in a 13-week cash forecast']
+ };
+ const link=links[post.slug];
+ return link?{...post,modified:'2026-10-13',html:post.html+`<h2>Test your own cost and payment assumptions</h2><p><a href="/calculators/${link[0]}/">${link[1]}</a>. Replace the fictional example with your own records and review the stated assumptions before acting.</p>`}:post;
+ }
  let html=post.html;
  if(post.slug==='margin-vs-markup'){
   html=html.replace('<h2>The direct answer</h2>','<h2 id="margin-markup-formulas">The margin and markup formulas</h2>')

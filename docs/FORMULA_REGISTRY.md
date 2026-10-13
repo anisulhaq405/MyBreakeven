@@ -84,3 +84,13 @@ Independent `src/marginMarkupEngine.js`, cloned Decimal context at 40-digit prec
 - Target selling-price floor rounds upward to cents. Discount-adjusted list-price floor = rounded target price / (1 − discount), again rounded upward. At 100% off, no finite list price can preserve a positive selling-price floor.
 - Percentage fees, monthly overhead and demand are outside the widget. Cost basis must be stated; difference is not automatically accounting gross or net profit. Currency selection relabels without conversion.
 - Tests cover known denominators, targets, two-stage ceiling, discounts, losses, undefined percentages and invalid/overflow/underflow inputs.
+
+## Employee cost and dated cash forecast — 13 October 2026
+
+Independent `planningToolsEngine.js` uses Decimal precision 40. No changes to core break-even, auth or billing engines.
+
+Employee: recurring annual cost sums salary, bonus, employer-only contribution amounts, benefits and overhead. First-year cost adds one-time hiring. Available hours = paid hours − paid leave; productive hours = available × productive percentage. Zero productive hours and zero salary leave their respective denominators undefined. Recovery = first-year cost / (collected productive-hour revenue − other variable-hour cost), with no finite recovery when contribution is nonpositive. Displayed recovery hours round upward to hundredths. Leave affects hours; salary already covering leave is not increased again. Country rates are not hardcoded.
+
+Cash: thirteen seven-day UTC calendar periods, inclusive start through start+90 days. Opening + operating/financing receipts − operating/financing payments = closing; next opening = prior closing. Minimum includes initial opening and weekly closings. Reserve shortfall = max(0, reserve − minimum). Delay 0–90 whole days and realization 0–100% affect only operating receipts. Events outside horizon are counted/excluded; financing is not sales. Weekly summaries can miss intraweek overdrafts. Maximum 100 dated events. Inputs and outputs reject nonfinite or unsupported >1e12 results.
+
+CSV is a formula-free current-scenario snapshot with quoted, spreadsheet-safe text cells. XLSX is a separate base template using editable dated events, bounded SUMIFS, roll-forward formulas and row validation; it does not copy browser inputs or implement browser scenarios. Both sheets were rendered and formulas recalculated; delayed receipt, final-day cutoff, incomplete row and baseline checks passed in Artifact Tool. Native Excel/Google Sheets application behavior has not been tested.
