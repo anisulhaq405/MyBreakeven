@@ -228,6 +228,13 @@ for (const article of allArticles) {
     ] }
   ] };
   const fallback = `<div id="root" data-prerendered="true">${renderPublicPage(`/${route}`, article)}</div>`;
+  if(article.slug==='margin-vs-markup')schema['@graph'].push({
+    '@type':'WebApplication','@id':`${canonical}#margin-calculator`,url:`${canonical}#margin-calculator`,
+    name:'Markup vs Margin Calculator',applicationCategory:'BusinessApplication',operatingSystem:'Any web browser',
+    isAccessibleForFree:true,offers:{'@type':'Offer',price:'0',priceCurrency:'USD'},
+    mainEntityOfPage:{'@id':`${canonical}#webpage`},publisher:{'@id':'https://mybreakeven.com/#organization'},
+    featureList:['Compare margin and markup on the same cost basis','Measure discount effects','Solve a target margin or markup price','Find a list-price floor that preserves the rounded target after discount'],
+  });
   const html = base
     .replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
     .replace(/<meta name="description" content="[^"]*"\s*\/?>/, `<meta name="description" content="${escapeHtml(article.metaDescription)}" />`)

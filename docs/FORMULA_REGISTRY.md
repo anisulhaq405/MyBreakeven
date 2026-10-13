@@ -73,3 +73,14 @@ The current downside/base/upside comparison changes price by -10%, 0% and +10%. 
 - Menu: ingredient-target price and full variable contribution-target price are distinct. Percentage fees reduce retained price. Required units ceil; monthly capacity floor(weekly × 52/12). Capacity funding floor uses the whole-unit capacity and rounds price upward to cents.
 - Contributions and funding targets are not accounting net profit. Owner labor already in variable cost must not be repeated in owner pay. The whole-cake transfer uses additional profit beyond entered labor, not a repeated wage.
 - `foodCostEngine.test.js` and `foodCostTransfer.test.js` cover conversion, yield, boundaries, rounding, negative results, capacity and guarded one-time transfer. Example defaults and guide calculations are hypothetical, not market benchmarks.
+
+## Margin/markup guide widget 1.0.0 — 2026-10-13
+
+Independent `src/marginMarkupEngine.js`, cloned Decimal context at 40-digit precision; existing engines are unchanged. The widget belongs to `/blogs/margin-vs-markup/#margin-calculator`.
+
+- Collected price = list price × (1 − discount rate). Difference = collected price − defined cost.
+- Margin = difference / collected price; markup = difference / defined cost. Zero denominators remain undefined, and negative results stay visible.
+- Target margin price = cost / (1 − target margin); target markup price = cost × (1 + target markup). These are separate percentage bases.
+- Target selling-price floor rounds upward to cents. Discount-adjusted list-price floor = rounded target price / (1 − discount), again rounded upward. At 100% off, no finite list price can preserve a positive selling-price floor.
+- Percentage fees, monthly overhead and demand are outside the widget. Cost basis must be stated; difference is not automatically accounting gross or net profit. Currency selection relabels without conversion.
+- Tests cover known denominators, targets, two-stage ceiling, discounts, losses, undefined percentages and invalid/overflow/underflow inputs.
