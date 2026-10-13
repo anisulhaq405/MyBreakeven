@@ -1,4 +1,5 @@
 import Decimal from "decimal.js";
+import { unitContributionAmounts } from './unitContribution.js';
 
 export const FORMULA_ENGINE_VERSION = "1.3.1";
 
@@ -43,13 +44,11 @@ export const calculate = (raw) => {
 
   const hundred = new Decimal(100);
   const feeRate = i.paymentFeePct.div(hundred);
-  const paymentFees = i.price.mul(feeRate);
-  const contribution = i.price
-    .minus(paymentFees)
-    .minus(i.materialCost)
-    .minus(i.laborCost)
-    .minus(i.otherVariableCost)
-    .minus(i.acquisitionCost);
+  const { fees: paymentFees, contribution } = unitContributionAmounts(
+    i.price,
+    i.materialCost.plus(i.laborCost).plus(i.otherVariableCost).plus(i.acquisitionCost),
+    i.paymentFeePct,
+  );
   const fixedNeed = i.fixedCosts.plus(i.ownerPay).plus(i.targetProfit);
   if (!contribution.gt(0)) {
     return { valid: false, contribution: output(contribution), message: "Each sale currently loses money before fixed costs." };
