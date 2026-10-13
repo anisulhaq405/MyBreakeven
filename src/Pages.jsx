@@ -300,7 +300,7 @@ const LegalPage = ({ page }) => (
 export default function SecondaryPage({ path, initialArticle }) {
   const pageMeta = {
     ...Object.fromEntries(Object.entries(authorityPages).map(([route, meta]) => [`/${route}`, meta])),
-    "/guides/agency-business": ["Agency Business Guides | MyBreakeven", "Explore agency retainer pricing, scope costs, staffing, utilization, client risk and cash. Find thirteen worked guides and three planning calculators."],
+    "/guides/agency-business": ["Agency Business Guides | MyBreakeven", "Explore agency retainer pricing, staffing, utilization and cash timing. Connect worked guides with employee cost, dated cash forecasts and break-even tools."],
     "/guides/ecommerce-business": ["E-commerce Business Guides | MyBreakeven", "Explore ecommerce product pricing, returns, shipping, advertising and inventory cash. Find sixteen worked guides and three business calculators."],
     "/guides/photography-business": ["Photography Business Guides | MyBreakeven", "Explore photography packages, editing costs, commercial assignments, prints and delivery capacity. Find twelve worked guides and a free break-even tool."],
     "/guides/restaurant-business": ["Restaurant Business Guides | MyBreakeven", "Explore restaurant startup, food and labor costs, menu pricing, delivery, events and capacity. Find twenty-one worked guides and a free break-even tool."],
