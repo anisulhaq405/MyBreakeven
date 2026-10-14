@@ -4,7 +4,7 @@ export const authorityPages = {
   'founder': ['Anis Ul Haq | Founder & SaaS Developer', 'Meet Anis Ul Haq, founder and SaaS developer. Explore his work in web apps, AI automation, technical SEO, e-commerce and business planning tools.', 'Anis Ul Haq'],
   'resources': ['Business Planning Resources | MyBreakeven', 'Download cleaning monthly-budget and job-cost worksheets, follow calculation walkthroughs and inspect MyBreakeven methods. Free resources without an account.', 'Business planning resources'],
   'resources/cleaning-business-budget-template': ['Cleaning Business Budget Template: Monthly Plan', 'Download a monthly cleaning and janitorial budget template for Excel. Compare bookings, payroll, overhead and owner pay, then check job targets against capacity.', 'Cleaning business budget template'],
-  'resources/cleaning-job-cost-worksheet': ['Cleaning Job Cost Worksheet | MyBreakeven', 'Compare quoted and actual cleaning labor, supplies, travel and fees. Download a free editable worksheet with a blank job sheet and labelled example.', 'Cleaning job-cost worksheet'],
+  'resources/cleaning-job-cost-worksheet': ['Cleaning Job Cost Worksheet: Quote vs Actual | MyBreakeven', 'Compare quoted and actual cleaning job costs. Track crew-hours, callback costs, customer credits and payment fees with a free worksheet and worked example.', 'Cleaning Job Cost Worksheet: Estimate vs Actual'],
   'calculator-walkthroughs': ['Calculator Walkthroughs | MyBreakeven', 'Follow cleaning and agency planning examples from inputs to contribution, monthly sales targets and capacity. See exactly which assumptions matter.', 'Follow a calculation from inputs to decision'],
 };
 export const worksheetFile = '/downloads/mybreakeven-cleaning-job-cost.xlsx';
