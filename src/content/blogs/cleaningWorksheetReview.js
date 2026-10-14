@@ -1,0 +1,8 @@
+export function applyCleaningWorksheetReview(post) {
+ if(post.slug !== 'cleaning-estimate-vs-actual-job-cost') return post;
+ const addition = `<h2 id="callback-credit-worksheet">Callback and credit: a separate worksheet example</h2>
+<p>The <a href="/resources/cleaning-job-cost-worksheet/">free cleaning job cost worksheet</a> uses a different fictional $240 job from the $300 example above. Estimated contribution is $110.80; first-visit actual contribution is $78.80. A callback costs $37 (one crew-hour at $25, $4 supplies and $8 travel). A $20 customer credit reduces retained revenue to $220. With actual payment fees still $7.20, total variable costs are $198.20 and final contribution is <strong>$21.80</strong>, or <strong>9.9%</strong> of retained revenue, before overhead.</p>
+<p>The <strong>$89</strong> change from the quote reconciles to $25 of extra first-visit labour, $3 supplies, $4 travel, the $37 callback and the $20 credit. Enter callback costs only when absent from first-visit actuals, and deduct the credit from revenue once. Use the actual-fee override when your processor retains fees after a refund; a credit does not automatically reduce fees.</p>
+<p>Download includes a blank Job tab and the worked Example tab. Complete both columns, including zero for unused costs. Add extra-work revenue and costs separately, counting any extra processing fee once. A missing required input remains incomplete; a zero retained-revenue percentage displays “n.a.”. Final contribution still needs to cover fixed overhead.</p>`;
+ return {...post, modified:'2026-10-14', html:post.html.replace('<h2 id="how-to-run-your-own-numbers">',addition+'\n<h2 id="how-to-run-your-own-numbers">')};
+}

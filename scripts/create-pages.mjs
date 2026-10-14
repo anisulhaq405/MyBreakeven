@@ -99,7 +99,7 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
   if (authorityPages[route]) {
     const page = pageSchema["@graph"].find(entity => entity["@type"] === "WebPage");
     page.datePublished = route === "resources/cleaning-business-budget-template" ? "2026-10-11" : "2026-10-10";
-    page.dateModified = ["resources", "resources/cleaning-business-budget-template"].includes(route) ? "2026-10-11" : "2026-10-10";
+    page.dateModified = route === "resources/cleaning-job-cost-worksheet" ? "2026-10-14" : ["resources", "resources/cleaning-business-budget-template"].includes(route) ? "2026-10-11" : "2026-10-10";
     page.publisher = { "@id": "https://mybreakeven.com/#organization" };
     pageSchema["@graph"].push({ "@type": "BreadcrumbList", itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://mybreakeven.com/" },
@@ -308,7 +308,7 @@ const publicUrls = ["https://mybreakeven.com/",
 ];
 const articleModified = new Map(allArticles.map(article => [`https://mybreakeven.com/blogs/${article.slug}/`, article.modified]));
 for (const slug of Object.keys(calculators)) articleModified.set(`https://mybreakeven.com/calculators/${slug}/`, freeTools[slug]?.reviewed || "2026-10-13");
-for (const route of Object.keys(authorityPages)) articleModified.set(`https://mybreakeven.com/${route}/`, ["founder", "resources", "resources/cleaning-business-budget-template"].includes(route) ? "2026-10-11" : "2026-10-10");
+for (const route of Object.keys(authorityPages)) articleModified.set(`https://mybreakeven.com/${route}/`, route === "resources/cleaning-job-cost-worksheet" ? "2026-10-14" : ["founder", "resources", "resources/cleaning-business-budget-template"].includes(route) ? "2026-10-11" : "2026-10-10");
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${publicUrls.map(url => `  <url><loc>${escapeHtml(url)}</loc>${articleModified.has(url) ? `<lastmod>${escapeHtml(articleModified.get(url))}</lastmod>` : ""}</url>`).join("\n")}\n</urlset>\n`;
 await writeFile(new URL("../dist/sitemap.xml", import.meta.url), sitemap);
 
