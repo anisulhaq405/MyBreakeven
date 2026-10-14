@@ -56,11 +56,11 @@ const staticPages = {
   ...authorityPages,
   "guides/agency-business": ["Agency Business Guides | MyBreakeven", "Review agency retainers, scope changes, staffing and cash dates. Use client records checklists, worked capacity examples and free business planning tools.", "Agency business planning guides"],
   "guides/ecommerce-business": ["E-commerce Business Guides | MyBreakeven", "Review ecommerce order contribution, returns, advertising and inventory cash. Follow records checklists, worked workflows and free business calculators.", "E-commerce business planning guides"],
-  "guides/photography-business": ["Photography Business Guides | MyBreakeven", "Explore photography packages, editing costs, commercial assignments, prints and delivery capacity. Find twelve worked guides and a free break-even tool.", "Photography business planning guides"],
+  "guides/photography-business": ["Photography Business Guides | MyBreakeven", "Review photography assignment hours, packages and mini-session costs. Follow records checklists, worked examples and the free monthly break-even planner.", "Photography business planning guides"],
   "guides/restaurant-business": ["Restaurant Business Guides | MyBreakeven", "Review restaurant recipe costs, inventory food cost and menu contribution. Follow workflows, calculators and editable budget and business-plan templates.", "Restaurant business planning guides"],
-  "guides/salon-business": ["Salon Business Planning Guides | MyBreakeven", "Explore salon service pricing, product costs, no-shows, memberships, booth rent and chair capacity. Find eleven worked guides and four free calculators.", "Salon business planning guides"],
-  "guides/mobile-detailing-business": ["Mobile Detailing Business Guides | MyBreakeven", "Explore mobile detailing pricing, fleet contracts, travel costs, cancellations and refill capacity. Find worked guides and three free business calculators.", "Mobile detailing business planning guides"],
-  "guides/landscaping-business": ["Landscaping Business Planning Guides | MyBreakeven", "Explore landscaping pricing, job costs, maintenance contracts, routes and crew capacity. Find worked planning guides and two free business calculators.", "Landscaping business planning guides"],
+  "guides/salon-business": ["Salon Business Planning Guides | MyBreakeven", "Review salon rebooking, no-shows, service costs and memberships. Follow practical workflows, records checklists and free appointment planning calculators.", "Salon business planning guides"],
+  "guides/mobile-detailing-business": ["Mobile Detailing Business Guides | MyBreakeven", "Review detailing travel profit, cancellations, chemicals and refill time. Use practical workflows, route records and free business planning calculators.", "Mobile detailing business planning guides"],
+  "guides/landscaping-business": ["Landscaping Business Planning Guides | MyBreakeven", "Review landscaping job costs, routes and seasonal capacity. Follow practical workflows, records checklists and free route and break-even calculators.", "Landscaping business planning guides"],
   "guides/cleaning-business": ["Cleaning Business Planning Guides | MyBreakeven", "Review cleaning quotes, callbacks, contract costs and payroll cash. Use practical workflows, job-cost worksheets, monthly budgets and break-even calculators.", "Cleaning business planning guides"],
   tools: ["Free Business Calculators: Profit & Pricing | MyBreakeven", "Explore free business calculators for profit, pricing, service costs, advertising and cash. Use clear formulas and worked guides without signing up.", "Free business calculators"],
   "pro-user-guide": ["MyBreakeven Pro Calculator User Guide", "Step-by-step guide to MyBreakeven Pro: enter costs, read break-even results, use advanced analysis, save scenarios and export reports.", "MyBreakeven Pro calculator user guide"],
@@ -137,7 +137,7 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
     page.mainEntity = {"@type":"ItemList", itemListElement: ecommerceClusters.flatMap(group => group.slugs).map((slug, i) => ({"@type":"ListItem", position:i+1, url:`https://mybreakeven.com/blogs/${slug}/`, name:allArticles.find(article => article.slug === slug).title}))};
     pageSchema["@graph"].push({"@type":"BreadcrumbList", itemListElement:[{"@type":"ListItem",position:1,name:"Home",item:"https://mybreakeven.com/"},{"@type":"ListItem",position:2,name:"Guides",item:"https://mybreakeven.com/blogs/"},{"@type":"ListItem",position:3,name:"E-commerce business planning",item:canonical}]});
   }
-  if (["guides/restaurant-business", "guides/cleaning-business", "guides/ecommerce-business", "guides/agency-business"].includes(route)) {
+  if (["guides/restaurant-business", "guides/cleaning-business", "guides/ecommerce-business", "guides/agency-business", "guides/salon-business", "guides/photography-business", "guides/mobile-detailing-business", "guides/landscaping-business"].includes(route)) {
     pageSchema["@graph"].find(entity => ["WebPage", "CollectionPage"].includes(entity["@type"])).dateModified = "2026-10-14";
   }
   if (route === "guides/photography-business") {
@@ -312,7 +312,7 @@ const publicUrls = ["https://mybreakeven.com/",
 const articleModified = new Map(allArticles.map(article => [`https://mybreakeven.com/blogs/${article.slug}/`, article.modified]));
 for (const slug of Object.keys(calculators)) articleModified.set(`https://mybreakeven.com/calculators/${slug}/`, freeTools[slug]?.reviewed || "2026-10-13");
 for (const route of Object.keys(authorityPages)) articleModified.set(`https://mybreakeven.com/${route}/`, route === "resources/cleaning-job-cost-worksheet" ? "2026-10-14" : ["founder", "resources", "resources/cleaning-business-budget-template"].includes(route) ? "2026-10-11" : "2026-10-10");
-for (const industry of ["restaurant", "cleaning", "ecommerce", "agency"]) articleModified.set(`https://mybreakeven.com/guides/${industry}-business/`, "2026-10-14");
+for (const industry of ["restaurant", "cleaning", "ecommerce", "agency", "salon", "photography", "mobile-detailing", "landscaping"]) articleModified.set(`https://mybreakeven.com/guides/${industry}-business/`, "2026-10-14");
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${publicUrls.map(url => `  <url><loc>${escapeHtml(url)}</loc>${articleModified.has(url) ? `<lastmod>${escapeHtml(articleModified.get(url))}</lastmod>` : ""}</url>`).join("\n")}\n</urlset>\n`;
 await writeFile(new URL("../dist/sitemap.xml", import.meta.url), sitemap);
 
