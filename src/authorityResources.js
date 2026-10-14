@@ -7,7 +7,7 @@ export const authorityPages = {
   'resources/cleaning-job-cost-worksheet': ['Cleaning Job Cost Worksheet: Quote vs Actual | MyBreakeven', 'Compare quoted and actual cleaning job costs. Track crew-hours, callback costs, customer credits and payment fees with a free worksheet and worked example.', 'Cleaning Job Cost Worksheet: Estimate vs Actual'],
   'calculator-walkthroughs': ['Calculator Walkthroughs | MyBreakeven', 'Follow cleaning and agency planning examples from inputs to contribution, monthly sales targets and capacity. See exactly which assumptions matter.', 'Follow a calculation from inputs to decision'],
 };
-export const worksheetFile = '/downloads/mybreakeven-cleaning-job-cost.xlsx';
+export const worksheetFile = '/downloads/mybreakeven-cleaning-job-cost.xlsx?v=20261014';
 export const exampleJobs = {
   estimated: { revenue: 240, hours: 4, wage: 25, supplies: 12, travel: 10, other: 0, fee: 3 },
   actual: { revenue: 240, hours: 5, wage: 25, supplies: 15, travel: 14, other: 0, fee: 3 },
