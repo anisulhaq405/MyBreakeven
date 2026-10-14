@@ -1,4 +1,6 @@
+import {remainingSectionWorkflows} from './remainingSectionWorkflows.js';
 export const sectionWorkflows = {
+  ...remainingSectionWorkflows,
   restaurant: {
     label: 'Restaurant',
     records: ['Purchase-pack prices, pack sizes and usable ingredient yields.', 'Recipes, portions sold and the dates of the inventory period.', 'Opening and closing inventory, purchases, supplier credits and food sales on the same basis.', 'Loaded payroll, packaging, channel fees and monthly commitments, counted once.'],
