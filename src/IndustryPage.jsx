@@ -130,6 +130,7 @@ export default function IndustryPage({ slug }) {
           <span>Choose jewellery, ceramics, clothing or art prints, then enter your own costs and making time.</span>
           <div><b>Free calculation</b> · no account needed</div>
           <div><b>Transparent examples</b> · illustrative USD inputs</div>
+          <a href="#ecommerce-product-examples">Explore the four product examples →</a>
         </aside> : <aside>
           <small>EXAMPLE MODEL</small>
           <strong>{money(example.revenue)}</strong>
