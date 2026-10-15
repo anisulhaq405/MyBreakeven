@@ -1,3 +1,5 @@
+import { RestaurantExamples, RestaurantResultGuide, RestaurantPlanOptions } from './RestaurantPlanning.jsx';
+import { restaurantFieldHelp } from './restaurantExamples.js';
 import { industryPages, industryInputGuidance, industryFieldHelp, industryCalculatorFaq } from './industryCalculatorContent.js';
 export { industryPages } from './industryCalculatorContent.js';
 import { AgencyClusterLink } from './AgencyCluster.jsx';
@@ -46,7 +48,7 @@ function IndustryQuickCalculator({ industry, industryKey }) {
   const fields = fieldLabels(industry);
   const [transferError, setTransferError] = useState("");
   useEffect(() => {
-    if (industryKey !== 'ecommerce' || !hasEdited || !result.valid) return;
+    if (!['ecommerce', 'restaurant'].includes(industryKey) || !hasEdited || !result.valid) return;
     const timer = setTimeout(() => recordResultReady(industryKey), 700);
     return () => clearTimeout(timer);
   }, [industryKey, hasEdited, values, result.valid, recordResultReady]);
@@ -62,6 +64,10 @@ function IndustryQuickCalculator({ industry, industryKey }) {
       setActiveExample(example.id);
       setHasEdited(false);
       setTransferError('');
+      trackProductEvent('calculator_example_load', industryKey);
+    }} />}
+    {industryKey === 'restaurant' && <RestaurantExamples activeId={activeExample} onLoad={example => {
+      setValues({ ...example.values }); setActiveExample(example.id); setHasEdited(false); setTransferError('');
       trackProductEvent('calculator_example_load', industryKey);
     }} />}
     <div className="industry-quick-fields">
@@ -81,7 +87,7 @@ function IndustryQuickCalculator({ industry, industryKey }) {
           }); }} aria-invalid={values[key] === ""} aria-describedby={`industry-help-${key}`} />
           {suffix && suffix !== "$" && <b aria-hidden="true">{suffix}</b>}
         </span>
-        <small id={`industry-help-${key}`}>{industryKey === 'ecommerce' ? ecommerceFieldHelp[key] || industryFieldHelp[key] : industryFieldHelp[key]}</small>
+        <small id={`industry-help-${key}`}>{industryKey === 'ecommerce' ? ecommerceFieldHelp[key] || industryFieldHelp[key] : industryKey === 'restaurant' ? restaurantFieldHelp[key] || industryFieldHelp[key] : industryFieldHelp[key]}</small>
       </label>)}
     </div>
     <CostBuilder industryKey={industryKey} input={values} onApply={patch => { recordCalculatorUse(industryKey); setHasEdited(true); setTransferError(''); setValues(current => ({ ...current, ...patch })); }} />
@@ -89,10 +95,11 @@ function IndustryQuickCalculator({ industry, industryKey }) {
       <div><span>Contribution per {industry.singular}</span><strong>{money(result.contribution)}</strong></div>
       <div><span>Whole {industry.unit} for your target</span><strong>{result.wholeJobs.toLocaleString("en-US")}</strong></div>
       <div><span>Monthly sales at that volume</span><strong>{money(result.practicalRevenue)}</strong></div>
-      <p>The whole-unit target needs approximately {result.practicalLeads.toLocaleString("en-US")} {industryKey === 'ecommerce' ? 'qualified visits or inquiries (using the same basis as your conversion input)' : 'inquiries'} at your assumed conversion rate. This is a planning requirement, not a demand forecast.</p>
+      <p>The whole-unit target needs approximately {result.practicalLeads.toLocaleString("en-US")} {['ecommerce', 'restaurant'].includes(industryKey) ? 'qualified visits or inquiries (using the same basis as your conversion input)' : 'inquiries'} at your assumed conversion rate. This is a planning requirement, not a demand forecast.</p>
       <p>At these assumptions, estimated delivery capacity is {result.wholeCapacity.toLocaleString("en-US")} whole {industry.unit} per month. {result.wholeCapacity < result.wholeJobs ? "The current capacity is below the required volume." : "The estimated capacity covers the required volume."} These are planning estimates, not a sales forecast.</p>
     </div> : <p className="industry-quick-error" role="status">{result.message}</p>}
     {industryKey === 'ecommerce' && <EcommerceResultGuide input={values} result={result} />}
+    {industryKey === 'restaurant' && <RestaurantResultGuide input={values} result={result} />}
     <div className="industry-quick-actions">
       <button type="button" onClick={() => { setValues({ ...industry.values }); setActiveExample(''); setHasEdited(false); setTransferError(''); }}>Reset example</button>
       <a href={`/?industry=${industryKey}&from=industry#calculator`} onClick={event => {
@@ -107,6 +114,7 @@ function IndustryQuickCalculator({ industry, industryKey }) {
     </div>
     {transferError && <p className="industry-quick-error" role="status">{transferError}</p>}
     {industryKey === 'ecommerce' && <EcommercePlanOptions />}
+    {industryKey === 'restaurant' && <RestaurantPlanOptions />}
   </section>;
 }
 
@@ -124,7 +132,11 @@ export default function IndustryPage({ slug }) {
           <p>{page.lead}</p>
           <a className="page-button industry-cta" href="#industry-calculator">Use the free calculator <ArrowRight /></a>
         </div>
-        {page.key === 'ecommerce' ? <aside>
+        {page.key === 'restaurant' ? <aside>
+          <small>PLAN YOUR NEXT SERVICE</small><strong>Busy service. Enough contribution?</strong>
+          <span>Preview dine-in, direct takeaway and delivery-app examples, then test your own food costs, fees and worker-hours.</span>
+          <div><b>Free calculation</b> · no account needed</div><a href="#restaurant-channel-examples">Explore the three channel examples →</a>
+        </aside> : page.key === 'ecommerce' ? <aside>
           <small>START WITH YOUR PRODUCT</small>
           <strong>One order. A clear monthly target.</strong>
           <span>Choose jewellery, ceramics, clothing or art prints, then enter your own costs and making time.</span>

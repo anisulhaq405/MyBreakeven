@@ -1,0 +1,14 @@
+# Restaurant planning and conversion — 15 October 2026
+
+Existing restaurant calculator and cluster only; no new category or route. Protected engine/default inputs, billing, entitlements, checkout and shared header/footer remain unchanged.
+
+- Hero links directly to three previewable hypothetical USD cases: dine-in customer check, direct takeaway order, delivery-app order. Loading explicitly replaces all 14 inputs, removes previous Cost Builder detail and clears transfer errors. Previewing does not load inputs. Reset restores the existing general restaurant defaults.
+- Cases use the same monthly commitments but different order definitions and economics; they are standalone cases, not a controlled same-basket channel comparison. Do not add targets together. Committed payroll belongs in overhead; variable labor and owner pay are separate. Delivery commission uses an explicitly hypothetical combined same-basis percentage, charged once.
+- Live interpretation shows the order-cost bridge, monthly funding requirement, editable 1–31 opening days, rounded daily pace, capacity warning and existing engine ±10% price cases. Invalid financial results hide the interpretation; invalid days hide daily pace. Days affect daily pacing only, remain local to this panel and are not included in transfers/saves. Worker-hour capacity does not validate seats, kitchen throughput or demand.
+- Free/Pro guidance states existing account limits, current $9.99 monthly price, 3-plan comparison, Offer Mix and exports. Pricing navigation explicitly does not save inputs. Continue uses the existing validated session-storage handoff; saving remains an explicit signed-in action.
+- Existing consent-gated example-load, edited-result-ready and pricing-click events now cover restaurant. Only the industry label is emitted. No additional events or financial payloads.
+- Incoming example links are visible in the existing restaurant hub and four relevant guides: break-even, covers-per-night, takeout vs dine-in and delivery commission. Outgoing links lead to ingredient costing, menu pricing and commission guidance.
+
+Validation: 577 tests passed; production build passed; 193-route/188-sitemap audit reported no issues. Four focused regression tests cover complete transferable examples, independent contribution/whole-target checks, one-time commission, capacity shortfall, nonviable sensitivity, static account messaging and unchanged defaults. Existing input-count assertions account for the separate opening-days control.
+
+Additional temporary happy-dom interaction check passed: channel preview leaves inputs unchanged; Load replaces inputs; invalid days recover; daily pace changes; manual edits and reset work; Continue stages the edited plan; consented analytics contain only industry. This is DOM interaction verification, not real-browser screenshot or payment verification. No actual purchase was made. Live verification and CI status are recorded in the release response.
