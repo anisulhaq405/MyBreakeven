@@ -1,3 +1,4 @@
+import { EcommerceExampleLink } from './EcommerceCluster.jsx';
 import { blogImageDimensions } from "./blogImageDimensions.js";
 import ClusterRelatedReading from './ClusterRelatedReading.jsx';
 import { AgencyClusterLink } from './AgencyCluster.jsx';
@@ -34,6 +35,7 @@ export default function BlogArticle({slug,initialArticle}){
     <div className="article-meta"><time dateTime={a.published}>Published {new Date(`${a.published}T12:00:00Z`).toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric",timeZone:"UTC"})}</time><span>Updated {new Date(`${a.modified}T12:00:00Z`).toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric",timeZone:"UTC"})}</span></div>
     <p className="article-note">Published by <a href="/about-us/">MyBreakeven</a>. <a href="/editorial-policy/">Editorial standards and corrections</a>. Report a calculation or content issue to <a href="mailto:support@mybreakeven.com">support@mybreakeven.com</a>.</p>
     <p className="article-lead">{a.description}</p>
+    <EcommerceExampleLink slug={a.slug || slug} />
     <div className="article-tags" aria-label="Article topics">{a.tags.map(tag=><span key={tag}>{tag}</span>)}</div>
     {a.image&&<figure className="article-featured"><img src={a.image} alt={a.alt} width={blogImageDimensions[a.image]?.width || 1200} height={blogImageDimensions[a.image]?.height || 675} fetchPriority="high" decoding="async"/><figcaption>{a.imageCaption}</figcaption></figure>}
     <section className="article-summary"><h2>What this number really tells you</h2><p>{a.opening}</p><p>Break-even is reached when contribution from completed {a.unit} covers monthly overhead and any owner-pay or profit target entered. Use actual per-{a.singular} costs and realistic productive capacity, then calculate your {a.tag.toLowerCase()} break-even point with your own figures.</p></section>

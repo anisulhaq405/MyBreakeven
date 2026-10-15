@@ -11,7 +11,7 @@ export function EcommerceExamples({ onLoad, activeId }) {
   const [previewId, setPreviewId] = useState(ecommerceExamples[0].id);
   const example = ecommerceExamples.find(item => item.id === previewId);
   const result = calculate(example.values);
-  return <section className="ecommerce-examples" aria-labelledby="ecommerce-examples-title">
+  return <section id="ecommerce-product-examples" className="ecommerce-examples" aria-labelledby="ecommerce-examples-title">
     <h3 id="ecommerce-examples-title">Start with a product like yours</h3>
     <p>Illustrative USD scenarios, not market averages. Loading an example replaces every calculator input below. Then edit the numbers to match your own records.</p>
     <div className="ecommerce-example-picker" role="group" aria-label="Preview a product example">{ecommerceExamples.map(item => <button type="button" key={item.id} aria-pressed={previewId === item.id} onClick={() => setPreviewId(item.id)}>{item.title}</button>)}</div>

@@ -1,3 +1,4 @@
+import { EcommerceExampleLink } from './EcommerceCluster.jsx';
 import { blogImageDimensions } from "./blogImageDimensions.js";
 import ClusterRelatedReading from './ClusterRelatedReading.jsx';
 import { AgencyClusterLink } from './AgencyCluster.jsx';
@@ -37,6 +38,7 @@ export default function LongformArticle({ article: a }) {
     <div className="article-meta"><time dateTime={a.published}>Published {dateLabel(a.published)}</time><span>Updated {dateLabel(a.modified)}</span></div>
     <p className="article-note">Published by <a href="/about-us/">MyBreakeven</a>. <a href="/editorial-policy/">Editorial standards and corrections</a>. Report a calculation or content issue to <a href="mailto:support@mybreakeven.com">support@mybreakeven.com</a>.</p>
     <p className="article-lead">{a.description}</p>
+    <EcommerceExampleLink slug={a.slug} />
     <div className="article-tags" aria-label="Article topics">{a.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
     {a.sectionLinks&&<nav className="article-section-nav" aria-label="Guide sections">{a.sectionLinks.map(([id,label])=><a key={id} href={`#${id}`}>{label}</a>)}</nav>}
     {slug==='margin-vs-markup'&&<MarginMarkupWidget/>}
