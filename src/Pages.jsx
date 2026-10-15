@@ -1,3 +1,4 @@
+import { staticPageMeta } from './staticPageMeta.js';
 import AuthorityPage from './AuthorityPages.jsx';
 import { authorityPages } from './authorityResources.js';
 import ClusterDirectory from './ClusterDirectory.jsx';
@@ -299,31 +300,8 @@ const LegalPage = ({ page }) => (
 );
 export default function SecondaryPage({ path, initialArticle }) {
   const pageMeta = {
-    ...Object.fromEntries(Object.entries(authorityPages).map(([route, meta]) => [`/${route}`, meta])),
-    "/guides/agency-business": ["Agency Business Guides | MyBreakeven", "Explore agency retainer pricing, staffing, utilization and cash timing. Connect worked guides with employee cost, dated cash forecasts and break-even tools."],
-    "/guides/ecommerce-business": ["E-commerce Business Guides | MyBreakeven", "Explore ecommerce product pricing, returns, shipping, advertising and inventory cash. Find sixteen worked guides and three business calculators."],
-    "/guides/photography-business": ["Photography Business Guides | MyBreakeven", "Explore photography packages, editing costs, commercial assignments, prints and delivery capacity. Find twelve worked guides and a free break-even tool."],
-    "/guides/restaurant-business": ["Restaurant Business Guides | MyBreakeven", "Explore restaurant startup, food and labor costs, menu pricing, delivery, events and capacity. Find twenty-one worked guides and a free break-even tool."],
-    "/guides/salon-business": ["Salon Business Planning Guides | MyBreakeven", "Explore salon service pricing, product costs, no-shows, memberships, booth rent and chair capacity. Find eleven worked guides and four free calculators."],
-    "/guides/mobile-detailing-business": ["Mobile Detailing Business Guides | MyBreakeven", "Explore mobile detailing pricing, fleet contracts, travel costs, cancellations and refill capacity. Find worked guides and three free business calculators."],
-    "/guides/landscaping-business": ["Landscaping Business Planning Guides | MyBreakeven", "Explore landscaping pricing, job costs, maintenance contracts, routes and crew capacity. Find worked planning guides and two free business calculators."],
-    "/guides/cleaning-business": ["Cleaning Business Planning Guides | MyBreakeven", "Explore cleaning business pricing, contract bids, operating costs, recurring clients and break-even. Find worked guides and free calculators."],
-    "/tools": ["Free Business Calculators: Profit & Pricing | MyBreakeven", "Explore free business calculators for profit, pricing, service costs, advertising and cash. Use clear formulas and worked guides without signing up."],
+    ...Object.fromEntries(Object.entries(staticPageMeta).map(([route, meta]) => [`/${route}`, meta])),
     ...Object.fromEntries(Object.entries(freeTools).map(([slug, tool]) => [`/calculators/${slug}`, [tool.title, tool.description]])),
-    "/pro-user-guide": ["MyBreakeven Pro Calculator User Guide", "Step-by-step guide to MyBreakeven Pro: enter costs, read break-even results, use advanced analysis, save scenarios and export reports."],
-    "/pricing": ["MyBreakeven Pricing: Free & Pro Business Planning", "Compare MyBreakeven Free and Pro plans for industry break-even calculators, saved scenarios, cost-drift analysis, comparisons and reports."],
-    "/blogs": ["Small Business Break-Even Guides | MyBreakeven", "Read practical break-even guides for cleaning, landscaping, photography, agencies, mobile detailing, e-commerce, restaurants and salons."],
-    "/about-us": ["About MyBreakeven | Formula-Backed Business Planning", "Learn how MyBreakeven turns contribution margin, sales demand and operating capacity into transparent business planning estimates."],
-    "/contact-us": ["Contact MyBreakeven", "Contact MyBreakeven about calculator feedback, industry requests, partnerships or formula-backed business planning tools."],
-    "/privacy-policy": ["Privacy Policy | MyBreakeven", "Read how MyBreakeven handles calculator data, website information and messages you send."],
-    "/terms-of-service": ["Terms of Service | MyBreakeven", "Read the terms for using MyBreakeven calculators, content and subscription features."],
-    "/refund-policy": ["Refund Policy | MyBreakeven", "Review the cancellation and refund policy for MyBreakeven paid subscriptions."],
-    "/cookie-policy": ["Cookie Policy | MyBreakeven", "Learn how MyBreakeven uses essential browser storage and cookies."],
-    "/login": ["Log in to MyBreakeven", "Access your private MyBreakeven planning workspace."],
-    "/signup": ["Create a MyBreakeven account", "Create an optional account for saved business planning scenarios and reports."],
-    "/forgot-password": ["Reset your MyBreakeven password", "Request a secure password-reset link for your MyBreakeven account."],
-    "/reset-password": ["Choose a new MyBreakeven password", "Securely update your MyBreakeven account password."],
-    "/dashboard": ["Your MyBreakeven dashboard", "Manage your private MyBreakeven account and planning workspace."],
   };
   useEffect(() => {
     const meta = pageMeta[path];

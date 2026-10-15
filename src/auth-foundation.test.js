@@ -1,10 +1,10 @@
+import { staticPageMeta } from './staticPageMeta.js';
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 
 const authSource = readFileSync(new URL("./AuthPages.jsx", import.meta.url), "utf8");
 const clientSource = readFileSync(new URL("./authClient.js", import.meta.url), "utf8");
 const schema = readFileSync(new URL("../supabase/schema.sql", import.meta.url), "utf8");
-const generator = readFileSync(new URL("../scripts/create-pages.mjs", import.meta.url), "utf8");
 const pages = readFileSync(new URL("./Pages.jsx", import.meta.url), "utf8");
 
 describe("secure account foundation", () => {
@@ -37,7 +37,7 @@ describe("secure account foundation", () => {
   it("marks account and dashboard routes noindex", () => {
     expect(authSource).toContain('"noindex,nofollow"');
     for (const route of ["login", "signup", "forgot-password", "reset-password", "dashboard"]) {
-      expect(generator).toMatch(new RegExp(`${route.replace("-", "\\-")}.*true`));
+      expect(staticPageMeta[route][3]).toBe(true);
     }
   });
 

@@ -1,6 +1,11 @@
 # Canonical host: keep every path and query string on the HTTPS apex domain.
 <IfModule mod_rewrite.c>
 RewriteEngine On
+# Redirect only explicit index.html requests, never internal DirectoryIndex resolution.
+# Keep query parameters (for example account verification codes) intact.
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html(?:[?\s]) [NC]
+RewriteRule ^(.*/)?index\.html$ https://mybreakeven.com/$1 [R=301,L]
+
 RewriteCond %{HTTP_HOST} ^www\.mybreakeven\.com$ [NC]
 RewriteRule ^ https://mybreakeven.com%{REQUEST_URI} [R=301,L,NE]
 </IfModule>
