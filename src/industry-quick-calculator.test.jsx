@@ -14,7 +14,7 @@ for (const [slug, expectedRevenue] of [
       const html = renderToStaticMarkup(<IndustryPage slug={slug} />);
       expect(html).toContain('href="#industry-calculator"');
       expect(html).toContain('id="industry-calculator"');
-      expect((html.match(/type="number"/g) || []).length).toBe(14);
+      expect((html.match(/type="number"/g) || []).length).toBe(slug === "restaurant-break-even-calculator" ? 15 : 14);
       expect(html).toContain('aria-live="polite"');
       expect(html).toContain(expectedRevenue);
     });
@@ -25,7 +25,7 @@ for (const [slug, page] of Object.entries(industryPages)) {
   it(`${slug} exposes editable inputs and distinguishes a profit target from break-even`, () => {
     const html = renderToStaticMarkup(<IndustryPage slug={slug} />);
     const expected = calculate(industries[page.key].values);
-    expect((html.match(/type="number"/g) || []).length).toBe(14);
+    expect((html.match(/type="number"/g) || []).length).toBe(slug === "restaurant-break-even-calculator" ? 15 : 14);
     expect(html).toContain('href="#industry-calculator"');
     expect(html).toContain(`/?industry=${page.key}&amp;from=industry#calculator`);
     expect(html).toContain(expected.practicalRevenue.toLocaleString("en-US", { style: "currency", currency: "USD" }));
