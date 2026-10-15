@@ -305,7 +305,12 @@ export function industryCalculatorFaq(industryKey) {
   const page = Object.values(industryPages).find(page => page.key === industryKey);
   if (!page) return [];
   const industry = industries[industryKey], result = calculate(industry.values), guidance = industryInputGuidance[industryKey];
-  return [...page.questions.map(q=>[q,answerQuestion(q,result,industry)]),
+  const ecommerceQuestions = industryKey === 'ecommerce' ? [
+    ['Can I use this for handmade products and small batches?', 'Yes. Preview and load the jewellery, ceramics, clothing or art-print example, then replace every assumption. Include making and packing worker-hours, allocate batch costs consistently, and keep owner compensation either in monthly owner pay or the relevant labor cost, once. The examples are illustrative USD inputs, not industry benchmarks.'],
+    ['How should I enter shipping, returns and platform fees?', 'Include seller-funded shipping, packing, flat fees and unrecovered return costs in the appropriate per-order costs. Exclude collected taxes from net price. Reconcile refunds and fee reversals so the same amount is not deducted twice; enter percentage fees separately from flat charges.'],
+    ['Do I need Pro to calculate, and where can I save my plan?', 'No. This page calculates free without an account. Continue with these numbers carries valid inputs to the full calculator in the same browser tab. A free account supports up to 3 saved scenarios; Pro supports up to 100 saved scenarios, three-plan comparisons and CSV/PDF reports. Opening the pricing page alone does not save inputs.'],
+  ] : [];
+  return [...page.questions.map(q=>[q,answerQuestion(q,result,industry)]), ...ecommerceQuestions,
     [guidance.question,guidance.answer],
     ['What if required sales exceed capacity?','The target does not fit the productive hours you entered. Test price, costs, delivery time or a revised capacity plan. Recalculate any new monthly staffing or equipment commitment; more available hours do not prove customer demand.'],
     ['Is this a cash-flow forecast or net-profit statement?','No. It models contribution, a monthly funding target and productive-hour capacity. Schedule collections, supplier payments, taxes, equipment cash and loan principal separately; reconcile any unentered items before interpreting accounting net profit.']];
