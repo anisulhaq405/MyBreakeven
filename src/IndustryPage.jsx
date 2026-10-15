@@ -8,11 +8,13 @@ import { SalonClusterLink } from './SalonCluster.jsx';
 import { MobileDetailingClusterLink } from './MobileDetailingCluster.jsx';
 import { LandscapingClusterLink } from './LandscapingCluster.jsx';
 import { CleaningClusterLink } from './CleaningCluster.jsx';
-import { createCalculatorUseTracker, trackProductEvent } from "./productAnalytics";
+import { createCalculatorUseTracker, createCalculatorResultTracker, trackProductEvent } from "./productAnalytics";
+import { EcommerceExamples, EcommerceResultGuide, EcommercePlanOptions } from './EcommercePlanning.jsx';
+import { ecommerceFieldHelp } from './ecommerceExamples.js';
 const salonPlanningSection = {"heading": "Test salon appointments against productive chair hours", "text": "Use complete appointment worker-hours and actual available productive time. Suppose a salon needs $6,000 contribution each month and leaves $60 per appointment. It needs 100 appointments. If each requires 1.5 delivery hours, that is 150 hours of work. A plan with only 135 productive hours has capacity for 90 whole appointments and does not fit the target.\n\nRetail purchases can add contribution, but they should not be treated as extra chair appointments. Model the service mix and product economics consistently. No-shows can consume reserved time without producing the planned paid service. Track cancellations and rebooked slots rather than assuming every diary entry creates revenue.\n\nOwner pay remains explicit in the monthly amount to cover. A booth-rental arrangement and an employee-service arrangement have different revenue and cost boundaries; avoid mixing their fields. The calculator shows an assumption-based capacity and contribution test, not a guarantee of appointment demand or salon profitability.", "question": "Does a full diary prove the salon covers its costs?", "answer": "No. Entries can include unpaid gaps, no-shows and services with different contribution. Compare paid delivered appointments, their costs and productive hours with the monthly requirement."};
 import { toolThemes } from './toolThemes.js';
 import './tool-themes.css';
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { ArrowRight, BarChart3, CheckCircle2, ShieldCheck } from "lucide-react";
 import { stageCalculatorPlan } from "./calculatorTransfer";
 import { calculate } from "./engine";
@@ -38,8 +40,16 @@ function IndustryQuickCalculator({ industry, industryKey }) {
   const [values, setValues] = useState(() => ({ ...industry.values }));
   const result = useMemo(() => calculate(values), [values]);
   const [recordCalculatorUse] = useState(() => createCalculatorUseTracker());
+  const [recordResultReady] = useState(() => createCalculatorResultTracker());
+  const [hasEdited, setHasEdited] = useState(false);
+  const [activeExample, setActiveExample] = useState('');
   const fields = fieldLabels(industry);
   const [transferError, setTransferError] = useState("");
+  useEffect(() => {
+    if (industryKey !== 'ecommerce' || !hasEdited || !result.valid) return;
+    const timer = setTimeout(() => recordResultReady(industryKey), 700);
+    return () => clearTimeout(timer);
+  }, [industryKey, hasEdited, values, result.valid, recordResultReady]);
 
   return <section className="industry-quick-calculator" id="industry-calculator" aria-labelledby="industry-calculator-title">
     <div className="industry-quick-intro">
@@ -47,6 +57,13 @@ function IndustryQuickCalculator({ industry, industryKey }) {
       <h2 id="industry-calculator-title">Calculate your {(industry.short === "Agencies" ? "Agency" : industry.short).toLowerCase()} break-even point</h2>
       <p>Replace the example inputs below. Results update in your browser as you type. Enter monthly totals for overhead, owner pay and target profit; enter direct costs per {industry.singular} separately.</p>
     </div>
+    {industryKey === 'ecommerce' && <EcommerceExamples activeId={activeExample} onLoad={example => {
+      setValues({ ...example.values });
+      setActiveExample(example.id);
+      setHasEdited(false);
+      setTransferError('');
+      trackProductEvent('calculator_example_load', industryKey);
+    }} />}
     <div className="industry-quick-fields">
       {fields.map(([label, key, suffix, options = {}]) => <label key={key}>
         <span>{label}</span>
@@ -55,6 +72,8 @@ function IndustryQuickCalculator({ industry, industryKey }) {
           <input type="number" inputMode="decimal" min={options.min ?? 0} max={options.max} step={options.step ?? "0.01"} value={values[key]} onChange={event => {
             const value = event.target.value;
             recordCalculatorUse(industryKey);
+            setHasEdited(true);
+            setTransferError('');
             setValues(current => {
             const next = { ...current, [key]: value };
             if (builtFields.includes(key)) delete next.costBuilder;
@@ -62,19 +81,20 @@ function IndustryQuickCalculator({ industry, industryKey }) {
           }); }} aria-invalid={values[key] === ""} aria-describedby={`industry-help-${key}`} />
           {suffix && suffix !== "$" && <b aria-hidden="true">{suffix}</b>}
         </span>
-        <small id={`industry-help-${key}`}>{industryFieldHelp[key]}</small>
+        <small id={`industry-help-${key}`}>{industryKey === 'ecommerce' ? ecommerceFieldHelp[key] || industryFieldHelp[key] : industryFieldHelp[key]}</small>
       </label>)}
     </div>
-    <CostBuilder industryKey={industryKey} input={values} onApply={patch => { recordCalculatorUse(industryKey); setValues(current => ({ ...current, ...patch })); }} />
+    <CostBuilder industryKey={industryKey} input={values} onApply={patch => { recordCalculatorUse(industryKey); setHasEdited(true); setTransferError(''); setValues(current => ({ ...current, ...patch })); }} />
     {result.valid ? <div className="industry-quick-results" aria-live="polite">
       <div><span>Contribution per {industry.singular}</span><strong>{money(result.contribution)}</strong></div>
       <div><span>Whole {industry.unit} for your target</span><strong>{result.wholeJobs.toLocaleString("en-US")}</strong></div>
       <div><span>Monthly sales at that volume</span><strong>{money(result.practicalRevenue)}</strong></div>
-      <p>The whole-unit target needs approximately {result.practicalLeads.toLocaleString("en-US")} inquiries at your assumed conversion rate. This is a planning requirement, not a demand forecast.</p>
+      <p>The whole-unit target needs approximately {result.practicalLeads.toLocaleString("en-US")} {industryKey === 'ecommerce' ? 'qualified visits or inquiries (using the same basis as your conversion input)' : 'inquiries'} at your assumed conversion rate. This is a planning requirement, not a demand forecast.</p>
       <p>At these assumptions, estimated delivery capacity is {result.wholeCapacity.toLocaleString("en-US")} whole {industry.unit} per month. {result.wholeCapacity < result.wholeJobs ? "The current capacity is below the required volume." : "The estimated capacity covers the required volume."} These are planning estimates, not a sales forecast.</p>
     </div> : <p className="industry-quick-error" role="status">{result.message}</p>}
+    {industryKey === 'ecommerce' && <EcommerceResultGuide input={values} result={result} />}
     <div className="industry-quick-actions">
-      <button type="button" onClick={() => setValues({ ...industry.values })}>Reset example</button>
+      <button type="button" onClick={() => { setValues({ ...industry.values }); setActiveExample(''); setHasEdited(false); setTransferError(''); }}>Reset example</button>
       <a href={`/?industry=${industryKey}&from=industry#calculator`} onClick={event => {
         let saved = false;
         try { saved = stageCalculatorPlan(industryKey, values, window.sessionStorage); } catch { /* Storage can be disabled. */ }
@@ -86,6 +106,7 @@ function IndustryQuickCalculator({ industry, industryKey }) {
       }}>Continue with these numbers in the full calculator <ArrowRight /></a>
     </div>
     {transferError && <p className="industry-quick-error" role="status">{transferError}</p>}
+    {industryKey === 'ecommerce' && <EcommercePlanOptions />}
   </section>;
 }
 
@@ -103,13 +124,19 @@ export default function IndustryPage({ slug }) {
           <p>{page.lead}</p>
           <a className="page-button industry-cta" href="#industry-calculator">Use the free calculator <ArrowRight /></a>
         </div>
-        <aside>
+        {page.key === 'ecommerce' ? <aside>
+          <small>START WITH YOUR PRODUCT</small>
+          <strong>One order. A clear monthly target.</strong>
+          <span>Choose jewellery, ceramics, clothing or art prints, then enter your own costs and making time.</span>
+          <div><b>Free calculation</b> · no account needed</div>
+          <div><b>Transparent examples</b> · illustrative USD inputs</div>
+        </aside> : <aside>
           <small>EXAMPLE MODEL</small>
           <strong>{money(example.revenue)}</strong>
           <span>sample revenue target including owner pay and profit, before rounding up to whole {industry.unit}</span>
           <div><b>{example.jobs.toFixed(2)}</b> {industry.unit} required</div>
           <div><b>{example.wholeCapacity}</b> whole {industry.unit} capacity</div>
-        </aside>
+        </aside>}
       </section>
       <figure className="industry-tool-feature"><img src={`/images/tools/${page.key}-break-even.webp`} alt={`${industry.short} break-even planning: direct costs, contribution, monthly sales target and working capacity.`} width="1200" height="675" decoding="async"/><figcaption>A {industry.short.toLowerCase()} planning model: use your own price, costs and delivery capacity.</figcaption></figure>
 

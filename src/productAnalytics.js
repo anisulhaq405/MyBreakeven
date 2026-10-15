@@ -1,5 +1,5 @@
 import { industries } from "./industries";
-const events = new Set(["calculator_use", "signup_request_accepted", "calculator_continue", "pro_pricing_view", "pro_checkout_click", "scenario_saved", "resource_download", "walkthrough_step", "walkthrough_calculator_click"]);
+const events = new Set(["calculator_use", "calculator_result_ready", "calculator_example_load", "signup_request_accepted", "calculator_continue", "pro_pricing_click", "pro_pricing_view", "pro_checkout_click", "scenario_saved", "resource_download", "walkthrough_step", "walkthrough_calculator_click"]);
 
 export function trackProductEvent(name, industryKey, browser = typeof window === "undefined" ? null : window) {
   if (!browser || !events.has(name)) return false;
@@ -17,6 +17,17 @@ export function createCalculatorUseTracker(track = trackProductEvent) {
   return industryKey => {
     if (recorded) return false;
     recorded = track("calculator_use", industryKey);
+    return recorded;
+  };
+}
+
+// A valid, edited result after the user pauses; sample loads alone do not count.
+// Never include financial inputs, product labels or personal details in analytics.
+export function createCalculatorResultTracker(track = trackProductEvent) {
+  let recorded = false;
+  return industryKey => {
+    if (recorded) return false;
+    recorded = track("calculator_result_ready", industryKey);
     return recorded;
   };
 }
