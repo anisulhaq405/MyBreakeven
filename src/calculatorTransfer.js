@@ -34,3 +34,9 @@ export function initialCalculatorPlan(browser, now = Date.now()) {
     return { industryKey, input: plan.input, currency, transferred: true };
   } catch { return fallback; }
 }
+
+const standardCurrencies = ['USD','EUR','GBP','CAD','AUD','NZD','AED','SAR','PKR','INR','BDT','SGD','MYR','ZAR','JPY','CHF','SEK','NOK','DKK'];
+// A food tool can carry a currency beyond the homepage's compact default list.
+export function calculatorCurrencyCodes(...carried) {
+  return [...new Set([...standardCurrencies,...carried.filter(code=>typeof code==='string'&&/^[A-Z]{3}$/.test(code))])];
+}

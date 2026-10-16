@@ -6,7 +6,7 @@ import {foodNextDecision} from './foodNextDecision';
 import {calculateMenuPrice,calculateFoodPeriod} from './foodCostEngine';
 import {calculate} from './engine';
 import {menuExample,foodPeriodExample,recipeExample} from './foodCalculatorDefaults';
-import {initialCalculatorPlan,stageCalculatorPlan} from './calculatorTransfer';
+import {initialCalculatorPlan,stageCalculatorPlan,calculatorCurrencyCodes} from './calculatorTransfer';
 import {recipeMenuTransfer,readMenuTransfer} from './foodCostTransfer';
 import {trackFoodEvent,trackProductEvent} from './productAnalytics';
 import MenuPlanNextStep from './MenuPlanNextStep';
@@ -69,4 +69,14 @@ it('tracks only allowlisted food identifiers after consent, and keeps saving dis
  expect(b.gtag).toHaveBeenCalledExactlyOnceWith('event','menu_plan_continue',{industry:'restaurant',tool:'menu-pricing-calculator'});
  expect(trackProductEvent('save_scenario_open','restaurant',b)).toBe(true);
  expect(trackProductEvent('save_login_click','restaurant',b)).toBe(true);
+});
+
+it('keeps a carried currency outside the compact homepage defaults selectable',()=>{
+ const s=store(),plan=menuRestaurantPlan(menuExample,ops,true);
+ stageCalculatorPlan('restaurant',plan,s,1000,'PLN');
+ const opened=initialCalculatorPlan({location:{search:'?industry=restaurant&from=industry'},sessionStorage:s},2000);
+ expect(opened.currency).toBe('PLN');
+ expect(calculatorCurrencyCodes(opened.currency,'USD')).toContain('PLN');
+ expect(calculatorCurrencyCodes(opened.currency,'USD').filter(c=>c==='USD')).toHaveLength(1);
+ expect(calculatorCurrencyCodes('not-currency',null)).not.toContain('not-currency');
 });
