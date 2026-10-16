@@ -1,6 +1,6 @@
 import { readAnalyticsChoice, ANALYTICS_CONSENT_EVENT, ANALYTICS_READY_EVENT } from './analyticsChoice';
 import { industries } from "./industries";
-const events = new Set(["calculator_use", "calculator_result_ready", "calculator_example_load", "signup_request_accepted", "calculator_continue", "pro_pricing_click", "pro_pricing_view", "pro_checkout_click", "scenario_saved", "resource_download", "walkthrough_step", "walkthrough_calculator_click"]);
+const events = new Set(["calculator_use", "calculator_result_ready", "calculator_example_load", "signup_request_accepted", "calculator_continue", "pro_pricing_click", "pro_pricing_view", "pro_checkout_click", "scenario_saved", "resource_download", "walkthrough_step", "walkthrough_calculator_click", "save_scenario_open", "save_login_click"]);
 
 export function trackProductEvent(name, industryKey, browser = typeof window === "undefined" ? null : window) {
   if (!browser || !events.has(name)) return false;
@@ -41,4 +41,16 @@ export function subscribeProductPageView(name, browser = window) {
   signals.forEach(event => browser.addEventListener(event, record));
   record();
   return () => signals.forEach(event => browser.removeEventListener(event, record));
+}
+
+const foodSlugs = new Set(['recipe-cost-calculator', 'food-cost-calculator', 'menu-pricing-calculator']);
+const foodEvents = new Set(['calculator_use', 'calculator_result_ready', 'recipe_menu_continue', 'menu_plan_continue']);
+// Only static tool identifiers leave the browser, after analytics consent.
+export function trackFoodEvent(name, slug, browser = typeof window === 'undefined' ? null : window) {
+  if (!browser || !foodSlugs.has(slug) || !foodEvents.has(name)) return false;
+  try {
+    if (readAnalyticsChoice(browser) !== 'accepted' || typeof browser.gtag !== 'function') return false;
+    browser.gtag('event', name, {industry: 'restaurant', tool: slug});
+    return true;
+  } catch { return false; }
 }
