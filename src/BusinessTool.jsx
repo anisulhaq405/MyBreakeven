@@ -1,8 +1,8 @@
-import { EcommerceClusterLink } from './EcommerceCluster.jsx';
-import { SalonClusterLink } from './SalonCluster.jsx';
-import { MobileDetailingClusterLink } from './MobileDetailingCluster.jsx';
-import { LandscapingClusterLink } from './LandscapingCluster.jsx';
-import { CleaningClusterLink } from './CleaningCluster.jsx';
+import { EcommerceClusterLink } from './ClusterLinks.jsx';
+import { SalonClusterLink } from './ClusterLinks.jsx';
+import { MobileDetailingClusterLink } from './ClusterLinks.jsx';
+import { LandscapingClusterLink } from './ClusterLinks.jsx';
+import { CleaningClusterLink } from './ClusterLinks.jsx';
 import {calculateDecisionTool} from './decisionToolEngine';
 import {switchLiquidUnit} from './liquidUnits';
 import CurrencySelector from './CurrencySelector';

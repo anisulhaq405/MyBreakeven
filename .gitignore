@@ -3,3 +3,7 @@ dist
 src/content/generated/
 .env*
 !.env.example
+
+# Generated detailed delivery trace; the summary table and baseline are versioned.
+docs/seo/*-page-delivery.json
+src/content/generated-tools/

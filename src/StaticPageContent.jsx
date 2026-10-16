@@ -1,0 +1,268 @@
+import React, { useState } from 'react';
+import { CheckCircle2, Mail, ShieldCheck, Sparkles } from 'lucide-react';
+import { trackProductEvent } from './productAnalytics';
+import { POLAR_CHECKOUT_URL } from './billing';
+import { calculatorCounts } from './calculatorDirectoryData.js';
+export const Pricing = () => (
+  <div className="pricing-decision-page">
+    <section className="page-hero">
+      <span>STRAIGHTFORWARD PRICING</span><h1>Start free. Upgrade when you need deeper planning.</h1>
+      <p>Work out the sales your business needs today. Save a base plan, compare a cost change and review the next decision with numbers you can explain.</p>
+      <a href="/calculator-walkthroughs/">See a worked calculator walkthrough</a>
+    </section>
+    <section className="pricing page-pricing" aria-label="Free and Pro plans"><div>
+      <article><h2>Free</h2><strong>$0</strong><p>Work out your target before creating an account.</p>
+        <ul><li>All {calculatorCounts.industry + calculatorCounts.tools} calculator pages: {calculatorCounts.industry} industry models and {calculatorCounts.tools} decision tools</li><li>Break-even targets, contribution and productive-hour feasibility</li><li>Formula trace in the full break-even calculator</li><li>Up to 3 saved scenarios with a free account</li></ul>
+        <a className="page-button secondary" href="/#calculator">Use the free calculator</a><small>Calculation needs no account or credit card. Saving is an explicit action after sign-in.</small>
+      </article>
+      <article className="pro"><small>MYBREAKEVEN PRO</small><h2>Pro</h2><strong>$9.99 <i>/ month</i></strong>
+        <p>Keep a baseline and compare the next business decision.</p>
+        <ul><li>Keep up to 100 saved scenarios for later review</li><li>Compare 3 plans side by side using a consistent unit and currency</li><li>Test pricing, cost changes, offer mix and staffing against your target</li><li>Review forecasts, risk sensitivity and productive capacity</li><li>Download CSV and professional PDF reports</li></ul>
+        <a className="page-button" href={POLAR_CHECKOUT_URL} onClick={() => trackProductEvent("pro_checkout_click")}>Upgrade to Pro</a>
+        <small>Monthly subscription through Polar. Opening checkout does not save your calculator inputs.</small>
+        <details className="pricing-all-features"><summary>See every included Pro tool</summary><ul><li>Up to 100 saved scenarios</li><li>Pro Command Center with search, filters and portfolio KPIs</li><li>Executive Decision Brief with shareable action plan</li><li>Offer Mix Studio for multiple products and services</li><li>Price Guard and discount recovery analysis</li><li>Customer Acquisition Break-Even and CAC payback</li><li>Hire Break-Even and staffing utilization</li><li>Startup recovery and break-even timeline</li><li>Monthly Break-Even Monitor (saved in this browser)</li><li>Profit forecast, margin of safety and capacity solver</li><li>Saved-plan cost drift and risk sensitivity</li><li>Compare 3 plans side by side</li><li>CSV and professional PDF reports</li></ul></details>
+        <a href="/pro-user-guide/">See the step-by-step Pro guide</a>
+      </article>
+    </div></section>
+    <section className="pricing-decisions" aria-labelledby="pricing-decisions-title"><h2 id="pricing-decisions-title">What would you compare next?</h2><p>These are planning uses for the existing tools. Replace example assumptions with your own records.</p><div>
+      <article><h3>Restaurant food costs change</h3><p>Save the current plan, then create a higher-food-cost case. Compare required orders and productive-hour capacity before changing the menu price.</p><a href="/calculators/restaurant-break-even-calculator/#restaurant-channel-examples">Start with a restaurant example</a></article>
+      <article><h3>A service job needs more time</h3><p>Compare the base job with a longer delivery-time case. Review the capacity gap and include any extra committed staffing cost before treating it as a workable plan.</p><a href="/calculators/cleaning-business-break-even-calculator/">Check a service-business target</a></article>
+      <article><h3>A product promotion changes margin</h3><p>Keep regular-price and promotion scenarios separate. Compare contribution, sales targets and making or fulfillment hours; demand still needs its own evidence.</p><a href="/calculators/ecommerce-break-even-calculator/#ecommerce-product-examples">Start with a product example</a></article>
+    </div></section>
+    <section className="pricing-next-steps" aria-labelledby="pricing-next-title"><h2 id="pricing-next-title">Keep the numbers you want to revisit</h2><ol><li>Enter and check your own inputs in the <a href="/#calculator">full calculator</a>. From an industry calculator, choose “Continue with these numbers”.</li><li>Sign in and choose Save scenario. A free account can keep up to 3; Pro supports up to 100.</li><li>For Pro comparisons, save distinct cases and select up to 3 in your dashboard. Use the same unit and currency.</li></ol><p>Opening pricing or checkout does not save or transfer an unsaved plan. The Monthly Break-Even Monitor keeps its entries in the current browser; saved account scenarios are separate.</p><nav aria-label="Plan and billing information"><a href="/pro-user-guide/#save">Saving, comparison and export instructions</a><a href="/refund-policy/">Cancellation and refund policy</a></nav></section>
+  </div>
+);
+
+export const About = () => (
+  <>
+    <section className="about-hero">
+      <div className="about-hero-copy">
+        <span className="journey-kicker"><i /> ABOUT MYBREAKEVEN</span>
+        <h1>Know the number. Then see if the plan can actually work.</h1>
+        <p>
+          MyBreakeven turns your costs, pricing and workload into a monthly target you can inspect—not a promise, and not a black-box forecast.
+        </p>
+        <div className="journey-actions">
+          <a className="journey-primary" href="/#calculator">Run your numbers <span aria-hidden="true">↗</span></a>
+          <a className="journey-secondary" href="/blogs/">Read the guides <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <aside className="planning-loop" aria-label="The MyBreakeven planning loop">
+        <small>THE PLANNING LOOP</small>
+        <ol>
+          <li><b>01</b><span><strong>Map the costs</strong><em>Fixed, variable and owner pay</em></span></li>
+          <li><b>02</b><span><strong>Test the margin</strong><em>What each sale contributes</em></span></li>
+          <li><b>03</b><span><strong>Check capacity</strong><em>What your team can deliver</em></span></li>
+          <li><b>04</b><span><strong>Plan demand</strong><em>Customers and leads required</em></span></li>
+        </ol>
+      </aside>
+    </section>
+    <section className="about-story">
+      <div>
+        <span className="journey-kicker"><i /> WHY IT EXISTS</span>
+        <h2>A break-even number is useful only when the business can deliver it.</h2>
+      </div>
+      <p>
+        A spreadsheet may show that the math balances. The next question is whether you have enough hours, crew capacity and qualified demand to reach that target. MyBreakeven keeps those questions in one practical planning flow for owner-operators.
+      </p>
+    </section>
+    <section className="about-story" aria-label="Content responsibility">
+      <div><h2>Who publishes these guides</h2></div>
+      <p>MyBreakeven publishes the guides and calculator explanations on this site. <a href="/founder/">Anis Ul Haq is the founder</a>. Worked examples show stated planning assumptions; they are not customer results or a forecast for your business. Read the <a href="/editorial-policy/">editorial and correction standards</a> and <a href="/calculation-methodology/">calculation methodology</a>. Send calculation errors, unclear assumptions or content corrections to <a href="mailto:support@mybreakeven.com">support@mybreakeven.com</a>.</p>
+    </section>
+    <section className="about-principles" aria-label="How MyBreakeven works">
+      <article>
+        <span>01</span><Sparkles />
+        <h2>Your assumptions stay visible</h2>
+        <p>Every result begins with the costs, prices and capacity you enter. Change an input and see what moves.</p>
+      </article>
+      <article>
+        <span>02</span><ShieldCheck />
+        <h2>The formulas do the math</h2>
+        <p>Deterministic calculations produce the numbers. Explanations add context; they do not replace the formula.</p>
+      </article>
+      <article>
+        <span>03</span><CheckCircle2 />
+        <h2>Feasibility comes next</h2>
+        <p>The plan is checked against sales volume, workload and lead demand so an attractive target does not hide an impossible operation.</p>
+      </article>
+    </section>
+    <section className="about-journey">
+      <header>
+        <span className="journey-kicker"><i /> FROM IDEA TO DECISION</span>
+        <h2>One clean path through the numbers.</h2>
+        <p>Use the result as a planning baseline, then revise it when your real costs or capacity change.</p>
+      </header>
+      <div>
+        <article><b>01</b><h3>Choose your model</h3><p>Start with the calculator built around how your business sells and delivers work.</p></article>
+        <article><b>02</b><h3>Enter real assumptions</h3><p>Add fixed costs, per-sale costs, owner pay, pricing and available capacity.</p></article>
+        <article><b>03</b><h3>Read the whole result</h3><p>Review break-even revenue alongside sales volume, customer demand and workload.</p></article>
+        <article><b>04</b><h3>Test a safer case</h3><p>Lower demand, raise a cost or adjust pricing before committing cash and time.</p></article>
+      </div>
+    </section>
+    <section className="journey-cta">
+      <div><span>READY WHEN YOU ARE</span><h2>Put your own assumptions through the model.</h2></div>
+      <a href="/#calculator">Open the free calculator <span aria-hidden="true">↗</span></a>
+    </section>
+  </>
+);
+const supportEmailAddress = "support@mybreakeven.com";
+const emailProviderUrl = (provider, subject) => {
+  const email = encodeURIComponent(supportEmailAddress);
+  const topic = encodeURIComponent(subject);
+  return provider === "outlook"
+    ? `https://outlook.live.com/mail/0/deeplink/compose?to=${email}&subject=${topic}`
+    : `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${topic}`;
+};
+const SupportEmailLink = ({ subject, children }) => {
+  const [open, setOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const copyAddress = async () => {
+    try {
+      await navigator.clipboard.writeText(supportEmailAddress);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1800);
+    } catch {
+      window.prompt("Copy this support email:", supportEmailAddress);
+    }
+  };
+  return <>
+    <button type="button" className="support-email-trigger" onClick={() => setOpen(true)}>{children}</button>
+    {open && <div className="email-panel-backdrop" role="presentation" onMouseDown={(event) => event.target === event.currentTarget && setOpen(false)}>
+      <section className="email-panel" role="dialog" aria-modal="true" aria-labelledby="email-panel-title">
+        <button className="email-panel-close" type="button" onClick={() => setOpen(false)} aria-label="Close email options">×</button>
+        <span className="email-panel-icon"><Mail /></span>
+        <small>CONTACT MYBREAKEVEN</small>
+        <h2 id="email-panel-title">Choose how you want to email us.</h2>
+        <p>Your message will be addressed to <strong>{supportEmailAddress}</strong> with the subject ready.</p>
+        <div className="email-provider-actions">
+          <a href={emailProviderUrl("gmail", subject)} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>Continue with Gmail <span>↗</span></a>
+          <a href={emailProviderUrl("outlook", subject)} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>Continue with Outlook <span>↗</span></a>
+        </div>
+        <button className="email-copy-action" type="button" onClick={copyAddress}>{copied ? "Email copied" : "Copy email address"}</button>
+      </section>
+    </div>}
+  </>;
+};
+export const Contact = () => (
+  <>
+    <section className="contact-hero">
+      <div>
+        <span className="journey-kicker"><i /> CONTACT MYBREAKEVEN</span>
+        <h1>Tell us what you are trying to work out.</h1>
+        <p>Send the business type, the page you were using and the question you need answered. Clear context helps us give you a useful reply.</p>
+      </div>
+      <aside className="contact-inbox">
+        <Mail />
+        <small>PRIMARY SUPPORT INBOX</small>
+        <SupportEmailLink subject="MyBreakeven support request">support@mybreakeven.com <span aria-hidden="true">↗</span></SupportEmailLink>
+        <p>Product questions, account support, calculator feedback and industry requests.</p>
+      </aside>
+    </section>
+    <section className="contact-route" aria-label="Contact options">
+      <article>
+        <span>01</span>
+        <h2>Calculator feedback</h2>
+        <p>Share the calculator, input or result that needs attention. Do not include passwords or payment-card details.</p>
+        <SupportEmailLink subject="Calculator feedback">Email calculator feedback ↗</SupportEmailLink>
+      </article>
+      <article>
+        <span>02</span>
+        <h2>Account or billing</h2>
+        <p>Include the email attached to your account and a short description of the issue. Never send your password.</p>
+        <SupportEmailLink subject="Account or billing support">Request account support ↗</SupportEmailLink>
+      </article>
+      <article>
+        <span>03</span>
+        <h2>Industry request</h2>
+        <p>Tell us the business model, what it sells and which costs or capacity limits should be included.</p>
+        <SupportEmailLink subject="New industry request">Suggest an industry ↗</SupportEmailLink>
+      </article>
+    </section>
+    <section className="contact-brief">
+      <div>
+        <span className="journey-kicker"><i /> A USEFUL SUPPORT NOTE</span>
+        <h2>Three details help us understand the problem faster.</h2>
+      </div>
+      <ol>
+        <li><b>01</b><span><strong>Where were you?</strong>Include the page or calculator name.</span></li>
+        <li><b>02</b><span><strong>What did you expect?</strong>Describe the result or behaviour you expected.</span></li>
+        <li><b>03</b><span><strong>What happened instead?</strong>Add the exact message and a screenshot when useful.</span></li>
+      </ol>
+    </section>
+    <section className="contact-final">
+      <div><small>ONE INBOX. THE RIGHT CONTEXT.</small><h2>Ready to send your question?</h2></div>
+      <SupportEmailLink subject="MyBreakeven support request">Email support <span aria-hidden="true">↗</span></SupportEmailLink>
+    </section>
+  </>
+);
+export const legalPages = {
+  "/privacy-policy": {
+    eyebrow: "PRIVACY",
+    title: "Privacy Policy",
+    intro: "How MyBreakeven handles information when you use our calculators and website.",
+    sections: [
+      ["Calculator data", "The free calculator runs in your browser. Typing or changing financial assumptions does not send them to our servers. Choosing Continue with these numbers uses same-tab session storage for a temporary handoff to the full calculator; it expires after five minutes and is removed when opened. If you sign in and choose Save scenario, the scenario name, industry, currency and financial inputs are stored with your account in Supabase so you can reopen them. You can export or delete saved scenarios from your dashboard."],
+      ["Website information", "Our hosting and security providers may process standard technical data such as IP address, browser type, device information, requested pages and timestamps to operate, protect and diagnose the website."],
+      ["Messages you send", "If you contact us, we use the information in your message to reply, provide support and improve the product."],
+      ["Optional accounts", "If you create an account, our authentication provider processes your email address, encrypted authentication credentials, verification status and security session data. MyBreakeven never receives your plain-text password."],
+      ["Account controls", "You may request access, correction or deletion of account information by emailing support@mybreakeven.com. Authentication records may be retained where reasonably required for security, fraud prevention or legal compliance."],
+      ["Analytics", "With your permission, Google Analytics measures pages viewed, approximate location, device and browser information, traffic sources and interactions. We do not send calculator inputs, account passwords or saved scenario contents to Google Analytics. You can reject optional analytics without losing access to the service."],
+      ["Error monitoring", "We use Sentry to receive technical error details needed to diagnose failures. Default personally identifiable information, session replay, logs and performance tracing are disabled. Query strings, request headers, cookies, request bodies and user identity are removed before an error is sent."],
+      ["Service providers", "We use carefully selected providers for hosting, analytics, authentication, email and subscription payments through Polar. Each provider processes data for its stated service and under its own applicable terms."],
+      ["Your choices", "You may ask about, correct or request deletion of personal information you have directly provided by emailing support@mybreakeven.com."],
+    ],
+  },
+  "/terms-of-service": {
+    eyebrow: "TERMS",
+    title: "Terms of Service",
+    intro: "Rules for using MyBreakeven calculators, content and subscription features.",
+    sections: [
+      ["Planning tool", "MyBreakeven provides assumption-based planning estimates. Results are not tax, legal, accounting, lending or investment advice, and they are not a guarantee of revenue, profit or business performance."],
+      ["Your responsibility", "You are responsible for the accuracy of your inputs and for reviewing important decisions with qualified professionals where appropriate."],
+      ["Acceptable use", "Do not misuse the service, interfere with its operation, attempt unauthorized access, or copy and resell the product or its protected content."],
+      ["Availability", "We may improve, change or discontinue features. We aim for reliable service but cannot promise uninterrupted or error-free availability."],
+      ["Contact", "Questions about these terms can be sent to support@mybreakeven.com."],
+    ],
+  },
+  "/refund-policy": {
+    eyebrow: "BILLING",
+    title: "Refund Policy",
+    intro: "Cancellation and refund terms for paid MyBreakeven subscriptions.",
+    sections: [
+      ["Subscription billing", "MyBreakeven Pro is billed monthly through Polar at the price shown during checkout."],
+      ["Subscription cancellation", "Customers can cancel renewal through the billing customer portal. Access will normally continue through the paid billing period."],
+      ["Refund requests", "If a billing error, duplicate charge or material service problem occurs, contact us promptly at support@mybreakeven.com. Eligible requests will be reviewed fairly under applicable consumer law and the checkout provider's rules."],
+      ["No guaranteed outcome", "A subscription provides access to software features. Business results depend on user inputs and real-world conditions, so a particular financial outcome is not guaranteed."],
+    ],
+  },
+  "/cookie-policy": {
+    eyebrow: "COOKIES",
+    title: "Cookie Policy",
+    intro: "How browser storage and cookies may be used on MyBreakeven.",
+    sections: [
+      ["Current use", "The free calculator does not require an account. Its live inputs stay in the browser unless you sign in and choose Save scenario. Continue with these numbers uses temporary same-tab session storage, expires after five minutes and is removed when the full calculator opens. Saved account scenarios are stored in Supabase. The Monthly Break-Even Monitor stores its entries in this browser; clearing site storage removes those local entries."],
+      ["Account sessions", "Optional accounts use essential local storage and authentication tokens to keep users securely signed in, refresh sessions and protect private account routes. These essential technologies are not used for advertising."],
+      ["Essential storage", "We may use essential cookies or similar browser storage for security, preferences, authentication and reliable site operation."],
+      ["Optional analytics", "Google Analytics is disabled by default and loads only after you choose Accept analytics. If accepted, it may use cookies or similar identifiers to measure page views, interactions, approximate location, device and browser information, and traffic sources. Advertising personalization and Google Signals are disabled."],
+      ["Your analytics choice", "You may reject analytics and continue using MyBreakeven. Your choice is stored in this browser. You can clear the site\'s browser storage to reset the choice and see the consent controls again."],
+      ["Browser controls", "You can block or delete cookies through your browser settings, although essential account or checkout features may then stop working."],
+    ],
+  },
+};
+
+export const LegalPage = ({ page }) => (
+  <article className="legal-page">
+    <header className="page-hero">
+      <span>{page.eyebrow}</span>
+      <h1>{page.title}</h1>
+      <p>{page.intro}</p>
+      <small>Effective {page.title === "Privacy Policy" || page.title === "Cookie Policy" || page.title === "Terms of Service" ? "September 30, 2026" : "September 13, 2026"}</small>
+    </header>
+    <div className="legal-content">
+      {page.sections.map(([heading, copy]) => (
+        <section key={heading}><h2>{heading}</h2><p>{copy}</p></section>
+      ))}
+    </div>
+  </article>
+);

@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 
 const source = readFileSync(new URL("./sentry.js", import.meta.url), "utf8");
-const pages = readFileSync(new URL("./Pages.jsx", import.meta.url), "utf8");
+const pages = readFileSync(new URL("./StaticPageContent.jsx", import.meta.url), "utf8");
 
 describe("privacy-safe Sentry monitoring", () => {
   it("runs only in production with PII and optional telemetry disabled", () => {

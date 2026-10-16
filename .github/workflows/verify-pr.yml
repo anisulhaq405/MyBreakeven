@@ -22,6 +22,8 @@ jobs:
       - run: npm run build
       - name: Audit rendered routes and internal links
         run: python3 scripts/audit-built-site.py --output /tmp/site-inventory.json
+      - name: Audit every page delivery budget and image dimensions
+        run: node scripts/audit-page-delivery.mjs --baseline docs/seo/2026-10-16-page-delivery-before.json --output /tmp/page-delivery
       - name: Verify industry calculator HTML links
         run: |
           node --input-type=module <<'EOF'
