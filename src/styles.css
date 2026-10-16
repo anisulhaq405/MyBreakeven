@@ -1453,3 +1453,5 @@ footer.compact-footer{padding:32px max(24px,calc((100% - 1180px)/2)) 20px}
 .proof article p { color: #4a5a6c; }
 .insight-grid article > p.negative { color: #9f2636; }
 .insight-grid article > p.positive { color: #08675f; }
+/* Keep both privacy choices reachable on narrow phones. */
+@media(max-width:380px){.analytics-consent-actions{flex-wrap:wrap}.analytics-consent button{flex:1 1 160px;min-height:44px;white-space:normal}}

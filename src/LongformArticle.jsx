@@ -45,6 +45,7 @@ export default function LongformArticle({ article: a }) {
     {a.sectionLinks&&<nav className="article-section-nav" aria-label="Guide sections">{a.sectionLinks.map(([id,label])=><a key={id} href={`#${id}`}>{label}</a>)}</nav>}
     {slug==='margin-vs-markup'&&<MarginMarkupWidget/>}
     {slug==='calculate-contribution-margin'&&<ContributionMarginWidget/>}
+    {a.answerHtml&&<section className="article-summary" dangerouslySetInnerHTML={{__html:a.answerHtml}} />}
     <figure className="article-featured"><img src={a.image} {...responsiveFeatureProps(a.image)} alt={a.alt} width={blogImageDimensions[a.image]?.width || 1200} height={blogImageDimensions[a.image]?.height || 675} fetchPriority={hasIntroWidget?undefined:'high'} loading={hasIntroWidget?'lazy':undefined} decoding="async"/><figcaption>{a.imageCaption}</figcaption></figure>
     <div className="day1-markdown" dangerouslySetInnerHTML={{ __html: a.html }} />
     {!faq.inline && faq.items.length > 0 && <section className="article-faq" id={a.sectionLinks?'guide-faqs':undefined}><h2>Frequently asked questions</h2>{faq.items.map(item => <details key={item.q}><summary>{item.q}</summary><p>{item.a}</p></details>)}</section>}

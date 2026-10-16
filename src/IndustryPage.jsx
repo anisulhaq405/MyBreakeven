@@ -1,3 +1,4 @@
+import { useEditedResultTracking } from './useProductTracking';
 import { RestaurantExamples, RestaurantResultGuide, RestaurantPlanOptions } from './RestaurantPlanning.jsx';
 import { restaurantFieldHelp } from './restaurantExamples.js';
 import { industryPages, industryInputGuidance, industryFieldHelp, industryCalculatorFaq } from './industryCalculatorContent.js';
@@ -10,13 +11,13 @@ import { SalonClusterLink } from './SalonCluster.jsx';
 import { MobileDetailingClusterLink } from './MobileDetailingCluster.jsx';
 import { LandscapingClusterLink } from './LandscapingCluster.jsx';
 import { CleaningClusterLink } from './CleaningCluster.jsx';
-import { createCalculatorUseTracker, createCalculatorResultTracker, trackProductEvent } from "./productAnalytics";
+import { createCalculatorUseTracker, trackProductEvent } from "./productAnalytics";
 import { EcommerceExamples, EcommerceResultGuide, EcommercePlanOptions } from './EcommercePlanning.jsx';
 import { ecommerceFieldHelp } from './ecommerceExamples.js';
 const salonPlanningSection = {"heading": "Test salon appointments against productive chair hours", "text": "Use complete appointment worker-hours and actual available productive time. Suppose a salon needs $6,000 contribution each month and leaves $60 per appointment. It needs 100 appointments. If each requires 1.5 delivery hours, that is 150 hours of work. A plan with only 135 productive hours has capacity for 90 whole appointments and does not fit the target.\n\nRetail purchases can add contribution, but they should not be treated as extra chair appointments. Model the service mix and product economics consistently. No-shows can consume reserved time without producing the planned paid service. Track cancellations and rebooked slots rather than assuming every diary entry creates revenue.\n\nOwner pay remains explicit in the monthly amount to cover. A booth-rental arrangement and an employee-service arrangement have different revenue and cost boundaries; avoid mixing their fields. The calculator shows an assumption-based capacity and contribution test, not a guarantee of appointment demand or salon profitability.", "question": "Does a full diary prove the salon covers its costs?", "answer": "No. Entries can include unpaid gaps, no-shows and services with different contribution. Compare paid delivered appointments, their costs and productive hours with the monthly requirement."};
 import { toolThemes } from './toolThemes.js';
 import './tool-themes.css';
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { ArrowRight, BarChart3, CheckCircle2, ShieldCheck } from "lucide-react";
 import { stageCalculatorPlan } from "./calculatorTransfer";
 import { calculate } from "./engine";
@@ -42,16 +43,11 @@ function IndustryQuickCalculator({ industry, industryKey }) {
   const [values, setValues] = useState(() => ({ ...industry.values }));
   const result = useMemo(() => calculate(values), [values]);
   const [recordCalculatorUse] = useState(() => createCalculatorUseTracker());
-  const [recordResultReady] = useState(() => createCalculatorResultTracker());
   const [hasEdited, setHasEdited] = useState(false);
   const [activeExample, setActiveExample] = useState('');
   const fields = fieldLabels(industry);
   const [transferError, setTransferError] = useState("");
-  useEffect(() => {
-    if (!['ecommerce', 'restaurant'].includes(industryKey) || !hasEdited || !result.valid) return;
-    const timer = setTimeout(() => recordResultReady(industryKey), 700);
-    return () => clearTimeout(timer);
-  }, [industryKey, hasEdited, values, result.valid, recordResultReady]);
+  useEditedResultTracking(industryKey, values, result.valid, hasEdited, recordCalculatorUse);
 
   return <section className="industry-quick-calculator" id="industry-calculator" aria-labelledby="industry-calculator-title">
     <div className="industry-quick-intro">

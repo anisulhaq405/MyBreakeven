@@ -1,3 +1,5 @@
+import './pricing-decisions.css';
+import { useProductPageView } from './useProductTracking';
 import { staticPageMeta } from './staticPageMeta.js';
 import AuthorityPage from './AuthorityPages.jsx';
 import { authorityPages } from './authorityResources.js';
@@ -27,44 +29,37 @@ import IndustryPage, { industryPages } from "./IndustryPage";
 import { POLAR_CHECKOUT_URL } from "./billing";
 const AuthPage = lazy(() => import("./AuthPages").then(module => ({ default: module.AuthPage })));
 const DashboardPage = lazy(() => import("./AuthPages").then(module => ({ default: module.DashboardPage })));
+const calculatorCounts = { industry: Object.keys(industryPages).length, tools: Object.keys(freeTools).length };
 const Pricing = () => (
-  <>
+  <div className="pricing-decision-page">
     <section className="page-hero">
-      <span>STRAIGHTFORWARD PRICING</span>
-      <h1>Start free. Upgrade when you need deeper planning.</h1>
-      <p>
-        Use the core calculator without an account. Pro expands saved
-        scenarios and adds advanced analysis, comparisons and downloadable reports.
-      </p>
+      <span>STRAIGHTFORWARD PRICING</span><h1>Start free. Upgrade when you need deeper planning.</h1>
+      <p>Work out the sales your business needs today. Save a base plan, compare a cost change and review the next decision with numbers you can explain.</p>
+      <a href="/calculator-walkthroughs/">See a worked calculator walkthrough</a>
     </section>
-    <section className="pricing page-pricing">
-      <div>
-        <article>
-          <h3>Free</h3>
-          <strong>$0</strong>
-          <p>Calculate privately without a credit card.</p>
-          <ul><li>All 8 industry calculators</li><li>Exact break-even and feasibility results</li><li>Formula trace</li><li>Up to 3 saved scenarios</li></ul>
-          <a className="page-button secondary" href="/#calculator">
-            Use calculator
-          </a>
-        </article>
-        <article className="pro">
-          <small>MYBREAKEVEN PRO</small>
-          <h3>Pro</h3>
-          <strong>
-            $9.99 <i>/ month</i>
-          </strong>
-          <p>Advanced planning for active owners and teams.</p>
-          <ul><li>Up to 100 saved scenarios</li><li>Pro Command Center with search, filters and portfolio KPIs</li><li>Executive Decision Brief with shareable action plan</li><li>Offer Mix Studio for multiple products and services</li><li>Price Guard and discount recovery analysis</li><li>Customer Acquisition Break-Even and CAC payback</li><li>Hire Break-Even and staffing utilization</li><li>Startup recovery and break-even timeline</li><li>Monthly Break-Even Monitor (saved in this browser)</li><li>Profit forecast, margin of safety and capacity solver</li><li>Saved-plan cost drift and risk sensitivity</li><li>Compare 3 plans side by side</li><li>CSV and professional PDF reports</li></ul>
-          <a href="/pro-user-guide/">How to use every Pro feature</a>
-          <a className="page-button" href={POLAR_CHECKOUT_URL} onClick={() => trackProductEvent("pro_checkout_click")}>
-            Upgrade to Pro
-          </a>
-        </article>
-      </div>
-    </section>
-  </>
+    <section className="pricing page-pricing" aria-label="Free and Pro plans"><div>
+      <article><h3>Free</h3><strong>$0</strong><p>Work out your target before creating an account.</p>
+        <ul><li>All {calculatorCounts.industry + calculatorCounts.tools} calculator pages: {calculatorCounts.industry} industry models and {calculatorCounts.tools} decision tools</li><li>Break-even targets, contribution and productive-hour feasibility</li><li>Formula trace in the full break-even calculator</li><li>Up to 3 saved scenarios with a free account</li></ul>
+        <a className="page-button secondary" href="/#calculator">Use the free calculator</a><small>Calculation needs no account or credit card. Saving is an explicit action after sign-in.</small>
+      </article>
+      <article className="pro"><small>MYBREAKEVEN PRO</small><h3>Pro</h3><strong>$9.99 <i>/ month</i></strong>
+        <p>Keep a baseline and compare the next business decision.</p>
+        <ul><li>Keep up to 100 saved scenarios for later review</li><li>Compare 3 plans side by side using a consistent unit and currency</li><li>Test pricing, cost changes, offer mix and staffing against your target</li><li>Review forecasts, risk sensitivity and productive capacity</li><li>Download CSV and professional PDF reports</li></ul>
+        <a className="page-button" href={POLAR_CHECKOUT_URL} onClick={() => trackProductEvent("pro_checkout_click")}>Upgrade to Pro</a>
+        <small>Monthly subscription through Polar. Opening checkout does not save your calculator inputs.</small>
+        <details className="pricing-all-features"><summary>See every included Pro tool</summary><ul><li>Up to 100 saved scenarios</li><li>Pro Command Center with search, filters and portfolio KPIs</li><li>Executive Decision Brief with shareable action plan</li><li>Offer Mix Studio for multiple products and services</li><li>Price Guard and discount recovery analysis</li><li>Customer Acquisition Break-Even and CAC payback</li><li>Hire Break-Even and staffing utilization</li><li>Startup recovery and break-even timeline</li><li>Monthly Break-Even Monitor (saved in this browser)</li><li>Profit forecast, margin of safety and capacity solver</li><li>Saved-plan cost drift and risk sensitivity</li><li>Compare 3 plans side by side</li><li>CSV and professional PDF reports</li></ul></details>
+        <a href="/pro-user-guide/">See the step-by-step Pro guide</a>
+      </article>
+    </div></section>
+    <section className="pricing-decisions" aria-labelledby="pricing-decisions-title"><h2 id="pricing-decisions-title">What would you compare next?</h2><p>These are planning uses for the existing tools. Replace example assumptions with your own records.</p><div>
+      <article><h3>Restaurant food costs change</h3><p>Save the current plan, then create a higher-food-cost case. Compare required orders and productive-hour capacity before changing the menu price.</p><a href="/calculators/restaurant-break-even-calculator/#restaurant-channel-examples">Start with a restaurant example</a></article>
+      <article><h3>A service job needs more time</h3><p>Compare the base job with a longer delivery-time case. Review the capacity gap and include any extra committed staffing cost before treating it as a workable plan.</p><a href="/calculators/cleaning-business-break-even-calculator/">Check a service-business target</a></article>
+      <article><h3>A product promotion changes margin</h3><p>Keep regular-price and promotion scenarios separate. Compare contribution, sales targets and making or fulfillment hours; demand still needs its own evidence.</p><a href="/calculators/ecommerce-break-even-calculator/#ecommerce-product-examples">Start with a product example</a></article>
+    </div></section>
+    <section className="pricing-next-steps" aria-labelledby="pricing-next-title"><h2 id="pricing-next-title">Keep the numbers you want to revisit</h2><ol><li>Enter and check your own inputs in the <a href="/#calculator">full calculator</a>. From an industry calculator, choose “Continue with these numbers”.</li><li>Sign in and choose Save scenario. A free account can keep up to 3; Pro supports up to 100.</li><li>For Pro comparisons, save distinct cases and select up to 3 in your dashboard. Use the same unit and currency.</li></ol><p>Opening pricing or checkout does not save or transfer an unsaved plan. The Monthly Break-Even Monitor keeps its entries in the current browser; saved account scenarios are separate.</p><nav aria-label="Plan and billing information"><a href="/pro-user-guide/#save">Saving, comparison and export instructions</a><a href="/refund-policy/">Cancellation and refund policy</a></nav></section>
+  </div>
 );
+
 const About = () => (
   <>
     <section className="about-hero">
@@ -299,6 +294,7 @@ const LegalPage = ({ page }) => (
   </article>
 );
 export default function SecondaryPage({ path, initialArticle }) {
+  useProductPageView(path === "/pricing" ? "pro_pricing_view" : null);
   const pageMeta = {
     ...Object.fromEntries(Object.entries(staticPageMeta).map(([route, meta]) => [`/${route}`, meta])),
     ...Object.fromEntries(Object.entries(freeTools).map(([slug, tool]) => [`/calculators/${slug}`, [tool.title, tool.description]])),

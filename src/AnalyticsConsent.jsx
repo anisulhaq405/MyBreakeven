@@ -1,7 +1,7 @@
+import { readAnalyticsChoice, saveAnalyticsChoice, ANALYTICS_CONSENT_EVENT } from './analyticsChoice';
 import React, { useEffect, useState } from "react";
 
 const MEASUREMENT_ID = "G-CEYVEE1ZV2";
-const CONSENT_KEY = "mybreakeven_analytics_consent";
 
 function loadAnalytics() {
   if (document.querySelector(`script[data-ga4="${MEASUREMENT_ID}"]`)) return;
@@ -25,14 +25,20 @@ function loadAnalytics() {
 }
 
 export default function AnalyticsConsent() {
-  const [choice, setChoice] = useState(() => localStorage.getItem(CONSENT_KEY));
+  const [choice, setChoice] = useState(() => readAnalyticsChoice());
 
   useEffect(() => {
     if (choice === "accepted") loadAnalytics();
   }, [choice]);
 
+  useEffect(() => {
+    const update = () => setChoice(readAnalyticsChoice());
+    window.addEventListener(ANALYTICS_CONSENT_EVENT, update);
+    return () => window.removeEventListener(ANALYTICS_CONSENT_EVENT, update);
+  }, []);
+
   const decide = (nextChoice) => {
-    localStorage.setItem(CONSENT_KEY, nextChoice);
+    saveAnalyticsChoice(nextChoice);
     setChoice(nextChoice);
   };
 
