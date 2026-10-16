@@ -1,4 +1,5 @@
 import { applyOctober16GuideReview } from './october16GuideReview.js';
+import { applyIntentOwnershipReview } from './intentOwnershipReview.js';
 import {applyRemainingSectionEnrichment} from './remainingSectionEnrichment.js';
 import {applyFourSectionEnrichment} from './fourSectionEnrichment.js';
 import {applyCleaningWorksheetReview} from './cleaningWorksheetReview.js';
@@ -111,7 +112,7 @@ const normalizePostBase = post => applyRemainingSectionEnrichment(applyFourSecti
   opening: cleanText(october07RecoveryUpdateMap[post.slug]?.opening || october07UpdateMap[post.slug]?.opening || october06UpdateMap[post.slug]?.opening || october05UpdateMap[post.slug]?.opening || october04UpdateMap[post.slug]?.opening || october03UpdateMap[post.slug]?.opening || post.opening),
 })))))))))))))));
 
-const normalizePost = post => applyOctober16GuideReview(normalizePostBase(post));
+const normalizePost = post => applyIntentOwnershipReview(applyOctober16GuideReview(normalizePostBase(post)));
 
 export const blogCollections = Object.freeze({
   foundation: foundationPosts.map(normalizePost),
