@@ -7,3 +7,6 @@
 /* Bring plan prices closer to the opening copy; expanding Pro should not stretch Free. */
 .pricing-decision-page .page-hero{padding:52px 24px 36px}.pricing-decision-page .page-hero h1{font-size:clamp(32px,4vw,52px);max-width:940px;margin:18px auto}.pricing-decision-page .page-pricing{padding:24px 24px 52px}.pricing-decision-page .page-pricing>div{margin:0 auto;align-items:start}
 @media(max-width:620px){.pricing-decision-page .page-hero{padding:34px 18px 28px}.pricing-decision-page .page-pricing{padding:18px 18px 36px}}
+
+/* Plan names are section headings after the page H1; preserve their existing appearance. */
+.pricing-decision-page .page-pricing article>h2{font:700 24px Sora;letter-spacing:normal;margin:12px 0 20px;color:#111831}.pricing-decision-page .page-pricing article.pro>h2{color:#fff}

@@ -38,11 +38,11 @@ const Pricing = () => (
       <a href="/calculator-walkthroughs/">See a worked calculator walkthrough</a>
     </section>
     <section className="pricing page-pricing" aria-label="Free and Pro plans"><div>
-      <article><h3>Free</h3><strong>$0</strong><p>Work out your target before creating an account.</p>
+      <article><h2>Free</h2><strong>$0</strong><p>Work out your target before creating an account.</p>
         <ul><li>All {calculatorCounts.industry + calculatorCounts.tools} calculator pages: {calculatorCounts.industry} industry models and {calculatorCounts.tools} decision tools</li><li>Break-even targets, contribution and productive-hour feasibility</li><li>Formula trace in the full break-even calculator</li><li>Up to 3 saved scenarios with a free account</li></ul>
         <a className="page-button secondary" href="/#calculator">Use the free calculator</a><small>Calculation needs no account or credit card. Saving is an explicit action after sign-in.</small>
       </article>
-      <article className="pro"><small>MYBREAKEVEN PRO</small><h3>Pro</h3><strong>$9.99 <i>/ month</i></strong>
+      <article className="pro"><small>MYBREAKEVEN PRO</small><h2>Pro</h2><strong>$9.99 <i>/ month</i></strong>
         <p>Keep a baseline and compare the next business decision.</p>
         <ul><li>Keep up to 100 saved scenarios for later review</li><li>Compare 3 plans side by side using a consistent unit and currency</li><li>Test pricing, cost changes, offer mix and staffing against your target</li><li>Review forecasts, risk sensitivity and productive capacity</li><li>Download CSV and professional PDF reports</li></ul>
         <a className="page-button" href={POLAR_CHECKOUT_URL} onClick={() => trackProductEvent("pro_checkout_click")}>Upgrade to Pro</a>
