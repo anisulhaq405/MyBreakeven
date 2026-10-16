@@ -212,7 +212,7 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
           <h2>{isPro ? "Compare scenarios and stress-test rising costs" : "Save your plan and unlock deeper analysis"}</h2>
         </div>
         <div className="export-actions">
-          <button onClick={() => { setScenarioName(`${industry.short} plan – ${new Date().toLocaleDateString("en-US")}`); setShowSaveForm(true); setSaveState({ loading: false, message: "", error: "" }); }} aria-expanded={showSaveForm} aria-controls="save-scenario-form" disabled={saveState.loading || !reportAnalysis.valid}>
+          <button onClick={() => { trackProductEvent("save_scenario_open", industryKey); setScenarioName(`${industry.short} plan – ${new Date().toLocaleDateString("en-US")}`); setShowSaveForm(true); setSaveState({ loading: false, message: "", error: "" }); }} aria-expanded={showSaveForm} aria-controls="save-scenario-form" disabled={saveState.loading || !reportAnalysis.valid}>
             <Save /> {saveState.loading ? "Saving…" : "Save scenario"}
           </button>
           {limits.exports ? <><button onClick={csv} disabled={!reportAnalysis.valid}><Download /> Download CSV</button><button className="primary" onClick={print} disabled={!reportAnalysis.valid}><FileText /> Print / Save PDF</button></> : <a className="tool-upgrade" href="/pricing/">Unlock CSV &amp; PDF with Pro</a>}
@@ -224,7 +224,7 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
         <button type="submit" disabled={saveState.loading || !reportAnalysis.valid}>{saveState.loading ? "Saving…" : "Save plan"}</button>
         <button type="button" disabled={saveState.loading} onClick={() => setShowSaveForm(false)}>Cancel</button>
       </form>}
-      {saveState.error && <p className="tool-message error" role="alert">{saveState.error} {saveState.error.startsWith("Log in") && <><a href="/login/" target="_blank" rel="noopener">Log in (opens a new tab)</a>. Keep this calculator tab open. After signing in, return here and choose Save plan.</>}</p>}
+      {saveState.error && <p className="tool-message error" role="alert">{saveState.error} {saveState.error.startsWith("Log in") && <><a href="/login/" target="_blank" rel="noopener" onClick={() => trackProductEvent("save_login_click", industryKey)}>Log in (opens a new tab)</a>. Keep this calculator tab open. After signing in, return here and choose Save plan.</>}</p>}
       {saveState.message && <p className="tool-message success" role="status">{saveState.message} <a href="/dashboard/">View dashboard</a></p>}
       <div className="scenario-table">
         <div className="scenario-row heading">

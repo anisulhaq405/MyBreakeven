@@ -35,7 +35,7 @@ export default function App() {
   const [initialPlan] = useState(() => initialCalculatorPlan(typeof window === "undefined" ? null : window));
   const [industryKey, setIndustryKey] = useState(initialPlan.industryKey),
     [input, setInput] = useState(initialPlan.input),
-    [currency, setCurrency] = useState("USD");
+    [currency, setCurrency] = useState(initialPlan.currency || "USD");
   const currencySymbol = new Intl.NumberFormat("en-US", { style: "currency", currency, currencyDisplay: "narrowSymbol" }).formatToParts(0).find(p => p.type === "currency")?.value || currency;
   const industry = industries[industryKey],
     fields = fieldLabels(industry);
@@ -155,9 +155,9 @@ export default function App() {
               </div>
               <span className="live-pill"><i /> Live</span>
             </div>
-            {initialPlan.transferUnavailable && <p className="calculator-transfer-note" role="status">The temporary plan was unavailable or expired. Example inputs are shown; return to your industry page to carry the edited plan again.</p>}
+            {initialPlan.transferUnavailable && <p className="calculator-transfer-note" role="status">The temporary plan was unavailable or expired. Example inputs are shown; return to your source calculator to carry the edited plan again.</p>}
             {loadError && <p className="calculator-transfer-note" role="status">{loadError}</p>}
-            {initialPlan.transferred && <p className="calculator-transfer-note" role="status">Your edited industry plan is loaded. Continue adjusting the same numbers below.</p>}
+            {initialPlan.transferred && <p className="calculator-transfer-note" role="status">Your plan and currency are loaded. Review the carried costs, monthly commitments and working capacity below.</p>}
             <div className="calculator-selectors">
               <label>
                 <span><BriefcaseBusiness /> Business model</span>
