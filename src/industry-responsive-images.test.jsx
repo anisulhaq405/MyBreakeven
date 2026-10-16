@@ -21,7 +21,11 @@ describe('Responsive industry cover delivery', () => {
       const metadata = await sharp(path).metadata();
       expect([metadata.width, metadata.height]).toEqual([800, 450]);
       expect(statSync(path).size).toBeLessThan(statSync(`public${page.image}`).size);
-      expect(responsiveFeatureProps(page.image, true).srcSet).toBe(`${smaller} 800w, ${page.image} 1200w`);
+      const cardPath = `public${page.image.replace('.webp', '-400.webp')}`;
+      const cardMetadata = await sharp(cardPath).metadata();
+      expect([cardMetadata.width, cardMetadata.height]).toEqual([400, 225]);
+      expect(statSync(cardPath).size).toBeLessThan(statSync(path).size);
+      expect(responsiveFeatureProps(page.image, true).srcSet).toBe(`${page.image.replace('.webp', '-400.webp')} 400w, ${smaller} 800w, ${page.image} 1200w`);
     }
   });
 
@@ -29,7 +33,7 @@ describe('Responsive industry cover delivery', () => {
     const directory = renderToStaticMarkup(<FreeToolsHub />);
     for (const [slug, page] of industries) {
       const candidates = responsiveFeatureProps(page.image).srcSet;
-      expect(directory).toContain(`srcSet="${candidates}"`);
+      expect(directory).toContain(`srcSet="${responsiveFeatureProps(page.image, true).srcSet}"`);
       const markup = renderToStaticMarkup(<IndustryPage slug={slug} />);
       expect(markup).toContain(`srcSet="${candidates}"`);
       expect(markup).toContain('width="1200" height="675"');
