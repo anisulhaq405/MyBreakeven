@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from 'react';
 import { ANALYTICS_CONSENT_EVENT } from './analyticsChoice';
-import { createCalculatorResultTracker, trackProductEvent } from './productAnalytics';
+import { createCalculatorResultTracker, subscribeProductPageView } from './productAnalytics';
 
 export function useEditedResultTracking(industryKey, input, valid, edited, recordUse) {
   const recordResult = useMemo(() => createCalculatorResultTracker(), [industryKey]);
@@ -22,10 +22,6 @@ export function useEditedResultTracking(industryKey, input, valid, edited, recor
 export function useProductPageView(name) {
   useEffect(() => {
     if (!name) return;
-    let recorded = false;
-    const record = () => { if (!recorded) recorded = trackProductEvent(name); };
-    record();
-    window.addEventListener(ANALYTICS_CONSENT_EVENT, record);
-    return () => window.removeEventListener(ANALYTICS_CONSENT_EVENT, record);
+    return subscribeProductPageView(name);
   }, [name]);
 }

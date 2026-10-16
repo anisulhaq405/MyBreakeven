@@ -21,3 +21,5 @@ export function saveAnalyticsChoice(choice, browser = typeof window === 'undefin
   if (browser.dispatchEvent && browser.Event) browser.dispatchEvent(new browser.Event(ANALYTICS_CONSENT_EVENT));
   return persisted;
 }
+
+export const ANALYTICS_READY_EVENT = 'mybreakeven:analytics-ready';
