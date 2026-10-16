@@ -28,3 +28,29 @@ Shared header/footer markup, formulas, defaults, cost transfers, currency-label 
 ## Measurement boundary
 
 Every generated URL receives delivery/image coverage. Not every URL receives a separate Lighthouse lab run; representative mobile runs cover page families and targeted heavy-image content. No field Core Web Vitals pass, guaranteed ranking, 100 score or universal speed improvement is claimed from a smaller build. Remaining diagnostics should be evaluated from fresh reports instead of assuming payload savings equal a specific LCP reduction.
+
+## First live mobile observations after the route release
+
+Official PageSpeed runs at approximately 12:50–12:54 PM Pakistan time, emulated Moto G Power / Slow 4G / Lighthouse 13.5.0. All have No Data for field experience. Each is one lab observation, not a controlled multi-run causal comparison.
+
+| Representative page | Performance | LCP | Accessibility |
+| --- | ---: | ---: | ---: |
+| Home | 98 | 2.1s | 100 |
+| Directory | 96 | 2.0s | 100 |
+| Cleaning industry calculator | 95 | 2.3s | 100 |
+| Menu pricing | 98 | 2.0s | 100 |
+| Detailing pricing guide | 96 | 2.5s | 100 |
+| Guide library | 96 | 2.2s | 96 |
+| Pricing | 99 | 1.8s | 100 |
+| Restaurant hub | 98 | 2.1s | 100 |
+| Calculation methodology | 96 | 2.1s | 100 |
+| Pro guide | 99 | 1.7s | 96 |
+| ROAS calculator | 94 | 2.6s | 100 |
+| Discount calculator | 94 | 2.4s | 100 |
+| Employee cost | 98 | 2.0s | 100 |
+
+All thirteen report TBT 0ms and Best Practices/SEO 100. CLS ranges 0–0.039. Directory and cleaning earlier same-day readings were 88/2.9s and 88/3.0s respectively. Fresh readings are better, but no field or universal timing claim follows.
+
+The two 96 accessibility readings identify specific low-contrast text: featured-library dates and Pro-guide figure notes. Follow-up: darken those body-text colors without changing shared chrome; also let blog cards use already registered responsive image candidates. Require affected-page remeasurement after deployment. No new image generation or content rewrite is needed.
+
+Live browser checks after the main release: directory empty search/reset works; menu-price edits and currency-label changes update results; currency labels match the generated input IDs. Thirteen route-family HTTP/content checks find the expected dedicated entries and no old combined Pages preload. The complete route crawl is tracked separately from these scoped checks.

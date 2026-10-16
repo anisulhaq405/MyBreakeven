@@ -1,3 +1,4 @@
+import { responsiveFeatureProps } from './responsiveFeatureImages.js';
 import React, { useMemo, useState } from "react";
 import { ArrowUpRight, BookOpen, Search, X } from "lucide-react";
 import { blogListingData } from "./blogListingData.js";
@@ -29,10 +30,10 @@ export default function BlogSection({ isHub = false } = {}) {
       <p className="blog-count" aria-live="polite">{filtered.length} {filtered.length === 1 ? "guide" : "guides"}</p>
     </div>
     {featured ? <><article className="blog-featured-card">
-      {featured.image && <a href={`/blogs/${featured.slug}/`} tabIndex="-1" aria-hidden="true"><img src={featured.image} alt="" width="1200" height="675" loading="eager" decoding="async" /></a>}
+      {featured.image && <a href={`/blogs/${featured.slug}/`} tabIndex="-1" aria-hidden="true"><img src={featured.image} {...responsiveFeatureProps(featured.image)} alt="" width="1200" height="675" loading="eager" decoding="async" /></a>}
       <div><span>{featured.tag}</span><time dateTime={featured.published}>Published {dateLabel(featured.published)}</time><h3><a href={`/blogs/${featured.slug}/`}>{featured.title}</a></h3><p>{featured.description}</p><a className="blog-read" href={`/blogs/${featured.slug}/`}>Read featured guide <ArrowUpRight /></a></div>
     </article><div className="blog-grid">{filtered.slice(1).map(article => <article key={article.slug}>
-      {article.image && <a className="blog-card-image" href={`/blogs/${article.slug}/`} tabIndex="-1" aria-hidden="true"><img src={article.image} alt="" width="1200" height="675" loading="lazy" decoding="async" /></a>}
+      {article.image && <a className="blog-card-image" href={`/blogs/${article.slug}/`} tabIndex="-1" aria-hidden="true"><img src={article.image} {...responsiveFeatureProps(article.image,true)} alt="" width="1200" height="675" loading="lazy" decoding="async" /></a>}
       <div><span>{article.tag}</span><time dateTime={article.published}>Published {dateLabel(article.published)}</time><h3><a href={`/blogs/${article.slug}/`}>{article.title}</a></h3><p>{article.description}</p><a className="blog-read" href={`/blogs/${article.slug}/`}>Read guide <ArrowUpRight /></a></div>
     </article>)}</div></> : <div className="blog-empty"><BookOpen /><h3>No matching guides yet</h3><p>Try a broader topic or clear the category filter.</p><button type="button" onClick={() => { updateQuery(""); setTag("All"); }}>Show all guides</button></div>}
   </section>;
