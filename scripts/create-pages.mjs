@@ -170,12 +170,12 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
       .replace(/<meta property="og:image:alt" content="[^"]*"\s*\/?>/, '<meta property="og:image:alt" content="Mobile detailing van, car and illustrated route markers" />');
   }
   const clusterImages = {
-    "guides/cleaning-business": ["/images/tools/cleaning-break-even.webp", "Cleaning business planning illustration"],
+    "guides/cleaning-business": ["/images/tools/cleaning-break-even-feature-20261016.webp", "Cleaning business planning scene"],
     "guides/salon-business": ["/images/tools/salon-rebooking-calculator-cover.webp", "Salon appointment and repeat-visit planning illustration"],
-    "guides/restaurant-business": ["/images/tools/restaurant-break-even.webp", "Restaurant business planning illustration"],
-    "guides/photography-business": ["/images/tools/photography-break-even.webp", "Photography business planning illustration"],
-    "guides/ecommerce-business": ["/images/tools/ecommerce-break-even.webp", "E-commerce business planning illustration"],
-    "guides/agency-business": ["/images/tools/agency-break-even.webp", "Agency business planning illustration"],
+    "guides/restaurant-business": ["/images/tools/restaurant-break-even-feature-20261016.webp", "Restaurant business planning scene"],
+    "guides/photography-business": ["/images/tools/photography-break-even-feature-20261016.webp", "Photography business planning scene"],
+    "guides/ecommerce-business": ["/images/tools/ecommerce-break-even-feature-20261016.webp", "E-commerce business planning scene"],
+    "guides/agency-business": ["/images/tools/agency-break-even-feature-20261016.webp", "Agency business planning scene"],
   };
   if (clusterImages[route]) {
     const [image, alt] = clusterImages[route];
@@ -242,7 +242,7 @@ for (const [slug, [title, description]] of Object.entries(calculators)) {
   const canonical = `https://mybreakeven.com/${route}/`;
   const tool = freeTools[slug];
   const industryImageKeys = {"cleaning-business-break-even-calculator":"cleaning", "landscaping-break-even-calculator":"landscaping", "photography-business-break-even-calculator":"photography", "agency-break-even-calculator":"agency", "mobile-detailing-break-even-calculator":"detailing", "ecommerce-break-even-calculator":"ecommerce", "restaurant-break-even-calculator":"restaurant", "salon-break-even-calculator":"salon"};
-  const pageImage = tool?.image || `/images/tools/${industryImageKeys[slug]}-break-even.webp`;
+  const pageImage = tool?.image || `/images/tools/${industryImageKeys[slug]}-break-even-feature-20261016.webp`;
   const pageImageAlt = tool?.alt || `${title.replace(" | MyBreakeven", "")} planning model: direct costs, contribution, monthly target and capacity.`;
   const schema = { "@context": "https://schema.org", "@graph": [
     { "@type": "WebPage", "@id": `${canonical}#webpage`, url: canonical, name: title, description, ...(tool ? {primaryImageOfPage: {"@type": "ImageObject", url: `https://mybreakeven.com${tool.image}`, width: 1200, height: 675}, dateModified: tool.reviewed || "2026-10-06", publisher: {"@id": "https://mybreakeven.com/#organization"}} : {dateModified:"2026-10-13",publisher:{"@id":"https://mybreakeven.com/#organization"},primaryImageOfPage:{"@type":"ImageObject",url:`https://mybreakeven.com${pageImage}`,width:1200,height:675}}), inLanguage: "en-US", isPartOf: { "@id": "https://mybreakeven.com/#website" } },
