@@ -1,4 +1,5 @@
 import { staticPageMeta } from '../src/staticPageMeta.js';
+import { routeEntryForPath } from '../src/routeEntries.js';
 import { industryCalculatorFaq } from '../src/industryCalculatorContent.js';
 import { homeFaq } from "../src/homeFaq.js";
 import { blogImageDimensions } from "../src/blogImageDimensions.js";
@@ -56,13 +57,21 @@ const allArticles = blogPosts;
 const staticPages = staticPageMeta;
 // Render public supporting pages from the same components used in the browser.
 const renderer = await createServer({ server: { middlewareMode: true, hmr: false, ws: false }, appType: "custom" });
-let PublicPage, HomeContent;
+let HomeContent;
+const serverRoutes = new Map();
 try {
-  PublicPage = (await renderer.ssrLoadModule("/src/Pages.jsx")).default;
+  const paths = [...Object.keys(staticPages).map(route => '/' + route), ...Object.keys(calculators).map(slug => '/calculators/' + slug), '/blogs/example'];
+  for (const entry of new Set(paths.map(routeEntryForPath))) {
+    serverRoutes.set(entry, (await renderer.ssrLoadModule('/' + entry)).default);
+  }
   HomeContent = (await renderer.ssrLoadModule("/src/main.jsx")).default;
 }
 finally { await renderer.close(); }
-const renderPublicPage = (path, initialArticle) => renderToString(React.createElement(PublicPage, { path, initialArticle }));
+const renderPublicPage = (path, initialArticle) => {
+  const PublicPage = serverRoutes.get(routeEntryForPath(path));
+  if (!PublicPage) throw new Error(`Missing server route: ${path}`);
+  return renderToString(React.createElement(PublicPage, { path, initialArticle, initialTool: freeTools[path.split("/")[2]] }));
+};
 base = base.replace(/<div id="root"[^>]*>[\s\S]*?<\/div>\s*<\/body>/, `<div id="root" data-prerendered="true">${renderToString(React.createElement(HomeContent))}</div></body>`);
 await writeFile(homeFile, base);
 for (const [route, [title, description, heading, privatePage = false]] of Object.entries(staticPages)) {
@@ -306,17 +315,21 @@ async function preloadRouteFiles(directory) {
     if (entry.isDirectory()) { await preloadRouteFiles(file); continue; }
     if (entry.name !== 'index.html') continue;
     const home = file.href === homeFile.href;
-    const routeKey = home ? 'src/main.jsx' : 'src/Pages.jsx';
+    const routePath = '/' + file.pathname.slice(new URL('../dist/', import.meta.url).pathname.length).replace(/index\.html$/, '').replace(/\/$/, '');
+    const routeKey = routeEntryForPath(home ? '/' : routePath);
     const assets = new Map(), visited = new Set();
     function collect(key) {
       if (visited.has(key) || !manifest[key]) return;
       visited.add(key);
       const item = manifest[key];
+      for (const dependency of item.imports || []) collect(dependency);
       assets.set(item.file, 'modulepreload');
       for (const css of item.css || []) assets.set(css, 'stylesheet');
-      for (const dependency of item.imports || []) collect(dependency);
     }
     collect(routeKey);
+    const slug = routePath.split('/')[2];
+    if (routePath.startsWith('/blogs/') && slug) collect(`src/content/generated/${slug}.json`);
+    if (routePath.startsWith('/calculators/') && Object.hasOwn(freeTools,slug)) collect(`src/content/generated-tools/${slug}.json`);
     const html = await readFile(file, 'utf8');
     const links = [...assets].filter(([asset]) => !html.includes(`href="/${asset}"`))
       .map(([asset, rel]) => `<link rel="${rel}" href="/${asset}"${rel === 'modulepreload' ? ' crossorigin' : ''}>`).join('\n');

@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 
 const source = readFileSync(new URL("./AnalyticsConsent.jsx", import.meta.url), "utf8");
-const pages = readFileSync(new URL("./Pages.jsx", import.meta.url), "utf8");
+const pages = readFileSync(new URL("./StaticPageContent.jsx", import.meta.url), "utf8");
 
 describe("privacy-safe analytics", () => {
   it("uses the configured GA4 measurement ID", () => {

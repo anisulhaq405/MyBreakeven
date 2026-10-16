@@ -1,8 +1,8 @@
 import React from 'react';
 import { dateLabel } from './authorityResources.js';
-import { freeTools } from './freeTools';
+import { calculatorDirectory } from './calculatorDirectoryData.js';
 export default function FreeToolGuide({tool,slug}){
- const sibling=Object.entries(freeTools).find(([key])=>key!==slug && ['discount','increase'].includes(freeTools[slug].mode) && ['discount','increase'].includes(freeTools[key].mode));
+ const sibling=calculatorDirectory.find(([key, candidate])=>key!==slug && ['discount','increase'].includes(tool.mode) && ['discount','increase'].includes(candidate.mode));
  return <article className="tool-method" id="tool-guide" aria-label={`${tool.name} guide`}>
  <section id="features"><h2>What this calculator includes</h2><ul>{tool.features.map(feature=><li key={feature}>{feature}</li>)}</ul></section>
  {tool.sections.map(section=><section key={section.id} id={section.id}><h2>{section.title}</h2>{section.paragraphs?.map(p=><p key={p}>{p}</p>)}{section.steps&&<ol>{section.steps.map(step=><li key={step}>{step}</li>)}</ol>}{section.table&&<div className="tool-table-wrap"><table><caption>{section.table.caption || 'Illustrative scenarios using unrounded contribution values'}</caption><thead><tr>{section.table.headers.map(h=><th scope="col" key={h}>{h}</th>)}</tr></thead><tbody>{section.table.rows.map(row=><tr key={row[0]}>{row.map((cell,i)=>i===0?<th scope="row" key={i}>{cell}</th>:<td key={i}>{cell}</td>)}</tr>)}</tbody></table></div>}{section.after?.map(p=><p key={p}>{p}</p>)}</section>)}

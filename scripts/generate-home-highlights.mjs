@@ -1,8 +1,12 @@
+import { freeTools } from '../src/freeTools.js';
+import { calculatorDirectory } from '../src/calculatorDirectory.js';
+import { generateClusterLinkStyles } from './generate-cluster-link-styles.mjs';
 import { mkdir, readdir, unlink, writeFile } from "node:fs/promises";
 import { blogCollections, blogLibrarySummary, blogPosts } from "../src/content/blogs/index.js";
 import { cafePosts } from "../src/content/blogs/cafe.js";
 
 const latest = collection => [...collection].sort((a, b) => b.published.localeCompare(a.published))[0];
+await generateClusterLinkStyles();
 const pick = post => post && Object.fromEntries(
   ["slug", "image", "title", "description", "tag"].map(key => [key, post[key]]),
 );
@@ -48,3 +52,17 @@ for (const name of await readdir(articleDirectory)) {
 await Promise.all(blogPosts.map(post => writeFile(
   new URL(`${post.slug}.json`, articleDirectory), JSON.stringify(post),
 )));
+
+// Directory cards and pricing counts do not need every calculator's worked guide/defaults.
+const directoryCards = calculatorDirectory.map(([slug, page]) => [slug, Object.fromEntries(
+  ['name','category','intro','mode','image','alt','theme'].map(key => [key, page[key]])
+)]);
+await writeFile(new URL('../src/calculatorDirectoryData.js', import.meta.url),
+  `// Generated from the calculator registries before dev and build.\nexport const calculatorDirectory = ${JSON.stringify(directoryCards)};\nexport const calculatorCounts = ${JSON.stringify({industry:calculatorDirectory.filter(([,page])=>page.mode==='industry').length,tools:calculatorDirectory.filter(([,page])=>page.mode!=='industry').length})};\n`);
+
+const toolDirectory = new URL('../src/content/generated-tools/',import.meta.url);
+await mkdir(toolDirectory,{recursive:true});
+for (const name of await readdir(toolDirectory)) {
+  if (name.endsWith('.json') && !Object.hasOwn(freeTools,name.slice(0,-5))) await unlink(new URL(name,toolDirectory));
+}
+await Promise.all(Object.entries(freeTools).map(([slug,tool]) => writeFile(new URL(slug+'.json',toolDirectory),JSON.stringify(tool))));

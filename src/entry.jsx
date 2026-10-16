@@ -1,4 +1,5 @@
 import { startFragmentNavigation } from "./fragmentNavigation";
+import { loadSecondaryRoute, loadSecondaryRouteData } from './routeLoaders.js';
 import React,{useLayoutEffect} from 'react';
 import {createRoot,hydrateRoot} from 'react-dom/client';
 import AnalyticsConsent from './AnalyticsConsent';
@@ -19,7 +20,8 @@ async function renderApp(){
   }else{
    const slug=path.startsWith('/blogs/')?path.split('/')[2]:null;
    const [{default:Page}]=await Promise.all([
-    import('./Pages'),
+    loadSecondaryRoute(path),
+    loadSecondaryRouteData(path),
     ...(slug?[import('./blogContentLoader.js').then(({loadBlogPost})=>loadBlogPost(slug))]:[]),
    ]);
    // Reuse visible server markup and attach events instead of replacing it

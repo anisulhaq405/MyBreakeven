@@ -1,0 +1,967 @@
+[
+  {
+    "url": "/",
+    "js_gzip_bytes": 137597,
+    "css_gzip_bytes": 20286
+  },
+  {
+    "url": "/about-us/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/agency-billable-utilization-rate/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/agency-break-even/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/agency-client-concentration-revenue-risk/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/agency-client-profitability/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/agency-employee-vs-freelancer-break-even/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/agency-profit-margin/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/agency-project-vs-retainer-profitability/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/agency-retainer-pricing/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/agency-scope-creep-cost/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/amazon-marketplace-vs-own-store-profit-per-order/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/break-even-analysis-example/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/break-even-formula-units-dollars/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/break-even-multiple-products-sales-mix/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/break-even-roas-formula/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/bridal-hair-and-makeup-package-pricing-for-salons/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/cafe-opening-costs/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/calculate-break-even-point/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/calculate-contribution-margin/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/car-detailing-prices-list/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/cash-flow-break-even-vs-profit-break-even/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/cash-flow-forecast-vs-break-even/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/catering-quote-profit/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/ceramic-coating-profit-margin/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/cleaning-business-break-even/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/cleaning-business-client-churn-cost/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/cleaning-business-monthly-expenses/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/cleaning-client-acquisition-payback/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/cleaning-contract-payroll-cash-gap/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/cleaning-estimate-vs-actual-job-cost/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/cleaning-minimum-booking-charge/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/coffee-shop-business-plan/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/coffee-shop-drink-contribution-margin/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/commercial-cleaning-contract-bid/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/commercial-cleaning-contract-price-increase/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/contribution-margin-vs-gross-margin/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/contribution-margin-vs-profit-margin/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/corporate-headshot-pricing/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/discount-break-even-sales-volume/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/ecommerce-break-even/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/ecommerce-bundle-pricing-profit/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/ecommerce-chargeback-cost-per-order/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/ecommerce-inventory-holding-cost-per-sku/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/ecommerce-orders-per-day-profitable/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/ecommerce-profit-margin/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/ecommerce-return-cost-per-order/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/ecommerce-shipping-costs/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/fixed-vs-variable-costs/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/fleet-detailing-contract-pricing/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/free-shipping-threshold-profit/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/freelance-business-plan-financials/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/hair-color-service-cost-per-appointment/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/how-many-agency-retainer-clients/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/how-many-cleaning-clients-5000/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/how-many-customers-can-you-lose-after-raising-prices/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/how-many-detailing-jobs-week/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/how-many-lawns-100k/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/how-many-photography-clients-month/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/how-much-does-it-cost-to-open-a-restaurant/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/how-much-does-it-cost-to-open-a-salon/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/how-much-does-it-cost-to-start-a-cleaning-business/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/how-much-does-it-cost-to-start-a-landscaping-business/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/how-much-does-it-cost-to-start-a-marketing-agency/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/how-much-does-it-cost-to-start-a-photography-business/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/how-much-does-it-cost-to-start-an-ecommerce-store/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/how-much-to-charge-for-house-cleaning/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/how-to-calculate-cost-of-goods-sold/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/how-to-calculate-days-sales-outstanding/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/how-to-calculate-working-capital/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/how-to-price-products-for-ecommerce/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/how-to-start-coffee-shop/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/how-to-start-restaurant/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/inventory-reorder-point-cash-flow/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/is-a-cleaning-business-profitable/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/is-mobile-detailing-profitable/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/landscaping-break-even/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/landscaping-business-profit-margin/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/landscaping-change-order-cost/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/landscaping-crew-utilization/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/landscaping-equipment-cost-per-hour/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/landscaping-job-costing-estimate-vs-actual/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/landscaping-maintenance-contract-pricing/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/landscaping-plant-warranty-cost/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/landscaping-route-density-profit/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/landscaping-seasonal-break-even/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/landscaping-subcontractor-cost/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/lawn-care-pricing-per-acre/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/lower-break-even-point/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/margin-of-safety-business/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/margin-vs-markup/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/mobile-detailing-break-even/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/mobile-detailing-business-startup-cost/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/mobile-detailing-cancellation-cost/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/mobile-detailing-maintenance-plan-pricing/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/mobile-detailing-travel-fee/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/mobile-detailing-water-refill-cost/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/move-out-cleaning-job-cost/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/mulch-installation-job-cost/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/operating-leverage-small-business/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/paint-correction-labor-hours-pricing/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/photography-business-break-even/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/photography-business-profit-margin/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/photography-cost-per-session-editing/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/photography-mini-session-profit/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/photography-pricing-packages/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/photography-print-package-profit/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/photography-second-shooter-cost/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/photography-usage-licensing-pricing/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/post-construction-cleaning-estimate/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/product-photography-pricing-per-image/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/recurring-vs-one-time-cleaning-profitability/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/restaurant-break-even/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/restaurant-budgeting/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/restaurant-business-plan/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/restaurant-covers-per-night-break-even/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/restaurant-delivery-app-commission-profit-per-order/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/restaurant-food-cost-percentage/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/restaurant-labor-cost-percentage/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/restaurant-menu-engineering-contribution-margin/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/restaurant-menu-pricing-formula/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/restaurant-prime-cost/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/restaurant-private-event-minimum-spend/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/restaurant-profit-margin-average/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/restaurant-sales-forecast/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/restaurant-takeout-vs-dine-in-profit-per-order/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/retail-break-even-analysis/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/salon-booth-rent-vs-commission-owner/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/salon-break-even/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/salon-clients-per-day-break-even/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/salon-membership-pricing/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/salon-no-show-cost/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/salon-profit-margin/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/salon-retail-product-profit-margin/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/salon-service-pricing/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/snow-removal-pricing/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/subscription-box-churn-break-even/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/blogs/target-profit-sales-formula/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculation-methodology/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculator-walkthroughs/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/agency-break-even-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/break-even-roas-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/cash-flow-forecast-template/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/cash-runway-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/cleaning-business-break-even-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/cleaning-contract-profit-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/detailing-chemical-cost-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/discount-break-even-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/ecommerce-break-even-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/ecommerce-return-cost-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/employee-cost-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/food-cost-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/hair-color-product-cost-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/hourly-rate-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/landscaping-break-even-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/lawn-route-profit-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/menu-pricing-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/mobile-detailing-break-even-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/mobile-detailing-travel-profit-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/photography-business-break-even-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/price-increase-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/recipe-cost-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/restaurant-break-even-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/salon-break-even-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/salon-no-show-profit-loss-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/calculators/salon-rebooking-calculator/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/contact-us/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/cookie-policy/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/dashboard/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/editorial-policy/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/forgot-password/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/founder/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/guides/agency-business/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/guides/cleaning-business/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/guides/ecommerce-business/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/guides/landscaping-business/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/guides/mobile-detailing-business/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/guides/photography-business/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/guides/restaurant-business/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/guides/salon-business/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/login/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/pricing/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/privacy-policy/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/pro-user-guide/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/refund-policy/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/reset-password/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/resources/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/resources/cleaning-business-budget-template/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/resources/cleaning-job-cost-worksheet/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/signup/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/terms-of-service/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  },
+  {
+    "url": "/tools/",
+    "js_gzip_bytes": 266734,
+    "css_gzip_bytes": 34501
+  }
+]

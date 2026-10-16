@@ -1,3 +1,4 @@
+import { featureDeliveryAssets } from './featureDeliveryAssets.js';
 const optimized = new Set([
   'recipe-cost-calculator','food-cost-calculator','menu-pricing-calculator','employee-cost-calculator','cash-flow-forecast-template',
   'how-to-calculate-cost-of-goods-sold','how-to-calculate-working-capital','how-to-calculate-days-sales-outstanding',
@@ -7,6 +8,7 @@ for (const key of ['cleaning','landscaping','photography','agency','detailing','
   optimized.add(`${key}-break-even-feature-20261016.webp`);
 }
 optimized.add('restaurant-budgeting-editorial.webp');
+for (const image of Object.values(featureDeliveryAssets)) optimized.add(image.split('/').pop());
 export function responsiveFeatureProps(image, card=false){
   if(!optimized.has(image?.split('/').pop()))return {};
   const cardCandidate = card && /\/tools\/\w+-break-even-feature-20261016\.webp$/.test(image)
