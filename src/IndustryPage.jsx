@@ -1,4 +1,5 @@
 import { useEditedResultTracking } from './useProductTracking';
+import { responsiveFeatureProps } from './responsiveFeatureImages.js';
 import { RestaurantExamples, RestaurantResultGuide, RestaurantPlanOptions } from './RestaurantPlanning.jsx';
 import { restaurantFieldHelp } from './restaurantExamples.js';
 import { industryPages, industryInputGuidance, industryFieldHelp, industryCalculatorFaq } from './industryCalculatorContent.js';
@@ -147,7 +148,7 @@ export default function IndustryPage({ slug }) {
           <div><b>{example.wholeCapacity}</b> whole {industry.unit} capacity</div>
         </aside>}
       </section>
-      <figure className="industry-tool-feature"><img src={`/images/tools/${page.key}-break-even-feature-20261016.webp`} alt={`${industry.short} break-even planning: direct costs, contribution, monthly sales target and working capacity.`} width="1200" height="675" decoding="async"/><figcaption>A {industry.short.toLowerCase()} planning model: use your own price, costs and delivery capacity.</figcaption></figure>
+      <figure className="industry-tool-feature"><img src={`/images/tools/${page.key}-break-even-feature-20261016.webp`} {...responsiveFeatureProps(`/images/tools/${page.key}-break-even-feature-20261016.webp`)} alt={`${industry.short} break-even planning: direct costs, contribution, monthly sales target and working capacity.`} width="1200" height="675" decoding="async"/><figcaption>A {industry.short.toLowerCase()} planning model: use your own price, costs and delivery capacity.</figcaption></figure>
 
       <nav className="tool-guide-nav industry-page-nav" aria-label="Calculator page sections"><a href="#industry-calculator">Calculator</a><a href="#input-records">Input records</a><a href="#calculation-method">Formula</a><a href="#industry-questions">FAQs</a></nav>
       <IndustryQuickCalculator key={page.key} industry={industry} industryKey={page.key} />

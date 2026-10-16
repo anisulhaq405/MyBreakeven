@@ -2,6 +2,11 @@ const optimized = new Set([
   'recipe-cost-calculator','food-cost-calculator','menu-pricing-calculator','employee-cost-calculator','cash-flow-forecast-template',
   'how-to-calculate-cost-of-goods-sold','how-to-calculate-working-capital','how-to-calculate-days-sales-outstanding',
 ].map(slug=>`${slug}-feature-20261013.webp`));
+// Keep the new industry covers responsive in both directory cards and page features.
+for (const key of ['cleaning','landscaping','photography','agency','detailing','ecommerce','restaurant','salon']) {
+  optimized.add(`${key}-break-even-feature-20261016.webp`);
+}
+optimized.add('restaurant-budgeting-editorial.webp');
 export function responsiveFeatureProps(image, card=false){
   if(!optimized.has(image?.split('/').pop()))return {};
   return {
