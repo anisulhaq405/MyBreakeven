@@ -1,3 +1,4 @@
+import { useEditedResultTracking } from './useProductTracking';
 import { createCalculatorUseTracker, trackProductEvent } from "./productAnalytics";
 import { toolThemes } from './toolThemes.js';
 import './tool-themes.css';
@@ -39,7 +40,9 @@ export default function App() {
   const industry = industries[industryKey],
     fields = fieldLabels(industry);
   const result = useMemo(() => calculate(input), [input]);
-  const [recordCalculatorUse] = useState(() => createCalculatorUseTracker());
+  const recordCalculatorUse = useMemo(() => createCalculatorUseTracker(), [industryKey]);
+  const [hasEdited, setHasEdited] = useState(false);
+  useEditedResultTracking(industryKey, input, result.valid, hasEdited, recordCalculatorUse);
   const decision = result.valid ? capacityDecision(result) : null;
   const set = (k, v) => setInput((s) => {
     const next = { ...s, [k]: v };
@@ -55,6 +58,7 @@ export default function App() {
   };
   const choose = (k) => {
     if (!Object.hasOwn(industries, k)) return;
+    setHasEdited(false);
     setIndustryKey(k);
     setInput({ ...industries[k].values });
   };
@@ -180,7 +184,7 @@ export default function App() {
                   <span className="step">01</span>
                   <h2>{industry.short} operating model</h2>
                 </div>
-                <button onClick={() => setInput({ ...industry.values })}>
+                <button onClick={() => { setHasEdited(false); setInput({ ...industry.values }); }}>
                   Reset example
                 </button>
               </div>
@@ -197,7 +201,7 @@ export default function App() {
                         step={options.step ?? "0.01"}
                         inputMode="decimal"
                         value={input[key]}
-                        onChange={(e) => { recordCalculatorUse(industryKey); set(key, e.target.value); }}
+                        onChange={(e) => { setHasEdited(true); recordCalculatorUse(industryKey); set(key, e.target.value); }}
                         onBlur={(e) => normalize(key, e.target.value, options)}
                         aria-invalid={input[key] === ""}
                       />
@@ -206,7 +210,7 @@ export default function App() {
                   </label>
                 ))}
               </div>
-              <CostBuilder key={industryKey} industryKey={industryKey} input={input} currency={currency} onApply={patch => { recordCalculatorUse(industryKey); setInput(current => ({ ...current, ...patch })); }} />
+              <CostBuilder key={industryKey} industryKey={industryKey} input={input} currency={currency} onApply={patch => { setHasEdited(true); recordCalculatorUse(industryKey); setInput(current => ({ ...current, ...patch })); }} />
               <div className="privacy">
                 <ShieldCheck />
                 <span>
