@@ -1,5 +1,6 @@
 import { routeEntryForPath } from './routeEntries.js';
 const loaders = {
+  'src/routes/FounderCaseRoute.jsx': () => import('./routes/FounderCaseRoute.jsx'),
   'src/routes/AccountRoute.jsx': () => import('./routes/AccountRoute.jsx'),
   'src/routes/AgencyRoute.jsx': () => import('./routes/AgencyRoute.jsx'),
   'src/routes/AuthorityRoute.jsx': () => import('./routes/AuthorityRoute.jsx'),

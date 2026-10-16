@@ -1,3 +1,4 @@
+import FounderCaseStudy from './FounderCaseStudy.jsx';
 import { Pricing, About, Contact, legalPages, LegalPage } from './StaticPageContent.jsx';
 import './pricing-decisions.css';
 import { useProductPageView } from './useProductTracking';
@@ -46,7 +47,7 @@ export default function SecondaryPage({ path, initialArticle }) {
   const slug = path.startsWith("/blogs/") ? path.split("/")[2] : null;
   const calculatorSlug = path.startsWith("/calculators/") ? path.split("/")[2] : null;
   const authPaths = ["/login", "/signup", "/forgot-password", "/reset-password"];
-  const content = authorityPages[path.slice(1)] ? <AuthorityPage path={path} /> : path === "/guides/agency-business" ? <AgencyCluster /> : path === "/guides/ecommerce-business" ? <EcommerceCluster /> : path === "/guides/photography-business" ? <PhotographyCluster /> : path === "/guides/restaurant-business" ? <RestaurantCluster /> : path === "/guides/salon-business" ? <SalonCluster /> : path === "/guides/mobile-detailing-business" ? <MobileDetailingCluster /> : path === "/guides/landscaping-business" ? <LandscapingCluster /> : path === "/guides/cleaning-business" ? <CleaningCluster /> : path === "/tools" ? <FreeToolsHub /> : calculatorSlug && freeTools[calculatorSlug] ? <FreeTool slug={calculatorSlug} /> : calculatorSlug && industryPages[calculatorSlug] ? <IndustryPage slug={calculatorSlug} /> : slug ? <BlogArticle slug={slug} initialArticle={initialArticle} /> :
+  const content = path === "/resources/daily-outfitter-founder-case-study" ? <FounderCaseStudy/> : authorityPages[path.slice(1)] ? <AuthorityPage path={path} /> : path === "/guides/agency-business" ? <AgencyCluster /> : path === "/guides/ecommerce-business" ? <EcommerceCluster /> : path === "/guides/photography-business" ? <PhotographyCluster /> : path === "/guides/restaurant-business" ? <RestaurantCluster /> : path === "/guides/salon-business" ? <SalonCluster /> : path === "/guides/mobile-detailing-business" ? <MobileDetailingCluster /> : path === "/guides/landscaping-business" ? <LandscapingCluster /> : path === "/guides/cleaning-business" ? <CleaningCluster /> : path === "/tools" ? <FreeToolsHub /> : calculatorSlug && freeTools[calculatorSlug] ? <FreeTool slug={calculatorSlug} /> : calculatorSlug && industryPages[calculatorSlug] ? <IndustryPage slug={calculatorSlug} /> : slug ? <BlogArticle slug={slug} initialArticle={initialArticle} /> :
     authPaths.includes(path) ? <Suspense fallback={<p className="route-loading">Loading secure account…</p>}><AuthPage path={path} /></Suspense> : path === "/dashboard" ? <Suspense fallback={<p className="route-loading">Loading secure workspace…</p>}><DashboardPage /></Suspense> :
     path === "/pro-user-guide" ? <ProUserGuide /> : path === "/pricing" ? (
       <Pricing />

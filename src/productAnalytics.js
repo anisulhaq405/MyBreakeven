@@ -1,6 +1,6 @@
 import { readAnalyticsChoice, ANALYTICS_CONSENT_EVENT, ANALYTICS_READY_EVENT } from './analyticsChoice';
 import { industries } from "./industries";
-const events = new Set(["calculator_use", "calculator_result_ready", "calculator_example_load", "signup_request_accepted", "calculator_continue", "pro_pricing_click", "pro_pricing_view", "pro_checkout_click", "scenario_saved", "resource_download", "walkthrough_step", "walkthrough_calculator_click", "save_scenario_open", "save_login_click"]);
+const events = new Set(["calculator_use", "calculator_result_ready", "calculator_example_load", "signup_request_accepted", "calculator_continue", "pro_pricing_click", "pro_pricing_view", "pro_checkout_click", "scenario_saved", "resource_download", "walkthrough_step", "walkthrough_calculator_click", "save_scenario_open", "save_login_click", "case_study_reconstruction_use", "case_study_calculator_click"]);
 
 export function trackProductEvent(name, industryKey, browser = typeof window === "undefined" ? null : window) {
   if (!browser || !events.has(name)) return false;
