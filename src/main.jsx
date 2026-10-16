@@ -12,7 +12,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { capacityDecision } from "./capacityDecision";
-import { initialCalculatorPlan } from "./calculatorTransfer";
+import { initialCalculatorPlan, calculatorCurrencyCodes } from "./calculatorTransfer";
 import { calculate, FORMULA_ENGINE_VERSION } from "./engine";
 import { fieldLabels, industries } from "./industries";
 import Insights from "./Insights";
@@ -172,7 +172,7 @@ export default function App() {
                 <span><b>{currencySymbol}</b> Currency</span>
                 <div className="select-shell">
                   <select value={currency} onChange={e => setCurrency(e.target.value)}>
-                    {["USD","EUR","GBP","CAD","AUD","NZD","AED","SAR","PKR","INR","BDT","SGD","MYR","ZAR","JPY","CHF","SEK","NOK","DKK"].map(code => <option key={code}>{code}</option>)}
+                    {calculatorCurrencyCodes(initialPlan.currency, currency).map(code => <option key={code}>{code}</option>)}
                   </select>
                   <ChevronDown />
                 </div>
