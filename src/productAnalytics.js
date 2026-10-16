@@ -1,4 +1,4 @@
-import { readAnalyticsChoice } from './analyticsChoice';
+import { readAnalyticsChoice, ANALYTICS_CONSENT_EVENT, ANALYTICS_READY_EVENT } from './analyticsChoice';
 import { industries } from "./industries";
 const events = new Set(["calculator_use", "calculator_result_ready", "calculator_example_load", "signup_request_accepted", "calculator_continue", "pro_pricing_click", "pro_pricing_view", "pro_checkout_click", "scenario_saved", "resource_download", "walkthrough_step", "walkthrough_calculator_click"]);
 
@@ -31,4 +31,14 @@ export function createCalculatorResultTracker(track = trackProductEvent) {
     recorded = track("calculator_result_ready", industryKey);
     return recorded;
   };
+}
+
+// Subscribe before checking: consent and tag initialization can occur in different roots.
+export function subscribeProductPageView(name, browser = window) {
+  let recorded = false;
+  const record = () => { if (!recorded) recorded = trackProductEvent(name, undefined, browser); };
+  const signals = [ANALYTICS_CONSENT_EVENT, ANALYTICS_READY_EVENT];
+  signals.forEach(event => browser.addEventListener(event, record));
+  record();
+  return () => signals.forEach(event => browser.removeEventListener(event, record));
 }

@@ -1,27 +1,28 @@
-import { readAnalyticsChoice, saveAnalyticsChoice, ANALYTICS_CONSENT_EVENT } from './analyticsChoice';
+import { readAnalyticsChoice, saveAnalyticsChoice, ANALYTICS_CONSENT_EVENT, ANALYTICS_READY_EVENT } from './analyticsChoice';
 import React, { useEffect, useState } from "react";
 
 const MEASUREMENT_ID = "G-CEYVEE1ZV2";
 
-function loadAnalytics() {
-  if (document.querySelector(`script[data-ga4="${MEASUREMENT_ID}"]`)) return;
+export function loadAnalytics(browser = window, doc = document) {
+  if (doc.querySelector(`script[data-ga4="${MEASUREMENT_ID}"]`)) return;
 
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = function gtag() {
-    window.dataLayer.push(arguments);
+  browser.dataLayer = browser.dataLayer || [];
+  browser.gtag = function gtag() {
+    browser.dataLayer.push(arguments);
   };
-  window.gtag("js", new Date());
-  window.gtag("config", MEASUREMENT_ID, {
+  browser.gtag("js", new Date());
+  browser.gtag("config", MEASUREMENT_ID, {
     anonymize_ip: true,
     allow_google_signals: false,
     allow_ad_personalization_signals: false,
   });
 
-  const script = document.createElement("script");
+  const script = doc.createElement("script");
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${MEASUREMENT_ID}`;
   script.dataset.ga4 = MEASUREMENT_ID;
-  document.head.appendChild(script);
+  doc.head.appendChild(script);
+  browser.dispatchEvent(new browser.Event(ANALYTICS_READY_EVENT));
 }
 
 export default function AnalyticsConsent() {
