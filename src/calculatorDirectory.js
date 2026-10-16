@@ -7,7 +7,7 @@ import { industries } from './industries.js';
 export const calculatorDirectory = [
   ...Object.entries(industryPages).map(([slug, page]) => [slug, {
     name: page.title, category: `${industries[page.key].short} planning`, intro: page.lead,
-    mode: 'industry', image: `/images/tools/${page.key}-break-even.webp`,
+    mode: 'industry', image: `/images/tools/${page.key}-break-even-feature-20261016.webp`,
     alt: `${industries[page.key].short} break-even planning`, theme: toolThemes[page.key],
   }]),
   ...Object.entries(freeTools),
