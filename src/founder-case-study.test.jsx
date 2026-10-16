@@ -30,6 +30,7 @@ describe('Founder account reconstruction and evidence boundaries',()=>{
   const html=renderToStaticMarkup(<FounderCaseStudy/>);
   for(const text of ['Founder relationship','self-reported','October 16, 2026','CURRENT RECONSTRUCTION','not the historical calculator output','+55.02%','+31.25%','Shipment packing','does not test fulfillment capacity'])expect(html).toContain(text);
   expect(html).not.toContain('889');expect(html).not.toContain('aggregateRating');
+  expect(html).toContain('What this founder account shows');expect(html).toContain('Currency: Pakistani rupees (PKR)');expect(html).toContain('aria-labelledby="case-label-fee"');expect(html).toContain('Current inputs:');expect(html).toContain('not saved after you leave or reload');
   expect(html).toContain('/founder/');expect(html).toContain('/editorial-policy/#case-study-standards');
  });
  it('uses a dedicated page bundle and an indexable static metadata entry',()=>{
