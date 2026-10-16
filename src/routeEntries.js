@@ -33,6 +33,7 @@ const industries = new Set(["/calculators/cleaning-business-break-even-calculato
 const authority = new Set(["/calculation-methodology","/editorial-policy","/founder","/resources","/resources/cleaning-business-budget-template","/resources/cleaning-job-cost-worksheet","/calculator-walkthroughs"]);
 export function routeEntryForPath(path) {
   path = path.replace(/\/$/, '') || '/';
+  if (path === '/resources/daily-outfitter-founder-case-study') return 'src/routes/FounderCaseRoute.jsx';
   if (path === '/') return 'src/main.jsx';
   if (path.startsWith('/blogs/')) return 'src/routes/BlogRoute.jsx';
   if (path === '/blogs' || path === '/blog') return 'src/routes/BlogHubRoute.jsx';

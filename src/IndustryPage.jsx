@@ -110,7 +110,7 @@ function IndustryQuickCalculator({ industry, industryKey }) {
       }}>Continue with these numbers in the full calculator <ArrowRight /></a>
     </div>
     {transferError && <p className="industry-quick-error" role="status">{transferError}</p>}
-    {industryKey === 'ecommerce' && <EcommercePlanOptions />}
+    {industryKey === 'ecommerce' && <><EcommercePlanOptions /><aside className="tool-related"><h3>See a founder planning experience</h3><p><a href="/resources/daily-outfitter-founder-case-study/">Daily Outfitter founder case study</a>: recalled costs, a current reconstruction and clearly labelled reported outcomes. This is the founder’s own business, not an independent customer testimonial.</p></aside></>}
     {industryKey === 'restaurant' && <RestaurantPlanOptions />}
   </section>;
 }

@@ -1,8 +1,10 @@
+import {founderCaseRoute,founderCaseMeta} from './founderCaseStudyData.js';
 import { authorityPages } from './authorityResources.js';
 
 // Shared by static HTML generation and browser metadata updates.
 export const staticPageMeta = {
   ...authorityPages,
+  [founderCaseRoute]: founderCaseMeta,
   "guides/agency-business": ["Agency Business Guides | MyBreakeven", "Review agency retainers, scope changes, staffing and cash dates. Use client records checklists, worked capacity examples and free business planning tools.", "Agency business planning guides"],
   "guides/ecommerce-business": ["E-commerce Business Guides | MyBreakeven", "Review ecommerce order contribution, returns, advertising and inventory cash. Follow records checklists, worked workflows and free business calculators.", "E-commerce business planning guides"],
   "guides/photography-business": ["Photography Business Guides | MyBreakeven", "Review photography assignment hours, packages and mini-session costs. Follow records checklists, worked examples and the free monthly break-even planner.", "Photography business planning guides"],
