@@ -4,9 +4,6 @@ import {createRoot,hydrateRoot} from 'react-dom/client';
 import AnalyticsConsent from './AnalyticsConsent';
 import './styles.css';
 import './fonts.css';
-import './industries.css';
-import './visuals.css';
-import './home-presentation.css';
 const rootElement=document.getElementById('root');
 function RevealAfterRender(){
  useLayoutEffect(()=>{rootElement.removeAttribute('data-booting');},[]);
