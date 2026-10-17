@@ -1,0 +1,298 @@
+{
+  "scheduled_day": "2026-10-18",
+  "checked": "2026-10-17",
+  "scope": "Built HTML link ownership; not rankings, live HTTP or proof of cannibalization",
+  "priority_articles": 18,
+  "issues": [],
+  "records": [
+    {
+      "url": "/blogs/restaurant-budgeting/",
+      "hub": "/guides/restaurant-business/",
+      "next": "/calculators/restaurant-break-even-calculator/",
+      "boundary": "Monthly operating budget; cash timing uses the separate forecast.",
+      "contextual_incoming": [
+        "/blogs/coffee-shop-business-plan/",
+        "/blogs/how-much-does-it-cost-to-open-a-restaurant/",
+        "/blogs/how-to-start-restaurant/",
+        "/blogs/restaurant-business-plan/",
+        "/blogs/restaurant-food-cost-percentage/",
+        "/blogs/restaurant-labor-cost-percentage/",
+        "/blogs/restaurant-prime-cost/",
+        "/blogs/restaurant-private-event-minimum-spend/",
+        "/blogs/restaurant-sales-forecast/",
+        "/guides/restaurant-business/"
+      ],
+      "status": "verified"
+    },
+    {
+      "url": "/blogs/cleaning-business-monthly-expenses/",
+      "hub": "/guides/cleaning-business/",
+      "next": "/calculators/cleaning-business-break-even-calculator/",
+      "boundary": "Monthly expenses and resource handoff; no duplicate worksheet.",
+      "contextual_incoming": [
+        "/blogs/cleaning-business-client-churn-cost/",
+        "/blogs/cleaning-contract-payroll-cash-gap/",
+        "/blogs/cleaning-estimate-vs-actual-job-cost/",
+        "/blogs/cleaning-minimum-booking-charge/",
+        "/blogs/commercial-cleaning-contract-bid/",
+        "/blogs/commercial-cleaning-contract-price-increase/",
+        "/blogs/how-much-to-charge-for-house-cleaning/",
+        "/blogs/is-a-cleaning-business-profitable/",
+        "/blogs/margin-of-safety-business/",
+        "/blogs/move-out-cleaning-job-cost/",
+        "/blogs/post-construction-cleaning-estimate/",
+        "/blogs/recurring-vs-one-time-cleaning-profitability/",
+        "/guides/cleaning-business/"
+      ],
+      "status": "verified"
+    },
+    {
+      "url": "/blogs/landscaping-break-even/",
+      "hub": "/guides/landscaping-business/",
+      "next": "/calculators/landscaping-break-even-calculator/",
+      "boundary": "How-to method; interactive calculator owns entered-number results.",
+      "contextual_incoming": [
+        "/blogs/how-many-lawns-100k/",
+        "/blogs/how-much-does-it-cost-to-start-a-landscaping-business/",
+        "/blogs/landscaping-crew-utilization/",
+        "/blogs/landscaping-equipment-cost-per-hour/",
+        "/blogs/landscaping-maintenance-contract-pricing/",
+        "/blogs/landscaping-seasonal-break-even/",
+        "/guides/landscaping-business/"
+      ],
+      "status": "verified"
+    },
+    {
+      "url": "/blogs/margin-of-safety-business/",
+      "hub": "/resources/",
+      "next": "/#calculator",
+      "boundary": "Sales cushion in units, sales and percent; planner supplies a threshold, not the ratio.",
+      "contextual_incoming": [
+        "/blogs/operating-leverage-small-business/",
+        "/resources/"
+      ],
+      "status": "verified"
+    },
+    {
+      "url": "/blogs/contribution-margin-vs-profit-margin/",
+      "hub": "/resources/",
+      "next": "/calculators/ecommerce-break-even-calculator/",
+      "boundary": "Per-sale contribution versus period profit; not a second calculator owner.",
+      "contextual_incoming": [
+        "/blogs/calculate-contribution-margin/",
+        "/blogs/ecommerce-profit-margin/",
+        "/blogs/how-to-price-products-for-ecommerce/",
+        "/blogs/photography-business-profit-margin/",
+        "/resources/"
+      ],
+      "status": "verified"
+    },
+    {
+      "url": "/blogs/operating-leverage-small-business/",
+      "hub": "/resources/",
+      "next": "/#calculator",
+      "boundary": "Fixed-cost sensitivity with a positive-profit boundary; planner is not a DOL tool.",
+      "contextual_incoming": [
+        "/resources/"
+      ],
+      "status": "verified"
+    },
+    {
+      "url": "/blogs/how-much-does-it-cost-to-start-a-photography-business/",
+      "hub": "/guides/photography-business/",
+      "next": "/calculators/photography-business-break-even-calculator/",
+      "boundary": "Startup cash versus monthly operating requirement.",
+      "contextual_incoming": [
+        "/blogs/photography-business-profit-margin/",
+        "/blogs/photography-pricing-packages/",
+        "/guides/photography-business/"
+      ],
+      "status": "verified"
+    },
+    {
+      "url": "/blogs/restaurant-food-cost-percentage/",
+      "hub": "/guides/restaurant-business/",
+      "next": "/calculators/food-cost-calculator/",
+      "boundary": "Matched food inventory and sales period, not payroll.",
+      "contextual_incoming": [
+        "/blogs/catering-quote-profit/",
+        "/blogs/how-to-start-coffee-shop/",
+        "/blogs/how-to-start-restaurant/",
+        "/blogs/restaurant-break-even/",
+        "/blogs/restaurant-budgeting/",
+        "/blogs/restaurant-delivery-app-commission-profit-per-order/",
+        "/blogs/restaurant-labor-cost-percentage/",
+        "/blogs/restaurant-menu-engineering-contribution-margin/",
+        "/blogs/restaurant-menu-pricing-formula/",
+        "/blogs/restaurant-prime-cost/",
+        "/blogs/restaurant-takeout-vs-dine-in-profit-per-order/",
+        "/guides/restaurant-business/"
+      ],
+      "status": "verified"
+    },
+    {
+      "url": "/blogs/restaurant-labor-cost-percentage/",
+      "hub": "/guides/restaurant-business/",
+      "next": "/calculators/employee-cost-calculator/",
+      "boundary": "Loaded hire cost is an input; aggregate payroll/sales for the same period.",
+      "contextual_incoming": [
+        "/blogs/catering-quote-profit/",
+        "/blogs/how-to-start-restaurant/",
+        "/blogs/restaurant-break-even/",
+        "/blogs/restaurant-budgeting/",
+        "/blogs/restaurant-food-cost-percentage/",
+        "/blogs/restaurant-prime-cost/",
+        "/guides/restaurant-business/"
+      ],
+      "status": "verified"
+    },
+    {
+      "url": "/blogs/restaurant-prime-cost/",
+      "hub": "/guides/restaurant-business/",
+      "next": "/calculators/food-cost-calculator/",
+      "boundary": "Food plus loaded labor, counted once.",
+      "contextual_incoming": [
+        "/blogs/restaurant-budgeting/",
+        "/blogs/restaurant-food-cost-percentage/",
+        "/blogs/restaurant-labor-cost-percentage/",
+        "/blogs/restaurant-menu-engineering-contribution-margin/",
+        "/blogs/restaurant-menu-pricing-formula/",
+        "/guides/restaurant-business/"
+      ],
+      "status": "verified"
+    },
+    {
+      "url": "/blogs/restaurant-menu-pricing-formula/",
+      "hub": "/guides/restaurant-business/",
+      "next": "/calculators/menu-pricing-calculator/",
+      "boundary": "Explain full-order cost; existing menu tool runs price and capacity.",
+      "contextual_incoming": [
+        "/blogs/cafe-opening-costs/",
+        "/blogs/restaurant-covers-per-night-break-even/",
+        "/blogs/restaurant-delivery-app-commission-profit-per-order/",
+        "/blogs/restaurant-food-cost-percentage/",
+        "/blogs/restaurant-menu-engineering-contribution-margin/",
+        "/blogs/restaurant-private-event-minimum-spend/",
+        "/blogs/restaurant-profit-margin-average/",
+        "/guides/restaurant-business/"
+      ],
+      "status": "verified"
+    },
+    {
+      "url": "/blogs/landscaping-seasonal-break-even/",
+      "hub": "/guides/landscaping-business/",
+      "next": "/calculators/landscaping-break-even-calculator/",
+      "boundary": "Annual commitments versus active-season workload; no new seasonal calculator.",
+      "contextual_incoming": [
+        "/blogs/cash-flow-break-even-vs-profit-break-even/",
+        "/blogs/how-many-lawns-100k/",
+        "/blogs/how-much-does-it-cost-to-start-a-landscaping-business/",
+        "/blogs/landscaping-break-even/",
+        "/blogs/landscaping-equipment-cost-per-hour/",
+        "/blogs/landscaping-job-costing-estimate-vs-actual/",
+        "/blogs/landscaping-maintenance-contract-pricing/",
+        "/blogs/landscaping-plant-warranty-cost/",
+        "/blogs/snow-removal-pricing/",
+        "/guides/landscaping-business/"
+      ],
+      "status": "verified"
+    },
+    {
+      "url": "/blogs/landscaping-business-profit-margin/",
+      "hub": "/guides/landscaping-business/",
+      "next": "/calculators/landscaping-break-even-calculator/",
+      "boundary": "Contribution and retained profit, not a duplicate how-to owner.",
+      "contextual_incoming": [
+        "/blogs/how-many-lawns-100k/",
+        "/blogs/how-much-does-it-cost-to-start-a-landscaping-business/",
+        "/blogs/landscaping-route-density-profit/",
+        "/blogs/lawn-care-pricing-per-acre/",
+        "/guides/landscaping-business/"
+      ],
+      "status": "verified"
+    },
+    {
+      "url": "/blogs/free-shipping-threshold-profit/",
+      "hub": "/guides/ecommerce-business/",
+      "next": "/calculators/ecommerce-break-even-calculator/",
+      "boundary": "Seller contribution after shipping, not gift-buying intent.",
+      "contextual_incoming": [
+        "/blogs/ecommerce-bundle-pricing-profit/",
+        "/blogs/ecommerce-inventory-holding-cost-per-sku/",
+        "/blogs/ecommerce-shipping-costs/",
+        "/blogs/how-to-price-products-for-ecommerce/",
+        "/blogs/subscription-box-churn-break-even/",
+        "/guides/ecommerce-business/"
+      ],
+      "status": "verified"
+    },
+    {
+      "url": "/blogs/ecommerce-return-cost-per-order/",
+      "hub": "/guides/ecommerce-business/",
+      "next": "/calculators/ecommerce-return-cost-calculator/",
+      "boundary": "Returned-order cost and recovery; keep whole-store planning separate.",
+      "contextual_incoming": [
+        "/blogs/amazon-marketplace-vs-own-store-profit-per-order/",
+        "/blogs/break-even-roas-formula/",
+        "/blogs/ecommerce-break-even/",
+        "/blogs/ecommerce-bundle-pricing-profit/",
+        "/blogs/ecommerce-chargeback-cost-per-order/",
+        "/blogs/ecommerce-profit-margin/",
+        "/blogs/ecommerce-shipping-costs/",
+        "/blogs/free-shipping-threshold-profit/",
+        "/blogs/how-much-does-it-cost-to-start-an-ecommerce-store/",
+        "/blogs/how-to-calculate-cost-of-goods-sold/",
+        "/blogs/subscription-box-churn-break-even/",
+        "/guides/ecommerce-business/"
+      ],
+      "status": "verified"
+    },
+    {
+      "url": "/blogs/is-a-cleaning-business-profitable/",
+      "hub": "/guides/cleaning-business/",
+      "next": "/calculators/cleaning-business-break-even-calculator/",
+      "boundary": "Owner-operator economics and capacity, not a demand guarantee.",
+      "contextual_incoming": [
+        "/blogs/cleaning-business-monthly-expenses/",
+        "/blogs/cleaning-estimate-vs-actual-job-cost/",
+        "/blogs/how-many-cleaning-clients-5000/",
+        "/blogs/how-much-to-charge-for-house-cleaning/",
+        "/guides/cleaning-business/"
+      ],
+      "status": "verified"
+    },
+    {
+      "url": "/blogs/commercial-cleaning-contract-bid/",
+      "hub": "/guides/cleaning-business/",
+      "next": "/calculators/cleaning-contract-profit-calculator/",
+      "boundary": "Agreed account scope, visits and paid hours before whole-business target.",
+      "contextual_incoming": [
+        "/blogs/cleaning-contract-payroll-cash-gap/",
+        "/blogs/commercial-cleaning-contract-price-increase/",
+        "/blogs/post-construction-cleaning-estimate/",
+        "/guides/cleaning-business/"
+      ],
+      "status": "verified"
+    },
+    {
+      "url": "/blogs/agency-billable-utilization-rate/",
+      "hub": "/guides/agency-business/",
+      "next": "/calculators/hourly-rate-calculator/",
+      "boundary": "Billable versus available hours before a sustainable rate; no promised sales.",
+      "contextual_incoming": [
+        "/blogs/agency-break-even/",
+        "/blogs/agency-client-concentration-revenue-risk/",
+        "/blogs/agency-client-profitability/",
+        "/blogs/agency-employee-vs-freelancer-break-even/",
+        "/blogs/agency-profit-margin/",
+        "/blogs/agency-project-vs-retainer-profitability/",
+        "/blogs/agency-retainer-pricing/",
+        "/blogs/agency-scope-creep-cost/",
+        "/blogs/freelance-business-plan-financials/",
+        "/blogs/how-many-agency-retainer-clients/",
+        "/guides/agency-business/"
+      ],
+      "status": "verified"
+    }
+  ]
+}
