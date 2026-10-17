@@ -1,3 +1,4 @@
+import { applyGscOctober17Review } from './gscOctober17Review.js';
 import { applyDay3IntentLinks } from './day3IntentLinks.js';
 import { applyOctober16GuideReview } from './october16GuideReview.js';
 import { applyIntentOwnershipReview } from './intentOwnershipReview.js';
@@ -115,7 +116,7 @@ const normalizePostBase = post => applyRemainingSectionEnrichment(applyFourSecti
 })))))))))))))));
 
 const normalizePost = post => {
-  const reviewed = applyDay3IntentLinks(applyIntentOwnershipReview(applyOctober16GuideReview(normalizePostBase(post))));
+  const reviewed = applyGscOctober17Review(applyDay3IntentLinks(applyIntentOwnershipReview(applyOctober16GuideReview(normalizePostBase(post)))));
   return featureDeliveryAssets[reviewed.image] ? { ...reviewed, image: featureDeliveryAssets[reviewed.image] } : reviewed;
 };
 
