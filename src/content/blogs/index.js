@@ -1,3 +1,4 @@
+import { october18RestaurantPosts } from './october18Restaurant.js';
 import { applyPhotographyStartupReview } from './photographyStartupReview.js';
 import { applyOctober18AnswerReview } from './october18AnswerReview.js';
 import { applyGscOctober17Review } from './gscOctober17Review.js';
@@ -148,6 +149,7 @@ export const blogCollections = Object.freeze({
   october09Landscaping: october09LandscapingPosts.map(normalizePost),
   october09Detailing: october09DetailingPosts.map(normalizePost),
   october13Finance: october13FinancePosts.map(normalizePost),
+  october18Restaurant: october18RestaurantPosts.map(normalizePost),
 });
 
 export const blogPosts = Object.values(blogCollections)
