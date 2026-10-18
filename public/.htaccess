@@ -35,10 +35,10 @@ ForceType text/csv
 <IfModule mod_headers.c>
 <Files "restaurant-20-scenarios-v1.csv">
 Header set Content-Type "text/csv; charset=utf-8"
-Header set Content-Disposition "attachment; filename=\"restaurant-20-scenarios-v1.csv\""
+Header set Content-Disposition "attachment; filename=restaurant-20-scenarios-v1.csv"
 </Files>
 <Files "landscaping-20-scenarios-v1.csv">
 Header set Content-Type "text/csv; charset=utf-8"
-Header set Content-Disposition "attachment; filename=\"landscaping-20-scenarios-v1.csv\""
+Header set Content-Disposition "attachment; filename=landscaping-20-scenarios-v1.csv"
 </Files>
 </IfModule>
