@@ -1,3 +1,4 @@
+import { applyPhotographyStartupReview } from './photographyStartupReview.js';
 import { applyOctober18AnswerReview } from './october18AnswerReview.js';
 import { applyGscOctober17Review } from './gscOctober17Review.js';
 import { applyDay3IntentLinks } from './day3IntentLinks.js';
@@ -119,7 +120,7 @@ const normalizePostBase = post => applyRemainingSectionEnrichment(applyFourSecti
 const normalizePost = post => {
   let reviewed = applyGscOctober17Review(applyDay3IntentLinks(applyIntentOwnershipReview(applyOctober16GuideReview(normalizePostBase(post)))));
   if (['restaurant-budgeting','landscaping-break-even'].includes(reviewed.slug)) reviewed = {...reviewed, modified:'2026-10-18', ...(reviewed.sectionLinks?{sectionLinks:[...reviewed.sectionLinks,['restaurant-20-scenarios','Compare 20 model scenarios']]}:{})};
-  reviewed = applyOctober18AnswerReview(reviewed);
+  reviewed = applyPhotographyStartupReview(applyOctober18AnswerReview(reviewed));
   return featureDeliveryAssets[reviewed.image] ? { ...reviewed, image: featureDeliveryAssets[reviewed.image] } : reviewed;
 };
 
