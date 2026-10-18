@@ -13,6 +13,7 @@ RewriteRule ^ https://mybreakeven.com%{REQUEST_URI} [R=301,L,NE]
 # Serve the existing downloadable workbooks as Excel files rather than plain text.
 <IfModule mod_mime.c>
 AddType application/vnd.openxmlformats-officedocument.spreadsheetml.sheet .xlsx
+AddType text/csv .csv
 </IfModule>
 
 # Vite includes a content hash in built JS/CSS filenames. New builds get new
@@ -25,4 +26,19 @@ Header set Content-Disposition "attachment"
 <FilesMatch "-[A-Za-z0-9_-]{8}\.(js|css|woff2)$">
 Header set Cache-Control "public, max-age=31536000, immutable"
 </FilesMatch>
+</IfModule>
+
+# Scenario exports must retain their CSV filename instead of downloading as text.
+<FilesMatch "^(restaurant|landscaping)-20-scenarios-v1\.csv$">
+ForceType text/csv
+</FilesMatch>
+<IfModule mod_headers.c>
+<Files "restaurant-20-scenarios-v1.csv">
+Header set Content-Type "text/csv; charset=utf-8"
+Header set Content-Disposition "attachment; filename=\"restaurant-20-scenarios-v1.csv\""
+</Files>
+<Files "landscaping-20-scenarios-v1.csv">
+Header set Content-Type "text/csv; charset=utf-8"
+Header set Content-Disposition "attachment; filename=\"landscaping-20-scenarios-v1.csv\""
+</Files>
 </IfModule>
