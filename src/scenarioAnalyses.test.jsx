@@ -22,7 +22,7 @@ describe('Reproducible scenario analyses on existing articles',()=>{
   expect(a.rows.find(r=>r.result.contribution===120&&r.result.fixedNeed===11300).wholeJobGap).toBe(-1);
  });
  it('exports all required inputs and reproduces CSV results with the product engine',()=>{
-  for(const a of Object.values(scenarioAnalyses)){const csv=readFileSync('public'+a.download,'utf8');expect(csv).toBe(scenarioCSV(a));const lines=csv.trim().split('\r\n').map(x=>x.slice(1,-1).split('\",\"'));expect(lines).toHaveLength(21);const [keys,...rows]=lines;expect(new Set(keys).size).toBe(keys.length);
+  for(const a of Object.values(scenarioAnalyses)){const csv=readFileSync('public'+a.download,'utf8');expect(csv.replace(/\r\n/g,'\n')).toBe(scenarioCSV(a).replace(/\r\n/g,'\n'));const lines=csv.trim().split(/\r?\n/).map(x=>x.slice(1,-1).split('\",\"'));expect(lines).toHaveLength(21);const [keys,...rows]=lines;expect(new Set(keys).size).toBe(keys.length);
    for(let n=0;n<rows.length;n++){const exported=Object.fromEntries(keys.map((k,i)=>[k,rows[n][i]]));const result=calculate(exported);expect(result.valid).toBe(true);for(const [key,resultKey] of [['contribution','contribution'],['exact_units','jobs'],['whole_units','wholeJobs'],['exact_capacity','capacity'],['whole_capacity','wholeCapacity'],['monthly_funding','fixedNeed']])expect(Number(exported[key])).toBe(result[resultKey]);expect(exported.currency).toBe('USD');expect(exported.scenario_id).toBe(a.rows[n].id);}
   }
  });
