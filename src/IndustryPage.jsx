@@ -95,6 +95,7 @@ function IndustryQuickCalculator({ industry, industryKey }) {
       <p>The whole-unit target needs approximately {result.practicalLeads.toLocaleString("en-US")} {['ecommerce', 'restaurant'].includes(industryKey) ? 'qualified visits or inquiries (using the same basis as your conversion input)' : 'inquiries'} at your assumed conversion rate. This is a planning requirement, not a demand forecast.</p>
       <p>At these assumptions, estimated delivery capacity is {result.wholeCapacity.toLocaleString("en-US")} whole {industry.unit} per month. {result.wholeCapacity < result.wholeJobs ? "The current capacity is below the required volume." : "The estimated capacity covers the required volume."} These are planning estimates, not a sales forecast.</p>
     </div> : <p className="industry-quick-error" role="status">{result.message}</p>}
+    {industryKey === 'landscaping' && <aside className="tool-related"><h3>Compare the target with completed-job capacity</h3><p><a href="/blogs/landscaping-break-even/#landscaping-20-scenarios">Review 20 transparent job-contribution and monthly-funding scenarios</a>. The guide shows why a higher contribution can still leave a whole-job capacity gap. These are separate fictional inputs; opening the guide does not transfer your current plan.</p></aside>}
     {industryKey === 'ecommerce' && <EcommerceResultGuide input={values} result={result} />}
     {industryKey === 'restaurant' && <RestaurantResultGuide input={values} result={result} />}
     <div className="industry-quick-actions">

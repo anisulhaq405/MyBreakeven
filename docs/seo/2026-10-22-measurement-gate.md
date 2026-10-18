@@ -1,0 +1,16 @@
+# Measurement gate — 22 October 2026, Pakistan time
+
+Status on October18: prepared; future measurement pending. This is a manual checklist, not an automation.
+
+1. Read the latest complete GSC reporting date and record it alongside export time. Use the existing property, Web search and USA country filter. Do not treat the newest incomplete day as final. GSC date boundaries may differ from Pakistan time.
+2. Preserve the already frozen query/page cohort and original exports. The previously used fixed comparison was October1–7 versus October8–14. Reuse that historical comparison for reference, then choose equally long complete seven-day periods for the new snapshot. Record exact dates; never blend countries/devices or silently change the cohort.
+3. Include all 18 priority canonical article URLs and the 8 existing industry calculators. For the pre-existing frozen core-12 queries, retrieve the original stored query list rather than inventing replacement queries. Country totals and privacy-filtered detailed rows may not reconcile; show them separately. Missing rows are not measured zeros or proof of deindexing.
+4. Record impressions, clicks, CTR and average position at country aggregate and matched page/query levels. Label low-click samples. Separate query-mix changes from matched-query changes. Compare USA first; any other countries remain separate.
+5. In Page Indexing, distinguish intended nonindexable pages, redirects/alternate canonicals, discovered-not-indexed, crawled-not-indexed and genuine failures. Use URL Inspection only where useful to diagnose a priority URL. Public HTTP200/canonical checks do not establish Google's selected canonical or indexed status. Do not bulk request indexing, remove pages or submit disavows.
+6. Annotate October16–17 prior releases and the actual merge/live time of the October18 scenario release. A seven-day window spanning releases is an early observation, not a clean causal estimate. Repeat the pre-agreed 28-day baseline comparison at the end of the plan; do not reset its dates to improve the result.
+7. In GA4, record property timezone and consented USA landing-page/source activity separately from GSC. Check engaged sessions, edited calculator results, actual signup/save events if available, pricing views and checkout clicks. A click is not a purchase. Exclude or label own QA; internal links have no UTMs.
+8. External posts use campaign `usa_30day_20261016`; log publish time, exact post destination, source/medium and content value. Video or community publication remains owner's manual task.
+9. Google AI/Bing reporting requires actual connected access; report unavailable data as unavailable. Do not infer zero citations or overall AI visibility from missing reports.
+10. End with a decision per page: retain for observation, fix a demonstrated defect, or schedule a specific content improvement. Independent business feedback received October19 can inform clarity; it does not establish search results or typical commercial outcomes.
+
+Suggested private export columns: snapshot_time, report_last_complete_date, period_start, period_end, country, device, search_type, query, canonical_page, impressions, clicks, ctr, average_position, indexing_state, data_status, release_annotation, next_action. Keep private account exports out of the public repository.

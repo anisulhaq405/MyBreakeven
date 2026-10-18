@@ -116,7 +116,8 @@ const normalizePostBase = post => applyRemainingSectionEnrichment(applyFourSecti
 })))))))))))))));
 
 const normalizePost = post => {
-  const reviewed = applyGscOctober17Review(applyDay3IntentLinks(applyIntentOwnershipReview(applyOctober16GuideReview(normalizePostBase(post)))));
+  let reviewed = applyGscOctober17Review(applyDay3IntentLinks(applyIntentOwnershipReview(applyOctober16GuideReview(normalizePostBase(post)))));
+  if (['restaurant-budgeting','landscaping-break-even'].includes(reviewed.slug)) reviewed = {...reviewed, modified:'2026-10-18', ...(reviewed.sectionLinks?{sectionLinks:[...reviewed.sectionLinks,['restaurant-20-scenarios','Compare 20 model scenarios']]}:{})};
   return featureDeliveryAssets[reviewed.image] ? { ...reviewed, image: featureDeliveryAssets[reviewed.image] } : reviewed;
 };
 

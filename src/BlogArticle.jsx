@@ -1,3 +1,4 @@
+import ScenarioAnalysis, {ScenarioAnalysisLink} from './ScenarioAnalysis.jsx';
 import { RestaurantExampleLink } from './ClusterLinks.jsx';
 import GuideCalculatorLink from './GuideCalculatorLink.jsx';
 import { EcommerceExampleLink } from './ClusterLinks.jsx';
@@ -39,12 +40,14 @@ export default function BlogArticle({slug,initialArticle}){
     <p className="article-lead">{a.description}</p>
     <GuideCalculatorLink slug={a.slug || slug} />
     <EcommerceExampleLink slug={a.slug || slug} />
+    <ScenarioAnalysisLink slug={a.slug || slug} />
     <RestaurantExampleLink slug={a.slug || slug} />
     <div className="article-tags" aria-label="Article topics">{a.tags.map(tag=><span key={tag}>{tag}</span>)}</div>
     {a.image&&<figure className="article-featured"><img src={a.image} alt={a.alt} width={blogImageDimensions[a.image]?.width || 1200} height={blogImageDimensions[a.image]?.height || 675} fetchPriority="high" decoding="async"/><figcaption>{a.imageCaption}</figcaption></figure>}
     <section className="article-summary"><h2>What this number really tells you</h2><p>{a.opening}</p><p>Break-even is reached when contribution from completed {a.unit} covers monthly overhead and any owner-pay or profit target entered. Use actual per-{a.singular} costs and realistic productive capacity, then calculate your {a.tag.toLowerCase()} break-even point with your own figures.</p></section>
     <section><h2>What the linked calculator checks</h2><ul>{a.features.map(item=><li key={item}>{item}</li>)}</ul></section>
     {a.sections.map((section,index)=><React.Fragment key={section.heading}><section><h2>{section.heading}</h2>{section.paragraphs?.map(p=><p key={p}>{p}</p>)}{section.table&&<div className="article-table-scroll"><table className="article-records-table"><caption>{section.table.caption}</caption><thead><tr>{section.table.headings.map(heading=><th scope="col" key={heading}>{heading}</th>)}</tr></thead><tbody>{section.table.rows.map(row=><tr key={row[0]}><th scope="row">{row[0]}</th>{row.slice(1).map((cell,cellIndex)=><td key={cellIndex}>{cell}</td>)}</tr>)}</tbody></table></div>}{section.bullets&&<ul>{section.bullets.map(item=><li key={item}>{item}</li>)}</ul>}</section>{index===2&&a.insideImage&&<figure className="article-visual"><img src={a.insideImage} alt={a.insideAlt} width={blogImageDimensions[a.insideImage]?.width || 1200} height={blogImageDimensions[a.insideImage]?.height || 630} loading="lazy" decoding="async"/><figcaption>How the {a.name.toLowerCase()} break-even calculation connects contribution, required {a.unit}, revenue and capacity.</figcaption></figure>}</React.Fragment>)}
+    <ScenarioAnalysis slug={a.slug || slug} />
     <section className="article-faq"><h2>Frequently asked questions</h2>{a.faq.map(item=><details key={item.q}><summary>{item.q}</summary><p>{item.a}</p></details>)}</section>
     <aside><h2>How to run your own numbers</h2><p>Open the matching calculator with industry-specific inputs, exact fractional results and whole-unit operating targets.</p><a className="page-button" href={`/calculators/${a.calculatorSlug}/`}>Use the free {a.tag} break-even calculator</a></aside>
     <section className="related-guides"><h2>Related break-even resources</h2><p>Compare similar operating models or review the methodology behind every result.</p><ul>{relatedBlogPosts(slug).map(item=><li key={item.slug}><a href={`/blogs/${item.slug}/`}>{item.title}</a></li>)}<li><a href="/#calculator">Free small business break-even calculator</a></li><li><a href="/#methodology">Transparent break-even calculation methodology</a></li></ul></section>
