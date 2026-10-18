@@ -245,6 +245,7 @@ export const roiTools = {
         "https://help.zapier.com/hc/en-us/articles/25444544607373-Review-your-account-usage-in-the-analytics-dashboard"
       ]
     ],
+    "relatedIntro": "Build a consistent investment case: estimate loaded employee cost, separate cash savings from remaining capacity, then place actual receipts and payments in the cash forecast. The agency model checks the wider operating target; runway asks how long business cash lasts. These tools answer different questions and do not transfer your inputs.",
     "related": [
       [
         "Budget loaded employee cost",
@@ -259,8 +260,8 @@ export const roiTools = {
         "/calculators/agency-break-even-calculator/"
       ],
       [
-        "Compare ecommerce advertising ROAS",
-        "/calculators/break-even-roas-calculator/"
+        "Check business cash runway separately from project payback",
+        "/calculators/cash-runway-calculator/"
       ]
     ]
   }

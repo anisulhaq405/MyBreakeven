@@ -1,3 +1,4 @@
+import { connectRoiGuide } from './roiConnections.js';
 import { october18RestaurantPosts } from './october18Restaurant.js';
 import { applyPhotographyStartupReview } from './photographyStartupReview.js';
 import { applyOctober18AnswerReview } from './october18AnswerReview.js';
@@ -121,7 +122,7 @@ const normalizePostBase = post => applyRemainingSectionEnrichment(applyFourSecti
 const normalizePost = post => {
   let reviewed = applyGscOctober17Review(applyDay3IntentLinks(applyIntentOwnershipReview(applyOctober16GuideReview(normalizePostBase(post)))));
   if (['restaurant-budgeting','landscaping-break-even'].includes(reviewed.slug)) reviewed = {...reviewed, modified:'2026-10-18', ...(reviewed.sectionLinks?{sectionLinks:[...reviewed.sectionLinks,['restaurant-20-scenarios','Compare 20 model scenarios']]}:{})};
-  reviewed = applyPhotographyStartupReview(applyOctober18AnswerReview(reviewed));
+  reviewed = connectRoiGuide(applyPhotographyStartupReview(applyOctober18AnswerReview(reviewed)));
   return featureDeliveryAssets[reviewed.image] ? { ...reviewed, image: featureDeliveryAssets[reviewed.image] } : reviewed;
 };
 
