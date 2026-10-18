@@ -65,6 +65,7 @@ export const restaurantClusters = [
     "description": "Connect orders and covers to contribution, owner pay and deliverable capacity.",
     "slugs": [
       "restaurant-sales-forecast",
+      "restaurant-cash-flow-forecast",
       "restaurant-profit-margin-average",
       "restaurant-break-even",
       "restaurant-covers-per-night-break-even"
