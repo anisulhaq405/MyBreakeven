@@ -8,6 +8,7 @@ for (const key of ['cleaning','landscaping','photography','agency','detailing','
   optimized.add(`${key}-break-even-feature-20261016.webp`);
 }
 optimized.add('restaurant-budgeting-editorial.webp');
+optimized.add('restaurant-cash-flow-forecast-editorial.webp');
 for (const image of Object.values(featureDeliveryAssets)) optimized.add(image.split('/').pop());
 export function responsiveFeatureProps(image, card=false){
   if(!optimized.has(image?.split('/').pop()))return {};
