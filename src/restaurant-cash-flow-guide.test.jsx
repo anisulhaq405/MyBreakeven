@@ -18,7 +18,7 @@ describe('restaurant cash forecast guide',()=>{
  it('is discoverable in the existing restaurant cluster and renders its sources and assumptions',()=>{
   expect(restaurantClusters.some(g=>g.slugs.includes(p.slug))).toBe(true);
   const h=renderToStaticMarkup(<BlogArticle slug={p.slug} initialArticle={p}/>);
-  expect(h).toContain('restaurant-cash-flow-forecast.webp');expect(h).toContain('hypothetical');
+  expect(h).toContain('restaurant-cash-flow-forecast-editorial.webp');expect(h).toContain('hypothetical');
   for(const id of ['cash-flow-formula','sales-to-cash','worked-forecast','stress-tests','weekly-review'])expect(h).toContain('id="'+id+'"');
   expect(h).toContain('openstax.org');expect(h).toContain('sba.gov');expect(h).toContain('squareup.com');
   expect(p.published).toBe('2026-10-18');
