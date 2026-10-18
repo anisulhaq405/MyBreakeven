@@ -145,6 +145,16 @@ export default function App() {
             </p>
             <a className="hero-calculator-cta" href="#calculator-inputs">Edit your assumptions <span aria-hidden="true">→</span></a>
             </div>
+<div className="hero-value-story">
+              <h2>Put your break-even target<br /><em>to the capacity test.</em></h2>
+              <p>A monthly sales target is only useful when your operating capacity can support it. Compare the work required with the time and resources available.</p>
+              <ul>
+                <li><span aria-hidden="true">01</span><div><strong>Connect costs to contribution margin</strong><small>Explore how pricing and variable costs change the contribution available to cover monthly commitments.</small></div></li>
+                <li><span aria-hidden="true">02</span><div><strong>Check demand against delivery capacity</strong><small>Review the target alongside your capacity and the inquiries needed at your assumed conversion rate.</small></div></li>
+                <li><span aria-hidden="true">03</span><div><strong>Compare business planning scenarios</strong><small>Change one assumption at a time to see which constraint deserves attention before you commit.</small></div></li>
+              </ul>
+              <div className="hero-proof-line"><span>Assumption-led planning</span><span>Transparent calculations</span></div>
+            </div>
           </div>
           <div className="hero-calculator-panel" id="calculator-inputs">
             <div className="hero-calculator-heading">
