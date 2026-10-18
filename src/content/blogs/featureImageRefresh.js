@@ -7,6 +7,7 @@ const descriptions={
  'cafe-opening-costs':'Cafe espresso equipment and startup supplies beside an opening checklist and calculator',
 };
 export function refreshFeatureImage(post){
+ if(post.slug==='retail-break-even-analysis')return {...post,alt:'Interior of a homewares shop with ceramic tableware and stocked display shelves.'};
  const alt=descriptions[post.slug];
  return alt?{...post,image:`/images/blog/${post.slug}-feature-20261013.webp`,alt,imageCaption:'Illustrative editorial scene for this guide; use your own business records.',modified:'2026-10-13'}:post;
 }

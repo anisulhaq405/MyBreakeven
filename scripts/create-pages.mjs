@@ -205,6 +205,9 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
     publicHtml = publicHtml.replace(/<meta property="og:image:type" content="[^"]*"\s*\/?>/, '<meta property="og:image:type" content="image/webp" />')
       .replace(/<meta property="og:image:height" content="[^"]*"\s*\/?>/, '<meta property="og:image:height" content="675" />');
   }
+  // Keep the alternate HTTPS preview URL aligned after page-specific image selection.
+  const socialImage = publicHtml.match(/<meta property="og:image" content="([^"]+)"/)[1];
+  publicHtml = publicHtml.replace(/<meta property="og:image:secure_url" content="[^"]*"\s*\/?>/, `<meta property="og:image:secure_url" content="${socialImage}" />`);
   await mkdir(new URL(`../dist/${route}/`, import.meta.url), { recursive: true });
   await writeFile(new URL(`../dist/${route}/index.html`, import.meta.url), publicHtml);
 }
