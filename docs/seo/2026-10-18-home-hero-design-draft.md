@@ -1,9 +1,7 @@
-# Homepage calculator hero design — draft
+# Homepage calculator hero — second design draft
 
-Owner asked to modernize the attached homepage calculator hero while preserving all core values. CSS-only refresh: navy/mint summary card, clearer primary monthly target, two supporting metrics, white input workspace, accessible focus states, responsive single-column layout and desktop sticky summary. Removes obsolete hero-specific rules from shared styles.css; essential current rules live in home-presentation.css. Shared header/footer rules and all JSX/copy/engine/defaults/account/billing remain unchanged.
+The owner rejected the first navy/mint card design. This version changes the layout as well as the palette: warm ivory canvas, charcoal typography and burnt-orange accents; full-width input workspace with a four-column desktop field grid; horizontal results strip below the inputs; two-column tablet fields and single-column mobile fields. Original hero JSX, copy, labels, fields, eight models, defaults, formulas, currency behavior and CTA remain unchanged. Only scoped hero presentation changes; shared header/footer rules are preserved.
 
-661 existing tests pass. Production build passes; 196-route/191-sitemap audit has zero issues. Every delivery budget passes; home declared CSS is 20,594 gzip bytes versus frozen baseline 20,286 (within 3% budget). No new external assets, animation or libraries. Browser visual/interaction QA remains unverified because a local browser is unavailable.
+The obsolete shared hero CSS remains consolidated into home-presentation.css. Production build, rendered-route and delivery checks run on this version. The existing 661-test suite passed during the first CSS-only draft; no calculation or component code has changed since. Browser visual/interaction QA remains unverified. A new isolated working HTML preview is delivered for owner review; no account saving, checkout or analytics connection is configured in that preview.
 
-A self-contained working HTML preview was prepared from the same existing hero JSX, calculation engine and styles, with isolated default state and no account/checkout configuration. It is not a replacement production build. Desktop/tablet/mobile frame controls allow owner review.
-
-Not deployed. Keep as a draft PR until owner requests release.
+Keep PR158 as draft. Do not deploy before the owner approves this new design.
