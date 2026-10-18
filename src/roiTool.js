@@ -51,7 +51,7 @@ export const roiTools = {
     "guide": "/blogs/cash-flow-break-even-vs-profit-break-even/",
     "guideLabel": "Understand cash-flow versus profit break-even",
     "image": "/images/tools/business-roi-calculator-editorial.webp",
-    "alt": "Two business colleagues reviewing a notebook and workflow calendar beside a laptop in a studio.",
+    "alt": "Business ROI and payback cover with a calculator, recovery-date calendar and connected AI workflow tiles.",
     "caption": "AI-generated editorial illustration; not a real client or a verified investment result.",
     "theme": {
       "--tool-accent": "#3153a0",
