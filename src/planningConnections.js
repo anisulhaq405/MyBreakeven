@@ -1,6 +1,7 @@
 // Curated next steps: each connection follows a specific decision in the source page.
 const employee='/calculators/employee-cost-calculator/';
 const cash='/calculators/cash-flow-forecast-template/';
+const roi='/calculators/business-roi-calculator/';
 const margin='/blogs/margin-vs-markup/#margin-calculator';
 export const planningGuideConnections={
  'agency-retainer-pricing':[employee,'Check employee cost per productive hour','If staff deliver the retainer, budget recurring employer costs and productive hours before allocating that cost to client work. Keep payroll once in the combined monthly plan.'],
@@ -20,10 +21,11 @@ export function connectPlanningGuide(post){
 }
 export const planningToolConnections={
  'hourly-rate-calculator':[['Budget a hire separately from your freelance income goal',employee],['Check the dates billed work turns into cash',cash]],
- 'cash-runway-calculator':[['Use dated receipts and payments in a 13-week cash forecast',cash]],
+ 'cash-flow-forecast-template':[['Compare a project’s ROI before scheduling its receipts and payments',roi]],
+ 'cash-runway-calculator':[['Check investment return separately from constant-burn runway',roi],['Use dated receipts and payments in a 13-week cash forecast',cash]],
  'menu-pricing-calculator':[['Check the margin and markup denominators',margin]],
  'break-even-roas-calculator':[['Compare markup with margin before building an ad threshold',margin]],
- 'employee-cost-calculator':[['Explore agency staffing, delivery and cash planning','/guides/agency-business/']],
+ 'employee-cost-calculator':[['Compare automation cash savings with released staff capacity',roi],['Explore agency staffing, delivery and cash planning','/guides/agency-business/']],
 };
 export function connectPlanningTool(slug,tool){
  const extra=planningToolConnections[slug];
