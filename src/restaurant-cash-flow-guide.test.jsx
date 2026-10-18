@@ -24,3 +24,20 @@ describe('restaurant cash forecast guide',()=>{
   expect(p.published).toBe('2026-10-18');
  });
 });
+describe('restaurant forecast usability review',()=>{
+ const p=blogPostMap['restaurant-cash-flow-forecast'];
+ it('puts the direct answer before the feature and exposes the worksheet and daily anchors',()=>{
+  const h=renderToStaticMarkup(<BlogArticle slug={p.slug} initialArticle={p}/>);
+  expect(h.indexOf('id="restaurant-cash-flow-quick-answer"')).toBeLessThan(h.indexOf('class="article-featured"'));
+  for(const id of ['daily-cash-check','restaurant-cash-flow-spreadsheet'])expect(h).toContain('id="'+id+'"');
+  expect(h).toContain('G2 = B2+C2-SUM(D2:F2)');
+  expect(h).toContain('restaurant-cash-flow-forecast-editorial-800.webp 800w');
+ });
+ it('reconciles the published daily supplement to week four and exposes its lower funding point',()=>{
+  const table=p.html.split('Week 4 daily supplement, before any financing')[1].match(/<tbody>(.*?)<\/tbody>/)[1];
+  const rows=[...table.matchAll(/<tr>(.*?)<\/tr>/g)].map(m=>[...m[1].matchAll(/<td>(.*?)<\/td>/g)].map(c=>Number(c[1].match(/-?\$[\d,]+/)[0].replace(/[$,]/g,''))));
+  let previous=23000;for(const [receipts,payments,closing]of rows){expect(closing).toBe(previous+receipts-payments);previous=closing;}
+  expect(rows.reduce((n,r)=>n+r[0],0)).toBe(27000);expect(rows.reduce((n,r)=>n+r[1],0)).toBe(46500);
+  const low=Math.min(...rows.map(r=>r[2]));expect(low).toBe(-3000);expect(8000-low).toBe(11000);expect(previous).toBe(3500);
+ });
+});
