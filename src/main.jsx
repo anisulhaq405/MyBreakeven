@@ -124,8 +124,8 @@ export default function App() {
               </div>
             <div className="dial">
               <div>
-                <strong style={{fontSize:"24px"}}>{result.valid && decision.utilization !== null ? `${decision.utilization.toFixed(1)}%` : "—"}</strong>
-                <small>capacity needed</small>
+                <strong style={{fontSize:"24px",display:"block"}}>{result.valid && decision.utilization !== null ? `${decision.utilization.toFixed(1)}%` : "—"}</strong>
+                <small style={{display:"block",fontSize:"8px",lineHeight:1.4}}>capacity needed</small>
               </div>
             </div>
             <div className="mini-grid">
