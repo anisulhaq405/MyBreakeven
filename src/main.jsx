@@ -217,6 +217,7 @@ export default function App() {
                       />
                       {suffix && suffix !== "$" && <i>{suffix}</i>}
                     </div>
+                    {key === "hoursPerJob" && <small>Use total worker-hours, not minutes: 0.15 hours = 9 minutes. Two people working one hour use two worker-hours.</small>}
                   </label>
                 ))}
               </div>
