@@ -25,7 +25,7 @@ const dateLabel = value => new Date(`${value}T12:00:00Z`).toLocaleDateString("en
 
 export default function LongformArticle({ article: a }) {
   const slug = a?.slug;
-  const hasIntroWidget = ['margin-vs-markup', 'calculate-contribution-margin'].includes(slug);
+  const hasIntroWidget = ['margin-vs-markup', 'calculate-contribution-margin', 'high-low-method'].includes(slug);
   const guideType = articleGuideType(a);
   useEffect(() => {
     if (!a) return;

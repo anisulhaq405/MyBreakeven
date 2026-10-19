@@ -7,6 +7,8 @@ const optimized = new Set([
 for (const key of ['cleaning','landscaping','photography','agency','detailing','ecommerce','restaurant','salon']) {
   optimized.add(`${key}-break-even-feature-20261016.webp`);
 }
+optimized.add('contribution-margin-income-statement-editorial-20261020.webp');
+optimized.add('high-low-method-editorial-20261020.webp');
 optimized.add('restaurant-budgeting-editorial.webp');
 optimized.add('business-roi-calculator-editorial.webp');
 optimized.add('restaurant-cash-flow-forecast-editorial.webp');

@@ -15,3 +15,7 @@ export function calculateHighLow(input) {
   if(rate.isZero())warnings.push('The two costs are equal: this fit estimates no variable component. Check whether the observations are representative.');
   return {valid:true,rate:rate.toNumber(),fixed:fixed.toNumber(),total:total.toNumber(),warnings};
 }
+
+export function formatHighLowRate(n, currency='USD') {
+  return Math.abs(n)>0&&Math.abs(n)<1e-8 ? `${currency} ${n.toExponential(4)}` : new Intl.NumberFormat('en-US',{style:'currency',currency,currencyDisplay:'code',minimumFractionDigits:2,maximumFractionDigits:8}).format(n);
+}

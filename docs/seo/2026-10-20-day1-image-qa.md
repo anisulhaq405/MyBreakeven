@@ -1,0 +1,7 @@
+# Day 1 follow-up QA - 20 October 2026
+
+Replaced the two new article covers with original AI-generated editorial photos, optimized as 1200px and 800px WebP variants. Source images remain in the generating workspace. Prompts: (1) bright small-business office, owner reconciling receipts, calculator and monthly operating results; (2) overhead monthly expense/activity record review, calculator and notebook. No overlaid titles, logos, formulas or numerical claims. Built-in image generation used. Updated alt text, editorial captions, responsive source sets and substantive modification dates; original publication dates preserved.
+
+Confirmed and corrected two issues: small nonzero high-low rates rounded to zero in the rate display, and template formulas calculated plausible-looking results on incomplete/negative input. Rate labels now preserve up to eight decimal places with scientific notation below 1e-8. The CSV has an inputs-only status gate and suppresses all six output formulas until seven nonnegative numeric inputs are complete; zero-revenue ratio remains undefined/blank.
+
+Validation: 681 tests across 76 files passed; build passed; 198 rendered routes / 193 sitemap URLs audited with no issues; no image or delivery-budget failures. Responsive image variants and prerendered article dates checked. Native browser interaction and Excel/Sheets recalculation not performed; template formulas inspected and structural dependencies checked.
