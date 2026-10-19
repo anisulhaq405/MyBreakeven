@@ -9,7 +9,7 @@ const decimal = (value) => {
   if (value === "" || value === null || value === undefined) return null;
   try {
     const parsed = new Decimal(value);
-    return parsed.isFinite() ? parsed : null;
+    return parsed.isFinite() && Number.isFinite(parsed.toNumber()) && (parsed.isZero() || parsed.toNumber() !== 0) ? parsed : null;
   } catch {
     return null;
   }
@@ -51,7 +51,7 @@ export const calculate = (raw) => {
   );
   const fixedNeed = i.fixedCosts.plus(i.ownerPay).plus(i.targetProfit);
   if (!contribution.gt(0)) {
-    return { valid: false, contribution: output(contribution), message: "Each sale currently loses money before fixed costs." };
+    return { valid: false, contribution: output(contribution), message: contribution.isZero() ? "Each sale leaves zero contribution for monthly costs, owner pay or profit. Review price and variable costs." : "Each sale currently loses money before fixed costs." };
   }
 
   const jobs = fixedNeed.div(contribution);
@@ -104,7 +104,7 @@ export const calculate = (raw) => {
   });
 
   const displayed = [contribution, fixedNeed, jobs, revenue, practicalRevenue, capacity, leads, practicalLeads, gap];
-  if (displayed.some(value => !Number.isFinite(value.toNumber())) ||
+  if (displayed.some(value => !Number.isFinite(value.toNumber()) || (!value.isZero() && value.toNumber() === 0)) ||
       [wholeJobs, wholeCapacity, practicalLeads].some(value => value.gt(Number.MAX_SAFE_INTEGER))) {
     return { valid: false, inputError: true, message: "These values exceed the supported calculation range. Reduce the amounts or review the contribution and delivery assumptions." };
   }
@@ -113,6 +113,10 @@ export const calculate = (raw) => {
     valid: true,
     contribution: output(contribution),
     fixedNeed: output(fixedNeed),
+    totalVariableCost: output(i.price.minus(contribution)),
+    operatingBreakEvenWhole: i.fixedCosts.div(contribution).ceil().toNumber(),
+    ownerPayTargetWhole: i.fixedCosts.plus(i.ownerPay).div(contribution).ceil().toNumber(),
+    practicalProfit: wholeJobs.mul(contribution).minus(i.fixedCosts).minus(i.ownerPay).toNumber(),
     jobs: output(jobs),
     wholeJobs: wholeJobs.toNumber(),
     revenue: output(revenue),

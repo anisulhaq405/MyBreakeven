@@ -72,6 +72,9 @@ export default function Insights({ result, input, industry, currency }) {
               </li>
             ))}
           </ul>
+          <p>Monthly overhead: <strong>{money(Number(input.fixedCosts), currency)}</strong>; owner pay: <strong>{money(Number(input.ownerPay), currency)}</strong>; extra profit goal: <strong>{money(Number(input.targetProfit), currency)}</strong>. Total contribution needed: <strong>{money(result.fixedNeed, currency)}</strong>.</p>
+          <p>Operating costs alone need <strong>{result.operatingBreakEvenWhole}</strong> whole {industry.unit}. Costs plus owner pay need <strong>{result.ownerPayTargetWhole}</strong>. Including your extra profit goal needs <strong>{result.wholeJobs}</strong>, producing <strong>{money(result.practicalRevenue, currency)}</strong> revenue and <strong>{money(result.practicalProfit, currency)}</strong> modeled profit after owner pay, before tax, if those sales are delivered.</p>
+          <p>Contribution is what remains per sale before monthly overhead and owner pay. The target is not an estimate of customer demand.</p>
         </article>
         <article>
           <header>

@@ -22,8 +22,8 @@ export function advancedAnalysis(input, result, options = {}) {
   const plannedUnits = D(Number(requestedUnits));
   const plannedRevenue = plannedUnits.mul(input.price);
   const plannedProfit = plannedUnits.mul(baseContribution).minus(fixedBase);
-  const marginSafetyRevenue = Decimal.max(0, plannedRevenue.minus(accountingRevenue));
-  const marginSafetyPct = plannedRevenue.gt(0) ? marginSafetyRevenue.div(plannedRevenue).mul(100) : D(0);
+  const marginSafetyRevenue = plannedRevenue.minus(accountingRevenue);
+  const marginSafetyPct = plannedRevenue.gt(0) ? marginSafetyRevenue.div(plannedRevenue).mul(100) : null;
   const wholeCapacity = D(result.capacity).floor();
   const capacityPrice = wholeCapacity.gt(0)
     ? fixedBase.plus(input.targetProfit).div(wholeCapacity).plus(variable).div(netRate).toDecimalPlaces(2, Decimal.ROUND_CEIL)
@@ -71,7 +71,7 @@ export function advancedAnalysis(input, result, options = {}) {
   return {
     valid: true, accountingRevenue: num(accountingRevenue), targetRevenue: result.revenue,
     plannedUnits: num(plannedUnits), plannedRevenue: num(plannedRevenue), plannedProfit: num(plannedProfit),
-    marginSafetyRevenue: num(marginSafetyRevenue), marginSafetyPct: num(marginSafetyPct),
+    marginSafetyRevenue: num(marginSafetyRevenue), marginSafetyPct: marginSafetyPct === null ? null : num(marginSafetyPct),
     capacityPrice: capacityPrice ? num(capacityPrice) : null,
     additionalWorkers: additionalWorkers ? additionalWorkers.toNumber() : null,
     drivers, heatmap, forecast,

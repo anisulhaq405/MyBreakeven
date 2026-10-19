@@ -22,7 +22,7 @@ export function buildDecisionBrief({ input, result, analysis, industry, currency
     { label: "Monthly target", value: `${wholeTarget} whole ${unit}` },
     { label: "Required inquiries", value: `${practicalLeads}` },
     { label: "Capacity cushion", value: `${wholeGap} ${unit}` },
-    { label: "Margin of safety", value: `${round(analysis.marginSafetyPct)}%` },
+    { label: "Margin of safety", value: analysis.marginSafetyPct === null ? "N/A (zero planned sales)" : `${round(analysis.marginSafetyPct)}%` },
   ];
   const money = value => new Intl.NumberFormat("en-US", { style: "currency", currency, maximumFractionDigits: 0 }).format(value || 0);
   const headline = wholeGap < 0
