@@ -1,3 +1,5 @@
+import { october19KeywordPosts } from './october19KeywordSprint.js';
+import { applyOctober19Enrichment } from './october19Enrichment.js';
 import { connectRoiGuide } from './roiConnections.js';
 import { october18RestaurantPosts } from './october18Restaurant.js';
 import { applyPhotographyStartupReview } from './photographyStartupReview.js';
@@ -123,6 +125,7 @@ const normalizePost = post => {
   let reviewed = applyGscOctober17Review(applyDay3IntentLinks(applyIntentOwnershipReview(applyOctober16GuideReview(normalizePostBase(post)))));
   if (['restaurant-budgeting','landscaping-break-even'].includes(reviewed.slug)) reviewed = {...reviewed, modified:'2026-10-18', ...(reviewed.sectionLinks?{sectionLinks:[...reviewed.sectionLinks,['restaurant-20-scenarios','Compare 20 model scenarios']]}:{})};
   reviewed = connectRoiGuide(applyPhotographyStartupReview(applyOctober18AnswerReview(reviewed)));
+  reviewed = applyOctober19Enrichment(reviewed);
   return featureDeliveryAssets[reviewed.image] ? { ...reviewed, image: featureDeliveryAssets[reviewed.image] } : reviewed;
 };
 
@@ -151,6 +154,7 @@ export const blogCollections = Object.freeze({
   october09Detailing: october09DetailingPosts.map(normalizePost),
   october13Finance: october13FinancePosts.map(normalizePost),
   october18Restaurant: october18RestaurantPosts.map(normalizePost),
+  october19Keyword: october19KeywordPosts.map(normalizePost),
 });
 
 export const blogPosts = Object.values(blogCollections)

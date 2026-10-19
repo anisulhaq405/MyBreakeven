@@ -234,6 +234,13 @@ for (const article of allArticles) {
     mainEntityOfPage:{'@id':`${canonical}#webpage`},publisher:{'@id':'https://mybreakeven.com/#organization'},
     featureList:['Compare margin and markup on the same cost basis','Measure discount effects','Solve a target margin or markup price','Find a list-price floor that preserves the rounded target after discount'],
   });
+  if(article.slug==='high-low-method') schema['@graph'].push({
+    '@type':'WebApplication','@id':`${canonical}#high-low-calculator`,url:`${canonical}#high-low-calculator`,
+    name:'High-Low Method Calculator',applicationCategory:'BusinessApplication',operatingSystem:'Any web browser',
+    isAccessibleForFree:true,offers:{'@type':'Offer',price:'0',priceCurrency:'USD'},
+    mainEntityOfPage:{'@id':`${canonical}#webpage`},publisher:{'@id':'https://mybreakeven.com/#organization'},
+    featureList:['Estimate variable rate and fixed component from two selected observations','Estimate target-activity cost','Flag extrapolation and negative fitted components'],
+  });
   const html = base
     .replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
     .replace(/<meta name="description" content="[^"]*"\s*\/?>/, `<meta name="description" content="${escapeHtml(article.metaDescription)}" />`)

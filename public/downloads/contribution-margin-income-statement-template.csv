@@ -1,0 +1,14 @@
+Line,Value,Instructions
+Completed units,200,Input for one reporting period
+Price per unit,180,Input net of sales discounts and excluding collected sales tax
+Variable supplies per unit,12,Input
+Variable job labor per unit,63,Input only labor that changes with the unit
+Variable fees per unit,5,Input dollar fee per unit counted once
+Other variable cost per unit,0,Input
+Fixed operating expenses,14000,Input monthly total excluding variable costs above
+Variable cost per unit,=SUM(B4:B7),Calculated
+Net sales,=B2*B3,Calculated
+Total variable expenses,=B2*B9,Calculated
+Contribution margin,=B10-B11,Calculated
+Contribution ratio,"=IF(B10=0,"""",B12/B10)",Format as percentage
+Operating income,=B12-B8,Before excluded financing and tax items
