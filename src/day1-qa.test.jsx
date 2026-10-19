@@ -15,7 +15,7 @@ describe('Day 1 release QA',()=>{
   const html=renderToStaticMarkup(<HighLowWidget/>);expect(html).toContain('high-low-calculator');expect(html).toContain('1,320.00');expect(html).toContain('2,200.00');expect(html).toContain('does not select those records');expect(html).toContain('aria-live="polite"');
  });
  it('guards all template outputs through an inputs-only status cell',()=>{
-  const csv=readFileSync(new URL('../public/downloads/contribution-margin-income-statement-template.csv',import.meta.url),'utf8');
+  const csv=readFileSync(new URL('../public/downloads/contribution-margin-income-statement-template-20261020.csv',import.meta.url),'utf8');
   expect(csv).toContain('COUNT(B2:B8)');expect(csv).toContain('MIN(B2:B8)<0');expect(csv).toContain('Complete numeric inputs');expect(csv).toContain('Check inputs');expect(csv.match(/B15<>/g)).toHaveLength(6);expect(csv).toContain('B10=0');
  });
 });

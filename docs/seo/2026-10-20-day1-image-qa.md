@@ -5,3 +5,5 @@ Replaced the two new article covers with original AI-generated editorial photos,
 Confirmed and corrected two issues: small nonzero high-low rates rounded to zero in the rate display, and template formulas calculated plausible-looking results on incomplete/negative input. Rate labels now preserve up to eight decimal places with scientific notation below 1e-8. The CSV has an inputs-only status gate and suppresses all six output formulas until seven nonnegative numeric inputs are complete; zero-revenue ratio remains undefined/blank.
 
 Validation: 681 tests across 76 files passed; build passed; 198 rendered routes / 193 sitemap URLs audited with no issues; no image or delivery-budget failures. Responsive image variants and prerendered article dates checked. Native browser interaction and Excel/Sheets recalculation not performed; template formulas inspected and structural dependencies checked.
+
+Live QA found the legacy CSV URL returning the cached pre-guard version. The article now links to a dated CSV URL so the updated guarded template is delivered without depending on cache expiration.
