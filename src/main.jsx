@@ -113,9 +113,9 @@ export default function App() {
             <span className="orbit orbit-two" />
             <div className="mini-card">
               <div className="mini-head">
-              <span>{industry.short} feasibility</span>
+              <span>{industry.short} capacity check</span>
               <span className={result.valid && decision.fits ? "good" : "review"}>
-                {result.valid && decision.fits ? "FEASIBLE" : "REVIEW"}
+                {result.valid && decision.fits ? "CAPACITY FITS" : "REVIEW"}
               </span>
               </div>
               <div className="ai-signal">
@@ -124,8 +124,8 @@ export default function App() {
               </div>
             <div className="dial">
               <div>
-                <strong>{result.valid ? result.score : 0}</strong>
-                <small>/100</small>
+                <strong style={{fontSize:"24px"}}>{result.valid && decision.utilization !== null ? `${decision.utilization.toFixed(1)}%` : "—"}</strong>
+                <small>capacity needed</small>
               </div>
             </div>
             <div className="mini-grid">
@@ -217,6 +217,7 @@ export default function App() {
                       />
                       {suffix && suffix !== "$" && <i>{suffix}</i>}
                     </div>
+                    {key === "hoursPerJob" && <small>Use total worker-hours, not minutes: 0.15 hours = 9 minutes. Two people working one hour use two worker-hours.</small>}
                   </label>
                 ))}
               </div>
