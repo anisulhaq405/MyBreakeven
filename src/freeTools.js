@@ -1,3 +1,4 @@
+import {applyDay2ToolDraft} from './day2ToolDrafts.js';
 import {roiTools} from './roiTool.js';
 import {connectPlanningTool} from './planningConnections.js';
 import {planningTools} from './planningTools.js';
@@ -25,4 +26,4 @@ const pricingTools = {
   },
 };
 
-export const freeTools = Object.fromEntries(Object.entries({...roiTools,...pricingTools,...businessTools,...operationalTools,...decisionTools,...foodTools,...planningTools}).map(([slug,tool])=>[slug,connectPlanningTool(slug,completeCalculatorPage(slug,{...tool,theme:tool.theme || toolThemes[slug],category:tool.category || "Pricing & contribution"}))]));
+export const freeTools = Object.fromEntries(Object.entries({...roiTools,...pricingTools,...businessTools,...operationalTools,...decisionTools,...foodTools,...planningTools}).map(([slug,tool])=>[slug,applyDay2ToolDraft(slug,connectPlanningTool(slug,completeCalculatorPage(slug,{...tool,theme:tool.theme || toolThemes[slug],category:tool.category || "Pricing & contribution"})))]));

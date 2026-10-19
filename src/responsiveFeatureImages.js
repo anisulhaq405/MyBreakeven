@@ -9,6 +9,8 @@ for (const key of ['cleaning','landscaping','photography','agency','detailing','
 }
 optimized.add('contribution-margin-income-statement-editorial-20261020.webp');
 optimized.add('high-low-method-editorial-20261020.webp');
+optimized.add('flexible-budget-variance-analysis-editorial-20261020.webp');
+optimized.add('make-or-buy-decision-editorial-20261020.webp');
 optimized.add('restaurant-budgeting-editorial.webp');
 optimized.add('business-roi-calculator-editorial.webp');
 optimized.add('restaurant-cash-flow-forecast-editorial.webp');

@@ -65,7 +65,7 @@ describe('Search-intent guide changes', () => {
   it('puts checked answers before the cover and preserves URL/publication and body examples', () => {
     for(const slug of ['break-even-analysis-example','target-profit-sales-formula']){
       const post=blogPostMap[slug], html=renderToStaticMarkup(<LongformArticle article={post}/>);
-      expect(post.modified).toBe('2026-10-16');expect(post.published).not.toBe(post.modified);
+      expect(post.modified).toBe(slug==='break-even-analysis-example'?'2026-10-20':'2026-10-16');expect(post.published).not.toBe(post.modified);
       expect(html.indexOf('id="quick-answer"')).toBeLessThan(html.indexOf('class="article-featured"'));
       for(const [id] of post.sectionLinks)expect(html).toContain(`id="${id}"`);
       expect((html.match(/<h1/g)||[]).length).toBe(1);

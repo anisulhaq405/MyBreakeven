@@ -51,7 +51,7 @@ it('keeps existing publication history and old scenarios for the eight enriched 
   for (const slug of Object.keys(fourSectionEnrichment)) {
     const post = blogPostMap[slug];
     expect(post.published < '2026-10-14').toBe(true);
-    expect(post.modified).toBe(slug==='restaurant-food-cost-percentage'?'2026-10-18':['cleaning-business-monthly-expenses','agency-profit-margin'].includes(slug) ? '2026-10-17' : '2026-10-14');
+    expect(post.modified).toBe(slug==='agency-client-profitability'?'2026-10-20':slug==='restaurant-food-cost-percentage'?'2026-10-18':['cleaning-business-monthly-expenses','agency-profit-margin'].includes(slug) ? '2026-10-17' : '2026-10-14');
     const ids = [...post.html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
     expect(new Set(ids).size).toBe(ids.length);
   }
