@@ -18,6 +18,7 @@ import { articleFaq } from "./articleFaq.js";
 import { responsiveFeatureProps } from './responsiveFeatureImages.js';
 import './new-content-navigation.css';
 import MarginMarkupWidget from './MarginMarkupWidget.jsx';
+import {FlexibleBudgetWidget,MakeOrBuyWidget,BreakEvenChartWidget} from './Day2PlanningWidgets.jsx';
 import HighLowWidget from './HighLowWidget.jsx';
 import ContributionMarginWidget from './ContributionMarginWidget.jsx';
 
@@ -25,7 +26,7 @@ const dateLabel = value => new Date(`${value}T12:00:00Z`).toLocaleDateString("en
 
 export default function LongformArticle({ article: a }) {
   const slug = a?.slug;
-  const hasIntroWidget = ['margin-vs-markup', 'calculate-contribution-margin', 'high-low-method'].includes(slug);
+  const hasIntroWidget = ['margin-vs-markup', 'calculate-contribution-margin', 'high-low-method', 'flexible-budget-variance-analysis', 'make-or-buy-decision', 'break-even-analysis-example'].includes(slug);
   const guideType = articleGuideType(a);
   useEffect(() => {
     if (!a) return;
@@ -38,6 +39,7 @@ export default function LongformArticle({ article: a }) {
   return <article className={`article-page${a.sectionLinks?' article-with-section-nav':''}`}>
     <nav className="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/blogs/">Guides</a><span>›</span><span>{a.tag}</span></nav>
     {a.tag === "Agency" && <AgencyClusterLink />}{a.tag === "E-commerce" && <EcommerceClusterLink />}{a.tag === "Photography" && <PhotographyClusterLink />}{a.tag === "Restaurant" && <RestaurantClusterLink />}{a.tag === "Salon" && <SalonClusterLink />}{a.tag === "Cleaning" && <CleaningClusterLink />}{a.tag === "Landscaping" && <LandscapingClusterLink />}{a.tag === "Mobile Detailing" && <MobileDetailingClusterLink />}
+    {a.editorialStatus==='draft'&&<p className="article-note" role="status">Unpublished draft for review</p>}
     <span>{a.tag} {guideType}</span><h1>{a.title}</h1>
     <div className="article-meta"><time dateTime={a.published}>Published {dateLabel(a.published)}</time><span>Updated {dateLabel(a.modified)}</span></div>
     <p className="article-note">Published by <a href="/about-us/">MyBreakeven</a>. <a href="/editorial-policy/">Editorial standards and corrections</a>. Report a calculation or content issue to <a href="mailto:support@mybreakeven.com">support@mybreakeven.com</a>.</p>
@@ -51,6 +53,9 @@ export default function LongformArticle({ article: a }) {
     {slug==='margin-vs-markup'&&<MarginMarkupWidget/>}
     {slug==='calculate-contribution-margin'&&<ContributionMarginWidget/>}
     {slug==='high-low-method'&&<HighLowWidget/>}
+    {slug==='flexible-budget-variance-analysis'&&<FlexibleBudgetWidget/>}
+    {slug==='make-or-buy-decision'&&<MakeOrBuyWidget/>}
+    {slug==='break-even-analysis-example'&&<BreakEvenChartWidget/>}
     {a.answerHtml&&<section className="article-summary" dangerouslySetInnerHTML={{__html:a.answerHtml}} />}
     <figure className="article-featured"><img src={a.image} {...responsiveFeatureProps(a.image)} alt={a.alt} width={blogImageDimensions[a.image]?.width || 1200} height={blogImageDimensions[a.image]?.height || 675} fetchPriority={hasIntroWidget?undefined:'high'} loading={hasIntroWidget?'lazy':undefined} decoding="async"/><figcaption>{a.imageCaption}</figcaption></figure>
     <div className="day1-markdown" dangerouslySetInnerHTML={{ __html: a.html }} />

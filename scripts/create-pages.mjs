@@ -234,6 +234,17 @@ for (const article of allArticles) {
     mainEntityOfPage:{'@id':`${canonical}#webpage`},publisher:{'@id':'https://mybreakeven.com/#organization'},
     featureList:['Compare margin and markup on the same cost basis','Measure discount effects','Solve a target margin or markup price','Find a list-price floor that preserves the rounded target after discount'],
   });
+  const day2Apps={
+    'flexible-budget-variance-analysis':['flexible-budget-calculator','Flexible Budget Variance Calculator'],
+    'make-or-buy-decision':['make-buy-calculator','Make-or-Buy Decision Calculator'],
+    'break-even-analysis-example':['break-even-chart-maker','Break-Even Analysis Graph Maker'],
+  };
+  if(day2Apps[article.slug]) { const [id,name]=day2Apps[article.slug]; schema['@graph'].push({
+    '@type':'WebApplication','@id':`${canonical}#${id}`,url:`${canonical}#${id}`,name,
+    applicationCategory:'BusinessApplication',operatingSystem:'Any web browser',isAccessibleForFree:true,
+    offers:{'@type':'Offer',price:'0',priceCurrency:'USD'},mainEntityOfPage:{'@id':`${canonical}#webpage`},
+    publisher:{'@id':'https://mybreakeven.com/#organization'},
+  }); }
   if(article.slug==='high-low-method') schema['@graph'].push({
     '@type':'WebApplication','@id':`${canonical}#high-low-calculator`,url:`${canonical}#high-low-calculator`,
     name:'High-Low Method Calculator',applicationCategory:'BusinessApplication',operatingSystem:'Any web browser',
