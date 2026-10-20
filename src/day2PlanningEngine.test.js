@@ -1,5 +1,5 @@
 import{describe,it,expect}from'vitest';
-import{calculateFlexibleBudget,calculateMakeOrBuy,calculateBreakEvenChart,varianceLabel}from'./day2PlanningEngine.js';
+import{calculateFlexibleBudget,calculateMakeOrBuy,calculateBreakEvenChart,varianceLabel,formatPlanningNumber}from'./day2PlanningEngine.js';
 const f={plannedUnits:200,actualUnits:180,price:180,variableRate:80,fixedBudget:14000,actualRevenue:31500,actualVariable:15120,actualFixed:14300};
 const b={quantity:1000,makeVariable:14,avoidableFixed:3000,buyUnit:18,buyExtra:500,opportunity:2000,commonFixed:4000};
 describe('flexible budget reconciliation',()=>{
@@ -19,3 +19,11 @@ describe('break-even graph data',()=>{
  it('reconciles exact and whole financial targets',()=>{const r=calculateBreakEvenChart({fixed:4000,price:50,variable:20,maxUnits:200});expect(r.exactUnits).toBeCloseTo(133.3333333333);expect(r.wholeUnits).toBe(134);expect(r.maxSales).toBe(10000);expect(r.maxCost).toBe(8000);expect(133*r.contribution-r.fixed).toBe(-10);expect(134*r.contribution-r.fixed).toBe(20);});
  it('exposes no-positive-contribution and validates the plotting range',()=>{expect(calculateBreakEvenChart({fixed:4000,price:20,variable:20,maxUnits:200}).exactUnits).toBeNull();expect(calculateBreakEvenChart({fixed:0,price:50,variable:20,maxUnits:200}).wholeUnits).toBe(0);expect(calculateBreakEvenChart({fixed:4000,price:50,variable:20,maxUnits:0}).valid).toBe(false);});
 });
+
+describe('live QA boundary regressions',()=>{
+ it('distinguishes coincident lines from a zero-activity-only crossing',()=>{expect(calculateBreakEvenChart({fixed:0,price:20,variable:20,maxUnits:200})).toMatchObject({valid:true,exactUnits:0,wholeUnits:0,breakEvenCase:'all-activity'});expect(calculateBreakEvenChart({fixed:0,price:20,variable:25,maxUnits:200})).toMatchObject({valid:true,exactUnits:0,wholeUnits:0,breakEvenCase:'zero-only'});});
+ it('retains the unique positive threshold and the no-crossing case',()=>{expect(calculateBreakEvenChart({fixed:12000,price:40,variable:16,maxUnits:1000})).toMatchObject({valid:true,exactUnits:500,wholeUnits:500,breakEvenCase:'positive-contribution'});expect(calculateBreakEvenChart({fixed:4000,price:20,variable:25,maxUnits:200})).toMatchObject({valid:true,exactUnits:null,breakEvenCase:'no-break-even'});});
+ it('rejects nonzero output underflow instead of silently converting it to zero',()=>{expect(calculateBreakEvenChart({fixed:1e-323,price:1e12,variable:0,maxUnits:1}).valid).toBe(false);expect(calculateMakeOrBuy({...b,quantity:1e-323,makeVariable:1e-323,buyUnit:0,avoidableFixed:0,buyExtra:0,opportunity:0,commonFixed:0}).valid).toBe(false);expect(calculateFlexibleBudget({...f,plannedUnits:1e-323,price:1e-323,variableRate:0}).valid).toBe(false);});
+});
+
+it("does not display a positive tiny threshold as zero",()=>{expect(formatPlanningNumber(1e-10)).toBe("1.0000e-10");expect(formatPlanningNumber(133.3333333333)).toBe("133.33333333");});

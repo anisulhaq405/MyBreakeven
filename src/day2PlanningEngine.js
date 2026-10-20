@@ -2,7 +2,7 @@ import Decimal from 'decimal.js';
 const D=Decimal.clone({precision:40});
 const bad=message=>({valid:false,message});
 function read(v){if(v==null||typeof v==='boolean'||String(v).trim()==='')return null;try{const n=new D(v);return n.isFinite()&&n.gte(0)&&n.lte(1e12)&&(n.isZero()||n.toNumber()>0)?n:null;}catch{return null;}}
-const convert=o=>Object.fromEntries(Object.entries(o).map(([k,v])=>[k,v instanceof D?v.toNumber():v]));
+const convert=o=>Object.fromEntries(Object.entries(o).map(([k,v])=>[k,v instanceof D?(!v.isZero()&&v.toNumber()===0?NaN:v.toNumber()):v]));
 const safe=o=>Object.values(o).every(v=>v===null||typeof v!=='number'||Number.isFinite(v)&&Math.abs(v)<=1e15);
 export function calculateFlexibleBudget(input){
  const keys=['plannedUnits','actualUnits','price','variableRate','fixedBudget','actualRevenue','actualVariable','actualFixed'];
@@ -34,8 +34,11 @@ export function calculateBreakEvenChart(input){
  const keys=['fixed','price','variable','maxUnits'];const n=Object.fromEntries(keys.map(k=>[k,read(input[k])]));
  if(Object.values(n).some(v=>v===null))return bad('Complete all four inputs with finite nonnegative numbers up to 1 trillion.');
  if(n.price.lte(0)||n.maxUnits.lte(0))return bad('Price and the maximum plotted activity must be positive.');
- const contribution=n.price.minus(n.variable),exact=contribution.gt(0)?n.fixed.div(contribution):null;
+ const contribution=n.price.minus(n.variable),exact=n.fixed.isZero()?new D(0):contribution.gt(0)?n.fixed.div(contribution):null;
+ const breakEvenCase=n.fixed.isZero()?(contribution.isZero()?'all-activity':contribution.lt(0)?'zero-only':'positive-contribution'):exact===null?'no-break-even':'positive-contribution';
  const result=convert({fixed:n.fixed,price:n.price,variable:n.variable,maxUnits:n.maxUnits,contribution,exactUnits:exact,wholeUnits:exact===null?null:exact.ceil(),maxSales:n.maxUnits.times(n.price),maxCost:n.fixed.plus(n.maxUnits.times(n.variable))});
  if(!safe(result))return bad('The result exceeds the supported display range. Check costs and activity units.');
- return {valid:true,...result};
+ return {valid:true,...result,breakEvenCase};
 }
+
+export function formatPlanningNumber(n){return n!==0&&Math.abs(n)<1e-8?n.toExponential(4):new Intl.NumberFormat('en-US',{maximumFractionDigits:8}).format(n);}
