@@ -84,7 +84,7 @@ export const About = () => (
       <article>
         <span>03</span><CheckCircle2 />
         <h2>Feasibility comes next</h2>
-        <p>The plan is checked against sales volume, workload and lead demand so an attractive target does not hide an impossible operation.</p>
+        <p>Compare required sales with productive hours and the qualified leads implied by your conversion assumption. This can reveal a capacity gap; it does not establish that customers will book.</p>
       </article>
     </section>
     <section className="about-journey">
@@ -96,8 +96,8 @@ export const About = () => (
       <div>
         <article><b>01</b><h3>Choose your model</h3><p>Start with the calculator built around how your business sells and delivers work.</p></article>
         <article><b>02</b><h3>Enter real assumptions</h3><p>Add fixed costs, per-sale costs, owner pay, pricing and available capacity.</p></article>
-        <article><b>03</b><h3>Read the whole result</h3><p>Review break-even revenue alongside sales volume, customer demand and workload.</p></article>
-        <article><b>04</b><h3>Test a safer case</h3><p>Lower demand, raise a cost or adjust pricing before committing cash and time.</p></article>
+        <article><b>03</b><h3>Read the whole result</h3><p>Review the chosen revenue target alongside whole sales, required inquiries and productive workload.</p></article>
+        <article><b>04</b><h3>Test a safer case</h3><p>Raise a delivery cost, reduce productive hours or lower your conversion assumption, then compare the target again.</p></article>
       </div>
     </section>
     <section className="journey-cta">

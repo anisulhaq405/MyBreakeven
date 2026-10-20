@@ -25,8 +25,8 @@ export default function HomeSEO() {
         <h2 id="seo-heading">A free break-even calculator built for real operating decisions</h2>
         <p>
           MyBreakeven helps small business owners calculate exact break-even revenue,
-          required sales volume, customer demand and delivery capacity. Unlike a basic
-          fixed-cost calculator, it tests whether the target is operationally feasible.
+          required sales volume, qualified inquiries and delivery capacity. It compares
+          the target with the productive hours you enter; actual demand needs separate evidence.
           Results retain fractional precision and also show the minimum practical whole
           orders, jobs, clients or appointments needed.
         </p>
@@ -42,13 +42,13 @@ export default function HomeSEO() {
       <div className="seo-method">
         <div>
           <span>HOW THE CALCULATION WORKS</span>
-          <h2>From contribution margin to a feasible monthly sales target</h2>
+          <h2>From contribution margin to a monthly sales target you can check</h2>
         </div>
         <ol>
           <li><strong>Calculate contribution per sale.</strong> Subtract direct materials, labor, other variable costs, acquisition cost and payment fees from average price.</li>
           <li><strong>Set the monthly amount to cover.</strong> Add operating overhead, owner pay and optional target profit.</li>
-          <li><strong>Calculate exact break-even volume.</strong> Divide the monthly amount to cover by contribution per sale without prematurely rounding the result.</li>
-          <li><strong>Test feasibility.</strong> Compare required sales with team capacity and translate the sales target into required customer inquiries.</li>
+          <li><strong>Calculate the exact sales target.</strong> Divide the monthly amount to cover by contribution per sale without prematurely rounding the result.</li>
+          <li><strong>Check capacity and inquiry requirements.</strong> Compare required sales with team capacity and translate the sales target into required customer inquiries.</li>
         </ol>
       </div>
       <div className="seo-example" aria-labelledby="seo-example-heading">
@@ -81,7 +81,7 @@ export default function HomeSEO() {
         </div>
         <dl aria-label="Illustrative break-even results">
           <div><dt>Contribution per job</dt><dd>$100</dd></div>
-          <div><dt>Break-even jobs</dt><dd>40</dd></div>
+          <div><dt>Jobs covering overhead and owner pay</dt><dd>40</dd></div>
           <div><dt>Jobs for $1,000 profit</dt><dd>50</dd></div>
           <div><dt>Inquiries at 25% conversion</dt><dd>200</dd></div>
           <div><dt>Whole jobs the team can deliver</dt><dd>43</dd></div>

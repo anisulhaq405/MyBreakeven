@@ -1,3 +1,4 @@
+import {applyOctober21ContentReview} from './october21ContentReview.js';
 import { october20DraftPosts } from './october20Drafts.js';
 import { applyDay2DraftEnrichment } from './day2DraftEnrichment.js';
 import { october19KeywordPosts } from './october19KeywordSprint.js';
@@ -128,6 +129,7 @@ const normalizePost = post => {
   if (['restaurant-budgeting','landscaping-break-even'].includes(reviewed.slug)) reviewed = {...reviewed, modified:'2026-10-18', ...(reviewed.sectionLinks?{sectionLinks:[...reviewed.sectionLinks,['restaurant-20-scenarios','Compare 20 model scenarios']]}:{})};
   reviewed = connectRoiGuide(applyPhotographyStartupReview(applyOctober18AnswerReview(reviewed)));
   reviewed = applyDay2DraftEnrichment(applyOctober19Enrichment(reviewed));
+  reviewed = applyOctober21ContentReview(reviewed);
   return featureDeliveryAssets[reviewed.image] ? { ...reviewed, image: featureDeliveryAssets[reviewed.image] } : reviewed;
 };
 

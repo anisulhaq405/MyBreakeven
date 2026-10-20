@@ -4,7 +4,7 @@ import { routeEntryForPath } from '../src/routeEntries.js';
 import { industryCalculatorFaq } from '../src/industryCalculatorContent.js';
 import { homeFaq } from "../src/homeFaq.js";
 import { blogImageDimensions } from "../src/blogImageDimensions.js";
-import { authorityPages } from "../src/authorityResources.js";
+import { authorityPages, authorityReviewDates } from "../src/authorityResources.js";
 import { agencyClusters } from "../src/agencyCluster.js";
 import { ecommerceClusters } from "../src/ecommerceCluster.js";
 import { photographyClusters } from "../src/photographyCluster.js";
@@ -85,7 +85,7 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
   if (authorityPages[route]) {
     const page = pageSchema["@graph"].find(entity => entity["@type"] === "WebPage");
     page.datePublished = route === "resources/cleaning-business-budget-template" ? "2026-10-11" : "2026-10-10";
-    page.dateModified = route === "resources/cleaning-job-cost-worksheet" ? "2026-10-14" : ["resources", "resources/cleaning-business-budget-template"].includes(route) ? "2026-10-11" : "2026-10-10";
+    page.dateModified = authorityReviewDates[route] || (route === "resources/cleaning-job-cost-worksheet" ? "2026-10-14" : ["resources", "resources/cleaning-business-budget-template"].includes(route) ? "2026-10-11" : "2026-10-10");
     page.publisher = { "@id": "https://mybreakeven.com/#organization" };
     pageSchema["@graph"].push({ "@type": "BreadcrumbList", itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://mybreakeven.com/" },
@@ -105,7 +105,7 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
     pageSchema['@graph'].push({'@type':'Article','@id':`${canonical}#article`,headline:heading,description,datePublished:founderCaseDate,dateModified:founderCaseDate,inLanguage:'en-US',author:{'@type':'Person','@id':'https://mybreakeven.com/founder/#person',name:'Anis Ul Haq',url:'https://mybreakeven.com/founder/'},publisher:{'@id':'https://mybreakeven.com/#organization'},mainEntityOfPage:{'@id':`${canonical}#webpage`},about:'Founder experience using an ecommerce order planning calculator in Pakistan'});
     pageSchema['@graph'].push({'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:'https://mybreakeven.com/'},{'@type':'ListItem',position:2,name:'Resources',item:'https://mybreakeven.com/resources/'},{'@type':'ListItem',position:3,name:'Daily Outfitter founder case study',item:canonical}]});
   }
-  if (['founder','resources','editorial-policy'].includes(route)) pageSchema['@graph'].find(entity=>['WebPage','ProfilePage'].includes(entity['@type'])).dateModified=founderCaseDate;
+  if (['founder','resources','editorial-policy'].includes(route)) pageSchema['@graph'].find(entity=>['WebPage','ProfilePage'].includes(entity['@type'])).dateModified=authorityReviewDates[route] || founderCaseDate;
   if (route === "guides/cleaning-business") {
     const page = pageSchema["@graph"].find(e => e["@type"] === "WebPage");
     page["@type"] = "CollectionPage";
@@ -328,7 +328,7 @@ for (const slug of Object.keys(calculators)) articleModified.set(`https://mybrea
 for (const route of Object.keys(authorityPages)) articleModified.set(`https://mybreakeven.com/${route}/`, route === "resources/cleaning-job-cost-worksheet" ? "2026-10-14" : ["founder", "resources", "resources/cleaning-business-budget-template"].includes(route) ? "2026-10-11" : "2026-10-10");
 for (const industry of ["restaurant", "cleaning", "ecommerce", "agency", "salon", "photography", "mobile-detailing", "landscaping"]) articleModified.set(`https://mybreakeven.com/guides/${industry}-business/`, "2026-10-14");
 articleModified.set(`https://mybreakeven.com/${founderCaseRoute}/`,founderCaseDate);
-for(const route of ['founder','resources','editorial-policy'])articleModified.set(`https://mybreakeven.com/${route}/`,founderCaseDate);
+for(const [route,date] of Object.entries(authorityReviewDates))articleModified.set(`https://mybreakeven.com/${route}/`,date);
 // The cluster gained a substantive founder-evidence section; the calculator only gained navigation.
 articleModified.set('https://mybreakeven.com/guides/ecommerce-business/',founderCaseDate);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${publicUrls.map(url => `  <url><loc>${escapeHtml(url)}</loc>${articleModified.has(url) ? `<lastmod>${escapeHtml(articleModified.get(url))}</lastmod>` : ""}</url>`).join("\n")}\n</urlset>\n`;
