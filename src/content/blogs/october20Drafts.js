@@ -5,7 +5,7 @@ export const october20DraftPosts = [
     "seoTitle": "Flexible Budget & Variance Calculator",
     "description": "Build a flexible budget at actual activity, compare original and actual results, and reconcile volume and performance effects with a checked service example.",
     "metaDescription": "Build a flexible budget at actual activity, compare original and actual results, and reconcile volume and performance effects with a checked service example.",
-    "image": "/images/blog/flexible-budget-variance-analysis-editorial-20261020.webp",
+    "image": "/images/blog/flexible-budget-variance-analysis-editorial-20261020.webp?v=release",
     "alt": "Business manager comparing an activity schedule and budget records at a bright office desk",
     "imageCaption": "Illustrative editorial scene. Financial examples in this guide use fictional USD assumptions.",
     "calculatorSlug": "cleaning-business-break-even-calculator",

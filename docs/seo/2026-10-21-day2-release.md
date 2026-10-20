@@ -5,3 +5,5 @@ User explicitly authorized immediate publication, replacing the draft-only restr
 New guide publication and modification dates, enriched article modification dates and resource review dates are 2026-10-21. Existing publication dates remain unchanged. Public guide draft banners removed through published status. CSV uses a release-specific URL.
 
 Validation and deployment results are reported in the release conversation. No social posting authorized; release commit uses [skip social].
+
+Live checks found cached 404 responses for the newly introduced CSV and flexible-budget full-size cover, while cache-versioned URLs returned the correct files. Links now use ?v=release; responsive cover lookup ignores query parameters while retaining versioned source candidates.

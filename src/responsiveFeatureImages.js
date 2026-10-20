@@ -16,7 +16,7 @@ optimized.add('business-roi-calculator-editorial.webp');
 optimized.add('restaurant-cash-flow-forecast-editorial.webp');
 for (const image of Object.values(featureDeliveryAssets)) optimized.add(image.split('/').pop());
 export function responsiveFeatureProps(image, card=false){
-  if(!optimized.has(image?.split('/').pop()))return {};
+  if(!optimized.has(image?.split('?')[0].split('/').pop()))return {};
   const cardCandidate = card && /\/tools\/\w+-break-even-feature-20261016\.webp$/.test(image)
     ? `${image.replace('.webp','-400.webp')} 400w, ` : '';
   return {
