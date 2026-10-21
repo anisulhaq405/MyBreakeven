@@ -20,3 +20,6 @@ Baseline production commit ece8f51b6a69717f7129f0ffd48d673af48e6e8d, tree 3d73b7
 Primary accounting references rechecked: OpenStax operating budgets (7.2), financial budgets (7.3), cost drivers (6.2), predetermined overhead/application (4.4). New figures are original extensions of the existing fictional examples.
 
 After production deploy, verify the actual new metadata/content, jump targets, small-currency display, invalid inputs and reset in a live browser. Release commit uses [skip social]. No ranking/traffic improvement is claimed from this implementation.
+
+## Visual follow-up
+The live desktop review found that the shared default right-aligned, nowrap final column was unsuitable for narrative tables. Apply the existing article-records-table presentation to six explanatory tables across the three guides. Preserve numeric table presentation. Rebuild, rerun the rendered route audit and verify actual browser table width before closure.
