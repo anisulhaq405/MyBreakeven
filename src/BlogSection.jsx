@@ -26,7 +26,7 @@ export default function BlogSection({ isHub = false } = {}) {
     <div className="blog-heading"><div><span>MYBREAKEVEN FIELD NOTES</span><h2>Practical guides for healthier business margins.</h2><p>Search pricing, startup costs, profitability, and break-even strategy across every guide.</p></div>{!isHub && <a href="/blogs/">Explore all guides <ArrowUpRight /></a>}</div>
     <div className="blog-discovery">
       <label className="blog-search"><Search aria-hidden="true" /><span className="sr-only">Search all business guides</span><input type="search" value={query} onChange={event => updateQuery(event.target.value)} placeholder="Search any topic, e.g. cleaning prices" autoComplete="off" />{query && <button type="button" onClick={() => updateQuery("")} aria-label="Clear blog search"><X /></button>}</label>
-      <div className="blog-filters" aria-label="Filter guides by category">{tags.map(item => <button type="button" key={item} className={tag === item ? "active" : ""} onClick={() => setTag(item)}>{item}</button>)}</div>
+      <div className="blog-filters" aria-label="Filter guides by category">{tags.map(item => <button type="button" key={item} className={tag === item ? "active" : ""} aria-pressed={tag === item} onClick={() => setTag(item)}>{item}</button>)}</div>
       <p className="blog-count" aria-live="polite">{filtered.length} {filtered.length === 1 ? "guide" : "guides"}</p>
     </div>
     {featured ? <><article className="blog-featured-card">

@@ -50,13 +50,13 @@ export default function LongformArticle({ article: a }) {
     <RestaurantExampleLink slug={a.slug} />
     <div className="article-tags" aria-label="Article topics">{a.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
     {a.sectionLinks&&<nav className="article-section-nav" aria-label="Guide sections">{a.sectionLinks.map(([id,label])=><a key={id} href={`#${id}`}>{label}</a>)}</nav>}
+    {a.answerHtml&&<section className="article-summary" dangerouslySetInnerHTML={{__html:a.answerHtml}} />}
     {slug==='margin-vs-markup'&&<MarginMarkupWidget/>}
     {slug==='calculate-contribution-margin'&&<ContributionMarginWidget/>}
     {slug==='high-low-method'&&<HighLowWidget/>}
     {slug==='flexible-budget-variance-analysis'&&<FlexibleBudgetWidget/>}
     {slug==='make-or-buy-decision'&&<MakeOrBuyWidget/>}
     {slug==='break-even-analysis-example'&&<BreakEvenChartWidget/>}
-    {a.answerHtml&&<section className="article-summary" dangerouslySetInnerHTML={{__html:a.answerHtml}} />}
     <figure className="article-featured"><img src={a.image} {...responsiveFeatureProps(a.image)} alt={a.alt} width={blogImageDimensions[a.image]?.width || 1200} height={blogImageDimensions[a.image]?.height || 675} fetchPriority={hasIntroWidget?undefined:'high'} loading={hasIntroWidget?'lazy':undefined} decoding="async"/><figcaption>{a.imageCaption}</figcaption></figure>
     <div className="day1-markdown" dangerouslySetInnerHTML={{ __html: a.html }} />
     <ScenarioAnalysis slug={a.slug || slug} />
