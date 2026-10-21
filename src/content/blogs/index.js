@@ -1,3 +1,4 @@
+import {rollingForecastPost, applyDay1PlanningReview} from '../day1PlanningContent.js';
 import {applyOctober21OperatingReview} from './october21OperatingReview.js';
 import {applyOctober21QuickAnswers} from './october21QuickAnswers.js';
 import {applyOctober21ContentReview} from './october21ContentReview.js';
@@ -134,11 +135,12 @@ const normalizePost = post => {
   reviewed = connectRoiGuide(applyPhotographyStartupReview(applyOctober18AnswerReview(reviewed)));
   reviewed = applyDay2DraftEnrichment(applyOctober19Enrichment(reviewed));
   reviewed = applyOctober21OperatingReview(applyOctober21QuickAnswers(applyOctober21ContentReview(reviewed)));
-  reviewed = applyDay3DraftEnrichment(reviewed);
+  reviewed = applyDay1PlanningReview(applyDay3DraftEnrichment(reviewed));
   return featureDeliveryAssets[reviewed.image] ? { ...reviewed, image: featureDeliveryAssets[reviewed.image] } : reviewed;
 };
 
 export const blogCollections = Object.freeze({
+  newPlanDay1: [rollingForecastPost].map(normalizePost),
   foundation: foundationPosts.map(normalizePost),
   pricing: pricingPosts.map(normalizePost),
   startup: [...startupPosts, ...cafePosts].map(normalizePost),

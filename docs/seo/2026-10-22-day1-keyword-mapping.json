@@ -1,0 +1,436 @@
+{
+  "status": "unpublished draft",
+  "new_page_keywords": 10,
+  "existing_page_keywords": 26,
+  "conditional_review_keywords": 10,
+  "rows": [
+    {
+      "keyword": "budget variance",
+      "volume": 590.0,
+      "kd": 22.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "budget variances",
+      "volume": 110.0,
+      "kd": 15.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "define budget variance",
+      "volume": 70.0,
+      "kd": 23.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "budget variance explanations",
+      "volume": 140.0,
+      "kd": 25.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "budget variance definition",
+      "volume": 140.0,
+      "kd": 18.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "variance analysis in budgeting",
+      "volume": 110.0,
+      "kd": 26.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "definition of budget variance",
+      "volume": 90.0,
+      "kd": 18.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "budget variance analysis",
+      "volume": 320.0,
+      "kd": 25.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "flexible budgeting and variance analysis",
+      "volume": 90.0,
+      "kd": 17.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "flexible budgeting variance analysis",
+      "volume": 50.0,
+      "kd": 18.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "budgeting and variance analysis",
+      "volume": 90.0,
+      "kd": 20.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "budget and variance analysis",
+      "volume": 50.0,
+      "kd": 28.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "budget variance report",
+      "volume": 210.0,
+      "kd": 23.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "variance to budget calculation",
+      "volume": 70.0,
+      "kd": 9.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "budget variance formula",
+      "volume": 170.0,
+      "kd": 23.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "budget variance analysis formula",
+      "volume": 90.0,
+      "kd": 14.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "variance in budget formula",
+      "volume": 50.0,
+      "kd": 29.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "calculate budget variance",
+      "volume": 140.0,
+      "kd": 13.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "how to calculate budget variance",
+      "volume": 50.0,
+      "kd": 12.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "flexible budget variance analysis",
+      "volume": 90.0,
+      "kd": 16.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "static budget variance",
+      "volume": 50.0,
+      "kd": 18.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "flexible budgets and variance analysis",
+      "volume": 110.0,
+      "kd": 20.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "flexible budget variance",
+      "volume": 170.0,
+      "kd": 15.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "flexible budget variance formula",
+      "volume": 110.0,
+      "kd": 19.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "calculate flexible budget variance",
+      "volume": 70.0,
+      "kd": 19.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "formula for flexible budget variance",
+      "volume": 70.0,
+      "kd": 16.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "cluster": "variance",
+      "decision": "Mapped to existing guide; preserve its existing answer and add static report context"
+    },
+    {
+      "keyword": "actual vs budget",
+      "volume": 170.0,
+      "kd": 17.0,
+      "intent": "I - C",
+      "url": "https://mybreakeven.com/resources/budget-vs-actual-template/",
+      "cluster": "bva",
+      "decision": "New owner with relevant section and workbook"
+    },
+    {
+      "keyword": "budget vs actual template",
+      "volume": 70.0,
+      "kd": 20.0,
+      "intent": "I - C",
+      "url": "https://mybreakeven.com/resources/budget-vs-actual-template/",
+      "cluster": "bva",
+      "decision": "New owner with relevant section and workbook"
+    },
+    {
+      "keyword": "dashboard budget vs actual",
+      "volume": 50.0,
+      "kd": 6.0,
+      "intent": "I - C",
+      "url": "https://mybreakeven.com/resources/budget-vs-actual-template/",
+      "cluster": "bva",
+      "decision": "Partial fit: compact month/YTD summary only; no category chart or automated dashboard claim"
+    },
+    {
+      "keyword": "budget vs actual excel template",
+      "volume": 140.0,
+      "kd": 11.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/resources/budget-vs-actual-template/",
+      "cluster": "bva",
+      "decision": "New owner with relevant section and workbook"
+    },
+    {
+      "keyword": "actual vs budget excel template",
+      "volume": 70.0,
+      "kd": 8.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/resources/budget-vs-actual-template/",
+      "cluster": "bva",
+      "decision": "New owner with relevant section and workbook"
+    },
+    {
+      "keyword": "accounting business plan template",
+      "volume": 50.0,
+      "kd": 11.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/resources/accounting-business-plan-template/",
+      "cluster": "accountplan",
+      "decision": "Hold for a complete accounting/bookkeeping-specific plan and fresh localized SERP validation; not merged into agency page"
+    },
+    {
+      "keyword": "accounting firm business plan template",
+      "volume": 480.0,
+      "kd": 8.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/resources/accounting-business-plan-template/",
+      "cluster": "accountplan",
+      "decision": "Hold for a complete accounting/bookkeeping-specific plan and fresh localized SERP validation; not merged into agency page"
+    },
+    {
+      "keyword": "bookkeeping business plan template",
+      "volume": 90.0,
+      "kd": 4.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/resources/accounting-business-plan-template/",
+      "cluster": "accountplan",
+      "decision": "Hold for a complete accounting/bookkeeping-specific plan and fresh localized SERP validation; not merged into agency page"
+    },
+    {
+      "keyword": "accounting business plan",
+      "volume": 170.0,
+      "kd": 14.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/resources/accounting-business-plan-template/",
+      "cluster": "accountplan",
+      "decision": "Hold for a complete accounting/bookkeeping-specific plan and fresh localized SERP validation; not merged into agency page"
+    },
+    {
+      "keyword": "accountant business plan",
+      "volume": 50.0,
+      "kd": 8.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/resources/accounting-business-plan-template/",
+      "cluster": "accountplan",
+      "decision": "Hold for a complete accounting/bookkeeping-specific plan and fresh localized SERP validation; not merged into agency page"
+    },
+    {
+      "keyword": "business plan cpa firm",
+      "volume": 50.0,
+      "kd": 3.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/resources/accounting-business-plan-template/",
+      "cluster": "accountplan",
+      "decision": "Hold for a complete accounting/bookkeeping-specific plan and fresh localized SERP validation; not merged into agency page"
+    },
+    {
+      "keyword": "business plan for accounting firm",
+      "volume": 480.0,
+      "kd": 9.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/resources/accounting-business-plan-template/",
+      "cluster": "accountplan",
+      "decision": "Hold for a complete accounting/bookkeeping-specific plan and fresh localized SERP validation; not merged into agency page"
+    },
+    {
+      "keyword": "sample business plan for accounting firm",
+      "volume": 90.0,
+      "kd": 7.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/resources/accounting-business-plan-template/",
+      "cluster": "accountplan",
+      "decision": "Hold for a complete accounting/bookkeeping-specific plan and fresh localized SERP validation; not merged into agency page"
+    },
+    {
+      "keyword": "business plan cpa",
+      "volume": 210.0,
+      "kd": 7.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/resources/accounting-business-plan-template/",
+      "cluster": "accountplan",
+      "decision": "Hold for a complete accounting/bookkeeping-specific plan and fresh localized SERP validation; not merged into agency page"
+    },
+    {
+      "keyword": "cpa firm business plan",
+      "volume": 170.0,
+      "kd": 8.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/resources/accounting-business-plan-template/",
+      "cluster": "accountplan",
+      "decision": "Hold for a complete accounting/bookkeeping-specific plan and fresh localized SERP validation; not merged into agency page"
+    },
+    {
+      "keyword": "rolling forecast",
+      "volume": 590.0,
+      "kd": 34.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/rolling-forecast/",
+      "cluster": "rolling",
+      "decision": "New owner with relevant section and workbook"
+    },
+    {
+      "keyword": "quarterly rolling forecast",
+      "volume": 50.0,
+      "kd": 20.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/rolling-forecast/",
+      "cluster": "rolling",
+      "decision": "New owner with relevant section and workbook"
+    },
+    {
+      "keyword": "rolling forecast meaning",
+      "volume": 90.0,
+      "kd": 30.0,
+      "intent": "I - C",
+      "url": "https://mybreakeven.com/blogs/rolling-forecast/",
+      "cluster": "rolling",
+      "decision": "New owner with relevant section and workbook"
+    },
+    {
+      "keyword": "rolling forecast budgeting",
+      "volume": 170.0,
+      "kd": 30.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/rolling-forecast/",
+      "cluster": "rolling",
+      "decision": "New owner with relevant section and workbook"
+    },
+    {
+      "keyword": "benefits of rolling forecasts over annual budgets",
+      "volume": 70.0,
+      "kd": 20.0,
+      "intent": "I",
+      "url": "https://mybreakeven.com/blogs/rolling-forecast/",
+      "cluster": "rolling",
+      "decision": "New owner with relevant section and workbook"
+    }
+  ],
+  "conditional_decision": {
+    "state": "hold",
+    "reason": "Business-plan intent is relevant, but accounting/CPA/bookkeeping operations need a distinct narrative and checked practice model. Existing agency page is not a complete substitute. No new page approved or built in Day 1.",
+    "observed_pages": [
+      "https://financial-cents.com/resources/articles/accounting-firm-business-plan-template/",
+      "https://www.zarla.com/business-plans/bookkeeping"
+    ],
+    "limits": "Representative public pages read. Downloads not exercised; no USA localized top-10, traffic or rank probability claim."
+  },
+  "baseline": {
+    "gsc": "No fresh connected query/page export supplied in this run; not fabricated. Capture on release if available.",
+    "production_base": "39fae09c480ac476d106fb748319e0f193982341",
+    "expected_live_main_unchanged": true
+  }
+}
