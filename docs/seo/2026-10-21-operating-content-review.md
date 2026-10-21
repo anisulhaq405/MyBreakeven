@@ -1,0 +1,13 @@
+# Operating content clarification — 21 October 2026
+
+Production base: 3e36ca9774468c30eed0195e3d3303a64a0807ad. Day 3 remains excluded and unpublished. This batch improves three demonstrated content gaps, not every article merely to increase length.
+
+E-commerce shipping: distinguish gross delivery cost from the net buyer-funded subsidy, correct the FAQ definition, and show two consistent presentations. A separate explicitly fictional fee of 2.9% of a $41 checkout plus $0.30 gives $1.489 fee and $15.511 contribution on a $35 product / $6 shipping collection, $14 product cost and $10 gross delivery cost. Explain actual calculator inputs without charging shipping revenue, handling or the percentage fee twice. Earlier fixed-$1 fee examples remain identified as separate assumptions. Actual processor rates are not asserted.
+
+Restaurant sales forecast: clarify covers/guests, transactions and concurrent seats. A fictional 12 four-person parties produce 48 covers but only 12 bills; 12 × $90 and 48 × $22.50 both yield $1,080. Qualify the earlier one-guest-per-order seating illustration. Add a shortened trading-calendar case: 22 × $3,210 sales = $70,620; 22 × $1,215 variable cost = $26,730; contribution $43,890 less unchanged $42,000 inclusive commitments leaves $1,890. Explicitly retain owner-pay/cash boundaries and relevant next-step links.
+
+Detailing maintenance plans: distinguish a normalized 26-visit/52-week illustration from actual included dates. A 365-day window including visits on days 0,14,...364 has 27 visits; at $70 each, a 30% contribution target requires $225 monthly over 12 months. Explain ten synchronized alternate-week members can demand ten visits / 20 reserved hours in the busy week despite averaging five visits weekly. Clarify two- versus three-visit month sensitivity and link the dated cash and weekly workload planning guides. No legal contract terms or universal annual visit count are prescribed.
+
+All additions precede practical instructions; existing examples/publication dates remain. Substantively updated article dates: 2026-10-21. No new topic URLs or Day 3 links introduced.
+
+Validation: 714 tests / 81 files pass. Calculator reconciliation verifies the shipping contribution; independent arithmetic verifies restaurant units/calendar and detailing schedule/cost/peak-week examples. Render checks enforce one H1, unique anchors and original publication history. Build passes. Route audit: 200 routes / 195 sitemap URLs with no issues. Image/delivery budgets clear; fixed 18-article intent/link audit clear. Final production checks follow the existing deployment pipeline. Release commit uses [skip social].
