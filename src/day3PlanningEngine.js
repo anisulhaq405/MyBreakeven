@@ -36,3 +36,9 @@ export function calculateJobCost(input){
   return result({overheadRate,applied,labor,total,unitCost:total.div(n.quantity),surplus,margin:n.revenue.gt(0)?surplus.div(n.revenue).times(100):null});
 }
 export function formatDriverRate(n){return n!==0&&Math.abs(n)<1e-8?n.toExponential(4):new Intl.NumberFormat('en-US',{maximumFractionDigits:8}).format(n);}
+
+// Preserve a nonzero result that would otherwise display as a zero currency amount.
+export function formatDay3Money(n,currency='USD'){
+ if(n!==0&&Math.abs(n)<0.005)return `${currency} ${n.toExponential(4)}`;
+ return new Intl.NumberFormat('en-US',{style:'currency',currency,currencyDisplay:'code',minimumFractionDigits:2,maximumFractionDigits:2}).format(n===0?0:n);
+}

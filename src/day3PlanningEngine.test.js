@@ -1,5 +1,5 @@
 import{describe,it,expect}from'vitest';
-import{calculateBudgetBridge,calculateDriverAllocation,calculateJobCost,formatDriverRate}from'./day3PlanningEngine.js';
+import{calculateBudgetBridge,calculateDriverAllocation,calculateJobCost,formatDriverRate,formatDay3Money}from'./day3PlanningEngine.js';
 const budget={units:200,price:180,variable:80,fixed:14000,openingCash:5000,collectionPercent:80,oldReceipts:3000,otherPayments:1000,capital:2000,minimumCash:4000};
 const driver={poolA:6000,totalA:200,jobA:20,poolB:3000,totalB:100,jobB:5};
 const job={materials:1200,hours:30,laborRate:24,overhead:6000,totalBase:200,jobBase:30,quantity:10,revenue:3000};
@@ -24,3 +24,12 @@ describe('assigned job cost boundaries',()=>{
  it('rejects missing units and zero rate denominators',()=>{for(const quantity of [0,-1,'',false])expect(calculateJobCost({...job,quantity}).valid).toBe(false);expect(calculateJobCost({...job,totalBase:0}).valid).toBe(false);});
 });
 it('refuses huge outputs, booleans and underflow instead of returning plausible numbers',()=>{expect(calculateBudgetBridge({...budget,units:1e12,price:1e12}).valid).toBe(false);expect(calculateDriverAllocation({...driver,poolA:false}).valid).toBe(false);expect(calculateDriverAllocation({...driver,poolA:1e-323,totalA:1e12,jobA:0}).valid).toBe(false);});
+
+it('does not format a positive or negative fractional-cent amount as zero',()=>{
+ expect(formatDay3Money(0,'USD')).toBe('USD\u00a00.00');expect(formatDay3Money(-0,'USD')).toBe('USD\u00a00.00');
+ expect(formatDay3Money(0.0001,'USD')).toBe('USD 1.0000e-4');
+ expect(formatDay3Money(-0.0001,'EUR')).toBe('EUR -1.0000e-4');
+ expect(formatDay3Money(0.005,'USD')).toBe('USD\u00a00.01');
+ const r=calculateDriverAllocation({...driver,poolA:0.001,poolB:0});
+ expect(r.allocatedA).toBe(0.0001);expect(formatDay3Money(r.allocatedA,'USD')).not.toContain('0.00');
+});
