@@ -235,6 +235,9 @@ for (const article of allArticles) {
     featureList:['Compare margin and markup on the same cost basis','Measure discount effects','Solve a target margin or markup price','Find a list-price floor that preserves the rounded target after discount'],
   });
   const day2Apps={
+    'master-budget':['master-budget-bridge','Operating Budget to Cash Bridge'],
+    'cost-drivers-small-business':['cost-driver-calculator','Cost Driver Allocation Calculator'],
+    'job-order-costing':['job-order-cost-sheet','Job Order Cost Sheet Calculator'],
     'flexible-budget-variance-analysis':['flexible-budget-calculator','Flexible Budget Variance Calculator'],
     'make-or-buy-decision':['make-buy-calculator','Make-or-Buy Decision Calculator'],
     'break-even-analysis-example':['break-even-chart-maker','Break-Even Analysis Graph Maker'],

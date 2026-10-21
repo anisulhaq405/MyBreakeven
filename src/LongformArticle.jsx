@@ -1,3 +1,4 @@
+import {BudgetBridgeWidget,DriverAllocationWidget,JobCostWidget} from './Day3PlanningWidgets.jsx';
 import ScenarioAnalysis, {ScenarioAnalysisLink} from './ScenarioAnalysis.jsx';
 import { RestaurantExampleLink } from './ClusterLinks.jsx';
 import GuideCalculatorLink from './GuideCalculatorLink.jsx';
@@ -26,7 +27,7 @@ const dateLabel = value => new Date(`${value}T12:00:00Z`).toLocaleDateString("en
 
 export default function LongformArticle({ article: a }) {
   const slug = a?.slug;
-  const hasIntroWidget = ['margin-vs-markup', 'calculate-contribution-margin', 'high-low-method', 'flexible-budget-variance-analysis', 'make-or-buy-decision', 'break-even-analysis-example'].includes(slug);
+  const hasIntroWidget = ['master-budget', 'cost-drivers-small-business', 'job-order-costing', 'margin-vs-markup', 'calculate-contribution-margin', 'high-low-method', 'flexible-budget-variance-analysis', 'make-or-buy-decision', 'break-even-analysis-example'].includes(slug);
   const guideType = articleGuideType(a);
   useEffect(() => {
     if (!a) return;
@@ -53,6 +54,9 @@ export default function LongformArticle({ article: a }) {
     {a.answerHtml&&<section className="article-summary" dangerouslySetInnerHTML={{__html:a.answerHtml}} />}
     {slug==='margin-vs-markup'&&<MarginMarkupWidget/>}
     {slug==='calculate-contribution-margin'&&<ContributionMarginWidget/>}
+    {slug==='master-budget'&&<BudgetBridgeWidget/>}
+    {slug==='cost-drivers-small-business'&&<DriverAllocationWidget/>}
+    {slug==='job-order-costing'&&<JobCostWidget/>}
     {slug==='high-low-method'&&<HighLowWidget/>}
     {slug==='flexible-budget-variance-analysis'&&<FlexibleBudgetWidget/>}
     {slug==='make-or-buy-decision'&&<MakeOrBuyWidget/>}

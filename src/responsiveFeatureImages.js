@@ -1,3 +1,4 @@
+// Responsive editorial covers for the Day 3 release.
 import { featureDeliveryAssets } from './featureDeliveryAssets.js';
 const optimized = new Set([
   'recipe-cost-calculator','food-cost-calculator','menu-pricing-calculator','employee-cost-calculator','cash-flow-forecast-template',
@@ -9,6 +10,7 @@ for (const key of ['cleaning','landscaping','photography','agency','detailing','
 }
 optimized.add('contribution-margin-income-statement-editorial-20261020.webp');
 optimized.add('high-low-method-editorial-20261020.webp');
+for(const slug of ['master-budget','cost-drivers-small-business','job-order-costing']) optimized.add(`${slug}-editorial-20261021.webp`);
 optimized.add('flexible-budget-variance-analysis-editorial-20261020.webp');
 optimized.add('make-or-buy-decision-editorial-20261020.webp');
 optimized.add('restaurant-budgeting-editorial.webp');

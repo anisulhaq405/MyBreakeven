@@ -36,7 +36,7 @@ it('distinguishes annual whole jobs, rounded monthly targets and seasonal capaci
 });
 it('preserves publication history and unique anchors in all eight enriched guides', () => {
   for(const slug of Object.keys(remainingSectionEnrichment)){
-    const p=blogPostMap[slug];expect(p.published<'2026-10-14').toBe(true);expect(p.modified).toBe('2026-10-14');
+    const p=blogPostMap[slug];expect(p.published<'2026-10-14').toBe(true);expect(p.modified).toBe(slug==='landscaping-job-costing-estimate-vs-actual'?'2026-10-22':'2026-10-14');
     const ids=[...p.html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);expect(new Set(ids).size).toBe(ids.length);
   }
 });
