@@ -30,21 +30,21 @@ for(const filled of [false,true]){
  s.getRange('A14:F14').values=[['Line','Budget YTD','Actual YTD','Actual − budget','Variance %','Direction']];heading(s,14,'A','F');
  for(const [r,label]of [[9,'Net revenue'],[10,'Included expenses'],[11,'Operating result'],[15,'Net revenue'],[16,'Included expenses'],[17,'Operating result']])cell(s,`A${r}`,label);
  s.getRange('A21:J21').values=[['Month','Budget revenue','Budget expenses','Actual revenue','Actual expenses','Budget result','Actual result','Budget entries / 2','Actual entries / 2','Reason / next action']];heading(s,21,'A','J');
- for(let r=22;r<=33;r++)formula(s,`A${r}`,`=DATE($E$5,${r-21},1)`);s.getRange('A22:A33').setNumberFormat('mmm');
+ for(let r=22;r<=33;r++)formula(s,`A${r}`,`=IF(ISNUMBER($E$5),IF(AND($E$5=INT($E$5),$E$5>=1900,$E$5<=9999),DATE($E$5,${r-21},1),"Invalid year"),"Invalid year")`);s.getRange('A22:A33').setNumberFormat('mmm');
  for(let r=22;r<=33;r++){
   if(filled){cell(s,`B${r}`,30000);cell(s,`C${r}`,20000);if(r<=24){cell(s,`D${r}`,r===22?28000:r===23?32000:30000);cell(s,`E${r}`,r===22?21000:r===23?20000:20500);}}
   formula(s,`H${r}`,`=COUNT(B${r}:C${r})`);formula(s,`I${r}`,`=COUNT(D${r}:E${r})`);
   formula(s,`F${r}`,`=IF(H${r}=2,B${r}-C${r},"Unreported")`);formula(s,`G${r}`,`=IF(I${r}=2,D${r}-E${r},"Unreported")`);
  }
  input(s,'B22:E33');input(s,'J22:J33');s.getRange('B22:G33').setNumberFormat(money);
- const valid='AND(ISNUMBER($B$5),$B$5=INT($B$5),$B$5>=1,$B$5<=12)';
+ const valid='AND(IF(ISNUMBER($B$5),AND($B$5=INT($B$5),$B$5>=1,$B$5<=12),FALSE),IF(ISNUMBER($E$5),AND($E$5=INT($E$5),$E$5>=1900,$E$5<=9999),FALSE))';
  for(const [r,col,ready]of [[9,'B','H'],[10,'C','H'],[9,'D','I'],[10,'E','I']]){
   const out=col==='B'||col==='C'?'B':'C';
-  formula(s,`${out}${r}`,`=IF(${valid},IF(INDEX($${ready}$22:$${ready}$33,$B$5)=2,INDEX($${col}$22:$${col}$33,$B$5),"Unreported"),"Invalid month")`);
+  formula(s,`${out}${r}`,`=IF(${valid},IF(INDEX($${ready}$22:$${ready}$33,$B$5)=2,INDEX($${col}$22:$${col}$33,$B$5),"Unreported"),"Invalid period")`);
  }
  for(const [r,col,ready]of [[15,'B','H'],[16,'C','H'],[15,'D','I'],[16,'E','I']]){
   const out=col==='B'||col==='C'?'B':'C';
-  formula(s,`${out}${r}`,`=IF(${valid},IF(SUMIF($A$22:$A$33,"<="&DATE($E$5,$B$5,1),$${ready}$22:$${ready}$33)=2*$B$5,SUMIF($A$22:$A$33,"<="&DATE($E$5,$B$5,1),$${col}$22:$${col}$33),"Unreported"),"Invalid month")`);
+  formula(s,`${out}${r}`,`=IF(${valid},IF(SUMIF($A$22:$A$33,"<="&DATE($E$5,$B$5,1),$${ready}$22:$${ready}$33)=2*$B$5,SUMIF($A$22:$A$33,"<="&DATE($E$5,$B$5,1),$${col}$22:$${col}$33),"Unreported"),"Invalid period")`);
  }
  for(const[r,above]of [[11,9],[17,15]])for(const col of ['B','C'])formula(s,`${col}${r}`,`=IF(COUNT(${col}${above}:${col}${above+1})=2,${col}${above}-${col}${above+1},"Unreported")`);
  for(const r of [9,10,11,15,16,17]){
@@ -62,7 +62,7 @@ for(const filled of [false,true]){
  note(s,41,'Positive expense variance is unfavorable. Zero budget has no percentage. Negative budgets use ABS(budget).');
  note(s,42,'Change the year label only for this Jan–Dec report; monthly row labels are calendar months.');
  note(s,43,'Source: original fictional MyBreakeven example. Method: openstax.org/books/principles-managerial-accounting/pages/7-5-explain-how-budgets-are-used-to-evaluate-goals');
- s.freezePanes.freezeRows(21);
+ // Compact report: avoid freezing 21 rows above the monthly input area.
 }
 bva.recalculate();
 const ex=bva.worksheets.getItem('Filled example'), blank=bva.worksheets.getItem('Blank report');
@@ -72,9 +72,12 @@ cell(ex,'B5',3);assert.equal(ex.getRange('C17').values[0][0],28500);assert.equal
 cell(ex,'B5',4);assert.equal(ex.getRange('C17').values[0][0],'Unreported');
 cell(ex,'B5',1);cell(ex,'B22',0);assert.equal(ex.getRange('E9').values[0][0],'n.a.');cell(ex,'B22',30000);
 cell(ex,'D22',0);assert.equal(ex.getRange('C9').values[0][0],0);cell(ex,'D22',28000);
-cell(ex,'B5',13);assert.equal(ex.getRange('B9').values[0][0],'Invalid month');cell(ex,'B5',1);
+cell(ex,'B5','not a month');assert.equal(ex.getRange('B9').values[0][0],'Invalid period');cell(ex,'B5',1);
+cell(ex,'E5','not a year');assert.equal(ex.getRange('B15').values[0][0],'Invalid period');cell(ex,'E5',2026);
+cell(ex,'C22',32000);cell(ex,'D22',31000);cell(ex,'E22',32000);assert.equal(ex.getRange('E11').values[0][0],0.5);assert.equal(ex.getRange('F11').values[0][0],'Favorable');cell(ex,'C22',20000);cell(ex,'D22',28000);cell(ex,'E22',21000);
+cell(ex,'B5',13);assert.equal(ex.getRange('B9').values[0][0],'Invalid period');cell(ex,'B5',1);
 bva.recalculate();
-proofs.push({workbook:'Budget vs Actual',checks:['Jan profit 7000 / variance -3000','March YTD profit 28500 / variance -1500','April incomplete','blank vs zero','zero budget','invalid month'],inspection:(await bva.inspect({kind:'table',range:"'Filled example'!A8:F17",include:'values,formulas',tableMaxRows:10,tableMaxCols:6,maxChars:6000})).ndjson});
+proofs.push({workbook:'Budget vs Actual',checks:['Jan profit 7000 / variance -3000','March YTD profit 28500 / variance -1500','April incomplete','blank vs zero','zero budget','invalid month/year text','budgeted loss percentage'],inspection:(await bva.inspect({kind:'table',range:"'Filled example'!A8:F17",include:'values,formulas',tableMaxRows:10,tableMaxCols:6,maxChars:6000})).ndjson});
 await(await SpreadsheetFile.exportXlsx(bva)).save(path.join(output,'budget-vs-actual-template.xlsx'));
 for(const name of ['Blank report','Filled example']){const img=await bva.render({sheetName:name,range:'A2:F17',scale:1.5,format:'png'});await fs.writeFile(path.join(output,`${name==='Blank report'?'budget-vs-actual-blank':'budget-vs-actual-example'}-preview.png`),new Uint8Array(await img.arrayBuffer()));}
 
@@ -97,7 +100,7 @@ for(let r=31;r<=48;r++)formula(s,`I${r}`,`=COUNT(B${r}:E${r})`);cell(s,'I30','Dr
 cell(s,'H33','March: 90 completed jobs. Revised April forecast: 90 jobs, 205 price, 85 variable cost.');cell(s,'B34',90);cell(s,'C34',205);cell(s,'D34',85);
 input(s,'B31:H48');s.getRange('A31:A48').setNumberFormat('mmm-yy');s.getRange('C31:G48').setNumberFormat(money);
 for(let r=14;r<=25;r++){
- formula(s,`A${r}`,`=DATE(YEAR($B$5),MONTH($B$5)+${r-13},1)`);s.getRange(`A${r}`).setNumberFormat('mmm-yy');
+ formula(s,`A${r}`,`=IF(ISNUMBER($B$5),IF($B$5>0,DATE(YEAR($B$5),MONTH($B$5)+${r-13},1),"Invalid cutoff"),"Invalid cutoff")`);s.getRange(`A${r}`).setNumberFormat('mmm-yy');
  for(const[c,source]of [['B','B'],['C','C'],['D','D'],['E','E']])formula(s,`${c}${r}`,`=IF(COUNTIF($A$31:$A$48,A${r})=1,IF(INDEX($I$31:$I$48,MATCH(A${r},$A$31:$A$48,0))=4,INDEX($${source}$31:$${source}$48,MATCH(A${r},$A$31:$A$48,0)),"Missing inputs"),"Missing / duplicate month")`);
  formula(s,`F${r}`,`=IF(COUNT(B${r}:E${r})=4,B${r}*C${r},"Incomplete")`);
  formula(s,`G${r}`,`=IF(COUNT(B${r}:E${r})=4,B${r}*D${r},"Incomplete")`);
@@ -117,8 +120,11 @@ cell(s,'B5',new Date(Date.UTC(2026,3,1)));assert.equal(s.getRange('F14').values[
 cell(s,'C35',210);assert.equal(s.getRange('F14').values[0][0],21000);cell(s,'C35',200);
 s.getRange('B35').clear({applyTo:'contents'});assert.equal(s.getRange('E7').values[0][0],'Incomplete');cell(s,'B35',100);
 cell(s,'B5',new Date(Date.UTC(2026,6,1)));assert.equal(s.getRange('E7').values[0][0],'Incomplete');cell(s,'B5',new Date(Date.UTC(2026,2,1)));
+cell(s,'B5','not a date');assert.equal(s.getRange('A14').values[0][0],'Invalid cutoff');assert.equal(s.getRange('E7').values[0][0],'Incomplete');cell(s,'B5',new Date(Date.UTC(2026,2,1)));
+cell(s,'A35',new Date(Date.UTC(2026,3,1)));assert.equal(s.getRange('E7').values[0][0],'Incomplete');cell(s,'A35',new Date(Date.UTC(2026,4,1)));
+cell(s,'B34',0);assert.equal(s.getRange('J14').values[0][0],-9000);cell(s,'B34',90);
 rolling.recalculate();
-proofs.push({workbook:'Rolling forecast',checks:['April revenue 18450 / result 1800','forward result 34800','cutoff shifts dated rows, preserves actuals','driver edit recalculates','missing driver / out-of-range horizon incomplete'],inspection:(await rolling.inspect({kind:'table',range:'\'Rolling forecast\'!A13:J16',include:'values,formulas',tableMaxRows:4,tableMaxCols:10,maxChars:5000})).ndjson});
+proofs.push({workbook:'Rolling forecast',checks:['April revenue 18450 / result 1800','forward result 34800','cutoff shifts dated rows, preserves actuals','driver edit recalculates','missing driver / out-of-range horizon incomplete','invalid cutoff / duplicate month incomplete','zero jobs retains fixed-cost loss'],inspection:(await rolling.inspect({kind:'table',range:'\'Rolling forecast\'!A13:J16',include:'values,formulas',tableMaxRows:4,tableMaxCols:10,maxChars:5000})).ndjson});
 await(await SpreadsheetFile.exportXlsx(rolling)).save(path.join(output,'rolling-forecast-template.xlsx'));
 const img=await rolling.render({sheetName:'Rolling forecast',range:'A2:J17',scale:1.2,format:'png'});await fs.writeFile(path.join(output,'rolling-forecast-preview.png'),new Uint8Array(await img.arrayBuffer()));
 for(const[w,name]of [[bva,'BvA'],[rolling,'Rolling']])proofs.push({name,errorScan:(await w.inspect({kind:'match',searchTerm:'#REF!|#DIV/0!|#VALUE!|#NAME\\?|#NUM!|#NULL!|#SPILL!|#CALC!',options:{useRegex:true,maxResults:20},maxChars:2000})).ndjson});
