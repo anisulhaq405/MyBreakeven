@@ -1,9 +1,9 @@
-import {keywordContentReviewData} from './keywordContentReviewData.js';
+import {keywordContentReviewData, keywordReviewedSlugs} from './keywordContentReviewData.js';
 export const keywordContentReviews = Object.freeze(Object.fromEntries(keywordContentReviewData.map(item=>[item.slug,item])));
 const escape = value => String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 export function applyKeywordContentReview(post) {
   const review = keywordContentReviews[post.slug];
-  if (!review) return post;
+  if (!review) return keywordReviewedSlugs.includes(post.slug) ? {...post, modified:'2026-10-22'} : post;
   const links = review.links.map(([label,href])=>'<a href="'+escape(href)+'">'+escape(label)+'</a>').join(' · ');
   const newAnswer = '<h2 id="answer-'+review.id+'">'+escape(review.heading)+'</h2><p>'+escape(review.answer)+'</p><p><a href="#'+review.id+'">Read the worked decision and its assumptions</a>.</p>';
   const answerHtml = post.answerHtml ? post.answerHtml+'<p><a href="#'+review.id+'">'+escape(review.heading)+'</a>.</p>' : newAnswer;

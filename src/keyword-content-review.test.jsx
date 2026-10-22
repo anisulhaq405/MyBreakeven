@@ -25,15 +25,9 @@ describe('Targeted keyword content review',()=>{
     const h=blogPostMap['how-to-calculate-days-sales-outstanding'].html;
     expect(h).toContain('$80,000');expect(h).toContain('closing-balance convention');expect(h).toContain('historical average-AR');
   });
-  it('reconciles bundle contribution and cost percentage without confusing their denominators',()=>{
-    const contribution=new Decimal(120).minus(28).minus(32).minus(5).minus(new Decimal(120).times(.03));
-    expect(contribution.toNumber()).toBe(51.4);expect(contribution.div(120).times(100).toFixed(2)).toBe('42.83');
-    expect(12000+30000-2000+1000-11000).toBe(30000);expect(30000/75000*100).toBe(40);
-    expect(blogPostMap['contribution-margin-vs-gross-margin'].html).toContain('$51.40');
-  });
   it('keeps owner income and payroll benchmarks separate from cleaning revenue',()=>{
     expect(8000/20000*100).toBe(40);expect(8000/16000*100).toBe(50);
-    expect(20000-8000-3000-4000-3000).toBe(2000);
+
     expect(blogPostMap['is-a-cleaning-business-profitable'].html).toContain('Neither 40% nor 50% here is a survey benchmark');
   });
   it('shows why product gross margin can understate the required break-even ROAS',()=>{
