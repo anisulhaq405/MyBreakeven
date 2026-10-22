@@ -14,7 +14,7 @@ describe('Contextual ROI discovery and distinct planning intents',()=>{
    expect(post.html.split(`href="${href}"`).length-1,slug).toBe(1);
    expect(post.html).toContain('id="project-roi-next-step"');
    expect(connectRoiGuide(post)).toEqual(post);
-   expect(post.modified).toBe('2026-10-18');
+   expect(post.modified).toBe(['agency-billable-utilization-rate','how-to-calculate-working-capital'].includes(slug)?'2026-10-22':'2026-10-18');
   }
   expect(connectRoiGuide({slug:'unrelated',html:'<p>Original</p>'})).toEqual({slug:'unrelated',html:'<p>Original</p>'});
  });
