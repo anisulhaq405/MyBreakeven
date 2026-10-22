@@ -28,7 +28,7 @@ describe('Route-specific browser delivery', () => {
       const after = renderToStaticMarkup(<Page path={path} initialArticle={initialArticle} />);
       expect(normalizeIds(after), path).toBe(normalizeIds(before));
     }
-  });
+  }, 15000); // This single check renders every public route twice.
   it('assigns separate bundles to pages that do not need calculator engines', () => {
     expect(routeEntryForPath('/blogs/restaurant-budgeting/')).toBe('src/routes/BlogRoute.jsx');
     expect(routeEntryForPath('/tools/')).toBe('src/routes/DirectoryRoute.jsx');
