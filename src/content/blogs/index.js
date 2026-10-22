@@ -1,3 +1,4 @@
+import {applyOctober22RecoveryReview} from './october22RecoveryReview.js';
 import {applyOctober21OperatingReview} from './october21OperatingReview.js';
 import {applyOctober21QuickAnswers} from './october21QuickAnswers.js';
 import {applyOctober21ContentReview} from './october21ContentReview.js';
@@ -135,6 +136,7 @@ const normalizePost = post => {
   reviewed = applyDay2DraftEnrichment(applyOctober19Enrichment(reviewed));
   reviewed = applyOctober21OperatingReview(applyOctober21QuickAnswers(applyOctober21ContentReview(reviewed)));
   reviewed = applyDay3DraftEnrichment(reviewed);
+  reviewed = applyOctober22RecoveryReview(reviewed);
   return featureDeliveryAssets[reviewed.image] ? { ...reviewed, image: featureDeliveryAssets[reviewed.image] } : reviewed;
 };
 
