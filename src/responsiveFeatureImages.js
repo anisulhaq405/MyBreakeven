@@ -15,6 +15,7 @@ optimized.add('flexible-budget-variance-analysis-editorial-20261020.webp');
 optimized.add('make-or-buy-decision-editorial-20261020.webp');
 optimized.add('restaurant-budgeting-editorial.webp');
 optimized.add('rolling-forecast-cover.webp');
+optimized.add('rolling-forecast-planning-20261023.webp');
 optimized.add('business-roi-calculator-editorial.webp');
 optimized.add('restaurant-cash-flow-forecast-editorial.webp');
 for (const image of Object.values(featureDeliveryAssets)) optimized.add(image.split('/').pop());
