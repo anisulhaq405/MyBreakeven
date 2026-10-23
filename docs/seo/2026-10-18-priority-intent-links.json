@@ -12,9 +12,11 @@
       "boundary": "Monthly operating budget; cash timing uses the separate forecast.",
       "contextual_incoming": [
         "/blogs/coffee-shop-business-plan/",
+        "/blogs/flexible-budget-variance-analysis/",
         "/blogs/how-much-does-it-cost-to-open-a-restaurant/",
         "/blogs/how-to-start-restaurant/",
         "/blogs/restaurant-business-plan/",
+        "/blogs/restaurant-cash-flow-forecast/",
         "/blogs/restaurant-food-cost-percentage/",
         "/blogs/restaurant-labor-cost-percentage/",
         "/blogs/restaurant-prime-cost/",
@@ -68,6 +70,7 @@
       "next": "/#calculator",
       "boundary": "Sales cushion in units, sales and percent; planner supplies a threshold, not the ratio.",
       "contextual_incoming": [
+        "/blogs/break-even-multiple-products-sales-mix/",
         "/blogs/operating-leverage-small-business/",
         "/resources/"
       ],
@@ -80,6 +83,7 @@
       "boundary": "Per-sale contribution versus period profit; not a second calculator owner.",
       "contextual_incoming": [
         "/blogs/calculate-contribution-margin/",
+        "/blogs/contribution-margin-vs-gross-margin/",
         "/blogs/ecommerce-profit-margin/",
         "/blogs/how-to-price-products-for-ecommerce/",
         "/blogs/photography-business-profit-margin/",
@@ -93,6 +97,8 @@
       "next": "/#calculator",
       "boundary": "Fixed-cost sensitivity with a positive-profit boundary; planner is not a DOL tool.",
       "contextual_incoming": [
+        "/blogs/break-even-multiple-products-sales-mix/",
+        "/blogs/margin-of-safety-business/",
         "/resources/"
       ],
       "status": "verified"
@@ -153,6 +159,7 @@
       "boundary": "Food plus loaded labor, counted once.",
       "contextual_incoming": [
         "/blogs/restaurant-budgeting/",
+        "/blogs/restaurant-cash-flow-forecast/",
         "/blogs/restaurant-food-cost-percentage/",
         "/blogs/restaurant-labor-cost-percentage/",
         "/blogs/restaurant-menu-engineering-contribution-margin/",
