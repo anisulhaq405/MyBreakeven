@@ -1,3 +1,5 @@
+import {applyDay4Connections} from './day4Connections.js';
+import {day4OperatingExpensePosts} from './day4OperatingExpenses.js';
 import { applyDay3DepthReview } from './day3DepthReview.js';
 import { applyDay2DepthReview } from './day2DepthReview.js';
 import {applyKeywordContentReview} from './keywordContentReview.js';
@@ -145,10 +147,12 @@ const normalizePost = post => {
   reviewed = applyDay1PlanningReview(reviewed);
   reviewed = applyDay2DepthReview(reviewed);
   reviewed = applyDay3DepthReview(reviewed);
+  reviewed = applyDay4Connections(reviewed);
   return featureDeliveryAssets[reviewed.image] ? { ...reviewed, image: featureDeliveryAssets[reviewed.image] } : reviewed;
 };
 
 export const blogCollections = Object.freeze({
+  day4Draft: day4OperatingExpensePosts.map(normalizePost),
   newPlanDay1: [rollingForecastPost].map(normalizePost),
   foundation: foundationPosts.map(normalizePost),
   pricing: pricingPosts.map(normalizePost),

@@ -12,6 +12,7 @@ export const industryIntent = [
 ];
 
 export const decisionIntent = [
+ ["operating-profit-margin-calculator", "Operating margin from consistent statement inputs", ["operating-expenses", "contribution-margin-vs-profit-margin"]],
   ['business-roi-calculator', 'business ROI and AI automation payback calculator', ['cash-flow-break-even-vs-profit-break-even']],
   ['discount-break-even-calculator', 'discount break-even calculator', ['discount-break-even-sales-volume']],
   ['price-increase-calculator', 'price increase customer loss calculator', ['how-many-customers-can-you-lose-after-raising-prices']],

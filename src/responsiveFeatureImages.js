@@ -1,6 +1,7 @@
 // Responsive editorial covers for the Day 3 release.
 import { featureDeliveryAssets } from './featureDeliveryAssets.js';
 const optimized = new Set([
+  'operating-expenses-day4.webp', 'operating-margin-day4.webp',
   'recipe-cost-calculator','food-cost-calculator','menu-pricing-calculator','employee-cost-calculator','cash-flow-forecast-template',
   'how-to-calculate-cost-of-goods-sold','how-to-calculate-working-capital','how-to-calculate-days-sales-outstanding',
 ].map(slug=>`${slug}-feature-20261013.webp`));

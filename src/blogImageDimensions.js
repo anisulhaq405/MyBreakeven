@@ -1,5 +1,6 @@
 // Measured image dimensions; preserve the intrinsic ratio before loading.
 export const blogImageDimensions = {
+  "/images/blog/operating-expenses-day4.webp": {width:1200,height:675},
   "/images/blog/rolling-forecast-planning-20261023.webp": {width:1200,height:800},
   "/images/blog/rolling-forecast-planning-20261023-800.webp": {width:800,height:533},
   "/images/blog/rolling-forecast-cover.webp": {width:1200,height:675},
