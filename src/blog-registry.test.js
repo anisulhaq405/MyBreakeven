@@ -4,7 +4,7 @@ import { blogCollections, blogLibrarySummary, blogModels, blogPostMap, blogPosts
 describe("central blog registry", () => {
   it("publishes every collection through one registry", () => {
     expect(Object.keys(blogCollections)).toEqual([
-      "newPlanDay1",
+      "day4Draft", "newPlanDay1",
       "foundation",
       "pricing",
       "startup",
@@ -32,8 +32,8 @@ describe("central blog registry", () => {
       "october19Keyword",
       "october21Draft", "october20Draft",
     ]);
-    expect(blogPosts).toHaveLength(145);
-    expect(Object.keys(blogPostMap)).toHaveLength(145);
+    expect(blogPosts).toHaveLength(146);
+    expect(Object.keys(blogPostMap)).toHaveLength(146);
     expect(blogLibrarySummary.guideCount).toBe(blogPosts.length);
     expect(blogLibrarySummary.modelCount).toBe(blogModels.length);
     expect(blogModels).toHaveLength(8);
