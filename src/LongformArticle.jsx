@@ -42,7 +42,7 @@ export default function LongformArticle({ article: a }) {
     {a.tag === "Agency" && <AgencyClusterLink />}{a.tag === "E-commerce" && <EcommerceClusterLink />}{a.tag === "Photography" && <PhotographyClusterLink />}{a.tag === "Restaurant" && <RestaurantClusterLink />}{a.tag === "Salon" && <SalonClusterLink />}{a.tag === "Cleaning" && <CleaningClusterLink />}{a.tag === "Landscaping" && <LandscapingClusterLink />}{a.tag === "Mobile Detailing" && <MobileDetailingClusterLink />}
     {a.editorialStatus==='draft'&&<p className="article-note" role="status">Unpublished draft for review</p>}
     <span>{a.tag} {guideType}</span><h1>{a.title}</h1>
-    <div className="article-meta"><time dateTime={a.published}>Published {dateLabel(a.published)}</time><span>Updated {dateLabel(a.modified)}</span></div>
+    <div className="article-meta"><time dateTime={a.published}>{a.editorialStatus==='draft'?'Draft prepared':'Published'} {dateLabel(a.published)}</time><span>Updated {dateLabel(a.modified)}</span></div>
     <p className="article-note">Published by <a href="/about-us/">MyBreakeven</a>. <a href="/editorial-policy/">Editorial standards and corrections</a>. Report a calculation or content issue to <a href="mailto:support@mybreakeven.com">support@mybreakeven.com</a>.</p>
     <p className="article-lead">{a.description}</p>
     <GuideCalculatorLink slug={a.slug} />
