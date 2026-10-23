@@ -1,3 +1,4 @@
+import { applyDay3DepthReview } from './day3DepthReview.js';
 import { applyDay2DepthReview } from './day2DepthReview.js';
 import {applyKeywordContentReview} from './keywordContentReview.js';
 import {applyOctober22RecoveryReview} from './october22RecoveryReview.js';
@@ -143,6 +144,7 @@ const normalizePost = post => {
   reviewed = applyKeywordContentReview(reviewed);
   reviewed = applyDay1PlanningReview(reviewed);
   reviewed = applyDay2DepthReview(reviewed);
+  reviewed = applyDay3DepthReview(reviewed);
   return featureDeliveryAssets[reviewed.image] ? { ...reviewed, image: featureDeliveryAssets[reviewed.image] } : reviewed;
 };
 
