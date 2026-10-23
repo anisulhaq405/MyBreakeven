@@ -1,5 +1,6 @@
 import {applyKeywordContentReview} from './keywordContentReview.js';
 import {applyOctober22RecoveryReview} from './october22RecoveryReview.js';
+import {rollingForecastPost, applyDay1PlanningReview} from '../day1PlanningContent.js';
 import {applyOctober21OperatingReview} from './october21OperatingReview.js';
 import {applyOctober21QuickAnswers} from './october21QuickAnswers.js';
 import {applyOctober21ContentReview} from './october21ContentReview.js';
@@ -139,10 +140,12 @@ const normalizePost = post => {
   reviewed = applyDay3DraftEnrichment(reviewed);
   reviewed = applyOctober22RecoveryReview(reviewed);
   reviewed = applyKeywordContentReview(reviewed);
+  reviewed = applyDay1PlanningReview(reviewed);
   return featureDeliveryAssets[reviewed.image] ? { ...reviewed, image: featureDeliveryAssets[reviewed.image] } : reviewed;
 };
 
 export const blogCollections = Object.freeze({
+  newPlanDay1: [rollingForecastPost].map(normalizePost),
   foundation: foundationPosts.map(normalizePost),
   pricing: pricingPosts.map(normalizePost),
   startup: [...startupPosts, ...cafePosts].map(normalizePost),

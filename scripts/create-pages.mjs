@@ -1,3 +1,4 @@
+import {day1PlanningRelease} from '../src/day1PlanningRelease.js';
 import {founderCaseRoute,founderCaseMeta,founderCaseDate} from '../src/founderCaseStudyData.js';
 import { staticPageMeta } from '../src/staticPageMeta.js';
 import { routeEntryForPath } from '../src/routeEntries.js';
@@ -84,7 +85,7 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
   ] };
   if (authorityPages[route]) {
     const page = pageSchema["@graph"].find(entity => entity["@type"] === "WebPage");
-    page.datePublished = route === "resources/cleaning-business-budget-template" ? "2026-10-11" : "2026-10-10";
+    page.datePublished = route === "resources/budget-vs-actual-template" ? day1PlanningRelease.date : route === "resources/cleaning-business-budget-template" ? "2026-10-11" : "2026-10-10";
     page.dateModified = authorityReviewDates[route] || (route === "resources/cleaning-job-cost-worksheet" ? "2026-10-14" : ["resources", "resources/cleaning-business-budget-template"].includes(route) ? "2026-10-11" : "2026-10-10");
     page.publisher = { "@id": "https://mybreakeven.com/#organization" };
     pageSchema["@graph"].push({ "@type": "BreadcrumbList", itemListElement: [
@@ -158,7 +159,7 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
     pageSchema["@graph"].push({"@type":"BreadcrumbList", itemListElement:[{"@type":"ListItem",position:1,name:"Home",item:"https://mybreakeven.com/"},{"@type":"ListItem",position:2,name:"Guides",item:"https://mybreakeven.com/blogs/"},{"@type":"ListItem",position:3,name:"Mobile detailing business planning",item:canonical}]});
   }
   const links = route === "blogs" ? `<ul>${allArticles.map(article => `<li><a href="/blogs/${article.slug}/">${escapeHtml(article.title)}</a></li>`).join("")}</ul>` : `<p><a href="/#calculator">Use the free small business break-even calculator</a></p>`;
-  const fallback = !privatePage
+  const fallback = (!privatePage || route === "resources/budget-vs-actual-template")
     ? `<div id="root" data-prerendered="true">${renderPublicPage(`/${route}`)}</div>`
     : `<div id="root" data-booting><main><h1>${escapeHtml(heading)}</h1><p>${escapeHtml(description)}</p>${links}</main></div>`;
   const html = base
@@ -206,6 +207,13 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
       .replace(/<meta property="og:image:height" content="[^"]*"\s*\/?>/, '<meta property="og:image:height" content="675" />');
   }
   // Keep the alternate HTTPS preview URL aligned after page-specific image selection.
+  if (route === 'resources/budget-vs-actual-template') {
+    publicHtml = publicHtml.replaceAll('https://mybreakeven.com/mybreakeven-social-preview.png','https://mybreakeven.com/images/resources/budget-vs-actual-example.webp')
+      .replace(/<meta property="og:image:type" content="[^"]*"\s*\/?>/,'<meta property="og:image:type" content="image/webp" />')
+      .replace(/<meta property="og:image:width" content="[^"]*"\s*\/?>/,'<meta property="og:image:width" content="1200" />')
+      .replace(/<meta property="og:image:height" content="[^"]*"\s*\/?>/,'<meta property="og:image:height" content="629" />')
+      .replace(/<meta property="og:image:alt" content="[^"]*"\s*\/?>/,'<meta property="og:image:alt" content="Budget versus actual workbook: January operating result of 7000 against a 10000 budget" />');
+  }
   const socialImage = publicHtml.match(/<meta property="og:image" content="([^"]+)"/)[1];
   publicHtml = publicHtml.replace(/<meta property="og:image:secure_url" content="[^"]*"\s*\/?>/, `<meta property="og:image:secure_url" content="${socialImage}" />`);
   await mkdir(new URL(`../dist/${route}/`, import.meta.url), { recursive: true });
@@ -256,6 +264,7 @@ for (const article of allArticles) {
     featureList:['Estimate variable rate and fixed component from two selected observations','Estimate target-activity cost','Flag extrapolation and negative fitted components'],
   });
   const html = base
+    .replace(/<meta name="(robots|googlebot)" content="[^\"]*"\s*\/?>/g, (_,name) => `<meta name="${name}" content="${article.editorialStatus === "draft" ? "noindex,nofollow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"}" />`)
     .replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
     .replace(/<meta name="description" content="[^"]*"\s*\/?>/, `<meta name="description" content="${escapeHtml(article.metaDescription)}" />`)
     .replace(/<meta property="og:title" content="[^"]*"\s*\/?>/, `<meta property="og:title" content="${escapeHtml(title)}" />`)
@@ -323,12 +332,12 @@ for (const [slug, [title, description]] of Object.entries(calculators)) {
 // Keep discovery in sync with the public route and article registry.
 const publicUrls = ["https://mybreakeven.com/",
   ...Object.entries(staticPages).filter(([, meta]) => !meta[3]).map(([route]) => `https://mybreakeven.com/${route}/`),
-  ...allArticles.map(article => `https://mybreakeven.com/blogs/${article.slug}/`),
+  ...allArticles.filter(article=>article.editorialStatus!=="draft").map(article => `https://mybreakeven.com/blogs/${article.slug}/`),
   ...Object.keys(calculators).map(slug => `https://mybreakeven.com/calculators/${slug}/`),
 ];
 const articleModified = new Map(allArticles.map(article => [`https://mybreakeven.com/blogs/${article.slug}/`, article.modified]));
 for (const slug of Object.keys(calculators)) articleModified.set(`https://mybreakeven.com/calculators/${slug}/`, freeTools[slug]?.reviewed || "2026-10-13");
-for (const route of Object.keys(authorityPages)) articleModified.set(`https://mybreakeven.com/${route}/`, route === "resources/cleaning-job-cost-worksheet" ? "2026-10-14" : ["founder", "resources", "resources/cleaning-business-budget-template"].includes(route) ? "2026-10-11" : "2026-10-10");
+for (const route of Object.keys(authorityPages)) articleModified.set(`https://mybreakeven.com/${route}/`, route === "resources/budget-vs-actual-template" ? day1PlanningRelease.date : route === "resources/cleaning-job-cost-worksheet" ? "2026-10-14" : ["founder", "resources", "resources/cleaning-business-budget-template"].includes(route) ? "2026-10-11" : "2026-10-10");
 for (const industry of ["restaurant", "cleaning", "ecommerce", "agency", "salon", "photography", "mobile-detailing", "landscaping"]) articleModified.set(`https://mybreakeven.com/guides/${industry}-business/`, "2026-10-14");
 articleModified.set(`https://mybreakeven.com/${founderCaseRoute}/`,founderCaseDate);
 for(const [route,date] of Object.entries(authorityReviewDates))articleModified.set(`https://mybreakeven.com/${route}/`,date);

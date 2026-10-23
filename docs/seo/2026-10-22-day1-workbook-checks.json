@@ -1,0 +1,34 @@
+[
+  {
+    "workbook": "Budget vs Actual",
+    "checks": [
+      "Jan profit 7000 / variance -3000",
+      "March YTD profit 28500 / variance -1500",
+      "April incomplete",
+      "blank vs zero",
+      "zero budget",
+      "invalid month/year text",
+      "budgeted loss percentage"
+    ]
+  },
+  {
+    "workbook": "Rolling forecast",
+    "checks": [
+      "April revenue 18450 / result 1800",
+      "forward result 34800",
+      "cutoff shifts dated rows, preserves actuals",
+      "driver edit recalculates",
+      "missing driver / out-of-range horizon incomplete",
+      "invalid cutoff / duplicate month incomplete",
+      "zero jobs retains fixed-cost loss"
+    ]
+  },
+  {
+    "name": "BvA",
+    "errorScan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+  },
+  {
+    "name": "Rolling",
+    "errorScan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+  }
+]
