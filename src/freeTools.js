@@ -1,3 +1,5 @@
+import {netCashFlowTools} from './netCashFlowTool.js';
+import {applyDay5ToolReview} from './day5CashReview.js';
 import {operatingMarginTools} from './operatingMarginTool.js';
 import {applyKeywordToolReview} from './keywordToolReview.js';
 import {applyDay3ToolDraft} from './day3ToolDrafts.js';
@@ -29,4 +31,4 @@ const pricingTools = {
   },
 };
 
-export const freeTools = Object.fromEntries(Object.entries({...operatingMarginTools,...roiTools,...pricingTools,...businessTools,...operationalTools,...decisionTools,...foodTools,...planningTools}).map(([slug,tool])=>[slug,applyKeywordToolReview(slug,applyDay3ToolDraft(slug,applyDay2ToolDraft(slug,connectPlanningTool(slug,completeCalculatorPage(slug,{...tool,theme:tool.theme || toolThemes[slug],category:tool.category || "Pricing & contribution"})))))]));
+export const freeTools = Object.fromEntries(Object.entries({...netCashFlowTools,...operatingMarginTools,...roiTools,...pricingTools,...businessTools,...operationalTools,...decisionTools,...foodTools,...planningTools}).map(([slug,tool])=>[slug,applyDay5ToolReview(slug,applyKeywordToolReview(slug,applyDay3ToolDraft(slug,applyDay2ToolDraft(slug,connectPlanningTool(slug,completeCalculatorPage(slug,{...tool,theme:tool.theme || toolThemes[slug],category:tool.category || "Pricing & contribution"}))))))]));

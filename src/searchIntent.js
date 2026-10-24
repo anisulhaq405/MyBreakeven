@@ -12,6 +12,7 @@ export const industryIntent = [
 ];
 
 export const decisionIntent = [
+ ["net-cash-flow-calculator", "Completed-period net cash flow and closing balance reconciliation", ["cash-flow-break-even-vs-profit-break-even", "cash-flow-forecast-vs-break-even"]],
  ["operating-profit-margin-calculator", "Operating margin from consistent statement inputs", ["operating-expenses", "contribution-margin-vs-profit-margin"]],
   ['business-roi-calculator', 'business ROI and AI automation payback calculator', ['cash-flow-break-even-vs-profit-break-even']],
   ['discount-break-even-calculator', 'discount break-even calculator', ['discount-break-even-sales-volume']],

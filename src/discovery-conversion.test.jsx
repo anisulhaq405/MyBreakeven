@@ -40,10 +40,10 @@ describe('Complete existing calculator directory', () => {
   it('includes each existing industry and decision tool exactly once', () => {
     const expected=[...Object.keys(industryPages),...Object.keys(freeTools)].sort();
     expect(calculatorDirectory.map(([slug])=>slug).sort()).toEqual(expected);
-    expect(new Set(expected).size).toBe(28);
+    expect(new Set(expected).size).toBe(29);
     const html=renderToStaticMarkup(<FreeToolsHub/>);
     for(const slug of expected) expect(html).toContain(`href="/calculators/${slug}/"`);
-    expect(html).toContain('28 calculators');
+    expect(html).toContain('29 calculators');
     const restaurant = calculatorDirectory.find(([slug]) => slug === 'restaurant-break-even-calculator')[1];
     for (const query of ['break even', 'break-even', 'breakeven', 'Restaurant']) expect(matchesCalculatorSearch(restaurant, query)).toBe(true);
     expect(matchesCalculatorSearch(restaurant, 'unknown product')).toBe(false);
@@ -80,7 +80,7 @@ describe('Pricing outcomes with unchanged billing', () => {
   it('keeps the existing checkout and clear Free/Pro account limits', () => {
     const html = renderToStaticMarkup(<SecondaryPage path="/pricing" />).replace(/<!--.*?-->/g, '');
     expect(html).toContain(`href="${POLAR_CHECKOUT_URL}"`);
-    for (const text of ['All 28 calculator pages', '8 industry models and 20 decision tools', '$9.99', 'up to 100 saved scenarios', 'up to 3 saved scenarios', 'Compare 3 plans', 'Opening pricing or checkout does not save', 'Monthly Break-Even Monitor']) expect(html.toLowerCase()).toContain(text.toLowerCase());
+    for (const text of ['All 29 calculator pages', '8 industry models and 21 decision tools', '$9.99', 'up to 100 saved scenarios', 'up to 3 saved scenarios', 'Compare 3 plans', 'Opening pricing or checkout does not save', 'Monthly Break-Even Monitor']) expect(html.toLowerCase()).toContain(text.toLowerCase());
     expect(html).toContain('href="/refund-policy/"');
     expect(html).toContain('See every included Pro tool');
   });

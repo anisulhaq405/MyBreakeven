@@ -1,0 +1,21 @@
+import React from 'react';
+import{describe,it,expect}from'vitest';
+import{renderToStaticMarkup}from'react-dom/server';
+import{calculateNetCash,netCashDefaults,netCashCSV}from'./netCashFlowEngine.js';
+import{freeTools}from'./freeTools.js';
+import{blogPostMap}from'./content/blogs/index.js';
+import NetCashFlowCalculator from './NetCashFlowCalculator.jsx';
+const calc=x=>calculateNetCash({...netCashDefaults,...x});
+describe('completed-period net cash flow',()=>{
+ it('reconciles the three categories to closing cash and keeps borrowing separate',()=>{expect(calc({observed:7300})).toMatchObject({valid:true,operating:2000,investing:-3000,financing:3500,movement:2500,closing:7500,difference:-200});});
+ it('separates operating deterioration from loan-funded cash growth',()=>{expect(calc({opIn:15000,financeIn:10000})).toMatchObject({operating:-3000,movement:3500,closing:8500});expect(calc({opIn:15000,financeIn:10000}).warnings).toHaveLength(1);});
+ it('keeps opening balances out of inflows and accepts explicit zero activity',()=>{const z=Object.fromEntries(['opIn','opOut','investIn','investOut','financeIn','financeOut'].map(k=>[k,0]));expect(calc(z)).toMatchObject({movement:0,closing:5000,difference:null});expect(calc({...z,opening:0,observed:0})).toMatchObject({closing:0,difference:0});});
+ it('treats exchange effects separately from activity cash',()=>{expect(calc({fx:100})).toMatchObject({movement:2500,change:2600,closing:7600});expect(calc({fx:-100})).toMatchObject({movement:2500,closing:7400});});
+ it('warns on negative closing cash without inventing funding',()=>{const r=calc({opening:0,opIn:0,financeIn:0});expect(r.closing).toBe(-21500);expect(r.warnings).toHaveLength(2);});
+ it.each(['',null,undefined,'no','Infinity','1e309',-1,1e12+1,'1e-999'])('rejects incomplete or unsupported required cash %s',value=>{expect(calc({opIn:value}).valid).toBe(false);});
+ it.each([['2026-02-30','2026-03-01'],['2026-09-30','2026-09-01'],['','2026-10-01'],['1899-01-01','2026-10-01']])('rejects invalid period %s to %s',(start,end)=>{expect(calc({start,end}).valid).toBe(false);});
+ it('keeps cents accurate and honors inclusive same-day and leap-year periods',()=>{expect(calc({start:'2024-02-29',end:'2024-02-29',opIn:.3,opOut:.2,investIn:0,investOut:0,financeIn:0,financeOut:0,opening:0})).toMatchObject({valid:true,movement:.1,closing:.1});});
+ it('exports a valid values-only snapshot and refuses invalid state',()=>{const csv=netCashCSV({...netCashDefaults,observed:7300});expect(csv).toContain('"Observed less calculated","-200"');expect(csv).toContain('"closing","7500"');expect(csv).toContain('"Period start","2026-09-01"');expect(csv).not.toMatch(/"=/);expect(netCashCSV({...netCashDefaults,opIn:''})).toBeNull();});
+ it('renders default reconciliation and leaves the real bank check explicitly unverified',()=>{const html=renderToStaticMarkup(<NetCashFlowCalculator tool={freeTools['net-cash-flow-calculator']} slug="net-cash-flow-calculator"/>);expect(html).toContain('$7,500.00');expect(html).toContain('Closing balance check: not checked');expect(html).toContain('Download cash summary CSV');expect(html).not.toContain('<header');expect(html).toContain('net-cash-flow-day5-800.webp');});
+ it('updates visible FAQ, actual-to-forecast guidance and links without a duplicate article',()=>{const guide=blogPostMap['cash-flow-forecast-vs-break-even'];expect(guide.html).not.toContain('It does not place invoices and payments on calendar dates.');expect(guide.html).toContain('carry the original $4,000');expect(guide.html).toContain('/calculators/net-cash-flow-calculator/');expect(freeTools['cash-flow-forecast-template'].reviewed).toBe('2026-10-24');expect(blogPostMap['net-cash-flow-calculator']).toBeUndefined();});
+});

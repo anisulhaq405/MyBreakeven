@@ -1,5 +1,6 @@
 import { routeEntryForPath } from './routeEntries.js';
 const loaders = {
+  "src/routes/NetCashFlowToolRoute.jsx": () => import("./routes/NetCashFlowToolRoute.jsx"),
   "src/routes/OperatingMarginToolRoute.jsx": () => import("./routes/OperatingMarginToolRoute.jsx"),
   'src/routes/RoiToolRoute.jsx': () => import('./routes/RoiToolRoute.jsx'),
   'src/routes/FounderCaseRoute.jsx': () => import('./routes/FounderCaseRoute.jsx'),
@@ -27,7 +28,7 @@ const loaders = {
 export function loadSecondaryRoute(path) { return loaders[routeEntryForPath(path)](); }
 
 export async function loadSecondaryRouteData(path) {
-  if (!/(?:Business|Food|Planning|Pricing|Roi|OperatingMargin)ToolRoute\.jsx$/.test(routeEntryForPath(path))) return null;
+  if (!/(?:Business|Food|Planning|Pricing|Roi|OperatingMargin|NetCashFlow)ToolRoute\.jsx$/.test(routeEntryForPath(path))) return null;
   const { loadTool } = await import('./toolContentLoader.js');
   return loadTool(path.split('/')[2]);
 }
