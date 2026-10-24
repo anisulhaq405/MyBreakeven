@@ -1,3 +1,4 @@
+import {applyDay6PlanningReview} from './day6PlanningReview.js';
 import {applyDay5CashReview} from '../../day5CashReview.js';
 import {applyDay4Connections} from './day4Connections.js';
 import {day4OperatingExpensePosts} from './day4OperatingExpenses.js';
@@ -148,7 +149,7 @@ const normalizePost = post => {
   reviewed = applyDay1PlanningReview(reviewed);
   reviewed = applyDay2DepthReview(reviewed);
   reviewed = applyDay3DepthReview(reviewed);
-  reviewed = applyDay5CashReview(applyDay4Connections(reviewed));
+  reviewed = applyDay6PlanningReview(applyDay5CashReview(applyDay4Connections(reviewed)));
   return featureDeliveryAssets[reviewed.image] ? { ...reviewed, image: featureDeliveryAssets[reviewed.image] } : reviewed;
 };
 
