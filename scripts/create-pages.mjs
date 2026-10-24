@@ -1,3 +1,5 @@
+import {day6Release} from '../src/day6Release.js';
+import {onePagePlanFaq} from '../src/content/day6PlanningContent.js';
 import {day1PlanningRelease} from '../src/day1PlanningRelease.js';
 import {founderCaseRoute,founderCaseMeta,founderCaseDate} from '../src/founderCaseStudyData.js';
 import { staticPageMeta } from '../src/staticPageMeta.js';
@@ -100,6 +102,14 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
       pageSchema["@graph"].push({ "@type": "Person", "@id": `${canonical}#person`, name: "Anis Ul Haq", jobTitle: "Founder and SaaS Developer", url: canonical, image: "https://mybreakeven.com/images/founder/anis-ul-haq-founder.webp", alumniOf: { "@type": "CollegeOrUniversity", name: "Punjab University Lahore" }, worksFor: { "@id": "https://mybreakeven.com/#organization" } });
     }
   }
+  if (route === day6Release.route) {
+    const page=pageSchema['@graph'].find(entity=>entity['@type']==='WebPage');
+    delete page.datePublished;
+    if(day6Release.published)page.datePublished=day6Release.date;
+    page.dateModified=day6Release.date;
+    page.primaryImageOfPage={'@type':'ImageObject',url:'https://mybreakeven.com/images/resources/one-page-plan-editorial-20261024.webp',width:1200,height:675};
+    pageSchema['@graph'].push({'@type':'FAQPage',mainEntity:onePagePlanFaq.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))});
+  }
   if (route === founderCaseRoute) {
     const page=pageSchema['@graph'].find(entity=>entity['@type']==='WebPage');
     Object.assign(page,{datePublished:founderCaseDate,dateModified:founderCaseDate,mainEntity:{'@id':`${canonical}#article`}});
@@ -159,7 +169,7 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
     pageSchema["@graph"].push({"@type":"BreadcrumbList", itemListElement:[{"@type":"ListItem",position:1,name:"Home",item:"https://mybreakeven.com/"},{"@type":"ListItem",position:2,name:"Guides",item:"https://mybreakeven.com/blogs/"},{"@type":"ListItem",position:3,name:"Mobile detailing business planning",item:canonical}]});
   }
   const links = route === "blogs" ? `<ul>${allArticles.map(article => `<li><a href="/blogs/${article.slug}/">${escapeHtml(article.title)}</a></li>`).join("")}</ul>` : `<p><a href="/#calculator">Use the free small business break-even calculator</a></p>`;
-  const fallback = (!privatePage || route === "resources/budget-vs-actual-template")
+  const fallback = (!privatePage || ["resources/budget-vs-actual-template",day6Release.route].includes(route))
     ? `<div id="root" data-prerendered="true">${renderPublicPage(`/${route}`)}</div>`
     : `<div id="root" data-booting><main><h1>${escapeHtml(heading)}</h1><p>${escapeHtml(description)}</p>${links}</main></div>`;
   const html = base
@@ -207,6 +217,7 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
       .replace(/<meta property="og:image:height" content="[^"]*"\s*\/?>/, '<meta property="og:image:height" content="675" />');
   }
   // Keep the alternate HTTPS preview URL aligned after page-specific image selection.
+  if(route===day6Release.route)publicHtml=publicHtml.replaceAll('https://mybreakeven.com/mybreakeven-social-preview.png','https://mybreakeven.com/images/resources/one-page-plan-editorial-20261024.webp');
   if (route === 'resources/budget-vs-actual-template') {
     publicHtml = publicHtml.replaceAll('https://mybreakeven.com/mybreakeven-social-preview.png','https://mybreakeven.com/images/resources/budget-vs-actual-example.webp')
       .replace(/<meta property="og:image:type" content="[^"]*"\s*\/?>/,'<meta property="og:image:type" content="image/webp" />')
