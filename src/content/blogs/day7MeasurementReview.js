@@ -1,5 +1,5 @@
 // Narrow improvements after the October 24 measurement review. No new page owners.
-const tracking = `<h2 id="track-cleaning-company-profit">Track cleaning-company profit from completed work</h2>
+const tracking = `<h2 id="track-cleaning-company-profit" style="scroll-margin-top:110px">Track cleaning-company profit from completed work</h2>
 <p>A quote calculator tests a plan; a monthly review needs records of the work actually delivered. Keep one row per completed visit with its job ID, service type, net charge after discounts or refunds, total paid worker-hours, labor cost, supplies used, travel allocation, acquisition cost and payment fee. Link any re-clean to the original job. Add invoice and collection dates in separate fields so unpaid sales do not quietly become bank cash.</p>
 <p>Close the same reporting period for sales, staff costs and overhead. Separate an estimate from an actual amount, and flag a missing supplier or payroll record rather than filling the gap with zero. A supply purchase can cover several months: the per-visit schedule needs the portion used, while the cash review needs the payment. Retain the source record behind each allocation.</p>
 <div class="article-table-scroll"><table><caption>Independent fictional month: 70 completed visits, USD</caption><thead><tr><th scope="col">Management-report line</th><th scope="col">Reconciliation</th><th scope="col">Amount</th></tr></thead><tbody>
@@ -21,7 +21,7 @@ const tracking = `<h2 id="track-cleaning-company-profit">Track cleaning-company 
 
 export function applyDay7MeasurementReview(post) {
   if (post.slug !== 'is-a-cleaning-business-profitable') return post;
-  const marker = '<h2 id="track-cleaning-company-profit">';
+  const marker = 'id="track-cleaning-company-profit"';
   if (post.html.includes(marker)) return post;
   const heading = post.html.match(/<h2[^>]*>Enter the base visit in the calculator<\/h2>/)?.[0];
   if (!heading) throw new Error('Missing cleaning calculator handoff for Day 7 review');
