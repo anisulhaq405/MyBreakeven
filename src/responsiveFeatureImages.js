@@ -16,6 +16,8 @@ optimized.add('flexible-budget-variance-analysis-editorial-20261020.webp');
 optimized.add('make-or-buy-decision-editorial-20261020.webp');
 optimized.add('restaurant-budgeting-editorial.webp');
 optimized.add('net-cash-flow-day5.webp');
+optimized.add('net-cash-flow-editorial-20261024.webp');
+optimized.add('operating-margin-editorial-20261024.webp');
 optimized.add('rolling-forecast-cover.webp');
 optimized.add('rolling-forecast-planning-20261023.webp');
 optimized.add('business-roi-calculator-editorial.webp');
