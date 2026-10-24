@@ -1,3 +1,4 @@
+import {businessPlanKey,businessPlanDate} from '../src/businessPlanTemplates.js';
 import {day6Release} from '../src/day6Release.js';
 import {onePagePlanFaq} from '../src/content/day6PlanningContent.js';
 import {day1PlanningRelease} from '../src/day1PlanningRelease.js';
@@ -89,6 +90,7 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
     const page = pageSchema["@graph"].find(entity => entity["@type"] === "WebPage");
     page.datePublished = route === "resources/budget-vs-actual-template" ? day1PlanningRelease.date : route === "resources/cleaning-business-budget-template" ? "2026-10-11" : "2026-10-10";
     page.dateModified = authorityReviewDates[route] || (route === "resources/cleaning-job-cost-worksheet" ? "2026-10-14" : ["resources", "resources/cleaning-business-budget-template"].includes(route) ? "2026-10-11" : "2026-10-10");
+    if(businessPlanKey(route)) {page.datePublished=businessPlanDate;page.dateModified=businessPlanDate;page.primaryImageOfPage={"@type":"ImageObject",url:`https://mybreakeven.com/images/resources/${businessPlanKey(route)}-business-plan-example.webp`,width:850,height:1100};}
     page.publisher = { "@id": "https://mybreakeven.com/#organization" };
     pageSchema["@graph"].push({ "@type": "BreadcrumbList", itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://mybreakeven.com/" },
@@ -192,6 +194,10 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
       .replace(/<meta name="twitter:image" content="[^"]*"\s*\/?>/, '<meta name="twitter:image" content="https://mybreakeven.com/images/tools/lawn-route-profit-calculator-modern-cover.webp" />')
       .replace(/<meta property="og:image:alt" content="[^"]*"\s*\/?>/, '<meta property="og:image:alt" content="Lawn care worker, service truck and illustrated route markers" />')
     : html;
+  if(businessPlanKey(route)) {
+    const image=`https://mybreakeven.com/images/resources/${businessPlanKey(route)}-business-plan-example.webp`;
+    publicHtml=publicHtml.replace(/<meta property="og:image" content="[^"]*"\s*\/?>/,`<meta property="og:image" content="${image}" />`).replace(/<meta name="twitter:image" content="[^"]*"\s*\/?>/,`<meta name="twitter:image" content="${image}" />`).replace(/<meta property="og:image:width" content="[^"]*"\s*\/?>/,'<meta property="og:image:width" content="850" />').replace(/<meta property="og:image:height" content="[^"]*"\s*\/?>/,'<meta property="og:image:height" content="1100" />').replace(/<meta property="og:image:alt" content="[^"]*"\s*\/?>/,`<meta property="og:image:alt" content="Completed fictional ${businessPlanKey(route)} business plan document preview" />`);
+  }
   if (route === "guides/mobile-detailing-business") {
     publicHtml = html.replace(/<meta property="og:image" content="[^"]*"\s*\/?>/, '<meta property="og:image" content="https://mybreakeven.com/images/tools/mobile-detailing-travel-profit-calculator-cover.webp" />')
       .replace(/<meta name="twitter:image" content="[^"]*"\s*\/?>/, '<meta name="twitter:image" content="https://mybreakeven.com/images/tools/mobile-detailing-travel-profit-calculator-cover.webp" />')
