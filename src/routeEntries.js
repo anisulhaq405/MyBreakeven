@@ -33,7 +33,7 @@ const tools = {
   "/calculators/cash-flow-forecast-template": "src/routes/PlanningToolRoute.jsx"
 };
 const industries = new Set(["/calculators/cleaning-business-break-even-calculator","/calculators/landscaping-break-even-calculator","/calculators/photography-business-break-even-calculator","/calculators/agency-break-even-calculator","/calculators/mobile-detailing-break-even-calculator","/calculators/ecommerce-break-even-calculator","/calculators/restaurant-break-even-calculator","/calculators/salon-break-even-calculator"]);
-const authority = new Set(["/resources/one-page-business-plan-template","/resources/budget-vs-actual-template","/calculation-methodology","/editorial-policy","/founder","/resources","/resources/cleaning-business-budget-template","/resources/cleaning-job-cost-worksheet","/calculator-walkthroughs"]);
+const authority = new Set(["/resources/landscaping-business-plan-template","/resources/agency-business-plan-template","/resources/ecommerce-business-plan-template","/resources/one-page-business-plan-template","/resources/budget-vs-actual-template","/calculation-methodology","/editorial-policy","/founder","/resources","/resources/cleaning-business-budget-template","/resources/cleaning-job-cost-worksheet","/calculator-walkthroughs"]);
 export function routeEntryForPath(path) {
   path = path.replace(/\/$/, '') || '/';
   if (path === '/resources/daily-outfitter-founder-case-study') return 'src/routes/FounderCaseRoute.jsx';
