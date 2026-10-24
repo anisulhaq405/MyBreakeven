@@ -10,6 +10,7 @@ const clusters = {
   "/guides/cleaning-business": "src/routes/CleaningRoute.jsx"
 };
 const tools = {
+  "/calculators/net-cash-flow-calculator": "src/routes/NetCashFlowToolRoute.jsx",
   "/calculators/operating-profit-margin-calculator": "src/routes/OperatingMarginToolRoute.jsx",
   "/calculators/business-roi-calculator": "src/routes/RoiToolRoute.jsx",
   "/calculators/discount-break-even-calculator": "src/routes/PricingToolRoute.jsx",

@@ -12,10 +12,10 @@ import { restaurantExamples } from './restaurantExamples.js';
 import { calculate } from './engine.js';
 
 describe('Existing-page intent ownership', () => {
-  it('assigns all 28 registered tools once and only links to real supporting guides', () => {
+  it('assigns all 29 registered tools once and only links to real supporting guides', () => {
     const tools = [...industryIntent.map(([, , tool]) => tool), ...decisionIntent.map(([tool]) => tool)];
     expect([...tools].sort()).toEqual([...Object.keys(industryPages), ...Object.keys(freeTools)].sort());
-    expect(new Set(tools).size).toBe(28);
+    expect(new Set(tools).size).toBe(29);
     for (const [, , guides] of decisionIntent) for (const slug of guides) expect(blogPostMap[slug], slug).toBeTruthy();
   });
   it('keeps guide headings distinct from interactive calculators in both article renderers', () => {
