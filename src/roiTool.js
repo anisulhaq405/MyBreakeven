@@ -4,8 +4,8 @@ export const roiTools = {
     "name": "Business ROI & Payback Calculator",
     "category": "Cash & investment",
     "resultLabel": "ROI on total modeled cost",
-    "title": "Business ROI Calculator: Payback & AI Savings",
-    "description": "Calculate business ROI, net benefit and payback after setup and recurring costs. Compare AI automation savings, extra capacity and workload scenarios.",
+    "title": "Business ROI Calculator: Uneven & Discounted Payback",
+    "description": "Calculate business ROI and compare simple or discounted payback with uneven monthly cash flows. Check AI cash savings, capacity and editable Excel examples.",
     "intro": "Test a business investment or AI workflow before committing cash. Separate actual payment savings from released time, include ongoing costs and see when the initial cash outlay could be recovered.",
     "defaults": {
       "setup": 6000,
@@ -37,7 +37,7 @@ export const roiTools = {
         "Whole 0–60 months before any benefit or usage cost."
       ]
     ],
-    "reviewed": "2026-10-18",
+    "reviewed": "2026-10-24",
     "quick": "ROI = (total modeled benefits − total modeled costs) ÷ total modeled costs × 100. In the fictional AI example, $200 monthly cash savings less $100 running cost gives $100 net per active month. With $600 setup and 12 active months, total costs are $1,800, net benefit is $600 and total-cost ROI is 33.33%. Simple payback is six months. The other 30 saved hours are capacity, not cash.",
     "features": [
       "Business investment and AI automation modes with independent inputs.",
@@ -59,7 +59,7 @@ export const roiTools = {
       "--tool-dark": "#142747",
       "--tool-radius": "18px"
     },
-    "assumptions": "This is a pre-tax, undiscounted incremental cash planning model, not accounting net profit, NPV, IRR or a demand forecast. Benefits start after the entered delay; fixed running cost starts in month one. There is no terminal asset/resale value, financing, depreciation or unentered tax/cost. Monthly benefits and costs are constant after launch. Fractional payback assumes smooth cash timing within a month; real dates and intramonth shortfalls require a cash forecast. Saved salary time is not a cash saving unless actual paid hours change. Extra contribution requires completed and collected extra work. Currency changes relabel amounts; they do not convert values.",
+    "assumptions": "The business and AI modes use pre-tax, undiscounted incremental cash. A separate uneven schedule calculates simple and discounted month-end recovery. These are not accounting net profit, IRR or a demand forecast. Benefits start after the entered delay; fixed running cost starts in month one. There is no terminal asset/resale value, financing, depreciation or unentered tax/cost. Monthly benefits and costs are constant after launch. Fractional payback assumes smooth cash timing within a month; real dates and intramonth shortfalls require a cash forecast. Saved salary time is not a cash saving unless actual paid hours change. Extra contribution requires completed and collected extra work. Currency changes relabel amounts; they do not convert values.",
     "sections": [
       {
         "id": "how-to-use",
@@ -216,7 +216,7 @@ export const roiTools = {
       ],
       [
         "Does ROI include taxes, financing or resale value?",
-        "No. This version is pre-tax and undiscounted, with no financing, terminal resale value or depreciation. Do not use it as an NPV, IRR, tax or formal valuation model."
+        "The business and AI modes are pre-tax and undiscounted. The separate uneven schedule discounts entered monthly net cash at your annual effective rate. Include any relevant tax, financing or resale cash consistently if using that schedule; neither mode supplies tax assumptions, IRR or a formal valuation."
       ],
       [
         "Are the workload scenarios forecasts?",

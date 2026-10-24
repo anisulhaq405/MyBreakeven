@@ -1,3 +1,4 @@
+import {completeExistingPlanPages} from './completeExistingPlanPages.js';
 import {connectBusinessPlanTemplate} from './businessPlanTemplateLinks.js';
 import {applyRankingContentReview} from './rankingContentReview.js';
 import {applyDay7MeasurementReview} from './day7MeasurementReview.js';
@@ -153,7 +154,7 @@ const normalizePost = post => {
   reviewed = applyDay2DepthReview(reviewed);
   reviewed = applyDay3DepthReview(reviewed);
   reviewed = applyDay6PlanningReview(applyDay5CashReview(applyDay4Connections(reviewed)));
-  reviewed = connectBusinessPlanTemplate(applyRankingContentReview(applyDay7MeasurementReview(reviewed)));
+  reviewed = completeExistingPlanPages(connectBusinessPlanTemplate(applyRankingContentReview(applyDay7MeasurementReview(reviewed))));
   return featureDeliveryAssets[reviewed.image] ? { ...reviewed, image: featureDeliveryAssets[reviewed.image] } : reviewed;
 };
 
