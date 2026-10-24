@@ -8,7 +8,11 @@ const notes = {
     ],
     "links": [
       [
-        "Calculate landscaping break-even",
+        "Run the landscaping break-even calculator",
+        "/calculators/landscaping-break-even-calculator/"
+      ],
+      [
+        "Follow the landscaping break-even formula and worked example",
         "/blogs/landscaping-break-even/"
       ],
       [
