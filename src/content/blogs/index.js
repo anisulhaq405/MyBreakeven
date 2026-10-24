@@ -1,3 +1,4 @@
+import {applyRankingContentReview} from './rankingContentReview.js';
 import {applyDay7MeasurementReview} from './day7MeasurementReview.js';
 import {applyDay6PlanningReview} from './day6PlanningReview.js';
 import {applyDay5CashReview} from '../../day5CashReview.js';
@@ -151,7 +152,7 @@ const normalizePost = post => {
   reviewed = applyDay2DepthReview(reviewed);
   reviewed = applyDay3DepthReview(reviewed);
   reviewed = applyDay6PlanningReview(applyDay5CashReview(applyDay4Connections(reviewed)));
-  reviewed = applyDay7MeasurementReview(reviewed);
+  reviewed = applyRankingContentReview(applyDay7MeasurementReview(reviewed));
   return featureDeliveryAssets[reviewed.image] ? { ...reviewed, image: featureDeliveryAssets[reviewed.image] } : reviewed;
 };
 
