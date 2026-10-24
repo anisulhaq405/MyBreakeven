@@ -10,9 +10,11 @@ RewriteCond %{HTTP_HOST} ^www\.mybreakeven\.com$ [NC]
 RewriteRule ^ https://mybreakeven.com%{REQUEST_URI} [R=301,L,NE]
 </IfModule>
 
-# Serve the existing downloadable workbooks as Excel files rather than plain text.
+# Serve downloadable Office documents using their correct file types.
 <IfModule mod_mime.c>
 AddType application/vnd.openxmlformats-officedocument.spreadsheetml.sheet .xlsx
+AddType application/vnd.openxmlformats-officedocument.wordprocessingml.document .docx
+AddType application/pdf .pdf
 AddType text/csv .csv
 </IfModule>
 
@@ -20,7 +22,7 @@ AddType text/csv .csv
 # URLs, so these files can be cached for a year without serving an old build.
 # Keep HTML and stable public filenames on the hosting provider's shorter TTL.
 <IfModule mod_headers.c>
-<FilesMatch "\.xlsx$">
+<FilesMatch "\.(xlsx|docx)$">
 Header set Content-Disposition "attachment"
 </FilesMatch>
 <FilesMatch "-[A-Za-z0-9_-]{8}\.(js|css|woff2)$">
