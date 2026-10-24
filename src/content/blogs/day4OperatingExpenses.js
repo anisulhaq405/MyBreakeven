@@ -13,9 +13,9 @@ export const day4OperatingExpensePosts = [
       "Financial reporting",
       "Cost classification"
     ],
-    "image": "/images/blog/operating-expenses-day4.webp",
-    "alt": "Checked example: 50,000 revenue less 20,000 COGS and 18,000 OPEX leaves 12,000 operating income",
-    "imageCaption": "Original illustrative statement bridge. Fictional USD figures; OPEX excludes COGS.",
+    "image": "/images/blog/operating-expenses-editorial-20261024.webp",
+    "alt": "Business owner reviewing rent, utilities, payroll and software subscription expenses",
+    "imageCaption": "AI-generated editorial illustration of a routine operating-expense review.",
     "published": "2026-10-23",
     "modified": "2026-10-23",
     "editorialStatus": "published",
