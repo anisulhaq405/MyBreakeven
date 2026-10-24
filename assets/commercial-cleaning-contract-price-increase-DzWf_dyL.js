@@ -1,0 +1,143 @@
+var e={slug:`commercial-cleaning-contract-price-increase`,tag:`Cleaning`,name:`Cleaning`,cluster:`pricing`,title:`Commercial Cleaning Contract Price Increase: Cost It First`,seoTitle:`Commercial Cleaning Contract Price Increase`,description:`Calculate a commercial cleaning contract price increase from labor, supplies and fees. Compare renewal options, scope changes and account contribution.`,metaDescription:`Calculate a commercial cleaning contract price increase from labor, supplies and fees. Compare renewal options, scope changes and account contribution.`,image:`/images/blog/commercial-cleaning-contract-price-increase-editorial.webp`,alt:`Three-dimensional office model beside blank contract sheets and a janitorial trolley.`,imageCaption:`Illustrative 3D concept for reviewing a commercial cleaning agreement.`,published:`2026-10-02`,modified:`2026-10-02`,opening:`A commercial cleaning contract price increase should come from the account's current scope, delivery costs and required contribution. Recalculate paid staff hours, loaded labor, supplies, travel and invoice fees before choosing a percentage. Then discuss the price and scope using the renewal process in your agreement. The fictional USD example below compares preserving contribution, increasing it and changing scope; it does not prescribe a market rate or a legally required notice period.`,unit:`contract-months`,singular:`contract-month`,calculatorSlug:`cleaning-business-break-even-calculator`,tags:[`Cleaning`,`Commercial Cleaning Contract Price Increase`],features:[`Checked illustrative calculations`,`Explicit cost and timing assumptions`,`A practical capacity check`],html:`<p>A commercial cleaning contract price increase should come from the account's current scope, delivery costs and required contribution. Recalculate paid staff hours, loaded labor, supplies, travel and invoice fees before choosing a percentage. Then discuss the price and scope using the renewal process in your agreement. The fictional USD example below compares preserving contribution, increasing it and changing scope; it does not prescribe a market rate or a legally required notice period.</p>
+<blockquote><p><strong>Quick answer:</strong> Add revised account costs before percentage fees to the contribution you need, then divide by one minus the fee rate. Here, $1,460 of revised costs plus $406 of contribution, divided by 0.97, gives $1,923.71. A $1,924 monthly price preserves roughly the old contribution, requiring a 6.89% increase.</p></blockquote>
+<h2 id="establish-what-the-account-contributes-today">Establish what the account contributes today</h2>
+<p>Decide what you are trying to preserve before drafting the renewal. Keeping the same revenue is different from keeping the same money left after delivery costs. That remaining money is <strong>contribution</strong>, and it is the number compared below.</p>
+<p>Consider a fictional office-cleaning contract billed at $1,800 per month. The agreed work uses 50 paid staff hours, including job-linked travel and preparation. Loaded labor costs $24 per staff hour. Supplies cost $80 and travel cash expenses cost $60. A 3% payment fee applies to the invoice.</p>
+<div class="article-table-scroll"><table>
+<thead>
+<tr class="header">
+<th>Current monthly item</th>
+<th>Calculation</th>
+<th style="text-align: right;">Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Revenue</td>
+<td>Monthly invoice</td>
+<td style="text-align: right;">$1,800</td>
+</tr>
+<tr class="even">
+<td>Loaded labor</td>
+<td>50 hours × $24</td>
+<td style="text-align: right;">$1,200</td>
+</tr>
+<tr class="odd">
+<td>Supplies</td>
+<td>Account-specific usage</td>
+<td style="text-align: right;">$80</td>
+</tr>
+<tr class="even">
+<td>Travel cash expenses</td>
+<td>Account-specific amount</td>
+<td style="text-align: right;">$60</td>
+</tr>
+<tr class="odd">
+<td>Payment fee</td>
+<td>$1,800 × 3%</td>
+<td style="text-align: right;">$54</td>
+</tr>
+<tr class="even">
+<td>Total account-linked costs</td>
+<td>Sum of four cost lines</td>
+<td style="text-align: right;">$1,394</td>
+</tr>
+<tr class="odd">
+<td>Contribution</td>
+<td>$1,800 − $1,394</td>
+<td style="text-align: right;">$406</td>
+</tr>
+</tbody>
+</table></div>
+<p>The $406 is available for company overhead and profit. It is not the account's final profit after insurance, software, administration and other fixed costs. If those expenses are already included in a loaded rate, explain that boundary and do not deduct them again later.</p>
+<p>Check actual hours against the quote. An account budgeted for 50 hours but regularly using 58 hours has a delivery-cost problem that a generic annual percentage can miss. Separate tasks the customer added from estimating errors, unusual incidents and routine work. Each reason points to a different conversation.</p>
+<h2 id="recalculate-the-renewal-price">Recalculate the renewal price</h2>
+<p>In the renewal example, the loaded labor rate is now $26. The same 50 hours cost $1,300. Supplies rise to $90 and travel cash expenses to $70, bringing costs before the payment fee to <strong>$1,300 + $90 + $70 = $1,460</strong>.</p>
+<p>Keeping the original $1,800 price would leave <strong>$1,800 − $1,460 − $54 = $286</strong> of contribution. The account would lose $120 of monthly contribution, even though the invoice and hours stayed the same.</p>
+<p>To preserve $406, calculate:</p>
+<p><strong>Renewal price = ($1,460 + $406) ÷ 0.97 = $1,923.71.</strong></p>
+<p>A rounded price of $1,924 produces a $57.72 fee and <strong>$406.28</strong> contribution. The increase is $124, or <strong>$124 ÷ $1,800 × 100 = 6.89%</strong>. These are illustrative costs; there is no claim that wages or supplies have risen by these amounts in your area.</p>
+<p>If the account needs $500 of contribution instead, the calculation is <strong>($1,460 + $500) ÷ 0.97 = $2,020.62</strong>. A $2,021 price leaves $500.37 after the $60.63 fee. That is a 12.28% increase over the original invoice. Explain whether your proposal preserves the old result or changes the contribution target.</p>
+<h2 id="compare-three-renewal-options">Compare three renewal options</h2>
+<p>A useful renewal discussion can present measurable scope choices. Price and workload need to change together; simply deleting a task name does not prove staff hours will fall.</p>
+<div class="article-table-scroll"><table>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th style="text-align: right;">Paid hours</th>
+<th style="text-align: right;">Costs before fees</th>
+<th style="text-align: right;">Monthly price</th>
+<th style="text-align: right;">Contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Preserve existing scope and contribution</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">$1,460</td>
+<td style="text-align: right;">$1,924</td>
+<td style="text-align: right;">$406.28</td>
+</tr>
+<tr class="even">
+<td>Add measured tasks and preserve contribution</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">$1,735</td>
+<td style="text-align: right;">$2,208</td>
+<td style="text-align: right;">$406.76</td>
+</tr>
+<tr class="odd">
+<td>Reduce measured scope and hold the old price</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">$1,330</td>
+<td style="text-align: right;">$1,800</td>
+<td style="text-align: right;">$416</td>
+</tr>
+</tbody>
+</table></div>
+<p>The expanded-scope option adds ten paid hours at $26 and $15 of supplies. Costs before fees become $1,735. Keeping a $406 contribution target requires <strong>($1,735 + $406) ÷ 0.97 = $2,207.22</strong>, rounded to $2,208. Its fee is $66.24.</p>
+<p>The reduced-scope option assumes a genuinely achievable five-hour reduction, with supplies still $90 and travel still $70. Labor becomes $1,170, and total costs before fees become $1,330. At the old price, contribution is <strong>$1,800 − $1,330 − $54 = $416</strong>.</p>
+<p>This last option depends on a revised task list the customer accepts. It should not mean quietly performing less work under the original promise. Check that service frequency, hygiene expectations, access requirements and quality can still be met. Re-measure the first few delivery periods rather than assuming the reduction occurred.</p>
+<h2 id="use-measured-cleaning-time-to-support-the-proposal">Use measured cleaning time to support the proposal</h2>
+<p>Group tasks by area, frequency and method. Record the paid time used for routine visits, periodic tasks, travel and preparation. A monthly contract can contain weekly or less frequent work; convert it to the billing period consistently instead of pretending every month has four identical weeks.</p>
+<p>ISSA's <a href="https://korea.issa.com/articles/how-to-calculate-cleaning-times">cleaning-time guidance</a> describes using building-specific observations to develop a workable time estimate. Use your own records to explain the renewal's labor requirement. A generic production rate is a starting assumption, not proof that your actual building can be cleaned in that time.</p>
+<p>Do not give the customer unnecessary private payroll details. You can explain that the price reflects the agreed service hours, supplies, travel and required account contribution without sharing employee-level information. Keep the detailed calculation in your internal account review.</p>
+<h2 id="communicate-the-change-through-the-agreement">Communicate the change through the agreement</h2>
+<p>Check the signed agreement for renewal dates, price-review provisions, approval steps and notice requirements. If wording is unclear or disputed, get appropriate contract advice. This article does not establish a right to change a price or a universal number of days' notice.</p>
+<p>Your proposal should identify the current scope, the proposed effective date, the revised monthly price and any alternatives. Describe the cost changes accurately. If you are increasing the contribution target as well as covering higher costs, do not describe the entire increase as a pass-through of supplies or wages.</p>
+<p>Give the customer a clear way to ask questions and record the agreed outcome. Update the task list, schedule and billing instructions together. A price revision entered in invoicing software while the service team follows an old scope can create rework and disputes that erase the expected benefit.</p>
+<p>After acceptance, review actual hours and contribution over the following billing periods. A renewal calculation becomes useful operating evidence only when it reconciles with delivered work and collected revenue.</p>
+<h2 id="how-to-run-your-own-numbers">How to run your own numbers</h2>
+<p>Collect the current monthly invoice, account-linked costs and paid hours. Recalculate with current labor and supply assumptions, then choose the contribution target explicitly. Use the fee basis from your payment arrangement; percentage fees may apply to different invoice components.</p>
+<p>Use the <a href="https://mybreakeven.com/calculators/cleaning-business-break-even-calculator/">cleaning business break-even calculator</a> for a financial portfolio check. For this comparison, treat one job as one contract-month even though the interface labels the unit “job.” Enter price $1,924, materials $90, direct labor $1,300, travel $70, acquisition $0 and payment/platform fees 3%. The output should leave $406.28 contribution; the calculator adds the fee, so do not include it again in travel.</p>
+<p>Replace monthly overhead, owner pay and target profit with your company's own figures. Use that financial result to compare account-month requirements. Check crew time separately using the actual weekly task calendar: this unit choice does not turn a monthly contract into a single physical visit. The currency selector supports other currencies; these renewal examples use USD.</p>
+<p>For the initial bid process, read <a href="/blogs/commercial-cleaning-contract-bid/">commercial cleaning contract bids</a>. Use <a href="/blogs/cleaning-business-monthly-expenses/">cleaning monthly expenses</a> to keep overhead separate. If retention is uncertain, <a href="/blogs/how-many-customers-can-you-lose-after-raising-prices/">how many customers you can lose after raising prices</a> explains the contribution comparison without treating acceptance as guaranteed.</p>
+<h2 id="mistakes-to-avoid-at-renewal">Mistakes to avoid at renewal</h2>
+<ul>
+<li>Choosing a percentage before costing the account. Different contracts can have different labor and supply requirements.</li>
+<li>Preserving invoice revenue while ignoring contribution. Higher delivery costs can reduce the result at an unchanged price.</li>
+<li>Adding a fee percentage to the cost total. A fee charged on price requires division by one minus the rate.</li>
+<li>Reducing scope on paper without reducing actual paid hours. The modeled saving then never reaches payroll or capacity.</li>
+<li>Counting the same payroll cost in labor and overhead. A consistent boundary matters more than the label used.</li>
+<li>Assuming all customers will accept. Track responses and check the contribution of the retained portfolio.</li>
+</ul>
+<h2 id="faqs">FAQs</h2>
+<h3 id="what-percentage-should-a-commercial-cleaning-price-increase-be">What percentage should a commercial cleaning price increase be?</h3>
+<p>Calculate it from revised costs, scope and the contribution target. The example needs 6.89% to preserve approximately its old contribution, but your result may differ. A percentage is the output of the calculation, not a substitute for it.</p>
+<h3 id="should-i-raise-every-contract-by-the-same-amount">Should I raise every contract by the same amount?</h3>
+<p>Only if a review supports that approach. Labor hours, supplies, access and current pricing can differ by account. A uniform increase can leave some accounts underpriced while overshooting the requirements of others.</p>
+<h3 id="can-a-smaller-scope-keep-the-old-price-workable">Can a smaller scope keep the old price workable?</h3>
+<p>Yes, if the customer agrees and the change reduces measured delivery costs enough. Document the revised tasks and frequencies. Check actual hours afterwards so the saving is real rather than assumed.</p>
+<h3 id="how-much-notice-must-i-give">How much notice must I give?</h3>
+<p>Check your agreement and any applicable requirements with appropriate advice where needed. There is no universal notice period supplied by this calculation. The financial model determines a proposed price, not your contractual rights.</p>
+<h3 id="is-the-406-contribution-the-accounts-profit">Is the $406 contribution the account's profit?</h3>
+<p>It is the amount left after the modeled account-linked costs. Company overhead still needs to be covered from the portfolio's total contribution. Include overhead once and define owner compensation consistently.</p>
+<h3 id="what-if-the-customer-rejects-the-proposal">What if the customer rejects the proposal?</h3>
+<p>Review whether an agreed scope alternative can meet both parties' needs. Compare the old price's revised contribution with available capacity and other demand. Do not assume replacing the account is immediate or cost-free.</p>
+<h2 id="prepare-a-reviewable-renewal">Prepare a reviewable renewal</h2>
+<ul>
+<li>Reconcile actual scope, paid hours and current account costs.</li>
+<li>State whether the new price preserves or increases contribution.</li>
+<li>Present measurable scope alternatives where appropriate.</li>
+<li>Follow the agreement and update service and billing records together.</li>
+</ul>
+<p>Find more business-cost examples in the <a href="/blogs/">MyBreakeven blog hub</a>.</p>`,faq:[{q:`What percentage should a commercial cleaning price increase be?`,a:`Calculate it from revised costs, scope and the contribution target. The example needs 6.89% to preserve approximately its old contribution, but your result may differ. A percentage is the output of the calculation, not a substitute for it.`},{q:`Should I raise every contract by the same amount?`,a:`Only if a review supports that approach. Labor hours, supplies, access and current pricing can differ by account. A uniform increase can leave some accounts underpriced while overshooting the requirements of others.`},{q:`Can a smaller scope keep the old price workable?`,a:`Yes, if the customer agrees and the change reduces measured delivery costs enough. Document the revised tasks and frequencies. Check actual hours afterwards so the saving is real rather than assumed.`},{q:`How much notice must I give?`,a:`Check your agreement and any applicable requirements with appropriate advice where needed. There is no universal notice period supplied by this calculation. The financial model determines a proposed price, not your contractual rights.`},{q:`Is the $406 contribution the account's profit?`,a:`It is the amount left after the modeled account-linked costs. Company overhead still needs to be covered from the portfolio's total contribution. Include overhead once and define owner compensation consistently.`},{q:`What if the customer rejects the proposal?`,a:`Review whether an agreed scope alternative can meet both parties' needs. Compare the old price's revised contribution with available capacity and other demand. Do not assume replacing the account is immediate or cost-free.`}]};export{e as default};

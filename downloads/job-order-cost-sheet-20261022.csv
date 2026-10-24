@@ -1,0 +1,17 @@
+Line,Value,Instructions
+Direct materials,1200,Input net of returns
+Direct labor hours,30,Input
+Direct labor hourly cost,24,Input; burden counted once
+Budgeted overhead pool,6000,Input for period
+Budgeted overhead base,200,Positive input
+Job base usage,30,Same base unit as budget
+Job output quantity,10,Positive equivalent units
+Job net revenue,3000,Input; zero margin undefined
+Input status,"=IF(COUNT(B2:B9)<>8,""Complete numeric inputs"",IF(OR(MIN(B2:B9)<0,B6<=0,B8<=0),""Check inputs"",""Ready""))",All eight inputs required
+Direct labor,"=IF(B10<>""Ready"","""",B3*B4)",Calculated
+Overhead rate,"=IF(B10<>""Ready"","""",B5/B6)",Calculated
+Applied overhead,"=IF(B10<>""Ready"","""",B12*B7)",Calculated
+Total assigned cost,"=IF(B10<>""Ready"","""",B2+B11+B13)",Calculated
+Unit assigned cost,"=IF(B10<>""Ready"","""",B14/B8)",Calculated
+Revenue less assigned cost,"=IF(B10<>""Ready"","""",B9-B14)",Calculated
+Assigned-cost margin,"=IF(OR(B10<>""Ready"",B9=0),"""",B16/B9)",Format as percent; before excluded period costs
