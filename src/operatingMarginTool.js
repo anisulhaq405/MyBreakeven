@@ -9,9 +9,9 @@ export const operatingMarginTools = {
     "resultLabel": "Operating profit margin",
     "reviewed": "2026-10-23",
     "editorialStatus": "published",
-    "image": "/images/tools/operating-margin-day4.webp",
-    "alt": "Statement bridge: 50,000 revenue minus 20,000 COGS and 18,000 operating expenses gives a 24 percent operating margin",
-    "caption": "Original diagram using fictional USD amounts.",
+    "image": "/images/tools/operating-margin-editorial-20261024.webp",
+    "alt": "Business owner reviewing operating expense reports with a calculator in a bright office.",
+    "caption": "AI-generated editorial illustration of an operating-expense review; not actual business records.",
     "theme": {
       "--tool-accent": "#234c7e",
       "--tool-soft": "#eef4fb",

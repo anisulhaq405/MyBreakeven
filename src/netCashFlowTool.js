@@ -4,7 +4,7 @@ export const netCashFlowTools={
  description:'Calculate operating, investing and financing cash flow for one period. Reconcile opening to closing cash, check a bank-balance difference and export a CSV summary.',
  intro:'Calculate how much cash your business generated or used during a completed period. Keep operating activity, equipment cash and financing separate, then check the calculated closing balance against your records.',
  category:'Cash & payment timing',resultLabel:'Net cash flow and closing cash',reviewed:'2026-10-24',editorialStatus:'published',
- image:'/images/tools/net-cash-flow-day5.webp',alt:'Cash bridge: 2,000 operating cash minus 3,000 investing cash plus 3,500 financing cash gives 2,500 net cash flow; 5,000 opening cash becomes 7,500 closing cash.',caption:'Original calculation diagram. Fictional USD example; exchange-rate adjustment is zero.',
+ image:'/images/tools/net-cash-flow-editorial-20261024.webp',alt:'Business owner reconciling receipts and payment records beside a cash ledger, calculator and laptop.',caption:'AI-generated editorial illustration of a cash-record review; not actual business records.',
  theme:{'--tool-accent':'#225c67','--tool-soft':'#f0f7f6','--tool-dark':'#17314f','--tool-radius':'18px'},
  quick:'The loaded example collects $20,000 from operations and pays $18,000, producing $2,000 operating cash. A $3,000 equipment purchase uses investing cash. A $4,000 loan receipt less $500 principal repayment adds $3,500 financing cash. Total net cash flow is $2,500. Add $5,000 opening cash to reach $7,500 closing cash. The loan improves cash without becoming customer revenue.',
  guide:'/blogs/cash-flow-break-even-vs-profit-break-even/',guideLabel:'Cash flow versus accounting profit',
