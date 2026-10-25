@@ -1,5 +1,12 @@
 // Measured image dimensions; preserve the intrinsic ratio before loading.
 export const blogImageDimensions = {
+  "/images/blog/cash-flow-statement-editorial-20261025.webp": {width:1200,height:675},
+  "/images/blog/cash-flow-statement-editorial-20261025-800.webp": {width:800,height:450},
+  "/images/blog/operating-cash-flow-editorial-20261025.webp": {width:1200,height:675},
+  "/images/blog/operating-cash-flow-editorial-20261025-800.webp": {width:800,height:450},
+  "/images/blog/cash-flow-problems-editorial-20261025.webp": {width:1200,height:675},
+  "/images/blog/cash-flow-problems-editorial-20261025-800.webp": {width:800,height:450},
+
   "/images/blog/operating-expenses-editorial-20261024.webp": {width:1200,height:675},
   "/images/blog/operating-expenses-day4.webp": {width:1200,height:675},
   "/images/blog/rolling-forecast-planning-20261023.webp": {width:1200,height:800},
