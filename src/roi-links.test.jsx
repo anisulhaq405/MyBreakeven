@@ -1,3 +1,4 @@
+import {october25GscDates}from'./testFixtures/october25GscDates.js';
 import React from 'react';
 import {describe,it,expect} from 'vitest';
 import {renderToStaticMarkup} from 'react-dom/server';
@@ -14,7 +15,7 @@ describe('Contextual ROI discovery and distinct planning intents',()=>{
    expect(post.html.split(`href="${href}"`).length-1,slug).toBe(1);
    expect(post.html).toContain('id="project-roi-next-step"');
    expect(connectRoiGuide(post)).toEqual(post);
-   expect(post.modified).toBe(['cash-flow-break-even-vs-profit-break-even','cash-flow-forecast-vs-break-even'].includes(slug)?'2026-10-25':slug==='how-to-calculate-working-capital'?'2026-10-25':['agency-billable-utilization-rate','how-to-calculate-working-capital'].includes(slug)?'2026-10-22':'2026-10-18');
+   expect(post.modified).toBe(october25GscDates.has(post.slug)?'2026-10-25':(['cash-flow-break-even-vs-profit-break-even','cash-flow-forecast-vs-break-even'].includes(slug)?'2026-10-25':slug==='how-to-calculate-working-capital'?'2026-10-25':['agency-billable-utilization-rate','how-to-calculate-working-capital'].includes(slug)?'2026-10-22':'2026-10-18'));
   }
   expect(connectRoiGuide({slug:'unrelated',html:'<p>Original</p>'})).toEqual({slug:'unrelated',html:'<p>Original</p>'});
  });
