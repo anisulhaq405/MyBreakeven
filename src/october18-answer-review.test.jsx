@@ -1,3 +1,4 @@
+import {october25GscDates}from'./testFixtures/october25GscDates.js';
 import React from 'react';
 import {describe,it,expect}from'vitest';
 import{renderToStaticMarkup}from'react-dom/server';
@@ -6,7 +7,7 @@ import{blogPostMap}from'./content/blogs/index.js';
 const slugs=['restaurant-labor-cost-percentage','restaurant-food-cost-percentage','operating-leverage-small-business','contribution-margin-vs-profit-margin'];
 describe('Four existing guide answers',()=>{
  it('renders all answers and method handoffs before the cover with one displaced quick answer removed',()=>{
-  for(const slug of slugs){const p=blogPostMap[slug],html=renderToStaticMarkup(<BlogArticle slug={slug} initialArticle={p}/>);expect(p.modified).toBe(slug==='contribution-margin-vs-profit-margin'?'2026-10-23':'2026-10-22');expect(html.indexOf(p.answerHtml)).toBeLessThan(html.indexOf('article-featured'));expect(p.html).not.toContain('Quick answer:');expect(p.answerHtml).not.toContain('Quick answer:');const anchors=[...p.answerHtml.matchAll(/href="#([^"]+)"/g)].map(x=>x[1]);expect(anchors.length).toBeGreaterThan(0);for(const id of anchors)expect(p.html).toContain(`id="${id}"`);}
+  for(const slug of slugs){const p=blogPostMap[slug],html=renderToStaticMarkup(<BlogArticle slug={slug} initialArticle={p}/>);expect(p.modified).toBe(october25GscDates.has(p.slug)?'2026-10-25':(slug==='contribution-margin-vs-profit-margin'?'2026-10-23':'2026-10-22'));expect(html.indexOf(p.answerHtml)).toBeLessThan(html.indexOf('article-featured'));expect(p.html).not.toContain('Quick answer:');expect(p.answerHtml).not.toContain('Quick answer:');const anchors=[...p.answerHtml.matchAll(/href="#([^"]+)"/g)].map(x=>x[1]);expect(anchors.length).toBeGreaterThan(0);for(const id of anchors)expect(p.html).toContain(`id="${id}"`);}
  });
  it('keeps payroll and food denominators distinct with independently reconciled examples',()=>{
   const labor=blogPostMap[slugs[0]].answerHtml,food=blogPostMap[slugs[1]].answerHtml;expect((16000+2000)/60000*100).toBe(30);expect(labor).toContain('30% labor cost');expect(labor).toContain('not total expenses');expect(labor).toContain('must be positive');expect((8000+18000-6000)/60000*100).toBeCloseTo(33.3333333);expect(food).toContain('33.33% actual food cost');expect(food).toContain('food-plus-beverage');expect(food).toContain('theoretical ingredient cost');

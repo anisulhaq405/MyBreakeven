@@ -1,3 +1,4 @@
+import {october25GscDates}from'./testFixtures/october25GscDates.js';
 import React from 'react';
 import {describe,it,expect} from 'vitest';
 import {renderToStaticMarkup} from 'react-dom/server';
@@ -12,7 +13,7 @@ describe('Targeted keyword content review',()=>{
     for(const r of keywordContentReviewData){
       const p=blogPostMap[r.slug],h=renderToStaticMarkup(<BlogArticle slug={r.slug} initialArticle={p}/>);
       const ids=[...h.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
-      expect(p.modified).toBe(r.slug==='is-a-cleaning-business-profitable'?'2026-10-24':'2026-10-22'); expect(p.published<='2026-10-21').toBe(true);
+      expect(p.modified).toBe(october25GscDates.has(p.slug)?'2026-10-25':(r.slug==='is-a-cleaning-business-profitable'?'2026-10-24':'2026-10-22')); expect(p.published<='2026-10-21').toBe(true);
       expect(new Set(ids).size,r.slug).toBe(ids.length); expect(ids).toContain(r.id);
       for(const [,id]of h.matchAll(/href="#([^"]+)"/g))expect(ids,r.slug+'#'+id).toContain(id);
       expect(h.indexOf(p.answerHtml.slice(0,30)),r.slug).toBeLessThan(h.indexOf('article-featured'));

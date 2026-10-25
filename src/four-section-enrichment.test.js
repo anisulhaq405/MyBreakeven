@@ -1,3 +1,4 @@
+import {october25GscDates}from'./testFixtures/october25GscDates.js';
 import { describe, expect, it } from 'vitest';
 import Decimal from 'decimal.js';
 import { calculateFoodPeriod, calculateRecipe, calculateMenuPrice } from './foodCostEngine.js';
@@ -51,7 +52,7 @@ it('keeps existing publication history and old scenarios for the eight enriched 
   for (const slug of Object.keys(fourSectionEnrichment)) {
     const post = blogPostMap[slug];
     expect(post.published < '2026-10-14').toBe(true);
-    expect(post.modified).toBe(['agency-client-profitability','restaurant-menu-pricing-formula','restaurant-food-cost-percentage'].includes(slug)?'2026-10-22':['cleaning-business-monthly-expenses','agency-profit-margin'].includes(slug) ? '2026-10-17' : '2026-10-14');
+    expect(post.modified).toBe(october25GscDates.has(post.slug)?'2026-10-25':(['agency-client-profitability','restaurant-menu-pricing-formula','restaurant-food-cost-percentage'].includes(slug)?'2026-10-22':['cleaning-business-monthly-expenses','agency-profit-margin'].includes(slug) ? '2026-10-17' : '2026-10-14'));
     const ids = [...post.html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
     expect(new Set(ids).size).toBe(ids.length);
   }

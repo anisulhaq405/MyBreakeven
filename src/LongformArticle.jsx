@@ -1,3 +1,4 @@
+import SalonBoothComparison from './SalonBoothComparison.jsx';
 import OperatingCashFlowWidget from './OperatingCashFlowWidget.jsx';
 import {BudgetBridgeWidget,DriverAllocationWidget,JobCostWidget} from './Day3PlanningWidgets.jsx';
 import ScenarioAnalysis, {ScenarioAnalysisLink} from './ScenarioAnalysis.jsx';
@@ -28,7 +29,7 @@ const dateLabel = value => new Date(`${value}T12:00:00Z`).toLocaleDateString("en
 
 export default function LongformArticle({ article: a }) {
   const slug = a?.slug;
-  const hasIntroWidget = ['operating-cash-flow', 'master-budget', 'cost-drivers-small-business', 'job-order-costing', 'margin-vs-markup', 'calculate-contribution-margin', 'high-low-method', 'flexible-budget-variance-analysis', 'make-or-buy-decision', 'break-even-analysis-example'].includes(slug);
+  const hasIntroWidget = ['salon-booth-rent-vs-commission-owner','operating-cash-flow', 'master-budget', 'cost-drivers-small-business', 'job-order-costing', 'margin-vs-markup', 'calculate-contribution-margin', 'high-low-method', 'flexible-budget-variance-analysis', 'make-or-buy-decision', 'break-even-analysis-example'].includes(slug);
   const guideType = articleGuideType(a);
   useEffect(() => {
     if (!a) return;
@@ -53,6 +54,7 @@ export default function LongformArticle({ article: a }) {
     <div className="article-tags" aria-label="Article topics">{a.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
     {a.sectionLinks&&<nav className="article-section-nav" aria-label="Guide sections">{a.sectionLinks.map(([id,label])=><a key={id} href={`#${id}`}>{label}</a>)}</nav>}
     {a.answerHtml&&<section className="article-summary" dangerouslySetInnerHTML={{__html:a.answerHtml}} />}
+    {slug==='salon-booth-rent-vs-commission-owner'&&<SalonBoothComparison/>}
     {slug==='operating-cash-flow'&&<OperatingCashFlowWidget/>}
     {slug==='margin-vs-markup'&&<MarginMarkupWidget/>}
     {slug==='calculate-contribution-margin'&&<ContributionMarginWidget/>}

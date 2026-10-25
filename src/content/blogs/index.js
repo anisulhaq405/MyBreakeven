@@ -1,3 +1,4 @@
+import {applyGscOctober25QueryReview} from './gscOctober25QueryReview.js';
 import {applyWorkingCapitalQueryReview} from './workingCapitalQueryReview.js';
 import {day5CashFlowPosts} from './day5CashFlowGuides.js';
 import {connectDay5CashGuides} from './day5CashConnections.js';
@@ -158,7 +159,7 @@ const normalizePost = post => {
   reviewed = applyDay3DepthReview(reviewed);
   reviewed = applyDay6PlanningReview(applyDay5CashReview(applyDay4Connections(reviewed)));
   reviewed = completeExistingPlanPages(connectBusinessPlanTemplate(applyRankingContentReview(applyDay7MeasurementReview(reviewed))));
-  reviewed = applyWorkingCapitalQueryReview(connectDay5CashGuides(reviewed));
+  reviewed = applyGscOctober25QueryReview(applyWorkingCapitalQueryReview(connectDay5CashGuides(reviewed)));
   return featureDeliveryAssets[reviewed.image] ? { ...reviewed, image: featureDeliveryAssets[reviewed.image] } : reviewed;
 };
 

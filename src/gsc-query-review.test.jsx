@@ -18,5 +18,5 @@ it('corrects the agency operating-versus-net definition and retains the source a
  const p=blogPostMap['agency-profit-margin'];const html=renderToStaticMarkup(<BlogArticle slug={p.slug} initialArticle={p}/>);
  expect(html).toContain('35% operating margin');expect(html).toContain('16.67% operating margin');expect(html).not.toContain('Define whether your “net” figure includes');
  expect(html).toContain('https://openstax.org/books/principles-finance/pages/5-1-the-income-statement');expect(html).toContain('not transferred automatically');
- expect(p.seoTitle).toBe('Agency Profit Margin: Payroll and Capacity');
+ expect(p.seoTitle).toBe('Agency Profit Margin: Formula & Examples');
 });

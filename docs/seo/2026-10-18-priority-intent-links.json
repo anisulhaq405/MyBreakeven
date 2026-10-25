@@ -21,6 +21,7 @@
         "/blogs/restaurant-labor-cost-percentage/",
         "/blogs/restaurant-prime-cost/",
         "/blogs/restaurant-private-event-minimum-spend/",
+        "/blogs/restaurant-profit-margin-average/",
         "/blogs/restaurant-sales-forecast/",
         "/guides/restaurant-business/"
       ],
@@ -122,6 +123,7 @@
       "boundary": "Matched food inventory and sales period, not payroll.",
       "contextual_incoming": [
         "/blogs/catering-quote-profit/",
+        "/blogs/how-to-calculate-cost-of-goods-sold/",
         "/blogs/how-to-start-coffee-shop/",
         "/blogs/how-to-start-restaurant/",
         "/blogs/restaurant-break-even/",
@@ -148,6 +150,7 @@
         "/blogs/restaurant-budgeting/",
         "/blogs/restaurant-food-cost-percentage/",
         "/blogs/restaurant-prime-cost/",
+        "/blogs/restaurant-profit-margin-average/",
         "/guides/restaurant-business/"
       ],
       "status": "verified"
