@@ -5,6 +5,8 @@ const optimized = new Set([
   'recipe-cost-calculator','food-cost-calculator','menu-pricing-calculator','employee-cost-calculator','cash-flow-forecast-template',
   'how-to-calculate-cost-of-goods-sold','how-to-calculate-working-capital','how-to-calculate-days-sales-outstanding',
 ].map(slug=>`${slug}-feature-20261013.webp`));
+for(const s of ['ebitda-calculator','future-value-calculator']) optimized.add(s+'.webp');
+for(const s of ['ebitda-vs-net-income-vs-cash-flow','adjusted-ebitda-add-backs','present-value-vs-future-value','ordinary-annuity-vs-annuity-due']) optimized.add('finance-day1-'+s+'.webp');
 // Keep the new industry covers responsive in both directory cards and page features.
 for (const key of ['cleaning','landscaping','photography','agency','detailing','ecommerce','restaurant','salon']) {
   optimized.add(`${key}-break-even-feature-20261016.webp`);
