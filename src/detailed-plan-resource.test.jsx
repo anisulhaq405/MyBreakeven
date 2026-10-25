@@ -1,0 +1,14 @@
+import React from 'react';
+import {describe,it,expect} from 'vitest';
+import {renderToStaticMarkup} from 'react-dom/server';
+import {existsSync} from 'node:fs';
+import DetailedPlanResource from './DetailedPlanResource.jsx';
+import {detailedPlanResources,annualPlanRows,planCase} from './detailedPlanData.js';
+import {authorityPages,authorityReviewDates} from './authorityResources.js';
+import {routeEntryForPath} from './routeEntries.js';
+describe('Original Day 3 detailed and five-year plan owners',()=>{
+ it('publishes distinct resources with actual downloads and matching navigation anchors',()=>{for(const[route,p]of Object.entries(detailedPlanResources)){const html=renderToStaticMarkup(<DetailedPlanResource route={route}/>);expect(authorityPages[route][0]).toBe(p.seoTitle);expect(authorityReviewDates[route]).toBe('2026-10-25');expect(routeEntryForPath('/'+route)).toBe('src/routes/AuthorityRoute.jsx');expect((html.match(/<h1\b/g)||[]).length).toBe(1);const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);expect(new Set(ids).size).toBe(ids.length);for(const[,id]of html.matchAll(/href="#([^"]+)"/g))expect(ids).toContain(id);for(const file of [p.document,p.workbook].filter(Boolean)){expect(existsSync('public/downloads/'+file)).toBe(true);expect(html).toContain('/downloads/'+file);}expect(existsSync('public/images/resources/'+p.preview)).toBe(true);expect(html).toContain('fictional');expect(html).toContain('/calculators/business-startup-cost-calculator/');}});
+ it('reconciles the narrative cash and owner allowance boundary over all five periods',()=>{const r=annualPlanRows();expect(r.map(x=>x.revenue)).toEqual([60000,74880,90720,107520,125280]);expect(r.map(x=>x.result)).toEqual([6000,13416,21504,30264,39696]);expect(r.map(x=>x.closingCash)).toEqual([12000,22928,40848,68432,104352]);for(let n=0;n<5;n++){expect(r[n].contribution-r[n].fixed-r[n].owner).toBe(r[n].result);if(n)expect(r[n].openingCash).toBe(r[n-1].closingCash);expect(r[n].jobs).toBeLessThanOrEqual(r[n].capacity);}});
+ it('shows the real downside without turning unpaid sales into cash',()=>{const p=structuredClone(planCase);p.jobs[0]=90;const r=annualPlanRows(p);expect(r[0]).toMatchObject({revenue:45000,result:-4500,closingCash:3000,closingAR:4500});expect(r[1].openingAR).toBeCloseTo(4500);});
+ it('connects both owners and preserves the separate one-page and dated cash tasks',()=>{const general=renderToStaticMarkup(<DetailedPlanResource route="resources/business-plan-template"/>),five=renderToStaticMarkup(<DetailedPlanResource route="resources/five-year-business-plan-template"/>);expect(general).toContain('href="/resources/five-year-business-plan-template/"');expect(five).toContain('href="/resources/business-plan-template/"');for(const html of[general,five]){expect(html).toContain('/resources/one-page-business-plan-template/');expect(html).toContain('/calculators/cash-flow-forecast-template/');expect(html).toContain('balance sheet');}});
+});
