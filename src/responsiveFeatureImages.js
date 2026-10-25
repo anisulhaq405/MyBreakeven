@@ -15,6 +15,7 @@ for(const slug of ['master-budget','cost-drivers-small-business','job-order-cost
 optimized.add('flexible-budget-variance-analysis-editorial-20261020.webp');
 optimized.add('make-or-buy-decision-editorial-20261020.webp');
 optimized.add('restaurant-budgeting-editorial.webp');
+optimized.add('startup-cost-cash-bridge-20261025.webp');
 optimized.add('net-cash-flow-day5.webp');
 optimized.add('net-cash-flow-editorial-20261024.webp');
 optimized.add('operating-margin-editorial-20261024.webp');

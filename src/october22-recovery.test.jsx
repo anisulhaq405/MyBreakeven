@@ -32,7 +32,7 @@ describe('October 22 existing-page recovery', () => {
       expect(new Set(ids).size, slug).toBe(ids.length);
       for (const [, id] of html.matchAll(/href="#([^"]+)"/g)) expect(ids, slug+'#'+id).toContain(id);
       expect(html.indexOf(p.answerHtml.slice(0,30)),slug).toBeLessThan(html.indexOf('article-featured'));
-      expect(p.modified).toBe(['restaurant-budgeting','how-much-does-it-cost-to-start-an-ecommerce-store'].includes(slug)?'2026-10-24':'2026-10-22');
+      expect(p.modified).toBe(slug==='how-much-does-it-cost-to-start-an-ecommerce-store'?'2026-10-25':slug==='restaurant-budgeting'?'2026-10-24':'2026-10-22');
       expect(p.draft).not.toBe(true);
     }
   });
