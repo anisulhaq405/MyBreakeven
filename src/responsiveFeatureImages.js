@@ -25,6 +25,7 @@ optimized.add('rolling-forecast-cover.webp');
 optimized.add('rolling-forecast-planning-20261023.webp');
 optimized.add('business-roi-calculator-editorial.webp');
 optimized.add('restaurant-cash-flow-forecast-editorial.webp');
+for(const slug of ['cash-flow-statement','operating-cash-flow','cash-flow-problems']) optimized.add(`${slug}-editorial-20261025.webp`);
 for (const image of Object.values(featureDeliveryAssets)) optimized.add(image.split('/').pop());
 export function responsiveFeatureProps(image, card=false){
   if(!optimized.has(image?.split('?')[0].split('/').pop()))return {};
