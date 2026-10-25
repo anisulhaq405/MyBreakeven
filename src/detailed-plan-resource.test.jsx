@@ -1,4 +1,5 @@
 import React from 'react';
+import AuthorityPage from './AuthorityPages.jsx';
 import {describe,it,expect} from 'vitest';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {existsSync} from 'node:fs';
@@ -12,3 +13,5 @@ describe('Original Day 3 detailed and five-year plan owners',()=>{
  it('shows the real downside without turning unpaid sales into cash',()=>{const p=structuredClone(planCase);p.jobs[0]=90;const r=annualPlanRows(p);expect(r[0]).toMatchObject({revenue:45000,result:-4500,closingCash:3000,closingAR:4500});expect(r[1].openingAR).toBeCloseTo(4500);});
  it('connects both owners and preserves the separate one-page and dated cash tasks',()=>{const general=renderToStaticMarkup(<DetailedPlanResource route="resources/business-plan-template"/>),five=renderToStaticMarkup(<DetailedPlanResource route="resources/five-year-business-plan-template"/>);expect(general).toContain('href="/resources/five-year-business-plan-template/"');expect(five).toContain('href="/resources/business-plan-template/"');for(const html of[general,five]){expect(html).toContain('/resources/one-page-business-plan-template/');expect(html).toContain('/calculators/cash-flow-forecast-template/');expect(html).toContain('balance sheet');}});
 });
+
+it("discovers both Day 3 owners from the resources hub",()=>{const html=renderToStaticMarkup(<AuthorityPage path="/resources"/>);expect(html).toContain("/resources/business-plan-template/");expect(html).toContain("/resources/five-year-business-plan-template/");});
