@@ -1,4 +1,5 @@
 import {titledFeatureImage} from '../../featureTitleCovers.js';
+import {applyCleaningProfitabilityGscRecovery} from './cleaningProfitabilityGscRecovery.js';
 import {financeCompletionPosts} from './financeCompletionGuides.js';
 import {applyDay3RatioContent} from './day3RatioContent.js';
 import {applyDay3RefinanceContent} from './day3RefinanceContent.js';
@@ -173,6 +174,7 @@ const normalizePost = post => {
   reviewed = applyWorkingCapitalGscGrowth(reviewed);
   reviewed = applyDay3RatioContent(reviewed);
   reviewed = applyDay3RefinanceContent(reviewed);
+  reviewed = applyCleaningProfitabilityGscRecovery(reviewed);
   const image=titledFeatureImage(reviewed.slug,featureDeliveryAssets[reviewed.image] || reviewed.image);
   return image===reviewed.image ? reviewed : {...reviewed,image};
 };
