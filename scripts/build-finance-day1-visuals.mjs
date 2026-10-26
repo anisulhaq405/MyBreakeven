@@ -1,6 +1,8 @@
 import sharp from 'sharp';
 import {mkdir,writeFile} from 'node:fs/promises';
 const covers=[
+ ['fire-calculator','Financial independence','Build toward your full FIRE target',['INVESTED ASSETS','KEEP SAVING','FIRE TARGET'],'#37568b','growth'],
+ ['coast-fire-calculator','Coast FIRE','Test growth with zero further deposits',['INVESTED TODAY','TIME TO GROW','RETIREMENT TARGET'],'#256b62','timeline'],
  ['ebitda-calculator','EBITDA','Trace the earnings bridge',['NET INCOME','INTEREST + TAX','D + A'],'#5538a4','bridge'],
  ['ebitda-vs-net-income-vs-cash-flow','Profit and cash','Three measures. Different questions.',['EARNINGS','RECONCILIATION','CASH'],'#236375','bars'],
  ['adjusted-ebitda-add-backs','Adjusted EBITDA','Make every adjustment visible',['BASE','EVIDENCE','ADJUSTED'],'#5e467d','bridge'],

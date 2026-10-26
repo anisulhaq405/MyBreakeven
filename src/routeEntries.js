@@ -10,6 +10,8 @@ const clusters = {
   "/guides/cleaning-business": "src/routes/CleaningRoute.jsx"
 };
 const tools = {
+  "/calculators/fire-calculator": "src/routes/RetirementToolRoute.jsx",
+  "/calculators/coast-fire-calculator": "src/routes/RetirementToolRoute.jsx",
   "/calculators/ebitda-calculator": "src/routes/FinanceToolRoute.jsx",
   "/calculators/future-value-calculator": "src/routes/FinanceToolRoute.jsx",
   "/calculators/business-startup-cost-calculator": "src/routes/StartupCostToolRoute.jsx",

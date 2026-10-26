@@ -12,6 +12,8 @@ export const industryIntent = [
 ];
 
 export const decisionIntent = [
+ ["fire-calculator", "Full FIRE target with continued saving", []],
+ ["coast-fire-calculator", "Zero-further-contribution retirement threshold", []],
  ["ebitda-calculator", "EBITDA and separately adjusted earnings", ["ebitda-vs-net-income-vs-cash-flow", "adjusted-ebitda-add-backs"]],
  ["future-value-calculator", "Future value from initial funds and dated contributions", ["present-value-vs-future-value", "ordinary-annuity-vs-annuity-due"]],
  ["business-startup-cost-calculator", "Launch spending, early cash deficit and remaining startup funding", ["how-much-does-it-cost-to-start-an-ecommerce-store"]],
