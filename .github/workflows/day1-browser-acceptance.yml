@@ -1,0 +1,54 @@
+name: Day 1 revised content and calculator acceptance
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/audit-day1-browser.mjs'
+      - 'src/FinanceDay1Calculator.jsx'
+      - 'src/financeDay1Engine.js'
+      - 'src/financeDay1Analytics.js'
+      - 'src/finance-day1.css'
+      - 'src/content/blogs/financeDay1Guides.js'
+      - '.github/workflows/day1-browser-acceptance.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser-qa:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install existing project dependencies
+        run: npm ci
+      - name: Build current project
+        run: npm run build
+      - name: Install temporary browser QA dependencies
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Serve built site locally
+        run: |
+          npm run preview -- --host 127.0.0.1 --port 4173 > /tmp/day1-preview.log 2>&1 &
+          for attempt in $(seq 1 35); do
+            if curl --fail --silent --output /dev/null http://127.0.0.1:4173/calculators/ebitda-calculator/; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/day1-preview.log
+          exit 1
+      - name: Run Chromium mobile, CSV and print acceptance
+        run: node scripts/audit-day1-browser.mjs
+      - name: Upload mobile screenshots, exports and QA report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: day1-browser-qa
+          path: /tmp/mybreakeven-day1-browser/
+          retention-days: 7
+          if-no-files-found: warn

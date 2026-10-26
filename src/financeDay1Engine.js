@@ -10,7 +10,7 @@ function parse(v,key,errors,{min=0,max=1e9,places=2,optional=false,integer=false
 }
 export function calculateEbitda(v,adjustments=[]){
  const errors={},x={};for(const k of ['net','interest','tax','depreciation','amortization','revenue'])x[k]=parse(v[k],k,errors,{min:['net','tax'].includes(k)?-1e9:0,optional:k==='revenue'});
- const names=new Set();const adj=adjustments.map((a,i)=>{const name=String(a.name??'').trim(),norm=name.toLowerCase();if(!name||name.length>100||names.has(norm))errors['adjustment-'+i]='Give each adjustment a unique description of 1–100 characters.';names.add(norm);return {name,amount:parse(a.amount,'adjustment-'+i,errors,{min:-1e9})};});
+ const names=new Set();const adj=adjustments.map((a,i)=>{const name=String(a.name??'').trim(),norm=name.toLowerCase();if(!name||name.length>100||names.has(norm))errors['adjustment-name-'+i]='Give each adjustment a unique description of 1–100 characters.';names.add(norm);return {name,amount:parse(a.amount,'adjustment-'+i,errors,{min:-1e9})};});
  if(adjustments.length>12)errors.adjustments='Use at most 12 separately documented adjustments.';
  if(Object.keys(errors).length)return {valid:false,errors};
  const base=x.net.plus(x.interest).plus(x.tax).plus(x.depreciation).plus(x.amortization),adjusted=adj.reduce((s,a)=>s.plus(a.amount),base);
