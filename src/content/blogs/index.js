@@ -4,6 +4,7 @@ import {financeDay1Posts} from './financeDay1Guides.js';
 import {connectFinanceDay1} from './financeDay1Connections.js';
 import {applyGscOctober25QueryReview} from './gscOctober25QueryReview.js';
 import {applyWorkingCapitalQueryReview} from './workingCapitalQueryReview.js';
+import {applyWorkingCapitalGscGrowth} from './workingCapitalGscGrowth.js';
 import {applyRestaurantFoodCostGscRecovery} from './restaurantFoodCostGscRecovery.js';
 import {day5CashFlowPosts} from './day5CashFlowGuides.js';
 import {connectDay5CashGuides} from './day5CashConnections.js';
@@ -167,6 +168,7 @@ const normalizePost = post => {
   reviewed = applyGscOctober25QueryReview(applyWorkingCapitalQueryReview(connectDay5CashGuides(reviewed)));
   reviewed = applyRestaurantFoodCostGscRecovery(reviewed);
   reviewed = connectFinanceDay1(reviewed);
+  reviewed = applyWorkingCapitalGscGrowth(reviewed);
   const image=titledFeatureImage(reviewed.slug,featureDeliveryAssets[reviewed.image] || reviewed.image);
   return image===reviewed.image ? reviewed : {...reviewed,image};
 };
