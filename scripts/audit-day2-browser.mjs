@@ -40,6 +40,13 @@ try {
         report.viewports.push(check);
         if(width!==1280)await page.screenshot({path:path.join(directory,slug+'-'+width+'.png'),fullPage:false});
         if(!check.pass)failures.push(slug+' responsive '+JSON.stringify(check));
+        if(width===1280){
+          await page.emulateMedia({media:'print'});
+          const consentVisible=await page.locator('.analytics-consent').evaluateAll(nodes=>nodes.some(n=>getComputedStyle(n).display!=='none'));
+          await page.emulateMedia({media:'screen'});
+          report.printConsentVisible=consentVisible;
+          if(consentVisible)failures.push(slug+' print consent overlay visible');
+        }
         if(width===1280&&route.startsWith('/calculators/')){
           try{
             const button=page.getByRole('button',{name:/download.*csv/i}).first();
@@ -57,6 +64,14 @@ try {
             await fs.writeFile(path.join(directory,slug+'.pdf'),pdf);
             report.pdf={bytes:pdf.length,valid:pdf.subarray(0,5).toString()==='%PDF-'};
             if(!report.pdf.valid||pdf.length<3000)failures.push(slug+' PDF '+JSON.stringify(report.pdf));
+          }catch(e){report.pdf={error:e.message};failures.push(slug+' PDF '+e.message);}
+        }
+        if(width===1280&&route==='/guides/financial-ratios/'){
+          try{
+            const pdf=await page.pdf({format:'A4',printBackground:true});
+            await fs.writeFile(path.join(directory,slug+'.pdf'),pdf);
+            report.pdf={bytes:pdf.length,valid:pdf.subarray(0,5).toString()==='%PDF-'};
+            if(!report.pdf.valid||pdf.length<3000)failures.push(slug+' PDF invalid');
           }catch(e){report.pdf={error:e.message};failures.push(slug+' PDF '+e.message);}
         }
       }catch(e){failures.push(slug+' width '+width+' '+e.message);}
