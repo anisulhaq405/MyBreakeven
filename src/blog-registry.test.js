@@ -58,7 +58,7 @@ describe("central blog registry", () => {
       expect(`${post.seoTitle} | MyBreakeven`.length).toBeLessThanOrEqual(60);
       expect(post.metaDescription.length).toBeGreaterThanOrEqual(120);
       expect(post.metaDescription.length).toBeLessThanOrEqual(160);
-      expect(post.image).toMatch(/^\/images\/blog\//);
+      expect(post.image).toMatch(/^\/images\/(?:blog|title-covers)\//);
       expect(post.alt.length).toBeGreaterThan(10);
       expect(post.faq.length).toBeGreaterThanOrEqual(4);
     }

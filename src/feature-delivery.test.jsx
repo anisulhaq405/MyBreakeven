@@ -1,3 +1,4 @@
+import manifest from '../scripts/data/feature-title-overlays-20261026.json';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { statSync } from 'node:fs';
@@ -11,7 +12,8 @@ import LongformArticle from './LongformArticle.jsx';
 describe('Heavy article image delivery', () => {
   it('serves real, smaller correctly sized copies for all ten flagged articles', async () => {
     expect(Object.keys(featureDeliveryAssets)).toHaveLength(10);
-    for (const [original, image] of Object.entries(featureDeliveryAssets)) {
+    for (const [original, previousImage] of Object.entries(featureDeliveryAssets)) {
+      const image=manifest.find(r=>r.image===previousImage)?.output || previousImage;
       const article = blogPosts.find(post => post.image === image);
       expect(article, image).toBeTruthy();
       expect(statSync('public'+image).size).toBeLessThan(statSync('public'+original).size);

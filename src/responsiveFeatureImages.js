@@ -32,6 +32,7 @@ for(const slug of ['cash-flow-statement','operating-cash-flow','cash-flow-proble
 for (const image of Object.values(featureDeliveryAssets)) optimized.add(image.split('/').pop());
 for (const asset of Object.values(financeFeatureAssets)) optimized.add(asset.image.split('/').pop());
 export function responsiveFeatureProps(image, card=false){
+  if(image?.startsWith('/images/title-covers/')) return {srcSet:`${card?image.replace('.webp','-400.webp')+' 400w, ':''}${image.replace('.webp','-800.webp')} 800w, ${image} 1200w`,sizes:card?'(max-width: 600px) calc(100vw - 40px), (max-width: 1000px) calc((100vw - 80px) / 2), 380px':'(max-width: 880px) calc(100vw - 48px), 820px'};
   if(!optimized.has(image?.split('?')[0].split('/').pop()))return {};
   const cardCandidate = card && (/\/tools\/\w+-break-even-feature-20261016\.webp$/.test(image) || Object.values(financeFeatureAssets).some(asset=>asset.image===image))
     ? `${image.replace('.webp','-400.webp')} 400w, ` : '';
