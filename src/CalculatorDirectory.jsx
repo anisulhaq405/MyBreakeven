@@ -5,7 +5,7 @@ import { responsiveFeatureProps } from './responsiveFeatureImages.js';
 import { ArrowUpRight, Search, Calculator, Check, SlidersHorizontal } from 'lucide-react';
 import './calculator-hub.css';
 const hubGroups = ['All calculators', 'Business Financial Analysis', 'Savings & Financial Independence', 'Pricing & profit', 'Food & recipes', 'Service costs', 'Ads & ecommerce', 'Cash & income'];
-const hubGroup = mode => mode==='ebitda' ? 'Business Financial Analysis' : mode==='futureValue' ? 'Savings & Financial Independence' : mode==='industry' ? 'Pricing & profit' : mode==='employeeCost' ? 'Service costs' : mode==='foodWorkflow' ? 'Food & recipes' : ['discount','increase','cleaningContract','lawnRoute','rebooking','noShow','travelProfit'].includes(mode) ? 'Pricing & profit' : ['chemical','hairColor'].includes(mode) ? 'Service costs' : ['roas','returns'].includes(mode) ? 'Ads & ecommerce' : 'Cash & income';
+const hubGroup = mode => mode==='ebitda' ? 'Business Financial Analysis' : ['futureValue','fire','coast'].includes(mode) ? 'Savings & Financial Independence' : mode==='industry' ? 'Pricing & profit' : mode==='employeeCost' ? 'Service costs' : mode==='foodWorkflow' ? 'Food & recipes' : ['discount','increase','cleaningContract','lawnRoute','rebooking','noShow','travelProfit'].includes(mode) ? 'Pricing & profit' : ['chemical','hairColor'].includes(mode) ? 'Service costs' : ['roas','returns'].includes(mode) ? 'Ads & ecommerce' : 'Cash & income';
 export default function FreeToolsHub(){
  const [query,setQuery]=useState(''),[group,setGroup]=useState('All calculators');
  const tools=calculatorDirectory;
