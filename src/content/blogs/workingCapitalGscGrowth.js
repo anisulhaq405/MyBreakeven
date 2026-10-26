@@ -20,7 +20,7 @@ export function applyWorkingCapitalGscGrowth(post){
  if(post.html.includes('id="working-capital-formula-selector"'))throw Error('Duplicate working capital formula selector');
  return {...post,
   modified:'2026-10-26',
-  metaDescription:'Calculate working capital from current assets and liabilities. Compare operating working capital, current ratio and days working capital with examples and Excel.',
+  metaDescription:'Calculate working capital from current assets and liabilities. Compare operating capital, current ratio and working capital days with examples and Excel.',
   html:section+post.html,
   sectionLinks:post.sectionLinks?[['working-capital-formula-selector','Choose the right formula'],...post.sectionLinks]:post.sectionLinks,
  };
