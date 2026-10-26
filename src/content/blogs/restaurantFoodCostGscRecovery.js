@@ -19,7 +19,6 @@ export function applyRestaurantFoodCostGscRecovery(post) {
   if (post.html.includes('id="food-cost-comparison-heading"')) throw new Error('Duplicate GSC recovery insertion');
   return {
     ...post,
-    seoTitle: 'Restaurant Food Cost Percentage: Formula & Examples',
     metaDescription: 'Calculate restaurant food cost percentage from inventory, purchases and food sales. See a 33.33% worked example and compare actual vs ideal recipe cost.',
     modified: '2026-10-26',
     html: quickComparison + post.html,
