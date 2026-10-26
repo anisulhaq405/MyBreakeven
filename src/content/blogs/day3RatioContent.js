@@ -1,0 +1,23 @@
+// Day 3 G08/G09: source-preserving, query-specific worked learning aids.
+// The existing article examples, publication dates, FAQ and images remain authoritative.
+const owner = {
+ 'find-missing-value-equivalent-ratios': {
+   id:'four-step-ratio-answer-check',
+   nav:'Four-step answer check',
+   html:`<section aria-labelledby="four-step-ratio-answer-check"><h2 id="four-step-ratio-answer-check">Four-step check: how to find a missing value in a ratio</h2><p>First write both ratios with the <strong>same quantity order</strong>. Second mark the unknown as x and identify known nonzero denominators if treating ratios as fractions. Third find a common scaling factor or solve by cross multiplication. Fourth <strong>substitute x into the original statement</strong>, not only the rearranged equation. For <strong>3:5 = x:20</strong>, 5 × 4 = 20, so x = 3 × 4 = <strong>12</strong>; equivalently, 3 × 20 = 5 × 12 = 60.</p><div class="article-table-scroll" role="region" tabindex="0" aria-label="Worked equivalent-ratio answer check"><table class="article-records-table"><caption>Three original checks: one solution, none, or nonunique (two-term fraction convention)</caption><thead><tr><th scope="col">Question</th><th scope="col">Equation</th><th scope="col">Verified outcome</th></tr></thead><tbody><tr><th scope="row">3:5 = x:20</th><td>60 = 5x</td><td>x = 12; denominator values 5 and 20 are valid</td></tr><tr><th scope="row">0:5 = 3:x</th><td>0 = 15</td><td>No solution, regardless of x</td></tr><tr><th scope="row">0:5 = 0:x</th><td>0 = 0</td><td>Not unique: any nonzero x is allowed when x is a fraction denominator</td></tr></tbody></table></div><p><strong>Common error:</strong> a zero cross-product does not automatically mean x = 0. A proportion can also be impossible or have multiple valid x values. Use <a href="/calculators/equivalent-ratio-calculator/">the exact ratio calculator in Solve mode</a> to verify the typed position; use <a href="/blogs/equivalent-ratio-tables-word-problems/">ratio-table word problems</a> when the task gives repeated quantities rather than a single unknown.</p></section>`
+ },
+ 'equivalent-ratio-tables-word-problems': {
+   id:'ratio-word-problem-practice',
+   nav:'Practice with unit-labelled ratios',
+   html:`<section aria-labelledby="ratio-word-problem-practice"><h2 id="ratio-word-problem-practice">Equivalent ratio tables: try the question before revealing the method</h2><p>The <strong>multiplier must apply to every component of the same row</strong>. When a total is provided instead of one component, divide by the sum of ratio parts before scaling. Keep dimensions consistent: convert kilograms to grams before treating two measurements as comparable mass values. These are proportional-math demonstrations, not food-safety recipes or purchasing forecasts.</p><div class="article-table-scroll" role="region" tabindex="0" aria-label="Solved ratio table word problems"><table class="article-records-table"><caption>Three new ratio-table practice questions with verified answers</caption><thead><tr><th scope="col">Question</th><th scope="col">Working</th><th scope="col">Answer and check</th></tr></thead><tbody><tr><th scope="row">5:2 mixture, 28 g total: how much of each?</th><td>7 total parts; 28 ÷ 7 = 4 g per part</td><td>20 g first + 8 g second = 28 g; 20:8 = 5:2</td></tr><tr><th scope="row">3:4 stock, 24 red units: how many blue units?</th><td>Red is four parts, so one part = 24 ÷ 4 = 6</td><td>18 blue; 18:24 = 3:4</td></tr><tr><th scope="row">2:1 allocation, 25 indivisible units: exact split?</th><td>Three parts; 25 ÷ 3 is not an integer</td><td>No exact whole-unit allocation of all 25; 24 can split into 16 and 8 with one left over if allowed</td></tr></tbody></table></div><p><strong>Problem-solving shortcut:</strong> label each component, calculate a single part, then multiply every quantity by that part and verify the sum. If the missing term is inside one proportion rather than a full table, see <a href="/blogs/find-missing-value-equivalent-ratios/">the four-position x tutorial</a>. You can <a href="/calculators/equivalent-ratio-calculator/">generate and check exact scaled ratios</a> without rounding decimal inputs.</p></section>`
+ }
+};
+export function applyDay3RatioContent(post) {
+ const change=owner[post.slug];
+ if(!change) return post;
+ if(!post.html?.includes('<h2') || post.html.includes('id="'+change.id+'"')) throw Error('Day 3 ratio article source changed or duplicate '+post.slug);
+ const nav=post.sectionLinks||[];
+ return {...post,html:change.html+post.html,
+ sectionLinks:[[change.id,change.nav],...nav],
+ modified:'2026-10-26'};
+}
