@@ -1,6 +1,9 @@
 import sharp from 'sharp';
 import {mkdir,writeFile} from 'node:fs/promises';
 const covers=[
+ ['financial-ratios-calculator','Financial ratios','One statement. Clearly defined measures.',['LIQUIDITY','PROFITABILITY','LEVERAGE'],'#315c83','bars'],
+ ['equivalent-ratio-calculator','Equivalent ratios','Scale every component together',['ORIGINAL','SAME FACTOR','EQUIVALENT'],'#6a5392','timeline'],
+ ['refinance-calculator','Mortgage refinance','Compare cash and debt at the same date',['CURRENT LOAN','FEES + TIME','NEW LOAN'],'#236b65','growth'],
  ['fire-calculator','Financial independence','Build toward your full FIRE target',['INVESTED ASSETS','KEEP SAVING','FIRE TARGET'],'#37568b','growth'],
  ['coast-fire-calculator','Coast FIRE','Test growth with zero further deposits',['INVESTED TODAY','TIME TO GROW','RETIREMENT TARGET'],'#256b62','timeline'],
  ['ebitda-calculator','EBITDA','Trace the earnings bridge',['NET INCOME','INTEREST + TAX','D + A'],'#5538a4','bridge'],

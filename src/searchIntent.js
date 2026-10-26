@@ -12,6 +12,9 @@ export const industryIntent = [
 ];
 
 export const decisionIntent = [
+ ["financial-ratios-calculator", "Statement-based business ratios and integrated leverage definitions", []],
+ ["equivalent-ratio-calculator", "Exact mathematical proportions, missing term and ratio tables", []],
+ ["refinance-calculator", "Fixed-rate mortgage refinance payments and same-date cost", []],
  ["fire-calculator", "Full FIRE target with continued saving", []],
  ["coast-fire-calculator", "Zero-further-contribution retirement threshold", []],
  ["ebitda-calculator", "EBITDA and separately adjusted earnings", ["ebitda-vs-net-income-vs-cash-flow", "adjusted-ebitda-add-backs"]],
