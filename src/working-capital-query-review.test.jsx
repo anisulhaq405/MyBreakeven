@@ -9,7 +9,7 @@ import LongformArticle from './LongformArticle.jsx';
 const p=blogPostMap['how-to-calculate-working-capital'];
 describe('GSC working-capital owner improvement',()=>{
  it('keeps the owner, original publication, original XLSX and prior anchors while exposing all query answers',()=>{
-  expect(p.tag).toBe('Break-Even Concepts');expect(p.published).toBe('2026-10-13');expect(p.modified).toBe('2026-10-25');expect(p.html).toContain('/downloads/working-capital-worksheet.xlsx');expect(p.html).toContain('$24,000');
+  expect(p.tag).toBe('Break-Even Concepts');expect(p.published).toBe('2026-10-13');expect(p.modified).toBe('2026-10-26');expect(p.html).toContain('/downloads/working-capital-worksheet.xlsx');expect(p.html).toContain('$24,000');
   const html=renderToStaticMarkup(<LongformArticle article={p}/>),ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);expect(new Set(ids).size).toBe(ids.length);for(const[id]of p.sectionLinks)expect(ids).toContain(id);for(const id of ['operating-definition','quick-answer','worked-balance-sheet','dated-cash-test','use-the-working-capital-workbook','working-capital-download'])expect(ids).toContain(id);
   expect((html.match(/<h1[ >]/g)||[]).length).toBe(1);expect(articleFaq(p).items.length).toBe(13);expect(`${p.seoTitle} | MyBreakeven`.length).toBeLessThanOrEqual(60);expect(p.metaDescription.length).toBeLessThanOrEqual(160);
  });
