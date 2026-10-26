@@ -17,7 +17,7 @@ export function applyDay3RatioContent(post) {
  if(!change) return post;
  if(!post.html?.includes('<h2') || post.html.includes('id="'+change.id+'"')) throw Error('Day 3 ratio article source changed or duplicate '+post.slug);
  const nav=post.sectionLinks||[];
- return {...post,html:change.html+post.html,
+ return {...post,html:change.html+(post.slug==='equivalent-ratio-tables-word-problems'?post.html.replaceAll('class="ratio-blocks" aria-label=','class="ratio-blocks" role="img" aria-label='):post.html),
  sectionLinks:[[change.id,change.nav],...nav],
  modified:'2026-10-26'};
 }
