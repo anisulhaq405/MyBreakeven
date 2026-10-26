@@ -45,9 +45,9 @@ export default function HomeSEO() {
           <h2>From contribution margin to a monthly sales target you can check</h2>
         </div>
         <ol>
-          <li><strong>Calculate contribution per sale.</strong> Subtract direct materials, labor, other variable costs, acquisition cost and payment fees from average price.</li>
+          <li><strong>Calculate contribution per sale.</strong> Subtract direct materials, labor, other variable costs, acquisition cost and payment fees from average price. <a href="/blogs/fixed-vs-variable-costs/">Distinguish fixed and variable costs</a> before choosing the inputs; restaurant operators can also <a href="/calculators/food-cost-calculator/">reconcile actual food cost from inventory and sales</a>.</li>
           <li><strong>Set the monthly amount to cover.</strong> Add operating overhead, owner pay and optional target profit.</li>
-          <li><strong>Calculate the exact sales target.</strong> Divide the monthly amount to cover by contribution per sale without prematurely rounding the result.</li>
+          <li><strong>Calculate the exact sales target.</strong> Divide the monthly amount to cover by contribution per sale without prematurely rounding the result. <a href="/blogs/break-even-formula-units-dollars/">Compare the units and revenue formulas</a> or <a href="/blogs/calculate-break-even-point/">follow the step-by-step calculation</a>.</li>
           <li><strong>Check capacity and inquiry requirements.</strong> Compare required sales with team capacity and translate the sales target into required customer inquiries.</li>
         </ol>
       </div>
@@ -76,7 +76,7 @@ export default function HomeSEO() {
             The basic break-even formula is fixed costs divided by contribution per sale;
             this example separately includes owner pay, a profit target, inquiries and
             delivery capacity. <a href="https://legacy.sba.gov/business-guide/plan-your-business/calculate-your-startup-costs/break-even-point">See the U.S. Small Business Administration&apos;s break-even method</a>.
-            {" "}<a href="#calculator">Run your own numbers in the free calculator</a>.
+            {" "}<a href="#calculator">Run your own numbers in the free calculator</a>. For receipts and bills that fall on different dates, <a href="/calculators/cash-flow-forecast-template/">build a separate 13-week cash flow forecast</a>; break-even profit is not the same as available cash.
           </p>
         </div>
         <dl aria-label="Illustrative break-even results">
