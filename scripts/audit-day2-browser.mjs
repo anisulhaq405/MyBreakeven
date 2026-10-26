@@ -60,7 +60,9 @@ try {
             if(!report.csv.bom||lines.length<20)failures.push(slug+' CSV '+JSON.stringify(report.csv));
           }catch(e){report.csv={error:e.message};failures.push(slug+' CSV '+e.message);}
           try{
+            await page.emulateMedia({media:'print'});
             const pdf=await page.pdf({format:'A4',printBackground:true});
+            await page.emulateMedia({media:'screen'});
             await fs.writeFile(path.join(directory,slug+'.pdf'),pdf);
             report.pdf={bytes:pdf.length,valid:pdf.subarray(0,5).toString()==='%PDF-'};
             if(!report.pdf.valid||pdf.length<3000)failures.push(slug+' PDF '+JSON.stringify(report.pdf));
@@ -68,7 +70,9 @@ try {
         }
         if(width===1280&&route==='/guides/financial-ratios/'){
           try{
+            await page.emulateMedia({media:'print'});
             const pdf=await page.pdf({format:'A4',printBackground:true});
+            await page.emulateMedia({media:'screen'});
             await fs.writeFile(path.join(directory,slug+'.pdf'),pdf);
             report.pdf={bytes:pdf.length,valid:pdf.subarray(0,5).toString()==='%PDF-'};
             if(!report.pdf.valid||pdf.length<3000)failures.push(slug+' PDF invalid');
