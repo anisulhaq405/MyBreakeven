@@ -25,7 +25,9 @@ try {
       try {
         const response=await page.goto(origin+route,{waitUntil:'domcontentloaded',timeout:8000});
         await page.locator('h1').first().waitFor({timeout:15000});
-        await page.waitForTimeout(700);
+        await page.waitForTimeout(300);
+        const feature=page.locator('img[src*="20261026"]').first();
+        if(await feature.count()) { await feature.scrollIntoViewIfNeeded(); await page.waitForTimeout(1000); }
         const metrics=await page.evaluate(async()=>{
           await Promise.race([Promise.all([...document.images].filter(i=>i.src.includes('20261026')).map(i=>i.decode().catch(()=>null))),new Promise(resolve=>setTimeout(resolve,2500))]);
           const image=[...document.images].find(i=>i.src.includes('20261026'));
