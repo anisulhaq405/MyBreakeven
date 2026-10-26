@@ -1,3 +1,4 @@
+import {financeFeatureAssets,financeFeatureCaption} from '../../financeFeatureAssets.js';
 // Original Day 1 finance guides; checked methods and independent examples.
 export const financeDay1Posts = [
   {
@@ -373,3 +374,6 @@ export const financeDay1Posts = [
     "answerHtml": "<p id=\"quick-answer\">Quick answer: ordinary payments occur at period end; due payments occur at the beginning. Two $1,000 annual deposits at 5% finish at $2,050 versus $2,152.50 respectively. <a href=\"/calculators/future-value-calculator/\">Compare timing in the calculator</a>.</p>"
   }
 ];
+
+// Include G01–G04 in the complete20-page feature refresh.
+for (const post of financeDay1Posts) Object.assign(post,financeFeatureAssets[post.slug],{imageCaption:financeFeatureCaption});

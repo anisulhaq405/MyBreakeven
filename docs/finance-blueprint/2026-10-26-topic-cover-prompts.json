@@ -1,0 +1,126 @@
+{
+  "mode": "built-in imagegen",
+  "sharedPrompt": "Generate a polished, highly topic-specific editorial photograph for a professional educational finance website. Landscape 16:9, realistic contemporary financial planning workspace, authentic paper textures and natural daylight, crisp photographic detail, neutral ivory desk with navy and modest teal accents. The content must immediately communicate the named finance topic, not an abstract metaphor. Composition: main objects in right two-thirds; upper left has clean light negative space for a title to be typeset later. Any paperwork may have realistic blank rows and muted headings, but NO readable words, numbers, company logos or invented data. No decorative 3D sculptures, glass spheres, stairs, boats, magical floating icons, watermark or money-rain imagery. Topic scene: ",
+  "subjects": [
+    {
+      "slug": "ebitda-calculator",
+      "title": "EBITDA Calculator",
+      "scene": "A close three-quarter photograph of a financial analyst's hands using a real desktop calculator beside a detailed printed income statement with visibly separated earnings and expense rows, pen highlighting the subtotal section; only hands visible.",
+      "titleInstruction": "Exact title in large readable navy typography; only cover title should be readable."
+    },
+    {
+      "slug": "future-value-calculator",
+      "title": "Future Value Calculator",
+      "scene": "A real household savings planning desk with a laptop showing a simple unlabelled savings projection curve, an open monthly contribution notebook, a calendar and a modest stack of coins; authentic practical investment calculation.",
+      "titleInstruction": "Exact title in large readable navy typography; only cover title should be readable."
+    },
+    {
+      "slug": "fire-calculator",
+      "title": "FIRE Calculator",
+      "scene": "A real couple viewed from the shoulders down at their kitchen table working through a retirement budget, laptop with an unlabelled retirement savings worksheet, expense notebook and desktop calculator; calm purposeful financial independence planning.",
+      "titleInstruction": "Exact title in large readable navy typography; only cover title should be readable."
+    },
+    {
+      "slug": "coast-fire-calculator",
+      "title": "Coast FIRE Calculator",
+      "scene": "A realistic investment review desk with a retirement date circled on an unnumbered calendar, a long-term account statement, a closed contribution notebook, calculator and reading glasses; clear long-term retirement savings review.",
+      "titleInstruction": "Exact title in large readable navy typography; only cover title should be readable."
+    },
+    {
+      "slug": "financial-ratios-calculator",
+      "title": "Financial Ratios Calculator",
+      "scene": "An accountant's desk with an income statement and balance sheet side by side, a desktop calculator, pen and laptop containing a clean unlabelled financial analysis worksheet; focus on comparing statement figures.",
+      "titleInstruction": "Exact title in large readable navy typography; only cover title should be readable."
+    },
+    {
+      "slug": "equivalent-ratio-calculator",
+      "title": "Equivalent Ratio Calculator",
+      "scene": "A real student's study desk with graph paper containing two proportional collections of colored counters, simple blank ratio-table cells, pencil, ruler and calculator; concrete mathematical proportions lesson.",
+      "titleInstruction": "Exact title in large readable navy typography; only cover title should be readable."
+    },
+    {
+      "slug": "refinance-calculator",
+      "title": "Mortgage Refinance Calculator",
+      "scene": "A realistic homeowner comparing two mortgage loan estimate documents beside a house key, calculator and laptop with a blank loan comparison worksheet; financial transaction paperwork is the focal point, not a model house.",
+      "titleInstruction": "Exact title in large readable navy typography; only cover title should be readable."
+    },
+    {
+      "slug": "financial-ratios",
+      "title": "Financial Ratios Explained",
+      "scene": "A professional top-down desk photograph with four organized financial analysis pages, balance sheet and income statement headings suggested by layout, calculator and analyst's pen comparing different sections; a practical financial ratio reference.",
+      "titleInstruction": "Exact title in large readable navy typography; only cover title should be readable."
+    },
+    {
+      "slug": "fire-vs-coast-fire-vs-barista-fire",
+      "title": "FIRE vs Coast vs Barista FIRE",
+      "scene": "A realistic household finance comparison on a desk: three organized retirement plan folders, spending notebook, investment statement and a part-time work schedule beside a coffee cup; show the distinct planning choices as real documents.",
+      "titleInstruction": "Exact title in large readable navy typography; only cover title should be readable."
+    },
+    {
+      "slug": "fire-withdrawal-rate-retirement-risks",
+      "title": "Retirement Withdrawal Risks",
+      "scene": "A close photograph of hands reviewing a retirement withdrawal budget, a retirement investment statement with an unlabelled uneven performance chart, calculator and healthcare expense folder; risk-aware retirement cash planning.",
+      "titleInstruction": "Exact title in large readable navy typography; only cover title should be readable."
+    },
+    {
+      "slug": "how-to-analyze-financial-statements",
+      "title": "Analyze Financial Statements",
+      "scene": "An analyst reviewing three distinct real printed financial statements spread across a desk, income statement, two comparative balance sheets and cash-flow working notes visually separated; hands with a pen trace between the documents.",
+      "titleInstruction": "Exact title in large readable navy typography; only cover title should be readable."
+    },
+    {
+      "slug": "find-missing-value-equivalent-ratios",
+      "title": "Find the Missing Ratio Value",
+      "scene": "A close photograph of a tutor's hand pointing with a pencil to one deliberately empty cell in a ratio table on squared paper; colored counters in paired proportional groups and a ruler provide a clear mathematical learning setting.",
+      "titleInstruction": "Exact title in large readable navy typography; only cover title should be readable."
+    },
+    {
+      "slug": "equivalent-ratio-tables-word-problems",
+      "title": "Ratio Tables and Word Problems",
+      "scene": "A realistic kitchen counter with measuring cups, flour and water bowls, a kitchen scale, recipe notebook with a blank proportional quantity table and a pencil; clear hands-on recipe scaling and ratio word-problem theme.",
+      "titleInstruction": "Exact title in large readable navy typography; only cover title should be readable."
+    },
+    {
+      "slug": "mortgage-refinance-break-even",
+      "title": "Mortgage Refinance Break-Even",
+      "scene": "A homeowner's realistic mortgage comparison worksheet on a desk beside a calculator, calendar, house keys and two loan-estimate documents; a pen marks the calendar timeline to connect closing costs with time needed for recovery.",
+      "titleInstruction": "Exact title in large readable navy typography; only cover title should be readable."
+    },
+    {
+      "slug": "refinance-closing-costs-financed-fees",
+      "title": "Refinance Closing Costs",
+      "scene": "A close realistic mortgage closing desk with a loan estimate, separate itemized fee sheets, calculator and house keys, with colored sticky tabs distinguishing fees paid now from financed charges; exact text and amounts absent.",
+      "titleInstruction": "Exact title in large readable navy typography; only cover title should be readable."
+    },
+    {
+      "slug": "refinance-shorter-vs-longer-term",
+      "title": "Shorter vs Longer Mortgage Term",
+      "scene": "Two real mortgage repayment schedules laid side by side on a homeowner's desk, one visibly shorter page stack and one longer page stack, calculator, calendar and house key; clear loan term comparison paperwork.",
+      "titleInstruction": "Exact title in large readable navy typography; only cover title should be readable."
+    },
+    {
+      "slug": "ebitda-vs-net-income-vs-cash-flow",
+      "title": "EBITDA vs Net Income vs Cash Flow",
+      "scene": "A finance professional's hands comparing three distinct printed statements on a real desk: an earnings reconciliation sheet, net income statement and cash flow statement arranged as separate columns; calculator and highlighter support the comparison.",
+      "titleInstruction": "Exact title in large readable navy typography; only cover title should be readable."
+    },
+    {
+      "slug": "adjusted-ebitda-add-backs",
+      "title": "Adjusted EBITDA and Add-Backs",
+      "scene": "An accountant checking an earnings reconciliation worksheet against supporting expense receipts, small evidence folder, calculator and pen ticking individually itemized adjustments; clear audit trail and add-back verification, no fabricated figures.",
+      "titleInstruction": "Exact title in large readable navy typography; only cover title should be readable."
+    },
+    {
+      "slug": "present-value-vs-future-value",
+      "title": "Present Value vs Future Value",
+      "scene": "Two dated savings comparison documents at opposite ends of a real desk, connected by a plain calendar timeline sheet, calculator and notebook; a hand compares today's value with a later savings projection on a laptop.",
+      "titleInstruction": "Exact title in large readable navy typography; only cover title should be readable."
+    },
+    {
+      "slug": "ordinary-annuity-vs-annuity-due",
+      "title": "Ordinary Annuity vs Annuity Due",
+      "scene": "A top-down real financial planning desk showing two payment schedule sheets, one with colored payment markers at the beginning of blank calendar periods and the other at the end, calculator and planner; distinct deposit timing comparison.",
+      "titleInstruction": "Exact title in large readable navy typography; only cover title should be readable."
+    }
+  ]
+}
