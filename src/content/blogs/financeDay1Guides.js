@@ -18,8 +18,8 @@ export const financeDay1Posts = [
     "image": "/images/blog/finance-day1-ebitda-vs-net-income-vs-cash-flow.webp",
     "alt": "Three earnings, reconciliation and cash columns illustrating distinct business measurement boundaries",
     "imageCaption": "Original MyBreakeven editorial illustration; the guide uses independent fictional examples, not customer results.",
-    "published": "2026-10-25",
-    "modified": "2026-10-25",
+    "published": "2026-10-26",
+    "modified": "2026-10-26",
     "editorialStatus": "published",
     "features": [
       "Original reconciled examples",
@@ -111,8 +111,8 @@ export const financeDay1Posts = [
     "image": "/images/blog/finance-day1-adjusted-ebitda-add-backs.webp",
     "alt": "Base earnings connected through documented evidence to a separately labelled adjusted subtotal",
     "imageCaption": "Original MyBreakeven editorial illustration; the guide uses independent fictional examples, not customer results.",
-    "published": "2026-10-25",
-    "modified": "2026-10-25",
+    "published": "2026-10-26",
+    "modified": "2026-10-26",
     "editorialStatus": "published",
     "features": [
       "Original reconciled examples",
@@ -204,8 +204,8 @@ export const financeDay1Posts = [
     "image": "/images/blog/finance-day1-present-value-vs-future-value.webp",
     "alt": "A dated timeline connects today’s money with a later balance using a stated rate",
     "imageCaption": "Original MyBreakeven editorial illustration; the guide uses independent fictional examples, not customer results.",
-    "published": "2026-10-25",
-    "modified": "2026-10-25",
+    "published": "2026-10-26",
+    "modified": "2026-10-26",
     "editorialStatus": "published",
     "features": [
       "Original reconciled examples",
@@ -297,8 +297,8 @@ export const financeDay1Posts = [
     "image": "/images/blog/finance-day1-ordinary-annuity-vs-annuity-due.webp",
     "alt": "Beginning, period and end markers illustrate the timing of equal recurring contributions",
     "imageCaption": "Original MyBreakeven editorial illustration; the guide uses independent fictional examples, not customer results.",
-    "published": "2026-10-25",
-    "modified": "2026-10-25",
+    "published": "2026-10-26",
+    "modified": "2026-10-26",
     "editorialStatus": "published",
     "features": [
       "Original reconciled examples",
