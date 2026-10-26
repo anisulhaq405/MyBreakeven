@@ -1,4 +1,4 @@
-const base={reviewed:'2026-10-25',theme:{'--tool-accent':'#4e389a','--tool-soft':'#f2effa','--tool-dark':'#192c43','--tool-radius':'18px'},caption:'Original MyBreakeven editorial illustration. Examples are fictional and rates are assumptions.',relatedIntro:'Each linked page answers a different financial question.'};
+const base={reviewed:'2026-10-26',theme:{'--tool-accent':'#4e389a','--tool-soft':'#f2effa','--tool-dark':'#192c43','--tool-radius':'18px'},caption:'Original MyBreakeven editorial illustration. Examples are fictional and rates are assumptions.',relatedIntro:'Each linked page answers a different financial question.'};
 const sec='https://www.sec.gov/rules-regulations/staff-guidance/corporation-finance-interpretations/non-gaap-financial-measures';
 const ann='https://openstax.org/books/principles-finance/pages/8-2-annuities';
 export const financeDay1Tools={
