@@ -1,0 +1,50 @@
+name: Day 3 real browser acceptance
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/audit-day3-browser.mjs'
+      - '.github/workflows/day3-browser-acceptance.yml'
+      - 'src/day3-print.css'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  day3-browser-qa:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Build production site
+        run: npm run build
+      - name: Install Chromium and automated accessibility
+        run: |
+          npm install --no-save playwright@1.56.1 axe-core@4.10.3
+          npx playwright install --with-deps chromium
+      - name: Start built app
+        run: |
+          npm run preview -- --host 127.0.0.1 --port 4173 > /tmp/day3-preview.log 2>&1 &
+          for attempt in $(seq 1 35); do
+            if curl --fail --silent --output /dev/null http://127.0.0.1:4173/calculators/equivalent-ratio-calculator/; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/day3-preview.log
+          exit 1
+      - name: Audit 7 live-intent routes in real Chromium
+        run: node scripts/audit-day3-browser.mjs
+      - name: Upload Day 3 browser artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: day3-browser-qa
+          path: /tmp/mybreakeven-day3-browser/
+          retention-days: 7
+          if-no-files-found: warn
