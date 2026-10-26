@@ -215,6 +215,7 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
       .replace(/<meta property="og:image:alt" content="[^"]*"\s*\/?>/, '<meta property="og:image:alt" content="Mobile detailing van, car and illustrated route markers" />');
   }
   const clusterImages = {
+    "guides/financial-ratios": [financialRatiosHub.image, financialRatiosHub.alt],
     "guides/cleaning-business": ["/images/tools/cleaning-break-even-feature-20261016.webp", "Cleaning business planning scene"],
     "guides/salon-business": ["/images/tools/salon-rebooking-calculator-cover.webp", "Salon appointment and repeat-visit planning illustration"],
     "guides/restaurant-business": ["/images/tools/restaurant-break-even-feature-20261016.webp", "Restaurant business planning scene"],

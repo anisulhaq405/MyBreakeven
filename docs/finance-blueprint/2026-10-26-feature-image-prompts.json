@@ -1,0 +1,70 @@
+{
+  "mode": "built-in imagegen",
+  "sharedPrompt": "Create one premium editorial feature image for MyBreakeven.com, a finance and educational calculator website. Wide landscape 16:9 composition, high-end tactile 3D editorial illustration with subtle realistic material textures and soft studio lighting, ivory and pale lavender backdrop, deep navy, violet and restrained teal accents. Strong distinct central subject and intentional negative space, excellent clarity as a small card thumbnail. This is conceptual cover art, NOT a quantitative diagram or app screenshot. No text, letters, numbers, logos, watermarks, charts with meaningful values, currency symbols or promises. Avoid generic floating neon icons, clutter and cartoon people. Subject: ",
+  "subjects": [
+    {
+      "slug": "ebitda-calculator",
+      "subject": "A sophisticated desk-top arrangement of sculptural accounting ledger slabs, a polished translucent bridge separating a stack into clearly distinct layers, small matte stone tokens, representing an earnings reconciliation; three-quarter view, editorial still life."
+    },
+    {
+      "slug": "future-value-calculator",
+      "subject": "A sculptural transparent glass time capsule with progressively larger smooth teal and violet spheres along a graceful forward curve, a small elegant hourglass, representing capital growing over time; warm side lighting."
+    },
+    {
+      "slug": "fire-calculator",
+      "subject": "A clean architectural stairway of deep violet blocks ascending toward an open sunlit doorway, an elegantly balanced stack of circular tokens at its base, representing a financial independence goal; wide architectural editorial scene."
+    },
+    {
+      "slug": "coast-fire-calculator",
+      "subject": "A calm sculptural sailboat made of folded ivory paper travelling on a smooth teal ribbon toward a distant warm sun, small existing asset stones safely resting on deck, suggesting letting an existing portfolio grow with time; expansive tranquil composition."
+    },
+    {
+      "slug": "financial-ratios-calculator",
+      "subject": "Four elegant translucent glass analysis lenses arranged above layered ledger paper on a desk, subtle violet and teal circular objects refracted through them, conceptual analysis of liquidity profitability leverage efficiency; close elevated view."
+    },
+    {
+      "slug": "equivalent-ratio-calculator",
+      "subject": "Two sophisticated groups of tactile violet and teal geometric blocks of the same shape arranged in visibly proportional miniature and larger arrangements, with a small balance beam between them; calm exact-math educational editorial still life, no numeric labels."
+    },
+    {
+      "slug": "refinance-calculator",
+      "subject": "Two distinct clean architectural paths connecting a miniature ivory house and a single shared destination arch, one pathway deep violet and the other teal, carefully crafted paper and stone model under soft studio light; mortgage comparison concept."
+    },
+    {
+      "slug": "financial-ratios",
+      "subject": "An editorial still life of an open deep-navy financial reference book with blank ivory pages, four sculptural translucent objects in violet teal amber and blue hovering neatly above four page tabs; a substantial reference hub, no printed content."
+    },
+    {
+      "slug": "fire-vs-coast-fire-vs-barista-fire",
+      "subject": "Three separate small sculptural scenes side by side on one elegant ivory plinth: sunlit open doorway, a quiet paper sailboat, and a beautiful ceramic coffee cup beside a small work notebook; representing three different financial independence lifestyles, premium tactile 3D illustration."
+    },
+    {
+      "slug": "fire-withdrawal-rate-retirement-risks",
+      "subject": "A premium sculptural glass reserve vessel beside a curving path that dips and rises, a restrained balancing stone arrangement and warm horizon light; financial retirement resilience and uneven returns concept, no actual data graph or labels."
+    },
+    {
+      "slug": "how-to-analyze-financial-statements",
+      "subject": "Three large elegant ivory document sheets with abstract embossed bands and shapes, connected by a teal ribbon over a deep-navy desk, a refined magnifying lens inspecting the middle document; relationship of statements and cash, no text or digits."
+    },
+    {
+      "slug": "find-missing-value-equivalent-ratios",
+      "subject": "A close premium educational still life of two rows of tactile proportional purple and teal blocks with one clean empty outlined slot and a matching floating block about to fit; solving a missing value, no question mark or text."
+    },
+    {
+      "slug": "equivalent-ratio-tables-word-problems",
+      "subject": "A sophisticated editorial still life of two ceramic measuring bowls, an ivory kitchen scale and carefully grouped teal and violet ingredient-like geometric pieces on a warm neutral tabletop, representing proportional recipes and quantity scaling, no numbers or labels."
+    },
+    {
+      "slug": "mortgage-refinance-break-even",
+      "subject": "An ivory miniature house on one side of a sculptural balancing bridge, a transparent hourglass at the center and two tidy sets of teal and violet tokens on the other side, representing mortgage fees, time and recovery; no numbers or text."
+    },
+    {
+      "slug": "refinance-closing-costs-financed-fees",
+      "subject": "A refined closing-cost editorial still life with a blank ivory document, three distinct shallow trays holding deep-violet and teal accounting tokens, a small miniature house and a restrained brass paper clip; clear separate fee buckets without text."
+    },
+    {
+      "slug": "refinance-shorter-vs-longer-term",
+      "subject": "Two elegant architectural stairways beside the same ivory house, one shorter steeper violet staircase and one longer gentle teal staircase leading to an identical landing; metaphor for mortgage term choices and payment trade-offs, premium paper and stone model."
+    }
+  ]
+}
