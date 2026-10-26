@@ -333,3 +333,7 @@
 #next-step-checklist{margin-top:40px}
 #next-step-checklist li{color:#53647a;line-height:1.8;margin-bottom:8px}
 .blog-featured-card img[src^="/images/title-covers/"]{object-fit:contain;background:#081c2e}
+/* Keep embedded cover titles visible inside the existing blog card layout. */
+.blog-card-image:has(img[src^="/images/title-covers/"]){flex-shrink:0;aspect-ratio:16/9}
+.blog-card-image img[src^="/images/title-covers/"]{height:100%;object-fit:contain;background:#081c2e}
+.blog-grid article:hover img[src^="/images/title-covers/"]{transform:none}
