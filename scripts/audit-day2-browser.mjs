@@ -41,6 +41,10 @@ try {
         if(width!==1280)await page.screenshot({path:path.join(directory,slug+'-'+width+'.png'),fullPage:false});
         if(!check.pass)failures.push(slug+' responsive '+JSON.stringify(check));
         if(width===1280){
+          await page.addScriptTag({path:'node_modules/axe-core/axe.min.js'});
+          const axeResults=await page.evaluate(async()=>{const r=await window.axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}});return r.violations.map(v=>({id:v.id,impact:v.impact,description:v.help,nodes:v.nodes.map(n=>({target:n.target,summary:n.failureSummary})).slice(0,5),count:v.nodes.length}));});
+          report.axe=axeResults;
+          console.log(slug+' axe',JSON.stringify(axeResults.map(x=>({id:x.id,impact:x.impact,count:x.count}))));
           await page.emulateMedia({media:'print'});
           const consentVisible=await page.locator('.analytics-consent').evaluateAll(nodes=>nodes.some(n=>getComputedStyle(n).display!=='none'));
           await page.emulateMedia({media:'screen'});
