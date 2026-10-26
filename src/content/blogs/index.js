@@ -1,6 +1,7 @@
 import {titledFeatureImage} from '../../featureTitleCovers.js';
 import {financeCompletionPosts} from './financeCompletionGuides.js';
 import {applyDay3RatioContent} from './day3RatioContent.js';
+import {applyDay3RefinanceContent} from './day3RefinanceContent.js';
 import {financeDay1Posts} from './financeDay1Guides.js';
 import {connectFinanceDay1} from './financeDay1Connections.js';
 import {applyGscOctober25QueryReview} from './gscOctober25QueryReview.js';
@@ -171,6 +172,7 @@ const normalizePost = post => {
   reviewed = connectFinanceDay1(reviewed);
   reviewed = applyWorkingCapitalGscGrowth(reviewed);
   reviewed = applyDay3RatioContent(reviewed);
+  reviewed = applyDay3RefinanceContent(reviewed);
   const image=titledFeatureImage(reviewed.slug,featureDeliveryAssets[reviewed.image] || reviewed.image);
   return image===reviewed.image ? reviewed : {...reviewed,image};
 };
