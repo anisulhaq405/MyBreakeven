@@ -8,3 +8,4 @@
 .financial-ratios-hub .article-summary{padding:1rem;background:#eaf2fa;border-radius:12px}
 @media print{.financial-ratios-hub .article-featured,.financial-ratios-hub .article-section-nav{display:none}.financial-ratios-hub .article-table-scroll{overflow:visible}.financial-ratios-hub table{font-size:9pt}.financial-ratios-hub tr{break-inside:avoid}}
 @media print{body:has(.financial-ratios-hub) .analytics-consent{display:none!important}}
+@media print{body:has(.financial-ratios-hub) footer{display:none!important}}
