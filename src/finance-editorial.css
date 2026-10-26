@@ -1,0 +1,9 @@
+/* Scoped exact-quantity graphics; the article's established table wrapper handles overflow. */
+.ratio-parts{padding:1.25rem;border:1px solid #d4dce5;border-radius:14px;background:#f4f7fa;margin:1.5rem 0}
+.ratio-parts>div{display:flex;flex-wrap:wrap;align-items:center;gap:1rem;margin-bottom:.75rem}
+.ratio-parts strong{min-width:10rem}
+.ratio-blocks{display:flex;gap:5px}
+.ratio-blocks i{display:block;width:30px;height:30px;background:#315c83;border-radius:4px}
+.ratio-parts figcaption{font-size:.9rem;color:#40536a}
+.financial-ratios-hub .article-summary{padding:1rem;background:#eaf2fa;border-radius:12px}
+@media print{.financial-ratios-hub .article-featured,.financial-ratios-hub .article-section-nav{display:none}.financial-ratios-hub .article-table-scroll{overflow:visible}.financial-ratios-hub table{font-size:9pt}.financial-ratios-hub tr{break-inside:avoid}}
