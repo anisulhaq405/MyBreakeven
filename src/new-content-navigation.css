@@ -3,3 +3,4 @@
 .article-with-section-nav [id]{scroll-margin-top:110px}
 .article-section-nav a:focus-visible{outline:3px solid #6353ed;outline-offset:4px}
 @media(max-width:600px){.article-section-nav{gap:4px 14px;padding:12px 16px}}
+@media print{body:has(#barista-income) .analytics-consent,body:has(#sequence-risk) .analytics-consent,body:has(#cash-bridge) .analytics-consent{display:none!important}}
