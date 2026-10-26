@@ -7,3 +7,7 @@ src/content/generated/
 # Generated detailed delivery trace; the summary table and baseline are versioned.
 docs/seo/*-page-delivery.json
 src/content/generated-tools/
+
+# Reproducible Day 1 editorial visuals built before test/dev/build.
+public/images/finance-day1/*.webp
+public/images/blog/finance-day1-*.webp

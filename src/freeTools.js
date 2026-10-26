@@ -1,3 +1,4 @@
+import {financeDay1Tools} from './financeDay1Tools.js';
 import {applyGscOctober25ToolReview} from './gscOctober25ToolReview.js';
 import {startupCostTools} from './startupCostTool.js';
 import {netCashFlowTools} from './netCashFlowTool.js';
@@ -33,4 +34,6 @@ const pricingTools = {
   },
 };
 
-export const freeTools = Object.fromEntries(Object.entries({...startupCostTools,...netCashFlowTools,...operatingMarginTools,...roiTools,...pricingTools,...businessTools,...operationalTools,...decisionTools,...foodTools,...planningTools}).map(([slug,tool])=>[slug,applyGscOctober25ToolReview(slug,applyDay5ToolReview(slug,applyKeywordToolReview(slug,applyDay3ToolDraft(slug,applyDay2ToolDraft(slug,connectPlanningTool(slug,completeCalculatorPage(slug,{...tool,theme:tool.theme || toolThemes[slug],category:tool.category || "Pricing & contribution"})))))))]));
+const baseFreeTools = Object.fromEntries(Object.entries({...financeDay1Tools,...startupCostTools,...netCashFlowTools,...operatingMarginTools,...roiTools,...pricingTools,...businessTools,...operationalTools,...decisionTools,...foodTools,...planningTools}).map(([slug,tool])=>[slug,applyGscOctober25ToolReview(slug,applyDay5ToolReview(slug,applyKeywordToolReview(slug,applyDay3ToolDraft(slug,applyDay2ToolDraft(slug,connectPlanningTool(slug,completeCalculatorPage(slug,{...tool,theme:tool.theme || toolThemes[slug],category:tool.category || "Pricing & contribution"})))))))]));
+
+export const freeTools = Object.fromEntries(Object.entries(baseFreeTools).map(([slug,tool])=>[slug,slug==='operating-profit-margin-calculator'?{...tool,related:[...(tool.related||[]),['Reconcile net income to EBITDA','/calculators/ebitda-calculator/']]}:slug==='business-roi-calculator'?{...tool,related:[...(tool.related||[]),['Project a separate future savings balance','/calculators/future-value-calculator/']]}:tool]));

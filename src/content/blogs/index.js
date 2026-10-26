@@ -1,3 +1,5 @@
+import {financeDay1Posts} from './financeDay1Guides.js';
+import {connectFinanceDay1} from './financeDay1Connections.js';
 import {applyGscOctober25QueryReview} from './gscOctober25QueryReview.js';
 import {applyWorkingCapitalQueryReview} from './workingCapitalQueryReview.js';
 import {day5CashFlowPosts} from './day5CashFlowGuides.js';
@@ -160,10 +162,12 @@ const normalizePost = post => {
   reviewed = applyDay6PlanningReview(applyDay5CashReview(applyDay4Connections(reviewed)));
   reviewed = completeExistingPlanPages(connectBusinessPlanTemplate(applyRankingContentReview(applyDay7MeasurementReview(reviewed))));
   reviewed = applyGscOctober25QueryReview(applyWorkingCapitalQueryReview(connectDay5CashGuides(reviewed)));
+  reviewed = connectFinanceDay1(reviewed);
   return featureDeliveryAssets[reviewed.image] ? { ...reviewed, image: featureDeliveryAssets[reviewed.image] } : reviewed;
 };
 
 export const blogCollections = Object.freeze({
+  financeDay1: financeDay1Posts.map(normalizePost),
   day5Cash: day5CashFlowPosts.map(normalizePost),
   day4Draft: day4OperatingExpensePosts.map(normalizePost),
   newPlanDay1: [rollingForecastPost].map(normalizePost),
