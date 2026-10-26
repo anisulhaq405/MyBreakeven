@@ -21,13 +21,13 @@ try {
     const slug=route.split('/').filter(Boolean).at(-1);
     const report={route,viewports:[],csv:null,pdf:null};
     for(const width of [390,768,1280]){
-      const page=await browser.newPage({viewport:{width,height:900},acceptDownloads:true});
+      const page=await browser.newPage({viewport:{width,height:900},acceptDownloads:true}); page.setDefaultTimeout(12000);
       try {
-        const response=await page.goto(origin+route,{waitUntil:'domcontentloaded',timeout:45000});
+        const response=await page.goto(origin+route,{waitUntil:'domcontentloaded',timeout:8000});
         await page.locator('h1').first().waitFor({timeout:15000});
         await page.waitForTimeout(700);
         const metrics=await page.evaluate(async()=>{
-          await Promise.all([...document.images].filter(i=>i.src.includes('20261026')).map(i=>i.decode().catch(()=>null)));
+          await Promise.race([Promise.all([...document.images].filter(i=>i.src.includes('20261026')).map(i=>i.decode().catch(()=>null))),new Promise(resolve=>setTimeout(resolve,2500))]);
           const image=[...document.images].find(i=>i.src.includes('20261026'));
           return {viewport:window.innerWidth,scroll:document.documentElement.scrollWidth,
             h1:document.querySelectorAll('h1').length,
@@ -36,7 +36,7 @@ try {
         const check={requested:width,status:response?.status(),...metrics};
         check.pass=check.status===200&&check.viewport===width&&check.scroll<=width+3&&check.h1===1&&check.image?.loaded===true;
         report.viewports.push(check);
-        if(width!==1280)await page.screenshot({path:path.join(directory,slug+'-'+width+'.png'),fullPage:true});
+        if(width!==1280)await page.screenshot({path:path.join(directory,slug+'-'+width+'.png'),fullPage:false});
         if(!check.pass)failures.push(slug+' responsive '+JSON.stringify(check));
         if(width===1280&&route.startsWith('/calculators/')){
           try{
