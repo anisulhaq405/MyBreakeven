@@ -1,68 +1,84 @@
-// Generated cover assets selected and visually reviewed on 26 October 2026.
+// Topic-specific covers reviewed on 26 October 2026.
 export const financeFeatureAssets = {
+  "fire-calculator": {
+    "image": "/images/finance-topics/fire-calculator-topic-20261026.webp",
+    "alt": "A couple reviews a retirement budget and savings worksheet beneath the title FIRE Calculator"
+  },
   "ebitda-calculator": {
-    "image": "/images/finance-features/ebitda-calculator-20261026.webp",
-    "alt": "Layered accounting blocks joined by a transparent bridge, illustrating an earnings reconciliation"
+    "image": "/images/finance-topics/ebitda-calculator-topic-20261026.webp",
+    "alt": "An analyst uses a calculator and highlights an income statement beneath the title EBITDA Calculator"
   },
   "future-value-calculator": {
-    "image": "/images/finance-features/future-value-calculator-20261026.webp",
-    "alt": "Progressively larger colored spheres inside a glass time capsule beside an hourglass"
-  },
-  "fire-calculator": {
-    "image": "/images/finance-features/fire-calculator-20261026.webp",
-    "alt": "Violet steps lead toward a sunlit open doorway beside a small stack of asset tokens"
+    "image": "/images/finance-topics/future-value-calculator-topic-20261026.webp",
+    "alt": "A savings projection, contribution notebook and calendar beneath the title Future Value Calculator"
   },
   "coast-fire-calculator": {
-    "image": "/images/finance-features/coast-fire-calculator-20261026.webp",
-    "alt": "A quiet ivory sailboat follows a teal ribbon toward the horizon, representing time and invested assets"
-  },
-  "financial-ratios-calculator": {
-    "image": "/images/finance-features/financial-ratios-calculator-20261026.webp",
-    "alt": "Four glass analysis lenses above a financial ledger represent different business ratio questions"
-  },
-  "equivalent-ratio-calculator": {
-    "image": "/images/finance-features/equivalent-ratio-calculator-20261026.webp",
-    "alt": "Two groups of violet and teal blocks rest on a balance, illustrating proportional relationships"
+    "image": "/images/finance-topics/coast-fire-calculator-topic-20261026.webp",
+    "alt": "Investment statements, retirement calendar and calculator beneath the title Coast FIRE Calculator"
   },
   "financial-ratios": {
-    "image": "/images/finance-features/financial-ratios-20261026.webp",
-    "alt": "An open financial reference book beneath four distinct sculptural analysis symbols"
+    "image": "/images/finance-topics/financial-ratios-topic-20261026.webp",
+    "alt": "Organized financial analysis statements and an analyst\u2019s pen beneath Financial Ratios Explained"
   },
   "refinance-calculator": {
-    "image": "/images/finance-features/refinance-calculator-20261026.webp",
-    "alt": "Two distinct paths connect an ivory house with one destination, representing mortgage options"
+    "image": "/images/finance-topics/refinance-calculator-topic-20261026.webp",
+    "alt": "A homeowner compares two mortgage loan estimates beside a calculator and house keys"
   },
-  "fire-vs-coast-fire-vs-barista-fire": {
-    "image": "/images/blog/finance-feature-fire-vs-coast-fire-vs-barista-fire-20261026.webp",
-    "alt": "An open doorway, sailboat and coffee cup form three distinct financial independence scenes"
+  "financial-ratios-calculator": {
+    "image": "/images/finance-topics/financial-ratios-calculator-topic-20261026.webp",
+    "alt": "A balance sheet and income statement beside a calculator and financial analysis worksheet"
+  },
+  "equivalent-ratio-calculator": {
+    "image": "/images/finance-topics/equivalent-ratio-calculator-topic-20261026.webp",
+    "alt": "A student compares proportional colored counters and a ratio table on graph paper"
   },
   "how-to-analyze-financial-statements": {
-    "image": "/images/blog/finance-feature-how-to-analyze-financial-statements-20261026.webp",
-    "alt": "Three financial document sheets connected by a ribbon with a magnifying lens over the center sheet"
+    "image": "/images/blog/finance-topic-how-to-analyze-financial-statements-topic-20261026.webp",
+    "alt": "An analyst traces between income, balance sheet and cash-flow documents on a desk"
   },
   "fire-withdrawal-rate-retirement-risks": {
-    "image": "/images/blog/finance-feature-fire-withdrawal-rate-retirement-risks-20261026.webp",
-    "alt": "A glass reserve vessel beside a winding path and balanced stones represents retirement resilience"
+    "image": "/images/blog/finance-topic-fire-withdrawal-rate-retirement-risks-topic-20261026.webp",
+    "alt": "Retirement withdrawal budget, investment chart and healthcare folder reviewed with a calculator"
+  },
+  "fire-vs-coast-fire-vs-barista-fire": {
+    "image": "/images/blog/finance-topic-fire-vs-coast-fire-vs-barista-fire-topic-20261026.webp",
+    "alt": "Three retirement planning folders and a spending worksheet compare FIRE, Coast and Barista FIRE"
   },
   "find-missing-value-equivalent-ratios": {
-    "image": "/images/blog/finance-feature-find-missing-value-equivalent-ratios-20261026.webp",
-    "alt": "A proportional block arrangement has one empty slot and a matching block ready to fit"
-  },
-  "equivalent-ratio-tables-word-problems": {
-    "image": "/images/blog/finance-feature-equivalent-ratio-tables-word-problems-20261026.webp",
-    "alt": "Measuring bowls and a kitchen scale hold grouped geometric ingredients for a recipe proportion example"
-  },
-  "mortgage-refinance-break-even": {
-    "image": "/images/blog/finance-feature-mortgage-refinance-break-even-20261026.webp",
-    "alt": "A miniature house, hourglass and accounting tokens sit beside a bridge representing fee recovery over time"
-  },
-  "refinance-shorter-vs-longer-term": {
-    "image": "/images/blog/finance-feature-refinance-shorter-vs-longer-term-20261026.webp",
-    "alt": "A shorter steep violet staircase and longer teal staircase lead toward the same house"
+    "image": "/images/blog/finance-topic-find-missing-value-equivalent-ratios-topic-20261026.webp",
+    "alt": "A tutor points to a missing ratio-table entry beside proportional groups of colored counters"
   },
   "refinance-closing-costs-financed-fees": {
-    "image": "/images/blog/finance-feature-refinance-closing-costs-financed-fees-20261026.webp",
-    "alt": "A blank closing document and separate trays of accounting tokens illustrate fee classifications"
+    "image": "/images/blog/finance-topic-refinance-closing-costs-financed-fees-topic-20261026.webp",
+    "alt": "A loan estimate and itemized closing-fee sheets sit beside a calculator and house keys"
+  },
+  "mortgage-refinance-break-even": {
+    "image": "/images/blog/finance-topic-mortgage-refinance-break-even-topic-20261026.webp",
+    "alt": "Mortgage estimates, calculator and calendar connect refinance fees with a holding period"
+  },
+  "refinance-shorter-vs-longer-term": {
+    "image": "/images/blog/finance-topic-refinance-shorter-vs-longer-term-topic-20261026.webp",
+    "alt": "Two mortgage repayment schedules and a calendar compare shorter and longer loan terms"
+  },
+  "equivalent-ratio-tables-word-problems": {
+    "image": "/images/blog/finance-topic-equivalent-ratio-tables-word-problems-topic-20261026.webp",
+    "alt": "Measuring cups, flour and water accompany a recipe-scaling ratio table"
+  },
+  "ebitda-vs-net-income-vs-cash-flow": {
+    "image": "/images/blog/finance-topic-ebitda-vs-net-income-vs-cash-flow-topic-20261026.webp",
+    "alt": "Three financial statements are compared beneath EBITDA vs Net Income vs Cash Flow"
+  },
+  "adjusted-ebitda-add-backs": {
+    "image": "/images/blog/finance-topic-adjusted-ebitda-add-backs-topic-20261026.webp",
+    "alt": "An accountant checks an earnings adjustment worksheet against receipts and supporting records"
+  },
+  "present-value-vs-future-value": {
+    "image": "/images/blog/finance-topic-present-value-vs-future-value-topic-20261026.webp",
+    "alt": "Two dated savings worksheets and a calendar compare present value with future value"
+  },
+  "ordinary-annuity-vs-annuity-due": {
+    "image": "/images/blog/finance-topic-ordinary-annuity-vs-annuity-due-topic-20261026.webp",
+    "alt": "Two calendar payment schedules contrast beginning and end-of-period contribution timing"
   }
 };
-export const financeFeatureCaption = "Conceptual editorial cover. Exact calculations and fictional worked figures appear in the page examples.";
+export const financeFeatureCaption = "Illustrative editorial scene. Exact quantities and calculations appear in the worked examples.";
