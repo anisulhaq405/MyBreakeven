@@ -166,8 +166,8 @@ const normalizePost = post => {
   reviewed = completeExistingPlanPages(connectBusinessPlanTemplate(applyRankingContentReview(applyDay7MeasurementReview(reviewed))));
   reviewed = applyGscOctober25QueryReview(applyWorkingCapitalQueryReview(connectDay5CashGuides(reviewed)));
   reviewed = applyRestaurantFoodCostGscRecovery(reviewed);
-  reviewed = applyWorkingCapitalGscGrowth(reviewed);
   reviewed = connectFinanceDay1(reviewed);
+  reviewed = applyWorkingCapitalGscGrowth(reviewed);
   return featureDeliveryAssets[reviewed.image] ? { ...reviewed, image: featureDeliveryAssets[reviewed.image] } : reviewed;
 };
 
