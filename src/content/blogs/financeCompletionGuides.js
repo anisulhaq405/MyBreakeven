@@ -1,3 +1,4 @@
+import {financeFeatureAssets,financeFeatureCaption} from '../../financeFeatureAssets.js';
 // Original supporting guides from the approved blueprint register; no private keyword data.
 export const financeGuideDate = '2026-10-26';
 const link=(href,label)=>`<a href="${href}">${label}</a>`;
@@ -157,3 +158,7 @@ export const financialRatiosHub={
 // Additional questions address distinct implementation boundaries.
 const finalQuestions={"G05": ["What happens if the part-time income stops?", "The portfolio-funded spending gap increases unless another income source or a spending change replaces it. Model that end date instead of assuming the smaller target lasts forever."], "G06": ["Is a withdrawal percentage the same as a return assumption?", "No. A withdrawal rule describes cash taken from assets; a return assumption describes their growth or loss. They have different roles in the plan."], "G07": ["Do two balance sheets explain every cash movement?", "Not by themselves. You also need transactions and supporting records to distinguish cash from noncash changes, investing, financing and operating adjustments."], "G08": ["Can a third component contradict the solved value?", "Yes. Every known proportional constraint must agree. A solution from one pair cannot repair an inconsistent second pair."], "G09": ["Can mass and volume units be mixed in a ratio table?", "Keep units consistent. Convert kilograms to grams when comparing masses; converting mass to volume needs an appropriate density."], "G10": ["Why not use APR in the payment formula?", "The scheduled interest accrues using the note rate under this model. APR is a broader financing-cost disclosure and is not the monthly accrual rate."], "G11": ["Can a lender credit exceed upfront fees in this model?", "No. The supported rate-and-term model offsets only the entered upfront fee bucket and does not create an unrestricted cash rebate."], "G12": ["Does the calculator include an extra-payment strategy?", "No. These schedules use contractual payments only. Extra principal, payment recasting and prepayment penalties need a separate supported model."]};
 for (const post of financeCompletionPosts) {const [q,a]=finalQuestions[post.id];post.faq.push({q,a});}
+
+// Feature-only update; preserve article body, original publication dates and calculations.
+for (const post of financeCompletionPosts) Object.assign(post,financeFeatureAssets[post.slug],{imageCaption:financeFeatureCaption});
+Object.assign(financialRatiosHub,financeFeatureAssets["financial-ratios"]);

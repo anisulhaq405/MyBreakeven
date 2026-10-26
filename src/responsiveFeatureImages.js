@@ -1,3 +1,4 @@
+import {financeFeatureAssets} from './financeFeatureAssets.js';
 // Responsive editorial covers for the Day 3 release.
 import { featureDeliveryAssets } from './featureDeliveryAssets.js';
 const optimized = new Set([
@@ -29,9 +30,10 @@ optimized.add('business-roi-calculator-editorial.webp');
 optimized.add('restaurant-cash-flow-forecast-editorial.webp');
 for(const slug of ['cash-flow-statement','operating-cash-flow','cash-flow-problems']) optimized.add(`${slug}-editorial-20261025.webp`);
 for (const image of Object.values(featureDeliveryAssets)) optimized.add(image.split('/').pop());
+for (const asset of Object.values(financeFeatureAssets)) optimized.add(asset.image.split('/').pop());
 export function responsiveFeatureProps(image, card=false){
   if(!optimized.has(image?.split('?')[0].split('/').pop()))return {};
-  const cardCandidate = card && /\/tools\/\w+-break-even-feature-20261016\.webp$/.test(image)
+  const cardCandidate = card && (/\/tools\/\w+-break-even-feature-20261016\.webp$/.test(image) || Object.values(financeFeatureAssets).some(asset=>asset.image===image))
     ? `${image.replace('.webp','-400.webp')} 400w, ` : '';
   return {
     srcSet:`${cardCandidate}${image.replace('.webp','-800.webp')} 800w, ${image} 1200w`,
