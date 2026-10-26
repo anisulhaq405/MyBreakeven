@@ -1,3 +1,4 @@
+import {financeCompletionPosts} from './financeCompletionGuides.js';
 import {financeDay1Posts} from './financeDay1Guides.js';
 import {connectFinanceDay1} from './financeDay1Connections.js';
 import {applyGscOctober25QueryReview} from './gscOctober25QueryReview.js';
@@ -167,6 +168,7 @@ const normalizePost = post => {
 };
 
 export const blogCollections = Object.freeze({
+  financeCompletion: financeCompletionPosts.map(normalizePost),
   financeDay1: financeDay1Posts.map(normalizePost),
   day5Cash: day5CashFlowPosts.map(normalizePost),
   day4Draft: day4OperatingExpensePosts.map(normalizePost),

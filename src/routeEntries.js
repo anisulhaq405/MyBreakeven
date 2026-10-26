@@ -1,5 +1,6 @@
 // Route entry points shared by browser loading and build-time asset preloading.
 const clusters = {
+  "/guides/financial-ratios": "src/routes/FinancialRatiosHubRoute.jsx",
   "/guides/agency-business": "src/routes/AgencyRoute.jsx",
   "/guides/ecommerce-business": "src/routes/EcommerceRoute.jsx",
   "/guides/photography-business": "src/routes/PhotographyRoute.jsx",

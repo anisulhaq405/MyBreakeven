@@ -1,3 +1,4 @@
+import {financialRatiosHub,financeGuideDate} from '../src/content/blogs/financeCompletionGuides.js';
 import {detailedPlanResources,detailedPlanDate,generalPlanFaq,fiveYearPlanFaq} from '../src/detailedPlanData.js';
 import {businessPlanKey,businessPlanDate} from '../src/businessPlanTemplates.js';
 import {day6Release} from '../src/day6Release.js';
@@ -87,6 +88,13 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
     ...homeSchema["@graph"].filter(entity => ["Organization", "WebSite"].includes(entity["@type"])),
     { "@type": "WebPage", "@id": `${canonical}#webpage`, url: canonical, name: title, description, inLanguage: "en-US", isPartOf: { "@id": "https://mybreakeven.com/#website" } },
   ] };
+  if (route === 'guides/financial-ratios') {
+    const page=pageSchema['@graph'].find(e=>e['@type']==='WebPage');
+    Object.assign(page,{datePublished:financeGuideDate,dateModified:financeGuideDate,mainEntity:{'@id':canonical+'#article'},primaryImageOfPage:{'@type':'ImageObject',url:'https://mybreakeven.com'+financialRatiosHub.image,width:1200,height:675}});
+    pageSchema['@graph'].push({'@type':'Article','@id':canonical+'#article',headline:heading,description,datePublished:financeGuideDate,dateModified:financeGuideDate,inLanguage:'en-US',author:{'@id':'https://mybreakeven.com/#organization'},publisher:{'@id':'https://mybreakeven.com/#organization'},mainEntityOfPage:{'@id':canonical+'#webpage'}});
+    pageSchema['@graph'].push({'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:'https://mybreakeven.com/'},{'@type':'ListItem',position:2,name:'Guides',item:'https://mybreakeven.com/blogs/'},{'@type':'ListItem',position:3,name:heading,item:canonical}]});
+    pageSchema['@graph'].push({'@type':'FAQPage',mainEntity:financialRatiosHub.faq.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))});
+  }
   if (authorityPages[route]) {
     const page = pageSchema["@graph"].find(entity => entity["@type"] === "WebPage");
     page.datePublished = route === "resources/budget-vs-actual-template" ? day1PlanningRelease.date : route === "resources/cleaning-business-budget-template" ? "2026-10-11" : "2026-10-10";
