@@ -1,0 +1,8 @@
+/* Day 3 guide print-only refinement: leave Day 1, frozen Day 2 and unrelated pages unchanged. */
+@media print {
+ body:has(#four-step-ratio-answer-check) .analytics-consent,
+ body:has(#ratio-word-problem-practice) .analytics-consent,
+ body:has(#refinance-two-method-decision) .analytics-consent,
+ body:has(#loan-estimate-field-map) .analytics-consent,
+ body:has(#term-decision-shortlist) .analytics-consent { display:none!important; }
+}

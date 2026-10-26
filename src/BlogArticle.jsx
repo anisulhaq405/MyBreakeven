@@ -1,4 +1,5 @@
 import {responsiveFeatureProps} from './responsiveFeatureImages.js';
+import './day3-print.css';
 import ScenarioAnalysis, {ScenarioAnalysisLink} from './ScenarioAnalysis.jsx';
 import { RestaurantExampleLink } from './ClusterLinks.jsx';
 import GuideCalculatorLink from './GuideCalculatorLink.jsx';
