@@ -11,3 +11,8 @@ src/content/generated-tools/
 # Reproducible Day 1 editorial visuals built before test/dev/build.
 public/images/finance-day1/*.webp
 public/images/blog/finance-day1-*.webp
+public/images/title-covers/*-400.webp
+public/images/title-covers/*-800.webp
+
+# Reproducible title overlays are generated from preserved source artwork.
+public/images/title-covers/

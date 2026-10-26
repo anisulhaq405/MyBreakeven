@@ -1,3 +1,4 @@
+import {titledFeatureImage} from '../src/featureTitleCovers.js';
 import {financialRatiosHub,financeGuideDate} from '../src/content/blogs/financeCompletionGuides.js';
 import {detailedPlanResources,detailedPlanDate,generalPlanFaq,fiveYearPlanFaq} from '../src/detailedPlanData.js';
 import {businessPlanKey,businessPlanDate} from '../src/businessPlanTemplates.js';
@@ -321,7 +322,7 @@ for (const [slug, [title, description]] of Object.entries(calculators)) {
   const canonical = `https://mybreakeven.com/${route}/`;
   const tool = freeTools[slug];
   const industryImageKeys = {"cleaning-business-break-even-calculator":"cleaning", "landscaping-break-even-calculator":"landscaping", "photography-business-break-even-calculator":"photography", "agency-break-even-calculator":"agency", "mobile-detailing-break-even-calculator":"detailing", "ecommerce-break-even-calculator":"ecommerce", "restaurant-break-even-calculator":"restaurant", "salon-break-even-calculator":"salon"};
-  const pageImage = tool?.image || `/images/tools/${industryImageKeys[slug]}-break-even-feature-20261016.webp`;
+  const pageImage = titledFeatureImage(slug,tool?.image || `/images/tools/${industryImageKeys[slug]}-break-even-feature-20261016.webp`,'calculator');
   const pageImageAlt = tool?.alt || `${title.replace(" | MyBreakeven", "")} planning model: direct costs, contribution, monthly target and capacity.`;
   const schema = { "@context": "https://schema.org", "@graph": [
     { "@type": "WebPage", "@id": `${canonical}#webpage`, url: canonical, name: title, description, ...(tool ? {primaryImageOfPage: {"@type": "ImageObject", url: `https://mybreakeven.com${tool.image}`, width: 1200, height: 675}, dateModified: tool.reviewed || "2026-10-06", publisher: {"@id": "https://mybreakeven.com/#organization"}} : {dateModified:slug === "landscaping-break-even-calculator" ? "2026-10-24" : "2026-10-13",publisher:{"@id":"https://mybreakeven.com/#organization"},primaryImageOfPage:{"@type":"ImageObject",url:`https://mybreakeven.com${pageImage}`,width:1200,height:675}}), inLanguage: "en-US", isPartOf: { "@id": "https://mybreakeven.com/#website" } },

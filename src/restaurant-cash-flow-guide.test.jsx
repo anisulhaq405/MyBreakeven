@@ -18,7 +18,7 @@ describe('restaurant cash forecast guide',()=>{
  it('is discoverable in the existing restaurant cluster and renders its sources and assumptions',()=>{
   expect(restaurantClusters.some(g=>g.slugs.includes(p.slug))).toBe(true);
   const h=renderToStaticMarkup(<BlogArticle slug={p.slug} initialArticle={p}/>);
-  expect(h).toContain('restaurant-cash-flow-forecast-editorial.webp');expect(h).toContain('hypothetical');
+  expect(h).toContain('blog-restaurant-cash-flow-forecast-20261026.webp');expect(h).toContain('hypothetical');
   for(const id of ['cash-flow-formula','sales-to-cash','worked-forecast','stress-tests','weekly-review'])expect(h).toContain('id="'+id+'"');
   expect(h).toContain('openstax.org');expect(h).toContain('sba.gov');expect(h).toContain('squareup.com');
   expect(p.published).toBe('2026-10-18');
@@ -31,7 +31,7 @@ describe('restaurant forecast usability review',()=>{
   expect(h.indexOf('id="restaurant-cash-flow-quick-answer"')).toBeLessThan(h.indexOf('class="article-featured"'));
   for(const id of ['daily-cash-check','restaurant-cash-flow-spreadsheet'])expect(h).toContain('id="'+id+'"');
   expect(h).toContain('G2 = B2+C2-SUM(D2:F2)');
-  expect(h).toContain('restaurant-cash-flow-forecast-editorial-800.webp 800w');
+  expect(h).toContain('blog-restaurant-cash-flow-forecast-20261026-800.webp 800w');
  });
  it('reconciles the published daily supplement to week four and exposes its lower funding point',()=>{
   const table=p.html.split('Week 4 daily supplement, before any financing')[1].match(/<tbody>(.*?)<\/tbody>/)[1];

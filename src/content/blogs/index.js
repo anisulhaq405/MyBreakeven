@@ -1,3 +1,4 @@
+import {titledFeatureImage} from '../../featureTitleCovers.js';
 import {financeCompletionPosts} from './financeCompletionGuides.js';
 import {financeDay1Posts} from './financeDay1Guides.js';
 import {connectFinanceDay1} from './financeDay1Connections.js';
@@ -166,7 +167,8 @@ const normalizePost = post => {
   reviewed = applyGscOctober25QueryReview(applyWorkingCapitalQueryReview(connectDay5CashGuides(reviewed)));
   reviewed = applyRestaurantFoodCostGscRecovery(reviewed);
   reviewed = connectFinanceDay1(reviewed);
-  return featureDeliveryAssets[reviewed.image] ? { ...reviewed, image: featureDeliveryAssets[reviewed.image] } : reviewed;
+  const image=titledFeatureImage(reviewed.slug,featureDeliveryAssets[reviewed.image] || reviewed.image);
+  return image===reviewed.image ? reviewed : {...reviewed,image};
 };
 
 export const blogCollections = Object.freeze({

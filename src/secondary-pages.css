@@ -332,3 +332,4 @@
 .industry-quick-fields label>small{display:block;margin-top:7px;color:#53647a;font-weight:400;font-size:12px;line-height:1.5}
 #next-step-checklist{margin-top:40px}
 #next-step-checklist li{color:#53647a;line-height:1.8;margin-bottom:8px}
+.blog-featured-card img[src^="/images/title-covers/"]{object-fit:contain;background:#081c2e}

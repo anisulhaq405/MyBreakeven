@@ -1,3 +1,4 @@
+import {titledFeatureImage} from './featureTitleCovers.js';
 import {financeFeatureAssets,financeFeatureCaption} from './financeFeatureAssets.js';
 import {finalFinanceTools} from './finalFinanceTools.js';
 import {fireCoastTools} from './fireCoastTools.js';
@@ -43,3 +44,6 @@ export const freeTools = Object.fromEntries(Object.entries(baseFreeTools).map(([
 
 // Only replace the seven requested finance calculator covers.
 for (const [slug, tool] of Object.entries(freeTools)) { const asset=financeFeatureAssets[slug]; if(asset)Object.assign(tool,asset,{caption:financeFeatureCaption}); }
+
+// Embed titles only on audited untitled covers; existing artwork assets remain intact.
+for (const [slug,tool] of Object.entries(freeTools)) tool.image=titledFeatureImage(slug,tool.image,'calculator');

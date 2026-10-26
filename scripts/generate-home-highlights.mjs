@@ -68,3 +68,4 @@ for (const name of await readdir(toolDirectory)) {
   if (name.endsWith('.json') && !Object.hasOwn(freeTools,name.slice(0,-5))) await unlink(new URL(name,toolDirectory));
 }
 await Promise.all(Object.entries(freeTools).map(([slug,tool]) => writeFile(new URL(slug+'.json',toolDirectory),JSON.stringify(tool))));
+import './build-feature-title-overlays.mjs';

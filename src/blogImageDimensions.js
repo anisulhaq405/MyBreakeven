@@ -1,3 +1,4 @@
+import {titleCoverDimensions} from './featureTitleCovers.js';
 // Measured image dimensions; preserve the intrinsic ratio before loading.
 export const blogImageDimensions = {
   "/images/blog/cash-flow-statement-editorial-20261025.webp": {width:1200,height:675},
@@ -574,3 +575,5 @@ export const blogImageDimensions = {
     "height": 630
   }
 };
+
+Object.assign(blogImageDimensions,titleCoverDimensions);
