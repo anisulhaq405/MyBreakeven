@@ -1,3 +1,6 @@
+import FinancialRatiosCalculator from './FinancialRatiosCalculator.jsx';
+import EquivalentRatioCalculator from './EquivalentRatioCalculator.jsx';
+import RefinanceCalculator from './RefinanceCalculator.jsx';
 import RetirementCalculator from './RetirementCalculator.jsx';
 import FinanceDay1Calculator from './FinanceDay1Calculator.jsx';
 import StartupCostCalculator from './StartupCostCalculator.jsx';
@@ -20,4 +23,4 @@ import BusinessTool from './BusinessTool';
 const count=n=>new Intl.NumberFormat('en-US',{maximumFractionDigits:0}).format(n);
 
 
-export default function FreeTool({slug}) {const tool=freeTools[slug]; return ["fire","coast"].includes(tool.mode)?<RetirementCalculator tool={tool} slug={slug}/>: ["ebitda","futureValue"].includes(tool.mode)?<FinanceDay1Calculator tool={tool} slug={slug}/>:tool.mode==="startupCost"?<StartupCostCalculator tool={tool} slug={slug}/>:tool.mode==="netCashFlow"?<NetCashFlowCalculator tool={tool} slug={slug}/>:tool.mode==="operatingMargin"?<OperatingMarginCalculator tool={tool} slug={slug}/>:tool.mode==="roi"?<RoiCalculator tool={tool} slug={slug}/>: ["employeeCost","cashForecast"].includes(tool.mode)?<PlanningCalculator tool={tool} slug={slug}/>:tool.mode==="foodWorkflow"?<FoodCalculator tool={tool} slug={slug}/>: ["discount","increase"].includes(tool.mode)?<PricingTool slug={slug} tool={tool}/>:<BusinessTool slug={slug} tool={tool}/>;}
+export default function FreeTool({slug}) {const tool=freeTools[slug]; return tool.mode==="financialRatios"?<FinancialRatiosCalculator tool={tool} slug={slug}/>:tool.mode==="equivalentRatio"?<EquivalentRatioCalculator tool={tool} slug={slug}/>:tool.mode==="refinance"?<RefinanceCalculator tool={tool} slug={slug}/>: ["fire","coast"].includes(tool.mode)?<RetirementCalculator tool={tool} slug={slug}/>: ["ebitda","futureValue"].includes(tool.mode)?<FinanceDay1Calculator tool={tool} slug={slug}/>:tool.mode==="startupCost"?<StartupCostCalculator tool={tool} slug={slug}/>:tool.mode==="netCashFlow"?<NetCashFlowCalculator tool={tool} slug={slug}/>:tool.mode==="operatingMargin"?<OperatingMarginCalculator tool={tool} slug={slug}/>:tool.mode==="roi"?<RoiCalculator tool={tool} slug={slug}/>: ["employeeCost","cashForecast"].includes(tool.mode)?<PlanningCalculator tool={tool} slug={slug}/>:tool.mode==="foodWorkflow"?<FoodCalculator tool={tool} slug={slug}/>: ["discount","increase"].includes(tool.mode)?<PricingTool slug={slug} tool={tool}/>:<BusinessTool slug={slug} tool={tool}/>;}

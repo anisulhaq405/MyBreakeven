@@ -1,0 +1,56 @@
+import React from 'react';
+import {renderToStaticMarkup} from 'react-dom/server';
+import {describe,it,expect} from 'vitest';
+import {ratioDefaults,calculateFinancialRatios,financialRatiosCsv,safeCsv} from './financialRatiosEngine.js';
+import {equivalentDefaults,calculateEquivalent} from './equivalentRatioEngine.js';
+import {refinanceDefaults,calculateRefinance,refinanceCsv} from './refinanceEngine.js';
+import {freeTools} from './freeTools.js';
+import {routeEntryForPath} from './routeEntries.js';
+import FinancialRatiosCalculator from './FinancialRatiosCalculator.jsx';
+import EquivalentRatioCalculator from './EquivalentRatioCalculator.jsx';
+import RefinanceCalculator from './RefinanceCalculator.jsx';
+const ratios=x=>calculateFinancialRatios({...ratioDefaults(),...x}),equiv=x=>calculateEquivalent({...equivalentDefaults(),...x}),refi=x=>calculateRefinance({...refinanceDefaults(),...x});
+const value=(r,name)=>r.rows.find(x=>x.name===name).value;
+describe('Financial statement ratio engine',()=>{
+ it('reconciles the independent connected statement examples',()=>{const r=ratios();expect(r.valid).toBe(true);expect(r.warnings).toEqual([]);expect(r.rows).toHaveLength(19);for(const[name,n]of [['Current ratio',2],['Quick ratio',4/3],['Cash ratio',.5],['Working capital',30000],['Gross margin',40],['Operating margin',15],['Net margin',10],['EBITDA margin',20],['Equity multiplier',2.5],['Liabilities to equity',1.5],['Interest-bearing debt to equity',.75],['Liabilities to assets',60],['Interest coverage',6],['Inventory turnover',6],['Receivables turnover',8],['DSO',45.625],['Asset turnover',200000/190000],['Return on assets',20000/190000*100],['Return on equity',20000/75000*100]])expect(value(r,name),name).toBeCloseTo(n,9);});
+ it('never substitutes zero or closing balances for missing opening data',()=>{const r=ratios({inventoryOpen:'',assetsOpen:'',arOpen:'',equityOpen:''});for(const name of ['Inventory turnover','Return on assets','DSO','Return on equity'])expect(value(r,name)).toBeNull();expect(value(r,'Current ratio')).toBe(2);});
+ it('keeps zero numerators and signed profits meaningful',()=>{expect(value(ratios({net:'0'}),'Net margin')).toBe(0);expect(value(ratios({net:'-10000'}),'Net margin')).toBe(-5);});
+ it.each(['currentLiabilities','revenue','interest','equity','assets'])('does not show a normal ratio with zero denominator %s',k=>{const r=ratios({[k]:'0'});expect(r.rows.some(x=>/denominator/.test(x.status))).toBe(true);});
+ it('suppresses non-comparable equity returns even if the average is positive',()=>expect(value(ratios({equityOpen:'-1'}),'Return on equity')).toBeNull());
+ it('retains period returns instead of annualizing',()=>{const a=ratios(),b=ratios({days:'90'});expect(value(a,'Return on assets')).toBe(value(b,'Return on assets'));expect(value(b,'DSO')).toBe(11.25);});
+ it('distinguishes credit sales from total revenue',()=>{expect(value(ratios({creditSales:''}),'DSO')).toBeNull();expect(value(ratios({creditSales:'90000'}),'DSO')).toBe(91.25);});
+ it.each([{currentAssets:'1e3'},{net:'NaN'},{cash:'-1'},{days:'0'},{days:'90.5'},{days:'367'},{assets:'1000000000001'}])('rejects invalid formats and limits %j',x=>expect(ratios(x).valid).toBe(false));
+ it('warns about unreconciled balances, overlapping quick assets and debt scope',()=>{expect(ratios({assets:'10'}).warnings.join()).toContain('does not reconcile');expect(ratios({currentAssets:'1'}).warnings.join()).toContain('quick assets');expect(ratios({debt:'130000'}).warnings.join()).toContain('exceeds');});
+ it('flags liquid assets plus inventory exceeding total current assets',()=>expect(ratios({inventoryClose:'22000'}).warnings.join()).toContain('closing inventory exceed'));
+ it('keeps independently computed period data separate in CSV',()=>{const a=ratios(),b=ratios({net:'10000'}),csv=financialRatiosCsv(ratioDefaults(),a,'USD',b);expect(csv).toContain('Comparison result');expect(csv).toContain('Net margin');expect(csv).toContain('Not automatically annualized');});
+ it('guards spreadsheet text while preserving quote/newline escaping',()=>{expect(safeCsv([['=1+1','@SUM(A1)','-5','a"b\nc']])).toContain("'@SUM(A1)");expect(safeCsv([['a"b']])).toContain('a""b');});
+});
+describe('Exact equivalent ratios',()=>{
+ it('checks ordinary equivalence and same scale',()=>{const r=equiv();expect(r.valid&&r.equal).toBe(true);expect(r.factor).toBe('4');});
+ it.each([['0.1','0.3','1','3'],['1/2','3/4','2','3'],['-2','-3','2','3']])('compares exact decimals/fractions and signed scales %s:%s',(a,b,c,d)=>expect(equiv({a:[a,b],b:[c,d]}).equal).toBe(true));
+ it('does not accept a close but unequal decimal ratio',()=>expect(equiv({a:['0.1','0.3'],b:['1','3.0000000000000001']}).equal).toBe(false));
+ it.each([['a',0,'2'],['a',1,'3'],['b',0,'8'],['b',1,'12']])('solves missing position %s %s',(side,k,answer)=>{let v=equivalentDefaults();v.mode='solve';v[side][k]='';expect(calculateEquivalent(v).solution).toBe(answer);});
+ it('returns an exact fractional solution',()=>expect(equiv({mode:'solve',a:['1','3'],b:['x','2']}).solution).toBe('2/3'));
+ it('identifies an underdetermined zero case',()=>expect(equiv({mode:'solve',a:['0','3'],b:['0','x']}).solutionState).toContain('Infinitely many'));
+ it('rejects algebraic zero that makes a denominator invalid',()=>expect(equiv({mode:'solve',a:['1','2'],b:['0','x']}).solutionState).toContain('No valid'));
+ it.each([{a:['0','0']},{a:['1','0']},{a:['1/0','2']},{a:['NaN','2']},{a:['1e3','2']},{a:['','2']},{mode:'solve',a:['x','x']},{mode:'generate',factor:'0'}])('handles invalid input %j',x=>expect(equiv(x).valid).toBe(false));
+ it('checks every component of three-term ratios',()=>{expect(equiv({terms:'3',a:['1','2','3'],b:['2','4','7']}).equal).toBe(false);expect(equiv({terms:'3',a:['0','2','3'],b:['0','4','6']}).equal).toBe(true);});
+ it('solves consistent three-term ratio and rejects contradictory pairs',()=>{expect(equiv({mode:'solve',terms:'3',a:['1','2','3'],b:['2','4','x']}).solution).toBe('6');expect(equiv({mode:'solve',terms:'3',a:['1','2','3'],b:['2','5','x']}).solutionState).toContain('No solution');});
+ it('simplifies fraction ratios and generates nonzero scaled table',()=>{let r=equiv({mode:'generate',a:['1/2','3/4'],factor:'1/2'});expect(r.simplifiedA).toBe('2 : 3');expect(r.scaled).toBe('1/4 : 3/8');expect(r.table).toHaveLength(6);});
+ it('normalizes common sign and hides bars for negative quantities',()=>{expect(equiv({a:['-2','-3'],b:['2','3']}).simplifiedA).toBe('2 : 3');expect(equiv({a:['-2','-3'],b:['2','3']}).bars).toBeNull();});
+});
+describe('Independent refinance schedules and fee ledger',()=>{
+ it('matches an independent ordinary-number monthly schedule',()=>{const r=refi();expect(r.valid).toBe(true);function oracle(principal,annual,n,h){let bal=principal,paid=0;const rate=annual/1200,pmt=Math.round(principal*rate/(1-Math.pow(1+rate,-n))*100)/100;for(let m=1;m<=h;m++){const interest=bal*rate,pay=m===n?bal+interest:Math.min(pmt,bal+interest);bal-=pay-interest;paid+=pay;}return{pmt,bal,paid};}const a=oracle(250000,6.5,300,60),b=oracle(250000,5.5,300,60);expect(r.old.payment).toBe(a.pmt);expect(r.next.payment).toBe(b.pmt);expect(r.oldH.balance).toBeCloseTo(a.bal,6);expect(r.saving).toBeCloseTo(a.paid+a.bal-6000-b.paid-b.bal,6);expect(r.simple).toBe(40);});
+ it('zero rate 12000/12 pays1000 and clears exactly',()=>{const r=refi({balance:'12000',oldRate:'0',newRate:'0',oldMonths:'12',newMonths:'12',upfront:'0',hold:'12'});expect(r.old.payment).toBe(1000);expect(r.oldH.balance).toBe(0);expect(r.saving).toBe(0);expect(r.old.lifetimeInterest).toBe(0);});
+ it('identical terms and no fees produce zero at every horizon',()=>{const r=refi({newRate:'6.5',upfront:'0'});expect(r.monthly).toBe(0);expect(r.simple).toBeNull();expect(r.comparison.every(x=>x.costSaving===0)).toBe(true);});
+ it('counts financed fees exactly once at month zero',()=>{const r=refi({financed:'5000',upfront:'6000',credits:'1000',hold:'0'});expect(r.newPrincipal).toBe(255000);expect(r.upfront).toBe(5000);expect(r.saving).toBe(-10000);expect(r.simple).toBeNull();});
+ it('keeps temporary escrow outside comparative irreversible cost',()=>{const a=refi(),b=refi({escrow:'4000'});expect(a.saving).toBe(b.saving);expect(b.cashToClose-a.cashToClose).toBe(4000);});
+ it('stops each loan at payoff and retains housing costs after payoff',()=>{const r=refi({balance:'12000',oldRate:'0',newRate:'0',oldMonths:'12',newMonths:'24',upfront:'0',hold:'36',oldOther:'100',newOther:'100',oldPmi:'20',newPmi:'30'});expect(r.valid).toBe(true);expect(r.old.rows[13].payment).toBe(0);expect(r.next.rows[25].payment).toBe(0);expect(r.oldH.balance+r.newH.balance).toBe(0);expect(r.oldH.paid).toBe(12000+3600+240);expect(r.newH.paid).toBe(12000+3600+720);expect(r.saving).toBe(-480);});
+ it('higher payment with shorter term can reduce same-date cost',()=>{const r=refi({newMonths:'180'});expect(r.monthly).toBeLessThan(0);expect(r.simple).toBeNull();expect(r.saving).toBeGreaterThan(0);});
+ it('final payment adjusts residual and principal sums to opening balance',()=>{const r=refi({newMonths:'361',oldMonths:'241',hold:'600',financed:'1000'});for(const loan of [r.old,r.next]){expect(loan.rows.at(-1).balance).toBe(0);expect(loan.rows.reduce((s,x)=>s+x.principal,0)).toBeCloseTo(loan.rows[0].balance,6);expect(loan.rows.reduce((s,x)=>s+x.payment,0)).toBeCloseTo(loan.lifetimePaid,6);expect(loan.rows.every(x=>x.balance>=0&&x.principal>=0)).toBe(true);}expect(r.comparison).toHaveLength(601);});
+ it.each([{balance:''},{oldRate:'-1'},{oldRate:'1e2'},{newRate:'101'},{oldMonths:'0'},{newMonths:'600.5'},{hold:'601'},{credits:'6001'},{balance:'1000000001'}])('validates loan formats, credit ledger and ranges %j',x=>expect(refi(x).valid).toBe(false));
+ it('exports complete matched schedules including initial balances',()=>{const r=refi({newMonths:'360'}),csv=refinanceCsv(refinanceDefaults(),r,'USD');expect(r.valid).toBe(true);expect(csv).toContain('Cost saving incl balances');expect(csv).toContain('361');expect(r.comparison).toHaveLength(361);});
+});
+describe('Three separate complete calculator pages',()=>{
+ it.each([['financial-ratios-calculator',FinancialRatiosCalculator],['equivalent-ratio-calculator',EquivalentRatioCalculator],['refinance-calculator',RefinanceCalculator]])('renders %s with unique anchors and complete method content',(slug,Component)=>{const tool=freeTools[slug],h=renderToStaticMarkup(<Component tool={tool} slug={slug}/>);expect(routeEntryForPath('/calculators/'+slug+'/')).toBe('src/routes/FinalFinanceToolRoute.jsx');expect((h.match(/<h1\b/g)||[])).toHaveLength(1);const ids=[...h.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);expect(ids.length).toBe(new Set(ids).size);for(const[,anchor]of h.matchAll(/href="#([^\"]+)"/g))expect(ids).toContain(anchor);expect(h).toContain('800w');expect(h).not.toContain('/calculators/financial-leverage-ratio-calculator/');expect(h).not.toContain('/blogs/mortgage-refinance-break-even/');expect(tool.faq.length).toBeGreaterThanOrEqual(7);expect(tool.title.length).toBeLessThanOrEqual(60);expect(tool.description.length).toBeLessThanOrEqual(160);expect(h).toContain('Print / save PDF');});
+});

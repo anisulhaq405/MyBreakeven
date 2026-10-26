@@ -10,6 +10,9 @@ const clusters = {
   "/guides/cleaning-business": "src/routes/CleaningRoute.jsx"
 };
 const tools = {
+  "/calculators/financial-ratios-calculator": "src/routes/FinalFinanceToolRoute.jsx",
+  "/calculators/equivalent-ratio-calculator": "src/routes/FinalFinanceToolRoute.jsx",
+  "/calculators/refinance-calculator": "src/routes/FinalFinanceToolRoute.jsx",
   "/calculators/fire-calculator": "src/routes/RetirementToolRoute.jsx",
   "/calculators/coast-fire-calculator": "src/routes/RetirementToolRoute.jsx",
   "/calculators/ebitda-calculator": "src/routes/FinanceToolRoute.jsx",
