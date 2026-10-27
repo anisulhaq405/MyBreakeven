@@ -1269,8 +1269,9 @@
       "attemptedAt": "2026-10-27T14:25:43.357Z"
     },
     "https://mybreakeven.com/blogs/restaurant-delivery-app-commission-profit-per-order/|instagram": {
-      "revision": "92a202deed5c89b41ff9ff12430f9e0940fb9cb2484f6fa59c17cea13b39617d",
-      "status": "baseline"
+      "revision": "375a8473bf7456cb97a917a4eb7cc280a25c265be5034bcdaa947e9eb1a44e7e",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:25:46.018Z"
     },
     "https://mybreakeven.com/blogs/restaurant-delivery-app-commission-profit-per-order/|pinterest": {
       "revision": "92a202deed5c89b41ff9ff12430f9e0940fb9cb2484f6fa59c17cea13b39617d",
