@@ -1634,7 +1634,7 @@
     },
     "https://mybreakeven.com/pricing/|instagram": {
       "revision": "27fed724c2a99e959228fdde734475030c67d362b5d4a1ea32a125e4a7bc6341",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-27T14:29:07.488Z"
     },
     "https://mybreakeven.com/pricing/|pinterest": {
