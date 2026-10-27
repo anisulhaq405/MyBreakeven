@@ -414,8 +414,9 @@
       "attemptedAt": "2026-10-27T14:19:01.459Z"
     },
     "https://mybreakeven.com/blogs/ecommerce-orders-per-day-profitable/|instagram": {
-      "revision": "ce2e7fb549201a93d473caec4db457211c83c5063d50401ce2f190e54ff82620",
-      "status": "baseline"
+      "revision": "4a44f11918c09453ad4310dd908dea1164aa38adc053f4347d4917574992c9d7",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:19:04.004Z"
     },
     "https://mybreakeven.com/blogs/ecommerce-orders-per-day-profitable/|pinterest": {
       "revision": "ce2e7fb549201a93d473caec4db457211c83c5063d50401ce2f190e54ff82620",
