@@ -1180,8 +1180,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/product-photography-pricing-per-image/|facebook": {
-      "revision": "470697f32973c1d9f1f4b7cdff72e2806ee0ed8014df41591fcfc166b1dc3fc3",
-      "status": "baseline"
+      "revision": "0cb534fef4ca0ced548d78c440cc1e0c9b3b6c2758c724bd51cfd37246545994",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:24:43.030Z"
     },
     "https://mybreakeven.com/blogs/product-photography-pricing-per-image/|instagram": {
       "revision": "470697f32973c1d9f1f4b7cdff72e2806ee0ed8014df41591fcfc166b1dc3fc3",
