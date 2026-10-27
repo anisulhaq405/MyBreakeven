@@ -2460,7 +2460,7 @@
     },
     "https://mybreakeven.com/blogs/make-or-buy-decision/|instagram": {
       "revision": "406a410aa286fb18f1a307a6f0c41b8a20162cd181d5ea81cfcf70bc7bd5ffa2",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-27T14:23:05.745Z"
     }
   }
