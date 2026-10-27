@@ -2658,6 +2658,11 @@
       "revision": "e5f30c132253d3642731c3babba53ca69a7c1d847a9bf6d7f22e4b37fa907fe4",
       "status": "needs_review",
       "attemptedAt": "2026-10-27T14:27:54.514Z"
+    },
+    "https://mybreakeven.com/calculators/financial-ratios-calculator/|facebook": {
+      "revision": "07c74e932c4a9a466e7fc094d9408667ede711e4d263dbdfec398976dac9f262",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:27:58.253Z"
     }
   }
 }
