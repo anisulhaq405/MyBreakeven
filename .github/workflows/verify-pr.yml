@@ -18,6 +18,10 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      - name: Generate annual restaurant budget asset for tests
+        run: |
+          python3 -m pip install openpyxl==3.1.5
+          python3 scripts/generate-restaurant-12-month-workbook.py
       - run: npm test
       - run: npm run build
       - name: Audit rendered routes and internal links
