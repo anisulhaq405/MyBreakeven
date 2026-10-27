@@ -2467,6 +2467,11 @@
       "revision": "9cd7f5c92ac8545bf883e0d1120377e372bee2ddafdadc1ff95e8c413001242e",
       "status": "needs_review",
       "attemptedAt": "2026-10-27T14:23:08.524Z"
+    },
+    "https://mybreakeven.com/blogs/master-budget/|instagram": {
+      "revision": "9cd7f5c92ac8545bf883e0d1120377e372bee2ddafdadc1ff95e8c413001242e",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:23:11.303Z"
     }
   }
 }
