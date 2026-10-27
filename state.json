@@ -1068,8 +1068,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/photography-business-break-even/|facebook": {
-      "revision": "bc98fc17965dc81ed735c4cef677125a1014e1086d6ca0faaee5675788f6aff1",
-      "status": "baseline"
+      "revision": "f415ce574cd70bc8c251ca6790f44ad56a71a7f1611084ade8f8e8a7a497b00e",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:23:57.838Z"
     },
     "https://mybreakeven.com/blogs/photography-business-break-even/|instagram": {
       "revision": "bc98fc17965dc81ed735c4cef677125a1014e1086d6ca0faaee5675788f6aff1",
