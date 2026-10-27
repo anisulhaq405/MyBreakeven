@@ -2257,7 +2257,7 @@
     },
     "https://mybreakeven.com/blogs/adjusted-ebitda-add-backs/|facebook": {
       "revision": "c44b7056aca862a3547706fca3b57335e9931a2fbd1f3dff681c2f3ae6b8de4c",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-27T14:15:16.209Z"
     }
   }
