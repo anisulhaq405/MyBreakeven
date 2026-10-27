@@ -19,7 +19,12 @@ describe('October 26 restaurant food-cost GSC recovery',()=>{
     expect(post.image).toContain('restaurant-food-cost-percentage');
     expect(post.metaDescription.length).toBeLessThanOrEqual(160);
     expect(post.metaDescription.length).toBeGreaterThanOrEqual(120);
-    expect(post.modified).toBe('2026-10-26');
+    expect(post.modified).toBe('2026-10-27');
+    expect(post.html).toContain('id="food-cost-reconciliation-heading"');
+    expect(post.html).toContain('Reconcile the food-cost variance');
+    expect(post.html).toContain('/blogs/restaurant-prime-cost/');
+    expect(post.html).toContain('/blogs/restaurant-budgeting/');
+    expect([...post.html.matchAll(/id="food-cost-reconciliation-heading"/g)]).toHaveLength(1);
     expect([...post.html.matchAll(/id="food-cost-comparison-heading"/g)]).toHaveLength(1);
     expect((20000/60000*100).toFixed(2)).toBe('33.33');
     expect((18200/60000*100).toFixed(2)).toBe('30.33');
