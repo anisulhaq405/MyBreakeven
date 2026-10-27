@@ -1,4 +1,5 @@
 import {titledFeatureImage} from '../../featureTitleCovers.js';
+import {applyRestaurantBudgetSerpScopeReview} from './restaurantBudgetSerpScopeReview.js';
 import {applyCleaningProfitabilityGscRecovery} from './cleaningProfitabilityGscRecovery.js';
 import {financeCompletionPosts} from './financeCompletionGuides.js';
 import {applyDay3RatioContent} from './day3RatioContent.js';
@@ -175,6 +176,7 @@ const normalizePost = post => {
   reviewed = applyDay3RatioContent(reviewed);
   reviewed = applyDay3RefinanceContent(reviewed);
   reviewed = applyCleaningProfitabilityGscRecovery(reviewed);
+  reviewed = applyRestaurantBudgetSerpScopeReview(reviewed);
   const image=titledFeatureImage(reviewed.slug,featureDeliveryAssets[reviewed.image] || reviewed.image);
   return image===reviewed.image ? reviewed : {...reviewed,image};
 };
