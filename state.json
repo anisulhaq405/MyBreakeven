@@ -297,8 +297,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/commercial-cleaning-contract-bid/|facebook": {
-      "revision": "c01fc7b70a44b20febe1b8a6acdf2688cfd71a381ee51a37a24be3f619d99766",
-      "status": "baseline"
+      "revision": "dc4f6f586e770f2f1bb7ac3cfbfc8919da5cd35bf6607049939a24cad99e04fd",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:17:17.087Z"
     },
     "https://mybreakeven.com/blogs/commercial-cleaning-contract-bid/|instagram": {
       "revision": "c01fc7b70a44b20febe1b8a6acdf2688cfd71a381ee51a37a24be3f619d99766",
