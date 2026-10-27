@@ -2342,7 +2342,7 @@
     },
     "https://mybreakeven.com/blogs/fire-vs-coast-fire-vs-barista-fire/|facebook": {
       "revision": "03a6851eb4c9b2ee37bcffdb72c35a74ff616faf290c9fab29bcf0ba62f16fd4",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-27T14:19:33.142Z"
     }
   }
