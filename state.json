@@ -451,8 +451,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/ecommerce-shipping-costs/|facebook": {
-      "revision": "93b92c90d12ce7b492fee9aad06bd50388badea57a2db1fe009260b7e124782d",
-      "status": "baseline"
+      "revision": "e183b3ec4704ba248399d65c4ddbcdceed040d78ff72157a219512687ecaafe1",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:19:12.160Z"
     },
     "https://mybreakeven.com/blogs/ecommerce-shipping-costs/|instagram": {
       "revision": "93b92c90d12ce7b492fee9aad06bd50388badea57a2db1fe009260b7e124782d",
