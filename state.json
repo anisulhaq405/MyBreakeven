@@ -863,8 +863,9 @@
       "attemptedAt": "2026-10-27T14:21:56.413Z"
     },
     "https://mybreakeven.com/blogs/landscaping-maintenance-contract-pricing/|instagram": {
-      "revision": "e7ea1ef7e71ca88c7bd574fe6bb02310c5c067b2567c6e459cac3b67c48a7828",
-      "status": "baseline"
+      "revision": "d68b6a69175c125f13a008bd463a9c7c24b3a08abf00d719e873089f029e735f",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:21:59.170Z"
     },
     "https://mybreakeven.com/blogs/landscaping-maintenance-contract-pricing/|pinterest": {
       "revision": "e7ea1ef7e71ca88c7bd574fe6bb02310c5c067b2567c6e459cac3b67c48a7828",
