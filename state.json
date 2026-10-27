@@ -2389,7 +2389,7 @@
     },
     "https://mybreakeven.com/blogs/how-to-analyze-financial-statements/|facebook": {
       "revision": "6e2d5e95b9f0b2e4e33dae45bb77c0919fb2b9198f7a2dfc0d7f2d6cb269b5a3",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-27T14:20:57.496Z"
     }
   }
