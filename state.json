@@ -2526,6 +2526,11 @@
       "revision": "91be543b257767ce7cdf7d05acd93128d5aa8a13399ad360e4f0625b8507e76d",
       "status": "needs_review",
       "attemptedAt": "2026-10-27T14:23:55.119Z"
+    },
+    "https://mybreakeven.com/blogs/present-value-vs-future-value/|facebook": {
+      "revision": "55a122fb04b305cef38593aaf42b6b5535338d4afdf3a66a04f684bcdcd95f7b",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:24:35.013Z"
     }
   }
 }
