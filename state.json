@@ -2751,7 +2751,7 @@
     },
     "https://mybreakeven.com/guides/financial-ratios/|facebook": {
       "revision": "c83c6a01fae2fbab95e4191edb07178093e5ae3923d8c288a3cf64cdbbec71fb",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-27T14:28:58.305Z"
     }
   }
