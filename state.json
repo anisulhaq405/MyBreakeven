@@ -2701,7 +2701,7 @@
     },
     "https://mybreakeven.com/calculators/menu-pricing-calculator/|facebook": {
       "revision": "7adf50eae3dd9fe90183b57c929a54bb34ee8983ad3926420f197ac235885ee9",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-27T14:28:20.438Z"
     }
   }
