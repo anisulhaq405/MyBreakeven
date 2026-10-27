@@ -816,8 +816,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/landscaping-crew-utilization/|facebook": {
-      "revision": "d193f570031640c734bcb9fd8aea93bc5a0d3c118045958ac41fb262f74bfc2e",
-      "status": "baseline"
+      "revision": "f55450acb8cb6e7a0dc6f884279999971a3b8290952d22c9a83326e5d02421bd",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:21:39.186Z"
     },
     "https://mybreakeven.com/blogs/landscaping-crew-utilization/|instagram": {
       "revision": "d193f570031640c734bcb9fd8aea93bc5a0d3c118045958ac41fb262f74bfc2e",
