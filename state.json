@@ -737,8 +737,9 @@
       "attemptedAt": "2026-10-27T14:21:21.451Z"
     },
     "https://mybreakeven.com/blogs/how-to-start-coffee-shop/|instagram": {
-      "revision": "612eac111420ade31351b3d5f4b1d72b0b73bcf8eb12b0aeb9bb8db8fdad21e9",
-      "status": "baseline"
+      "revision": "99e07fd94603ff40ef54d5244902cf148d2dd83a08ba3bd2600fec54d4efd003",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:21:24.746Z"
     },
     "https://mybreakeven.com/blogs/how-to-start-coffee-shop/|pinterest": {
       "revision": "612eac111420ade31351b3d5f4b1d72b0b73bcf8eb12b0aeb9bb8db8fdad21e9",
