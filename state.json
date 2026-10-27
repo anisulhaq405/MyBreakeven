@@ -2477,7 +2477,7 @@
     },
     "https://mybreakeven.com/blogs/mortgage-refinance-break-even/|facebook": {
       "revision": "d63d8017dc5b8f2df6b32b5f7d21ad40fdb6eeab2387d55eb1699f9ec9a316c6",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-27T14:23:19.545Z"
     }
   }
