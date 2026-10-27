@@ -260,8 +260,9 @@
       "attemptedAt": "2026-10-27T14:16:54.143Z"
     },
     "https://mybreakeven.com/blogs/cleaning-business-client-churn-cost/|instagram": {
-      "revision": "f03b832123a8446ce09c72b104cf74ff93aaff6a5507b0eba6fff088541bad08",
-      "status": "baseline"
+      "revision": "59a267d6fcac818e333ffb8b17e549c72f01e5f5644336822c6d143f28a8405b",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:16:56.772Z"
     },
     "https://mybreakeven.com/blogs/cleaning-business-client-churn-cost/|pinterest": {
       "revision": "f03b832123a8446ce09c72b104cf74ff93aaff6a5507b0eba6fff088541bad08",
