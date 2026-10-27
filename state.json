@@ -2741,7 +2741,7 @@
     },
     "https://mybreakeven.com/calculators/refinance-calculator/|facebook": {
       "revision": "b0b37c62a85747685602a6fe7f100839db37503d4314b72b8cc37260e2a15cb7",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-27T14:28:52.872Z"
     }
   }
