@@ -2678,6 +2678,11 @@
       "revision": "c7227e0a3d0adb6e258ae977185f89ccef00d0aae36c708834e8999f0a60052b",
       "status": "needs_review",
       "attemptedAt": "2026-10-27T14:28:07.769Z"
+    },
+    "https://mybreakeven.com/calculators/food-cost-calculator/|facebook": {
+      "revision": "e9498fa6415be065a86e7465f308add841097896196cd48578961ba1daedf365",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:28:10.407Z"
     }
   }
 }
