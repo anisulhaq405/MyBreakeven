@@ -1236,8 +1236,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/restaurant-business-plan/|facebook": {
-      "revision": "99a25bdf2de70efdc63bbd70f4cce2aae1c30ce9760303958eac4aeedc7f17f1",
-      "status": "baseline"
+      "revision": "215704eedf3c957faded244b84a2e458ba69ef6fc04942f9983c7923d0bc6664",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:25:32.241Z"
     },
     "https://mybreakeven.com/blogs/restaurant-business-plan/|instagram": {
       "revision": "99a25bdf2de70efdc63bbd70f4cce2aae1c30ce9760303958eac4aeedc7f17f1",
