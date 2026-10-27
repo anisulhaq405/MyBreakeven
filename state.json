@@ -1355,7 +1355,7 @@
     },
     "https://mybreakeven.com/blogs/restaurant-sales-forecast/|instagram": {
       "revision": "343300efd681286a4f660ec0a7a9e6bc7723e15b9ffe3591687a8f14bb7b00ce",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-27T14:25:56.502Z"
     },
     "https://mybreakeven.com/blogs/restaurant-sales-forecast/|pinterest": {
