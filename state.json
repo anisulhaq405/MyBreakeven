@@ -382,7 +382,7 @@
     },
     "https://mybreakeven.com/blogs/ecommerce-break-even/|facebook": {
       "revision": "bbd6eb57fd72db90332df2cd8e03ebc469df6902961d1a7938eec6ba708bad3e",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-27T14:18:40.069Z"
     },
     "https://mybreakeven.com/blogs/ecommerce-break-even/|instagram": {
