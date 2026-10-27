@@ -2297,6 +2297,11 @@
       "revision": "fd508e010459ab27b17b3582c9225c660393ba49c6f3d56833a19fa1d73336da",
       "status": "needs_review",
       "attemptedAt": "2026-10-27T14:17:47.807Z"
+    },
+    "https://mybreakeven.com/blogs/cost-drivers-small-business/|facebook": {
+      "revision": "9c2b74171695bd2016cd5fd11c78df36dcfc7fff73549f8abeb23c851acaca7e",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:18:21.939Z"
     }
   }
 }
