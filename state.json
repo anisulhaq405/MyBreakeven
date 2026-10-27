@@ -353,8 +353,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/corporate-headshot-pricing/|facebook": {
-      "revision": "50be10375f14ed69a38fe6fc363f8c6233b73d2912d240db431c026d2c7831bb",
-      "status": "baseline"
+      "revision": "44cc01660c1638c367dc5893b65b35b7339da2f36371790a64896f107cad5727",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:18:07.561Z"
     },
     "https://mybreakeven.com/blogs/corporate-headshot-pricing/|instagram": {
       "revision": "50be10375f14ed69a38fe6fc363f8c6233b73d2912d240db431c026d2c7831bb",
