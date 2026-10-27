@@ -633,8 +633,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-cleaning-business/|facebook": {
-      "revision": "01f4734d1609ca5ddde34fd3bc4a39d495dbcde5ae20ef36042fa332b90f509b",
-      "status": "baseline"
+      "revision": "9f0eff97fd56f5fa7dd8dd110b9512d88d741f0a61f2af83ac820773ca32bae2",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:20:38.932Z"
     },
     "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-cleaning-business/|instagram": {
       "revision": "01f4734d1609ca5ddde34fd3bc4a39d495dbcde5ae20ef36042fa332b90f509b",
