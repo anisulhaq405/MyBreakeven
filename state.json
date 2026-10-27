@@ -2489,7 +2489,7 @@
     },
     "https://mybreakeven.com/blogs/operating-cash-flow/|facebook": {
       "revision": "2debbfb7c1803a1448b3ab8f186fed3228ae61ed2d3d8b0d45f95263b87eb2d2",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-27T14:23:39.963Z"
     }
   }
