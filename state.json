@@ -396,7 +396,7 @@
     },
     "https://mybreakeven.com/blogs/ecommerce-chargeback-cost-per-order/|facebook": {
       "revision": "b22ada370646f71a1a38e8bcd49cfc278533d8be8784e83fd0a1f9a3e1d161ee",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-27T14:18:50.028Z"
     },
     "https://mybreakeven.com/blogs/ecommerce-chargeback-cost-per-order/|instagram": {
