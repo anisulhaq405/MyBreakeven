@@ -1138,8 +1138,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/photography-second-shooter-cost/|facebook": {
-      "revision": "b0ca97661e21d474507555440ef14b7747e0b0836610c8654051fcaec1b6d1a5",
-      "status": "baseline"
+      "revision": "cb38fc923ef0ae7b531f8ede5a0acc1edf4cfb73bea7dc06a3a36e632e81f652",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:24:18.366Z"
     },
     "https://mybreakeven.com/blogs/photography-second-shooter-cost/|instagram": {
       "revision": "b0ca97661e21d474507555440ef14b7747e0b0836610c8654051fcaec1b6d1a5",
