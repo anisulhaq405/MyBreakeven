@@ -213,8 +213,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/cash-flow-break-even-vs-profit-break-even/|facebook": {
-      "revision": "b1daca23cc3dcd0b1b54d3abbb15a2212eb2e7d2ee71ec9bb31dbfa7bab3be2e",
-      "status": "baseline"
+      "revision": "d3c8c8a19dc33c58ea1ebbf27480e86867b2a6dc6a1e800fa772d80bbca94e5b",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:16:22.146Z"
     },
     "https://mybreakeven.com/blogs/cash-flow-break-even-vs-profit-break-even/|instagram": {
       "revision": "b1daca23cc3dcd0b1b54d3abbb15a2212eb2e7d2ee71ec9bb31dbfa7bab3be2e",
