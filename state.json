@@ -1152,8 +1152,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/photography-usage-licensing-pricing/|facebook": {
-      "revision": "46fb88e002732ae3145c198d984fc549a447dac5ad4c86bf6c971adb3c90884d",
-      "status": "baseline"
+      "revision": "33196f6b37e6c0c2ee86b6fac8a8c8484656ccdd9a7f13e1e027398c242b64c4",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:24:24.164Z"
     },
     "https://mybreakeven.com/blogs/photography-usage-licensing-pricing/|instagram": {
       "revision": "46fb88e002732ae3145c198d984fc549a447dac5ad4c86bf6c971adb3c90884d",
