@@ -751,8 +751,9 @@
       "attemptedAt": "2026-10-27T14:21:27.381Z"
     },
     "https://mybreakeven.com/blogs/how-to-start-restaurant/|instagram": {
-      "revision": "2da0eeaf5feacb49ead1b807d3b8b039fcf98916f1b6005a6d49a376235dbf04",
-      "status": "baseline"
+      "revision": "50b880e61f77b02678826c36e18f5db4d67fdc820a937c3de36f43556e59b515",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:21:30.207Z"
     },
     "https://mybreakeven.com/blogs/how-to-start-restaurant/|pinterest": {
       "revision": "2da0eeaf5feacb49ead1b807d3b8b039fcf98916f1b6005a6d49a376235dbf04",
