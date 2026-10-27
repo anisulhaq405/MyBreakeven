@@ -1633,8 +1633,9 @@
       "attemptedAt": "2026-10-27T14:29:04.795Z"
     },
     "https://mybreakeven.com/pricing/|instagram": {
-      "revision": "a09794e7a43c5a7bb531a3f616e3fdb5c8f241666bbc7f93d60c8499c57963f5",
-      "status": "baseline"
+      "revision": "27fed724c2a99e959228fdde734475030c67d362b5d4a1ea32a125e4a7bc6341",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:29:07.488Z"
     },
     "https://mybreakeven.com/pricing/|pinterest": {
       "revision": "a09794e7a43c5a7bb531a3f616e3fdb5c8f241666bbc7f93d60c8499c57963f5",
