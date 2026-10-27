@@ -1467,8 +1467,9 @@
       "attemptedAt": "2026-10-27T14:26:47.038Z"
     },
     "https://mybreakeven.com/blogs/snow-removal-pricing/|instagram": {
-      "revision": "a58dacc01fc31ef9538fd11095f51d028f06b854703de6115f827b7f10a07efb",
-      "status": "baseline"
+      "revision": "3b8a2bf7888bef2d9e581547bb44f1d742ba897e229b4ec98134d9ccbbc21136",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:26:58.891Z"
     },
     "https://mybreakeven.com/blogs/snow-removal-pricing/|pinterest": {
       "revision": "a58dacc01fc31ef9538fd11095f51d028f06b854703de6115f827b7f10a07efb",
