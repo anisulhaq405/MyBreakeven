@@ -2501,6 +2501,11 @@
       "revision": "7d239c1c6b3a26a16c7ba8e4e2b4e6ea99eb988f63782727d1db8011d6e913bd",
       "status": "needs_review",
       "attemptedAt": "2026-10-27T14:23:45.447Z"
+    },
+    "https://mybreakeven.com/blogs/operating-expenses/|instagram": {
+      "revision": "7d239c1c6b3a26a16c7ba8e4e2b4e6ea99eb988f63782727d1db8011d6e913bd",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:23:48.135Z"
     }
   }
 }
