@@ -92,8 +92,9 @@
       "attemptedAt": "2026-10-27T14:15:53.283Z"
     },
     "https://mybreakeven.com/blogs/agency-retainer-pricing/|instagram": {
-      "revision": "20396b35c82c70f0eeed19531a59001809a199dd4ae5904cdff364ca71b33b42",
-      "status": "baseline"
+      "revision": "ebb900d65f1bd11196c70c7d87cdfddb0be3f36930aef011a39343e15da490be",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:15:55.808Z"
     },
     "https://mybreakeven.com/blogs/agency-retainer-pricing/|pinterest": {
       "revision": "20396b35c82c70f0eeed19531a59001809a199dd4ae5904cdff364ca71b33b42",
