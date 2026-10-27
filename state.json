@@ -143,10 +143,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/break-even-roas-formula/|facebook": {
-      "revision": "08ce65bced9213d4fd45953d7dea704ff756e9b5966f7f24791d68dacea910e0",
-      "status": "published",
-      "postId": "1437362339452872_122095374969509539",
-      "publishedAt": "2026-10-07T10:57:11.630Z"
+      "revision": "e2238b3f7f119c9359230f0040a40628cd7949de9f233cbcec492c9623c059c7",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:16:08.606Z"
     },
     "https://mybreakeven.com/blogs/break-even-roas-formula/|instagram": {
       "revision": "08ce65bced9213d4fd45953d7dea704ff756e9b5966f7f24791d68dacea910e0",
