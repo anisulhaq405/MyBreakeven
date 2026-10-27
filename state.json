@@ -2788,7 +2788,7 @@
     },
     "https://mybreakeven.com/resources/business-plan-template/|instagram": {
       "revision": "dc5d311198b6678d74b0133cb6823cf577d318ce8b61a201049e8027224ebc22",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-27T14:29:23.305Z"
     }
   }
