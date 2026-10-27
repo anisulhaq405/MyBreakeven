@@ -2409,7 +2409,7 @@
     },
     "https://mybreakeven.com/blogs/how-to-calculate-days-sales-outstanding/|facebook": {
       "revision": "1345f8568f67d64362bdb2298f9b64bd224447597343832bddb3d34a5bc6a8b8",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-27T14:21:08.515Z"
     }
   }
