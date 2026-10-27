@@ -661,8 +661,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-marketing-agency/|facebook": {
-      "revision": "ab9ac478c818ade386cc1e33b520082d253a7a014d316f61919ba61c22a50727",
-      "status": "baseline"
+      "revision": "9be317aeb227fb6f4b6ffe59f29675911d0ec6e69ceca9e8079a0d69a94fce44",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:20:44.361Z"
     },
     "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-marketing-agency/|instagram": {
       "revision": "ab9ac478c818ade386cc1e33b520082d253a7a014d316f61919ba61c22a50727",
