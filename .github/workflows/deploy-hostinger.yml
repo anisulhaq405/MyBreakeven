@@ -29,6 +29,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Generate annual restaurant budget workbook
+        run: |
+          python3 -m pip install openpyxl==3.1.5
+          python3 scripts/generate-restaurant-12-month-workbook.py
+          python3 - <<'PY'
+          from openpyxl import load_workbook
+          p='public/downloads/restaurant-12-month-budget-template.xlsx'
+          w=load_workbook(p)
+          assert {'Instructions','12-Month Budget','Dashboard'} <= set(w.sheetnames)
+          assert w['12-Month Budget']['B19'].value.startswith('=')
+          assert w['12-Month Budget']['B38'].value.startswith('=')
+          print('Workbook generated and checked')
+          PY
+
       - name: Build production site
         run: npm run build
 
