@@ -2778,7 +2778,7 @@
     },
     "https://mybreakeven.com/resources/budget-vs-actual-template/|instagram": {
       "revision": "9611fa2f4462f7772f68c02a2c2e0f68dfc01b9a4158be9ff23113bf685c7ed4",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-27T14:29:18.067Z"
     }
   }
