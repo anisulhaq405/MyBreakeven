@@ -2496,6 +2496,11 @@
       "revision": "2debbfb7c1803a1448b3ab8f186fed3228ae61ed2d3d8b0d45f95263b87eb2d2",
       "status": "needs_review",
       "attemptedAt": "2026-10-27T14:23:42.740Z"
+    },
+    "https://mybreakeven.com/blogs/operating-expenses/|facebook": {
+      "revision": "7d239c1c6b3a26a16c7ba8e4e2b4e6ea99eb988f63782727d1db8011d6e913bd",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:23:45.447Z"
     }
   }
 }
