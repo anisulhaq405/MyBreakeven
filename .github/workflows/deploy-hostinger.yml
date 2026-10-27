@@ -58,9 +58,18 @@ jobs:
           force_orphan: true
 
       - name: Publish new and changed content to social accounts
+        id: social_publish
+        continue-on-error: true
         if: ${{ !contains(github.event.head_commit.message, '[skip social]') }}
         env:
           MAKE_SOCIAL_WEBHOOK_URL: ${{ secrets.MAKE_SOCIAL_WEBHOOK_URL }}
           SOCIAL_REPOSITORY_URL: https://github.com/${{ github.repository }}.git
           SOCIAL_FIRST_TEST_URL: https://mybreakeven.com/blogs/agency-billable-utilization-rate/
         run: node scripts/publish-social.mjs
+
+      - name: Report optional social publishing failure
+        if: ${{ steps.social_publish.outcome == 'failure' }}
+        run: |
+          echo '::warning::Production website build and publishing succeeded; optional social posting failed. Review the social publisher logs separately.'
+          echo '### Optional social publication failed' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Website publishing completed. Review social publishing logs and webhook integration independently.' >> "$GITHUB_STEP_SUMMARY"
