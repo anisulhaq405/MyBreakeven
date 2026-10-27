@@ -550,7 +550,7 @@
     },
     "https://mybreakeven.com/blogs/how-many-customers-can-you-lose-after-raising-prices/|facebook": {
       "revision": "1cfddf38803cb15eb1ab9b727ea8b625ba08bfdc345d9e32ae94c320dc8f98b4",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-27T14:20:10.789Z"
     },
     "https://mybreakeven.com/blogs/how-many-customers-can-you-lose-after-raising-prices/|instagram": {
