@@ -2808,7 +2808,7 @@
     },
     "https://mybreakeven.com/resources/daily-outfitter-founder-case-study/|instagram": {
       "revision": "c2a3006f4eac1bbe0ab62c6c10fdd5f043433ee0e146c6ba7a4f4a7bb8215e97",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-27T14:29:52.994Z"
     }
   }
