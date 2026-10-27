@@ -10,7 +10,7 @@ export default function FinancialRatiosHub(){return <article className="article-
  <div className="article-meta"><time dateTime={financeGuideDate}>Published October 26, 2026</time><span>Updated October 26, 2026</span></div>
  <p className="article-note">Published by <a href="/about-us/">MyBreakeven</a>. <a href="/editorial-policy/">Editorial standards and corrections</a>.</p>
  <p className="article-lead">{hub.description}</p>
- <p className="article-summary"><a href="/calculators/financial-ratios-calculator/">Calculate liquidity, profitability, leverage and returns →</a></p>
+ <p className="article-summary"><a href="/calculators/financial-ratios-calculator/">Calculate all 55 measures in the interactive calculator →</a></p>
  <nav className="article-section-nav" aria-label="Financial ratio categories">{[['definition','Definition'],['categories','Categories'],['dataset','Example dataset'],['reference','Printable formulas'],['periods','Dates and periods'],['leverage','Leverage'],['interpretation','Interpretation'],['mistakes','Mistakes'],['sources','Sources'],['hub-faqs','FAQs']].map(([id,label])=><a href={'#'+id} key={id}>{label}</a>)}</nav>
  <figure className="article-featured"><img src={hub.image} {...responsiveFeatureProps(hub.image)} width="1200" height="675" alt={hub.alt} decoding="async"/><figcaption>Illustrative financial-analysis scene. The reference table contains the exact formulas and fictional figures.</figcaption></figure>
  <div className="day1-markdown" dangerouslySetInnerHTML={{__html:hub.html}}/>
