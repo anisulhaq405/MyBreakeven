@@ -2272,7 +2272,7 @@
     },
     "https://mybreakeven.com/blogs/cash-flow-statement/|facebook": {
       "revision": "7978fd7a804a57523853c7a5cb13aa085c2a7ed06f9059b567ad8b82182e1ffa",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-27T14:16:35.892Z"
     }
   }
