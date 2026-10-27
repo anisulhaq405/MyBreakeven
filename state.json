@@ -2608,6 +2608,11 @@
       "revision": "da014cb211c44b0f0ed07bdcdc6c321a3cc49f4aed47fb36d1f7b1a443eec006",
       "status": "needs_review",
       "attemptedAt": "2026-10-27T14:27:18.617Z"
+    },
+    "https://mybreakeven.com/calculators/cash-flow-forecast-template/|facebook": {
+      "revision": "3c8fb470e717e83f181ff6679a600f39ccaafc7e4f6cfe1d0801c8c1a21e8454",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:27:21.169Z"
     }
   }
 }
