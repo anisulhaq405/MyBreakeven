@@ -2438,7 +2438,7 @@
     },
     "https://mybreakeven.com/blogs/job-order-costing/|instagram": {
       "revision": "6b92598997ee5bb5dcc1914135a5a06c49c4b19dee325e8fc812ed47dae7d0ce",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-27T14:21:36.411Z"
     }
   }
