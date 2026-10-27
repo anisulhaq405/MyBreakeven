@@ -2284,6 +2284,11 @@
       "revision": "7978fd7a804a57523853c7a5cb13aa085c2a7ed06f9059b567ad8b82182e1ffa",
       "status": "needs_review",
       "attemptedAt": "2026-10-27T14:16:38.511Z"
+    },
+    "https://mybreakeven.com/blogs/contribution-margin-income-statement/|facebook": {
+      "revision": "fd508e010459ab27b17b3582c9225c660393ba49c6f3d56833a19fa1d73336da",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:17:45.332Z"
     }
   }
 }
