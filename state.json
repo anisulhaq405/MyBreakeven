@@ -2718,6 +2718,11 @@
       "revision": "729e5a0039d2f47a164fb85c0c1027b6cc984af4e840bd24592e254e7aa2ce17",
       "status": "needs_review",
       "attemptedAt": "2026-10-27T14:28:37.459Z"
+    },
+    "https://mybreakeven.com/calculators/operating-profit-margin-calculator/|facebook": {
+      "revision": "ee8bde64fccf9a30dd549de00f8096f6f219d654f73803f5629fb7642415bc4e",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:28:42.730Z"
     }
   }
 }
