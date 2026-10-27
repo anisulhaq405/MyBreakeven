@@ -437,8 +437,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/ecommerce-return-cost-per-order/|facebook": {
-      "revision": "320c5d4b7faf6a12de5518c868bc9420bfac025b22c3c4478acf15d15b986472",
-      "status": "baseline"
+      "revision": "8600505c048c8ea19f6ce3863dc8625a8701e04258236954606aafae7fc6a3d2",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:19:06.900Z"
     },
     "https://mybreakeven.com/blogs/ecommerce-return-cost-per-order/|instagram": {
       "revision": "320c5d4b7faf6a12de5518c868bc9420bfac025b22c3c4478acf15d15b986472",
