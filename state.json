@@ -512,8 +512,9 @@
       "attemptedAt": "2026-10-27T14:19:59.171Z"
     },
     "https://mybreakeven.com/blogs/hair-color-service-cost-per-appointment/|instagram": {
-      "revision": "c81baea672c3a4586c742f1055eb8f0bf79435c4795e3545090b7e3e9a101bb6",
-      "status": "baseline"
+      "revision": "b2315736bd4307ca89d28928e6cffe82e7b935372d8bc413b1fc17f0a46d51b8",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:20:02.089Z"
     },
     "https://mybreakeven.com/blogs/hair-color-service-cost-per-appointment/|pinterest": {
       "revision": "c81baea672c3a4586c742f1055eb8f0bf79435c4795e3545090b7e3e9a101bb6",
