@@ -577,8 +577,9 @@
       "status": "baseline"
     },
     "https://mybreakeven.com/blogs/how-many-lawns-100k/|facebook": {
-      "revision": "5eaa95c2184139214f3c5313468480342dfa75405c71104fdabbacc8b3278fc9",
-      "status": "baseline"
+      "revision": "09e032e4d48ddb7eb76c2ea726e09d14e1199241a32c3185b6fb71de0aab17bd",
+      "status": "attempting",
+      "attemptedAt": "2026-10-27T14:20:18.948Z"
     },
     "https://mybreakeven.com/blogs/how-many-lawns-100k/|instagram": {
       "revision": "5eaa95c2184139214f3c5313468480342dfa75405c71104fdabbacc8b3278fc9",
