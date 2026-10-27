@@ -2305,7 +2305,7 @@
     },
     "https://mybreakeven.com/blogs/cost-drivers-small-business/|instagram": {
       "revision": "9c2b74171695bd2016cd5fd11c78df36dcfc7fff73549f8abeb23c851acaca7e",
-      "status": "attempting",
+      "status": "needs_review",
       "attemptedAt": "2026-10-27T14:18:24.890Z"
     }
   }
