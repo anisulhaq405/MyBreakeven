@@ -2,9 +2,3 @@
 @media print{body:has(.final-finance-page) .analytics-consent{display:none!important}}
 @media print{body:has(.final-finance-page) .fd-panel{break-inside:auto!important}body:has(.final-finance-page) footer{display:none!important}}
 
-/* Refinance: avoid an empty left column beside much longer decision tables. */
-.final-finance-page .refinance-layout{grid-template-columns:minmax(0,1fr);gap:4px}
-.final-finance-page .refinance-layout>.fd-panel{width:100%;box-sizing:border-box;margin:8px 0}
-@media(min-width:1050px){.final-finance-page .refinance-layout #calculator-inputs .fd-fields{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:700px){.final-finance-page .refinance-layout #calculator-inputs .fd-fields{grid-template-columns:minmax(0,1fr)}}
-.final-finance-page .refinance-layout .tool-table-wrap{max-width:100%;overflow-x:auto}
