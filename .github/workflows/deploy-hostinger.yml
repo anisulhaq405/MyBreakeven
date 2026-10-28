@@ -43,6 +43,9 @@ jobs:
           print('Workbook generated and checked')
           PY
 
+      - name: Run automated regression tests
+        run: npm test
+
       - name: Build production site
         run: npm run build
 
