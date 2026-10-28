@@ -1,3 +1,4 @@
+import {applyCoreBreakEvenIntentReview} from './coreBreakEvenIntentReview.js';
 import {titledFeatureImage} from '../../featureTitleCovers.js';
 import {applyRestaurantBudgetSerpScopeReview} from './restaurantBudgetSerpScopeReview.js';
 import {applyCleaningProfitabilityGscRecovery} from './cleaningProfitabilityGscRecovery.js';
@@ -179,6 +180,7 @@ const normalizePost = post => {
   reviewed = applyRefinanceDay2Quality(reviewed);
   reviewed = applyCleaningProfitabilityGscRecovery(reviewed);
   reviewed = applyRestaurantBudgetSerpScopeReview(reviewed);
+  reviewed = applyCoreBreakEvenIntentReview(reviewed);
   const image=titledFeatureImage(reviewed.slug,featureDeliveryAssets[reviewed.image] || reviewed.image);
   return image===reviewed.image ? reviewed : {...reviewed,image};
 };
