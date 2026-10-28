@@ -138,3 +138,22 @@
 .final-finance-page .ratio-result-group{margin:20px 0 26px;scroll-margin-top:100px}
 .final-finance-page .ratio-result-group>h3{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:1.22rem;color:#1b4056;border-bottom:2px solid #e5edf2;padding:0 0 10px;margin:0 0 12px}
 .final-finance-page .ratio-result-group>h3 span{font-size:.77rem;font-weight:600;color:#597183}
+
+
+/* Semantic ratio analysis panels: more readable, less duplicate data. */
+.final-finance-page .ff-insight-visual-frame{margin:9px 0 11px;padding:10px;border:1px solid #e0e9f0;border-radius:11px;background:#f8fbfd}
+.final-finance-page .ff-insight-visual-heading{font-size:.72rem;font-weight:800;letter-spacing:.02em;color:#526d80;margin:0 0 9px}
+.final-finance-page .ff-insight-equation{display:grid;grid-template-columns:100px minmax(0,1fr);gap:10px;align-items:start;padding:10px 0;border-top:1px solid #e5edf3;line-height:1.45;overflow-wrap:anywhere}
+.final-finance-page .ff-insight-equation span{font-size:.72rem;color:#526d80;font-weight:700}
+.final-finance-page .ff-insight-equation strong{font-size:.78rem;font-weight:700;color:#22465b}
+.final-finance-page .ratio-count-check{font-weight:750;color:#15576a;background:#f0f8f9;padding:10px 12px;border-radius:8px}
+.final-finance-page .ratio-table-analysis-link{font-size:.82rem;color:#526b7c}
+.final-finance-page .ratio-compact-card .ff-insight-driver{min-height:68px}
+.final-finance-page .ratio-compact-card .ff-insight-driver-label{overflow-wrap:anywhere}
+.final-finance-page .ff-visual-timeline{border-left:4px solid #4985b4}
+.final-finance-page .ff-visual-bridge{border-left:4px solid #169481}
+.final-finance-page .ff-visual-composition{border-left:4px solid #7966b9}
+.final-finance-page .ff-visual-drivers{border-left:4px solid #3074a6}
+.final-finance-page .ff-visual-valuation{border-left:4px solid #bf8c4a}
+.final-finance-page .ff-visual-coverage{border-left:4px solid #168576}
+@media(max-width:480px){.final-finance-page .ff-insight-equation{grid-template-columns:1fr;gap:3px}.final-finance-page .ff-insight-visual-frame{padding:8px}}
