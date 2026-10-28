@@ -2,7 +2,7 @@ import React from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {describe,it,expect} from 'vitest';
 import RefinanceCalculator from './RefinanceCalculator.jsx';
-import {freeTools} from './finalFinanceTools.js';
+import {freeTools} from './freeTools.js';
 describe('Refinance decision-focused UX',()=>{
  it('shows guided stages, savings curve and accessible exit-date comparison',()=>{
   const html=renderToStaticMarkup(<RefinanceCalculator tool={freeTools['refinance-calculator']} slug="refinance-calculator"/>);
