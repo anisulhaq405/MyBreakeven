@@ -21,7 +21,7 @@ export const financeFeatureAssets = {
     "alt": "Organized financial analysis statements and an analyst\u2019s pen beneath Financial Ratios Explained"
   },
   "refinance-calculator": {
-    "image": "/images/finance-topics/refinance-multi-loan-feature-20261028.svg",
+    "image": "/images/finance-topics/refinance-five-loan-feature-20261028-v2.svg",
     "alt": "Multi-Loan Refinance Calculator with mortgage, auto, personal, student and business loan choices and savings chart"
   },
   "financial-ratios-calculator": {
