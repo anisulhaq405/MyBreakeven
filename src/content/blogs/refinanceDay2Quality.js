@@ -20,5 +20,5 @@ const additions={
 export function applyRefinanceDay2Quality(post){
  const section=additions[post.slug];if(!section)return post;
  if(!post.html?.includes('<h2')||post.html.includes('id="'+section.id+'"'))throw Error('Refinance Day 2 duplicate or unexpected source: '+post.slug);
- return {...post,html:section.html+post.html,sectionLinks:[[section.id,section.title],...(post.sectionLinks||[])],modified:'2026-10-28'};
+ return {...post,html:section.html+post.html,sectionLinks:[...(post.sectionLinks||[]),[section.id,section.title]]};
 }
