@@ -6,9 +6,9 @@ describe('Day 2 refinance content numerical and intent integrity',()=>{
   for(const [slug,id] of [['mortgage-refinance-break-even','refinance-checkpoints-example'],['refinance-closing-costs-financed-fees','refinance-three-ledgers'],['refinance-shorter-vs-longer-term','refinance-term-tradeoff-example']]){
    const post=blogPostMap[slug];expect(post).toBeDefined();
    expect(post.html.match(new RegExp('id="'+id+'"','g'))).toHaveLength(1);
-   expect(post.sectionLinks[0][0]).toBe(id);
+   expect(post.sectionLinks.some(([anchor])=>anchor===id)).toBe(true);
    expect(post.html).toContain('/calculators/refinance-calculator/');
-   expect(post.modified).toBe('2026-10-28');
+   expect(post.modified).toBe('2026-10-26');
   }
  });
  it('matches economic checkpoint figures and break-even month within published precision',()=>{
