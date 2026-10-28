@@ -35,3 +35,23 @@
 .final-finance-page .ratio-analysis-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .final-finance-page .ratio-analysis-grid>div{min-width:0}
 @media(max-width:800px){.final-finance-page .ratio-workspace #calculator-inputs>.fd-fields,.final-finance-page .ratio-analysis-grid{grid-template-columns:1fr}}
+
+/* Compact Financial Ratios dashboard */
+.ratio-dashboard-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:12px 0}
+.ratio-dashboard-summary>div{padding:13px;border:1px solid #dbe6ed;border-radius:12px;background:#fff;min-width:0}
+.ratio-dashboard-summary strong{display:block;font-size:1.13rem;color:#15576a;overflow-wrap:anywhere}
+.ratio-dashboard-summary span{display:block;font-size:.76rem;color:#647687}
+.final-finance-page .ratio-analysis-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:12px;margin:14px 0}
+.ratio-compact-card{min-width:0;border:1px solid #dce5ed;border-radius:12px;padding:12px;background:#fff;display:flex;flex-direction:column;gap:7px}
+.ratio-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.ratio-card-head h3{font-size:1rem;margin:0;line-height:1.3}
+.ratio-card-head strong{font-size:1.08rem;white-space:normal;text-align:right;color:#0c6576}
+.ratio-compact-card .ff-ratio-insight{margin:0;padding:8px;border:0;background:#f7fafc}
+.ratio-compact-card .ff-insight-meaning{font-size:.76rem;line-height:1.4;margin:6px 0}
+.ratio-compact-card .ff-insight-diagram{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.ratio-compact-card .ff-insight-driver{padding:7px}
+.ratio-compact-card .ff-insight-footnote{font-size:.67rem}
+.ratio-compact-card details{margin-top:2px;font-size:.78rem}
+.ratio-full-details>summary{cursor:pointer;font-weight:700;font-size:1rem}
+@media(max-width:850px){.ratio-dashboard-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.final-finance-page .ratio-analysis-grid{grid-template-columns:1fr}}
+@media print{.ratio-full-details{display:block}}
