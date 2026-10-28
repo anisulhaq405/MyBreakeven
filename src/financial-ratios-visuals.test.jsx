@@ -11,8 +11,11 @@ describe('ratio visual presentation',()=>{
   const html=renderToStaticMarkup(<FinancialRatiosCalculator tool={freeTools['financial-ratios-calculator']} slug="financial-ratios-calculator"/>);
   for(const row of r.rows)expect(html).toContain('data-ratio-visual="'+row.name.replace(/&/g,'&amp;').replace(/"/g,'&quot;')+'"');
   expect(html).toContain('Financial driver relationship');
-  expect(html).toContain('Calculation:');
+  expect(html).toContain('Exact formula');
   expect(html).toContain('Value bridge');
+  expect((html.match(/class="ratio-compact-card"/g)||[]).length).toBe(55);
+  expect((html.match(/class="ratio-result-group"/g)||[]).length).toBe(7);
+  expect(html).toContain('Showing 55 of 55 financial measures across 7 categories');
   expect(html).toContain('Operating timeline');
   expect(html).toContain('Capital / allocation structure');
   expect(html).toContain('Per-share / valuation relationship');
