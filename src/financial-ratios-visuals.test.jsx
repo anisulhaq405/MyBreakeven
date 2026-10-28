@@ -12,5 +12,9 @@ describe('ratio visual presentation',()=>{
   for(const row of r.rows)expect(html).toContain('data-ratio-visual="'+row.name.replace(/&/g,'&amp;').replace(/"/g,'&quot;')+'"');
   expect(html).toContain('Financial driver relationship');
   expect(html).toContain('Calculation:');
+  expect(html).toContain('Value bridge');
+  expect(html).toContain('Operating timeline');
+  expect(html).toContain('Capital / allocation structure');
+  expect(html).toContain('Per-share / valuation relationship');
  });
 });
