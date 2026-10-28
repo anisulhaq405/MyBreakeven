@@ -128,3 +128,13 @@
   .final-finance-page .ratio-analysis-grid{columns:2}
   .final-finance-page .ratio-analysis-grid .ratio-compact-card{box-shadow:none}
 }
+
+
+/* All 55 financial ratios remain directly discoverable, never filtered by input category. */
+.final-finance-page .ratio-result-nav{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 22px}
+.final-finance-page .ratio-result-nav a{display:inline-flex;gap:6px;align-items:center;padding:9px 12px;border:1px solid #cfdee6;border-radius:9px;background:#f5fafc;color:#17536d;text-decoration:none;font-size:.83rem;font-weight:700}
+.final-finance-page .ratio-result-nav a:hover,.final-finance-page .ratio-result-nav a:focus-visible{background:#e6f2f7}
+.final-finance-page .ratio-result-nav span{font-variant-numeric:tabular-nums;color:#566c7b}
+.final-finance-page .ratio-result-group{margin:20px 0 26px;scroll-margin-top:100px}
+.final-finance-page .ratio-result-group>h3{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:1.22rem;color:#1b4056;border-bottom:2px solid #e5edf2;padding:0 0 10px;margin:0 0 12px}
+.final-finance-page .ratio-result-group>h3 span{font-size:.77rem;font-weight:600;color:#597183}
