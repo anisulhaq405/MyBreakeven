@@ -55,3 +55,76 @@
 .ratio-full-details>summary{cursor:pointer;font-weight:700;font-size:1rem}
 @media(max-width:850px){.ratio-dashboard-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.final-finance-page .ratio-analysis-grid{grid-template-columns:1fr}}
 @media print{.ratio-full-details{display:block}}
+
+
+/* Ratio analysis: content-first masonry columns eliminate unused grid-row space.
+   Scope carefully to this calculator; do not change other finance tools. */
+.final-finance-page .ratio-analysis-grid{
+  display:block;
+  columns:2 340px;
+  column-gap:14px;
+  margin:14px 0 18px;
+}
+.final-finance-page .ratio-analysis-grid .ratio-compact-card{
+  display:inline-flex;
+  width:100%;
+  box-sizing:border-box;
+  vertical-align:top;
+  break-inside:avoid;
+  -webkit-column-break-inside:avoid;
+  margin:0 0 14px;
+  padding:13px 14px;
+  gap:8px;
+  box-shadow:0 3px 14px rgba(16,45,70,.045);
+}
+.final-finance-page .ratio-compact-card .ratio-card-head{
+  align-items:center;
+  padding-bottom:8px;
+  border-bottom:1px solid #e6edf1;
+}
+.final-finance-page .ratio-compact-card .ratio-card-head h3{
+  font-size:.96rem;
+  line-height:1.3;
+  color:#19354a;
+}
+.final-finance-page .ratio-compact-card .ratio-card-head strong{
+  font-size:1.14rem;
+  font-variant-numeric:tabular-nums;
+}
+.final-finance-page .ratio-compact-card .ff-ratio-insight{
+  background:transparent;
+  padding:0;
+}
+.final-finance-page .ratio-compact-card .ff-insight-top{padding-bottom:6px}
+.final-finance-page .ratio-compact-card .ff-insight-top strong{display:none}
+.final-finance-page .ratio-compact-card .ff-insight-diagram{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:7px;
+}
+.final-finance-page .ratio-compact-card .ff-insight-driver{
+  padding:8px;
+  background:#f8fafc;
+}
+.final-finance-page .ratio-compact-card .ff-insight-driver-value{font-size:.88rem}
+.final-finance-page .ratio-compact-card .ff-insight-meaning{margin:7px 0 9px;line-height:1.48}
+.final-finance-page .ratio-compact-card .ff-insight-footnote{margin-top:8px;line-height:1.4}
+.final-finance-page .ratio-compact-card details{
+  border-top:1px solid #e7edf2;
+  padding-top:8px;
+  margin:0;
+}
+.final-finance-page .ratio-compact-card details:not([open]){padding-bottom:0}
+.final-finance-page .ratio-compact-card summary{font-size:.8rem}
+@media(max-width:850px){
+  .final-finance-page .ratio-analysis-grid{columns:1;column-gap:0}
+  .final-finance-page .ratio-analysis-grid .ratio-compact-card{margin-bottom:11px}
+}
+@media(max-width:480px){
+  .final-finance-page .ratio-compact-card .ff-insight-diagram{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .final-finance-page .ratio-compact-card .ratio-card-head{flex-wrap:wrap}
+  .final-finance-page .ratio-compact-card .ratio-card-head strong{text-align:left}
+}
+@media print{
+  .final-finance-page .ratio-analysis-grid{columns:2}
+  .final-finance-page .ratio-analysis-grid .ratio-compact-card{box-shadow:none}
+}
