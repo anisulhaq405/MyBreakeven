@@ -157,3 +157,28 @@
 .final-finance-page .ff-visual-valuation{border-left:4px solid #bf8c4a}
 .final-finance-page .ff-visual-coverage{border-left:4px solid #168576}
 @media(max-width:480px){.final-finance-page .ff-insight-equation{grid-template-columns:1fr;gap:3px}.final-finance-page .ff-insight-visual-frame{padding:8px}}
+
+
+/* Equivalent Ratio Calculator: scoped, accessible analysis presentation. */
+.final-finance-page .equivalent-workspace{align-items:start;gap:18px}
+.final-finance-page .equivalent-workspace .fd-panel{min-width:0}
+.final-finance-page .equivalent-workspace .ff-ratio-inputs{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:15px;background:#fafcfe}
+.final-finance-page .equivalent-workspace .ff-ratio-inputs:has(>label:nth-of-type(3)){grid-template-columns:repeat(3,minmax(0,1fr))}
+.final-finance-page .equivalent-workspace .ff-ratio-inputs legend{font-size:.9rem;color:#25445a}
+.final-finance-page .equivalent-verdict{padding:17px 19px;border:1px solid #cedfe8;border-left:5px solid #327b89;border-radius:12px;background:#f0f8fa;font-size:1.12rem;font-weight:750;line-height:1.5;overflow-wrap:anywhere}
+.final-finance-page .equivalent-verdict.is-invalid{border-left-color:#b7663b;background:#fff7ef}
+.final-finance-page .equivalent-verdict.is-equivalent{border-left-color:#15836a;background:#edfaf5}
+.final-finance-page .equivalent-results .fd-cards{margin:18px 0}
+.final-finance-page .equivalent-results ol{padding-left:22px;line-height:1.65}
+.final-finance-page .equivalent-results ol li{padding-left:4px;overflow-wrap:anywhere}
+.final-finance-page .equivalent-comparison{margin:18px 0;padding:17px;border:1px solid #dae7ee;border-radius:13px;background:#f8fbfd}
+.final-finance-page .equivalent-comparison figcaption{line-height:1.5;color:#4d6675;font-size:.84rem;margin-bottom:15px}
+.final-finance-page .equivalent-comparison-row{margin:12px 0}
+.final-finance-page .equivalent-comparison-row p{margin:0 0 7px;font-size:.85rem;font-weight:700}
+.final-finance-page .equivalent-comparison .ff-bars{height:27px;border:1px solid #d5e1e9}
+.final-finance-page .equivalent-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:13px;font-size:.8rem;color:#40586a}
+.final-finance-page .equivalent-legend span{display:inline-flex;align-items:center;gap:5px}
+.final-finance-page .equivalent-legend span:before{content:"";width:10px;height:10px;border-radius:2px;background:#2e6d82}
+.final-finance-page .equivalent-legend span:nth-child(2):before{background:#927345}
+.final-finance-page .equivalent-legend span:nth-child(3):before{background:#7857a4}
+@media(max-width:720px){.final-finance-page .equivalent-workspace{grid-template-columns:1fr}.final-finance-page .equivalent-workspace .ff-ratio-inputs,.final-finance-page .equivalent-workspace .ff-ratio-inputs:has(>label:nth-of-type(3)){grid-template-columns:1fr}.final-finance-page .equivalent-comparison{padding:12px}}
