@@ -10,7 +10,11 @@ describe('ratio visual presentation',()=>{
   expect(r.rows).toHaveLength(55);
   const html=renderToStaticMarkup(<FinancialRatiosCalculator tool={freeTools['financial-ratios-calculator']} slug="financial-ratios-calculator"/>);
   for(const row of r.rows)expect(html).toContain('data-ratio-visual="'+row.name.replace(/&/g,'&amp;').replace(/"/g,'&quot;')+'"');
-  expect(html).toContain('Own scale');
-  expect(html).toContain('no benchmark');
+  expect(html).toContain('Financial driver relationship');
+  expect(html).toContain('Calculation:');
+  expect(html).toContain('Value bridge');
+  expect(html).toContain('Operating timeline');
+  expect(html).toContain('Capital / allocation structure');
+  expect(html).toContain('Per-share / valuation relationship');
  });
 });
