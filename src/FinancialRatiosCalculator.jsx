@@ -14,12 +14,12 @@ function RatioVisual({row,priorRow,compare,fmt}){
  const current=Number.isFinite(row.value)?row.value:null;
  const previous=compare&&priorRow&&Number.isFinite(priorRow.value)?priorRow.value:null;
  const max=Math.max(Math.abs(current??0),Math.abs(previous??0),1e-12);
- const width=value=>value===null?0:Math.abs(value)/max*90;
+ const width=value=>value===null?0:Math.abs(value)/max*45;
  const label=value=>value===null?'Unavailable':value<0?'Negative':value===0?'Zero':'Positive';
  const readings=[{key:'current',name:'Current',value:current,formatted:fmt(row)},...(compare?[{key:'prior',name:'Comparison',value:previous,formatted:priorRow?fmt(priorRow):'Unavailable'}]:[])];
  return <figure className="ff-ratio-visual" data-ratio-visual={row.name} aria-label={row.name+' visual comparison'}>
  <div className="ff-ratio-visual-title">Value diagram <span>Own scale · no benchmark</span></div>
- {readings.map(a=><div className="ff-ratio-visual-line" key={a.key}><span className="ff-ratio-visual-label">{a.name}</span><div className="ff-ratio-visual-axis" role="img" aria-label={a.name+': '+a.formatted+' ('+label(a.value)+')'}><span className="ff-ratio-visual-center"/>{a.value!==null&&<span className={'ff-ratio-visual-bar '+(a.value<0?'negative':'positive')+(a.key==='prior'?' comparison':'')} style={{width:width(a.value)+'%',left:a.value<0?(50-width(a.value)/2)+'%':'50%'}}/>}</div><span className="ff-ratio-visual-value">{a.formatted}</span></div>)}
+ {readings.map(a=><div className="ff-ratio-visual-line" key={a.key}><span className="ff-ratio-visual-label">{a.name}</span><div className="ff-ratio-visual-axis" role="img" aria-label={a.name+': '+a.formatted+' ('+label(a.value)+')'}><span className="ff-ratio-visual-center"/>{a.value!==null&&<span className={'ff-ratio-visual-bar '+(a.value<0?'negative':'positive')+(a.key==='prior'?' comparison':'')} style={{width:width(a.value)+'%',left:a.value<0?(50-width(a.value))+'%':'50%'}}/>}</div><span className="ff-ratio-visual-value">{a.formatted}</span></div>)}
  <figcaption>{current===null?'Missing or invalid required values: no numeric bar is drawn.':compare?'Bars compare the same measure in two periods. Signs are preserved; longer is not necessarily better.':'Bar displays this measure relative to its own absolute value, not a performance score. Enable period comparison for a meaningful change visual.'}</figcaption>
  </figure>;
 }
