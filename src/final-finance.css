@@ -11,3 +11,12 @@
 .ff-refi-key{display:inline-block;width:11px;height:11px;border-radius:2px;margin:0 .25rem 0 .6rem;vertical-align:middle}.ff-refi-legend{font-size:.8rem;margin:.6rem 0}
 .ff-refi-visual figcaption{font-size:.78rem;color:#486174;line-height:1.5;clear:both}
 @media(max-width:600px){.ff-refi-visual{padding:.75rem}.ff-refi-bar-line>span{font-size:.8rem}}
+
+/* Financial ratios: independent, accessible unit-preserving diagrams. */
+.ff-ratio-visual{font-size:.82rem;max-width:100%;margin:10px 0;padding:9px;border:1px solid #e1e7ef;border-radius:10px;background:#f9fbfd;color:#263e50;font-weight:400;white-space:normal}
+.ff-ratio-visual-title{font-weight:700;margin-bottom:6px}.ff-ratio-visual-title span{font-size:.7rem;font-weight:400;color:#54677b}
+.ff-ratio-visual-line{display:grid;grid-template-columns:70px minmax(0,1fr) minmax(65px,auto);align-items:center;gap:6px;margin:5px 0}
+.ff-ratio-visual-label,.ff-ratio-visual-value{font-size:.73rem;font-variant-numeric:tabular-nums}.ff-ratio-visual-value{text-align:right}
+.ff-ratio-visual-axis{height:15px;border-radius:4px;background:#e9eef4;position:relative;overflow:hidden}.ff-ratio-visual-center{position:absolute;left:50%;height:100%;border-left:2px solid #73859a;z-index:1}
+.ff-ratio-visual-bar{position:absolute;top:2px;height:11px;border-radius:2px}.ff-ratio-visual-bar.positive{background:#168474}.ff-ratio-visual-bar.negative{background:#c46c4f}.ff-ratio-visual-bar.comparison{opacity:.65}
+.ff-ratio-visual figcaption{font-size:.68rem;line-height:1.45;color:#586a7d;margin-top:6px}
