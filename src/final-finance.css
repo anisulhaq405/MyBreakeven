@@ -12,11 +12,18 @@
 .ff-refi-visual figcaption{font-size:.78rem;color:#486174;line-height:1.5;clear:both}
 @media(max-width:600px){.ff-refi-visual{padding:.75rem}.ff-refi-bar-line>span{font-size:.8rem}}
 
-/* Financial ratios: independent, accessible unit-preserving diagrams. */
-.ff-ratio-visual{font-size:.82rem;max-width:100%;margin:10px 0;padding:9px;border:1px solid #e1e7ef;border-radius:10px;background:#f9fbfd;color:#263e50;font-weight:400;white-space:normal}
-.ff-ratio-visual-title{font-weight:700;margin-bottom:6px}.ff-ratio-visual-title span{font-size:.7rem;font-weight:400;color:#54677b}
-.ff-ratio-visual-line{display:grid;grid-template-columns:70px minmax(0,1fr) minmax(65px,auto);align-items:center;gap:6px;margin:5px 0}
-.ff-ratio-visual-label,.ff-ratio-visual-value{font-size:.73rem;font-variant-numeric:tabular-nums}.ff-ratio-visual-value{text-align:right}
-.ff-ratio-visual-axis{height:15px;border-radius:4px;background:#e9eef4;position:relative;overflow:hidden}.ff-ratio-visual-center{position:absolute;left:50%;height:100%;border-left:2px solid #73859a;z-index:1}
-.ff-ratio-visual-bar{position:absolute;top:2px;height:11px;border-radius:2px}.ff-ratio-visual-bar.positive{background:#168474}.ff-ratio-visual-bar.negative{background:#c46c4f}.ff-ratio-visual-bar.comparison{opacity:.65}
-.ff-ratio-visual figcaption{font-size:.68rem;line-height:1.45;color:#586a7d;margin-top:6px}
+
+/* Domain-aware financial ratio analysis cards */
+.ff-ratio-insight{margin:12px 0;padding:14px;border:1px solid #d8e2eb;border-radius:14px;background:linear-gradient(145deg,#fff,#f6f9fc);text-align:left;color:#18344a;font-weight:400;min-width:0}
+.ff-ratio-featured{border-color:#98b9cf;padding:18px}
+.ff-insight-top{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;border-bottom:1px solid #e4eaf0;padding-bottom:9px}
+.ff-insight-top span{font-size:.73rem;font-weight:750;letter-spacing:.035em;text-transform:uppercase;color:#42667f}.ff-insight-top strong{font-size:1.22rem;font-variant-numeric:tabular-nums;color:#0d4e63}
+.ff-insight-meaning{font-size:.82rem;line-height:1.58;margin:10px 0;color:#425769}
+.ff-insight-diagram{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;align-items:stretch}
+.ff-insight-driver{min-width:0;background:#fff;border:1px solid #e4eaf0;border-radius:9px;padding:9px;display:flex;flex-direction:column;gap:4px}
+.ff-insight-driver-label{font-size:.72rem;color:#53697a;line-height:1.3}.ff-insight-driver-value{font-size:.91rem;font-weight:750;word-break:break-word;font-variant-numeric:tabular-nums}
+.ff-insight-meter{height:7px;border-radius:7px;background:#e7edf3;overflow:hidden;margin-top:auto}.ff-insight-meter i{display:block;height:100%;background:#168576;border-radius:7px}.ff-insight-meter i.is-negative{background:#b76d4e}
+.ff-insight-timeline .ff-insight-driver{border-top:3px solid #4985b4}.ff-insight-bridge .ff-insight-driver{border-top:3px solid #169481}.ff-insight-composition .ff-insight-driver{border-top:3px solid #7966b9}.ff-insight-drivers .ff-insight-driver{border-top:3px solid #3074a6}.ff-insight-valuation .ff-insight-driver{border-top:3px solid #bf8c4a}.ff-insight-coverage .ff-insight-driver{border-top:3px solid #168576}
+.ff-insight-missing{font-size:.7rem;color:#835a42}.ff-insight-compare{margin-top:12px;padding:10px;background:#eaf4f7;border-radius:9px;display:flex;flex-wrap:wrap;gap:8px 14px;font-size:.8rem}.ff-insight-compare small{width:100%;color:#53697a}
+.ff-insight-footnote{color:#65788a;font-size:.71rem;line-height:1.48;margin:10px 0 0}
+@media(max-width:650px){.ff-insight-diagram{grid-template-columns:repeat(2,minmax(0,1fr))}.ff-ratio-insight{padding:10px}}
