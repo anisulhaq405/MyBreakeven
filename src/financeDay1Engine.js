@@ -108,7 +108,7 @@ export function futureValuePlanCsv(v,settings,r,currency){
 
 /** Phase 2: like-for-like, independently calculated investment plan comparison. */
 export function compareFutureValuePlans(v,alternatives=[]){
- const choices=[{label:'Current plan',overrides:{},plan:{}},...alternatives].slice(0,4);
+ const choices=[{label:'Current plan',overrides:{},plan:alternatives[0]?.plan||{}},...alternatives].slice(0,4);
  const results=choices.map((choice,index)=>{
   const input={...v,...(choice.overrides||{})};
   const result=calculateFutureValuePlan(input,choice.plan||{});
