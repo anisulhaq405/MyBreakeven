@@ -1,0 +1,6 @@
+import {describe,it,expect} from 'vitest';
+import {fvDefaults,compareFutureValuePlans,calculateFutureValuePlan} from './financeDay1Engine.js';
+describe('Future Value Phase 2 investment comparisons',()=>{
+ it('uses identical deposits and fees for independent return scenarios',()=>{const v=fvDefaults(),plan={fee:'0.5',step:'2',fixedFee:'0',delay:'0'};const r=compareFutureValuePlans(v,[{label:'Low',overrides:{rate:'3'},plan},{label:'High',overrides:{rate:'8'},plan}]);expect(r.valid).toBe(true);expect(r.results).toHaveLength(3);expect(r.results[1].result.balance).toBeLessThan(r.results[2].result.balance);expect(r.results[1].result.contributed).toBeCloseTo(r.results[2].result.contributed,5);expect(r.results[2].result.balance).toBeCloseTo(calculateFutureValuePlan({...v,rate:'8'},plan).balance,6);});
+ it('flags an invalid scenario without inventing a winner',()=>{const r=compareFutureValuePlans(fvDefaults(),[{label:'Bad',overrides:{rate:'200'}}]);expect(r.valid).toBe(false);expect(r.leader).toBeNull();});
+});
