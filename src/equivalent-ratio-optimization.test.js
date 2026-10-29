@@ -37,8 +37,10 @@ describe('Equivalent ratio optimization safety',()=>{
   expect(html).toContain('equivalent-verdict');
   expect(html).toContain('Step-by-step working');
   expect(html).toContain('Composition of each ratio');
-  expect(html).toContain('Equivalent pair');
-  expect(html).toContain('Solve missing x');
+  expect(html).toContain('Business comparisons');
+  expect(html).toContain('Cost-to-revenue comparison');
+  expect(html).toContain('Debt-to-equity comparison');
+  expect(html).toContain('Advanced ratio mathematics');
   expect(html).toContain('Copy result &amp; steps');
   expect(html).toContain('Download CSV');
  });
