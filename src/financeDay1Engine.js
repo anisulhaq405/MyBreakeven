@@ -105,3 +105,15 @@ export function futureValuePlanCsv(v,settings,r,currency){
  const rows=[['MyBreakeven advanced future value plan','Illustrative fixed-return scenario'],['Currency',currency,'No FX conversion'],...Object.entries(v).map(([k,val])=>[k,val]),...Object.entries(settings).map(([k,val])=>['plan_'+k,val]),['Fee model','Annual percentage converted to equivalent period retention; fixed fee deducted after growth'],['Tax','Excluded; not after-tax advice'],[],['Period','Elapsed months','Opening','Contribution','Gross growth','Fees paid','Closing balance'],...r.rows.map(x=>[x.period,x.months,x.opening.toFixed(2),x.deposit.toFixed(2),x.growth.toFixed(2),x.fee.toFixed(2),x.balance.toFixed(2)]),[],['After-fee ending balance',r.balance.toFixed(2)],['No-fee ending balance on identical deposits',r.noFeeBalance.toFixed(2)],['Cumulative fees paid',r.fees.toFixed(2)],['Fee drag including lost compounding',r.feeDrag.toFixed(2)],['Inflation-adjusted after-fee balance',r.real.toFixed(2)]];
  return '\\uFEFF'+rows.map(row=>row.map(csvCell).join(',')).join('\\r\\n');
 }
+
+/** Phase 2: like-for-like, independently calculated investment plan comparison. */
+export function compareFutureValuePlans(v,alternatives=[]){
+ const choices=[{label:'Current plan',overrides:{},plan:{}},...alternatives].slice(0,4);
+ const results=choices.map((choice,index)=>{
+  const input={...v,...(choice.overrides||{})};
+  const result=calculateFutureValuePlan(input,choice.plan||{});
+  return {label:String(choice.label||'Plan '+(index+1)),input,result};
+ });
+ const valid=results.every(x=>x.result.valid);
+ return {valid,results,leader:valid?results.reduce((best,x)=>x.result.balance>best.result.balance?x:best,results[0]):null};
+}
