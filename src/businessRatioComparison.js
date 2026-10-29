@@ -28,3 +28,23 @@ export function evaluateBusinessRatio(type,inputs){
  };
  return {valid:true,title:item.title,unit:item.unit,values,delta,labels:item.labels,kind:'two',direction,note:notes[type]};
 }
+
+export function evaluateBusinessTarget(type,comparison,targetText){
+ if(!comparison?.valid)return null;
+ const target=numeric(targetText);
+ if(target===null)return {valid:false,reason:'Enter a nonnegative numeric target.'};
+ if(type==='mix')return {valid:false,reason:'Mix targets require separate target shares for each component.'};
+ const current=comparison.values[1],delta=current-target;
+ const lowerIsBetter=businessScenarios[type]?.good==='lower';
+ const met=lowerIsBetter?current<=target:current>=target;
+ const unit=comparison.unit;
+ const action={
+  cost:'Review variable costs, pricing and product mix. Compare the same cost categories and revenue basis across periods.',
+  debt:'Review borrowing obligations, equity movements, interest coverage and debt maturity before changing financing.',
+  labor:'Review hours per unit alongside product quality, staffing, capacity utilization and production mix.'
+ }[type];
+ return {valid:true,target,current,delta,met,unit,
+  status:met?'Target met':'Target not met',
+  action,
+  note:'Illustrative threshold chosen by the user, not an industry benchmark. This tool does not establish causal drivers.'};
+}
