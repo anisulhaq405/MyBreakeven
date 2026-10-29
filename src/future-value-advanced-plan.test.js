@@ -1,0 +1,9 @@
+import {describe,it,expect} from 'vitest';
+import {fvDefaults,calculateFutureValue,calculateFutureValuePlan} from './financeDay1Engine.js';
+describe('Future Value advanced plan',()=>{
+ const v=fvDefaults();
+ it('matches the original engine exactly when charges and step-up are zero',()=>{const a=calculateFutureValue(v),b=calculateFutureValuePlan(v,{fee:'0',step:'0',fixedFee:'0'});expect(b.valid).toBe(true);expect(b.balance).toBeCloseTo(a.balance,6);expect(b.contributed).toBeCloseTo(a.contributed,6);expect(b.fees).toBe(0);expect(b.feeDrag).toBeCloseTo(0,6);});
+ it('tracks fees as balance drag against the identical no-fee stepped plan',()=>{const a=calculateFutureValuePlan(v,{fee:'0',step:'3',fixedFee:'0'}),b=calculateFutureValuePlan(v,{fee:'1',step:'3',fixedFee:'1'});expect(b.valid).toBe(true);expect(b.balance).toBeLessThan(a.balance);expect(b.fees).toBeGreaterThan(0);expect(b.feeDrag).toBeCloseTo(a.balance-b.balance,6);});
+ it('increases cumulative deposits with positive annual step-up',()=>{const a=calculateFutureValuePlan(v,{fee:'0',step:'0'}),b=calculateFutureValuePlan(v,{fee:'0',step:'5'});expect(b.contributed).toBeGreaterThan(a.contributed);});
+ it('rejects out-of-range fee and step values',()=>{expect(calculateFutureValuePlan(v,{fee:'50'}).valid).toBe(false);expect(calculateFutureValuePlan(v,{step:'101'}).valid).toBe(false);});
+});
