@@ -82,6 +82,19 @@ jobs:
           print('PASS: Future Value production HTML includes Phase 1 and Phase 2')
           PY
 
+      - name: Verify Future Value Phase 3 published modules
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('dist/calculators/future-value-calculator/index.html')
+          assert p.exists()
+          html = p.read_text(encoding='utf-8')
+          required = ('Investment risk and simulated outcomes', 'Investment growth and cost analysis', 'Download your complete investment planning report')
+          missing = [text for text in required if text not in html]
+          assert not missing, f'Missing Phase 3 production components: {missing}'
+          print('PASS: Future Value Phase 3 components present in built HTML')
+          PY
+
       - name: Audit rendered routes and internal links
         run: python3 scripts/audit-built-site.py --output /tmp/site-inventory.json
 
