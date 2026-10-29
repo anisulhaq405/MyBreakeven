@@ -43,6 +43,7 @@ export function calculateFutureValuePlan(v,settings={}){
  const fee=parse(settings.fee??'0','fee',errors,{min:0,max:25,places:4});
  const step=parse(settings.step??'0','step',errors,{min:-100,max:100,places:4});
  const fixedFee=parse(settings.fixedFee??'0','fixedFee',errors,{min:0,max:100000,places:2});
+ const delay=parse(settings.delay??'0','delay',errors,{min:0,max:1200,places:0,integer:true});
  if(Object.keys(errors).length)return {valid:false,errors};
  const rate=Number(v.rate)/100,compounds=Number(v.compound),frequency=Number(v.frequency);
  const logAnnual=v.basis==='nominal'?compounds*Math.log1p(rate/compounds):Math.log1p(rate);
@@ -55,7 +56,7 @@ export function calculateFutureValuePlan(v,settings={}){
   const opening=balance;
   const yearIndex=Math.floor((k-1)/frequency);
   const payment=basePayment.times(new D(1).plus(step.div(100)).pow(yearIndex));
-  const deposit=payment;
+  const deposit=k<=delay.toNumber()?new D(0):payment;
   const noFeeBase=due?withoutFees.plus(deposit):withoutFees;
   withoutFees=withoutFees.plus(deposit).plus(noFeeBase.times(periodRate));
   const earningBase=due?balance.plus(deposit):balance;
@@ -70,7 +71,8 @@ export function calculateFutureValuePlan(v,settings={}){
   rows.push({period:k,months:k*12/frequency,opening:opening.toNumber(),deposit:deposit.toNumber(),growth:growth.toNumber(),fee:D.min(charge,beforeFee).toNumber(),balance:balance.toNumber()});
  }
  const years=Number(v.months)/12,deflator=Math.pow(1+Number(v.inflation)/100,years);
- return {valid:true,errors,balance:balance.toNumber(),contributed:contributed.toNumber(),growth:balance.minus(contributed).toNumber(),fees:totalFees.toNumber(),real:balance.div(deflator).toNumber(),rows,periods,years,baseline:baseline.balance,noFeeBalance:withoutFees.toNumber(),noFeeReal:withoutFees.div(deflator).toNumber(),feeDrag:withoutFees.minus(balance).toNumber(),annualStep:step.toNumber(),annualFee:fee.toNumber(),fixedFee:fixedFee.toNumber()};
+ if(!Number.isFinite(deflator)||deflator===0||!balance.div(deflator).isFinite()||balance.div(deflator).abs().gt('1e15'))return {valid:false,errors:{inflation:'Inflation-adjusted result exceeds the supported range.'}};
+ return {valid:true,errors,balance:balance.toNumber(),contributed:contributed.toNumber(),growth:balance.minus(contributed).toNumber(),fees:totalFees.toNumber(),real:balance.div(deflator).toNumber(),rows,periods,years,baseline:baseline.balance,noFeeBalance:withoutFees.toNumber(),noFeeReal:withoutFees.div(deflator).toNumber(),feeDrag:withoutFees.minus(balance).toNumber(),annualStep:step.toNumber(),annualFee:fee.toNumber(),fixedFee:fixedFee.toNumber(),delay:delay.toNumber()};
 }
 const csvCell=x=>'"'+String(x).replaceAll('"','""')+'"';
 export function futureValueCsv(v,r,currency){if(!r.valid)return '';const lines=[['MyBreakeven future value schedule','Fixed-rate scenario; not a forecast'],['Currency',currency,'Labels only; no FX conversion'],...Object.entries(v).map(([k,x])=>[k,x]),['Annual rate convention',v.basis],['Timing',v.timing],['Excluded','Tax, fees, withdrawals and variable returns'],['Contribution basis','Fixed nominal amount per selected period'],[],['Period','Elapsed months','Opening balance','Contribution','Growth','Closing balance'],...r.rows.map(x=>[x.period,x.months,x.opening.toFixed(2),x.deposit.toFixed(2),x.growth.toFixed(2),x.balance.toFixed(2)]),[],['Ending balance',r.balance.toFixed(2)],['Contributed',r.contributed.toFixed(2)],['Growth',r.growth.toFixed(2)],['Inflation-adjusted ending balance',r.real.toFixed(2)],['Rounding','Rows display cents independently; engine retains precision']];return '\uFEFF'+lines.map(row=>row.map(csvCell).join(',')).join('\r\n');}
