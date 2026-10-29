@@ -51,9 +51,10 @@ export function calculateFutureValueGoal(v,goalInput){
  const perUnit=trial.balance-baseline.balance;
  if(!Number.isFinite(perUnit)||perUnit<=0)return {valid:false,errors:{goal:'Unable to solve this combination of assumptions.'}};
  const raw=Math.max(0,(goal.toNumber()-baseline.balance)/perUnit);
- const required=Math.ceil((raw-1e-9)*100)/100;
+ let required=Math.ceil(raw*100)/100;
  if(required>1e9)return {valid:false,errors:{goal:'Required contribution exceeds the supported per-period amount.'}};
- const verification=calculateFutureValue({...v,payment:required.toFixed(2)});
+ let verification=calculateFutureValue({...v,payment:required.toFixed(2)});
+ if(verification.valid&&verification.balance+1e-7<goal.toNumber()){required=Math.round(required*100+1)/100;verification=calculateFutureValue({...v,payment:required.toFixed(2)});}
  if(!verification.valid)return {valid:false,errors:verification.errors};
  const remaining=Math.max(0,goal.toNumber()-baseline.balance);
  return {valid:true,goal:goal.toNumber(),required,startingOnly:baseline.balance,projected:verification.balance,incrementalNeeded:remaining,periods:baseline.periods,frequency:Number(v.frequency),alreadyFunded:required===0};
