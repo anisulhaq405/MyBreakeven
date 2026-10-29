@@ -70,7 +70,7 @@ export function calculateFutureValuePlan(v,settings={}){
   rows.push({period:k,months:k*12/frequency,opening:opening.toNumber(),deposit:deposit.toNumber(),growth:growth.toNumber(),fee:D.min(charge,beforeFee).toNumber(),balance:balance.toNumber()});
  }
  const years=Number(v.months)/12,deflator=Math.pow(1+Number(v.inflation)/100,years);
- return {valid:true,errors,balance:balance.toNumber(),contributed:contributed.toNumber(),growth:balance.minus(contributed).toNumber(),fees:totalFees.toNumber(),real:balance.div(deflator).toNumber(),rows,periods,years,baseline:baseline.balance,feeDrag:withoutFees.minus(balance).toNumber(),annualStep:step.toNumber(),annualFee:fee.toNumber(),fixedFee:fixedFee.toNumber()};
+ return {valid:true,errors,balance:balance.toNumber(),contributed:contributed.toNumber(),growth:balance.minus(contributed).toNumber(),fees:totalFees.toNumber(),real:balance.div(deflator).toNumber(),rows,periods,years,baseline:baseline.balance,noFeeBalance:withoutFees.toNumber(),noFeeReal:withoutFees.div(deflator).toNumber(),feeDrag:withoutFees.minus(balance).toNumber(),annualStep:step.toNumber(),annualFee:fee.toNumber(),fixedFee:fixedFee.toNumber()};
 }
 const csvCell=x=>'"'+String(x).replaceAll('"','""')+'"';
 export function futureValueCsv(v,r,currency){if(!r.valid)return '';const lines=[['MyBreakeven future value schedule','Fixed-rate scenario; not a forecast'],['Currency',currency,'Labels only; no FX conversion'],...Object.entries(v).map(([k,x])=>[k,x]),['Annual rate convention',v.basis],['Timing',v.timing],['Excluded','Tax, fees, withdrawals and variable returns'],['Contribution basis','Fixed nominal amount per selected period'],[],['Period','Elapsed months','Opening balance','Contribution','Growth','Closing balance'],...r.rows.map(x=>[x.period,x.months,x.opening.toFixed(2),x.deposit.toFixed(2),x.growth.toFixed(2),x.balance.toFixed(2)]),[],['Ending balance',r.balance.toFixed(2)],['Contributed',r.contributed.toFixed(2)],['Growth',r.growth.toFixed(2)],['Inflation-adjusted ending balance',r.real.toFixed(2)],['Rounding','Rows display cents independently; engine retains precision']];return '\uFEFF'+lines.map(row=>row.map(csvCell).join(',')).join('\r\n');}
@@ -95,4 +95,11 @@ export function calculateFutureValueGoal(v,goalInput){
  if(!verification.valid)return {valid:false,errors:verification.errors};
  const remaining=Math.max(0,goal.toNumber()-baseline.balance);
  return {valid:true,goal:goal.toNumber(),required,startingOnly:baseline.balance,projected:verification.balance,incrementalNeeded:remaining,periods:baseline.periods,frequency:Number(v.frequency),alreadyFunded:required===0};
+}
+
+/** Export the full advanced plan with its assumptions and per-period fee accounting. */
+export function futureValuePlanCsv(v,settings,r,currency){
+ if(!r?.valid)return '';
+ const rows=[['MyBreakeven advanced future value plan','Illustrative fixed-return scenario'],['Currency',currency,'No FX conversion'],...Object.entries(v).map(([k,val])=>[k,val]),...Object.entries(settings).map(([k,val])=>['plan_'+k,val]),['Fee model','Annual percentage converted to equivalent period retention; fixed fee deducted after growth'],['Tax','Excluded; not after-tax advice'],[],['Period','Elapsed months','Opening','Contribution','Gross growth','Fees paid','Closing balance'],...r.rows.map(x=>[x.period,x.months,x.opening.toFixed(2),x.deposit.toFixed(2),x.growth.toFixed(2),x.fee.toFixed(2),x.balance.toFixed(2)]),[],['After-fee ending balance',r.balance.toFixed(2)],['No-fee ending balance on identical deposits',r.noFeeBalance.toFixed(2)],['Cumulative fees paid',r.fees.toFixed(2)],['Fee drag including lost compounding',r.feeDrag.toFixed(2)],['Inflation-adjusted after-fee balance',r.real.toFixed(2)]];
+ return '\\uFEFF'+rows.map(row=>row.map(csvCell).join(',')).join('\\r\\n');
 }
