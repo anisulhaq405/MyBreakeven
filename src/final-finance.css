@@ -182,3 +182,11 @@
 .final-finance-page .equivalent-legend span:nth-child(2):before{background:#927345}
 .final-finance-page .equivalent-legend span:nth-child(3):before{background:#7857a4}
 @media(max-width:720px){.final-finance-page .equivalent-workspace{grid-template-columns:1fr}.final-finance-page .equivalent-workspace .ff-ratio-inputs,.final-finance-page .equivalent-workspace .ff-ratio-inputs:has(>label:nth-of-type(3)){grid-template-columns:1fr}.final-finance-page .equivalent-comparison{padding:12px}}
+
+/* Equivalent ratio example presets */
+.final-finance-page .equivalent-examples{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}
+.final-finance-page .equivalent-examples button{font:inherit;font-size:.79rem;line-height:1.3;font-weight:700;border:1px solid #c9dce6;background:#f4f9fc;color:#215367;border-radius:8px;padding:9px 11px;cursor:pointer;min-height:40px}
+.final-finance-page .equivalent-examples button:hover{background:#e7f3fa}
+.final-finance-page .equivalent-examples button:focus-visible{outline:3px solid #efad37;outline-offset:2px}
+.final-finance-page .equivalent-results .fd-actions{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0}
+@media(max-width:480px){.final-finance-page .equivalent-examples button{flex:1 1 46%}}
