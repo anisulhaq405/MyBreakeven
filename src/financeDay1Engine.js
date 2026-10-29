@@ -37,3 +37,24 @@ export function calculateFutureValue(v){
 }
 const csvCell=x=>'"'+String(x).replaceAll('"','""')+'"';
 export function futureValueCsv(v,r,currency){if(!r.valid)return '';const lines=[['MyBreakeven future value schedule','Fixed-rate scenario; not a forecast'],['Currency',currency,'Labels only; no FX conversion'],...Object.entries(v).map(([k,x])=>[k,x]),['Annual rate convention',v.basis],['Timing',v.timing],['Excluded','Tax, fees, withdrawals and variable returns'],['Contribution basis','Fixed nominal amount per selected period'],[],['Period','Elapsed months','Opening balance','Contribution','Growth','Closing balance'],...r.rows.map(x=>[x.period,x.months,x.opening.toFixed(2),x.deposit.toFixed(2),x.growth.toFixed(2),x.balance.toFixed(2)]),[],['Ending balance',r.balance.toFixed(2)],['Contributed',r.contributed.toFixed(2)],['Growth',r.growth.toFixed(2)],['Inflation-adjusted ending balance',r.real.toFixed(2)],['Rounding','Rows display cents independently; engine retains precision']];return '\uFEFF'+lines.map(row=>row.map(csvCell).join(',')).join('\r\n');}
+
+/** Goal-based contribution solver, using the same effective payment-period convention as the schedule. */
+export function calculateFutureValueGoal(v,goalInput){
+ const baseline=calculateFutureValue({...v,payment:'0'});
+ if(!baseline.valid)return {valid:false,errors:baseline.errors};
+ const errors={};const goal=parse(goalInput,'goal',errors,{min:0,max:1e12});
+ if(Object.keys(errors).length)return {valid:false,errors};
+ if(baseline.periods===0)return {valid:false,errors:{goal:'A nonzero investment horizon is required to calculate contributions.'}};
+ // Solve via the engine's existing payment convention; avoid a separate approximation of rates.
+ const trial=calculateFutureValue({...v,payment:'1'});
+ if(!trial.valid)return {valid:false,errors:trial.errors};
+ const perUnit=trial.balance-baseline.balance;
+ if(!Number.isFinite(perUnit)||perUnit<=0)return {valid:false,errors:{goal:'Unable to solve this combination of assumptions.'}};
+ const raw=Math.max(0,(goal.toNumber()-baseline.balance)/perUnit);
+ const required=Math.ceil((raw-1e-9)*100)/100;
+ if(required>1e9)return {valid:false,errors:{goal:'Required contribution exceeds the supported per-period amount.'}};
+ const verification=calculateFutureValue({...v,payment:required.toFixed(2)});
+ if(!verification.valid)return {valid:false,errors:verification.errors};
+ const remaining=Math.max(0,goal.toNumber()-baseline.balance);
+ return {valid:true,goal:goal.toNumber(),required,startingOnly:baseline.balance,projected:verification.balance,incrementalNeeded:remaining,periods:baseline.periods,frequency:Number(v.frequency),alreadyFunded:required===0};
+}
