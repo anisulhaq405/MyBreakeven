@@ -1,0 +1,8 @@
+import {describe,it,expect} from 'vitest';
+import {fvDefaults,calculateFutureValue,calculateFutureValueCashFlows,futureValueMilestones,calculateFutureValuePlan} from './financeDay1Engine.js';
+describe('Phase 2 milestones and scheduled cash flows',()=>{
+ it('tracks funded milestones and an unmet goal',()=>{const v={...fvDefaults(),principal:'0',payment:'100',months:'12',rate:'0',inflation:'0'};const p=calculateFutureValuePlan(v,{fee:'0',step:'0',fixedFee:'0'});const hit=futureValueMilestones(p,'1200');expect(hit.valid).toBe(true);expect(hit.marks.map(x=>x.months)).toEqual([3,6,9,12]);const miss=futureValueMilestones(p,'2400');expect(miss.reached).toBe(false);expect(miss.shortfall).toBe(1200);});
+ it('adds scheduled cash and rejects overdrawn balances',()=>{const v={...fvDefaults(),principal:'100',payment:'10',months:'12',rate:'0',inflation:'0'};const r=calculateFutureValueCashFlows(v,[{period:'3',amount:'50'},{period:'6',amount:'-20'}]);expect(r.valid).toBe(true);expect(r.balance).toBe(250);expect(r.netCash).toBe(250);expect(r.growth).toBe(0);expect(calculateFutureValueCashFlows(v,[{period:'1',amount:'-1000'}]).valid).toBe(false);});
+ it('matches baseline without custom events',()=>{const v=fvDefaults();expect(calculateFutureValueCashFlows(v,[]).balance).toBeCloseTo(calculateFutureValue(v).balance,6);});
+ it('rejects invalid event positions and oversized collections',()=>{const v=fvDefaults();expect(calculateFutureValueCashFlows(v,[{period:'999',amount:'100'}]).valid).toBe(false);expect(calculateFutureValueCashFlows(v,Array.from({length:25},()=>({period:'1',amount:'1'}))).valid).toBe(false);});
+});
