@@ -43,5 +43,8 @@ describe('Equivalent ratio optimization safety',()=>{
   expect(html).toContain('Advanced ratio mathematics');
   expect(html).toContain('Copy result &amp; steps');
   expect(html).toContain('Download CSV');
+  expect(html).toContain('Your target');
+  expect(html).toContain('Target met');
+  expect(html).toContain('Reset business comparison');
  });
 });
