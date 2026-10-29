@@ -4,7 +4,7 @@ export const ebitdaDefaults=()=>({net:'80000',interest:'10000',tax:'20000',depre
 export const fvDefaults=()=>({principal:'10000',payment:'200',months:'120',rate:'6',basis:'effective',compound:'12',frequency:'12',timing:'end',inflation:'2.5'});
 function parse(v,key,errors,{min=0,max=1e9,places=2,optional=false,integer=false}={}){
  if(optional&&(v===''||v===undefined))return null;
- const s=String(v??'');const re=new RegExp(`^-?(?:0|[1-9]\\d*)(?:\\.\\d{1,${places}})?$`);
+ const s=String(v??'');const re=places===0?/^-?(?:0|[1-9][0-9]*)$/:new RegExp(`^-?(?:0|[1-9]\\d*)(?:\\.\\d{1,${places}})?$`);
  if(!re.test(s)){errors[key]='Enter a plain number'+(places===0?'':` with up to ${places} decimal places`)+'. Use zero explicitly.';return null;}
  const n=new D(s);if(n.lt(min)||n.gt(max)||(integer&&!n.isInteger())){errors[key]=`Enter ${integer?'a whole number ':''}from ${min} to ${max}.`;return null;}return n;
 }
