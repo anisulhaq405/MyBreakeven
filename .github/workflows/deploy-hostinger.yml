@@ -89,7 +89,7 @@ jobs:
           p = Path('dist/calculators/future-value-calculator/index.html')
           assert p.exists()
           html = p.read_text(encoding='utf-8')
-          required = ('Investment risk and simulated outcomes', 'Investment growth and cost analysis', 'Download your complete investment planning report')
+          required = ('Investment risk and simulated outcomes', 'Investment growth and cost analysis', 'Download your complete investment planning report', 'Tax impact and business reserve planning')
           missing = [text for text in required if text not in html]
           assert not missing, f'Missing Phase 3 production components: {missing}'
           print('PASS: Future Value Phase 3 components present in built HTML')
