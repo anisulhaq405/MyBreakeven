@@ -210,3 +210,11 @@
 .final-finance-page .equivalent-kpis dd{font-size:1.15rem;font-weight:800;color:#15576a;margin:6px 0 0;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
 .final-finance-page .equivalent-business-insight p{line-height:1.6;color:#325267}
 @media(max-width:650px){.final-finance-page .equivalent-kpis{grid-template-columns:1fr}}
+
+/* Business ratio target-versus-actual decision panel */
+.final-finance-page .equivalent-target{padding:12px 14px;border:1px solid #d5e5eb;border-radius:11px;background:#fff;margin:12px 0}
+.final-finance-page .equivalent-target label{display:block;font-size:.85rem;font-weight:750;color:#21495b;margin-bottom:7px}
+.final-finance-page .equivalent-target input{font:inherit;max-width:220px;width:100%;box-sizing:border-box;border-radius:8px;border:1px solid #aebfca;padding:9px 11px;color:#173b4e}
+.final-finance-page .equivalent-target input:focus-visible{outline:3px solid #67a9ba;outline-offset:1px}
+.final-finance-page .equivalent-target p{font-size:.86rem;line-height:1.55;margin:10px 0 0}
+.final-finance-page .equivalent-target small{display:block;margin-top:6px;color:#617280}
