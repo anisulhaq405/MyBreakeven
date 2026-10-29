@@ -9,4 +9,16 @@ describe('Future Value advanced plan',()=>{
  it('separates fee drag and supports auditable CSV',()=>{const r=calculateFutureValuePlan(v,{fee:'1',step:'2',fixedFee:'1'});expect(r.valid).toBe(true);expect(r.noFeeBalance-r.balance).toBeCloseTo(r.feeDrag,6);expect(r.feeDrag).toBeGreaterThanOrEqual(r.fees);const csv=futureValuePlanCsv(v,{fee:'1',step:'2',fixedFee:'1'},r,'USD');expect(csv).toContain('Fee drag including lost compounding');expect(csv).toContain('Fees paid');expect(csv).toContain('USD');});
  it('delays deposits without delaying principal growth',()=>{const base=calculateFutureValuePlan({...v,months:'12',rate:'0',principal:'100',payment:'10'},{fee:'0',step:'0',delay:'0'});const delayed=calculateFutureValuePlan({...v,months:'12',rate:'0',principal:'100',payment:'10'},{fee:'0',step:'0',delay:'3'});expect(base.balance).toBe(220);expect(delayed.balance).toBe(190);expect(delayed.rows.slice(1,4).every(x=>x.deposit===0)).toBe(true);});
  it('rejects invalid delayed periods and protects real-value overflow',()=>{expect(calculateFutureValuePlan(v,{delay:'-1'}).valid).toBe(false);expect(calculateFutureValuePlan({...v,months:'1200',inflation:'-99',rate:'0',principal:'1000000',payment:'0'},{fee:'0'}).valid).toBe(false);});
+ it('reconciles every row, fee totals and ending balance',()=>{
+  const r=calculateFutureValuePlan({...v,months:'24'},{fee:'0.75',fixedFee:'1',step:'3',delay:'2'});
+  expect(r.valid).toBe(true);
+  expect(r.rows).toHaveLength(25);
+  for(const row of r.rows.slice(1)){
+   expect(row.opening+row.deposit+row.growth-row.fee).toBeCloseTo(row.balance,6);
+   expect(row.fee).toBeGreaterThanOrEqual(0);
+  }
+  expect(r.rows.slice(1).reduce((sum,row)=>sum+row.deposit,Number(v.principal))).toBeCloseTo(r.contributed,6);
+  expect(r.rows.slice(1).reduce((sum,row)=>sum+row.fee,0)).toBeCloseTo(r.fees,6);
+  expect(r.rows.at(-1).balance).toBeCloseTo(r.balance,6);
+ });
 });
