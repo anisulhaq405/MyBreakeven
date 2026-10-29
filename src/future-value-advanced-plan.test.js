@@ -21,4 +21,5 @@ describe('Future Value advanced plan',()=>{
   expect(r.rows.slice(1).reduce((sum,row)=>sum+row.fee,0)).toBeCloseTo(r.fees,6);
   expect(r.rows.at(-1).balance).toBeCloseTo(r.balance,6);
  });
+ it('accepts whole-number delay and rejects fractional delay safely',()=>{const ok=calculateFutureValuePlan(v,{delay:'3'});expect(ok.valid).toBe(true);const bad=calculateFutureValuePlan(v,{delay:'3.5'});expect(bad.valid).toBe(false);expect(bad.errors.delay).toBeDefined();});
 });
