@@ -17,6 +17,20 @@ describe('Equivalent ratio optimization safety',()=>{
   expect(r.equal).toBe(true);
   expect(r.bars===null || r.bars.every(row=>row.every(Number.isFinite))).toBe(true);
  });
+
+ it('solves missing zero exactly and rejects invalid denominators',()=>{
+  const zero=calculateEquivalent({...equivalentDefaults(),mode:'solve',a:['x','3','4'],b:['0','6','8'],terms:'2'});
+  expect(zero.valid).toBe(true);
+  expect(zero.solution).toBe('0');
+  const invalid=calculateEquivalent({...equivalentDefaults(),a:['1','0','4'],b:['2','0','8'],terms:'2'});
+  expect(invalid.valid).toBe(false);
+ });
+ it('generates exact fractional multiples without rounding',()=>{
+  const r=calculateEquivalent({...equivalentDefaults(),mode:'generate',terms:'2',a:['1/3','2/3','4'],factor:'3/2'});
+  expect(r.valid).toBe(true);
+  expect(r.scaled).toBe('1/2 : 1');
+  expect(r.table).toHaveLength(6);
+ });
  it('renders result and exact explanation in readable sections',()=>{
   const html=renderToStaticMarkup(<EquivalentRatioCalculator tool={freeTools['equivalent-ratio-calculator']} slug="equivalent-ratio-calculator"/>);
   expect(html).toContain('equivalent-workspace');
