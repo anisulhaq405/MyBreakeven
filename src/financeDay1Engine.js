@@ -117,3 +117,50 @@ export function compareFutureValuePlans(v,alternatives=[]){
  const valid=results.every(x=>x.result.valid);
  return {valid,results,leader:valid?results.reduce((best,x)=>x.result.balance>best.result.balance?x:best,results[0]):null};
 }
+
+/** Phase 2: first end-of-period date at which a goal is reached. */
+export function futureValueMilestones(plan,goalText){
+ if(!plan?.valid)return {valid:false,errors:plan?.errors||{plan:'Calculate a valid plan first.'}};
+ const errors={},goal=parse(goalText,'goal',errors,{min:0,max:1e12});
+ if(Object.keys(errors).length)return {valid:false,errors};
+ const target=goal.toNumber();
+ const marks=[.25,.5,.75,1].map(fraction=>{
+  const threshold=target*fraction;
+  const row=plan.rows.find(x=>x.balance+1e-7>=threshold);
+  return {fraction,threshold,period:row?.period??null,months:row?.months??null,balance:row?.balance??null};
+ });
+ return {valid:true,goal:target,marks,reached:marks[3].period!==null,firstReachedMonths:marks[3].months,shortfall:Math.max(0,target-plan.balance)};
+}
+/** Signed custom deposits/withdrawals at contribution-period boundaries.
+ Positive values add cash; negative values withdraw cash. */
+export function calculateFutureValueCashFlows(v,events=[]){
+ const baseline=calculateFutureValue(v);
+ if(!baseline.valid)return baseline;
+ if(!Array.isArray(events)||events.length>24)return {valid:false,errors:{events:'Enter at most 24 custom cash flows.'}};
+ const errors={},map=new Map();
+ for(let j=0;j<events.length;j++){
+  const e=events[j],period=parse(e.period,'event-period-'+j,errors,{min:1,max:1200,integer:true,places:0});
+  const amount=parse(e.amount,'event-amount-'+j,errors,{min:-1e9,max:1e9});
+  if(period&&!period.lte(baseline.periods))errors['event-period-'+j]='Event must occur inside the investment horizon.';
+  if(period&&amount)map.set(period.toNumber(),(map.get(period.toNumber())||new D(0)).plus(amount));
+ }
+ if(Object.keys(errors).length)return {valid:false,errors};
+ const annual=Number(v.rate)/100,frequency=Number(v.frequency),compounds=Number(v.compound);
+ const logAnnual=v.basis==='nominal'?compounds*Math.log1p(annual/compounds):Math.log1p(annual);
+ const periodRate=Math.expm1(logAnnual/frequency);
+ const due=v.timing==='begin';
+ let balance=new D(v.principal),netCash=new D(v.principal),rows=[{period:0,months:0,opening:balance.toNumber(),deposit:0,custom:0,growth:0,balance:balance.toNumber()}];
+ for(let k=1;k<=baseline.periods;k++){
+  const opening=balance,deposit=new D(v.payment),custom=map.get(k)||new D(0);
+  const growth=(due?balance.plus(deposit):balance).times(periodRate);
+  balance=balance.plus(deposit).plus(growth).plus(custom);
+  netCash=netCash.plus(deposit).plus(custom);
+  if(balance.lt(0))return {valid:false,errors:{events:'A withdrawal exceeds the available balance at period '+k+'.'}};
+  if(!balance.isFinite()||balance.gt('1e15'))return {valid:false,errors:{events:'Projected balance exceeds the supported range.'}};
+  rows.push({period:k,months:k*12/frequency,opening:opening.toNumber(),deposit:deposit.toNumber(),custom:custom.toNumber(),growth:growth.toNumber(),balance:balance.toNumber()});
+ }
+ const deflator=Math.pow(1+Number(v.inflation)/100,Number(v.months)/12);
+ const real=balance.toNumber()/deflator;
+ if(!Number.isFinite(real)||Math.abs(real)>1e15)return {valid:false,errors:{inflation:'Inflation-adjusted balance is out of range.'}};
+ return {valid:true,rows,balance:balance.toNumber(),netCash:netCash.toNumber(),growth:balance.minus(netCash).toNumber(),real,periods:baseline.periods};
+}
