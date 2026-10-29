@@ -35,6 +35,41 @@ export function calculateFutureValue(v){
  const pow=Math.exp(logAnnual*years),annuity=i===0?n:Math.expm1(logAnnual*years)/i;const closed=principal.times(pow).plus(payment.times(annuity).times(due?factor:1)).toNumber();
  return {valid:true,errors,balance:balance.toNumber(),contributed:contributed.toNumber(),growth:balance.minus(contributed).toNumber(),real:real.toNumber(),periodRate:i*100,effectiveAnnual:Math.expm1(logAnnual)*100,periods:n,years,rows,closed};
 }
+// Optional planning extension. Existing fixed-deposit engine remains the baseline.
+export function calculateFutureValuePlan(v,settings={}){
+ const baseline=calculateFutureValue(v);
+ if(!baseline.valid)return baseline;
+ const errors={};
+ const fee=parse(settings.fee??'0','fee',errors,{min:0,max:25,places:4});
+ const step=parse(settings.step??'0','step',errors,{min:-100,max:100,places:4});
+ const fixedFee=parse(settings.fixedFee??'0','fixedFee',errors,{min:0,max:100000,places:2});
+ if(Object.keys(errors).length)return {valid:false,errors};
+ const rate=Number(v.rate)/100,compounds=Number(v.compound),frequency=Number(v.frequency);
+ const logAnnual=v.basis==='nominal'?compounds*Math.log1p(rate/compounds):Math.log1p(rate);
+ const periodRate=Math.expm1(logAnnual/frequency);
+ const periodFee=Math.expm1(Math.log1p(-fee.toNumber()/100)/frequency);
+ const periods=baseline.periods,initial=new D(v.principal),basePayment=new D(v.payment);
+ let balance=initial,contributed=initial,totalFees=new D(0),rows=[{period:0,months:0,opening:initial.toNumber(),deposit:0,growth:0,fee:0,balance:initial.toNumber()}];
+ const due=v.timing==='begin';
+ for(let k=1;k<=periods;k++){
+  const opening=balance;
+  const yearIndex=Math.floor((k-1)/frequency);
+  const payment=basePayment.times(new D(1).plus(step.div(100)).pow(yearIndex));
+  const deposit=payment;
+  const earningBase=due?balance.plus(deposit):balance;
+  const growth=earningBase.times(periodRate);
+  const beforeFee=balance.plus(deposit).plus(growth);
+  const variableFee=beforeFee.times(-periodFee);
+  const charge=variableFee.plus(fixedFee);
+  balance=D.max(0,beforeFee.minus(charge));
+  totalFees=totalFees.plus(D.min(charge,beforeFee));
+  contributed=contributed.plus(deposit);
+  if(!balance.isFinite()||!contributed.isFinite()||balance.gt('1e15')||contributed.gt('1e15'))return {valid:false,errors:{plan:'The projected amounts exceed the supported range.'}};
+  rows.push({period:k,months:k*12/frequency,opening:opening.toNumber(),deposit:deposit.toNumber(),growth:growth.toNumber(),fee:D.min(charge,beforeFee).toNumber(),balance:balance.toNumber()});
+ }
+ const years=Number(v.months)/12,deflator=Math.pow(1+Number(v.inflation)/100,years);
+ return {valid:true,errors,balance:balance.toNumber(),contributed:contributed.toNumber(),growth:balance.minus(contributed).toNumber(),fees:totalFees.toNumber(),real:balance.div(deflator).toNumber(),rows,periods,years,baseline:baseline.balance,feeDrag:baseline.balance-balance,annualStep:step.toNumber(),annualFee:fee.toNumber(),fixedFee:fixedFee.toNumber()};
+}
 const csvCell=x=>'"'+String(x).replaceAll('"','""')+'"';
 export function futureValueCsv(v,r,currency){if(!r.valid)return '';const lines=[['MyBreakeven future value schedule','Fixed-rate scenario; not a forecast'],['Currency',currency,'Labels only; no FX conversion'],...Object.entries(v).map(([k,x])=>[k,x]),['Annual rate convention',v.basis],['Timing',v.timing],['Excluded','Tax, fees, withdrawals and variable returns'],['Contribution basis','Fixed nominal amount per selected period'],[],['Period','Elapsed months','Opening balance','Contribution','Growth','Closing balance'],...r.rows.map(x=>[x.period,x.months,x.opening.toFixed(2),x.deposit.toFixed(2),x.growth.toFixed(2),x.balance.toFixed(2)]),[],['Ending balance',r.balance.toFixed(2)],['Contributed',r.contributed.toFixed(2)],['Growth',r.growth.toFixed(2)],['Inflation-adjusted ending balance',r.real.toFixed(2)],['Rounding','Rows display cents independently; engine retains precision']];return '\uFEFF'+lines.map(row=>row.map(csvCell).join(',')).join('\r\n');}
 
