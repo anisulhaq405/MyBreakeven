@@ -49,6 +49,19 @@ jobs:
       - name: Build production site
         run: npm run build
 
+      - name: Verify business ratio calculator in generated production HTML
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('dist/calculators/equivalent-ratio-calculator/index.html')
+          assert p.exists(), f'Missing generated page: {p}'
+          html=p.read_text(encoding='utf-8')
+          required=('Business Equivalent Ratio Calculator', 'business ratio', 'financial')
+          assert required[0] in html, 'Old equivalent-ratio title detected: regenerate from updated main'
+          assert any(token in html.lower() for token in ('cost-to-revenue', 'business', 'ratio')), 'Missing business intent'
+          print('PASS: business equivalent ratio metadata included in production HTML')
+          PY
+
       - name: Audit rendered routes and internal links
         run: python3 scripts/audit-built-site.py --output /tmp/site-inventory.json
 
