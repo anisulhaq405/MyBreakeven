@@ -49,13 +49,15 @@ export function calculateFutureValuePlan(v,settings={}){
  const periodRate=Math.expm1(logAnnual/frequency);
  const periodFee=Math.expm1(Math.log1p(-fee.toNumber()/100)/frequency);
  const periods=baseline.periods,initial=new D(v.principal),basePayment=new D(v.payment);
- let balance=initial,contributed=initial,totalFees=new D(0),rows=[{period:0,months:0,opening:initial.toNumber(),deposit:0,growth:0,fee:0,balance:initial.toNumber()}];
+ let balance=initial,withoutFees=initial,contributed=initial,totalFees=new D(0),rows=[{period:0,months:0,opening:initial.toNumber(),deposit:0,growth:0,fee:0,balance:initial.toNumber()}];
  const due=v.timing==='begin';
  for(let k=1;k<=periods;k++){
   const opening=balance;
   const yearIndex=Math.floor((k-1)/frequency);
   const payment=basePayment.times(new D(1).plus(step.div(100)).pow(yearIndex));
   const deposit=payment;
+  const noFeeBase=due?withoutFees.plus(deposit):withoutFees;
+  withoutFees=withoutFees.plus(deposit).plus(noFeeBase.times(periodRate));
   const earningBase=due?balance.plus(deposit):balance;
   const growth=earningBase.times(periodRate);
   const beforeFee=balance.plus(deposit).plus(growth);
@@ -68,7 +70,7 @@ export function calculateFutureValuePlan(v,settings={}){
   rows.push({period:k,months:k*12/frequency,opening:opening.toNumber(),deposit:deposit.toNumber(),growth:growth.toNumber(),fee:D.min(charge,beforeFee).toNumber(),balance:balance.toNumber()});
  }
  const years=Number(v.months)/12,deflator=Math.pow(1+Number(v.inflation)/100,years);
- return {valid:true,errors,balance:balance.toNumber(),contributed:contributed.toNumber(),growth:balance.minus(contributed).toNumber(),fees:totalFees.toNumber(),real:balance.div(deflator).toNumber(),rows,periods,years,baseline:baseline.balance,feeDrag:baseline.balance-balance,annualStep:step.toNumber(),annualFee:fee.toNumber(),fixedFee:fixedFee.toNumber()};
+ return {valid:true,errors,balance:balance.toNumber(),contributed:contributed.toNumber(),growth:balance.minus(contributed).toNumber(),fees:totalFees.toNumber(),real:balance.div(deflator).toNumber(),rows,periods,years,baseline:baseline.balance,feeDrag:withoutFees.minus(balance).toNumber(),annualStep:step.toNumber(),annualFee:fee.toNumber(),fixedFee:fixedFee.toNumber()};
 }
 const csvCell=x=>'"'+String(x).replaceAll('"','""')+'"';
 export function futureValueCsv(v,r,currency){if(!r.valid)return '';const lines=[['MyBreakeven future value schedule','Fixed-rate scenario; not a forecast'],['Currency',currency,'Labels only; no FX conversion'],...Object.entries(v).map(([k,x])=>[k,x]),['Annual rate convention',v.basis],['Timing',v.timing],['Excluded','Tax, fees, withdrawals and variable returns'],['Contribution basis','Fixed nominal amount per selected period'],[],['Period','Elapsed months','Opening balance','Contribution','Growth','Closing balance'],...r.rows.map(x=>[x.period,x.months,x.opening.toFixed(2),x.deposit.toFixed(2),x.growth.toFixed(2),x.balance.toFixed(2)]),[],['Ending balance',r.balance.toFixed(2)],['Contributed',r.contributed.toFixed(2)],['Growth',r.growth.toFixed(2)],['Inflation-adjusted ending balance',r.real.toFixed(2)],['Rounding','Rows display cents independently; engine retains precision']];return '\uFEFF'+lines.map(row=>row.map(csvCell).join(',')).join('\r\n');}
