@@ -62,6 +62,26 @@ jobs:
           print('PASS: business equivalent ratio metadata included in production HTML')
           PY
 
+      - name: Verify Future Value Phase 1 and Phase 2 production HTML
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('dist/calculators/future-value-calculator/index.html')
+          assert p.exists(), f'Missing production route: {p}'
+          html=p.read_text(encoding='utf-8')
+          required=(
+              'Plan toward a future savings goal',
+              'Advanced investment growth plan',
+              'Delay contribution payments',
+              'Compare investment plans side by side',
+              'Goal milestones and funding timeline',
+              'One-time deposits and withdrawals',
+          )
+          missing=[name for name in required if name not in html]
+          assert not missing, f'Missing Future Value modules: {missing}'
+          print('PASS: Future Value production HTML includes Phase 1 and Phase 2')
+          PY
+
       - name: Audit rendered routes and internal links
         run: python3 scripts/audit-built-site.py --output /tmp/site-inventory.json
 
