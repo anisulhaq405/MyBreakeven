@@ -190,3 +190,13 @@
 .final-finance-page .equivalent-examples button:focus-visible{outline:3px solid #efad37;outline-offset:2px}
 .final-finance-page .equivalent-results .fd-actions{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0}
 @media(max-width:480px){.final-finance-page .equivalent-examples button{flex:1 1 46%}}
+
+/* Business-first equivalent ratio workspace */
+.final-finance-page .equivalent-view-switch{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}
+.final-finance-page .equivalent-view-switch button{border:1px solid #bdd3dc;border-radius:10px;padding:10px 15px;font-weight:750;background:#f5f9fb;color:#17485c;cursor:pointer}
+.final-finance-page .equivalent-view-switch button[aria-pressed=true]{background:#15576a;border-color:#15576a;color:#fff}
+.final-finance-page .equivalent-business-presets{border:1px solid #d6e4eb;background:#f7fafc;border-radius:14px;padding:16px;margin:14px 0}
+.final-finance-page .equivalent-business-presets h3{margin:0 0 10px;color:#234b61}
+.final-finance-page .equivalent-business-presets .equivalent-examples button{display:flex;flex-direction:column;text-align:left;gap:4px;flex:1 1 180px;min-height:72px}
+.final-finance-page .equivalent-business-presets .equivalent-examples small{font-weight:450;color:#556f7d;line-height:1.4}
+@media(max-width:560px){.final-finance-page .equivalent-view-switch button{flex:1 1 100%}.final-finance-page .equivalent-business-presets{padding:11px}}
