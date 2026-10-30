@@ -9,7 +9,7 @@ export const malaysiaRestaurantReviewPosts = [{
  tags:['Restaurant break-even calculator','Restaurant profit planning','Malaysia restaurant user feedback'],
  cluster:'restaurant-break-even',
  calculatorSlug:'restaurant-break-even-calculator',
- image:'/images/blog/restaurant-break-even-malaysia-review.webp',
+ image:'/images/blog/restaurant-break-even-malaysia-review.webp?verify=65372ac3',
  alt:'Restaurant break-even calculator review with Pro plan before-and-after panels and a Malaysian restaurant scene',
  published:'2026-10-30',modified:'2026-10-30',editorialStatus:'published',
  faq:[

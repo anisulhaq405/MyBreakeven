@@ -1,7 +1,7 @@
 import {titleCoverDimensions} from './featureTitleCovers.js';
 // Measured image dimensions; preserve the intrinsic ratio before loading.
 export const blogImageDimensions = {
-  "/images/blog/restaurant-break-even-malaysia-review.webp": {width:1536,height:1024},
+  "/images/blog/restaurant-break-even-malaysia-review.webp?verify=65372ac3": {width:1536,height:1024},
   "/images/blog/cash-flow-statement-editorial-20261025.webp": {width:1200,height:675},
   "/images/blog/cash-flow-statement-editorial-20261025-800.webp": {width:800,height:450},
   "/images/blog/operating-cash-flow-editorial-20261025.webp": {width:1200,height:675},
