@@ -15,5 +15,5 @@ describe('Restaurant budgeting SERP scope / 15-day freeze',()=>{
    expect(a.html).toContain('restaurant-budget-diagnosis');
    expect(()=>applyRestaurantBudgetSerpScopeReview(a)).toThrow(/already present/);
  });
- it('preserves existing blog inventory',()=>expect(blogPosts).toHaveLength(161));
+ it('preserves existing blog inventory',()=>expect(blogPosts).toHaveLength(162));
 });
