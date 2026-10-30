@@ -19,6 +19,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Diagnose runner and npm availability
+        run: |
+          node --version
+          npm --version
+          npm config get registry
+          df -h .
       - name: Install isolated Playwright package
         run: |
           mkdir -p /tmp/mybreakeven-liveqa
@@ -26,17 +32,25 @@ jobs:
           mkdir -p node_modules
           ln -s /tmp/mybreakeven-liveqa/node_modules/playwright node_modules/playwright
           ln -s /tmp/mybreakeven-liveqa/node_modules/playwright-core node_modules/playwright-core
-          node -e "import('playwright').then(x=>console.log('Playwright imported:',typeof x.chromium.launch))"
+          node -e "import('playwright').then(x=>console.log('Playwright imported:',typeof x.chromium.launch)).catch(e=>{console.error(e);process.exit(1)})"
       - name: Install Chromium
         run: /tmp/mybreakeven-liveqa/node_modules/.bin/playwright install --with-deps chromium
       - name: Verify real workbook HTTP download and mobile browser rendering
         run: node scripts/live-restaurant-browser-qa.mjs
+      - name: Capture preflight and browser setup diagnostics
+        if: always()
+        run: |
+          echo "Node: $(node --version)" > live-qa-preflight.txt
+          echo "npm: $(npm --version)" >> live-qa-preflight.txt
+          echo "Playwright package present: $(test -e /tmp/mybreakeven-liveqa/node_modules/playwright/package.json && echo yes || echo no)" >> live-qa-preflight.txt
+          echo "Playwright executable present: $(test -e /tmp/mybreakeven-liveqa/node_modules/.bin/playwright && echo yes || echo no)" >> live-qa-preflight.txt
       - name: Upload report and mobile screenshots even on failure
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: restaurant-live-qa
           path: |
+            live-qa-preflight.txt
             live-qa-report.json
             qa-mobile-375.png
             qa-mobile-390.png
