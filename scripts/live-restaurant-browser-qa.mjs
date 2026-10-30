@@ -1,8 +1,8 @@
-import { chromium, devices } from 'playwright';
+import { chromium } from 'playwright';
 import { writeFileSync } from 'node:fs';
 
 const origin = 'https://mybreakeven.com';
-const pagePath = '/blogs/restaurant-budgeting/';
+const pages = ['target-profit-sales-formula','contribution-margin-vs-profit-margin','margin-of-safety-business','operating-leverage-small-business','restaurant-budgeting','restaurant-food-cost-percentage'];
 const filePath = '/downloads/restaurant-12-month-budget-template.xlsx';
 const report = { checkedAt: new Date().toISOString(), origin, checks: [], success: false };
 const add = (name, pass, detail) => { report.checks.push({ name, pass, detail }); console.log((pass ? 'PASS ' : 'FAIL ') + name + ': ' + detail); };
@@ -24,8 +24,9 @@ try {
   ]) {
     const context = await browser.newContext({ viewport: { width: device.width, height: device.height }, isMobile: device.isMobile || false, hasTouch: device.hasTouch || false, deviceScaleFactor: 1 });
     const page = await context.newPage();
+    for (const slug of pages) {
     try {
-      const response = await page.goto(origin + pagePath, { waitUntil: 'domcontentloaded', timeout: 35000 });
+      const response = await page.goto(origin + '/blogs/' + slug + '/', { waitUntil: 'domcontentloaded', timeout: 35000 });
       await page.waitForTimeout(1200);
       const info = await page.evaluate(() => ({
         title: document.title,
@@ -35,13 +36,15 @@ try {
         bodyText: document.body.innerText,
         linkCount: [...document.querySelectorAll('a[href="/downloads/restaurant-12-month-budget-template.xlsx"]')].length
       }));
-      const correct = info.bodyText.includes('Download editable 12-month Excel workbook') && !info.bodyText.includes('not a separate editable 12-month file');
-      add(device.label + '-page-content', response?.ok() && correct && info.linkCount > 0,
+      const correct = slug !== 'restaurant-budgeting' || (info.bodyText.includes('Download editable 12-month Excel workbook') && !info.bodyText.includes('not a separate editable 12-month file'));
+      const valid = info.h1.length === 1 && info.h1[0].length > 5;
+      add(slug + '-' + device.label + '-page-content', response?.ok() && correct && valid && (slug !== 'restaurant-budgeting' || info.linkCount > 0),
         'HTTP ' + response?.status() + '; title=' + info.title + '; workbook links=' + info.linkCount + '; corrected table=' + correct);
       const overflow = info.docWidth > info.viewport + 5;
-      add(device.label + '-horizontal-overflow', !overflow, 'viewport=' + info.viewport + '; documentWidth=' + info.docWidth);
-      await page.screenshot({ path: 'qa-' + device.label + '.png', fullPage: true });
-    } catch (e) { add(device.label + '-browser', false, String(e)); }
+      add(slug + '-' + device.label + '-horizontal-overflow', !overflow, 'viewport=' + info.viewport + '; documentWidth=' + info.docWidth);
+      await page.screenshot({ path: 'qa-' + slug + '-' + device.label + '.png', fullPage: true });
+    } catch (e) { add(slug + '-' + device.label + '-browser', false, String(e)); }
+    }
     await context.close();
   }
 } catch (e) { add('chromium-launch', false, String(e)); } finally { if (browser) await browser.close(); }
