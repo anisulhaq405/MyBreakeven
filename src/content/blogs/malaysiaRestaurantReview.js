@@ -1,7 +1,7 @@
 export const malaysiaRestaurantReviewPosts = [{
  slug:'restaurant-break-even-calculator-malaysia-user-review',
  title:'Restaurant Break-Even Calculator Review: 5 Malaysia Restaurant Owners',
- seoTitle:'Restaurant Break-Even Calculator Review: Malaysia User Study',
+ seoTitle:'Restaurant Break-Even Review: Malaysia Study',
  description:'Five Malaysian restaurant owners reported reducing break-even planning time from 120 to 15 minutes. Read the before-and-after methodology, results and limitations.',
  metaDescription:'Five Malaysian restaurant owners reported 87.5% less calculation time. Explore their restaurant break-even calculator feedback, results and limitations.',
  opening:'Five restaurant owners in Malaysia compared manual break-even planning with MyBreakEven over an October 2026 evaluation.',
