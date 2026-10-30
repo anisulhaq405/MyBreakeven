@@ -36,13 +36,36 @@ export default function ScenarioTools({ input, result, industry, industryKey, cu
   const limits = limitsFor(plan);
   const isPro = plan === "pro";
   useEffect(() => {
-    import("./authClient").then(async ({ supabase }) => {
-      const { data: { user } } = await supabase.auth.getUser();
-      if (!user) return;
-      setUserId(user.id);
-      const { data } = await supabase.from("profiles").select("plan").eq("id", user.id).single();
-      setPlan(normalizePlan(data?.plan));
-    });
+    let active = true;
+    let subscription;
+    const refresh = async (client) => {
+      if (!client || !active) return;
+      try {
+        const { data: { user }, error } = await client.auth.getUser();
+        if (!active) return;
+        if (error || !user) { setUserId(null); setPlan("free"); return; }
+        setUserId(user.id);
+        const { data: profile, error: profileError } = await client.from("profiles").select("plan").eq("id", user.id).maybeSingle();
+        if (!active) return;
+        // A transient profile lookup failure must not silently downgrade a paid user.
+        if (profileError) { console.warn("Could not refresh plan", profileError); return; }
+        setPlan(normalizePlan(profile?.plan));
+      } catch (error) { console.warn("Could not refresh calculator account", error); }
+    };
+    import("./authClient").then(({ supabase }) => {
+      if (!active || !supabase) return;
+      refresh(supabase);
+      const { data } = supabase.auth.onAuthStateChange(() => {
+        // Defer the database lookup outside the auth callback to avoid auth-client deadlocks.
+        Promise.resolve().then(() => refresh(supabase));
+      });
+      subscription = data?.subscription;
+    }).catch(error => console.warn("Could not initialize calculator account", error));
+    const onFocus = () => import("./authClient").then(({ supabase }) => refresh(supabase));
+    window.addEventListener("focus", onFocus);
+    const onVisible = () => { if (document.visibilityState === "visible") onFocus(); };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => { active = false; subscription?.unsubscribe(); window.removeEventListener("focus", onFocus); document.removeEventListener("visibilitychange", onVisible); };
   }, []);
   const scenarios = useMemo(
     () =>
