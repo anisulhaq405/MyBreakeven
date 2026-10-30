@@ -6,7 +6,7 @@ import {freeTools} from './freeTools.js';
 // October 26 GSC Coverage: 45 discovered URLs; protect existing inventory.
 describe('GSC discovered URL contextual recovery without new public pages',()=>{
  it('keeps blog publication count and unique topic identifiers stable',()=>{
-  expect(blogPosts).toHaveLength(161);
+  expect(blogPosts).toHaveLength(162);
   const ids=financeTopics.map(t=>t.id);
   expect(new Set(ids).size).toBe(ids.length);
  });
