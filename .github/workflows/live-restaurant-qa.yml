@@ -6,6 +6,8 @@ on:
     paths:
       - 'scripts/live-restaurant-browser-qa.mjs'
       - 'scripts/technical-live-http-audit.mjs'
+      - 'scripts/gsc-45-live-audit.mjs'
+      - 'docs/seo/2026-10-26-gsc-discovered-45-recovery.md'
       - '.github/workflows/live-restaurant-qa.yml'
 permissions:
   contents: read
@@ -41,6 +43,9 @@ jobs:
       - name: Check live robots sitemap canonical and redirects
         if: always()
         run: node scripts/technical-live-http-audit.mjs
+      - name: Check original 45 GSC URLs live
+        if: always()
+        run: node scripts/gsc-45-live-audit.mjs
       - name: Capture preflight and browser setup diagnostics
         if: always()
         run: |
@@ -67,5 +72,6 @@ jobs:
             live-qa-preflight.txt
             live-qa-report.json
             technical-live-http-report.json
+            gsc-45-live-technical-report.json
             qa-*.png
           if-no-files-found: warn
