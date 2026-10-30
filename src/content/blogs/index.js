@@ -1,3 +1,4 @@
+import {malaysiaRestaurantReviewPosts} from './malaysiaRestaurantReview.js';
 import {applyCoreBreakEvenIntentReview} from './coreBreakEvenIntentReview.js';
 import {titledFeatureImage} from '../../featureTitleCovers.js';
 import {applyRestaurantBudgetSerpScopeReview} from './restaurantBudgetSerpScopeReview.js';
@@ -186,6 +187,7 @@ const normalizePost = post => {
 };
 
 export const blogCollections = Object.freeze({
+  malaysiaReview: malaysiaRestaurantReviewPosts.map(normalizePost),
   financeCompletion: financeCompletionPosts.map(normalizePost),
   financeDay1: financeDay1Posts.map(normalizePost),
   day5Cash: day5CashFlowPosts.map(normalizePost),
