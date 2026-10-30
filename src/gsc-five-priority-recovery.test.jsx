@@ -19,7 +19,7 @@ describe('Five existing GSC discovered URL homepage contextual pathways',()=>{
   expect(new Set(targets.map(x=>x[0])).size).toBe(5);
  });
  it('preserves inventory and verifies every link resolves to existing source owner',()=>{
-  expect(blogPosts).toHaveLength(161);
+  expect(blogPosts).toHaveLength(162);
   for(const [href,slug] of targets){
    if(href.startsWith('/blogs/'))expect(blogPostMap[slug],href).toBeDefined();
    else expect(freeTools[slug],href).toBeDefined();
