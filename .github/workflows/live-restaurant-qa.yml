@@ -44,6 +44,16 @@ jobs:
           echo "npm: $(npm --version)" >> live-qa-preflight.txt
           echo "Playwright package present: $(test -e /tmp/mybreakeven-liveqa/node_modules/playwright/package.json && echo yes || echo no)" >> live-qa-preflight.txt
           echo "Playwright executable present: $(test -e /tmp/mybreakeven-liveqa/node_modules/.bin/playwright && echo yes || echo no)" >> live-qa-preflight.txt
+      - name: Publish QA results in workflow summary
+        if: always()
+        run: |
+          echo "## Six-page live SEO/mobile QA" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f live-qa-report.json ]; then
+            node -e 'const r=require("./live-qa-report.json"); const passed=r.checks.filter(x=>x.pass).length; const failed=r.checks.filter(x=>!x.pass); console.log("Checks passed: "+passed+"/"+r.checks.length); console.log("Failed checks: "+failed.length); for(const x of failed)console.log("- "+x.name+": "+x.detail);' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Report missing: browser/install step stopped before tests executed." >> "$GITHUB_STEP_SUMMARY"
+          fi
+          echo "Screenshots and machine-readable details are in restaurant-live-qa artifact." >> "$GITHUB_STEP_SUMMARY"
       - name: Upload report and mobile screenshots even on failure
         if: always()
         uses: actions/upload-artifact@v4
