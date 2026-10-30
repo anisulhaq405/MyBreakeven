@@ -23,8 +23,8 @@ for(const slug of slugs){
  if(slug==='margin-of-safety-business'&&!h.includes('33.33%'))throw Error('Margin of safety example missing');
  if(slug==='operating-leverage-small-business'&&!h.includes('10% sales change'))throw Error('DOL sensitivity missing');
  if(slug==='restaurant-budgeting'){
-  if(h.includes('not a separate editable 12-month file'))throw Error('Outdated workbook guidance');
-  if(!h.includes('Download editable 12-month Excel workbook'))throw Error('Annual workbook resource link missing');
+  if(h.includes('not a separate editable 12-month file'))throw Error('Outdated workbook guidance at '+file+' — ensure latest restaurantBudgetSerpScopeReview.js is included in build');
+  if(!h.includes('Download editable 12-month Excel workbook'))throw Error('Annual workbook resource link missing in '+file+' — built article did not include updated resource picker');
   if(!existsSync('dist/downloads/restaurant-12-month-budget-template.xlsx'))throw Error('Annual workbook missing');
  }
  if(slug==='restaurant-food-cost-percentage'&&!/inventory formula/i.test(h))throw Error('Inventory method missing');
