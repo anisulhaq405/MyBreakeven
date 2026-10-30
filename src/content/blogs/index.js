@@ -1,3 +1,4 @@
+import {connectMalaysiaRestaurantReview} from './malaysiaRestaurantReviewLinks.js';
 import {malaysiaRestaurantReviewPosts} from './malaysiaRestaurantReview.js';
 import {applyCoreBreakEvenIntentReview} from './coreBreakEvenIntentReview.js';
 import {titledFeatureImage} from '../../featureTitleCovers.js';
@@ -182,6 +183,7 @@ const normalizePost = post => {
   reviewed = applyCleaningProfitabilityGscRecovery(reviewed);
   reviewed = applyRestaurantBudgetSerpScopeReview(reviewed);
   reviewed = applyCoreBreakEvenIntentReview(reviewed);
+  reviewed = connectMalaysiaRestaurantReview(reviewed);
   const image=titledFeatureImage(reviewed.slug,featureDeliveryAssets[reviewed.image] || reviewed.image);
   return image===reviewed.image ? reviewed : {...reviewed,image};
 };
