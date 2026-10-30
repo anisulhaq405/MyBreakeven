@@ -11,17 +11,24 @@ permissions:
 jobs:
   live-qa:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
-      - name: Install browser automation
+          node-version: '22'
+      - name: Install isolated Playwright package
         run: |
-          npm ci
-          npm install --no-save --no-package-lock playwright@1.57.0
-          npx playwright install --with-deps chromium
+          mkdir -p /tmp/mybreakeven-liveqa
+          npm install --prefix /tmp/mybreakeven-liveqa --no-package-lock --no-save --ignore-scripts playwright@1.57.0
+          mkdir -p node_modules
+          ln -s /tmp/mybreakeven-liveqa/node_modules/playwright node_modules/playwright
+          ln -s /tmp/mybreakeven-liveqa/node_modules/playwright-core node_modules/playwright-core
+          node -e "import('playwright').then(x=>console.log('Playwright imported:',typeof x.chromium.launch))"
+      - name: Install Chromium
+        run: /tmp/mybreakeven-liveqa/node_modules/.bin/playwright install --with-deps chromium
       - name: Verify real workbook HTTP download and mobile browser rendering
         run: node scripts/live-restaurant-browser-qa.mjs
       - name: Upload report and mobile screenshots even on failure
