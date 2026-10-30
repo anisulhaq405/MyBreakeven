@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/live-restaurant-browser-qa.mjs'
+      - 'scripts/technical-live-http-audit.mjs'
       - '.github/workflows/live-restaurant-qa.yml'
 permissions:
   contents: read
@@ -37,6 +38,9 @@ jobs:
         run: /tmp/mybreakeven-liveqa/node_modules/.bin/playwright install --with-deps chromium
       - name: Verify real workbook HTTP download and mobile browser rendering
         run: node scripts/live-restaurant-browser-qa.mjs
+      - name: Check live robots sitemap canonical and redirects
+        if: always()
+        run: node scripts/technical-live-http-audit.mjs
       - name: Capture preflight and browser setup diagnostics
         if: always()
         run: |
@@ -62,5 +66,6 @@ jobs:
           path: |
             live-qa-preflight.txt
             live-qa-report.json
+            technical-live-http-report.json
             qa-*.png
           if-no-files-found: warn
