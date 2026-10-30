@@ -3,7 +3,7 @@ import {blogPostMap,blogPosts} from './content/blogs/index.js';
 import {applyCoreBreakEvenIntentReview} from './content/blogs/coreBreakEvenIntentReview.js';
 describe('Core break-even search intent protection',()=>{
  it('keeps existing URLs and article inventory unchanged',()=>{
-  expect(blogPosts).toHaveLength(161);
+  expect(blogPosts).toHaveLength(162);
   expect(blogPostMap['break-even-formula-units-dollars']).toBeDefined();
   expect(blogPostMap['calculate-break-even-point']).toBeDefined();
  });
