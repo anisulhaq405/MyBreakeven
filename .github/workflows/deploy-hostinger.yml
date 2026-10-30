@@ -95,6 +95,9 @@ jobs:
           print('PASS: Future Value Phase 3 components present in built HTML')
           PY
 
+      - name: Audit six GSC priority pages and workbook
+        run: node scripts/audit-gsc-check6.mjs
+
       - name: Audit rendered routes and internal links
         run: python3 scripts/audit-built-site.py --output /tmp/site-inventory.json
 
