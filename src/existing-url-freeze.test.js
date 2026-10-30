@@ -4,7 +4,7 @@ import {applyCleaningProfitabilityGscRecovery} from './content/blogs/cleaningPro
 
 describe('Existing URLs only: GSC recovery and 15-day content freeze',()=>{
  it('holds baseline article count and preserves primary search ownership',()=>{
-  expect(blogPosts).toHaveLength(161);
+  expect(blogPosts).toHaveLength(162);
   for(const slug of ['is-a-cleaning-business-profitable','restaurant-budgeting','how-to-calculate-working-capital','margin-of-safety-business']){
    expect(blogPostMap[slug]).toBeDefined();
   }
