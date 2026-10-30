@@ -1,5 +1,6 @@
 export function articleGuideType(article) {
   const slug = article?.slug || "";
+  if (slug === "restaurant-break-even-calculator-malaysia-user-review") return "OWNER REVIEW & CASE STUDY";
   if (/pricing|price-|minimum-spend/.test(slug)) return "PRICING GUIDE";
   if (/how-many|covers-per-night|clients-per-day/.test(slug) || article?.cluster === "volume-to-income") return "VOLUME PLANNING GUIDE";
   if (/startup|cost-to-open|cost-to-start/.test(slug) || article?.cluster?.startsWith("startup")) return "STARTUP COST GUIDE";

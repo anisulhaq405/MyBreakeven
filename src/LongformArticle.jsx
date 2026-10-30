@@ -1,3 +1,4 @@
+import './malaysia-review.css';
 import SalonBoothComparison from './SalonBoothComparison.jsx';
 import OperatingCashFlowWidget from './OperatingCashFlowWidget.jsx';
 import {BudgetBridgeWidget,DriverAllocationWidget,JobCostWidget} from './Day3PlanningWidgets.jsx';
