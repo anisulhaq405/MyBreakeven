@@ -12,6 +12,12 @@ export const malaysiaRestaurantReviewPosts = [{
  image:'/images/title-covers/blog-restaurant-break-even-20261026.webp',
  alt:'Restaurant break-even planning illustration',
  published:'2026-10-30',modified:'2026-10-30',editorialStatus:'published',
+ faq:[
+ {q:'How many restaurant owners took part?',a:'Five restaurant owners in Malaysia provided feedback during October 12–27, 2026.'},
+ {q:'How much time did participants report saving?',a:'Average reported calculation time declined from 120 to 15 minutes, a reduction of 105 minutes or 87.5% for the evaluated tasks.'},
+ {q:'Were results independently audited?',a:'Participants reported checking expected calculations, but original worksheets and third-party validation were not supplied.'},
+ {q:'What improvements did participants request?',a:'They requested clearer visuals and dedicated food-wastage cost inputs without double-counting ingredient costs.'}
+ ],
  features:['Five restaurant owners in Malaysia','Before-and-after reported measurements','Transparent limitations and improvement requests'],
  html:`
 <p><strong>Research disclosure:</strong> This is a MyBreakEven-published case study based on feedback provided by five restaurant owners in Malaysia—not an independently commissioned study. Original participant-level worksheets, operational profit results and individual rating records were not supplied. Results are self-reported and should not be generalized to all restaurants.</p>
