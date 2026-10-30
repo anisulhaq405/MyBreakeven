@@ -9,8 +9,8 @@ export const malaysiaRestaurantReviewPosts = [{
  tags:['Restaurant break-even calculator','Restaurant profit planning','Malaysia restaurant user feedback'],
  cluster:'restaurant-break-even',
  calculatorSlug:'restaurant-break-even-calculator',
- image:'/images/title-covers/blog-restaurant-break-even-20261026.webp',
- alt:'Restaurant break-even planning illustration',
+ image:'/images/blog/malaysia-restaurant-break-even-study.svg',
+ alt:'Malaysian restaurant illustration with Kuala Lumpur skyline and nasi lemak for five-owner break-even study',
  published:'2026-10-30',modified:'2026-10-30',editorialStatus:'published',
  faq:[
  {q:'How many restaurant owners took part?',a:'Five restaurant owners in Malaysia provided feedback during October 12–27, 2026.'},
