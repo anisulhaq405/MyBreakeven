@@ -20,3 +20,6 @@ Owner authorized moving to the next stage after finishing Check 6. This document
 5. No claim of increased rankings, clicks or indexing outcomes until new GSC comparison exists.
 
 The current tool environment could not resolve the site DNS for direct web fetch. The live QA action is a separate real-runner proof path. No changes to calculator formulas, article URLs or published sitemap count were intentionally made. Do not final-lock Check 7 until the above accepted evidence is observed.
+
+## Update — 2026-10-30 Live QA #5
+Owner supplied screenshot showing the dedicated `Live restaurant workbook and mobile QA` workflow **#5 green** for commit `79a35ae` (43 seconds). The workflow script exits nonzero if any workbook HTTP/XLSX or 375px/390px/1280px page-content and overflow checks fail; therefore a successful run supports automated checks passing. The individual machine-readable report and screenshots have not been separately retrieved in this session, so no visual-design assessment is claimed. The corrected Restaurant Budgeting HTML was independently rechecked in `hostinger-deploy` (new editable 12-month workbook text present, old contradiction absent). Indexing/Googlebot evidence remains pending independently of release QA.
