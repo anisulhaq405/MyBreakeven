@@ -52,7 +52,5 @@ jobs:
           path: |
             live-qa-preflight.txt
             live-qa-report.json
-            qa-mobile-375.png
-            qa-mobile-390.png
-            qa-desktop-1280.png
+            qa-*.png
           if-no-files-found: warn
