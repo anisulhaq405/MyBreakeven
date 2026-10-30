@@ -31,3 +31,6 @@ Maintain the 15-day Oct 26–Nov 9 no-new-URL freeze. Avoid revising proven-good
 
 ## Latest owner-confirmed QA evidence
 Owner-provided GitHub Actions screenshot (2026-10-30) shows successful six-page live QA run #6 (commit 92ad928), screenshot artifact run #7 (ce0ca42), and full results run #8 (cb3f97a). Thus expanded automated mobile/desktop testing is now confirmed green, superseding the earlier pending-run caveat. Individual full-page screenshot visual inspection has not been performed in this audit. GSC 45-URL inspection/crawl logs and post-release SEO outcome comparisons remain unresolved.
+
+## Live technical HTTP QA #9 — owner evidence (2026-10-30)
+Owner screenshot confirms GitHub Actions live-restaurant workflow #9 green for commit 6aeca78, duration 1m17s. Because the technical audit step runs with `if: always()` and exits nonzero on any failing row, a green job supports passing the scripted checks: live robots.txt sitemap declaration, live sitemap payload, six pages HTTP/index/canonical, restaurant-prime-cost URL normalization and trailing-slash canonical. The raw JSON artifact has not been inspected here; assertions are limited to the script's checks. This does **not** confirm Google indexed the 45 discovered-not-indexed URLs. Native GSC URL Inspection, Googlebot origin logs, and post-release search performance still pending.
