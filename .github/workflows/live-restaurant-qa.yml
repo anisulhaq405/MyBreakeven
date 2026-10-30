@@ -1,0 +1,36 @@
+name: Live restaurant workbook and mobile QA
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/live-restaurant-browser-qa.mjs'
+      - '.github/workflows/live-restaurant-qa.yml'
+permissions:
+  contents: read
+jobs:
+  live-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install browser automation
+        run: |
+          npm install --no-save --no-package-lock playwright@1.57.0
+          npx playwright install --with-deps chromium
+      - name: Verify real workbook HTTP download and mobile browser rendering
+        run: node scripts/live-restaurant-browser-qa.mjs
+      - name: Upload report and mobile screenshots even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: restaurant-live-qa
+          path: |
+            live-qa-report.json
+            qa-mobile-375.png
+            qa-mobile-390.png
+            qa-desktop-1280.png
+          if-no-files-found: warn
