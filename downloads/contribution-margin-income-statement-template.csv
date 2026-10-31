@@ -1,0 +1,15 @@
+Line,Value,Instructions
+Completed units,200,Input for one reporting period
+Price per unit,180,Input net of sales discounts and excluding collected sales tax
+Variable supplies per unit,12,Input
+Variable job labor per unit,63,Input only labor that changes with the unit
+Variable fees per unit,5,Input dollar fee per unit counted once
+Other variable cost per unit,0,Input
+Fixed operating expenses,14000,Input monthly total excluding variable costs above
+Variable cost per unit,"=IF(B15<>""Ready"","""",SUM(B4:B7))",Calculated
+Net sales,"=IF(B15<>""Ready"","""",B2*B3)",Calculated
+Total variable expenses,"=IF(B15<>""Ready"","""",B2*B9)",Calculated
+Contribution margin,"=IF(B15<>""Ready"","""",B10-B11)",Calculated
+Contribution ratio,"=IF(OR(B15<>""Ready"",B10=0),"""",B12/B10)",Format as percentage
+Operating income,"=IF(B15<>""Ready"","""",B12-B8)",Before excluded financing and tax items
+Input status,"=IF(COUNT(B2:B8)<>7,""Complete numeric inputs"",IF(MIN(B2:B8)<0,""Check inputs"",""Ready""))",Complete all seven nonnegative numeric inputs; output formulas remain blank until Ready

@@ -1,0 +1,23 @@
+Original fictional USD examples,Calculation,Value,Boundary
+Current assets,8000 + 22000 + 30000 + 2000,62000,Same reporting date
+Current liabilities,18000 + 6000 + 4000 + 10000,38000,Same reporting date
+Net working capital,62000 - 38000,24000,All current accounts
+Trade working capital,22000 + 30000 - 18000,34000,Receivables plus inventory less trade payables
+Selected operating working capital,22000 + 30000 + 2000 - 18000 - 6000,30000,Excludes cash; debt; assumed income tax payable
+Net-to-operating bridge,24000 - 8000 + 10000 + 4000,30000,Explicit account reclassification; no cash created
+Cash balance,Cash from same snapshot,8000,Not equal to the working-capital balance
+Zero result example,38000 - 38000,0,Independent scenario
+Negative result example,30000 - 38000,-8000,Independent scenario
+Opening net working capital,Additional full-year example assumption,20000,USD
+Closing net working capital,Full-year example,24000,USD
+Average net working capital,(20000 + 24000) / 2,22000,Two-date average
+Opening selected operating working capital,Additional full-year example assumption,26000,USD
+Closing selected operating working capital,Full-year example,30000,USD
+Average operating working capital,(26000 + 30000) / 2,28000,Two-date average
+Annual net revenue,Additional full-year example assumption,440000,Matching full-year period
+Period days,Full-year assumption,365,Not a universal period length
+Net working capital days,22000 / 440000 * 365,18.25,Days
+Operating working capital days,28000 / 440000 * 365,23.23,Days
+Change in net working capital,24000 - 20000,4000,Signed change; not automatically cash impact
+Change in selected operating working capital,30000 - 26000,4000,Reconcile noncash changes separately
+Note,Values only; no formulas,,Does not recalculate after editing; existing XLSX remains separate
