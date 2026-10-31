@@ -1,3 +1,4 @@
+import {applyDailyOctober31Batch2} from './dailyOctober31Batch2.js';
 import {applyDailyOctober30Review} from './dailyOctober30Review.js';
 import {connectMalaysiaRestaurantReview} from './malaysiaRestaurantReviewLinks.js';
 import {malaysiaRestaurantReviewPosts} from './malaysiaRestaurantReview.js';
@@ -186,6 +187,7 @@ const normalizePost = post => {
   reviewed = applyCoreBreakEvenIntentReview(reviewed);
   reviewed = connectMalaysiaRestaurantReview(reviewed);
   reviewed = applyDailyOctober30Review(reviewed);
+  reviewed = applyDailyOctober31Batch2(reviewed);
   const image=titledFeatureImage(reviewed.slug,featureDeliveryAssets[reviewed.image] || reviewed.image);
   return image===reviewed.image ? reviewed : {...reviewed,image};
 };
