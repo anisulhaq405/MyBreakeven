@@ -110,9 +110,9 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
     ] });
     if (route === "founder") {
       page["@type"] = "ProfilePage";
-      page.dateModified = "2026-10-11";
+      page.dateModified = authorityReviewDates.founder;
       page.mainEntity = { "@id": `${canonical}#person` };
-      pageSchema["@graph"].push({ "@type": "Person", "@id": `${canonical}#person`, name: "Anis Ul Haq", jobTitle: "Founder and SaaS Developer", url: canonical, image: "https://mybreakeven.com/images/founder/anis-ul-haq-founder.webp", alumniOf: { "@type": "CollegeOrUniversity", name: "Punjab University Lahore" }, worksFor: { "@id": "https://mybreakeven.com/#organization" } });
+      pageSchema["@graph"].push({ "@type": "Person", "@id": `${canonical}#person`, name: "Anis Ul Haq", jobTitle: "Founder", description: "Founder of MyBreakeven, focused on business planning and business development.", sameAs: ["https://www.linkedin.com/in/anis-ulhaq-33049a42b/"], url: canonical, image: "https://mybreakeven.com/images/founder/anis-ul-haq-founder.webp", alumniOf: { "@type": "CollegeOrUniversity", name: "University of the Punjab, Lahore" }, worksFor: { "@id": "https://mybreakeven.com/#organization" } });
     }
   }
   if (route === day6Release.route) {
