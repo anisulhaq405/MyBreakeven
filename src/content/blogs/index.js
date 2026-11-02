@@ -1,3 +1,4 @@
+import {applyDailyNovember02Review} from './dailyNovember02Review.js';
 import {applyDailyOctober31Batch2} from './dailyOctober31Batch2.js';
 import {applyDailyOctober30Review} from './dailyOctober30Review.js';
 import {connectMalaysiaRestaurantReview} from './malaysiaRestaurantReviewLinks.js';
@@ -188,6 +189,7 @@ const normalizePost = post => {
   reviewed = connectMalaysiaRestaurantReview(reviewed);
   reviewed = applyDailyOctober30Review(reviewed);
   reviewed = applyDailyOctober31Batch2(reviewed);
+  reviewed = applyDailyNovember02Review(reviewed);
   const image=titledFeatureImage(reviewed.slug,featureDeliveryAssets[reviewed.image] || reviewed.image);
   return image===reviewed.image ? reviewed : {...reviewed,image};
 };
