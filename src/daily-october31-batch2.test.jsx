@@ -1,3 +1,4 @@
+import {dailyNovember03Review as november03Batch} from './content/blogs/dailyNovember03Review';
 import {dailyNovember02Review as novemberBatch} from './content/blogs/dailyNovember02Review';
 import React from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
@@ -15,7 +16,7 @@ const required=['agency-client-concentration-revenue-risk', 'agency-project-vs-r
 describe('October 31 second isolated ten-guide update',()=>{
  it('changes exactly ten existing articles and preserves every other normalized article',()=>{
  expect(Object.keys(edits).sort()).toEqual(required.sort());expect(blogPosts).toHaveLength(Object.keys(baseline).length);
- for(const p of blogPosts){expect(p.image,p.slug).toBe(baseline[p.slug].image);if(!edits[p.slug]&&!novemberBatch[p.slug])expect(digest(p),p.slug).toBe(baseline[p.slug].hash);else if(edits[p.slug]){expect(baseline[p.slug].modified<= '2026-10-25',p.slug).toBe(true);expect(p.modified).toBe('2026-10-31');}}
+ for(const p of blogPosts){expect(p.image,p.slug).toBe(baseline[p.slug].image);if(!edits[p.slug]&&!novemberBatch[p.slug]&&!november03Batch[p.slug])expect(digest(p),p.slug).toBe(baseline[p.slug].hash);else if(edits[p.slug]){expect(baseline[p.slug].modified<= '2026-10-25',p.slug).toBe(true);expect(p.modified).toBe('2026-10-31');}}
  const protectedPost={slug:'restaurant-budgeting',modified:'2026-10-30'};expect(applyReview(protectedPost)).toBe(protectedPost);const recentlyChanged={slug:required[0],modified:'2026-10-26'};expect(applyReview(recentlyChanged)).toBe(recentlyChanged);
  });
  it('renders accessible additions with valid internal links and matching FAQ inputs',()=>{

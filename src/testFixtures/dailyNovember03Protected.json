@@ -1,0 +1,974 @@
+{
+  "restaurant-break-even-calculator-malaysia-user-review": {
+    "image": "/images/blog/restaurant-break-even-malaysia-review.webp?verify=65372ac3",
+    "modified": "2026-10-30",
+    "published": "2026-10-30",
+    "hash": "c653a0934b52ffec24c41b609fc42c407b92c6f4d2f530adeeab1c413d4ac8c0"
+  },
+  "fire-vs-coast-fire-vs-barista-fire": {
+    "image": "/images/blog/finance-topic-fire-vs-coast-fire-vs-barista-fire-topic-20261026.webp",
+    "modified": "2026-10-26",
+    "published": "2026-10-26",
+    "hash": "35bfdfae3f2e33ef4924c7f3b48dff97334302b01a8752522306d3e1fe0ab726"
+  },
+  "fire-withdrawal-rate-retirement-risks": {
+    "image": "/images/blog/finance-topic-fire-withdrawal-rate-retirement-risks-topic-20261026.webp",
+    "modified": "2026-10-26",
+    "published": "2026-10-26",
+    "hash": "4c76492a89913463bd7c087413b5b7a7beb8d8edee6803f014504173bd61c6a0"
+  },
+  "how-to-analyze-financial-statements": {
+    "image": "/images/blog/finance-topic-how-to-analyze-financial-statements-topic-20261026.webp",
+    "modified": "2026-10-26",
+    "published": "2026-10-26",
+    "hash": "8d366c54467a475ff1bbc34107432b39f92370c17aa5a9b482380eb9ee5ca500"
+  },
+  "find-missing-value-equivalent-ratios": {
+    "image": "/images/blog/finance-topic-find-missing-value-equivalent-ratios-topic-20261026.webp",
+    "modified": "2026-10-26",
+    "published": "2026-10-26",
+    "hash": "e39f032ea8a2fdd69c9fd0d639e29d098013a028515a1139ae15ede86a92942b"
+  },
+  "equivalent-ratio-tables-word-problems": {
+    "image": "/images/blog/finance-topic-equivalent-ratio-tables-word-problems-topic-20261026.webp",
+    "modified": "2026-10-26",
+    "published": "2026-10-26",
+    "hash": "f5c0ceefbaafb1590c0550672a0de4d94b2730b7f0673162ccbf9be957ad4503"
+  },
+  "mortgage-refinance-break-even": {
+    "image": "/images/blog/finance-topic-mortgage-refinance-break-even-topic-20261026.webp",
+    "modified": "2026-10-26",
+    "published": "2026-10-26",
+    "hash": "5903dc8d0fd191e7637ae60c8ef70829ef1a7b737eb0d472016f91004af608ae"
+  },
+  "refinance-closing-costs-financed-fees": {
+    "image": "/images/blog/finance-topic-refinance-closing-costs-financed-fees-topic-20261026.webp",
+    "modified": "2026-10-26",
+    "published": "2026-10-26",
+    "hash": "49200025574d4dbb51052adaf8f46977b1ef02851fdae69323c98b7a98d3ee18"
+  },
+  "refinance-shorter-vs-longer-term": {
+    "image": "/images/blog/finance-topic-refinance-shorter-vs-longer-term-topic-20261026.webp",
+    "modified": "2026-10-26",
+    "published": "2026-10-26",
+    "hash": "1c2dd89ee6fd20ac53f9749fa61bf0ad4235a4512e4ed867ded7492506c1eb9e"
+  },
+  "ebitda-vs-net-income-vs-cash-flow": {
+    "image": "/images/blog/finance-topic-ebitda-vs-net-income-vs-cash-flow-topic-20261026.webp",
+    "modified": "2026-10-26",
+    "published": "2026-10-26",
+    "hash": "30b1b8772e53275deb1af4b72fe01b1965f140d55f7790a224d407b8ef2648dd"
+  },
+  "adjusted-ebitda-add-backs": {
+    "image": "/images/blog/finance-topic-adjusted-ebitda-add-backs-topic-20261026.webp",
+    "modified": "2026-10-26",
+    "published": "2026-10-26",
+    "hash": "1d17d2797ff08178a16770c947a998e825cec80702ab3d8824455cdc2f7afe48"
+  },
+  "present-value-vs-future-value": {
+    "image": "/images/blog/finance-topic-present-value-vs-future-value-topic-20261026.webp",
+    "modified": "2026-10-26",
+    "published": "2026-10-26",
+    "hash": "a060915ac99854cca441183e10d3effae6b09982078cc0a12d74db61e94098a9"
+  },
+  "ordinary-annuity-vs-annuity-due": {
+    "image": "/images/blog/finance-topic-ordinary-annuity-vs-annuity-due-topic-20261026.webp",
+    "modified": "2026-10-26",
+    "published": "2026-10-26",
+    "hash": "1c478c62ffea5b8269f5629b62bf3501adc074ca82292860023e1ff666b3e06d"
+  },
+  "cash-flow-statement": {
+    "image": "/images/title-covers/blog-cash-flow-statement-20261026.webp",
+    "modified": "2026-10-25",
+    "published": "2026-10-25",
+    "hash": "1698517844baddc83e56c270f4cb2fcdc1486efc478ae38a872838445ac0e2da"
+  },
+  "operating-cash-flow": {
+    "image": "/images/title-covers/blog-operating-cash-flow-20261026.webp",
+    "modified": "2026-10-25",
+    "published": "2026-10-25",
+    "hash": "d0c5ee49aed35bb8a912aa80ed3c0407fd3695b447c384b4c6c9cc369367bd58"
+  },
+  "cash-flow-problems": {
+    "image": "/images/title-covers/blog-cash-flow-problems-20261026.webp",
+    "modified": "2026-10-25",
+    "published": "2026-10-25",
+    "hash": "cc94a0becca8925f100965c3b77441318a69fed2c72ec7f45ef7b9469ee2cb42"
+  },
+  "operating-expenses": {
+    "image": "/images/title-covers/blog-operating-expenses-20261026.webp",
+    "modified": "2026-10-25",
+    "published": "2026-10-23",
+    "hash": "21f78c4464fdf577b1cda073494396d832ba10c126e5b48b33db3e4f8a18cded"
+  },
+  "rolling-forecast": {
+    "image": "/images/blog/rolling-forecast-planning-20261023.webp?v=20261023",
+    "modified": "2026-10-23",
+    "published": "2026-10-23",
+    "hash": "d77497ec4e64fb2dd28fd7cc3cc0e2990159f45f10086a25194eef9e6bda0eeb"
+  },
+  "master-budget": {
+    "image": "/images/title-covers/blog-master-budget-20261026.webp",
+    "modified": "2026-10-23",
+    "published": "2026-10-22",
+    "hash": "b720983c70e4305038fbf4839a18a271f55e4889dc7f5cfe6cdd00928168ed84"
+  },
+  "cost-drivers-small-business": {
+    "image": "/images/title-covers/blog-cost-drivers-small-business-20261026.webp",
+    "modified": "2026-10-23",
+    "published": "2026-10-22",
+    "hash": "bdd4a200467a3fd90db7f8ea27323d02cf35f8d98d3f17909d5f0ff65b01ac67"
+  },
+  "job-order-costing": {
+    "image": "/images/title-covers/blog-job-order-costing-20261026.webp",
+    "modified": "2026-10-23",
+    "published": "2026-10-22",
+    "hash": "5bab4d2ccff639c8d0b10516a0b104b6c2a2b71f9cd341e4862fa80dcec26584"
+  },
+  "flexible-budget-variance-analysis": {
+    "image": "/images/title-covers/blog-flexible-budget-variance-analysis-20261026.webp",
+    "modified": "2026-10-23",
+    "published": "2026-10-21",
+    "hash": "53e084822cb510bb0ae76650ac7e33619586d73dcfdbc13a56b8654267b03180"
+  },
+  "make-or-buy-decision": {
+    "image": "/images/title-covers/blog-make-or-buy-decision-20261026.webp",
+    "modified": "2026-10-23",
+    "published": "2026-10-21",
+    "hash": "9400e7d1ba3a47d196b15b99b7fa8ac9e55d6145f0146dba92f56f5b62010de5"
+  },
+  "contribution-margin-income-statement": {
+    "image": "/images/title-covers/blog-contribution-margin-income-statement-20261026.webp",
+    "modified": "2026-10-23",
+    "published": "2026-10-19",
+    "hash": "71bf21a5d866b139d778a55b59f0aa56cd2682761b71c30f994c2a316c250c39"
+  },
+  "high-low-method": {
+    "image": "/images/title-covers/blog-high-low-method-20261026.webp",
+    "modified": "2026-10-21",
+    "published": "2026-10-19",
+    "hash": "3ed27d3817d4eba172b5f6c53748f702a3a2e6aa914c05dd432cd9242499bccc"
+  },
+  "restaurant-cash-flow-forecast": {
+    "image": "/images/title-covers/blog-restaurant-cash-flow-forecast-20261026.webp",
+    "modified": "2026-10-18",
+    "published": "2026-10-18",
+    "hash": "c97dc00a7f98237e7835f607516619362acd995b300019972e15263ff4b3e97a"
+  },
+  "how-to-calculate-cost-of-goods-sold": {
+    "image": "/images/title-covers/blog-how-to-calculate-cost-of-goods-sold-20261026.webp",
+    "modified": "2026-10-25",
+    "published": "2026-10-13",
+    "hash": "05141da35bcbd5b1615129b67745574db53d459af2ec4143d9cfb8abe0a3797d"
+  },
+  "how-to-calculate-working-capital": {
+    "image": "/images/title-covers/blog-how-to-calculate-working-capital-20261026.webp",
+    "modified": "2026-10-26",
+    "published": "2026-10-13",
+    "hash": "c50a7fe1a17032b24752f339991be855d7f6d9328cbca57b1d66034b015df8ed"
+  },
+  "how-to-calculate-days-sales-outstanding": {
+    "image": "/images/title-covers/blog-how-to-calculate-days-sales-outstanding-20261026.webp",
+    "modified": "2026-10-25",
+    "published": "2026-10-13",
+    "hash": "e6b401d487e890f349aa82c8b1207414bc58f7079ef35c54f251a3b11ab18996"
+  },
+  "cleaning-contract-payroll-cash-gap": {
+    "image": "/images/title-covers/blog-cleaning-contract-payroll-cash-gap-20261026.webp",
+    "modified": "2026-10-13",
+    "published": "2026-10-09",
+    "hash": "8b6083e95f0446699256d51b1a9dedf6caf6fe06f01fe4bf6abd876439612d57"
+  },
+  "cleaning-estimate-vs-actual-job-cost": {
+    "image": "/images/title-covers/blog-cleaning-estimate-vs-actual-job-cost-20261026.webp",
+    "modified": "2026-10-14",
+    "published": "2026-10-09",
+    "hash": "ed5e656f2152f6e8623b9d160761aca505ded8a5f7d95dc9291db8463bcec04a"
+  },
+  "cleaning-client-acquisition-payback": {
+    "image": "/images/title-covers/blog-cleaning-client-acquisition-payback-20261026.webp",
+    "modified": "2026-10-12",
+    "published": "2026-10-09",
+    "hash": "b0c642f347f8a6412aefb38629fc1dea91cc92395f59cc809522bacbc6279b26"
+  },
+  "landscaping-change-order-cost": {
+    "image": "/images/title-covers/blog-landscaping-change-order-cost-20261026.webp",
+    "modified": "2026-11-02",
+    "published": "2026-10-09",
+    "hash": "08c0457602a36c943b299792e616bf27de888b4a1da5e9c44b89d04119a0f1a0"
+  },
+  "landscaping-plant-warranty-cost": {
+    "image": "/images/title-covers/blog-landscaping-plant-warranty-cost-20261026.webp",
+    "modified": "2026-11-02",
+    "published": "2026-10-09",
+    "hash": "b8186159054b1238b6a3526f1e64afb1a60652b0fc5154d80e9278ad273e6de4"
+  },
+  "mobile-detailing-cancellation-cost": {
+    "image": "/images/title-covers/blog-mobile-detailing-cancellation-cost-20261026.webp",
+    "modified": "2026-11-02",
+    "published": "2026-10-09",
+    "hash": "7757e21a104700484878434e9751340874fd4a65917c1f3031b853198b65a317"
+  },
+  "mobile-detailing-water-refill-cost": {
+    "image": "/images/title-covers/blog-mobile-detailing-water-refill-cost-20261026.webp",
+    "modified": "2026-11-02",
+    "published": "2026-10-09",
+    "hash": "2ae590f998a10cca3e3e9e60b4b680fbb9cfbff61d9353ef662c8f2654c335d2"
+  },
+  "agency-client-concentration-revenue-risk": {
+    "image": "/images/title-covers/blog-agency-client-concentration-revenue-risk-20261026.webp",
+    "modified": "2026-10-31",
+    "published": "2026-10-07",
+    "hash": "0b40b156fa236aaa8f7e27fe22fffb77957bc7cb37b899163e2e99380993f753"
+  },
+  "agency-employee-vs-freelancer-break-even": {
+    "image": "/images/title-covers/blog-agency-employee-vs-freelancer-break-even-20261026.webp",
+    "modified": "2026-10-31",
+    "published": "2026-10-07",
+    "hash": "4b2fd7341cf44cd1e40164fdf293c5e7b51135da96845a392768822f221db624"
+  },
+  "agency-project-vs-retainer-profitability": {
+    "image": "/images/title-covers/blog-agency-project-vs-retainer-profitability-20261026.webp",
+    "modified": "2026-10-31",
+    "published": "2026-10-07",
+    "hash": "3638d761f4d44bb77791245b6b245f83a4bc90e0b6db6a88884c159dc3bcba8e"
+  },
+  "amazon-marketplace-vs-own-store-profit-per-order": {
+    "image": "/images/title-covers/blog-amazon-marketplace-vs-own-store-profit-per-order-20261026.webp",
+    "modified": "2026-10-07",
+    "published": "2026-10-07",
+    "hash": "80bc44f247e2710fcc4e0429927ea7d63f7e034c0c6740b654a8b9d70a3b7f5b"
+  },
+  "bridal-hair-and-makeup-package-pricing-for-salons": {
+    "image": "/images/title-covers/blog-bridal-hair-and-makeup-package-pricing-for-salons-20261026.webp",
+    "modified": "2026-11-02",
+    "published": "2026-10-07",
+    "hash": "4fd39d7c27a05342fe658facf61308fe3fd035c4bf072b37a74a05ff8e5261c4"
+  },
+  "coffee-shop-drink-contribution-margin": {
+    "image": "/images/title-covers/blog-coffee-shop-drink-contribution-margin-20261026.webp",
+    "modified": "2026-10-31",
+    "published": "2026-10-07",
+    "hash": "b290f73540e10e4b2cfc7ece1fed77cfdb3a3f399f65ded63360f09a0f51f6d1"
+  },
+  "ecommerce-inventory-holding-cost-per-sku": {
+    "image": "/images/title-covers/blog-ecommerce-inventory-holding-cost-per-sku-20261026.webp",
+    "modified": "2026-10-31",
+    "published": "2026-10-07",
+    "hash": "2125bfc74280c959bcf04b11599290455681215f4d2dd1555bb2cc208a10deaf"
+  },
+  "inventory-reorder-point-cash-flow": {
+    "image": "/images/title-covers/blog-inventory-reorder-point-cash-flow-20261026.webp",
+    "modified": "2026-10-31",
+    "published": "2026-10-07",
+    "hash": "7b0c0df63560ec3ba6e3818c19268abddab09b9ea919544e7d68eb8ed4c66648"
+  },
+  "photography-print-package-profit": {
+    "image": "/images/title-covers/blog-photography-print-package-profit-20261026.webp",
+    "modified": "2026-10-31",
+    "published": "2026-10-07",
+    "hash": "7aee721e568795f057c09f778ffb0935991761a76e9c785a295dea81836429d0"
+  },
+  "restaurant-menu-engineering-contribution-margin": {
+    "image": "/images/title-covers/blog-restaurant-menu-engineering-contribution-margin-20261026.webp",
+    "modified": "2026-10-31",
+    "published": "2026-10-07",
+    "hash": "345cfb280a27b22f96afebedb90b5d6500dc1bd79351f9d3c14de3be72b9c337"
+  },
+  "restaurant-private-event-minimum-spend": {
+    "image": "/images/title-covers/blog-restaurant-private-event-minimum-spend-20261026.webp",
+    "modified": "2026-10-31",
+    "published": "2026-10-07",
+    "hash": "743c30b10d29277d6c23f046bf49b6657e6fc59dae785efe50b12bb843c14a68"
+  },
+  "restaurant-takeout-vs-dine-in-profit-per-order": {
+    "image": "/images/title-covers/blog-restaurant-takeout-vs-dine-in-profit-per-order-20261026.webp",
+    "modified": "2026-10-31",
+    "published": "2026-10-07",
+    "hash": "392eb12496b131dabb5d34b414e562a2009b8de9c7ea94271d4615825f433cd1"
+  },
+  "subscription-box-churn-break-even": {
+    "image": "/images/title-covers/blog-subscription-box-churn-break-even-20261026.webp",
+    "modified": "2026-10-11",
+    "published": "2026-10-07",
+    "hash": "4e88e4b22979b978d26f8057bc20c2e638719be00ef9d260f47df4b4673a4a97"
+  },
+  "cleaning-minimum-booking-charge": {
+    "image": "/images/title-covers/blog-cleaning-minimum-booking-charge-20261026.webp",
+    "modified": "2026-10-31",
+    "published": "2026-10-06",
+    "hash": "bcf0d2f2e0c3e8f4bcef4adb4fd906c2fdcdcb5817faa06a0651fe7bc5d802e9"
+  },
+  "salon-no-show-cost": {
+    "image": "/images/title-covers/blog-salon-no-show-cost-20261026.webp",
+    "modified": "2026-10-14",
+    "published": "2026-10-06",
+    "hash": "9ca3e5241ad55829da8415d9420ec323e6ffae2411eff32b5793752c30eaaf91"
+  },
+  "catering-quote-profit": {
+    "image": "/images/title-covers/blog-catering-quote-profit-20261026.webp",
+    "modified": "2026-10-31",
+    "published": "2026-10-06",
+    "hash": "5deb934910d62250e5bf4b86a1bbeb166756826e906d6942dda2381c128d5012"
+  },
+  "landscaping-subcontractor-cost": {
+    "image": "/images/title-covers/blog-landscaping-subcontractor-cost-20261026.webp",
+    "modified": "2026-10-06",
+    "published": "2026-10-06",
+    "hash": "d4fd948d6ec4a76319072c099d8a3a70f211f16e1a1fdadd14c8aae8b7c511f8"
+  },
+  "retail-break-even-analysis": {
+    "image": "/images/title-covers/blog-retail-break-even-analysis-20261026.webp",
+    "modified": "2026-10-07",
+    "published": "2026-10-06",
+    "hash": "2522c1b4d86eacee401f2371c1b396a661001d4f9b72d89f78d39339b6cfb68c"
+  },
+  "freelance-business-plan-financials": {
+    "image": "/images/title-covers/blog-freelance-business-plan-financials-20261026.webp",
+    "modified": "2026-10-24",
+    "published": "2026-10-06",
+    "hash": "39b6e1b6e1b0af0daa9ec1691833493e7a45496446e438ef1e0a71e657c3ca51"
+  },
+  "cash-flow-forecast-vs-break-even": {
+    "image": "/images/title-covers/blog-cash-flow-forecast-vs-break-even-20261026.webp",
+    "modified": "2026-10-25",
+    "published": "2026-10-06",
+    "hash": "0852587ba8626758d45d2408c8488638bbafa6f1735b82953326b421eacfb68a"
+  },
+  "agency-scope-creep-cost": {
+    "image": "/images/title-covers/blog-agency-scope-creep-cost-20261026.webp",
+    "modified": "2026-10-14",
+    "published": "2026-10-06",
+    "hash": "79795094b4fae5fd899e15369d72b2b547f8339e3f4c8c1017384d62fa44ad3f"
+  },
+  "ecommerce-bundle-pricing-profit": {
+    "image": "/images/title-covers/blog-ecommerce-bundle-pricing-profit-20261026.webp",
+    "modified": "2026-10-31",
+    "published": "2026-10-06",
+    "hash": "cd66af1cd03c784601ad235b0d06046822c8c9608e52ea9dbff72f81df0393e8"
+  },
+  "paint-correction-labor-hours-pricing": {
+    "image": "/images/title-covers/blog-paint-correction-labor-hours-pricing-20261026.webp",
+    "modified": "2026-11-02",
+    "published": "2026-10-05",
+    "hash": "c774ac507dfc523a4d3e560df8bfe3e6b6864bf4eafc69014d409a4341e39b8e"
+  },
+  "mobile-detailing-travel-fee": {
+    "image": "/images/title-covers/blog-mobile-detailing-travel-fee-20261026.webp",
+    "modified": "2026-10-10",
+    "published": "2026-10-05",
+    "hash": "6588093c04cc8b68bb6e7e531c69daad369f9c0b1a080328c2c3b6725de10e65"
+  },
+  "salon-retail-product-profit-margin": {
+    "image": "/images/title-covers/blog-salon-retail-product-profit-margin-20261026.webp",
+    "modified": "2026-11-02",
+    "published": "2026-10-05",
+    "hash": "a8dad088f7f99ac28f1666e6089e3ec1e24c58c1e91d29dc5f98e51742a3dba5"
+  },
+  "salon-membership-pricing": {
+    "image": "/images/title-covers/blog-salon-membership-pricing-20261026.webp",
+    "modified": "2026-11-02",
+    "published": "2026-10-05",
+    "hash": "758ecf0a49385984ef454f22fda5180050fa9eaadeda5e23cec12be94b1eaccf"
+  },
+  "free-shipping-threshold-profit": {
+    "image": "/images/title-covers/blog-free-shipping-threshold-profit-20261026.webp",
+    "modified": "2026-10-31",
+    "published": "2026-10-05",
+    "hash": "13d8d4bf267602590f06ff381512c65c29706d240c1fe896d95870c6a131fca9"
+  },
+  "snow-removal-pricing": {
+    "image": "/images/title-covers/blog-snow-removal-pricing-20261026.webp",
+    "modified": "2026-10-04",
+    "published": "2026-10-04",
+    "hash": "26469affa07a7f7f06487bd0f0c29b653c54590440cfe7fccca41cca34e2ebb2"
+  },
+  "mulch-installation-job-cost": {
+    "image": "/images/title-covers/blog-mulch-installation-job-cost-20261026.webp",
+    "modified": "2026-10-10",
+    "published": "2026-10-04",
+    "hash": "b3deec1a70d8088af803dfe1a6b8ac4ac3072531ba85e60aad0bebbd6da02952"
+  },
+  "photography-second-shooter-cost": {
+    "image": "/images/title-covers/blog-photography-second-shooter-cost-20261026.webp",
+    "modified": "2026-10-31",
+    "published": "2026-10-04",
+    "hash": "b8abdabca0f6cf42e88a27d3e886909b39221f23f50e9f908d59347a9889d284"
+  },
+  "photography-usage-licensing-pricing": {
+    "image": "/images/title-covers/blog-photography-usage-licensing-pricing-20261026.webp",
+    "modified": "2026-10-22",
+    "published": "2026-10-04",
+    "hash": "545c7bec3c4dfc7a5358cf3a660fc2df35e587d292c3d9ddb3108b7cb8bc5f29"
+  },
+  "ceramic-coating-profit-margin": {
+    "image": "/images/title-covers/blog-ceramic-coating-profit-margin-20261026.webp",
+    "modified": "2026-11-02",
+    "published": "2026-10-04",
+    "hash": "4188c3e24089c6790f2f49abb2016e6a2bdf420eefc48c6937ac1144bcc96e45"
+  },
+  "landscaping-equipment-cost-per-hour": {
+    "image": "/images/title-covers/blog-landscaping-equipment-cost-per-hour-20261026.webp",
+    "modified": "2026-10-31",
+    "published": "2026-10-03",
+    "hash": "911f4dc2f1898425f156d48f456414e88bf4f2ccf4aea95dd6c2f567e82c56bd"
+  },
+  "landscaping-crew-utilization": {
+    "image": "/images/title-covers/blog-landscaping-crew-utilization-20261026.webp",
+    "modified": "2026-10-03",
+    "published": "2026-10-03",
+    "hash": "706cc92de663ef288a7279323759a8ac84e29e5727b3f5d329597ebbc6b9b00f"
+  },
+  "landscaping-maintenance-contract-pricing": {
+    "image": "/images/title-covers/blog-landscaping-maintenance-contract-pricing-20261026.webp",
+    "modified": "2026-10-03",
+    "published": "2026-10-03",
+    "hash": "24b02f0c5d9be8e8004a4be784f92961f3f65654ecbf62218bf00ca4499def50"
+  },
+  "corporate-headshot-pricing": {
+    "image": "/images/title-covers/blog-corporate-headshot-pricing-20261026.webp",
+    "modified": "2026-10-31",
+    "published": "2026-10-03",
+    "hash": "0232371b1173f296d5f170ad47bcb5416ff5e2a5556f90c4bd644d93321f80c1"
+  },
+  "product-photography-pricing-per-image": {
+    "image": "/images/title-covers/blog-product-photography-pricing-per-image-20261026.webp",
+    "modified": "2026-10-03",
+    "published": "2026-10-03",
+    "hash": "467916f1c48197a5e48a0ff4de81f31f61acb3e01374d9292b7517cc988e10b1"
+  },
+  "move-out-cleaning-job-cost": {
+    "image": "/images/title-covers/blog-move-out-cleaning-job-cost-20261026.webp",
+    "modified": "2026-10-31",
+    "published": "2026-10-02",
+    "hash": "221358c4fc741340416d4fd61267785cbe8eb0ec9cfc03ec1fad54f59f59f56d"
+  },
+  "recurring-vs-one-time-cleaning-profitability": {
+    "image": "/images/title-covers/blog-recurring-vs-one-time-cleaning-profitability-20261026.webp",
+    "modified": "2026-10-31",
+    "published": "2026-10-02",
+    "hash": "b6e4945512bfa5e28e207a5f57e99f79b527dc6959d551eefa7b2d30472cbd94"
+  },
+  "commercial-cleaning-contract-price-increase": {
+    "image": "/images/title-covers/blog-commercial-cleaning-contract-price-increase-20261026.webp",
+    "modified": "2026-10-02",
+    "published": "2026-10-02",
+    "hash": "81b7ca83531d1f429371618cfa81c9eb7e9985de8114983d26797a8d3d8f672b"
+  },
+  "cleaning-business-client-churn-cost": {
+    "image": "/images/title-covers/blog-cleaning-business-client-churn-cost-20261026.webp",
+    "modified": "2026-10-12",
+    "published": "2026-10-02",
+    "hash": "62f94acc6b19df1e864035e1b24ae4590a1878f1ecf302d5ed029fa30855a0e0"
+  },
+  "restaurant-delivery-app-commission-profit-per-order": {
+    "image": "/images/title-covers/blog-restaurant-delivery-app-commission-profit-per-order-20261026.webp",
+    "modified": "2026-10-24",
+    "published": "2026-10-02",
+    "hash": "bbe51a6ffac78367eff3d34fec56f414b9ef8b66c3c8ccf59d3815802b394d6f"
+  },
+  "cash-flow-break-even-vs-profit-break-even": {
+    "image": "/images/title-covers/blog-cash-flow-break-even-vs-profit-break-even-20261026.webp",
+    "modified": "2026-10-25",
+    "published": "2026-10-01",
+    "hash": "e94f48fdbfdd13b6cb2d6bf7bfcb045f0e1bfce2373e174094e4995f07eaea88"
+  },
+  "discount-break-even-sales-volume": {
+    "image": "/images/title-covers/blog-discount-break-even-sales-volume-20261026.webp",
+    "modified": "2026-10-01",
+    "published": "2026-10-01",
+    "hash": "4558f44c46fe0bd0a9263d6a7707dd7262a35eb61488700bd8e3d54a18f4a043"
+  },
+  "how-many-customers-can-you-lose-after-raising-prices": {
+    "image": "/images/title-covers/blog-how-many-customers-can-you-lose-after-raising-prices-20261026.webp",
+    "modified": "2026-10-12",
+    "published": "2026-10-01",
+    "hash": "0f7a424fabbc047ca7312795d02b5cb6c6aa6abad67e3bb009e1d481f39a0b9a"
+  },
+  "contribution-margin-vs-profit-margin": {
+    "image": "/images/title-covers/blog-contribution-margin-vs-profit-margin-20261026.webp",
+    "modified": "2026-10-23",
+    "published": "2026-10-01",
+    "hash": "ec6e0e60e610b37b691f8fabd4515f784648abbdb7c5b3d5b04837e82c196388"
+  },
+  "hair-color-service-cost-per-appointment": {
+    "image": "/images/title-covers/blog-hair-color-service-cost-per-appointment-20261026.webp",
+    "modified": "2026-11-02",
+    "published": "2026-10-01",
+    "hash": "5e3ff16f2be8d58a5cff1e0a78c71c88a5a4476ed035df39e44dd3ba45e70fd5"
+  },
+  "target-profit-sales-formula": {
+    "image": "/images/title-covers/blog-target-profit-sales-formula-20261026.webp",
+    "modified": "2026-10-25",
+    "published": "2026-09-30",
+    "hash": "b1311208ef2bc8aa626e52b402370315ff3d65514034bab722be9e81fa9d026b"
+  },
+  "margin-of-safety-business": {
+    "image": "/images/title-covers/blog-margin-of-safety-business-20261026.webp",
+    "modified": "2026-10-22",
+    "published": "2026-09-30",
+    "hash": "52d91e07617bdc82e52755a19680afa7c43bd8dee02e3c9039c0056ca50ca19c"
+  },
+  "operating-leverage-small-business": {
+    "image": "/images/title-covers/blog-operating-leverage-small-business-20261026.webp",
+    "modified": "2026-10-22",
+    "published": "2026-09-30",
+    "hash": "15edef6bfc34d618754508e4af95df137144f573bbdeee09aa17fce23ce350c0"
+  },
+  "break-even-roas-formula": {
+    "image": "/images/title-covers/blog-break-even-roas-formula-20261026.webp",
+    "modified": "2026-10-25",
+    "published": "2026-09-30",
+    "hash": "5e82f26ff5c3a191f7990fbdbc8b2e50fe99a22fe112d0d5f4a5cc8971a013a6"
+  },
+  "agency-client-profitability": {
+    "image": "/images/title-covers/blog-agency-client-profitability-20261026.webp",
+    "modified": "2026-10-22",
+    "published": "2026-09-30",
+    "hash": "fc61534a03fc2bfa3990c034c4512e1cd325f61ee6a67fa3253b18a64a045b90"
+  },
+  "break-even-multiple-products-sales-mix": {
+    "image": "/images/title-covers/blog-break-even-multiple-products-sales-mix-20261026.webp",
+    "modified": "2026-10-21",
+    "published": "2026-09-29",
+    "hash": "91c345734bc11c8d8b29f0e7726139280fd9204feb3b92c7581056edeeab177d"
+  },
+  "post-construction-cleaning-estimate": {
+    "image": "/images/title-covers/blog-post-construction-cleaning-estimate-20261026.webp",
+    "modified": "2026-09-29",
+    "published": "2026-09-29",
+    "hash": "9029085aea06d95824d566fdc7016e82ac21b53ca3908ad22760f6422c48698a"
+  },
+  "landscaping-job-costing-estimate-vs-actual": {
+    "image": "/images/title-covers/blog-landscaping-job-costing-estimate-vs-actual-20261026.webp",
+    "modified": "2026-10-22",
+    "published": "2026-09-29",
+    "hash": "007ef5251dd8108b01b6afea257545d035d94e448a666cbad2df8b2dbf53a1cc"
+  },
+  "photography-mini-session-profit": {
+    "image": "/images/title-covers/blog-photography-mini-session-profit-20261026.webp",
+    "modified": "2026-10-14",
+    "published": "2026-09-29",
+    "hash": "612da948709b0c140254df9630034d6a34c57b14939e9f7918055a644f81e103"
+  },
+  "fleet-detailing-contract-pricing": {
+    "image": "/images/title-covers/blog-fleet-detailing-contract-pricing-20261026.webp",
+    "modified": "2026-09-29",
+    "published": "2026-09-29",
+    "hash": "6b262b7d247df8a33146c8f50461731b52d862642f932472c12a1207a2ab14b1"
+  },
+  "commercial-cleaning-contract-bid": {
+    "image": "/images/title-covers/blog-commercial-cleaning-contract-bid-20261026.webp",
+    "modified": "2026-10-14",
+    "published": "2026-09-28",
+    "hash": "7eb797baa3a1c0b11459553fd082723b21e5bfd7f63d1a2030ac75f92c6b1cbc"
+  },
+  "salon-booth-rent-vs-commission-owner": {
+    "image": "/images/title-covers/blog-salon-booth-rent-vs-commission-owner-20261026.webp",
+    "modified": "2026-10-25",
+    "published": "2026-09-28",
+    "hash": "112d3f826dd3bf16ff544889f1f50eedce475d0f7e83097c7cba47aacf38f8fd"
+  },
+  "mobile-detailing-maintenance-plan-pricing": {
+    "image": "/images/title-covers/blog-mobile-detailing-maintenance-plan-pricing-20261026.webp",
+    "modified": "2026-10-21",
+    "published": "2026-09-28",
+    "hash": "cc222c3210a4c6f458a2c8347c9d9a2f3a96a72226a94bee8d79e15fc9a52245"
+  },
+  "ecommerce-chargeback-cost-per-order": {
+    "image": "/images/title-covers/blog-ecommerce-chargeback-cost-per-order-20261026.webp",
+    "modified": "2026-10-25",
+    "published": "2026-09-28",
+    "hash": "a6061806432da671da0287a7692c3d693aa4b56fb8f8dd388ef3f3af3c2e1708"
+  },
+  "landscaping-seasonal-break-even": {
+    "image": "/images/title-covers/blog-landscaping-seasonal-break-even-20261026.webp",
+    "modified": "2026-10-14",
+    "published": "2026-09-28",
+    "hash": "60aeaa2619dcfbcf43c8069bad3f5ec7ca29c7bd2a80f335f78e49895612330c"
+  },
+  "cleaning-business-monthly-expenses": {
+    "image": "/images/title-covers/blog-cleaning-business-monthly-expenses-20261026.webp",
+    "modified": "2026-10-25",
+    "published": "2026-09-27",
+    "hash": "b6e3ea6038100c37c58839e2c0d1017860575d55eccfab04696067854096e9f9"
+  },
+  "ecommerce-return-cost-per-order": {
+    "image": "/images/title-covers/blog-ecommerce-return-cost-per-order-20261026.webp",
+    "modified": "2026-10-14",
+    "published": "2026-09-27",
+    "hash": "47189ec43c7603894681d2057d6979dd3e32fb22060a67e6a4dcc954a0bb8a6a"
+  },
+  "agency-billable-utilization-rate": {
+    "image": "/images/title-covers/blog-agency-billable-utilization-rate-20261026.webp",
+    "modified": "2026-10-25",
+    "published": "2026-09-27",
+    "hash": "5abc0d65c47993e11a059c78af3d1bb746e13e3135f7ea734f48979cec7a959d"
+  },
+  "landscaping-route-density-profit": {
+    "image": "/images/title-covers/blog-landscaping-route-density-profit-20261026.webp",
+    "modified": "2026-10-31",
+    "published": "2026-09-27",
+    "hash": "f83d6a42461ac63a0c5916dfa278ad90dcc02276dee8362ea5d2121b5373120e"
+  },
+  "photography-cost-per-session-editing": {
+    "image": "/images/title-covers/blog-photography-cost-per-session-editing-20261026.webp",
+    "modified": "2026-10-14",
+    "published": "2026-09-27",
+    "hash": "b47c596a9e3b52d1e6527e8997e9c48f3849d198e562e4c7629bcee283d678af"
+  },
+  "cafe-opening-costs": {
+    "image": "/images/title-covers/blog-cafe-opening-costs-20261026.webp",
+    "modified": "2026-10-22",
+    "published": "2026-09-26",
+    "hash": "2277db59824cc0543478fd33fa616c0d31264db8409610476a23f0d9d6424532"
+  },
+  "restaurant-budgeting": {
+    "image": "/images/title-covers/blog-restaurant-budgeting-20261026.webp",
+    "modified": "2026-10-30",
+    "published": "2026-09-26",
+    "hash": "103e11a77df1dda731599eacd471a5f4dee73a348c1e1bc95f610bd506490d40"
+  },
+  "restaurant-food-cost-percentage": {
+    "image": "/images/title-covers/blog-restaurant-food-cost-percentage-20261026.webp",
+    "modified": "2026-10-27",
+    "published": "2026-09-26",
+    "hash": "aaa45ed004f2c5d71b3ebb55095fa3968072e3f22b1985875db0f101c169d8ec"
+  },
+  "coffee-shop-business-plan": {
+    "image": "/images/title-covers/blog-coffee-shop-business-plan-20261026.webp",
+    "modified": "2026-10-24",
+    "published": "2026-09-26",
+    "hash": "061bf86adabb1e2be7fde2f49410d1d1084fec6f68b5d4440018774f3217baa5"
+  },
+  "restaurant-labor-cost-percentage": {
+    "image": "/images/title-covers/blog-restaurant-labor-cost-percentage-20261026.webp",
+    "modified": "2026-10-25",
+    "published": "2026-09-26",
+    "hash": "39215cc4c760e0a5d5babd52bdc1f202366cb7175ccefa7ca048e2ba61ce2611"
+  },
+  "restaurant-business-plan": {
+    "image": "/images/title-covers/blog-restaurant-business-plan-20261026.webp",
+    "modified": "2026-10-24",
+    "published": "2026-09-26",
+    "hash": "3587e8557eb8ce408c093b03828af14a2eaacddbd7922bed76dd84d9fd184caa"
+  },
+  "restaurant-prime-cost": {
+    "image": "/images/title-covers/blog-restaurant-prime-cost-20261026.webp",
+    "modified": "2026-10-13",
+    "published": "2026-09-26",
+    "hash": "513009b2991a9e5f6bb12cd1fc0b72662dc9046ae6f2735c94885ecfbc6511c5"
+  },
+  "restaurant-sales-forecast": {
+    "image": "/images/title-covers/blog-restaurant-sales-forecast-20261026.webp",
+    "modified": "2026-10-21",
+    "published": "2026-09-26",
+    "hash": "50eb4838154caa78cebe64916ec3244cc8d90887c854d621df6b91d77de57682"
+  },
+  "how-to-start-coffee-shop": {
+    "image": "/images/title-covers/blog-how-to-start-coffee-shop-20261026.webp",
+    "modified": "2026-10-22",
+    "published": "2026-09-26",
+    "hash": "36ff37891f13f722afdc07251d8661bc94ba573f2d1f9e24ae9a208a70534043"
+  },
+  "how-to-start-restaurant": {
+    "image": "/images/title-covers/blog-how-to-start-restaurant-20261026.webp",
+    "modified": "2026-10-22",
+    "published": "2026-09-26",
+    "hash": "57eae69138a2fe48253fc9999ce5205e9351d1be000eb0a77bf98d7f4db47115"
+  },
+  "ecommerce-shipping-costs": {
+    "image": "/images/title-covers/blog-ecommerce-shipping-costs-20261026.webp",
+    "modified": "2026-10-25",
+    "published": "2026-09-26",
+    "hash": "e80e5cec411fd2f6bf31ce81a4d2810e2a57c0a4ad93c3d2b578fdeea8d67b1f"
+  },
+  "calculate-break-even-point": {
+    "image": "/images/title-covers/blog-calculate-break-even-point-20261026.webp",
+    "modified": "2026-10-28",
+    "published": "2026-09-23",
+    "hash": "b8484d1f8c032360959820c28d600e63ba560621728d9a6cb512b9097f1d651f"
+  },
+  "break-even-analysis-example": {
+    "image": "/images/title-covers/blog-break-even-analysis-example-20261026.webp",
+    "modified": "2026-10-21",
+    "published": "2026-09-23",
+    "hash": "4eb84a4437861bbe908ef7acb07a0748838c7fabe29941fcf907cfabb9d78c9c"
+  },
+  "break-even-formula-units-dollars": {
+    "image": "/images/title-covers/blog-break-even-formula-units-dollars-20261026.webp",
+    "modified": "2026-10-28",
+    "published": "2026-09-23",
+    "hash": "dbd5bfcded9b677518d2b5b6ef301fd6d88e7e56840004c6af2a86ec36a3cb0c"
+  },
+  "calculate-contribution-margin": {
+    "image": "/images/title-covers/blog-calculate-contribution-margin-20261026.webp",
+    "modified": "2026-10-22",
+    "published": "2026-09-23",
+    "hash": "c4b0698f2302bc30956dfb02fbbd6d6a436ec1c50e40d7a647b9589f11cf6d68"
+  },
+  "contribution-margin-vs-gross-margin": {
+    "image": "/images/title-covers/blog-contribution-margin-vs-gross-margin-20261026.webp",
+    "modified": "2026-10-22",
+    "published": "2026-09-23",
+    "hash": "c68baa9bafed779c9b5d5f8e9fc914cc00cbe0088c70e02d1ff1d95cb4bf3c43"
+  },
+  "fixed-vs-variable-costs": {
+    "image": "/images/title-covers/blog-fixed-vs-variable-costs-20261026.webp",
+    "modified": "2026-10-23",
+    "published": "2026-09-23",
+    "hash": "ca8d6a297667a20d5e6c78c5baa76a61dba3ddaa394f79e82432b8c3d186d034"
+  },
+  "margin-vs-markup": {
+    "image": "/images/title-covers/blog-margin-vs-markup-20261026.webp",
+    "modified": "2026-10-13",
+    "published": "2026-09-23",
+    "hash": "66d9d519d185dad7be07b5093aece4884708826ff2350b6af04b7eeb6543d44b"
+  },
+  "lower-break-even-point": {
+    "image": "/images/title-covers/blog-lower-break-even-point-20261026.webp",
+    "modified": "2026-10-07",
+    "published": "2026-09-23",
+    "hash": "7340825ebe1d47726a86f41e549790e97577c70541b2f5869efbebe14edd084f"
+  },
+  "how-many-cleaning-clients-5000": {
+    "image": "/images/title-covers/blog-how-many-cleaning-clients-5000-20261026.webp",
+    "modified": "2026-10-07",
+    "published": "2026-09-22",
+    "hash": "a1b98067d4375def9313deb9066842290feaba0e8d355a2123837e7a1fbe1a9c"
+  },
+  "how-many-lawns-100k": {
+    "image": "/images/title-covers/blog-how-many-lawns-100k-20261026.webp",
+    "modified": "2026-10-11",
+    "published": "2026-09-22",
+    "hash": "c391ac4fcdcef0549059e705dd3d267ca3178e6345009c2fe7bece53075b945d"
+  },
+  "how-many-photography-clients-month": {
+    "image": "/images/title-covers/blog-how-many-photography-clients-month-20261026.webp",
+    "modified": "2026-10-07",
+    "published": "2026-09-22",
+    "hash": "6fc19065bb2f0db05463b62aa55c2e015aea655e90889b0e40f607b9bcbb38ab"
+  },
+  "how-many-detailing-jobs-week": {
+    "image": "/images/title-covers/blog-how-many-detailing-jobs-week-20261026.webp",
+    "modified": "2026-10-07",
+    "published": "2026-09-22",
+    "hash": "b43384c06bca71fabb4e8c66809eb24b0f665cdea9706a206a4ee9d278c753fd"
+  },
+  "salon-clients-per-day-break-even": {
+    "image": "/images/title-covers/blog-salon-clients-per-day-break-even-20261026.webp",
+    "modified": "2026-10-07",
+    "published": "2026-09-22",
+    "hash": "1833705f49fd17853d1d0efabc0afacbf2907ff0ca4cff99e32b8b1085182a9d"
+  },
+  "restaurant-covers-per-night-break-even": {
+    "image": "/images/title-covers/blog-restaurant-covers-per-night-break-even-20261026.webp",
+    "modified": "2026-10-07",
+    "published": "2026-09-22",
+    "hash": "45a1b511bbe4c449e18fd0936b717e80de72db2acdc992a00a36e1f9758d5fef"
+  },
+  "ecommerce-orders-per-day-profitable": {
+    "image": "/images/title-covers/blog-ecommerce-orders-per-day-profitable-20261026.webp",
+    "modified": "2026-09-22",
+    "published": "2026-09-22",
+    "hash": "fe76bdfe14ebd2a8c1b503897773ead72123e9682bb205648be47ab23e5b1a6d"
+  },
+  "how-many-agency-retainer-clients": {
+    "image": "/images/title-covers/blog-how-many-agency-retainer-clients-20261026.webp",
+    "modified": "2026-10-07",
+    "published": "2026-09-22",
+    "hash": "1572b54ef02e4d88d9778723f0188d2ad636e7efa57585d406fef2ed96d9400c"
+  },
+  "is-a-cleaning-business-profitable": {
+    "image": "/images/title-covers/blog-is-a-cleaning-business-profitable-20261026.webp",
+    "modified": "2026-10-26",
+    "published": "2026-09-20",
+    "hash": "1f2139242e4c87f75c385d7af7b4cb683a605e96dd4e5321446dda75c5995577"
+  },
+  "landscaping-business-profit-margin": {
+    "image": "/images/title-covers/blog-landscaping-business-profit-margin-20261026.webp",
+    "modified": "2026-10-10",
+    "published": "2026-09-20",
+    "hash": "3160624695e01b5ac9229a7e5adfc6e05c3ba608293cb845e4da1cd034ebba03"
+  },
+  "photography-business-profit-margin": {
+    "image": "/images/title-covers/blog-photography-business-profit-margin-20261026.webp",
+    "modified": "2026-10-07",
+    "published": "2026-09-20",
+    "hash": "1844a932902ab535a0aac1ae43d6a0ab4fe6519a8b44ff6e3655d5e96abaa0fa"
+  },
+  "is-mobile-detailing-profitable": {
+    "image": "/images/title-covers/blog-is-mobile-detailing-profitable-20261026.webp",
+    "modified": "2026-10-07",
+    "published": "2026-09-20",
+    "hash": "5a91d3819c11b3ff68565f4a583cc55a66bbfac10d269825f53921662be0cf8e"
+  },
+  "salon-profit-margin": {
+    "image": "/images/title-covers/blog-salon-profit-margin-20261026.webp",
+    "modified": "2026-10-25",
+    "published": "2026-09-20",
+    "hash": "86b975273eb5080588646e85dd586794249b9209539217b7af54771615489e24"
+  },
+  "restaurant-profit-margin-average": {
+    "image": "/images/title-covers/blog-restaurant-profit-margin-average-20261026.webp",
+    "modified": "2026-10-25",
+    "published": "2026-09-20",
+    "hash": "37a0b1872e0383ed821a02f9c309759749d557136bae9ade4263a3376be84aa8"
+  },
+  "ecommerce-profit-margin": {
+    "image": "/images/title-covers/blog-ecommerce-profit-margin-20261026.webp",
+    "modified": "2026-10-13",
+    "published": "2026-09-20",
+    "hash": "5a1e042b1504a4ae088882c6f4bd8b863e9abcb7113e212544a2b0a1d59809e1"
+  },
+  "agency-profit-margin": {
+    "image": "/images/title-covers/blog-agency-profit-margin-20261026.webp",
+    "modified": "2026-10-25",
+    "published": "2026-09-20",
+    "hash": "ea761ee4030e0c3740e0e88ed6dae3f546348f25af422b4486bfd83c7f9228f5"
+  },
+  "how-much-does-it-cost-to-start-a-cleaning-business": {
+    "image": "/images/title-covers/blog-how-much-does-it-cost-to-start-a-cleaning-business-20261026.webp",
+    "modified": "2026-10-12",
+    "published": "2026-09-18",
+    "hash": "d79121441d9981e85cc4de2ef2800ce02a319e63a41afa4348d207aa8b66ec54"
+  },
+  "how-much-does-it-cost-to-start-a-landscaping-business": {
+    "image": "/images/title-covers/blog-how-much-does-it-cost-to-start-a-landscaping-business-20261026.webp",
+    "modified": "2026-10-22",
+    "published": "2026-09-18",
+    "hash": "76e11c8163880ecb971b32cbf7f79dd6d65c1bad3ba8c25296bde6772968d0f5"
+  },
+  "how-much-does-it-cost-to-start-a-photography-business": {
+    "image": "/images/title-covers/blog-how-much-does-it-cost-to-start-a-photography-business-20261026.webp",
+    "modified": "2026-10-22",
+    "published": "2026-09-18",
+    "hash": "79a1483b279fdc748f3bb28605d339a1b437f6432635221d488596da6eecc5b2"
+  },
+  "mobile-detailing-business-startup-cost": {
+    "image": "/images/title-covers/blog-mobile-detailing-business-startup-cost-20261026.webp",
+    "modified": "2026-10-22",
+    "published": "2026-09-18",
+    "hash": "095402efdc4ff5e772f757fa7728e976337d15a819c95058c3ac5ca1eb08ce48"
+  },
+  "how-much-does-it-cost-to-open-a-salon": {
+    "image": "/images/title-covers/blog-how-much-does-it-cost-to-open-a-salon-20261026.webp",
+    "modified": "2026-10-22",
+    "published": "2026-09-18",
+    "hash": "cc296e6447bbcaa163f036992effd2115d65b78487351adcc265c516f6a7fbe5"
+  },
+  "how-much-does-it-cost-to-open-a-restaurant": {
+    "image": "/images/title-covers/blog-how-much-does-it-cost-to-open-a-restaurant-20261026.webp",
+    "modified": "2026-10-22",
+    "published": "2026-09-18",
+    "hash": "56a4efe594b6401a1de12c40e596ec0ebf29cb8971228d315bf62efbb37cdd95"
+  },
+  "how-much-does-it-cost-to-start-an-ecommerce-store": {
+    "image": "/images/title-covers/blog-how-much-does-it-cost-to-start-an-ecommerce-store-20261026.webp",
+    "modified": "2026-10-25",
+    "published": "2026-09-18",
+    "hash": "bc8cd5614657948cc42465687cc3ed6ba8a2ffb19ddec2e1d042568abc7be4b9"
+  },
+  "how-much-does-it-cost-to-start-a-marketing-agency": {
+    "image": "/images/title-covers/blog-how-much-does-it-cost-to-start-a-marketing-agency-20261026.webp",
+    "modified": "2026-10-11",
+    "published": "2026-09-18",
+    "hash": "92f3653ff9eb80016374abf71115e26538b7c099ffc756d9c6bc310e2b9391e7"
+  },
+  "how-much-to-charge-for-house-cleaning": {
+    "image": "/images/title-covers/blog-how-much-to-charge-for-house-cleaning-20261026.webp",
+    "modified": "2026-10-25",
+    "published": "2026-09-17",
+    "hash": "2d3069923bee5910cc0ee730f93ac2dd7cfea695c7cffb14a0639987077cd86d"
+  },
+  "lawn-care-pricing-per-acre": {
+    "image": "/images/title-covers/blog-lawn-care-pricing-per-acre-20261026.webp",
+    "modified": "2026-10-22",
+    "published": "2026-09-17",
+    "hash": "7d6492c47a9b2fa4a4b80a458a9aed72cce3f81c8314099f686c90281a0d8784"
+  },
+  "photography-pricing-packages": {
+    "image": "/images/title-covers/blog-photography-pricing-packages-20261026.webp",
+    "modified": "2026-10-11",
+    "published": "2026-09-17",
+    "hash": "184d7f1d65dd3c31c5d22ef91523424cef97d48577104b2ada605b951013375d"
+  },
+  "car-detailing-prices-list": {
+    "image": "/images/title-covers/blog-car-detailing-prices-list-20261026.webp",
+    "modified": "2026-10-11",
+    "published": "2026-09-17",
+    "hash": "789f7423b24649cbd6d00c540aa2094becdabfd16b30af4f7674bb5939b6563c"
+  },
+  "salon-service-pricing": {
+    "image": "/images/title-covers/blog-salon-service-pricing-20261026.webp",
+    "modified": "2026-10-22",
+    "published": "2026-09-17",
+    "hash": "e63f8c98099d75fc41824fc55ba32722b7e7e34456caa728795f6cdf0ded7822"
+  },
+  "agency-retainer-pricing": {
+    "image": "/images/title-covers/blog-agency-retainer-pricing-20261026.webp",
+    "modified": "2026-10-13",
+    "published": "2026-09-17",
+    "hash": "df32e113b48202c48b6bd6f92da08cab474fc6b3d5d113bbae5456026a89fa2c"
+  },
+  "how-to-price-products-for-ecommerce": {
+    "image": "/images/title-covers/blog-how-to-price-products-for-ecommerce-20261026.webp",
+    "modified": "2026-10-07",
+    "published": "2026-09-17",
+    "hash": "fb01ad5c632df502a171dcffa80ee601b4cee3b39df81ab5260ed5798965212a"
+  },
+  "restaurant-menu-pricing-formula": {
+    "image": "/images/title-covers/blog-restaurant-menu-pricing-formula-20261026.webp",
+    "modified": "2026-10-22",
+    "published": "2026-09-17",
+    "hash": "d807d40a86263717d08d15b2261825c956cc02456188cd25839784d4a6e4e90b"
+  },
+  "cleaning-business-break-even": {
+    "image": "/images/title-covers/blog-cleaning-business-break-even-20261026.webp",
+    "modified": "2026-10-21",
+    "published": "2026-09-10",
+    "hash": "626fee884d20dfcb08a0f53676ec92200e2808b9dade4f7dfbca00bb0bc867f7"
+  },
+  "landscaping-break-even": {
+    "image": "/images/title-covers/blog-landscaping-break-even-20261026.webp",
+    "modified": "2026-10-25",
+    "published": "2026-09-10",
+    "hash": "8ae94a0e8fd8b74076c89e6e6032b8bfa4cf80e247eb20785521883d972369e9"
+  },
+  "photography-business-break-even": {
+    "image": "/images/title-covers/blog-photography-business-break-even-20261026.webp",
+    "modified": "2026-10-21",
+    "published": "2026-09-10",
+    "hash": "4f68909772e530ddf041e7d6f1ed2f7c853dfe45984886bdaa6e1d592c185c98"
+  },
+  "agency-break-even": {
+    "image": "/images/title-covers/blog-agency-break-even-20261026.webp",
+    "modified": "2026-10-21",
+    "published": "2026-09-10",
+    "hash": "64a14f65a8d5d5a7f7303c9f712a8e206e73ca7bbd7f645a52d19c8923ccc720"
+  },
+  "mobile-detailing-break-even": {
+    "image": "/images/title-covers/blog-mobile-detailing-break-even-20261026.webp",
+    "modified": "2026-10-07",
+    "published": "2026-09-10",
+    "hash": "d40cf06af3910e036e533a15d9817e1c577013aa273f01139759ec9b19d0b81c"
+  },
+  "ecommerce-break-even": {
+    "image": "/images/title-covers/blog-ecommerce-break-even-20261026.webp",
+    "modified": "2026-10-12",
+    "published": "2026-09-10",
+    "hash": "a1c75dda9752c26ddcfe0bdde4162ba8dbae057f7474a7ad20f6479f0b7f0f6a"
+  },
+  "restaurant-break-even": {
+    "image": "/images/title-covers/blog-restaurant-break-even-20261026.webp",
+    "modified": "2026-10-07",
+    "published": "2026-09-10",
+    "hash": "aa30258b8a6631d315874ef1d027ea8010f1a8e14a0846164c9e99f3eafb4e66"
+  },
+  "salon-break-even": {
+    "image": "/images/title-covers/blog-salon-break-even-20261026.webp",
+    "modified": "2026-10-08",
+    "published": "2026-09-10",
+    "hash": "12df62725f52dacff8cb68759952d490f8000d038e388e0f60633ad466b20534"
+  }
+}

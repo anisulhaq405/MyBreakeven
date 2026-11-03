@@ -1,3 +1,4 @@
+import {dailyNovember03Review} from './content/blogs/dailyNovember03Review.js';
 import {dailyNovember02Review} from './content/blogs/dailyNovember02Review.js';
 import { expect, it } from 'vitest';
 import Decimal from 'decimal.js';
@@ -37,7 +38,7 @@ it('distinguishes annual whole jobs, rounded monthly targets and seasonal capaci
 });
 it('preserves publication history and unique anchors in all eight enriched guides', () => {
   for(const slug of Object.keys(remainingSectionEnrichment)){
-    const p=blogPostMap[slug];expect(p.published<'2026-10-14').toBe(true);expect(p.modified).toBe(dailyNovember02Review[slug]?'2026-11-02':slug==='landscaping-job-costing-estimate-vs-actual'?'2026-10-22':'2026-10-14');
+    const p=blogPostMap[slug];expect(p.published<'2026-10-14').toBe(true);expect(p.modified).toBe(dailyNovember03Review[slug]?'2026-11-03':dailyNovember02Review[slug]?'2026-11-02':slug==='landscaping-job-costing-estimate-vs-actual'?'2026-10-22':'2026-10-14');
     const ids=[...p.html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);expect(new Set(ids).size).toBe(ids.length);
   }
 });
