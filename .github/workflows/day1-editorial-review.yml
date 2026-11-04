@@ -13,7 +13,7 @@ permissions:
   contents: read
 jobs:
   draft-browser-review:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
@@ -40,6 +40,5 @@ jobs:
         with:
           name: day1-draft-browser-review
           path: |
-            ../analysis/day1-browser/
-            ../analysis/day1-browser-qa.json
+            qa-artifacts/day1-browser/
             dist/review/day1/
