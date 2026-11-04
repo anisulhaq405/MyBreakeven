@@ -21,7 +21,7 @@ describe('October 26 Working Capital GSC formula intent growth',()=>{
   for(const [id] of p.sectionLinks.filter(([id])=>id!=='guide-faqs'))expect(ids).toContain(id);
   expect(p.metaDescription.length).toBeLessThanOrEqual(160);
   expect(p.metaDescription.length).toBeGreaterThanOrEqual(120);
-  expect(p.modified).toBe('2026-10-26');
+  expect(p.modified).toBe('2026-11-04');
  });
  it('uses consistent fictional formula values and is scoped to one post',()=>{
   expect(62000-38000).toBe(24000);

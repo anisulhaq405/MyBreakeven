@@ -1,3 +1,4 @@
+import {applyNovember04GscReview} from './november04GscReview.js';
 import {twelveDayDay1Posts,applyTwelveDayExistingReview} from './twelveDayDay1.js';
 import {applyDailyNovember03Review} from './dailyNovember03Review.js';
 import {applyDailyNovember02Review} from './dailyNovember02Review.js';
@@ -194,6 +195,7 @@ const normalizePost = post => {
   reviewed = applyDailyNovember02Review(reviewed);
   reviewed = applyDailyNovember03Review(reviewed);
   reviewed = applyTwelveDayExistingReview(reviewed);
+  reviewed = applyNovember04GscReview(reviewed);
   const image=titledFeatureImage(reviewed.slug,featureDeliveryAssets[reviewed.image] || reviewed.image);
   return image===reviewed.image ? reviewed : {...reviewed,image};
 };
