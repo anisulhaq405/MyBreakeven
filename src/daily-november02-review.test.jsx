@@ -1,9 +1,11 @@
+import {twelveDayExistingSlugs} from './twelveDayRelease.js';
 import {dailyNovember03Review as november03Batch} from './content/blogs/dailyNovember03Review';
 import React from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {describe,it,expect} from 'vitest';
 import {createHash} from 'node:crypto';
-import {blogPosts} from './content/blogs';
+import {blogPosts as currentBlogPosts} from './content/blogs';
+const blogPosts=currentBlogPosts.filter(p=>Object.hasOwn(baseline,p.slug));
 import {dailyNovember02Review as edits,applyDailyNovember02Review} from './content/blogs/dailyNovember02Review';
 import baseline from './testFixtures/dailyNovember02Protected.json';
 import {articleFaq} from './articleFaq';
@@ -13,7 +15,7 @@ const digest=p=>createHash('sha256').update(JSON.stringify(stable(p))).digest('h
 describe('November 2 existing ten-article improvements',()=>{
  it('preserves all other articles, all images and publication dates',()=>{
   expect(Object.keys(edits)).toHaveLength(10);expect(blogPosts).toHaveLength(Object.keys(baseline).length);
-  for(const p of blogPosts){expect(p.image,p.slug).toBe(baseline[p.slug].image);if(!edits[p.slug]&&!november03Batch[p.slug])expect(digest(p),p.slug).toBe(baseline[p.slug].hash);else if(edits[p.slug]) {expect(baseline[p.slug].modified<= '2026-10-25',p.slug).toBe(true);expect(p.modified).toBe('2026-11-02');}}
+  for(const p of blogPosts){expect(p.image,p.slug).toBe(baseline[p.slug].image);if(!twelveDayExistingSlugs.has(p.slug)&&!edits[p.slug]&&!november03Batch[p.slug])expect(digest(p),p.slug).toBe(baseline[p.slug].hash);else if(edits[p.slug]) {expect(baseline[p.slug].modified<= '2026-10-25',p.slug).toBe(true);expect(p.modified).toBe('2026-11-02');}}
   const protectedPost={slug:Object.keys(edits)[0],modified:'2026-10-26'};expect(applyDailyNovember02Review(protectedPost)).toBe(protectedPost);
  });
  it('renders the decision aids, valid links and extracted FAQs without duplicate IDs',()=>{

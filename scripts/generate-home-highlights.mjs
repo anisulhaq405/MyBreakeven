@@ -1,4 +1,5 @@
 import './build-finance-day1-visuals.mjs';
+import './build-12day-day1-images.mjs';
 import './build-finance-guide-visuals.mjs';
 import { freeTools } from '../src/freeTools.js';
 import { calculatorDirectory } from '../src/calculatorDirectory.js';
@@ -26,6 +27,7 @@ await writeFile(new URL("../src/homeBlogData.js", import.meta.url),
   `// Generated from the blog registry before dev and build.\nexport const homeBlogData = ${JSON.stringify(highlights)};\n`);
 
 const groupFor = slug => {
+  if (blogCollections.twelveDayDay1.some(post=>post.slug===slug)) return 'twelveDayDay1';
   if (blogCollections.foundation.some(post => post.slug === slug)) return "core";
   if (blogCollections.pricing.some(post => post.slug === slug)) return "pricing";
   if (blogCollections.startup.some(post => post.slug === slug)) {

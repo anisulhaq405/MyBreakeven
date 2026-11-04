@@ -4,7 +4,7 @@ import { blogCollections, blogLibrarySummary, blogModels, blogPostMap, blogPosts
 describe("central blog registry", () => {
   it("publishes every collection through one registry", () => {
     expect(Object.keys(blogCollections)).toEqual([
-      "malaysiaReview", "financeCompletion", "financeDay1", "day5Cash", "day4Draft", "newPlanDay1",
+      "twelveDayDay1", "malaysiaReview", "financeCompletion", "financeDay1", "day5Cash", "day4Draft", "newPlanDay1",
       "foundation",
       "pricing",
       "startup",
@@ -32,8 +32,8 @@ describe("central blog registry", () => {
       "october19Keyword",
       "october21Draft", "october20Draft",
     ]);
-    expect(blogPosts).toHaveLength(162);
-    expect(Object.keys(blogPostMap)).toHaveLength(162);
+    expect(blogPosts).toHaveLength(171);
+    expect(Object.keys(blogPostMap)).toHaveLength(171);
     expect(blogLibrarySummary.guideCount).toBe(blogPosts.length);
     expect(blogLibrarySummary.modelCount).toBe(blogModels.length);
     expect(blogModels).toHaveLength(8);
@@ -48,7 +48,7 @@ describe("central blog registry", () => {
     expect(new Set(blogPosts.map(post => post.title)).size).toBe(blogPosts.length);
     for (const post of blogPosts) {
       expect(post.slug).toMatch(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
-      expect(post.calculatorSlug).toMatch(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+      if(post.calculatorSlug) expect(post.calculatorSlug).toMatch(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
     }
   });
 

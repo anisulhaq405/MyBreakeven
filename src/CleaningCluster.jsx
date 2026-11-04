@@ -1,5 +1,6 @@
 import SectionWorkflows from './SectionWorkflows.jsx';
 import React from 'react';
+import Day1PlanningReview from './Day1PlanningReview.jsx';
 import { blogListingData } from './blogListingData.js';
 import { cleaningClusters, cleaningClusterPath } from './cleaningCluster.js';
 import './cleaning-cluster.css';
@@ -15,5 +16,5 @@ export default function CleaningCluster(){
     <nav className="cleaning-topic-index" aria-label="Cleaning decisions">{cleaningClusters.map(c=><a key={c.id} href={'#'+c.id}>{c.title}</a>)}</nav>
  <div className="cleaning-cluster-grid" id="cleaning-decisions">{cleaningClusters.map(c=><section key={c.id} id={c.id} className="cleaning-cluster-card"><h2>{c.title}</h2><p>{c.description}</p><ul>{c.slugs.map(slug=>{const p=posts.get(slug);return <li key={slug}><a href={'/blogs/'+slug+'/'}>{p.title}</a><p>{p.description}</p></li>;})}</ul></section>)}</div>
  <section className="cleaning-scope"><h2>Choose the right cost boundary</h2><p>A job quote answers what one visit must charge. A contract review looks at one account. A monthly break-even plan combines contribution with overhead, owner pay and capacity. Cash planning also needs the dates money is collected and paid.</p><p>Start with the decision you are making, and keep each cost in one place. The guides include hypothetical worked examples; their figures are not local market rates.</p><a href="/blogs/">Browse all business planning guides</a></section>
- </div>;
+ <Day1PlanningReview route="guides/cleaning-business"/></div>;
 }
