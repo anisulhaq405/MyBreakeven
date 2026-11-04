@@ -6,6 +6,7 @@ const report=[];
 for(let i=0;i<manifest.length;i++){
  const m=manifest[i],p=twelveDayDay1Posts[i];
  const master=new URL('../public'+p.image,import.meta.url);
+ await fs.mkdir(new URL('.',master),{recursive:true});
  for(const width of [1200,800,400]){
   const target=width===1200?master:new URL(master.href.replace('.webp',`-${width}.webp`));
   const info=await sharp(m.source).resize(width,Math.round(width*9/16),{fit:'cover'}).webp({quality:85,effort:6}).toFile(target.pathname);
