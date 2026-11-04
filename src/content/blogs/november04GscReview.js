@@ -16,6 +16,7 @@ export function applyNovember04GscReview(post){
   return {...post,reviewVersion:'2026-11-04-gsc',modified:'2026-11-04',name:'Small Business',calculatorSlug:'financial-ratios-calculator',seoTitle:'Working Capital: Formula, Example & Excel',description:'Calculate working capital from a balance sheet, check the $24,000 example, and separate reported liquidity from cash available for upcoming payments.',metaDescription:'Calculate working capital with current assets minus current liabilities. Follow a balance-sheet example, compare operating capital and days, and download Excel.',html,sectionLinks:[...post.sectionLinks.filter(([id])=>id!=='quick-answer'),['working-capital-asset-quality','Asset-quality stress test']]};
  }
  // Keep existing worked scenarios, chart and capacity examples; improve missing comparison/formula intent.
+ html=html.replace('<img src="/images/blog/day4-cost-curves.svg"','<img style="max-width:100%;height:auto" src="/images/blog/day4-cost-curves.svg"');
  html=html.replace('<h2>The direct answer</h2>',comparison+'<h2>The direct answer</h2>');
  const faqStart=html.indexOf('<h2>FAQs</h2>'),faqEnd=html.indexOf('<h2 id="mixed-cost-estimation">',faqStart);
  if(faqStart<0||faqEnd<0)throw Error('Cost FAQ source boundary changed');

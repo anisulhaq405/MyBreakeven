@@ -21,7 +21,7 @@ describe('November 4 explicitly authorized two-page GSC improvement',()=>{
   expect(62000-4400-6000-38000).toBe(13600);expect(62000-38000).toBe(24000);
  });
  it('reconciles cost formulas and the cost-indifference point, without corrupting FAQ answers',()=>{
-  const p=blogPostMap['fixed-vs-variable-costs'];expect(p.html).toContain('id="total-fixed-variable-formulas"');expect(p.html).toContain('cost-indifference point');
+  const p=blogPostMap['fixed-vs-variable-costs'];expect(p.html).toContain('id="total-fixed-variable-formulas"');expect(p.html).toContain('cost-indifference point');expect(p.html).toContain('<img style="max-width:100%;height:auto" src="/images/blog/day4-cost-curves.svg"');
   expect(9680-81*80).toBe(3200);expect(9680/80).toBe(121);const units=(4800-1200)/(50-20);expect(units).toBe(120);expect(4800+20*units).toBe(1200+50*units);
   expect(articleFaq(p).inline).toBe(false);expect(articleFaq(p).items).toHaveLength(7);expect(articleFaq(p).items.find(f=>f.q.startsWith('Are payment')).a).not.toContain('For another angle');
  });
