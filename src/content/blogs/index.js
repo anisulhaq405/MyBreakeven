@@ -1,3 +1,4 @@
+import {twelveDayDay1Posts,applyTwelveDayExistingReview} from './twelveDayDay1.js';
 import {applyDailyNovember03Review} from './dailyNovember03Review.js';
 import {applyDailyNovember02Review} from './dailyNovember02Review.js';
 import {applyDailyOctober31Batch2} from './dailyOctober31Batch2.js';
@@ -192,11 +193,13 @@ const normalizePost = post => {
   reviewed = applyDailyOctober31Batch2(reviewed);
   reviewed = applyDailyNovember02Review(reviewed);
   reviewed = applyDailyNovember03Review(reviewed);
+  reviewed = applyTwelveDayExistingReview(reviewed);
   const image=titledFeatureImage(reviewed.slug,featureDeliveryAssets[reviewed.image] || reviewed.image);
   return image===reviewed.image ? reviewed : {...reviewed,image};
 };
 
 export const blogCollections = Object.freeze({
+  twelveDayDay1: twelveDayDay1Posts,
   malaysiaReview: malaysiaRestaurantReviewPosts.map(normalizePost),
   financeCompletion: financeCompletionPosts.map(normalizePost),
   financeDay1: financeDay1Posts.map(normalizePost),

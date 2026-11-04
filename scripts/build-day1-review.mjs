@@ -1,0 +1,31 @@
+import fs from 'node:fs/promises';
+import './build-12day-day1-images.mjs';
+import path from 'node:path';
+import {createServer} from 'vite';
+import {createElement} from 'react';
+import {renderToStaticMarkup} from 'react-dom/server';
+import {twelveDayDay1Posts,applyTwelveDayExistingReview} from '../src/content/blogs/twelveDayDay1.js';
+import {blogPostMap} from '../src/content/blogs/index.js';
+const style=`*{box-sizing:border-box}body{margin:0;color:#183344;background:#f6f9f9;font:18px/1.7 system-ui,sans-serif}article,main{max-width:1000px;margin:auto;padding:28px 24px;background:white}h1{font-size:clamp(30px,5vw,48px);line-height:1.15;color:#113c48}h2{font-size:28px;line-height:1.25;color:#075b61;margin-top:48px}h3{font-size:22px}a{color:#006b72;text-underline-offset:3px}figure{margin:30px 0}img{max-width:100%;height:auto;border-radius:12px}figcaption,.note{font-size:15px;color:#49616b}.draft{padding:15px;border:1px solid #dbb45e;background:#fff7df;border-radius:8px}.article-table-scroll,.dp-table,.authority-table{overflow:auto}table{width:100%;border-collapse:collapse;font-size:16px}td,th{border:1px solid #c7d9dc;padding:12px;text-align:left}thead{background:#eaf5f3}caption{text-align:left;font-weight:700;padding-bottom:12px}nav{display:flex;flex-wrap:wrap;gap:14px;font-size:16px}details{padding:16px;border:1px solid #cee0e2;margin:10px 0}summary{font-weight:650;cursor:pointer}code{white-space:normal}li{margin:7px 0}@media(max-width:600px){article,main{padding:20px 16px}h2{font-size:25px}table{min-width:560px}nav{gap:10px}body{font-size:17px}}`;
+const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
+const shell=(title,body)=>`<!doctype html><html lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>${esc(title)} | MyBreakEven review</title><style>${style}</style></head><body>${body}</body></html>`;
+const dir='dist/review/day1';await fs.mkdir(dir,{recursive:true});const links=[];
+for(const p of twelveDayDay1Posts){
+ for(const size of [1200,800,400]){const asset=p.image.replace('.webp',size===1200?'.webp':`-${size}.webp`);await fs.mkdir(path.dirname('dist'+asset),{recursive:true});await fs.copyFile('public'+asset,'dist'+asset);}
+ await fs.mkdir('dist/downloads',{recursive:true});await fs.copyFile('public/downloads/'+p.slug+'-worksheet.html','dist/downloads/'+p.slug+'-worksheet.html');
+}
+await fs.mkdir('dist/images/diagrams',{recursive:true});await fs.copyFile('public/images/diagrams/cvp-relevant-range-20261103.svg','dist/images/diagrams/cvp-relevant-range-20261103.svg');
+for(const p of twelveDayDay1Posts){
+ const body=`<article><nav><a href="/review/day1/">Day 1 review index</a><a href="/blogs/">Existing live guides</a></nav><p class="draft">Unpublished draft for review. Fresh USA top-three positions, final editorial/source review and browser acceptance remain open. This is not a live article.</p><h1>${esc(p.title)}</h1><p class="note">Prepared November 3, 2026. Proposed route: /blogs/${p.slug}/</p><p>${esc(p.description)}</p><nav aria-label="Guide sections">${p.sectionLinks.map(([id,label])=>`<a href="#${id}">${esc(label)}</a>`).join('')}</nav><figure><img src="${p.image}" srcset="${p.image.replace('.webp','-400.webp')} 400w, ${p.image.replace('.webp','-800.webp')} 800w, ${p.image} 1200w" sizes="(max-width:600px) calc(100vw - 32px), 952px" width="1200" height="675" alt="${esc(p.alt)}"><figcaption>AI-created topic illustration. Financial examples are original fictional assumptions.</figcaption></figure>${p.html}<h2>Frequently asked questions</h2>${p.faq.map(f=>`<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('')}</article>`;
+ const dest=path.join(dir,p.slug);await fs.mkdir(dest,{recursive:true});await fs.writeFile(path.join(dest,'index.html'),shell(p.title,body));links.push([p.slug,p.title]);
+}
+const vite=await createServer({server:{middlewareMode:true},appType:'custom'});
+try{
+ const {default:Review}=await vite.ssrLoadModule('/src/Day1PlanningReview.jsx');
+ for(const[id,route,title,status]of [['E002','resources/business-plan-template','Business Plan Template','HOLD: frozen Day 3 release. Read-only review; supplement is not applied.'],['E003','resources/landscaping-business-plan-template','Landscaping Business Plan Template','Review proposal only. Original page and downloads are unchanged.'],['E004','guides/cleaning-business','Cleaning Business Planning Hub','Review proposal only. Original page and feature image are unchanged.']]){
+  const supplement=renderToStaticMarkup(createElement(Review,{route}));const slug=id.toLowerCase();const dest=path.join(dir,slug);await fs.mkdir(dest,{recursive:true});await fs.writeFile(path.join(dest,'index.html'),shell(title,`<article><a href="/review/day1/">Day 1 review index</a><p class="draft">${esc(status)}</p><h1>${id}: ${esc(title)}</h1><p>Existing route: <a href="https://mybreakeven.com/${route}/">/${route}/</a></p>${supplement}</article>`));links.push([slug,id+': '+title]);
+ }
+}finally{await vite.close()}
+const before=blogPostMap['cash-flow-statement'];const after=applyTwelveDayExistingReview(before);const supplement=after.html.slice(before.html.length);const dest=path.join(dir,'e006');await fs.mkdir(dest,{recursive:true});await fs.writeFile(path.join(dest,'index.html'),shell('Cash flow statement review',`<article><a href="/review/day1/">Day 1 review index</a><p class="draft">Review proposal only. Original cash-flow statement, examples and image are unchanged.</p><h1>E006: Cash Flow Statement</h1>${supplement}</article>`));links.push(['e006','E006: Cash Flow Statement']);
+await fs.writeFile(path.join(dir,'index.html'),shell('Day 1 editorial review',`<main><h1>MyBreakEven - Day 1 editorial review</h1><p class="draft">9 new drafts + 4 existing-page review records. Existing production pages are preserved. General business-plan template remains on HOLD.</p><ul>${links.map(([slug,title])=>`<li><a href="/review/day1/${slug}/">${esc(title)}</a></li>`).join('')}</ul></main>`));
+console.log(JSON.stringify({reviewPages:links.length,drafts:9,existingReviewRecords:4,productionRegistryUnchanged:true}));

@@ -1,0 +1,45 @@
+name: Day 1 editorial draft browser review
+on:
+  pull_request:
+    paths:
+      - 'src/content/blogs/twelveDayDay1.js'
+      - 'src/Day1PlanningReview.jsx'
+      - 'src/twelve-day-day1.test.jsx'
+      - 'scripts/*12day-day1*'
+      - 'scripts/build-day1-review.mjs'
+      - '.github/workflows/day1-editorial-review.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  draft-browser-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm install --no-save playwright@1.56.1
+      - run: npx playwright install --with-deps chromium
+      - name: Prepare existing required workbook
+        run: |
+          python3 -m pip install openpyxl==3.1.5
+          python3 scripts/generate-restaurant-12-month-workbook.py
+      - run: npm test
+      - run: npm run build
+      - run: node scripts/build-day1-review.mjs
+      - name: Serve review and inspect mobile and desktop
+        run: |
+          python3 -m http.server 4173 --directory dist > /tmp/day1-review-server.log 2>&1 &
+          DAY1_QA_MODE=published node scripts/qa-12day-day1.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: day1-draft-browser-review
+          path: |
+            ../analysis/day1-browser/
+            ../analysis/day1-browser-qa.json
+            dist/review/day1/

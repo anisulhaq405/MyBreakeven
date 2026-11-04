@@ -1,3 +1,4 @@
+import {twelveDayExistingSlugs} from './twelveDayRelease.js';
 import {dailyNovember03Review as november03Batch} from './content/blogs/dailyNovember03Review';
 import {dailyNovember02Review as novemberBatch} from './content/blogs/dailyNovember02Review';
 import {dailyOctober31Batch2 as laterBatch} from './content/blogs/dailyOctober31Batch2';
@@ -5,7 +6,8 @@ import React from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {describe,it,expect} from 'vitest';
 import {createHash} from 'node:crypto';
-import {blogPosts} from './content/blogs';
+import {blogPosts as currentBlogPosts} from './content/blogs';
+const blogPosts=currentBlogPosts.filter(p=>Object.hasOwn(baseline,p.slug));
 import {dailyOctober30Review as edits,applyDailyOctober30Review} from './content/blogs/dailyOctober30Review';
 import baseline from './testFixtures/dailyOctober30Protected.json';
 import {articleFaq} from './articleFaq';
@@ -17,7 +19,7 @@ const required=['coffee-shop-drink-contribution-margin','restaurant-private-even
 describe('October 30 isolated ten-guide update',()=>{
  it('changes exactly ten existing articles and preserves every other normalized article',()=>{
  expect(Object.keys(edits).sort()).toEqual(required.sort());expect(blogPosts).toHaveLength(Object.keys(baseline).length);
- for(const p of blogPosts){expect(p.image,p.slug).toBe(baseline[p.slug].image);if(!edits[p.slug]&&!laterBatch[p.slug]&&!novemberBatch[p.slug]&&!november03Batch[p.slug])expect(digest(p),p.slug).toBe(baseline[p.slug].hash);else if(edits[p.slug]){expect(baseline[p.slug].modified<= '2026-10-25',p.slug).toBe(true);expect(p.modified).toBe('2026-10-31');}}
+ for(const p of blogPosts){expect(p.image,p.slug).toBe(baseline[p.slug].image);if(!twelveDayExistingSlugs.has(p.slug)&&!edits[p.slug]&&!laterBatch[p.slug]&&!novemberBatch[p.slug]&&!november03Batch[p.slug])expect(digest(p),p.slug).toBe(baseline[p.slug].hash);else if(edits[p.slug]){expect(baseline[p.slug].modified<= '2026-10-25',p.slug).toBe(true);expect(p.modified).toBe('2026-10-31');}}
  const protectedPost={slug:'restaurant-budgeting',modified:'2026-10-30'};expect(applyDailyOctober30Review(protectedPost)).toBe(protectedPost);const recentlyChanged={slug:required[0],modified:'2026-10-26'};expect(applyDailyOctober30Review(recentlyChanged)).toBe(recentlyChanged);
  });
  it('renders accessible additions with valid internal links and matching FAQ inputs',()=>{

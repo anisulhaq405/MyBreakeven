@@ -131,6 +131,7 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
   }
   if (['founder','resources','editorial-policy'].includes(route)) pageSchema['@graph'].find(entity=>['WebPage','ProfilePage'].includes(entity['@type'])).dateModified=authorityReviewDates[route] || founderCaseDate;
   if (route === "guides/cleaning-business") {
+    pageSchema["@graph"].find(e=>e["@type"]==="WebPage").dateModified="2026-11-04";
     const page = pageSchema["@graph"].find(e => e["@type"] === "WebPage");
     page["@type"] = "CollectionPage";
     page.mainEntity = {"@type":"ItemList", itemListElement: cleaningClusters.flatMap(c => c.slugs).map((slug, i) => ({"@type":"ListItem", position:i+1, url:`https://mybreakeven.com/blogs/${slug}/`, name:allArticles.find(a=>a.slug===slug).title}))};

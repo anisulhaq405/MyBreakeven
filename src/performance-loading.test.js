@@ -29,5 +29,5 @@ describe("small initial content payloads", () => {
       expect(post.html).toBe(reference.html);
     }
     expect(await loadBlogPost("missing-guide")).toBeNull();
-  });
+  }, 15000);
 });

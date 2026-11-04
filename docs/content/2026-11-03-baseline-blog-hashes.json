@@ -1,0 +1,812 @@
+[
+  {
+    "slug": "restaurant-break-even-calculator-malaysia-user-review",
+    "modified": "2026-10-30",
+    "sha256": "c0b13f8a2f695242c785310551209d0d58d0fcaa9ba0825cdf2f3536689f6065"
+  },
+  {
+    "slug": "fire-vs-coast-fire-vs-barista-fire",
+    "modified": "2026-10-26",
+    "sha256": "672ad093d7aa513b9476d742d22f364e267aeec739db1f05b6d05791afd7e852"
+  },
+  {
+    "slug": "fire-withdrawal-rate-retirement-risks",
+    "modified": "2026-10-26",
+    "sha256": "ffe3a96cf3c4930686739ea7f92e6eff650648ed64e1af700801f4c4d1a39846"
+  },
+  {
+    "slug": "how-to-analyze-financial-statements",
+    "modified": "2026-10-26",
+    "sha256": "2646923b572cd6e487ecde7f667eec3d2e06f3c71eebcfc11fd251b760270773"
+  },
+  {
+    "slug": "find-missing-value-equivalent-ratios",
+    "modified": "2026-10-26",
+    "sha256": "3e895f2b5ba1dbbdedfeb28eea7b874d572ea1764ebe6f7db5938d5728b422c1"
+  },
+  {
+    "slug": "equivalent-ratio-tables-word-problems",
+    "modified": "2026-10-26",
+    "sha256": "8b46fc87d6e3f432ec1bb5de8a0146c35d19ea8f55717d13bd55607b94672423"
+  },
+  {
+    "slug": "mortgage-refinance-break-even",
+    "modified": "2026-10-26",
+    "sha256": "e104fdc22df557df9142767d8516011471aab76c911d9840bdf96345f3e3872e"
+  },
+  {
+    "slug": "refinance-closing-costs-financed-fees",
+    "modified": "2026-10-26",
+    "sha256": "dfe4e39c2ae698a935da7cce9c89b8b730ff794a102fb1ac9cdd413237ce5a15"
+  },
+  {
+    "slug": "refinance-shorter-vs-longer-term",
+    "modified": "2026-10-26",
+    "sha256": "c2141c1bc5b65c07fabcffa0526b213546d33c0f652e207a13e26cc48719cf29"
+  },
+  {
+    "slug": "ebitda-vs-net-income-vs-cash-flow",
+    "modified": "2026-10-26",
+    "sha256": "5c5062960394adc57d32250a41e926577513504c7902fe6f7b6ad5f5697a3b9a"
+  },
+  {
+    "slug": "adjusted-ebitda-add-backs",
+    "modified": "2026-10-26",
+    "sha256": "f4aa2745347eeaa9e79f4fb22205a9a6118738a8230376bdda8cc90eed996bae"
+  },
+  {
+    "slug": "present-value-vs-future-value",
+    "modified": "2026-10-26",
+    "sha256": "5c0770d463b8fa09b895babb13eafc72d9a409a317c4a863d3583304f2862d4a"
+  },
+  {
+    "slug": "ordinary-annuity-vs-annuity-due",
+    "modified": "2026-10-26",
+    "sha256": "c6efc017457f8f0a4e8117dc641242635cda32f06bbc192eafb468d08fa0908f"
+  },
+  {
+    "slug": "cash-flow-statement",
+    "modified": "2026-10-25",
+    "sha256": "cb2e65cc1dbf6168ae7f5f9ca42850061953ad86fbfe54585e809831972199f9"
+  },
+  {
+    "slug": "operating-cash-flow",
+    "modified": "2026-10-25",
+    "sha256": "0424c8fcc851a2abbbc1cc4a37a456b94cdf4c58fd0d408662d9f9638bf23953"
+  },
+  {
+    "slug": "cash-flow-problems",
+    "modified": "2026-10-25",
+    "sha256": "1a28a0b750281ca06d21def193c6965fea7b4fffafec08621ad61d805f3bb23f"
+  },
+  {
+    "slug": "operating-expenses",
+    "modified": "2026-10-25",
+    "sha256": "95e2c470a8ca661ec2e3fc5e672e49ea822867430a6d7caa44b6f165d0ebc1e7"
+  },
+  {
+    "slug": "rolling-forecast",
+    "modified": "2026-10-23",
+    "sha256": "af7df597d659af54a23477d7b581154c015e9cbbe67ae53fd83b8f5eb9638667"
+  },
+  {
+    "slug": "master-budget",
+    "modified": "2026-10-23",
+    "sha256": "1316cc14d82ae587d7a1d395f38730ee3f82023028a734aad85605d9cb657d96"
+  },
+  {
+    "slug": "cost-drivers-small-business",
+    "modified": "2026-10-23",
+    "sha256": "f600b79fea3c8095bbf0a5d4abb0563d20b40c37ea0eeed927f4d5a9c34a1a03"
+  },
+  {
+    "slug": "job-order-costing",
+    "modified": "2026-10-23",
+    "sha256": "375e8183ee3b2e389b8510e113932f66463062bd164c772c105aca06eca468a8"
+  },
+  {
+    "slug": "flexible-budget-variance-analysis",
+    "modified": "2026-10-23",
+    "sha256": "44ba14eeb3b08ebabdd68f3a452ffe0e15caf474a17bfacd355bb5f5ff9479c4"
+  },
+  {
+    "slug": "make-or-buy-decision",
+    "modified": "2026-10-23",
+    "sha256": "1fab81dc198fa837d2e9bda676f1877bc2638d12d1e164e91918a5b20c21cf46"
+  },
+  {
+    "slug": "contribution-margin-income-statement",
+    "modified": "2026-10-23",
+    "sha256": "02dc625b19ef21c8fa67b4d48e0333e545d33f2d07b8a784ac53c539fb8d25c4"
+  },
+  {
+    "slug": "high-low-method",
+    "modified": "2026-10-21",
+    "sha256": "a75457c6330dfdc7308666e1999a998a4c39091da16831450591069fda77e3f2"
+  },
+  {
+    "slug": "restaurant-cash-flow-forecast",
+    "modified": "2026-10-18",
+    "sha256": "1dbc1bbbf351ce0f4c018b49da8c28d702b39cb8ddd282fbd23cbbc101bbec1b"
+  },
+  {
+    "slug": "how-to-calculate-cost-of-goods-sold",
+    "modified": "2026-10-25",
+    "sha256": "a94490ccb71fe41bbd76e222ea7d5c6870294ab3fa146059c635a12dbcdc29c2"
+  },
+  {
+    "slug": "how-to-calculate-working-capital",
+    "modified": "2026-10-26",
+    "sha256": "3c87538bb8d8faa0d5d882074dcbb003906a11bf30a1201910a82dc74a1f08a6"
+  },
+  {
+    "slug": "how-to-calculate-days-sales-outstanding",
+    "modified": "2026-10-25",
+    "sha256": "25ea7dbbb2eb5aec3c7f0811b7bb28efd0a838da40585038aba8677234b7cf33"
+  },
+  {
+    "slug": "cleaning-contract-payroll-cash-gap",
+    "modified": "2026-11-03",
+    "sha256": "54e9289327cae155dbdd28cdc5c6decdfa92f07e9394ba310b6674d1650bc70a"
+  },
+  {
+    "slug": "cleaning-estimate-vs-actual-job-cost",
+    "modified": "2026-11-03",
+    "sha256": "38e2b3199264bcef2ecb598b737f9afc23970fbc31dd4a423aad81e284e0db81"
+  },
+  {
+    "slug": "cleaning-client-acquisition-payback",
+    "modified": "2026-11-03",
+    "sha256": "d6f9f560e02b00d06b62deb93a91e2cd8452f9bed603effc3e1f3cada6ccf745"
+  },
+  {
+    "slug": "landscaping-change-order-cost",
+    "modified": "2026-11-02",
+    "sha256": "df8e886ce6f280ab50c86b1eea00be9f66e6787a28954276730a11dadfdc45ef"
+  },
+  {
+    "slug": "landscaping-plant-warranty-cost",
+    "modified": "2026-11-02",
+    "sha256": "1343dc2a97f9a6b6ceb69112881251b2fe4df5328950e0544725e87dc83a0396"
+  },
+  {
+    "slug": "mobile-detailing-cancellation-cost",
+    "modified": "2026-11-02",
+    "sha256": "e43124419092349049e849ba8a7efdc6b209f139c94d6a3ce2cfb06ab2e66cc4"
+  },
+  {
+    "slug": "mobile-detailing-water-refill-cost",
+    "modified": "2026-11-02",
+    "sha256": "a6dcf1eb4d17d3705ddef5aebaf15d52bb49d0a332eabef27ac24e18141166e1"
+  },
+  {
+    "slug": "agency-client-concentration-revenue-risk",
+    "modified": "2026-10-31",
+    "sha256": "8e886a5c06f2af10eb2381bc6af0c427334d57c2973b00fc487590b52d55139a"
+  },
+  {
+    "slug": "agency-employee-vs-freelancer-break-even",
+    "modified": "2026-10-31",
+    "sha256": "e3680d457e7dfefb3093b74d7f540ccebf5124c839b5d0c5a2bffb96330ffb53"
+  },
+  {
+    "slug": "agency-project-vs-retainer-profitability",
+    "modified": "2026-10-31",
+    "sha256": "60cc1e6982574747cf3e77f31cf47ab67b5dfc3c445b8a10ed6654eacd8f43fb"
+  },
+  {
+    "slug": "amazon-marketplace-vs-own-store-profit-per-order",
+    "modified": "2026-10-07",
+    "sha256": "13d436dfcb7f26326e110d4db33fd683534ee1289044c7efa97786d15527e352"
+  },
+  {
+    "slug": "bridal-hair-and-makeup-package-pricing-for-salons",
+    "modified": "2026-11-02",
+    "sha256": "949b054e557f492c6988f5a62a6e24201918c7a2d9592ac08e51d999ea5c734a"
+  },
+  {
+    "slug": "coffee-shop-drink-contribution-margin",
+    "modified": "2026-10-31",
+    "sha256": "a71602582ecbd879cb956c8c3958a8c14bf9ab4c69f1b25b84b777d788f5cf5b"
+  },
+  {
+    "slug": "ecommerce-inventory-holding-cost-per-sku",
+    "modified": "2026-10-31",
+    "sha256": "4aacc34f793be67142609fdb92e33969f23c2ba9a5d5ca035e89e43314d7ad90"
+  },
+  {
+    "slug": "inventory-reorder-point-cash-flow",
+    "modified": "2026-10-31",
+    "sha256": "9ed0d64943bbad784cfb503e54e98cd5392822cc4eeacb61b5e12a379a7974e5"
+  },
+  {
+    "slug": "photography-print-package-profit",
+    "modified": "2026-10-31",
+    "sha256": "458c03a51cebfc7b520a672639338e6c27ac4c293eeb4fec79e874ce7ef56472"
+  },
+  {
+    "slug": "restaurant-menu-engineering-contribution-margin",
+    "modified": "2026-10-31",
+    "sha256": "bc01c04c5029a71a0dee038d22445bb828ca97936db93d701d0f80b8d8f3a892"
+  },
+  {
+    "slug": "restaurant-private-event-minimum-spend",
+    "modified": "2026-10-31",
+    "sha256": "b9ecb9aa7a8fcb334d57b36ba208a22426ce52d7e1573cff8b7ff72ccf699b97"
+  },
+  {
+    "slug": "restaurant-takeout-vs-dine-in-profit-per-order",
+    "modified": "2026-10-31",
+    "sha256": "261ee499aa99784f057341d9084ba1e7adfeb9bcdda6a3376ac9003f7adca592"
+  },
+  {
+    "slug": "subscription-box-churn-break-even",
+    "modified": "2026-10-11",
+    "sha256": "97617b45cd504c528a182aaa81c5752856e6bab0f55808a1aa8cf6ee104f258d"
+  },
+  {
+    "slug": "cleaning-minimum-booking-charge",
+    "modified": "2026-10-31",
+    "sha256": "ab977717c3f2d06f9c252eacceb09cd0d91012fdfb629a49317ec847c6706b37"
+  },
+  {
+    "slug": "salon-no-show-cost",
+    "modified": "2026-10-14",
+    "sha256": "ae609dffd41b59e708a9e2e5e5a36d5db576774ca899fa40fb1da09763f2d648"
+  },
+  {
+    "slug": "catering-quote-profit",
+    "modified": "2026-10-31",
+    "sha256": "7d2bb2d8f26d650a8c4d3ff617d4b7ef6274186dda76f8f22d2f10b687991a2c"
+  },
+  {
+    "slug": "landscaping-subcontractor-cost",
+    "modified": "2026-11-03",
+    "sha256": "64376a334e88aa01f25fa8ec91b2784563610de7337f9209005a50458689cb1e"
+  },
+  {
+    "slug": "retail-break-even-analysis",
+    "modified": "2026-10-07",
+    "sha256": "0296028272e5e3526ceb2355d4cd817474476a280994632f028930c450a42af5"
+  },
+  {
+    "slug": "freelance-business-plan-financials",
+    "modified": "2026-10-24",
+    "sha256": "47b2192742ebd5f1b6be01b351aac02bcaa5a7b5771c463ecc1923b6f9302af8"
+  },
+  {
+    "slug": "cash-flow-forecast-vs-break-even",
+    "modified": "2026-10-25",
+    "sha256": "56a0f1be6e31d780ab7f9881929e2f7d2b35151fea07fc2c74630d12ed5e022c"
+  },
+  {
+    "slug": "agency-scope-creep-cost",
+    "modified": "2026-10-14",
+    "sha256": "65ac0423ed998f64560351d5201c054e992f76955879bb877e48ec90d67fab26"
+  },
+  {
+    "slug": "ecommerce-bundle-pricing-profit",
+    "modified": "2026-10-31",
+    "sha256": "545fb9d0a0e95262a74f865cfa058055c32f740097a7ffd7dd124ffe976a68db"
+  },
+  {
+    "slug": "paint-correction-labor-hours-pricing",
+    "modified": "2026-11-02",
+    "sha256": "739eaa92004c2556215079a9e3846ced6e91a7d2a7dea0defb3bdd0c83ac85b5"
+  },
+  {
+    "slug": "mobile-detailing-travel-fee",
+    "modified": "2026-11-03",
+    "sha256": "8b6c0c0eeefa3ab64ed649c7cc36936292db0f2f525d197619b2b8fa0592e88c"
+  },
+  {
+    "slug": "salon-retail-product-profit-margin",
+    "modified": "2026-11-02",
+    "sha256": "1073852aad5e2214b5b237cced12c4a421dea6bbd4f03baf2c4938e3482297f3"
+  },
+  {
+    "slug": "salon-membership-pricing",
+    "modified": "2026-11-02",
+    "sha256": "9c5a2d33bd5fc3599d00cfaf0d400932f5582c10e37b3ecb76ac4b82c65d3f99"
+  },
+  {
+    "slug": "free-shipping-threshold-profit",
+    "modified": "2026-10-31",
+    "sha256": "333a9db74ceb5237e6fe8ef07e61f79328dc381766a836aff1f0abb2eb17a0f2"
+  },
+  {
+    "slug": "snow-removal-pricing",
+    "modified": "2026-10-04",
+    "sha256": "6b0cade431ec702643a1030d8829583c1f2c91ebee69d2d0b2146d24e843ca60"
+  },
+  {
+    "slug": "mulch-installation-job-cost",
+    "modified": "2026-11-03",
+    "sha256": "820cd7b1cd99bae55ddd211d6d6cb99ab22a0c7351131079043f406fa91deec1"
+  },
+  {
+    "slug": "photography-second-shooter-cost",
+    "modified": "2026-10-31",
+    "sha256": "d430705a3301b3fbc0d06af3026ffb00a1829143d515f304406cf198da119602"
+  },
+  {
+    "slug": "photography-usage-licensing-pricing",
+    "modified": "2026-10-22",
+    "sha256": "d05e317328f09bf09fbb6500b7e57f39056ec3d7268ce44aad9aedcad998ca76"
+  },
+  {
+    "slug": "ceramic-coating-profit-margin",
+    "modified": "2026-11-02",
+    "sha256": "5e3771a46fade49f8fe5cba5d3f71ae8e53c02f864e387bc87bf423c01c4c49b"
+  },
+  {
+    "slug": "landscaping-equipment-cost-per-hour",
+    "modified": "2026-10-31",
+    "sha256": "6af69c34194575e5cec8241b125db69a6b810c4a36c4a9898abb0e33b95b55d7"
+  },
+  {
+    "slug": "landscaping-crew-utilization",
+    "modified": "2026-11-03",
+    "sha256": "af878cbbb8ce360641be114077f94db26b1a2fa03e665d84bfa7ec9d2856bfb3"
+  },
+  {
+    "slug": "landscaping-maintenance-contract-pricing",
+    "modified": "2026-10-03",
+    "sha256": "91c045e252f4ec1f17531b448ef8cdfe72f83e5d6505679b0738922024d448ee"
+  },
+  {
+    "slug": "corporate-headshot-pricing",
+    "modified": "2026-10-31",
+    "sha256": "9a035faeb890115ddcd3c08604f2467a2b6918edaaf088d88bcff58584b0be0d"
+  },
+  {
+    "slug": "product-photography-pricing-per-image",
+    "modified": "2026-10-03",
+    "sha256": "c4ae268079755e8ca16303a3e498241a9ebeb9d67f9513139e73b6d98e8a33a2"
+  },
+  {
+    "slug": "move-out-cleaning-job-cost",
+    "modified": "2026-10-31",
+    "sha256": "3bd9c71a23e69661140641221c9dcbda2936b463cdeaef17fba27e13841d3a9d"
+  },
+  {
+    "slug": "recurring-vs-one-time-cleaning-profitability",
+    "modified": "2026-10-31",
+    "sha256": "eee3532d2c12ea15202bfb4e2f6b316a22f3ba5732f2bd0774f29c6540263488"
+  },
+  {
+    "slug": "commercial-cleaning-contract-price-increase",
+    "modified": "2026-11-03",
+    "sha256": "cb0841103c07d1edda32673274ea3be9ac6d04e244123099e4c59252c1792620"
+  },
+  {
+    "slug": "cleaning-business-client-churn-cost",
+    "modified": "2026-11-03",
+    "sha256": "2a433067a5a6bdb12d58f329efc1e0855ed117ccc683d213d53699a119d646fb"
+  },
+  {
+    "slug": "restaurant-delivery-app-commission-profit-per-order",
+    "modified": "2026-10-24",
+    "sha256": "3609c79ae786df64d0de089319250fdd6a0fa79cd7b0424554631f706ce606f1"
+  },
+  {
+    "slug": "cash-flow-break-even-vs-profit-break-even",
+    "modified": "2026-10-25",
+    "sha256": "17312031ad5046da258831228722bac24afe3c1a0a21511d0d54bc8098112514"
+  },
+  {
+    "slug": "discount-break-even-sales-volume",
+    "modified": "2026-10-01",
+    "sha256": "82d6042437f7b9813c6acff731df3e1ae72a9241f996b2b081f1828cac748352"
+  },
+  {
+    "slug": "how-many-customers-can-you-lose-after-raising-prices",
+    "modified": "2026-10-12",
+    "sha256": "31f58bf20d9072ce45960ceb101c07be56946c26e4d8cb4f3a386e04e016a1cd"
+  },
+  {
+    "slug": "contribution-margin-vs-profit-margin",
+    "modified": "2026-10-23",
+    "sha256": "806bda1cc27e3907a14d5033657a3522ee8bb1f74813ddeff48aed04958ffd54"
+  },
+  {
+    "slug": "hair-color-service-cost-per-appointment",
+    "modified": "2026-11-02",
+    "sha256": "73b2ebd3ce1bed9e0e4c2d3ec9019384a7f7cec8de72a38b5160e413f2260eea"
+  },
+  {
+    "slug": "target-profit-sales-formula",
+    "modified": "2026-10-25",
+    "sha256": "215c49d5d7c1cc7b13fbec013840eb9eaa704e7cb98615b1417420f9d21583fe"
+  },
+  {
+    "slug": "margin-of-safety-business",
+    "modified": "2026-10-22",
+    "sha256": "c1ec4533a540732748d7736f58b16622c363075a9f7955e9810c9680bd6fbf7a"
+  },
+  {
+    "slug": "operating-leverage-small-business",
+    "modified": "2026-10-22",
+    "sha256": "09bde88fb90c2fc4367d3dd79bf9afead7d702b5bcda3bbbfc00cf8ce8b2f986"
+  },
+  {
+    "slug": "break-even-roas-formula",
+    "modified": "2026-10-25",
+    "sha256": "ed3b6729c93886e6f443cf14629db4727b9c51f6909c288375af333ddd753111"
+  },
+  {
+    "slug": "agency-client-profitability",
+    "modified": "2026-10-22",
+    "sha256": "070d1a22a4499029f82d77c2fcfb7af8bcd4a7ad5d594db619bf70d2156b4b72"
+  },
+  {
+    "slug": "break-even-multiple-products-sales-mix",
+    "modified": "2026-10-21",
+    "sha256": "188380ee998ff7ed431298b552ce67b9d6b3a309a78a485b9bc863e66b8f8d63"
+  },
+  {
+    "slug": "post-construction-cleaning-estimate",
+    "modified": "2026-09-29",
+    "sha256": "cb13cbf17a5cd8adfafac9786e548a1b28ecc86b257309dd63718ca443e1c655"
+  },
+  {
+    "slug": "landscaping-job-costing-estimate-vs-actual",
+    "modified": "2026-10-22",
+    "sha256": "958009e9a9403a328c7036fd626ded94727390391fcba2eaa93494d08dc9d8f3"
+  },
+  {
+    "slug": "photography-mini-session-profit",
+    "modified": "2026-11-03",
+    "sha256": "d105dc9e23f829be2ae000870bd017983351522468f74dd0031e2f64f9e372c5"
+  },
+  {
+    "slug": "fleet-detailing-contract-pricing",
+    "modified": "2026-09-29",
+    "sha256": "3fa1fa5648bb3663a271a2b857c216c94c0f558fca598e945a36201e4f5aa006"
+  },
+  {
+    "slug": "commercial-cleaning-contract-bid",
+    "modified": "2026-10-14",
+    "sha256": "a75b31268937361e76f70fb32cf604a9383f8bcea29e088f5087e76ff3b0a684"
+  },
+  {
+    "slug": "salon-booth-rent-vs-commission-owner",
+    "modified": "2026-10-25",
+    "sha256": "23af10f7b0820aa4a694607e037673b5c13db6fb8c445e580449b5a0714cf717"
+  },
+  {
+    "slug": "mobile-detailing-maintenance-plan-pricing",
+    "modified": "2026-10-21",
+    "sha256": "27484c735a76537eee821676ce07100a783c0095391d7d56f984160af34bd391"
+  },
+  {
+    "slug": "ecommerce-chargeback-cost-per-order",
+    "modified": "2026-10-25",
+    "sha256": "dd7a04bb808b03dc1d81c8a480745fbb7d6f75a90def393d51471238578f65d2"
+  },
+  {
+    "slug": "landscaping-seasonal-break-even",
+    "modified": "2026-10-14",
+    "sha256": "90d330518b93998866fa18bd19d51e43e078b9f195ea0f8416b9e99c9ec41f08"
+  },
+  {
+    "slug": "cleaning-business-monthly-expenses",
+    "modified": "2026-10-25",
+    "sha256": "32e4c2692c67ae71de7bd9ce8ff06b42faf137a2ff3a5f93eefc9fc43e5e51cf"
+  },
+  {
+    "slug": "ecommerce-return-cost-per-order",
+    "modified": "2026-10-14",
+    "sha256": "592b19f4aed08c281aa94802d8271232226694544c44f0b9013e175d3145f33b"
+  },
+  {
+    "slug": "agency-billable-utilization-rate",
+    "modified": "2026-10-25",
+    "sha256": "a1f55bb29878b3d871afdf79d1bf1063dcae24378e6e802fecfba008a4cda0cf"
+  },
+  {
+    "slug": "landscaping-route-density-profit",
+    "modified": "2026-10-31",
+    "sha256": "f70816c4f01ed85eec0d7fae0f180a9a138ca849910765a922e186626a5f1c9c"
+  },
+  {
+    "slug": "photography-cost-per-session-editing",
+    "modified": "2026-10-14",
+    "sha256": "e52ecedb6a5f529999ccfc7d160278027c6b127bf294b851f50032761f1deff0"
+  },
+  {
+    "slug": "cafe-opening-costs",
+    "modified": "2026-10-22",
+    "sha256": "b84045bb4c86cc64327ad265d75feac6ff22ab398da3d018efa26c1fdc63ad93"
+  },
+  {
+    "slug": "restaurant-budgeting",
+    "modified": "2026-10-30",
+    "sha256": "5c12a1219719bbb0cfccf10410bcb9b0f54d8a0575c8c05e9f80ca1b3226f479"
+  },
+  {
+    "slug": "restaurant-food-cost-percentage",
+    "modified": "2026-10-27",
+    "sha256": "df6301f83599f701176b41839b7ef78da756d2ce3123aede3f1d783a0ff5918e"
+  },
+  {
+    "slug": "coffee-shop-business-plan",
+    "modified": "2026-10-24",
+    "sha256": "7cd6cefd745c5b8655726714351f225da91585b5ae2924c5b2c8baab3c1077f9"
+  },
+  {
+    "slug": "restaurant-labor-cost-percentage",
+    "modified": "2026-10-25",
+    "sha256": "9222d94c5d1c222119e9005ec1192b6b0efa0593a1753466ea916ab20e8a35d7"
+  },
+  {
+    "slug": "restaurant-business-plan",
+    "modified": "2026-10-24",
+    "sha256": "0373b809e35dc8468ea1f8ed6bfbd0070ed93abfa4a18b0467129da6c1b25196"
+  },
+  {
+    "slug": "restaurant-prime-cost",
+    "modified": "2026-10-13",
+    "sha256": "ccd3fbaf76eb3bbbb48065311368ee841f6bb379a8ffa8f2ae43748606a5f806"
+  },
+  {
+    "slug": "restaurant-sales-forecast",
+    "modified": "2026-10-21",
+    "sha256": "b7605a3ff5e5a97c4a4d78a5b74aa189e72b60e33ada9069c760b7afa8cfeb2e"
+  },
+  {
+    "slug": "how-to-start-coffee-shop",
+    "modified": "2026-10-22",
+    "sha256": "ff00da19f29a199843e5c9c2e0ca5d383085c0d3ae0e3a516987d6ebef5edfd6"
+  },
+  {
+    "slug": "how-to-start-restaurant",
+    "modified": "2026-10-22",
+    "sha256": "753f22a0d25579da9d875124f2b463f648327632efa874c6152e7a87997b1152"
+  },
+  {
+    "slug": "ecommerce-shipping-costs",
+    "modified": "2026-10-25",
+    "sha256": "fc005341a42ab8f7ba56bdbf08b7896f27deb7627a4fb16ca7001d2bcd59f30a"
+  },
+  {
+    "slug": "calculate-break-even-point",
+    "modified": "2026-10-28",
+    "sha256": "66aa8ef48a8561e38ee18fed2974bc035ed647a15ce978f2734be3da657ffa2f"
+  },
+  {
+    "slug": "break-even-analysis-example",
+    "modified": "2026-10-21",
+    "sha256": "2019f02a8553f2367e3f2d0d8a1d33f56820f29ff7f18572957dd5bf6cbbe038"
+  },
+  {
+    "slug": "break-even-formula-units-dollars",
+    "modified": "2026-10-28",
+    "sha256": "6d014edd48ffe737c692d7cb6e39fea75410f55dfed86c8e32082ad7d0f597aa"
+  },
+  {
+    "slug": "calculate-contribution-margin",
+    "modified": "2026-10-22",
+    "sha256": "45e9e5b9d587074954c4ac2da07327bfa92f6afac5539d79cdcfcc99d4366953"
+  },
+  {
+    "slug": "contribution-margin-vs-gross-margin",
+    "modified": "2026-10-22",
+    "sha256": "14fcbac9de21a5e4368c2e07ef36396bc8296301a578f33da82a197351a43546"
+  },
+  {
+    "slug": "fixed-vs-variable-costs",
+    "modified": "2026-10-23",
+    "sha256": "136417e7c36cdcfead68140addc2721e2f8413df56ceff757afde4a007eff653"
+  },
+  {
+    "slug": "margin-vs-markup",
+    "modified": "2026-10-13",
+    "sha256": "1e5e5ab15105e590ff02659f675bf3f8977df89a70dc229090d1dd79ce6aeb75"
+  },
+  {
+    "slug": "lower-break-even-point",
+    "modified": "2026-10-07",
+    "sha256": "03e0c5fdd3b9b641a1469d51ffa93e797b3b3c8a6f5ca2f8b488444e933f3a71"
+  },
+  {
+    "slug": "how-many-cleaning-clients-5000",
+    "modified": "2026-10-07",
+    "sha256": "303e4bc9485c1ed451ced2ae09c17175d59267cdd3ab106eb8f68d0187b08f31"
+  },
+  {
+    "slug": "how-many-lawns-100k",
+    "modified": "2026-10-11",
+    "sha256": "97f88380976e697e550c55c2cf5afc9fa0603dcce3dccd5da5b898ff899602b5"
+  },
+  {
+    "slug": "how-many-photography-clients-month",
+    "modified": "2026-10-07",
+    "sha256": "72115eda88da150b995a4fae7357fbf4d7fb55418a711aea2ba1a25a6e7d66fa"
+  },
+  {
+    "slug": "how-many-detailing-jobs-week",
+    "modified": "2026-10-07",
+    "sha256": "e78f132c3d3221757a80273378c1ae3c5531c153fac2dbe71bae8fae816db819"
+  },
+  {
+    "slug": "salon-clients-per-day-break-even",
+    "modified": "2026-10-07",
+    "sha256": "c32574e4ce59eae5e2504fb60226bcc679932f8a60f974176df96bc72d293648"
+  },
+  {
+    "slug": "restaurant-covers-per-night-break-even",
+    "modified": "2026-10-07",
+    "sha256": "430d3c99b0da7fcc84858c29d171463d7cf5b7aaee8bd8fd1af4eb99878117c2"
+  },
+  {
+    "slug": "ecommerce-orders-per-day-profitable",
+    "modified": "2026-09-22",
+    "sha256": "271bdb024140c3217f2935717404bf017ece07f8d343f38f201655e196f0cce0"
+  },
+  {
+    "slug": "how-many-agency-retainer-clients",
+    "modified": "2026-10-07",
+    "sha256": "a8d0f73ca49645c5f6dcdfa1b5946ef8bdbb72782f68827044287560e1a3532f"
+  },
+  {
+    "slug": "is-a-cleaning-business-profitable",
+    "modified": "2026-10-26",
+    "sha256": "75b37fc49ca99e29e81bb42fe3d0935adec3eb38e33a73d1e1cace8c9937e13c"
+  },
+  {
+    "slug": "landscaping-business-profit-margin",
+    "modified": "2026-10-10",
+    "sha256": "d18928f96c99bfd93a54004a7d953ab35d6ac48dc44b09788f494180581607ce"
+  },
+  {
+    "slug": "photography-business-profit-margin",
+    "modified": "2026-10-07",
+    "sha256": "189b915213f081c9a79d5289c245334e2d569c09ade120e3a01cbf8eb3d25313"
+  },
+  {
+    "slug": "is-mobile-detailing-profitable",
+    "modified": "2026-10-07",
+    "sha256": "0031b00a9ee93da4c90be55930bbe122ec0585bc6439623be30812dd7e83dce7"
+  },
+  {
+    "slug": "salon-profit-margin",
+    "modified": "2026-10-25",
+    "sha256": "87fa5bad119e59b8881d08ceb35eb60096ff92aeb5f1527767296e0814f146d3"
+  },
+  {
+    "slug": "restaurant-profit-margin-average",
+    "modified": "2026-10-25",
+    "sha256": "6d789ce79775e41cae74f720c56d010c40146b2ddd04e205091ebc5aebbb898d"
+  },
+  {
+    "slug": "ecommerce-profit-margin",
+    "modified": "2026-10-13",
+    "sha256": "022532b54421935f258a9c9e69baec17cb573d6c62c5000b87886714d54c73a9"
+  },
+  {
+    "slug": "agency-profit-margin",
+    "modified": "2026-10-25",
+    "sha256": "acf90d24eef17fba89c653a855f51d133ff2b48e4e04c72611ef1892615e357f"
+  },
+  {
+    "slug": "how-much-does-it-cost-to-start-a-cleaning-business",
+    "modified": "2026-10-12",
+    "sha256": "7446090ee4f4cb2e975bedabf03971631f8028d6ce0331fcb7cf7a776bf316bd"
+  },
+  {
+    "slug": "how-much-does-it-cost-to-start-a-landscaping-business",
+    "modified": "2026-10-22",
+    "sha256": "21ff1a516e10743b18b3f6f7eac70153afcf119f8e1c2161c45afc24cad63c6c"
+  },
+  {
+    "slug": "how-much-does-it-cost-to-start-a-photography-business",
+    "modified": "2026-10-22",
+    "sha256": "d872ff61ebfbff4432c092b21a56eb9cec973a58bbb012c5c53992931f1252dc"
+  },
+  {
+    "slug": "mobile-detailing-business-startup-cost",
+    "modified": "2026-10-22",
+    "sha256": "659409538388e9cc5ed02bdf7d257d73905a45f219235b58cd12987a534af31c"
+  },
+  {
+    "slug": "how-much-does-it-cost-to-open-a-salon",
+    "modified": "2026-10-22",
+    "sha256": "4193e11172b15a1fbb51b2187dfb1f0f7793794ca9894f12cf60725d39b3ab46"
+  },
+  {
+    "slug": "how-much-does-it-cost-to-open-a-restaurant",
+    "modified": "2026-10-22",
+    "sha256": "8a596194c5918928adb971c3308f3c506149f6e6111e75dd4da2a015d39820ea"
+  },
+  {
+    "slug": "how-much-does-it-cost-to-start-an-ecommerce-store",
+    "modified": "2026-10-25",
+    "sha256": "77bd08211ed1e4e91eafb5524509773212b72bd4eff6724ed22b69fe968fd39d"
+  },
+  {
+    "slug": "how-much-does-it-cost-to-start-a-marketing-agency",
+    "modified": "2026-10-11",
+    "sha256": "b1471573e4b8e78c3316e6cadd7890d1df03142d147cce0c979167064b8f33de"
+  },
+  {
+    "slug": "how-much-to-charge-for-house-cleaning",
+    "modified": "2026-10-25",
+    "sha256": "7048292548561f39e7b23a94f4524675ac0b63c951b7036e21f0ef4662e17220"
+  },
+  {
+    "slug": "lawn-care-pricing-per-acre",
+    "modified": "2026-10-22",
+    "sha256": "438f2173385f5bfcbf058d21d3528e0893dd2ebb68d331dc5958724522ad95c5"
+  },
+  {
+    "slug": "photography-pricing-packages",
+    "modified": "2026-10-11",
+    "sha256": "c75dc0b9bb307e3479617353e12817d9d4f64cc654f14a933b098655e0eeee44"
+  },
+  {
+    "slug": "car-detailing-prices-list",
+    "modified": "2026-10-11",
+    "sha256": "fe7b34122659ae24d1bef7aba2a87fee6ee224dd157cfe7d3f9f6545d061b56a"
+  },
+  {
+    "slug": "salon-service-pricing",
+    "modified": "2026-10-22",
+    "sha256": "ca2bbe871ff4c77ee9b2090559f29f989f50e9939174be723365731a2def29f2"
+  },
+  {
+    "slug": "agency-retainer-pricing",
+    "modified": "2026-10-13",
+    "sha256": "5d8ff5ffd1b624872da8ac6be74aa98175bed046d33493e336b58b13357d0f29"
+  },
+  {
+    "slug": "how-to-price-products-for-ecommerce",
+    "modified": "2026-10-07",
+    "sha256": "cf0397883347deec8ce640555ec3961e21f546e204baa8fc112b425d8853f9ac"
+  },
+  {
+    "slug": "restaurant-menu-pricing-formula",
+    "modified": "2026-10-22",
+    "sha256": "1a8ab0a7fef28b8c07f96cffb861029d9baeb06650262395a2937c6f8d13479d"
+  },
+  {
+    "slug": "cleaning-business-break-even",
+    "modified": "2026-10-21",
+    "sha256": "ac5a97a493d178773441be0f929e61ebfef17b41344bc86f6af9087eb58662b0"
+  },
+  {
+    "slug": "landscaping-break-even",
+    "modified": "2026-10-25",
+    "sha256": "55114448f1732705e7f53ae9f35c8a3967472ecd3340381fae13377ed27f6605"
+  },
+  {
+    "slug": "photography-business-break-even",
+    "modified": "2026-10-21",
+    "sha256": "1218813f899b20bddbf623a3954b487ea2a7140cc16db7432cd94521df40961f"
+  },
+  {
+    "slug": "agency-break-even",
+    "modified": "2026-10-21",
+    "sha256": "83acdb116ae74952aa6cca7a359688e18d8867001633f9283a8514dc62a13379"
+  },
+  {
+    "slug": "mobile-detailing-break-even",
+    "modified": "2026-10-07",
+    "sha256": "74ac49cabd9d7a86239c5be7f386c5446bb38b41eff836c2ef49c29c1e1b129a"
+  },
+  {
+    "slug": "ecommerce-break-even",
+    "modified": "2026-10-12",
+    "sha256": "cb63fa73359b933dff65ee078cc21f3547426b09d31cfe3372f6a25863e44585"
+  },
+  {
+    "slug": "restaurant-break-even",
+    "modified": "2026-10-07",
+    "sha256": "cd4aaf0f989bc2a9d10eba41d82a3ef1443a67f878af9d70094cc00e93c86e32"
+  },
+  {
+    "slug": "salon-break-even",
+    "modified": "2026-10-08",
+    "sha256": "23b8e62860a2f16b3077bb0e9ae9cf10c810c18f604346430f6919843d036659"
+  }
+]

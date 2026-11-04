@@ -11,7 +11,7 @@ import FinanceTopicNavigator from './FinanceTopicNavigator.jsx';
 const slugs=['cash-flow-statement','operating-cash-flow','cash-flow-problems'];
 describe('Day 5 original cash-flow owners',()=>{
  it('publishes three distinct complete owners with valid assets, navigation and shared FAQ boundary',()=>{
-  for(const slug of slugs){const p=blogPostMap[slug];expect(blogPosts.filter(p=>p.slug===slug)).toHaveLength(1);expect(p.published).toBe('2026-10-25');expect(p.modified).toBe('2026-10-25');expect(p.html).toContain('fictional');expect(`${p.seoTitle} | MyBreakeven`.length).toBeLessThanOrEqual(60);expect(p.metaDescription.length).toBeLessThanOrEqual(160);expect(p.html.replace(/<[^>]*>/g,' ').split(/\s+/).length).toBeGreaterThan(1200);
+  for(const slug of slugs){const p=blogPostMap[slug];expect(blogPosts.filter(p=>p.slug===slug)).toHaveLength(1);expect(p.published).toBe('2026-10-25');expect(p.modified).toBe(p.slug==='cash-flow-statement'?'2026-11-04':'2026-10-25');expect(p.html).toContain('fictional');expect(`${p.seoTitle} | MyBreakeven`.length).toBeLessThanOrEqual(60);expect(p.metaDescription.length).toBeLessThanOrEqual(160);expect(p.html.replace(/<[^>]*>/g,' ').split(/\s+/).length).toBeGreaterThan(1200);
    const html=renderToStaticMarkup(<LongformArticle article={p}/>);expect((html.match(/<h1[ >]/g)||[])).toHaveLength(1);const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);expect(new Set(ids).size).toBe(ids.length);for(const[id]of p.sectionLinks)expect(ids).toContain(id);
    for(const m of p.html.matchAll(/(?:href|src)="(\/(?:downloads|images)\/[^"?#]+)"/g))expect(existsSync('public'+m[1]),m[1]).toBe(true);
    for(const m of p.html.matchAll(/href="\/blogs\/([^/"#]+)\//g))expect(blogPostMap[m[1]],m[1]).toBeTruthy();
