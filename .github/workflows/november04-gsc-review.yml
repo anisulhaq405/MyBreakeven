@@ -1,0 +1,38 @@
+name: Two-page GSC browser verification
+on:
+  pull_request:
+    paths:
+      - 'src/content/blogs/november04GscReview.js'
+      - 'scripts/qa-november04-gsc.cjs'
+      - '.github/workflows/november04-gsc-review.yml'
+permissions:
+  contents: read
+jobs:
+  browser-verification:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm install --no-save playwright@1.56.1
+      - run: npx playwright install --with-deps chromium
+      - name: Prepare workbook dependency
+        run: |
+          python3 -m pip install openpyxl==3.1.5
+          python3 scripts/generate-restaurant-12-month-workbook.py
+      - run: npm run build
+      - name: Check both published routes on mobile and desktop
+        run: |
+          python3 -m http.server 4173 --directory dist >/tmp/site-server.log 2>&1 &
+          for attempt in $(seq 1 30); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break; sleep 1; done
+          node scripts/qa-november04-gsc.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: november04-gsc-browser-evidence
+          path: qa-artifacts/november04-gsc/
+          if-no-files-found: warn

@@ -1,3 +1,4 @@
+import {november04GscSlugs} from './content/blogs/november04GscReview.js';
 import {twelveDayExistingSlugs} from './twelveDayRelease.js';
 import React from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
@@ -15,7 +16,7 @@ const required=['cleaning-contract-payroll-cash-gap','cleaning-estimate-vs-actua
 describe('November 3 isolated ten-article update',()=>{
  it('updates only the ten eligible articles and preserves all publication dates and images',()=>{
   expect(Object.keys(edits).sort()).toEqual(required.sort());expect(blogPosts).toHaveLength(Object.keys(baseline).length);
-  for(const p of blogPosts){expect(p.image,p.slug).toBe(baseline[p.slug].image);expect(p.published,p.slug).toBe(baseline[p.slug].published);if(!twelveDayExistingSlugs.has(p.slug)&&!edits[p.slug])expect(digest(p),p.slug).toBe(baseline[p.slug].hash);else if(edits[p.slug]){expect(baseline[p.slug].modified<='2026-10-25').toBe(true);expect(p.modified).toBe('2026-11-03');expect(digest(p)).not.toBe(baseline[p.slug].hash);}}
+  for(const p of blogPosts){expect(p.image,p.slug).toBe(baseline[p.slug].image);expect(p.published,p.slug).toBe(baseline[p.slug].published);if(!november04GscSlugs.has(p.slug)&&!twelveDayExistingSlugs.has(p.slug)&&!edits[p.slug])expect(digest(p),p.slug).toBe(baseline[p.slug].hash);else if(edits[p.slug]){expect(baseline[p.slug].modified<='2026-10-25').toBe(true);expect(p.modified).toBe('2026-11-03');expect(digest(p)).not.toBe(baseline[p.slug].hash);}}
   const recent={slug:required[0],modified:'2026-10-26'};expect(applyDailyNovember03Review(recent)).toBe(recent);
  });
  it('renders distinct accessible worksheets, valid links and matching FAQ extraction',()=>{
