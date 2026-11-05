@@ -24,6 +24,8 @@ jobs:
           python3 scripts/generate-restaurant-12-month-workbook.py
       - run: npm test
       - run: npm run build
+      - name: Verify Day 3 published guide assets and metadata
+        run: node scripts/qa-12day-day3-release.mjs
       - name: Audit rendered routes and internal links
         run: python3 scripts/audit-built-site.py --output /tmp/site-inventory.json
       - name: Audit every page delivery budget and image dimensions

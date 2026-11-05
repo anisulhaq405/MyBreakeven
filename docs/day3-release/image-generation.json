@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "business-risk-assessment",
+    "prompt": "Photorealistic editorial wide 16:9 feature cover for a practical business risk assessment guide. A Black female operations manager with short natural curls in a small warehouse, reviewing supplier contingency cards and backup shipment samples beside a rainy loading window. Visual focus on identifying disruptions and planning responses, no charts or numerical data. Sophisticated navy and violet accents, realistic daylight. No readable text, no logos, no watermark.",
+    "path": "image-source/business-risk-assessment.webp"
+  },
+  {
+    "slug": "online-business-ideas",
+    "prompt": "Editorial photorealistic wide 16:9 feature image: overhead three distinct online business models on a warm walnut worktable: a small shipping parcel and handmade ceramic cup, a laptop with abstract video-call interface and headphones, and a tablet showing abstract printable artwork samples. Comparison of ecommerce, client services, digital products. No people, no readable text, no brands, no charts, no watermark. Refined ivory navy violet details.",
+    "path": "image-source/online-business-ideas.webp"
+  },
+  {
+    "slug": "how-to-start-online-business",
+    "prompt": "Photorealistic editorial wide 16:9 cover: East Asian male entrepreneur with thin glasses tests an online order fulfillment at a compact creative studio, laptop checkout abstract unbranded interface, packing one sample item and checking a delivery checklist with colored unlabeled tabs. Launch workflow not brainstorming. Side profile, afternoon sunlight, navy violet accents, no readable text, no logos or charts.",
+    "path": "image-source/how-to-start-online-business.webp"
+  },
+  {
+    "slug": "start-home-based-business",
+    "prompt": "Wide 16:9 editorial realistic photo of a dedicated home tailoring workspace with sewing machine, neatly stored fabric, task lamp, a wall calendar with no readable words, separate domestic living area softly visible through doorway. No people. Focus on workspace boundaries and capacity. Warm daylight, restrained violet/navy accent materials, no text/logos/watermark.",
+    "path": "image-source/start-home-based-business.webp"
+  },
+  {
+    "slug": "assets-liabilities-equity",
+    "prompt": "Wide 16:9 high-end editorial still life for accounting equation guide. On a light studio table, three balanced groups: business equipment and cash envelope, supplier invoices and loan folder, and an owner's capital notebook; neat architectural wood blocks visually balanced on a central level beam. Symbolic only, no data chart, no mathematical text, no labels or logos. Navy violet warm ivory.",
+    "path": "image-source/assets-liabilities-equity.webp"
+  },
+  {
+    "slug": "current-assets",
+    "prompt": "Photorealistic wide 16:9 cover for current assets classification: close view of small artisan retail back office, bank receipt folder, customer invoice tray, neatly counted boxed inventory and prepaid service pass organized separately. No people, no readable words, no numbers, no logos. Inviting daylight and textured shelving, navy and teal accents. Distinct from generic calculator desk.",
+    "path": "image-source/current-assets.webp"
+  },
+  {
+    "slug": "current-liabilities",
+    "prompt": "Photorealistic wide 16:9 editorial feature image: Latina finance coordinator with shoulder length dark hair in a small manufacturing office, arranging supplier bills, payroll envelope and loan payment folder along a large dated planner without readable text. Visual theme upcoming obligations and payment timing. Side view, navy and coral accent tabs, no charts/numbers/logos.",
+    "path": "image-source/current-liabilities.webp"
+  },
+  {
+    "slug": "accounts-receivable-process",
+    "prompt": "Wide 16:9 photorealistic editorial cover: South Asian woman in a contemporary small design agency, reconciling client invoice folder with bank receipt evidence on laptop, two distinct trays for awaiting approval and collected receipts, subtle abstract project samples. Warm natural side light, violet accents, no readable words, no logos or charts. Focus invoice-to-collection.",
+    "path": "image-source/accounts-receivable-process.webp"
+  },
+  {
+    "slug": "accounts-payable-process",
+    "prompt": "Wide 16:9 realistic editorial cover: mature white male purchasing manager with gray beard in a workshop receiving area, checking a delivered component against a purchase order and supplier invoice, approval stamp and organized payable folders on bench. Physical receiving and invoice matching clearly visible. Navy with amber accents, no readable text, no logos or watermark.",
+    "path": "image-source/accounts-payable-process.webp"
+  }
+]

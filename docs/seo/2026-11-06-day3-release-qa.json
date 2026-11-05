@@ -1,0 +1,110 @@
+{
+  "newPages": [
+    {
+      "slug": "business-risk-assessment",
+      "canonical": "https://mybreakeven.com/blogs/business-risk-assessment/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "online-business-ideas",
+      "canonical": "https://mybreakeven.com/blogs/online-business-ideas/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "how-to-start-online-business",
+      "canonical": "https://mybreakeven.com/blogs/how-to-start-online-business/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "start-home-based-business",
+      "canonical": "https://mybreakeven.com/blogs/start-home-based-business/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "assets-liabilities-equity",
+      "canonical": "https://mybreakeven.com/blogs/assets-liabilities-equity/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "current-assets",
+      "canonical": "https://mybreakeven.com/blogs/current-assets/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "current-liabilities",
+      "canonical": "https://mybreakeven.com/blogs/current-liabilities/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "accounts-receivable-process",
+      "canonical": "https://mybreakeven.com/blogs/accounts-receivable-process/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "accounts-payable-process",
+      "canonical": "https://mybreakeven.com/blogs/accounts-payable-process/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    }
+  ],
+  "existingAdditions": [
+    "cost-drivers-small-business",
+    "job-order-costing",
+    "flexible-budget-variance-analysis",
+    "contribution-margin-income-statement"
+  ],
+  "passed": true
+}
