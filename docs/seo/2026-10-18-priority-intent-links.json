@@ -15,6 +15,7 @@
         "/blogs/flexible-budget-variance-analysis/",
         "/blogs/how-much-does-it-cost-to-open-a-restaurant/",
         "/blogs/how-to-start-restaurant/",
+        "/blogs/restaurant-break-even-calculator-malaysia-user-review/",
         "/blogs/restaurant-business-plan/",
         "/blogs/restaurant-cash-flow-forecast/",
         "/blogs/restaurant-food-cost-percentage/",
@@ -127,12 +128,14 @@
         "/blogs/how-to-start-coffee-shop/",
         "/blogs/how-to-start-restaurant/",
         "/blogs/restaurant-break-even/",
+        "/blogs/restaurant-break-even-calculator-malaysia-user-review/",
         "/blogs/restaurant-budgeting/",
         "/blogs/restaurant-delivery-app-commission-profit-per-order/",
         "/blogs/restaurant-labor-cost-percentage/",
         "/blogs/restaurant-menu-engineering-contribution-margin/",
         "/blogs/restaurant-menu-pricing-formula/",
         "/blogs/restaurant-prime-cost/",
+        "/blogs/restaurant-sales-forecast/",
         "/blogs/restaurant-takeout-vs-dine-in-profit-per-order/",
         "/guides/restaurant-business/"
       ],
@@ -148,7 +151,6 @@
         "/blogs/how-to-start-restaurant/",
         "/blogs/restaurant-break-even/",
         "/blogs/restaurant-budgeting/",
-        "/blogs/restaurant-food-cost-percentage/",
         "/blogs/restaurant-prime-cost/",
         "/blogs/restaurant-profit-margin-average/",
         "/guides/restaurant-business/"
@@ -178,6 +180,7 @@
       "boundary": "Explain full-order cost; existing menu tool runs price and capacity.",
       "contextual_incoming": [
         "/blogs/cafe-opening-costs/",
+        "/blogs/catering-quote-profit/",
         "/blogs/restaurant-covers-per-night-break-even/",
         "/blogs/restaurant-delivery-app-commission-profit-per-order/",
         "/blogs/restaurant-food-cost-percentage/",
@@ -202,6 +205,7 @@
         "/blogs/landscaping-job-costing-estimate-vs-actual/",
         "/blogs/landscaping-maintenance-contract-pricing/",
         "/blogs/landscaping-plant-warranty-cost/",
+        "/blogs/landscaping-working-capital/",
         "/blogs/snow-removal-pricing/",
         "/guides/landscaping-business/"
       ],

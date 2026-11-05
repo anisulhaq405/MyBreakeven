@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-05",
+  "surface": "Built production HTML and actual hydrated production article component",
+  "drafts": 9,
+  "viewportChecks": 18,
+  "frameWidths": [390, 1280],
+  "documentWidthsAfterScrollbar": [375, 1265],
+  "horizontalOverflow": false,
+  "singleH1PerPage": true,
+  "responsiveCoversLoaded": 18,
+  "mobileFaqDisclosuresOpened": 9,
+  "mobileTableContainers": {"width":325,"overflowX":"auto","tableWidthRange":[520,729]},
+  "fixedDuringAcceptance": "Three exact charts needed max-width:100%;height:auto on the production image elements. Applied only to Day 2 chart markup and confirmed all 18 layouts again.",
+  "scope": "Narrow and desktop CSS viewports, not real-device certification. Static link/schema/asset checks are recorded separately."
+}

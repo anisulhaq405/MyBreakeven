@@ -1,3 +1,4 @@
+import {day2ExistingSlugs} from './content/blogs/twelveDayDay2Release.js';
 import {november04GscSlugs} from './content/blogs/november04GscReview.js';
 import {describe,it,expect} from 'vitest';
 import '../scripts/build-12day-day1-images.mjs';
@@ -38,7 +39,7 @@ describe('Day 1 editorial delivery',()=>{
   const baseline=JSON.parse(readFileSync('docs/content/2026-11-03-baseline-blog-hashes.json','utf8'));
   const current=new Map(blogPosts.map(p=>[p.slug,p]));
   for(const before of baseline){
-   if(november04GscSlugs.has(before.slug))continue; // Independently protected by the November 4 two-page review test.
+   if(day2ExistingSlugs.has(before.slug)||november04GscSlugs.has(before.slug))continue; // Independently protected by the November 4 two-page review test.
    if(before.slug==='cash-flow-statement'){const old=JSON.parse(readFileSync('docs/content/2026-11-04-cash-flow-before-release.json','utf8'));const now=current.get(before.slug);expect(now.html.startsWith(old.html)).toBe(true);expect(now.html).toContain('cash-close-cutoff-control');expect(now.modified).toBe('2026-11-04');expect({...now,html:old.html,modified:old.modified}).toEqual(old);}else expect(createHash('sha256').update(JSON.stringify(current.get(before.slug))).digest('hex')).toBe(before.sha256);
   }
  });
