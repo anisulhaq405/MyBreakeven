@@ -1,0 +1,109 @@
+{
+  "newPages": [
+    {
+      "slug": "landscaping-working-capital",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-working-capital/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "small-business-ideas",
+      "canonical": "https://mybreakeven.com/blogs/small-business-ideas/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "how-to-start-small-business",
+      "canonical": "https://mybreakeven.com/blogs/how-to-start-small-business/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "business-model-canvas",
+      "canonical": "https://mybreakeven.com/blogs/business-model-canvas/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "business-proposal-template",
+      "canonical": "https://mybreakeven.com/blogs/business-proposal-template/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "business-growth-strategies",
+      "canonical": "https://mybreakeven.com/blogs/business-growth-strategies/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "business-feasibility-study",
+      "canonical": "https://mybreakeven.com/blogs/business-feasibility-study/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "business-goals",
+      "canonical": "https://mybreakeven.com/blogs/business-goals/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "small-business-strategic-planning",
+      "canonical": "https://mybreakeven.com/blogs/small-business-strategic-planning/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    }
+  ],
+  "existingAdditions": [
+    "operating-cash-flow",
+    "operating-expenses",
+    "rolling-forecast"
+  ],
+  "passed": true
+}
