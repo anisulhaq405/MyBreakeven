@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "accrual-accounting",
+    "id": "N028",
+    "keyword": "accrual accounting",
+    "scope": "Recognition overview, distinct from the cash forecast and later accrued-expense workflow."
+  },
+  {
+    "slug": "bookkeeping-small-business",
+    "id": "N029",
+    "keyword": "bookkeeping for small business",
+    "scope": "Recordkeeping and close workflow, not software recommendations or accounting-method selection."
+  },
+  {
+    "slug": "accounting-cycle",
+    "id": "N030",
+    "keyword": "accounting cycle",
+    "scope": "The recording-to-close sequence, separate from statement interpretation and ledger-template structure."
+  },
+  {
+    "slug": "general-ledger-template",
+    "id": "N031",
+    "keyword": "general ledger template",
+    "scope": "Account-level posting and reconciliation record; not an automatic accounting system or journal-entry policy."
+  },
+  {
+    "slug": "depreciation-methods",
+    "id": "N032",
+    "keyword": "depreciation",
+    "scope": "Method selection and reporting effects; detailed straight-line schedule and accumulated-balance rollforward have separate owners."
+  },
+  {
+    "slug": "accumulated-depreciation",
+    "id": "N033",
+    "keyword": "accumulated depreciation",
+    "scope": "Contra-asset balance and disposal reconciliation, distinct from method selection and straight-line calculation."
+  },
+  {
+    "slug": "straight-line-depreciation",
+    "id": "N034",
+    "keyword": "straight line method of depreciation",
+    "scope": "Single-method formula and dated schedule; parent methods comparison and accumulated-balance disposal case stay separate."
+  },
+  {
+    "slug": "allowance-doubtful-accounts",
+    "id": "N035",
+    "keyword": "allowance for doubtful accounts",
+    "scope": "Allowance estimation and rollforward under an explicit US GAAP educational scope; not a tax deduction or assurance of CECL compliance."
+  },
+  {
+    "slug": "bad-debt-expense",
+    "id": "N036",
+    "keyword": "bad debt expense",
+    "scope": "Event-level accounting mechanics; allowance estimation method and tax deductibility remain separate."
+  }
+]

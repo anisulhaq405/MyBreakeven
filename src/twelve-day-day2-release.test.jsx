@@ -1,3 +1,4 @@
+import {day4ExistingSlugs} from './content/blogs/twelveDayDay4Review.js';
 import {day3ExistingSlugs} from './content/blogs/twelveDayDay3Review.js';
 import React from 'react';
 import {describe,it,expect} from 'vitest';
@@ -12,7 +13,7 @@ const hash=p=>createHash('sha256').update(JSON.stringify(p)).digest('hex');
 
 describe('Authorized November 5 Day 2 publication',()=>{
  it('publishes exactly nine new canonical owners and complete production assets',()=>{
-  expect(blogPosts).toHaveLength(before.length+18);expect(blogModels).toHaveLength(8);
+  expect(blogPosts).toHaveLength(before.length+27);expect(blogModels).toHaveLength(8);
   expect(new Set(twelveDayDay2Posts.map(p=>p.slug)).size).toBe(9);
   for(const p of twelveDayDay2Posts){
    expect(before.some(b=>b.slug===p.slug)).toBe(false);expect(blogPostMap[p.slug]).toEqual(p);
@@ -31,7 +32,7 @@ describe('Authorized November 5 Day 2 publication',()=>{
  it('preserves all 171 prior records exactly except three approved append-only additions and their modification dates',()=>{
   expect([...day2ExistingSlugs].sort()).toEqual(['operating-cash-flow','operating-expenses','rolling-forecast']);
   for(const old of before){
-   if(day3ExistingSlugs.has(old.slug))continue; // Exact allowed change protected by the 180-record Day 3 baseline test.
+   if(day4ExistingSlugs.has(old.slug)||day3ExistingSlugs.has(old.slug))continue; // Exact allowed change protected by the 180-record Day 3 baseline test.
    const now=blogPostMap[old.slug];expect(now).toBeDefined();
    if(!day2ExistingSlugs.has(old.slug)){expect(hash(now),old.slug).toBe(old.sha256);continue;}
    const addition=day2ExistingAdditions[old.slug];expect(now.html.endsWith(addition)).toBe(true);expect(now.html.split(addition)).toHaveLength(2);expect(now.modified).toBe('2026-11-05');
