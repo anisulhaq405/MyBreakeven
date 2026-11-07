@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-07",
+  "testedBuild": "Day 4 local production dist",
+  "guideLayouts": 18,
+  "iframeWidths": [
+    390,
+    1280
+  ],
+  "actualInnerWidths": [
+    375,
+    1265
+  ],
+  "pageOverflow": false,
+  "oneH1": true,
+  "allCoversLoaded": true,
+  "scrollableTables": true,
+  "faqInteractions": 9,
+  "editableWorksheets": 9,
+  "worksheetInputsAndCells": true,
+  "diagramLoaded": true,
+  "printButtonPresent": true,
+  "printDialogExecuted": false,
+  "passed": true
+}

@@ -1,0 +1,110 @@
+{
+  "newPages": [
+    {
+      "slug": "accrual-accounting",
+      "canonical": "https://mybreakeven.com/blogs/accrual-accounting/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "bookkeeping-small-business",
+      "canonical": "https://mybreakeven.com/blogs/bookkeeping-small-business/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "accounting-cycle",
+      "canonical": "https://mybreakeven.com/blogs/accounting-cycle/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "general-ledger-template",
+      "canonical": "https://mybreakeven.com/blogs/general-ledger-template/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "depreciation-methods",
+      "canonical": "https://mybreakeven.com/blogs/depreciation-methods/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "accumulated-depreciation",
+      "canonical": "https://mybreakeven.com/blogs/accumulated-depreciation/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "straight-line-depreciation",
+      "canonical": "https://mybreakeven.com/blogs/straight-line-depreciation/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "allowance-doubtful-accounts",
+      "canonical": "https://mybreakeven.com/blogs/allowance-doubtful-accounts/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    },
+    {
+      "slug": "bad-debt-expense",
+      "canonical": "https://mybreakeven.com/blogs/bad-debt-expense/",
+      "sitemap": true,
+      "indexable": true,
+      "metadataAndSchema": true,
+      "linksAndAnchors": true,
+      "responsiveImages": true,
+      "worksheet": true,
+      "contextualInbound": true
+    }
+  ],
+  "existingAdditions": [
+    "how-to-calculate-cost-of-goods-sold",
+    "how-to-calculate-days-sales-outstanding",
+    "target-profit-sales-formula",
+    "operating-leverage-small-business"
+  ],
+  "passed": true
+}

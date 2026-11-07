@@ -51,6 +51,8 @@ jobs:
 
       - name: Verify Day 3 published guide assets and metadata
         run: node scripts/qa-12day-day3-release.mjs
+      - name: Verify Day 4 publication
+        run: node scripts/qa-12day-day4-release.mjs
 
       - name: Verify business ratio calculator in generated production HTML
         run: |
