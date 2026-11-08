@@ -35,6 +35,13 @@
         "from": "a zero contribution after support",
         "to": "a zero customer subtotal after assigned support"
       }
+    ],
+    "faqReplacements": [
+      {
+        "fromQ": "Can profit be positive while collections are late?",
+        "toQ": "Can profit be positive while collections are late?",
+        "toA": "Yes. Accrual revenue and the defined customer service subtotal do not establish available cash. Track invoice due dates and receipts separately."
+      }
     ]
   },
   {

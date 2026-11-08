@@ -36,6 +36,13 @@ export const authenticityReviewRecords = [
         "from": "a zero contribution after support",
         "to": "a zero customer subtotal after assigned support"
       }
+    ],
+    "faqReplacements": [
+      {
+        "fromQ": "Can profit be positive while collections are late?",
+        "toQ": "Can profit be positive while collections are late?",
+        "toA": "Yes. Accrual revenue and the defined customer service subtotal do not establish available cash. Track invoice due dates and receipts separately."
+      }
     ]
   },
   {
@@ -336,6 +343,17 @@ export const authenticityReviewRecords = [
       {
         "to": "project surplus falls to $350",
         "from": "contribution falls to $350"
+      },
+      {
+        "from": "contribution-margin method</a> checks the chosen delivery-cost boundary.",
+        "to": "contribution-margin method</a> explains sales less variable costs, a different boundary from a loaded full-cost estimate."
+      }
+    ],
+    "faqReplacements": [
+      {
+        "fromQ": "Is contribution margin the same as markup?",
+        "toQ": "Is the project surplus percentage the same as markup?",
+        "toA": "No. Here project surplus divided by fee and project surplus divided by included cost use different denominators. Standard contribution margin uses variable costs; this example instead uses its stated loaded project-cost boundary."
       }
     ]
   },
@@ -473,7 +491,7 @@ export const authenticityReviewRecords = [
     "heading": "Set separate launch tests for merchandise and service promises",
     "paragraphs": [
       "<p>For US merchandise covered by the <a href=\"https://www.ftc.gov/business-guidance/resources/business-guide-ftcs-mail-internet-or-telephone-order-merchandise-rule\">FTC’s order rule guidance</a>, a seller needs a reasonable basis for its stated shipping time; when no shipping time is stated, the usual rule is shipment within thirty days after a properly completed order. If timely shipment becomes impossible, follow the applicable delay-consent or cancellation/refund procedure. This is not a universal thirty-day delivery rule for every online transaction, and the FTC guidance identifies exemptions and special cases. Services are outside this merchandise rule.</p>",
-      "<p>For the original service pilot, make the delivery promise testable: what file or work product is due, how the buyer confirms receipt, which revisions are included and who handles a failed handoff. A payment receipt establishes a payment event; it does not by itself prove completed service performance. Keep the five fictional orders labeled as teaching data when presenting the 25% inquiry conversion. Replace them with dated, consented business records before describing a real customer result.</p>",
+      "<p>For the original service pilot, make the delivery promise testable: what file or work product is due, how the buyer confirms receipt, which revisions are included and who handles a failed handoff. A payment receipt establishes a payment event; it does not by itself prove completed service performance. Keep the five fictional orders labeled as teaching data when presenting the 25% inquiry conversion. Replace them with genuine dated business records before describing a real customer result. The $1,050 includes a one-off $250 test budget, so it is a defined pilot surplus rather than standard sales-minus-variable-cost contribution margin.</p>",
       "<p>The launch decision should have separate evidence for offer accuracy, payment, fulfillment and customer communications. The <a href=\"https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers\">FTC review-rule Q&amp;A</a> explains why businesses must avoid fake or false testimonials and incentives conditioned on a particular review sentiment. Ask genuine buyers for their actual experience; a test order, generated persona or fictional worked case must not become a customer endorsement. Record unresolved launch defects with an owner and retest the repaired step before increasing demand.</p>"
     ],
     "faq": [
@@ -494,6 +512,22 @@ export const authenticityReviewRecords = [
       {
         "from": "Five divided by twenty is a 25% conversion for this tiny observed pilot",
         "to": "Five divided by twenty is a 25% conversion for this fictional teaching pilot"
+      },
+      {
+        "from": "Contribution after included costs",
+        "to": "Pilot surplus after included costs"
+      },
+      {
+        "from": "$35 contribution per delivery hour",
+        "to": "$35 pilot surplus per delivery hour"
+      },
+      {
+        "from": "$26.25 contribution per delivery hour",
+        "to": "$26.25 pilot surplus per delivery hour"
+      },
+      {
+        "from": "separately from operating contribution",
+        "to": "separately from the defined operating result"
       }
     ]
   },

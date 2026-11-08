@@ -115,6 +115,17 @@
       {
         "to": "project surplus falls to $350",
         "from": "contribution falls to $350"
+      },
+      {
+        "from": "contribution-margin method</a> checks the chosen delivery-cost boundary.",
+        "to": "contribution-margin method</a> explains sales less variable costs, a different boundary from a loaded full-cost estimate."
+      }
+    ],
+    "faqReplacements": [
+      {
+        "fromQ": "Is contribution margin the same as markup?",
+        "toQ": "Is the project surplus percentage the same as markup?",
+        "toA": "No. Here project surplus divided by fee and project surplus divided by included cost use different denominators. Standard contribution margin uses variable costs; this example instead uses its stated loaded project-cost boundary."
       }
     ]
   },

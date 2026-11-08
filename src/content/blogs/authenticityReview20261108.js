@@ -20,6 +20,8 @@ export function applyAuthenticityReview(post){
  html=html.replace(/Reviewed November [0-9]+, 2026/g,'Reviewed November 8, 2026');
  html=html.replace('Primary references below support the stated definitions or framework.','The references below support the stated definitions, educational mechanics or specifically identified framework.');
  html+='<p><strong>Source review: November 8, 2026.</strong> Official guidance, publisher explanations and software workflows have different scopes. The linked application section identifies their use. Numerical business cases remain original fictional teaching examples, not observed customer results or market benchmarks.</p>';
+ const reviewedFaq=post.faq.map(q=>{const patch=review.faqReplacements?.find(r=>r.fromQ===q.q);return patch?{q:patch.toQ,a:patch.toA}:q;});
+ for(const q of review.faqReplacements||[])if(post.faq.filter(f=>f.q===q.fromQ).length!==1)throw Error('FAQ replacement must match once: '+post.slug);
  const nav=post.sectionLinks.filter(([id])=>id!=='evidence-and-application');const at=nav.findIndex(([id])=>id==='worksheet');nav.splice(at,0,['evidence-and-application',review.heading]);
- return {...post,opening:lead[1].replace(/<[^>]+>/g,''),modified:authenticityReviewDate,contentReview:'authenticity-20261108',answerHtml:'<h2 id="verified-answer">Quick answer</h2><p>'+lead[1]+'</p><p><a href="#evidence-and-application">Read the source-backed application and limits</a>. Worked business amounts are fictional teaching examples.</p>',html,sectionLinks:nav,faq:[...post.faq,...review.faq]};
+ return {...post,opening:lead[1].replace(/<[^>]+>/g,''),modified:authenticityReviewDate,contentReview:'authenticity-20261108',answerHtml:'<h2 id="verified-answer">Quick answer</h2><p>'+lead[1]+'</p><p><a href="#evidence-and-application">Read the source-backed application and limits</a>. Worked business amounts are fictional teaching examples.</p>',html,sectionLinks:nav,faq:[...reviewedFaq,...review.faq]};
 }
