@@ -1,0 +1,9 @@
+# Day 4 source and numerical review — November 8, 2026
+
+All nine existing cases were independently checked: accrual profit $3,100 / operating cash $1,200 / closing assets $17,300; book/bank reconciliation $9,700; adjusted trial balance $16,800 and post-closing $15,200; ledger Cash $4,550 and trial balance $7,200; alternative depreciation charges $2,400/$3,000/$5,600 and residual-capped DDB total $12,000; accumulated balance $15,600 and carrying amount $32,400 with $400 disposal gain; sixty-month straight-line total $12,000 and $2,000 residual; allowance target $2,800 and $2,100 provision; final bad-debt sequence $23,800 gross / $1,500 allowance / $22,300 net.
+
+References retrieved and read directly November 8: OpenStax original publisher lessons 3.5 (journal/posting), 4.2 (adjustments), 5.1 (closing), 9.2 (uncollectible mechanics), 11.3 (depreciation) and 11.5 (estimate changes/disposal); IRS official recordkeeping/retention pages, Publication 538, Publication 946 (2025) and Tax Topic 453; FASB official ASU 2025-05 PDF, summary/effective date. Exact URLs are in day4-patches.json and the retained article references.
+
+Use educational mechanics as educational explanations, not as a complete accounting standard. FASB's update describes amendments to the Codification and optional scoped choices; the existing example assumes neither choice. Tax deductions and financial-reporting entries remain separate. No professional sign-off or entity-specific compliance claim is made.
+
+The nine additions supply evidence-based close records, source-to-ledger traceability, temporary/permanent balance interpretation, depreciation/tax/valuation distinctions, asset-ID disposal checks, prospective-estimate decision boundaries, current allowance-policy scope and recovery/tax separation. Every numerical business example remains clearly fictional rather than a real customer outcome. No published third-party case or observed result was invented.

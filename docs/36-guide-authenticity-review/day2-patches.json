@@ -1,0 +1,221 @@
+[
+  {
+    "slug": "landscaping-working-capital",
+    "heading": "Reconcile a funding draw through the later repayment",
+    "paragraphs": [
+      "<p><a href=\"https://www.bdc.ca/en/articles-tools/money-finance/manage-finances/making-most-working-capital\">BDC’s cash-management guidance</a> supports anticipating when receipts and payments occur. It is Canadian business education, not a statement of US lender eligibility. In this guide’s original case, the $8,000 requirement is a top-up to the chosen $5,000 weekly-close floor; it is not a recurring weekly expense, a recommended reserve or an approved credit limit.</p>",
+      "<p>If an $8,000 draw is inserted immediately before the base case’s lowest weekly close, that close rises from −$3,000 to $5,000. The borrowing increases cash and an obligation; it does not create customer revenue. Carry the draw through every later balance and add principal repayments, interest and fees on their expected payment dates. Drawing $8,000 again in every later week would invent additional funding. Match the assumed availability date with the facility’s actual written conditions before treating the proceeds as usable.</p>",
+      "<p>Check within-week order as well. A Monday payment before a Friday receipt can need more funding than a weekly-close table reveals. Include later repayment dates, off-season commitments and any customer refund obligation. If a payment is deferred to protect April cash, it remains a payment in the later schedule. Keep confirmed funds, conditional offers and applications separate. Approve a response only after both the low point and the repayment period can meet their actual obligations.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Does the $8,000 funding need recur every week?",
+        "a": "No. It is the additional amount needed at the base case’s lowest weekly close to reach the chosen floor. Carry any actual draw forward and schedule its repayment; do not invent a new draw each week."
+      },
+      {
+        "q": "Does a line-of-credit approval guarantee usable cash on every date?",
+        "a": "No. Check the actual availability conditions, remaining undrawn amount and timing in the written agreement. The forecast does not establish eligibility or approval."
+      }
+    ],
+    "replacements": []
+  },
+  {
+    "slug": "small-business-ideas",
+    "heading": "Keep a demand-evidence record before comparing owner income",
+    "paragraphs": [
+      "<p>The <a href=\"https://www.sba.gov/counseling/plan-your-business/\">SBA planning guidance</a> connects customer research with competitor analysis. Apply that framework to a specific offer: record the customer group, the problem, the alternative supplier, matched service scope and date of each conversation or test. Compare nearby alternatives on the same scope; a public price for a different package is not an equivalent benchmark.</p>",
+      "<p>Separate an interview, a request for a quote, an accepted order, completed delivery and cleared payment. They answer different questions and must not be added together as equal proof of demand. Record the cost and owner time needed to acquire the first buyer, not just the time spent delivering. In the fictional cleaning case, $125 spread over four job-related hours gives $31.25 per hour before general overhead, idle time and owner requirements. That is an offer-level comparison, not an authentic earnings average for cleaners.</p>",
+      "<p>The case assumes the $55 and $90 cash delivery costs vary with the relevant jobs. If a real cost is a committed salary, a sunk purchase or allocated shared overhead, classify it separately before interpreting variable-cost contribution. A paid pilot may expose delivery or pricing problems but does not establish market-wide demand or repeatable income. Set the next test, maximum cash exposure and review date while keeping unsupported inputs labeled as assumptions. Retain failed tests as well as successful ones so the selection record reflects the evidence available at the time.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Are the example hourly figures actual industry earnings?",
+        "a": "No. They divide fictional price less the specified job-varying costs by assumed owner-hours. General overhead, non-job time, owner requirements and other omitted costs still need consideration."
+      },
+      {
+        "q": "Can I count interviews and orders as the same demand evidence?",
+        "a": "No. Record their distinct stages. Interest, accepted scope, completed work and cleared payment support different conclusions."
+      }
+    ],
+    "replacements": [
+      {
+        "to": "Assumed job-varying cash delivery costs",
+        "from": "Relevant cash delivery costs"
+      }
+    ]
+  },
+  {
+    "slug": "how-to-start-small-business",
+    "heading": "Build an agency-by-agency launch and recordkeeping file",
+    "paragraphs": [
+      "<p>The <a href=\"https://www.irs.gov/businesses/small-businesses-self-employed/checklist-for-starting-a-business\">IRS startup checklist</a> is a federal starting point and explicitly is not all-inclusive. It lists an EIN when applicable. That does not mean every individual researching an idea needs every identifier, entity or permit. Establish the actual activity, ownership, business location, employee plans and customer locations before checking which requirements apply.</p>",
+      "<p>For each applicable registration or permission, record the issuing agency, official source, current status, renewal date and supporting document. A bank account or tax identifier does not itself authorize every regulated activity. Separate preparatory research from commitments that depend on a permission being effective. Verify unresolved state, local or activity-specific questions with the actual agency and suitable advisers; a generic launch article cannot resolve them for an unidentified business.</p>",
+      "<p><a href=\"https://www.irs.gov/publications/p583\">IRS Publication 583</a> explains business recordkeeping and supporting documents. For the fictional launch, trace the $4,500 owner contribution separately from customer receipts or loans. Preserve the quotes and payment dates behind the $6,500 need and the $2,000 unfunded difference. Identify which forecast already contains tools, deposits and early operating shortfalls so no cash item is added twice. Record customer invoices, supplier bills, receipts and bank movements from the first transaction. Check applicable retention requirements by record type instead of assuming a single universal period.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Must every startup obtain an EIN and form an LLC?",
+        "a": "No. Requirements depend on the owner, structure, activity and other facts. The IRS checklist says to obtain an EIN if applicable; verify entity and registration decisions using the relevant official agencies."
+      },
+      {
+        "q": "Does the $4,500 owner contribution count as sales?",
+        "a": "No. In the example it is a funding source. Customer revenue, cash collection, owner funding and borrowing need separate records."
+      }
+    ],
+    "replacements": []
+  },
+  {
+    "slug": "business-model-canvas",
+    "heading": "Trace each changed promise through the connected blocks",
+    "paragraphs": [
+      "<p>The <a href=\"https://www.strategyzer.com/library/the-business-model-canvas\">official Strategyzer canvas guidance</a> treats the model as connected hypotheses that should be dated and revised as evidence changes. Put one accountable owner and version date on the record. Attach a short evidence reference to important assumptions rather than hiding every uncertainty in one general notes field.</p>",
+      "<p>In the original cleaning case, expanding from eight to ten worker-hours per customer changes the resources, activities and cost blocks immediately. Ten customers would require 100 hours against 96 available. The $900 result after unchanged overhead does not resolve that four-hour operational shortage. A new distant segment can also change travel, channels, the support relationship and the acceptable price. Do not revise only the revenue block while leaving the delivery system unchanged. State what actual change supplies the missing capacity and recheck its cost before committing to the promise.</p>",
+      "<p>This numerical example assumes the $30 loaded delivery rate varies with the included worker-hours and that its underlying labor is not also counted in overhead. A real salaried employee’s allocated rate may be useful for estimating full service cost without being an avoidable payment for one more customer. Mark that distinction before using the amount as variable-cost contribution or a cash forecast input. A completed canvas describes the proposed model; paid delivery, customer acceptance and repeat decisions test different parts of it. Archive the original and explain each changed block. Use the official source for its own tool and usage terms; this article’s evidence record is an independently written example.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Does a completed canvas prove the business is feasible?",
+        "a": "No. It records connected hypotheses. Customer demand, delivery capacity, costs and funding still require evidence and their own decision review."
+      },
+      {
+        "q": "Is an internal hourly labor rate always a variable cash payment?",
+        "a": "No. A loaded or allocated rate can include committed salary or shared costs. Identify the actual cost behavior and avoid counting its underlying amount again in overhead."
+      }
+    ],
+    "replacements": [
+      {
+        "to": "an assumed job-varying loaded delivery cost of $30 per hour",
+        "from": "a defined loaded delivery cost of $30 per hour"
+      }
+    ]
+  },
+  {
+    "slug": "business-proposal-template",
+    "heading": "Turn deliverables and changes into an acceptance record",
+    "paragraphs": [
+      "<p><a href=\"https://www.salesforce.com/small-business/how-to-write-a-business-proposal/\">Salesforce’s proposal guide</a> supports organizing client-specific scope, timing, price and acceptance. It is vendor education, not legal authority. For the 20-image case, identify the product list, final file format, dimensions, agreed background and the person authorized to approve delivery. Write observable completion criteria instead of promising an undefined “professional result.”</p>",
+      "<p>Record which products, brand files and approvals the client must supply before production can proceed. Explain how a delayed input changes the proposed schedule. Give an additional image or correction request its own reference, estimated extra hours, impact on delivery and proposed fee decision. Confirm that decision before starting the additional scope. A recorded request alone is not evidence that the customer accepted a changed fee. Keep the accepted version and its supporting correspondence together so subsequent invoices can be traced to the same scope.</p>",
+      "<p>The $40 internal loaded rate is an estimating assumption. It can include costs that do not vary with one additional project, so the $750 and $350 differences are labeled project surplus after included costs rather than automatically treated as textbook variable-cost contribution. Check which underlying salaries or shared costs are already in the rate before adding overhead. The $960, $960 and $480 installments sum to the $2,400 fee, but due dates are not receipt dates. Map cash timing independently, including a delayed second installment. Review intellectual property, cancellation, liability and other engagement-specific terms with appropriate expertise rather than treating the worksheet as a complete enforceable agreement.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Is the $750 example surplus the company’s net profit?",
+        "a": "No. It is the fee less the specified project costs. Shared overhead, financing, tax and any omitted costs still need consideration; the internal loaded-rate basis also matters."
+      },
+      {
+        "q": "Does a customer request automatically approve an extra fee?",
+        "a": "No. Record the requested change, proposed scope/date/fee effect and the actual acceptance before beginning additional work."
+      }
+    ],
+    "replacements": [
+      {
+        "to": "project surplus after those included costs is $750",
+        "from": "contribution after those included costs is $750"
+      },
+      {
+        "to": "project surplus falls to $350",
+        "from": "contribution falls to $350"
+      },
+      {
+        "from": "contribution-margin method</a> checks the chosen delivery-cost boundary.",
+        "to": "contribution-margin method</a> explains sales less variable costs, a different boundary from a loaded full-cost estimate."
+      }
+    ],
+    "faqReplacements": [
+      {
+        "fromQ": "Is contribution margin the same as markup?",
+        "toQ": "Is the project surplus percentage the same as markup?",
+        "toA": "No. Here project surplus divided by fee and project surplus divided by included cost use different denominators. Standard contribution margin uses variable costs; this example instead uses its stated loaded project-cost boundary."
+      }
+    ]
+  },
+  {
+    "slug": "business-growth-strategies",
+    "heading": "Reconcile the separate campaign between profit and cash",
+    "paragraphs": [
+      "<p><a href=\"https://www.bdc.ca/en/articles-tools/business-strategy-planning/manage-growth/9-tips-handling-fast-business-growth\">BDC’s growth guidance</a> links expansion with resource and cash requirements. Apply that principle without treating cash receipt as the universal revenue-recognition rule. The original table isolates price, volume and capacity. Its fourth row’s $3,500 result is before a separately specified campaign expense.</p>",
+      "<p>The fourth row already includes the extra 20 jobs’ $2,000 delivery cost and the $2,500 additional monthly capacity commitment. If the later $1,000 campaign payment represents an additional expense of this same month, that row’s result after campaign expense is $2,500. A payment alone does not determine its accounting period: a genuine prepayment or a different covered period needs its own treatment under the applicable basis. Keep the $3,500 before-campaign comparison and any after-campaign result explicitly labeled instead of mixing them in one table.</p>",
+      "<p>In the stated cash scenario, the delivery, campaign and capacity payments are all due before the incremental customer receipts, so the pre-collection outlay is $5,500. Do not subtract that full amount again from $3,500: delivery and capacity are already included in the fourth row. The $1,000 campaign is the newly specified item, whose expense treatment must be stated separately. Map the subsequent receipts, any repayments and the period after the campaign ends. A funded expansion can still reduce profit; a profitable expansion can still require cash before collection. Reconcile both views to the same underlying commitments before increasing the next spending limit.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Why is the growth table’s $3,500 result different from $2,500 after campaign expense?",
+        "a": "The $3,500 row includes the delivery and added capacity costs but excludes the separate $1,000 campaign. If that campaign is an additional expense of the same period, the after-campaign result is $2,500."
+      },
+      {
+        "q": "Should I subtract the $5,500 cash requirement again from the table result?",
+        "a": "No. The delivery and capacity costs are already in the fourth row. Reconcile cash payment dates and expense periods item by item; a payment does not by itself establish the expense period."
+      }
+    ],
+    "replacements": [
+      {
+        "to": "This is a cash schedule, not another $5,500 expense to subtract from the monthly result. The table already includes the $2,000 delivery cost and $2,500 capacity cost, but excludes the separately specified $1,000 campaign. If that campaign is an additional expense of the same month, the fourth-row result after campaign expense is $2,500; its payment date alone does not establish the expense period.",
+        "from": "This is a cash schedule, not another $5,500 expense to subtract from the monthly result: some costs are already in the case."
+      },
+      {
+        "to": "Growth result before a separately specified campaign expense depends on the capacity cost. Exact chart of the original fictional example.",
+        "from": "Growth result depends on the capacity cost. Exact chart of the original fictional example."
+      }
+    ]
+  },
+  {
+    "slug": "business-feasibility-study",
+    "heading": "State which evidence would reverse the decision",
+    "paragraphs": [
+      "<p><a href=\"https://www.extension.iastate.edu/AgDM/wholefarm/html/c5-65.html\">Iowa State Extension’s feasibility guidance</a> examines whether a proposed idea can proceed using the resources and risks involved. The five connected tests in this article are its working structure, not a compulsory universal five-part standard. Its owner-income requirement is a planning recovery target, not automatically a deductible accounting expense.</p>",
+      "<p>Give each decision condition a source, accountable owner and review date. For the original three-hour service, a forecast of 50 jobs does not resolve the 40-job practical capacity limit. A revised two-hour scope must be demonstrated at the required quality and accepted price. Include rework, inspection and added supervision before approving the new 60-job ceiling. A supplier quote should identify its scope, expiry, payment dates and assumptions; a favorable amount from a different specification is not equivalent support. Funding must still resolve the separate $2,000 startup gap.</p>",
+      "<p>Compare proceed, pilot, revise and postpone on the same horizon and cost definitions. Record which commitments are difficult to reverse and the maximum exposure before the next evidence check. State the specific result that would stop further spending: missing permissions, a failed delivery test, insufficient buyer acceptance or unavailable funding can each matter. A “not yet supportable” conclusion is useful rather than a reason to manufacture a positive business plan. Preserve rejected alternatives and the evidence behind the decision. The university page is educational material; its authors state they no longer provide feasibility-study assistance, so use it as a reference rather than a promise of an available advisory service.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Are the guide’s five feasibility areas an official universal standard?",
+        "a": "No. They organize this guide’s market, delivery, organizational, economic and funding investigation. A real study should include the issues material to the actual venture."
+      },
+      {
+        "q": "Does a forecast of 50 jobs resolve a 40-job capacity ceiling?",
+        "a": "No. Demonstrate a workable change in price, scope, resources or the required recovery target, then recheck demand, quality and funding."
+      }
+    ],
+    "replacements": []
+  },
+  {
+    "slug": "business-goals",
+    "heading": "Keep the same measurement definition through every review",
+    "paragraphs": [
+      "<p><a href=\"https://www.bdc.ca/en/articles-tools/entrepreneur-toolkit/templates-business-guides/glossary/smart-objectives\">BDC’s SMART explanation</a> supports clear criteria and alignment with available resources. For this guide’s original goal, define whether a job counts when booked, delivered, accepted or paid. Those stages are not interchangeable, even if each appears in the same customer system.</p>",
+      "<p>State the calendar period and treatment of cancellations, refunds and rework. Use the same definition for the 80-job baseline and the 96-job target. A higher price can raise revenue without the same job increase, while a booking target can be met even when the resulting work exceeds available delivery time. Identify whether $250 is the gross quoted price or revenue after any agreed credits. If a definition changes, retain a reconciliation to the earlier series rather than claiming the resulting measurement jump is operating improvement.</p>",
+      "<p>Assign a data owner for the job record and an action owner for the referral test; they may be different people. Keep the current forecast beside the intended target. Do not raise a forecast solely to match an ambition. At three hours each, 96 jobs still require 288 hours against 270 available: the 18-hour gap remains until a real capacity, scope or price/volume decision resolves it. Record the revised assumption, approval date and resulting cost or cash effect. Review completed activity, service quality, case-defined margin and payment timing together. Clear goal wording helps coordination; it cannot independently supply missing demand or delivery resources.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Can I compare booked jobs with a completed-job baseline?",
+        "a": "Not without a clear reconciliation. Bookings, delivery, acceptance and payment measure different stages; retain the same definition for the goal and baseline."
+      },
+      {
+        "q": "Does a SMART goal automatically make 96 jobs achievable?",
+        "a": "No. The fictional case still has an 18-hour delivery shortfall, and actual demand and cash evidence must support any revised operating plan."
+      }
+    ],
+    "replacements": []
+  },
+  {
+    "slug": "small-business-strategic-planning",
+    "heading": "Record the scarce-resource decision and its review trigger",
+    "paragraphs": [
+      "<p><a href=\"https://www.bdc.ca/en/articles-tools/business-strategy-planning/define-strategy/how-write-strategic-plan\">BDC’s strategy guidance</a> connects priorities to named actions, responsibility, timing and measures. Apply that structure to an explicit resource choice. <a href=\"https://extension.unr.edu/publication.aspx?PubID=4061\">University of Nevada, Reno Extension</a> also treats strategic planning as fundamental direction and decisions, rather than simply a list of tasks.</p>",
+      "<p>Record which of the original two options receives the next available hours and setup cash, what is deferred and what evidence could change the choice. Nearby offices use 100 of the stated 120 delivery hours. The remaining 20 can provide resilience or be offered to additional buyers, but unused capacity is not already revenue. Premium projects use all 120 hours and generate $400 greater modeled monthly result. They also need $4,000 more assumed setup cash. Neither difference by itself settles the strategic choice; compare buyer evidence, collection timing, service quality and the cost of acquiring the work.</p>",
+      "<p>Assign each approved initiative an owner, due date, budget and outcome measure. Check that the same manager-hours or cash are not allocated to incompatible initiatives. A material customer loss, unavailable worker or failed price assumption may warrant review before the next chosen quarterly meeting. Record the trigger and the decision authority in advance. Separate a tactical adjustment within the selected model from a change in the model itself, and preserve the old version for comparison. Do not infer a compulsory review cadence or document length from one educational source. The business needs a usable record of its choices, commitments and evidence.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Do the unused 20 hours automatically create more office revenue?",
+        "a": "No. They are capacity, which may provide resilience or be offered to buyers. Additional accepted demand and its delivery/cash requirements still need evidence."
+      },
+      {
+        "q": "Must a small business wait until a quarterly meeting to review strategy?",
+        "a": "No. Quarterly review is this example’s chosen cadence. A material failed assumption can justify an earlier review under a documented decision process."
+      }
+    ],
+    "replacements": []
+  }
+]

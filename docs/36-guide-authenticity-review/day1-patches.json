@@ -1,0 +1,229 @@
+[
+  {
+    "slug": "customer-profitability-analysis",
+    "heading": "Test the incremental effect before removing an account",
+    "paragraphs": [
+      "<p>The customer ledger above is a management allocation, not a standard contribution-margin income statement. A conventional contribution margin subtracts variable costs from sales; a traceable customer cost can be fixed, and a support allocation can remain payable after the customer leaves. The <a href=\"https://openstax.org/books/principles-managerial-accounting/pages/10-1-identify-relevant-information-for-decision-making\">OpenStax relevant-cost framework</a> supports comparing future amounts that actually differ between alternatives.</p>",
+      "<p>Extend Customer C with another explicitly fictional assumption: its $1,200 direct delivery cost disappears if the account ends, but all support salaries and general overhead remain. Removing C loses $2,000 revenue and avoids only $1,200 cost. The business result falls by $800, from $2,200 to $1,400, before any replacement work. The account’s negative $700 allocated result therefore does not mean closure saves $700.</p>",
+      "<p>Now test released capacity separately. If the team can sell replacement work, list its achievable revenue, additional materials, delivery hours and collection date. Deduct transition costs or contract penalties where supported. Compare that complete alternative with retaining C; do not count both a salary saving and revenue from the same retained employee without explaining the staffing arrangement.</p>",
+      "<p>Keep three columns in the decision record: amount assigned in the reporting ledger, cash actually avoided by the decision, and capacity released. Ask the delivery manager to confirm each assumption and reconcile the chosen action to the next month’s actual cost and customer service evidence.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Why can dropping a customer reduce business profit despite a negative allocated result?",
+        "a": "The customer may still cover costs that remain payable after departure. In the added fictional case, removing $2,000 revenue avoids only $1,200 delivery cost, reducing the business result by $800."
+      },
+      {
+        "q": "Is a directly traceable cost automatically variable?",
+        "a": "No. Traceability identifies the customer or activity; cost behavior describes how the amount changes with activity or a decision. A dedicated salary can be traceable and fixed."
+      }
+    ],
+    "replacements": [
+      {
+        "from": "Customer contribution = net revenue − directly traceable delivery and service costs.",
+        "to": "Defined customer service subtotal = net revenue − directly traceable delivery and service costs."
+      },
+      {
+        "from": "Contribution after support",
+        "to": "Customer subtotal after assigned support"
+      },
+      {
+        "from": "Show contribution and allocated profit separately before deciding whether a relationship should change.",
+        "to": "Show the defined service subtotal and allocated profit separately before deciding whether a relationship should change."
+      },
+      {
+        "from": "a zero contribution after support",
+        "to": "a zero customer subtotal after assigned support"
+      }
+    ],
+    "faqReplacements": [
+      {
+        "fromQ": "Can profit be positive while collections are late?",
+        "toQ": "Can profit be positive while collections are late?",
+        "toA": "Yes. Accrual revenue and the defined customer service subtotal do not establish available cash. Track invoice due dates and receipts separately."
+      }
+    ]
+  },
+  {
+    "slug": "roas-vs-roi",
+    "heading": "Reconcile the reported return to orders, attribution and cash",
+    "paragraphs": [
+      "<p><a href=\"https://support.google.com/google-ads/answer/14090?hl=en\">Google Ads’ ROI example</a> includes production and advertising costs in its stated investment base. That supports the total-cost version used above; it does not make every marketing team’s differently defined return interchangeable. Keep a named numerator, denominator and measurement window beside every percentage.</p>",
+      "<p>For this fictional $12,000 campaign, prepare an order-level bridge from gross tracked value to $12,000 net attributed revenue. Show cancellations, credits and returns once. If the conversion tag sends profit or an assigned lead score rather than revenue, label the platform value accordingly; a 4× value-to-cost ratio then cannot be described as four sales dollars per advertising dollar.</p>",
+      "<p>Incrementality is a separate question. <a href=\"https://support.google.com/google-ads/answer/14102450?hl=en-AU\">Google’s conversion-lift documentation</a> distinguishes experiment-based additional value from attribution-based credit. As an independent teaching calculation, suppose a valid experiment estimated $4,500 incremental revenue against $3,000 media spend: incremental revenue ROAS would be 1.5×. The same ledger could still show 4× attributed ROAS because the numerators answer different questions. This invented experiment result is not a measurement of the site or a customer.</p>",
+      "<p>Before scaling, reconcile finance revenue, platform settings and the experiment’s uncertainty. Also check unsettled processor amounts and the expected return window. A correct reported ratio cannot replace evidence of additional demand, profitable fulfillment or enough cash to fund orders before collections arrive.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Can the same campaign show 4× attributed ROAS and 1.5× incremental ROAS?",
+        "a": "Yes, if a valid experiment supports the different incremental numerator. The added amounts are fictional arithmetic, not evidence that any actual campaign achieved those results."
+      },
+      {
+        "q": "What if conversion value is a lead score rather than revenue?",
+        "a": "Label the ratio conversion value divided by spend. Do not present a score-based conversion value as sales revenue, profit or received cash."
+      }
+    ],
+    "replacements": []
+  },
+  {
+    "slug": "sales-forecast-small-business",
+    "heading": "Calibrate pipeline probability and reconcile it to delivery",
+    "paragraphs": [
+      "<p><a href=\"https://help.salesforce.com/s/articleView?id=forecasts3_best_practices.htm&amp;language=en_US&amp;type=5\">Salesforce’s forecasting guidance</a> recommends maintaining opportunity detail and using historical evidence when adjusting close probabilities. A stage label alone does not prove a reliable chance of winning. Record when each estimate was made, the expected close date and any unresolved condition.</p>",
+      "<p>Consider an additional fictional pipeline: one $10,000 opportunity at an assumed 30% close probability and another $20,000 opportunity at 60%. Their weighted total is $15,000. Actual bookings from these two all-or-nothing opportunities could be $0, $10,000, $20,000 or $30,000. The $15,000 expectation is neither a partial signed contract nor a receipt guaranteed for next month. Correlated customer decisions can also make a downside scenario more severe than the weighted total suggests.</p>",
+      "<p>Assign probable delivery dates only after checking the work. The existing two-offer base already requires all 128 productive worker-hours. Adding a newly won contract to that month without moving another job or obtaining supported additional capacity would overstate executable revenue. Preserve a demand view and a feasible delivery view, then send the feasible invoices and payment terms into cash planning.</p>",
+      "<p>After closing the period, compare the dated opportunity list with wins, losses, slippages and delivery evidence. Investigate systematically optimistic close dates or stage probabilities. Keep the original forecast unchanged so later edits do not erase the forecast error being measured.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Does $15,000 weighted pipeline mean $15,000 will be delivered next month?",
+        "a": "No. It is an expectation from stated opportunity values and assumed probabilities. Wins, timing, recognition and delivery capacity need separate evidence."
+      },
+      {
+        "q": "Can I add won pipeline to the base without another capacity check?",
+        "a": "Only if the original base did not already include those jobs and sufficient delivery resources remain. This example’s base uses all 128 productive worker-hours."
+      }
+    ],
+    "replacements": []
+  },
+  {
+    "slug": "cost-volume-profit-analysis",
+    "heading": "Measure the safety margin inside the relevant capacity range",
+    "paragraphs": [
+      "<p>The <a href=\"https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f5/technical-articles/CVP-analysis.html\">ACCA CVP explanation</a> treats margin of safety as the excess of budgeted or actual sales over break-even sales. It should use the same price, cost assumptions and sales mix as the break-even calculation. It is a sales buffer under that model, not a cash reserve or a probability of avoiding loss.</p>",
+      "<p>At 250 units in the original fictional case, sales are $30,000 and break-even sales are $24,000. The margin of safety is 50 units or $6,000. Dividing $6,000 by $30,000 gives 20%. A loss of 50 sales units reaches zero operating profit under the original $48 unit contribution and $9,600 fixed-cost base. This statement assumes no simultaneous price, mix, variable-rate or fixed-cost change.</p>",
+      "<p>A capacity change requires a fresh calculation. The case’s additional $2,400 commitment raises fixed costs to $12,000, so the revised break-even is 250 units at $48 contribution. At 300 units, the revised result is $2,400 and the revised margin of safety is 50 units, or 16.67% of 300. The old 200-unit threshold no longer explains that committed cost structure.</p>",
+      "<p>Record exactly when the extra commitment becomes unavoidable. If a capacity purchase has already been agreed, returning to a lower sales volume may not restore the old fixed-cost base immediately. Show the applicable range, commitment date and exit terms beside each scenario rather than selecting whichever fixed-cost assumption produces the preferred answer.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Does a 20% margin of safety mean a 20% chance of loss?",
+        "a": "No. It describes the modeled sales reduction to break-even using a stated denominator, not a probability. Demand uncertainty requires separate analysis."
+      },
+      {
+        "q": "Can I retain the old break-even after committing to more fixed capacity?",
+        "a": "No. Recalculate using the applicable committed fixed costs and check whether reducing sales also removes that commitment."
+      }
+    ],
+    "replacements": []
+  },
+  {
+    "slug": "cost-per-hire-vs-employee-cost",
+    "heading": "Reconcile recruiting, compensation and the first-year cash calendar",
+    "paragraphs": [
+      "<p>The <a href=\"https://learnhrm.shrm.org/wp-content/uploads/2015/12/EHRM_demo_excerpt.pdf\">official SHRM teaching excerpt</a> separates external recruiting spending, internal staffing resources and hires during the evaluated period. Its dated publication supports the metric’s components; it is not a current market cost-per-hire benchmark. The two completed starts remain the counted event in this guide’s fictional $2,700 case.</p>",
+      "<p>Retain one row per counted hire, including role, actual start, source and the recruiting campaign reference. Maintain a separate accepted-offer count: a candidate who accepts and then never starts should not silently become a completed start in this example. Explain any cutoff policy for a recruiting campaign spanning several periods, and use the same policy when comparing channels.</p>",
+      "<p>The <a href=\"https://www.bls.gov/opub/hom/ncs/concepts.htm\">BLS National Compensation Measures concepts</a> define compensation through wages/salaries and employee benefits. This article’s employment budget is broader because it also includes equipment, software and separately defined onboarding. Consequently the $58,600 subtotal should not be presented as a BLS compensation statistic or compared directly with an hourly benefits benchmark without reconciling those boundaries.</p>",
+      "<p>Build a dated funding schedule as well as an annual total. A $1,200 equipment payment before the employee starts can create a larger first-month cash need than an annual average suggests. Check whether the $1,000 onboarding amount is genuinely additional; if the same paid hours already sit within the $48,000 salary, remove the duplicate. Retain jurisdiction-specific employer charges as supported inputs rather than applying the example’s amounts as universal payroll rates.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Should an accepted offer that never starts count among the two starts?",
+        "a": "No. This guide’s example counts completed starts. Track accepted offers separately and disclose any different policy used in another report."
+      },
+      {
+        "q": "Is the $58,600 budget a BLS compensation benchmark?",
+        "a": "No. It is an original fictional all-in employment budget with a broader scope, including equipment/software and a separately defined onboarding amount."
+      }
+    ],
+    "replacements": [
+      {
+        "to": "For this example, count completed starts as hires and report accepted offers separately. If another internal report uses a different counted event, disclose it and reconcile the difference before comparing cost-per-hire results.",
+        "from": "Count actual hires using a consistent event, such as accepted offers or starts, and disclose which event you use."
+      },
+      {
+        "to": "$1,000 incremental onboarding paid time outside both the salary and recruiting amounts.",
+        "from": "$1,000 onboarding paid time outside the recruiting definition."
+      }
+    ]
+  },
+  {
+    "slug": "business-financial-contingency-plan",
+    "heading": "Turn the four-week closing balance into a dated funding test",
+    "paragraphs": [
+      "<p>The <a href=\"https://legacy.sba.gov/business-guide/manage-your-business/prepare-emergencies\">SBA emergency-preparedness material</a> covers risk assessment, a business-specific response plan and practice. It supports preparation; it does not establish this example’s $5,000 cash floor or promise financing. Those amounts must follow the business’s actual commitments and decision policy.</p>",
+      "<p>A positive month-end balance can conceal an earlier shortage. Extend the fictional base with dated movements: begin at $18,000, pay $12,000 in week one, then $8,000 in week two, and receive $8,000 in week four. Closing cash is still $6,000, but week-two cash reaches −$2,000. Restoring the selected $5,000 floor before that payment requires $7,000 of timely additional cash or agreed payment changes, rather than the $1,000 month-end buffer suggested by the aggregate base.</p>",
+      "<p>Apply the same timing test to each response. If a $4,000 credit draw can arrive only in week three, it does not solve the week-two payment. If a supplier agrees to defer $1,500, record the replacement due date and include it in the next forecast period. Distinguish removing a genuinely uncommitted purchase from merely postponing an existing obligation.</p>",
+      "<p>Keep the last evidence date beside every available-funding line. Check draw conditions, approvals and settlement delays before treating it as usable. Assign an alternative action if any condition fails, and rehearse the decision before the critical payment date. Disaster assistance, insurance claims and hoped-for receivable collections remain conditional until their amount and timing are supported.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Can month-end positive cash hide an earlier negative balance?",
+        "a": "Yes. The added fictional sequence closes at $6,000 but reaches −$2,000 in week two before its week-four receipt."
+      },
+      {
+        "q": "Does a later credit draw fix an earlier missed payment automatically?",
+        "a": "No. Cash must be usable by the payment deadline, and any draw conditions or settlement delays must be considered."
+      }
+    ],
+    "replacements": [
+      {
+        "to": "https://www.sba.gov/counseling/manage-your-business/",
+        "from": "https://www.sba.gov/business-guide/manage-your-business"
+      }
+    ]
+  },
+  {
+    "slug": "accounts-receivable-vs-accounts-payable",
+    "heading": "Complete the merchandise record without confusing the two prices",
+    "paragraphs": [
+      "<p>The receivable and payable use the invoice selling amount for the transaction between the two businesses. The seller also keeps a separate inventory-cost record. <a href=\"https://openstax.org/books/principles-financial-accounting/pages/6-4-analyze-and-record-transactions-for-the-sale-of-merchandise-using-the-perpetual-inventory-system\">OpenStax’s perpetual-inventory sales entries</a> illustrate both the revenue entry and the separate cost-of-sales entry; customer settlement subsequently reduces the receivable.</p>",
+      "<p>To complete the fictional Harbor example, add a new explicit assumption: the delivered goods cost Harbor $1,800, and the accepted return contains resalable goods originally costing $180. At delivery Harbor records Dr Cost of Goods Sold $1,800 / Cr Inventory $1,800. On the resalable return it records Dr Inventory $180 / Cr Cost of Goods Sold $180. Net seller cost of goods sold is $1,620, and $2,700 net sales minus that cost gives $1,080 gross profit before other expenses. These new cost amounts are teaching assumptions, not a markup inferred from the original invoice.</p>",
+      "<p>The buyer initially records its $3,000 acquisition at the supplier’s selling price; the $300 return leaves a $2,700 purchase amount in this restricted example. That is not the same as Harbor’s $1,620 cost of goods sold. The buyer must then trace what it retains, uses or sells before recognizing its own expense under the applicable policy.</p>",
+      "<p>The $1,000 settlement still leaves both trade accounts open at $1,700 and creates no second sale. Match the agreed due date, bank receipt/payment and credit reference independently. A correct account balance does not prove the returned inventory was resalable or justify using the seller’s cost in the buyer’s ledger.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Why are the seller’s cost and buyer’s inventory purchase different?",
+        "a": "The seller measures its own inventory cost; the buyer records the acquisition price charged by the supplier, subject to its accounting policy. They are different cost records."
+      },
+      {
+        "q": "Does the original $3,000 invoice reveal the seller’s profit?",
+        "a": "No. The seller’s inventory cost and other expenses are needed. The added $1,800 and $180 cost assumptions create a fictional complete example; they are not facts inferred from the invoice."
+      }
+    ],
+    "replacements": []
+  },
+  {
+    "slug": "cost-performance-index",
+    "heading": "Test the remaining efficiency needed to meet a chosen budget",
+    "paragraphs": [
+      "<p>CPI describes cost performance achieved to date. The separate to-complete performance index, or TCPI, asks what efficiency the remaining work would need to meet a selected funding target. <a href=\"https://www.pmi.org/learning/library/to-complete-performance-index-tcpi-6009\">PMI’s TCPI paper</a> explains the remaining-work numerator and the different denominators for the original budget and an approved revised estimate.</p>",
+      "<p>Using the existing fictional status, $50,000 of budgeted work remains: $100,000 BAC minus $50,000 EV. Only $37,500 remains within the original budget: $100,000 minus $62,500 AC. Thus TCPI to the original BAC is $50,000 / $37,500 = 1.3333. That would require substantially better remaining cost efficiency than the measured 0.80 CPI; it is a requirement, not proof the team can achieve it.</p>",
+      "<p>If the selected revised target is the $125,000 EAC, its remaining funding is $62,500 and TCPI becomes $50,000 / $62,500 = 0.80. That matches the continued-efficiency assumption used to derive this EAC. A $120,500 bottom-up EAC gives $58,000 remaining funding and TCPI approximately 0.8621. Each denominator must identify the target being tested; changing the forecast does not erase the original approved baseline.</p>",
+      "<p>When the selected target has no remaining funding, this ratio is undefined or infeasible for positive remaining work. Investigate scope, accrual cutoff, remaining commitments and corrective resources before using the result. Do not interpret 1.3333 as a required percentage margin, a promised productivity improvement or a schedule completion date.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Is TCPI the same as CPI?",
+        "a": "No. CPI measures achieved earned value per actual cost. TCPI divides budgeted remaining work by funds remaining under a specified target."
+      },
+      {
+        "q": "What does 1.3333 TCPI mean in this case?",
+        "a": "The original budget would require about $1.3333 of budgeted remaining work for each remaining actual dollar. It does not show that this required performance is attainable."
+      }
+    ],
+    "replacements": []
+  },
+  {
+    "slug": "profitability-index",
+    "heading": "Test feasible project combinations and make the PI convention explicit",
+    "paragraphs": [
+      "<p><a href=\"https://openstax.org/books/principles-managerial-accounting/pages/11-4-use-discounted-cash-flow-models-to-make-capital-investment-decisions\">OpenStax’s discounted-cash-flow explanation</a> provides the PV-of-net-future-cash-flows divided by initial-investment convention used here. Another convention reports NPV divided by investment. Under this guide’s positive time-zero outlay setup, those figures differ by one: 1.1191 versus 0.1191 for the base case. They can preserve rankings within that setup while using different acceptance thresholds.</p>",
+      "<p>For a separate fictional indivisible-project decision, let a $30,000 budget fund A at $20,000 outlay and $26,000 future PV, or B and C at $15,000 outlay and $19,200 future PV each. Assume all PV amounts already use consistent risk, timing and rate assumptions; there are no dependencies or repeat opportunities. A has PI 1.30 and $6,000 NPV. B and C each have PI 1.28 and $4,200 NPV.</p>",
+      "<p>Ranking only by PI selects A first and leaves $10,000 that cannot buy B or C, producing $6,000 total NPV. Choosing B plus C uses the whole $30,000 budget and yields $8,400 total NPV. The arithmetic demonstrates why a ratio ranking is insufficient when projects cannot be split. It is an original constrained-choice illustration, not an observed investment recommendation.</p>",
+      "<p>List every feasible combination, include required companion investment and compare total NPV under the same stated assumptions. If future funding is also constrained, a single time-zero ratio may miss another bottleneck. Revisit working-capital recovery, terminal costs and discount-rate sensitivity before interpreting a rounded PI near its threshold as a robust decision.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Why do some sources report a PI of 0.1191 rather than 1.1191?",
+        "a": "They may use NPV divided by initial investment rather than PV of future net cash flows divided by initial investment. Reconcile the definition and threshold before comparison."
+      },
+      {
+        "q": "Why does the lower-PI pair beat the highest-PI project here?",
+        "a": "The projects are indivisible. B plus C fits the $30,000 budget and gives $8,400 total NPV, while A leaves unusable funding and gives $6,000."
+      }
+    ],
+    "replacements": []
+  }
+]

@@ -77,3 +77,6 @@ for (const name of await readdir(toolDirectory)) {
 }
 await Promise.all(Object.entries(freeTools).map(([slug,tool]) => writeFile(new URL(slug+'.json',toolDirectory),JSON.stringify(tool))));
 import './build-feature-title-overlays.mjs';
+
+// Run after the original worksheet builders have completed.
+await import('./build-36-guide-reviewed-worksheets.mjs');

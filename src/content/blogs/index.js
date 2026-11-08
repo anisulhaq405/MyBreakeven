@@ -1,3 +1,4 @@
+import {applyAuthenticityReview} from './authenticityReview20261108.js';
 import {twelveDayDay4Posts} from './twelveDayDay4.js';
 import {applyDay4Review} from './twelveDayDay4Review.js';
 import {twelveDayDay3Posts} from './twelveDayDay3.js';
@@ -209,10 +210,10 @@ const normalizePost = post => {
 };
 
 export const blogCollections = Object.freeze({
-  twelveDayDay4: twelveDayDay4Posts,
-  twelveDayDay3: twelveDayDay3Posts,
-  twelveDayDay2: twelveDayDay2Posts,
-  twelveDayDay1: twelveDayDay1Posts,
+  twelveDayDay4: twelveDayDay4Posts.map(applyAuthenticityReview),
+  twelveDayDay3: twelveDayDay3Posts.map(applyAuthenticityReview),
+  twelveDayDay2: twelveDayDay2Posts.map(applyAuthenticityReview),
+  twelveDayDay1: twelveDayDay1Posts.map(applyAuthenticityReview),
   malaysiaReview: malaysiaRestaurantReviewPosts.map(normalizePost),
   financeCompletion: financeCompletionPosts.map(normalizePost),
   financeDay1: financeDay1Posts.map(normalizePost),
