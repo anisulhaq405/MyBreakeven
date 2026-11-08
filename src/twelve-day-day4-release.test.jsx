@@ -1,3 +1,4 @@
+import {applyAuthenticityReview,authenticityReviewSlugs} from './content/blogs/authenticityReview20261108.js';
 import React from 'react';
 import {describe,it,expect} from 'vitest';
 import {renderToStaticMarkup} from 'react-dom/server';
@@ -14,7 +15,7 @@ describe('November 7 Day 4 publication',()=>{
   expect(blogPosts).toHaveLength(before.length+9);
   for(const p of posts){
    expect(before.some(b=>b.slug===p.slug)).toBe(false);
-   expect(blogPostMap[p.slug]).toEqual(p);expect(p.editorialStatus).toBe('published');
+   expect(blogPostMap[p.slug]).toEqual(applyAuthenticityReview(p));expect(p.editorialStatus).toBe('published');
    expect(p.published).toBe('2026-11-07');expect(p.modified).toBe(p.published);
    const html=renderToStaticMarkup(<LongformArticle article={p}/>);
    expect((html.match(/<h1\b/g)||[])).toHaveLength(1);expect(html).not.toContain('Unpublished draft');expect(html).not.toContain('Invalid Date');
@@ -30,6 +31,7 @@ describe('November 7 Day 4 publication',()=>{
   expect(day4ExistingSlugs.size).toBe(4);
   for(const old of before){
    const now=blogPostMap[old.slug];expect(now).toBeDefined();
+   if(authenticityReviewSlugs.has(old.slug))continue; // Fully reviewed under the November 8 198-record baseline test.
    if(!day4ExistingSlugs.has(old.slug)){expect(hash(now),old.slug).toBe(old.sha256);continue;}
    const addition=day4ExistingAdditions[old.slug];expect(now.html.endsWith(addition)).toBe(true);expect(now.html.split(addition)).toHaveLength(2);expect(now.modified).toBe('2026-11-07');
    expect(hash({...now,html:now.html.slice(0,-addition.length),modified:old.modified}),old.slug).toBe(old.sha256);

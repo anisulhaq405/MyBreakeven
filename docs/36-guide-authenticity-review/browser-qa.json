@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-08",
+  "guides": 36,
+  "responsiveLayouts": 72,
+  "iframeWidths": [
+    390,
+    1280
+  ],
+  "actualViewportWidths": [
+    375,
+    1265
+  ],
+  "pageOverflow": false,
+  "oneH1": true,
+  "coverLoaded": true,
+  "quickAnswerAndApplicationVisible": true,
+  "faqsPerGuide": 6,
+  "newFaqInteractions": 36,
+  "reviewedMobileWorksheets": 36,
+  "editableCellsVerified": true,
+  "worksheetReviewNotesVisible": true,
+  "passed": true
+}

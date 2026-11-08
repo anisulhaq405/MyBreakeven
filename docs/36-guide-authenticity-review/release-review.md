@@ -1,0 +1,15 @@
+# Complete 36-guide review — November 8, 2026
+
+The user explicitly authorized a full update of all 36 guides first published in Days 1–4. This review supersedes the prior content-freeze restriction for these 36 only. The nine-per-day canonical inventory is preserved. There are still 198 guides. Source publication dates, URLs, feature images and calculator formulas remain unchanged.
+
+Each guide now has an early quick answer, substantial topic-specific evidence/application material (about 8,000 added words in aggregate), inline references, two additional FAQs and the genuine November 8 update date. References distinguish official rules, publisher education, tool-owner definitions and software workflows. Original numerical cases remain explicitly fictional teaching cases. No market benchmark, client outcome, ranking or professional sign-off is fabricated.
+
+Material corrections: customer service subtotal versus variable-cost contribution; hire-start counting versus accepted offers; incremental onboarding outside salary; loaded/project costs versus variable costs; $3,500 growth result before the separately specified campaign and $2,500 if the $1,000 belongs to that expense period; fictional pilot wrongly described as observed; SEC-hosted issuer taxonomy wrongly presented as accounting guidance; absolute AR/bank wording; scoped merchandise-versus-service obligations; current FASB optional-policy boundary. The exact per-slug changes and primary references are recorded in the four patch/research files.
+
+All 36 downloadable worksheets have new versioned URLs ending worksheet-reviewed-20261108.html, corrected relevant labels, source-backed application notes and clear manual/nonpersistent behavior. Older URLs remain available for existing links. No spreadsheet automation is claimed.
+
+The full 198-record baseline protects the other 162 guides exactly. The 36 original records and deterministic patch manifest make the authorized changes reviewable and testable. New tests independently check avoidable customer cost, weighted pipeline, margin of safety, dated cash troughs, merchandise returns, TCPI, capital-budget combinations and campaign double-counting boundaries; prior calculation regressions remain active.
+
+Local validation: 152 test files / 1,151 tests pass. Production build; all 36 canonical/schema/FAQ/worksheet checks; Day 3 and Day 4 historical acceptance; 275-route/270-sitemap built-site audit pass with no issues. Browser validation: 72 layouts, 36 new-FAQ interactions, 36 editable mobile worksheets pass. Primary release CI and production deployment/live proof are verified after publication, not inferred from these local results.
+
+Source HTTP diagnostics are supplementary, not claim verification. Of 53 prior unique URLs, 51 returned 200 and two Google Ads URLs returned 429 to the HTTP client. Both Google references were retrieved through official web-research results; a rate limit is not evidence that a source is invalid. Newly added source claims were read through primary web retrieval and recorded in the research notes. No SEO-ranking improvement or indexing outcome is claimed by this content review.

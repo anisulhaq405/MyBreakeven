@@ -1,3 +1,4 @@
+import {applyAuthenticityReview,authenticityReviewSlugs} from './content/blogs/authenticityReview20261108.js';
 import {day4ExistingSlugs} from './content/blogs/twelveDayDay4Review.js';
 import React from 'react';
 import {describe,it,expect} from 'vitest';
@@ -15,7 +16,7 @@ describe('November 6 Day 3 publication',()=>{
   expect(blogPosts).toHaveLength(before.length+18);
   for(const p of posts){
    expect(before.some(b=>b.slug===p.slug)).toBe(false);
-   expect(blogPostMap[p.slug]).toEqual(p);expect(p.editorialStatus).toBe('published');
+   expect(blogPostMap[p.slug]).toEqual(applyAuthenticityReview(p));expect(p.editorialStatus).toBe('published');
    expect(p.published).toBe('2026-11-06');expect(p.modified).toBe(p.published);
    const html=renderToStaticMarkup(<LongformArticle article={p}/>);
    expect((html.match(/<h1\b/g)||[])).toHaveLength(1);expect(html).not.toContain('Unpublished draft');expect(html).not.toContain('Invalid Date');
@@ -31,7 +32,7 @@ describe('November 6 Day 3 publication',()=>{
   expect(day3ExistingSlugs.size).toBe(4);
   for(const old of before){
    const now=blogPostMap[old.slug];expect(now).toBeDefined();
-   if(day4ExistingSlugs.has(old.slug))continue; // Exact prior record retained by Day 4 baseline test.
+   if(authenticityReviewSlugs.has(old.slug)||day4ExistingSlugs.has(old.slug))continue; // Exact prior record retained by Day 4 baseline test.
    if(!day3ExistingSlugs.has(old.slug)){expect(hash(now),old.slug).toBe(old.sha256);continue;}
    const addition=day3ExistingAdditions[old.slug];expect(now.html.endsWith(addition)).toBe(true);expect(now.html.split(addition)).toHaveLength(2);expect(now.modified).toBe('2026-11-06');
    expect(hash({...now,html:now.html.slice(0,-addition.length),modified:old.modified}),old.slug).toBe(old.sha256);

@@ -1,0 +1,182 @@
+[
+  {
+    "slug": "accrual-accounting",
+    "heading": "Check recognition, billing and settlement against separate evidence",
+    "paragraphs": [
+      "<p>The <a href=\"https://openstax.org/books/principles-financial-accounting/pages/4-2-discuss-the-adjustment-process-and-illustrate-common-types-of-adjusting-entries\">OpenStax adjustment framework</a> distinguishes accrued items from deferred items. Apply that distinction to the four case records: accepted work supports the revenue assessment; payroll evidence supports the wage accrual; the insurance contract supports the unused coverage; and the customer agreement supports the unearned advance. A bank statement establishes a receipt or payment, but does not establish that every recognition condition was satisfied.</p>",
+      "<p>For a real close, create one row per event with the performance or consumption date, invoice date, due date, settlement date and account reference. Explain any difference rather than forcing all five dates to match. If an invoice includes work still to be delivered, review the separate obligations before assigning the entire invoice to revenue. If an amount is disputed, identify whether the problem concerns the transaction price, the recognition conditions or collectibility; those are different questions.</p>",
+      "<p>The case’s $3,100 profit, $1,200 operating cash movement and $11,200 closing cash answer three defined questions. The owner’s $10,000 investment belongs in the funding bridge, not service revenue. Compare each reconciliation with the same reporting cutoff and included transactions. <a href=\"https://www.irs.gov/publications/p538\">IRS Publication 538</a> is a separate federal tax-method reference; it does not turn this introductory financial-reporting case into a tax return.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Can a customer invoice contain both earned and unearned amounts?",
+        "a": "Yes. Assess the underlying delivery obligations and applicable recognition rules; the invoice total alone does not settle that question."
+      },
+      {
+        "q": "Which evidence supports the insurance adjustment?",
+        "a": "The coverage period and amount in the insurance agreement, together with the payment and prior prepaid balance, support the allocation."
+      }
+    ],
+    "replacements": []
+  },
+  {
+    "slug": "bookkeeping-small-business",
+    "heading": "Build a close package that another person can reproduce",
+    "paragraphs": [
+      "<p>The <a href=\"https://www.irs.gov/businesses/small-businesses-self-employed/what-kind-of-records-should-i-keep\">IRS recordkeeping guidance</a> allows a system suited to the business, while requiring records that support the amounts reported. It does not require this guide’s particular spreadsheet, chart of accounts or monthly timetable. Keep the document that explains a transaction alongside its posting reference; a category selected in an app is not the underlying evidence.</p>",
+      "<p>For the $9,700 cash reconciliation, preserve the original statement, opening book balance, receipts and payments, the omitted $50 fee, and the $250/$400 timing items. The reviewer should be able to reach the same adjusted balance without asking the preparer to remember what happened. Retain subsequent clearing evidence for the timing items. If a payment remains outstanding unusually long, record the investigation rather than deleting it to make the schedule shorter.</p>",
+      "<p>A practical close package also contains customer and supplier detail, the bank reconciliation, asset and loan schedules, approved adjustments, the trial balance and the reports actually reviewed. Make the cutoff and version visible. Record who prepared and reviewed each reconciliation and which issues remain open. Retention is a separate decision: <a href=\"https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records\">IRS retention guidance</a> has different conditions for different records, so a blanket “discard everything after three years” instruction would be misleading. Consider other applicable contractual or legal requirements before disposal.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Must every business use the same chart of accounts?",
+        "a": "No. The chart should support the business and reporting requirements, with consistent account identities and documented mappings."
+      },
+      {
+        "q": "Is a bank-feed category sufficient supporting evidence?",
+        "a": "Not by itself. Retain the invoice, receipt, agreement or other evidence explaining the amount, purpose and reporting period."
+      }
+    ],
+    "replacements": []
+  },
+  {
+    "slug": "accounting-cycle",
+    "heading": "Use a stage-by-stage completion test before carrying balances forward",
+    "paragraphs": [
+      "<p>The <a href=\"https://openstax.org/books/principles-financial-accounting/pages/5-1-describe-and-prepare-closing-entries-for-a-business\">OpenStax closing-entry explanation</a> separates temporary revenue and expense accounts from permanent balance-sheet accounts. The teaching case uses owner capital because it is a sole-proprietor illustration. A corporation may use retained earnings and different distribution accounts. Follow the entity and system actually used instead of copying equity-account names without checking them.</p>",
+      "<p>Treat each stage as a separate control. The unadjusted trial balance must trace to posted journals. Each adjustment needs its own evidence and reference. Statements must reconcile to the adjusted balances. The closing journals must reset only the intended temporary accounts. Finally, permanent balances must agree with the next period’s opening records. A list of stage names without these links does not demonstrate a completed close.</p>",
+      "<p>In this case, $4,400 revenue less $1,600 expenses produces $2,800 profit before closing. Transferring that amount to capital changes where the result is recorded within equity; it does not create another $2,800 of business performance. The $15,200 post-closing debit total is smaller than the $16,800 adjusted debit total because the expense balances have been closed, not because $1,600 cash disappeared at closing. Keep both reports so that difference can be explained. Reversing selected accruals, when the system uses that procedure, is also separate from closing all temporary accounts.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Why do adjusted and post-closing trial-balance totals differ?",
+        "a": "Temporary accounts have been closed. In this case the $1,600 expense debit balances disappear from the post-closing trial balance while the result is transferred to equity."
+      },
+      {
+        "q": "Does transferring profit to capital earn the profit again?",
+        "a": "No. It transfers an already measured result within the accounting records; it is not a new revenue or cash event."
+      }
+    ],
+    "replacements": []
+  },
+  {
+    "slug": "general-ledger-template",
+    "heading": "Read normal balances without treating debit and credit as cash directions",
+    "paragraphs": [
+      "<p>The <a href=\"https://openstax.org/books/principles-financial-accounting/pages/3-5-use-journal-entries-to-record-transactions-and-post-to-t-accounts\">OpenStax journal and posting explanation</a> defines journal entries before their transfer to individual accounts. Debits and credits are the two sides of an entry; their effect depends on the account. Cash and an ordinary receivable normally carry debit balances, while a payable normally carries a credit balance. A contra-asset such as accumulated depreciation has a different normal side from the related asset.</p>",
+      "<p>Use the template as one account’s working record, not a substitute for the whole double-entry system. Every journal reference needs the complete balanced entry in its supporting record. For J03, the absence of cash movement explains why the invoice is missing from the Cash ledger, but it must still be present in Receivables and Revenue. If only bank-feed transactions were imported, the books would omit that unpaid revenue and receivable even though Cash looked correct.</p>",
+      "<p>Check a ledger in both directions: trace selected source documents forward to the journal and ledger, then trace selected ledger lines back to their documents. Compare the date, account, amount and counter-account, not just the existence of a reference. An unusual credit in Cash may be an ordinary payment; an unusual credit balance in a customer account may require investigation or reclassification. The normal-side label helps interpret the balance but cannot replace that review. Preserve approved corrections as traceable entries instead of silently replacing the original row.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Does debit always mean cash received?",
+        "a": "No. Debit identifies one side of an entry. For example, buying equipment for cash debits Equipment and credits Cash."
+      },
+      {
+        "q": "Can one Cash ledger represent every transaction?",
+        "a": "No. Credit sales and other noncash events can affect other accounts without appearing in Cash."
+      }
+    ],
+    "replacements": []
+  },
+  {
+    "slug": "depreciation-methods",
+    "heading": "Separate a reporting method from a tax deduction and an asset valuation",
+    "paragraphs": [
+      "<p>The <a href=\"https://openstax.org/books/principles-financial-accounting/pages/11-3-explain-and-apply-depreciation-methods-to-allocate-capitalized-costs\">OpenStax method comparison</a> supports the straight-line, usage and declining-balance mechanics used here. The choice concerns cost allocation under a reporting policy. It does not establish the asset’s resale value, a replacement-funding balance or a tax deduction. The case explicitly keeps the $14,000 acquisition cash amount the same under all three alternatives.</p>",
+      "<p>For a real asset, retain the purchase and installation evidence, readiness date, approved life and residual assumptions, method rationale and review history. For a usage method, reconcile the period’s production measure to the same unit definition used for total estimated output. Do not use machine-hours for one input and saleable units for the other. For declining balance, retain the residual cap and the policy on any method switch rather than allowing a formula to drive carrying amount below its intended floor.</p>",
+      "<p>Compare the effects using a common cutoff and cost boundary. The first-year service-case results of $7,600, $7,000 and $4,400 assume all depreciation reaches that period’s expenses. They cannot be copied unchanged into a manufacturer’s result if some allocation remains in unsold inventory. For federal tax, <a href=\"https://www.irs.gov/publications/p946\">IRS Publication 946</a> addresses separate eligibility, basis, recovery-method and convention rules. A financial-statement five-year life is not proof that the same five-year tax treatment applies. Keep the reporting schedule and any tax schedule separately reconcilable.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Is a depreciation schedule a replacement fund?",
+        "a": "No. Depreciation is an accounting allocation. A replacement-funding plan requires a separate cash decision."
+      },
+      {
+        "q": "Can units-of-production inputs use different units?",
+        "a": "No. The period usage and estimated lifetime usage must use a consistent measure for the ratio to be meaningful."
+      }
+    ],
+    "replacements": []
+  },
+  {
+    "slug": "accumulated-depreciation",
+    "heading": "Keep impairment, disposal and ordinary depreciation as separate movements",
+    "paragraphs": [
+      "<p>The <a href=\"https://openstax.org/books/principles-financial-accounting/pages/11-5-describe-some-special-issues-in-accounting-for-long-term-assets\">OpenStax long-term-asset discussion</a> treats a revised estimate and a disposal as separate events. The $15,600 closing accumulated balance in this guide is an allocation-and-removal reconciliation under the stated cost-model assumptions. It is not an appraisal of the remaining assets and does not, by itself, establish their recoverable or market values.</p>",
+      "<p>For the disposed item, retain its asset ID, $12,000 cost, $8,400 accumulated allocation through disposal, $4,000 proceeds and any disposal costs. The $400 gain follows only because the case assumes no selling costs and no other carrying-amount adjustments. If costs or another relevant adjustment exist, reconcile them before calculating the result rather than treating gross sale proceeds as net gain. Do not remove another active asset’s accumulated balance simply because its amount makes the group total reconcile.</p>",
+      "<p>The closing gross-cost and accumulated schedules should agree on which asset IDs remain. A fully allocated asset can still be in use; a physical count may identify that fact without creating a new cost or rewriting its previous allocation. Conversely, an item with a positive carrying amount may have been disposed of or lost. Investigate the actual event. Where impairment or another adjustment applies under the reporting framework, show it separately; the simplified equation “cost less accumulated depreciation” is not a universal complete valuation model.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Does a low carrying amount prove impairment?",
+        "a": "No. Carrying amount alone does not establish an impairment conclusion; the applicable framework and evidence require a separate assessment."
+      },
+      {
+        "q": "Why retain asset IDs in the rollforward?",
+        "a": "They help ensure that disposed cost and accumulated balances belong to the same item and that closing balances relate to assets still recorded."
+      }
+    ],
+    "replacements": []
+  },
+  {
+    "slug": "straight-line-depreciation",
+    "heading": "Distinguish a changed estimate from an error in the original schedule",
+    "paragraphs": [
+      "<p>The <a href=\"https://openstax.org/books/principles-financial-accounting/pages/11-5-describe-some-special-issues-in-accounting-for-long-term-assets\">OpenStax discussion of revised estimates</a> illustrates allocating a remaining depreciable amount over a revised remaining life. That is a different task from correcting an arithmetic error. Keep the original approved schedule and document why new information changes an estimate; do not simply overwrite its life or residual assumptions without an effective date.</p>",
+      "<p>In the unchanged case here, April 2027 through March 2032 contains exactly sixty whole months. A genuine revision would require a separately documented carrying amount at the revision date, supported remaining life and updated residual estimate. Use those facts for the future schedule under the applicable policy. A mistake in the original cost, a wrongly entered start date and newly learned usage information are not automatically the same type of change.</p>",
+      "<p>Before using a partial-period result, verify the year, available-for-use date, convention, reporting cutoff and rounding treatment. Reconcile the first partial period and final residual, not just the annual formula. A tax convention cannot be selected solely because it creates the same first-year amount as this teaching case: <a href=\"https://www.irs.gov/publications/p946\">IRS Publication 946</a> is the separate federal tax reference. Likewise, a switch to a usage method or an actual disposal requires its own decision. The manual worksheet preserves a working record but does not automatically implement any of these changes.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Does new useful-life information mean the original accounting was necessarily wrong?",
+        "a": "No. New information can support a change in estimate. An original error requires a separate assessment and treatment."
+      },
+      {
+        "q": "What should be checked before using a partial-year result?",
+        "a": "Check the readiness date, reporting cutoff, stated convention, number of included periods, rounding and final residual balance."
+      }
+    ],
+    "replacements": []
+  },
+  {
+    "slug": "allowance-doubtful-accounts",
+    "heading": "Apply the current policy scope before treating an aging table as an estimate",
+    "paragraphs": [
+      "<p>The official <a href=\"https://storage.fasb.org/ASU%202025-05.pdf\">FASB ASU 2025-05 summary</a> states that the optional changes apply to specified current receivables and contract assets arising under Topic 606. The effective annual periods begin after December 15, 2025, with early adoption permitted. This case does not elect the options; its arithmetic is not evidence that another entity’s population or policy qualifies.</p>",
+      "<p>Before using a real aging matrix, reconcile the population to the gross receivable control, separate credit balances and disputed items for review, and record how due dates are assigned. Keep the loss-rate support, risk grouping, current information and any forecasting assessment together with the calculation. A rate copied from an online article is an unsupported input even when the multiplication is exact. A customer’s overdue status and an approved write-off are also different facts.</p>",
+      "<p>The $2,800 target is a closing allowance balance. The current $2,100 provision follows from the existing $700 credit after the specified write-off and recovery events. If the pre-adjustment allowance were already higher than the supported target, investigate the evidence and policy rather than forcing another positive expense simply because a table has a positive estimated loss. Keep a signed rollforward: opening allowance, provision or release, write-offs, recoveries and other explained movements. Reconcile the net receivable as well as the gross population so an adjustment is not counted twice.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Do the optional FASB changes cover every financial asset?",
+        "a": "No. ASU 2025-05 describes a specified scope for current receivables and contract assets arising from Topic 606 transactions."
+      },
+      {
+        "q": "Must every adjustment to an allowance increase expense?",
+        "a": "No. Compare the supported closing requirement with the signed existing balance and movements; the evidence can require a provision or a release under the applicable policy."
+      }
+    ],
+    "replacements": []
+  },
+  {
+    "slug": "bad-debt-expense",
+    "heading": "Keep an allowance write-off separate from a tax-worthlessness conclusion",
+    "paragraphs": [
+      "<p>The <a href=\"https://openstax.org/books/principles-financial-accounting/pages/9-2-account-for-uncollectible-accounts-using-the-balance-sheet-and-income-statement-approaches\">OpenStax uncollectible-account illustration</a> distinguishes estimation from a later removal of a customer balance. This guide demonstrates that mechanical distinction. It does not present its two-step reinstatement and collection sequence as the only recovery presentation permitted under every accounting policy.</p>",
+      "<p>For each event, identify what actually changed. The $900 provision changes the allowance estimate and included period expense. The $1,200 write-off removes a customer item and uses the existing allowance. The $300 reinstatement restores that item in the illustrated process; the subsequent $300 receipt must match bank evidence. Keep those references together so an automated receipt import cannot create a second collection, a second expense or a new sale.</p>",
+      "<p>An internal credit approval, a financial-reporting estimate, a customer-ledger write-off and a federal tax deduction do not share an automatic trigger. If tax treatment is needed, use the <a href=\"https://www.irs.gov/taxtopics/tc453\">IRS bad-debt topic</a> and the applicable business-debt guidance for the taxpayer and facts. Do not assume an unpaid invoice was previously included in taxable income, especially where a different tax accounting method is used. The numerical case intentionally makes no deductible-amount claim. Preserve the accounting trail even if legal collection activity or a tax assessment follows a different timetable.</p>"
+    ],
+    "faq": [
+      {
+        "q": "Does this guide prescribe the only permitted recovery entry?",
+        "a": "No. It illustrates a two-step reinstatement and receipt sequence; use the policy appropriate to the entity and accounting framework."
+      },
+      {
+        "q": "Does a customer-ledger write-off automatically create a federal deduction?",
+        "a": "No. The applicable tax conditions and accounting-method history require a separate determination."
+      }
+    ],
+    "replacements": []
+  }
+]

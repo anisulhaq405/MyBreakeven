@@ -1,3 +1,4 @@
+import {applyAuthenticityReview} from '../src/content/blogs/authenticityReview20261108.js';
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import path from 'node:path';
@@ -7,7 +8,8 @@ import {twelveDayDay4Posts} from '../src/content/blogs/twelveDayDay4.js';
 import {day4ExistingAdditions} from '../src/content/blogs/twelveDayDay4Review.js';
 const report=[];
 const sitemap=await fs.readFile('dist/sitemap.xml','utf8');
-for(const p of twelveDayDay4Posts){
+for(const original of twelveDayDay4Posts){
+ const p=applyAuthenticityReview(original);
  const canonical=`https://mybreakeven.com/blogs/${p.slug}/`;
  const html=await fs.readFile(`dist/blogs/${p.slug}/index.html`,'utf8');
  assert(html.includes(`rel="canonical" href="${canonical}"`),p.slug+' canonical');
@@ -18,7 +20,7 @@ for(const p of twelveDayDay4Posts){
  const blocks=[...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
  const nodes=blocks.flatMap(b=>b['@graph']||[b]);
  const article=nodes.find(n=>n['@type']==='BlogPosting');assert(article,p.slug+' schema');
- assert.equal(article.datePublished,'2026-11-07');assert.equal(article.dateModified,'2026-11-07');assert.equal(article.headline,p.title);
+ assert.equal(article.datePublished,'2026-11-07');assert.equal(article.dateModified,p.modified);assert.equal(article.headline,p.title);
  const faq=nodes.find(n=>n['@type']==='FAQPage');assert.equal(faq.mainEntity.length,p.faq.length);
  for(const q of faq.mainEntity)assert(html.includes(q.name.replaceAll('&','&amp;')),p.slug+' visible FAQ');
  const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);assert.equal(new Set(ids).size,ids.length);
