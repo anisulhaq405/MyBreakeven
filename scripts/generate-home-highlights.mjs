@@ -1,3 +1,4 @@
+import './build-12day-day5-assets.mjs';
 import './build-12day-day4-assets.mjs';
 import './build-12day-day3-assets.mjs';
 import './build-12day-day2-assets.mjs';
@@ -30,6 +31,7 @@ await writeFile(new URL("../src/homeBlogData.js", import.meta.url),
   `// Generated from the blog registry before dev and build.\nexport const homeBlogData = ${JSON.stringify(highlights)};\n`);
 
 const groupFor = slug => {
+  if (blogCollections.twelveDayDay5.some(post=>post.slug===slug)) return 'twelveDayDay5';
   if (blogCollections.twelveDayDay4.some(post=>post.slug===slug)) return 'twelveDayDay4';
   if (blogCollections.twelveDayDay3.some(post=>post.slug===slug)) return 'twelveDayDay3';
   if (blogCollections.twelveDayDay2.some(post=>post.slug===slug)) return 'twelveDayDay2';

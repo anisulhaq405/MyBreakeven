@@ -1,0 +1,439 @@
+[
+  {
+    "id": "N043",
+    "slug": "cost-benefit-analysis",
+    "title": "Cost-Benefit Analysis: Incremental Cash, Discounting and Decision Evidence",
+    "seoTitle": "Cost-Benefit Analysis: Costs, Benefits and NPV",
+    "description": "Compare incremental costs and benefits against a baseline. Check a discounted example, uncertainty, payback and nonfinancial conditions before deciding.",
+    "primaryKeyword": "cost benefit analysis",
+    "scopeBoundary": "Decision-level incremental benefit/cost comparison; not a replacement for the profitability-index, CVP, cash-forecast or strategic-planning owners.",
+    "opening": "Cost-benefit analysis compares the additional consequences of a decision with a defined alternative. Identify who bears each cost, when each benefit occurs and what cannot credibly be monetized before interpreting a total or ratio.",
+    "sections": [
+      {
+        "id": "decision-baseline",
+        "title": "Define the decision and the alternative first",
+        "html": "<p>Write the question in operational terms: should a workshop replace its manual scheduling process with a specified system for the next three years? Compare that option with continuing the present process, including the costs and performance reasonably expected without the change. A baseline is not automatically zero cost or zero improvement. Include a lower-cost repair or smaller pilot if it could meet the same objective.</p><p>This guide uses an original fictional USD business case, not a vendor quote, observed customer result or investment recommendation. Its perspective is the workshop\u2019s incremental operating cash before financing and income tax. A social benefit-cost analysis can include effects on other parties and therefore have a different boundary. <a href=\"https://www.whitehouse.gov/wp-content/uploads/2025/12/a094.pdf\">OMB Circular A-94</a> is a federal-program methodological reference; it does not set this private business\u2019s hurdle rate or approval policy.</p>"
+      },
+      {
+        "id": "incremental-scope",
+        "title": "Build a cost-and-benefit register without double counting",
+        "html": "<p>Include future changes caused by choosing the option: setup, integration, training, recurring fees, transition disruption, decommissioning and any supported residual proceeds. Identify a resource\u2019s next-best use when an opportunity cost matters. A nonrefundable study fee already paid before the decision is normally outside the future incremental comparison; an unpaid cancellation obligation or avoidable next stage can still be relevant. Record the reason for each inclusion or exclusion.</p><p>Do not value the same released labor twice as both avoided payroll and additional delivery contribution. If payroll continues, freed hours are capacity, not automatically cash savings. Include incremental sales only through their additional cash contribution after the associated costs, rather than adding gross revenue and ignoring fulfillment. Use a separate nonfinancial record for effects that lack a defensible monetary estimate. A precise spreadsheet cannot turn an unsupported claim into evidence.</p>"
+      },
+      {
+        "id": "dated-case",
+        "title": "Reconcile a dated three-year teaching case",
+        "html": "<p>Assume $18,000 implementation plus $2,000 transition cash at time zero. Each year-end brings $12,000 of avoided external-service payments relative to the baseline and $4,000 incremental operating payments. Assume identical nominal dollar amounts each year, a three-year horizon, no taxes, financing, terminal proceeds or working-capital change. These exclusions keep the arithmetic inspectable; a real proposal must assess them rather than presume they are immaterial.</p><div class=\"article-table-scroll\"><table><caption>Original incremental case; USD and year-end timing</caption><thead><tr><th scope=\"col\">Date</th><th scope=\"col\">Gross benefit</th><th scope=\"col\">Incremental cost</th><th scope=\"col\">Net cash</th><th scope=\"col\">PV of net at 8%</th></tr></thead><tbody><tr><th scope=\"row\">Today, t=0</th><td>0</td><td>20,000</td><td>\u221220,000</td><td>\u221220,000.00</td></tr><tr><th scope=\"row\">End of year 1</th><td>12,000</td><td>4,000</td><td>8,000</td><td>7,407.41</td></tr><tr><th scope=\"row\">End of year 2</th><td>12,000</td><td>4,000</td><td>8,000</td><td>6,858.71</td></tr><tr><th scope=\"row\">End of year 3</th><td>12,000</td><td>4,000</td><td>8,000</td><td>6,350.66</td></tr><tr><th scope=\"row\">Total, unrounded calculation</th><td>36,000</td><td>32,000</td><td>4,000</td><td>616.78 NPV</td></tr></tbody></table></div><p>Undiscounted benefits total $36,000 and costs total $32,000, producing a $4,000 net benefit. That sum treats a dollar received in year three like a dollar spent today, so it is a screening total rather than the discounted decision result. Preserve the gross benefit and cost columns even when a net cash column is convenient.</p>"
+      },
+      {
+        "id": "discounted-comparison",
+        "title": "Discount benefits and costs on the same basis",
+        "html": "<p>For a stated rate r and end-of-year amount in year t, present value equals amount / (1 + r)<sup>t</sup>. Use the same timing convention, currency and price basis across the comparison. Nominal cash amounts require a compatible nominal rate; constant-price amounts require a compatible real rate. Do not add an inflation forecast to cash flows and then discount them with an unrelated real assumption.</p><p>At an illustrative 8% nominal rate, the three-year discount-factor sum is 2.577096987. Present-value benefits are $30,925.16. Present-value costs are $20,000 + $4,000 \u00d7 2.577096987 = $30,308.39. NPV is $616.78, and the explicitly defined benefit-cost ratio is PV benefits / PV costs = 1.02035. Calculate from unrounded values and round displayed amounts only. An OMB Appendix C rate is not automatically appropriate for this business.</p>"
+      },
+      {
+        "id": "metrics-boundaries",
+        "title": "Keep ROI, payback and NPV as separate questions",
+        "html": "<p>A simple undiscounted return defined here as net benefit / total incremental cost is $4,000 / $32,000 = 12.5% over the full three-year horizon. It is not an annual return or an internal rate of return. Other ROI conventions can use a different denominator, so show yours rather than comparing unlabeled percentages. The <a href=\"/blogs/roas-vs-roi/\">ROAS-versus-ROI guide</a> separately explains campaign return boundaries.</p><p>After two annual net receipts, $4,000 of the initial $20,000 remains unrecovered. Assuming benefits accrue uniformly within year three gives an interpolated simple payback of 2.5 years. Under the actual year-end-only timing in the table, recovery occurs at the third payment. Discounted payback must use discounted cash and still does not capture benefits beyond its cutoff. Use <a href=\"/blogs/profitability-index/\">profitability index</a> for that separate capital-ranking question, with its own numerator definition.</p>"
+      },
+      {
+        "id": "sensitivity-conditions",
+        "title": "Test the fragile assumptions and nonfinancial conditions",
+        "html": "<p>At the same $8,000 annual net cash, illustrative rates of 4%, 8% and 12% give NPVs of $2,200.73, $616.78 and \u2212$785.35. If annual gross benefit is only $10,000 while operating cost remains $4,000, NPV at 8% becomes \u2212$4,537.42. The gross annual benefit required for zero NPV under these assumptions is about $11,760.67. These are original scenario calculations, not probability estimates.</p><p>The <a href=\"https://www.gao.gov/products/gao-20-195g\">GAO cost-estimating guide</a> recommends documenting assumptions and sensitivity rather than presenting one estimate without its drivers. Link each scenario to a question that can be investigated: supplier price, implementation delay, usable capacity or actual baseline spending. Keep service reliability, data-access requirements, accessibility and exit feasibility as explicit criteria. A positive NPV does not override a failed mandatory requirement, and unsupported scores should not be disguised as dollar benefits.</p>"
+      },
+      {
+        "id": "decision-record",
+        "title": "Approve a testable decision and review actual results",
+        "html": "<p>Record the chosen alternative, dated input evidence, cash owner, accepted uncertainty and stop conditions. Before a full commitment, a bounded pilot can test whether the assumed external-service payment really disappears and whether the replacement meets its delivery requirement. State what result would change the decision instead of selecting a threshold after the pilot outcome is known.</p><p>After launch, compare actual incremental payments and achieved benefits with the original baseline. Preserve the prior version when revising the forecast. Feed payment dates into the <a href=\"/blogs/cash-flow-forecast-vs-break-even/\">cash-flow forecast</a>. Benefits can arrive late even when the three-year total looks acceptable. The worksheet is a manual evidence record, not an automatic financial appraisal.</p>"
+      }
+    ],
+    "worksheet": {
+      "headers": [
+        "Date",
+        "Gross benefit USD",
+        "Cost USD",
+        "Net USD",
+        "PV at 8% USD"
+      ],
+      "rows": [
+        [
+          "Today, t=0",
+          "0",
+          "20,000",
+          "\u221220,000",
+          "\u221220,000.00"
+        ],
+        [
+          "End of year 1",
+          "12,000",
+          "4,000",
+          "8,000",
+          "7,407.41"
+        ],
+        [
+          "End of year 2",
+          "12,000",
+          "4,000",
+          "8,000",
+          "6,858.71"
+        ],
+        [
+          "End of year 3",
+          "12,000",
+          "4,000",
+          "8,000",
+          "6,350.66"
+        ],
+        [
+          "Total, unrounded calculation",
+          "36,000",
+          "32,000",
+          "4,000",
+          "616.78 NPV"
+        ]
+      ],
+      "blankHeaders": [
+        "Alternative / baseline",
+        "Evidence / owner",
+        "Date / horizon",
+        "Incremental benefit / cost",
+        "Rate / basis",
+        "Nonfinancial condition / decision"
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is cost-benefit analysis?",
+        "a": "It compares the additional costs and benefits of a defined option with a stated alternative, including timing, uncertainty and relevant nonfinancial effects."
+      },
+      {
+        "q": "Is the benefit-cost ratio the same as ROI?",
+        "a": "No. This case defines BCR as present-value benefits divided by present-value costs, while its simple ROI uses undiscounted net benefit divided by total incremental cost."
+      },
+      {
+        "q": "Is an 8% discount rate recommended for my business?",
+        "a": "No. It is a fictional teaching assumption. Select and support a rate consistent with the decision, price basis and risk treatment."
+      },
+      {
+        "q": "Should time saved be counted as cash saved?",
+        "a": "Only when a supported cash consequence follows. If payroll continues, released time can be capacity rather than an avoided payment."
+      },
+      {
+        "q": "Does payback include every benefit?",
+        "a": "No. Payback asks when the initial amount is recovered under its timing convention and can ignore later benefits and other decision effects."
+      },
+      {
+        "q": "Can a positive NPV override a legal or operational requirement?",
+        "a": "No. Treat mandatory requirements and unmonetized consequences explicitly rather than allowing a financial subtotal to erase them."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.whitehouse.gov/wp-content/uploads/2025/12/a094.pdf",
+        "label": "OMB Circular A-94: federal benefit-cost method; private-case rate is independently assumed"
+      },
+      {
+        "url": "https://www.whitehouse.gov/omb/information-resources/guidance/circulars/",
+        "label": "OMB current circular index and 2026 Appendix C listing"
+      },
+      {
+        "url": "https://www.gao.gov/products/gao-20-195g",
+        "label": "GAO: documented assumptions and sensitivity analysis"
+      }
+    ]
+  },
+  {
+    "id": "N044",
+    "slug": "activity-based-costing",
+    "title": "Activity-Based Costing: Reconcile Cost Pools, Drivers and Product Costs",
+    "seoTitle": "Activity-Based Costing: Pools and Example",
+    "description": "Build a reconciled activity-based costing example with three pools, two products and a separate unused-capacity scenario. Test drivers before using the result.",
+    "primaryKeyword": "activity based costing",
+    "scopeBoundary": "Complete multiple-pool ABC allocation and capacity interpretation; the cost-drivers and job-order-costing guides retain their own driver-selection and job-sheet scopes.",
+    "opening": "Activity-based costing traces resource costs to activities and then assigns activity costs to the products, services or customers that use them. Its value depends on a defensible cost boundary, meaningful drivers and a complete reconciliation.",
+    "sections": [
+      {
+        "id": "boundary",
+        "title": "Define what the ABC model will explain",
+        "html": "<p>Start with the decision and cost object. A product-cost model, a customer cost-to-serve model and a quote for one job can need different pools. Write which ledger costs are included and which remain outside the model. Direct materials or directly traced labor must not be added to an overhead pool and then charged to the product a second time.</p><p><a href=\"https://openstax.org/books/principles-managerial-accounting/pages/6-3-calculate-activity-based-product-costs\">OpenStax\u2019s ABC lesson</a> describes assigning indirect costs through activity pools and drivers. This guide supplies a separate original fictional USD manufacturing case with two products and three support pools for one period. It does not reuse a source\u2019s numerical case, claim that an allocation measures avoidable cash or prescribe an external-reporting inventory policy. Use the <a href=\"/blogs/customer-profitability-analysis/\">customer profitability guide</a> when customer-specific support is the question.</p>"
+      },
+      {
+        "id": "pools-drivers",
+        "title": "Build pools whose activity records can be checked",
+        "html": "<p>The fictional factory has $18,000 setup support, $12,000 inspection and $30,000 machine support: $60,000 included overhead. The case assumes these pools are mutually exclusive and fully reconciled to the selected ledger accounts. Setup counts are appropriate only under its assumption that setups require sufficiently similar resources; inspection and machine support use hours rather than units sold.</p><div class=\"article-table-scroll\"><table><caption>Original pool budget and matched activity quantities</caption><thead><tr><th scope=\"col\">Pool</th><th scope=\"col\">Cost USD</th><th scope=\"col\">Total driver</th><th scope=\"col\">Calculated rate</th><th scope=\"col\">Product A driver</th><th scope=\"col\">Product B driver</th></tr></thead><tbody><tr><th scope=\"row\">Setup support</th><td>18,000</td><td>40 setups</td><td>450 / setup</td><td>10</td><td>30</td></tr><tr><th scope=\"row\">Inspection</th><td>12,000</td><td>200 inspection hours</td><td>60 / hour</td><td>120</td><td>80</td></tr><tr><th scope=\"row\">Machine support</th><td>30,000</td><td>2,000 machine hours</td><td>15 / hour</td><td>1,500</td><td>500</td></tr><tr><th scope=\"row\">Total resources</th><td>60,000</td><td>Different driver units</td><td>Do not add rates</td><td>\u2014</td><td>\u2014</td></tr></tbody></table></div><p>Keep costs and activity in the same period. Record whether the quantities are budgeted or actual, what a setup includes, how hours are captured and who reviews incomplete logs. A count generated by software can still omit rework or combine different activity definitions. A driver should explain resource consumption for the chosen pool, not merely correlate with revenue.</p>"
+      },
+      {
+        "id": "allocation",
+        "title": "Apply each rate and reconcile the complete allocation",
+        "html": "<p>For each pool, rate = included pool cost / selected driver quantity. Product allocation = pool rate \u00d7 product driver consumption. These units matter: dollars per setup cannot be added directly to dollars per inspection hour. Apply the rates separately, then add the dollar allocations. A zero denominator with a nonzero pool is an unresolved model condition, not permission to return a zero rate.</p><div class=\"article-table-scroll\"><table><caption>Original ABC allocation; USD except units</caption><thead><tr><th scope=\"col\">Pool or measure</th><th scope=\"col\">Product A</th><th scope=\"col\">Product B</th><th scope=\"col\">Reconciliation</th></tr></thead><tbody><tr><th scope=\"row\">Setup support</th><td>4,500</td><td>13,500</td><td>18,000</td></tr><tr><th scope=\"row\">Inspection</th><td>7,200</td><td>4,800</td><td>12,000</td></tr><tr><th scope=\"row\">Machine support</th><td>22,500</td><td>7,500</td><td>30,000</td></tr><tr><th scope=\"row\">Total ABC overhead</th><td>34,200</td><td>25,800</td><td>60,000</td></tr><tr><th scope=\"row\">Units produced</th><td>1,000</td><td>500</td><td>1,500</td></tr><tr><th scope=\"row\">Overhead per unit</th><td>34.20</td><td>51.60</td><td>Not an additive total</td></tr></tbody></table></div><p>Product A receives $4,500 + $7,200 + $22,500 = $34,200. Product B receives $13,500 + $4,800 + $7,500 = $25,800. The allocations sum to $60,000, and each pool also reconciles individually. Dividing by 1,000 and 500 completed units gives $34.20 and $51.60 overhead per unit. This case has no work in process, losses or unallocated base-case cost.</p>"
+      },
+      {
+        "id": "comparison",
+        "title": "Explain the difference from one machine-hour rate",
+        "html": "<p>A single-rate comparison would allocate $60,000 / 2,000 machine hours = $30 per machine hour. That assigns $45,000 to A and $15,000 to B, or $45 and $30 per unit. Relative to that method, ABC shifts $10,800 from A to B without changing total included overhead. B has fewer machine hours but more setups, which is why the mix of activities changes the assignment.</p><p>Assume separately traced manufacturing costs of $26 per A unit and $34 per B unit. The base-case ABC assigned manufacturing costs become $60.20 and $85.60 per unit; the single-rate comparison gives $71 and $64. These are assigned manufacturing costs, not contribution margins, market prices or complete business profits. Nonmanufacturing costs, demand and capacity remain outside this comparison. A more complicated method is useful only if the resulting decision information justifies maintaining the evidence.</p>"
+      },
+      {
+        "id": "capacity",
+        "title": "Report an unused-capacity scenario separately",
+        "html": "<p>The base case divides the machine-support pool by its specified 2,000 used hours. Now consider a separate management scenario in which the same $30,000 resource budget supplies 2,500 practical machine hours, but only 2,000 are used. A practical-capacity rate is $12 per hour. A receives $18,000 machine support and B $6,000; $6,000 is shown separately as unused machine capacity.</p><p>Keeping setup and inspection allocations unchanged gives A $29,700 and B $24,300, totaling $54,000 assigned plus $6,000 unused = $60,000 supplied. <a href=\"https://www.library.hbs.edu/working-knowledge/rethinking-activity-based-costing\">Harvard Business School\u2019s capacity discussion</a> explains why resource use and resource supply need separate visibility. This alternative management model is not a direction to capitalize or expense amounts under a particular reporting standard. Preserve its denominator and separate it from the full-allocation base case rather than silently switching the rate.</p>"
+      },
+      {
+        "id": "decision",
+        "title": "Do not turn an allocated saving into an automatic cash saving",
+        "html": "<p>Stopping Product B would remove its recorded activity demand from this model, but not necessarily its share of paid staff, machinery or facility commitments. Identify which resources can actually be reduced, when contracts can change and whether released capacity has a better use. A cost transfer between products changes the report even when the next bank payment is identical.</p><p>Test driver quality before changing price or mix. If B\u2019s thirty setups include many short changeovers while A\u2019s ten are unusually long, setup count may distort the assignment; measure duration or split genuinely different activities. If inspection hours reflect defects, retain the distinction between necessary inspection and avoidable rework. Reconcile the proposed action to <a href=\"/blogs/cost-volume-profit-analysis/\">CVP assumptions</a> only after identifying which costs change with activity and which remain committed.</p>"
+      },
+      {
+        "id": "controls",
+        "title": "Maintain the model as an evidence-backed operating record",
+        "html": "<p>Preserve pool account mappings, driver definitions, quantity sources, rate version and reconciliation. Investigate any variance between budgeted resource cost, applied activity cost and actual ledger spending instead of hiding it in the unit price. Document treatment of facility-sustaining activity and excluded costs; forcing every cost through an arbitrary driver can make a complete-looking model less informative.</p><p>Update when process design, product mix, resource prices or capacity changes materially, and retain the previous version for comparison. A small pilot with a few consequential pools can reveal whether better records alter the decision before every minor expense is modeled. The <a href=\"/blogs/cost-drivers-small-business/\">cost-driver guide</a> supports driver investigation; <a href=\"/blogs/job-order-costing/\">job order costing</a> supports a job-level cost sheet. This worksheet records assumptions and allocations manually and does not calculate rates or audit source records automatically.</p>"
+      }
+    ],
+    "worksheet": {
+      "headers": [
+        "Pool / measure",
+        "Product A USD",
+        "Product B USD",
+        "Control total / unit"
+      ],
+      "rows": [
+        [
+          "Setup support",
+          "4,500",
+          "13,500",
+          "18,000"
+        ],
+        [
+          "Inspection",
+          "7,200",
+          "4,800",
+          "12,000"
+        ],
+        [
+          "Machine support",
+          "22,500",
+          "7,500",
+          "30,000"
+        ],
+        [
+          "Total ABC overhead",
+          "34,200",
+          "25,800",
+          "60,000"
+        ],
+        [
+          "Units produced",
+          "1,000",
+          "500",
+          "1,500"
+        ],
+        [
+          "Overhead per unit",
+          "34.20",
+          "51.60",
+          "Not an additive total"
+        ]
+      ],
+      "blankHeaders": [
+        "Pool / ledger reference",
+        "Cost USD",
+        "Driver / denominator",
+        "Rate / units",
+        "Object usage / allocation",
+        "Unused / excluded / reviewer"
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is the activity-based costing formula?",
+        "a": "For each pool, divide the included cost by the selected driver quantity, multiply by each object\u2019s usage and reconcile the resulting allocations."
+      },
+      {
+        "q": "Must every pool use the same driver?",
+        "a": "No. A setup count, inspection hour and machine hour can represent different resource demands; their definitions and evidence must match their pools."
+      },
+      {
+        "q": "Does ABC change the total overhead incurred?",
+        "a": "Allocation alone changes who receives the included cost, not the underlying total spending. Separate actual resource changes from reporting transfers."
+      },
+      {
+        "q": "Why is Product B more costly under this example\u2019s ABC model?",
+        "a": "It uses thirty of forty setups despite using fewer machine hours, so multiple drivers assign it more setup support than the single-rate comparison."
+      },
+      {
+        "q": "Is unused capacity a cash saving?",
+        "a": "Not automatically. Cash changes only when the resource supply or other relevant cash consequence changes; unused availability can also support future work."
+      },
+      {
+        "q": "Is this an automatic external-reporting inventory calculation?",
+        "a": "No. It is a management-costing illustration. Financial-statement inventory must follow the applicable recognition, allocation and measurement requirements."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openstax.org/books/principles-managerial-accounting/pages/6-3-calculate-activity-based-product-costs",
+        "label": "OpenStax: activity pools, drivers and allocation mechanics"
+      },
+      {
+        "url": "https://www.library.hbs.edu/working-knowledge/rethinking-activity-based-costing",
+        "label": "Harvard Business School: resource use, supply and unused capacity"
+      }
+    ]
+  },
+  {
+    "id": "N045",
+    "slug": "absorption-vs-variable-costing",
+    "title": "Absorption vs Variable Costing: Inventory and Profit Reconciliation",
+    "seoTitle": "Absorption vs Variable Costing: Profit Bridge",
+    "description": "Compare absorption and variable costing using two months of production and sales. Reconcile fixed manufacturing overhead, inventory and operating profit.",
+    "primaryKeyword": "absorption vs variable costing",
+    "scopeBoundary": "Manufacturing fixed-overhead inventory timing and two-period profit bridge; contribution income statement and generic COGS pages retain their formats and primary tasks.",
+    "opening": "Absorption and variable costing differ in how fixed manufacturing overhead enters product cost and current-period expense. Reconcile production, sales and inventory before explaining a profit difference between the two reports.",
+    "sections": [
+      {
+        "id": "cost-boundary",
+        "title": "Separate manufacturing cost from selling and administration",
+        "html": "<p>In the simplified methods compared here, both reports include variable manufacturing cost in units produced. Absorption costing also assigns fixed manufacturing overhead to inventory; variable costing charges that fixed manufacturing amount to the period instead. Selling and administrative costs remain outside manufacturing inventory in this case. Fixed marketing expense must not be absorbed merely because it is fixed.</p><p><a href=\"https://openstax.org/books/principles-managerial-accounting/pages/6-5-compare-and-contrast-variable-and-absorption-costing\">OpenStax\u2019s comparison</a> explains the basic timing difference. The following two-month USD case is original fictional teaching material, not a company result. It assumes one homogeneous product, no work in process, returns, scrap, taxes, financing, valuation write-down or overhead spending variance. Actual financial reporting needs the applicable inventory policy and classification review; the exercise does not establish tax treatment or compliance for a particular entity.</p>"
+      },
+      {
+        "id": "unit-inputs",
+        "title": "Calculate one supported manufacturing rate",
+        "html": "<p>Assume direct materials $12, direct labor $5 and variable manufacturing overhead $3 per completed unit. Variable manufacturing cost is therefore $20. Fixed manufacturing overhead is $6,000 per month. The selected normal-capacity illustration is 1,000 units each month, equal to actual production in both months, giving $6 fixed manufacturing overhead per unit. Absorption manufacturing cost is $26 per unit; variable manufacturing cost is $20.</p><p>Selling price is $40 per unit sold. Variable selling cost is $2 per unit sold, and fixed selling/administrative cost is $3,000 monthly. Keep the production denominator separate from the sales denominator: manufacturing allocation uses the specified production/capacity basis, while variable selling expense follows sales in this case. Direct labor is assumed variable for this exercise only; a real workforce arrangement can behave differently and must be classified from its facts.</p>"
+      },
+      {
+        "id": "physical-units",
+        "title": "Reconcile the physical units before comparing income",
+        "html": "<p>Month one starts with zero finished goods, produces 1,000 units and sells 800, leaving 200. Month two starts with those 200, produces another 1,000 and sells 1,100, leaving 100. The identity beginning units + units completed \u2212 units sold = ending units holds for each month. No unit can be sold twice or disappear solely because the reporting method changes.</p><div class=\"article-table-scroll\"><table><caption>Original physical movement; completed identical units</caption><thead><tr><th scope=\"col\">Measure</th><th scope=\"col\">Month 1</th><th scope=\"col\">Month 2</th></tr></thead><tbody><tr><th scope=\"row\">Opening finished goods</th><td>0</td><td>200</td></tr><tr><th scope=\"row\">Completed production</th><td>1,000</td><td>1,000</td></tr><tr><th scope=\"row\">Units available</th><td>1,000</td><td>1,200</td></tr><tr><th scope=\"row\">Units sold</th><td>800</td><td>1,100</td></tr><tr><th scope=\"row\">Closing finished goods</th><td>200</td><td>100</td></tr></tbody></table></div><p>Both methods use the same physical quantities, price and selling costs. Because all manufacturing rates are constant and the units are identical in this case, cost-flow assumptions do not change its numerical bridge. If costs vary between periods, opening layers must retain their own fixed-overhead content; multiplying every historical unit by today\u2019s rate would be an unsupported shortcut.</p>"
+      },
+      {
+        "id": "income-comparison",
+        "title": "Prepare the two reports from the same facts",
+        "html": "<p>Month-one sales are $32,000. Absorption COGS is 800 \u00d7 $26 = $20,800. After $1,600 variable selling and $3,000 fixed selling/administration, operating profit is $6,600. Variable costing deducts $16,000 variable manufacturing COGS and $1,600 variable selling to reach $14,400 contribution, then deducts $6,000 fixed manufacturing and $3,000 fixed selling/administration, giving $5,400.</p><div class=\"article-table-scroll\"><table><caption>Original comparison; USD; cost lines are positive deductions</caption><thead><tr><th scope=\"col\">Line</th><th scope=\"col\">M1 absorption</th><th scope=\"col\">M1 variable</th><th scope=\"col\">M2 absorption</th><th scope=\"col\">M2 variable</th></tr></thead><tbody><tr><th scope=\"row\">Sales</th><td>32,000</td><td>32,000</td><td>44,000</td><td>44,000</td></tr><tr><th scope=\"row\">Manufacturing cost of goods sold</th><td>20,800</td><td>16,000</td><td>28,600</td><td>22,000</td></tr><tr><th scope=\"row\">Variable selling expense</th><td>1,600</td><td>1,600</td><td>2,200</td><td>2,200</td></tr><tr><th scope=\"row\">Fixed manufacturing expense shown separately</th><td>0</td><td>6,000</td><td>0</td><td>6,000</td></tr><tr><th scope=\"row\">Fixed selling/admin expense</th><td>3,000</td><td>3,000</td><td>3,000</td><td>3,000</td></tr><tr><th scope=\"row\">Operating profit</th><td>6,600</td><td>5,400</td><td>10,200</td><td>10,800</td></tr><tr><th scope=\"row\">Closing inventory</th><td>5,200</td><td>4,000</td><td>2,600</td><td>2,000</td></tr></tbody></table></div><p>Month-two sales are $44,000. Absorption COGS is 1,100 \u00d7 $26 = $28,600, and variable manufacturing COGS is $22,000. The same $2,200 variable selling and $3,000 fixed selling/administration apply to both reports. Variable costing additionally shows the month\u2019s $6,000 fixed manufacturing charge separately. Do not subtract the full $6,000 again from absorption profit after its inventory/COGS allocation.</p>"
+      },
+      {
+        "id": "fixed-overhead-bridge",
+        "title": "Explain the profit bridge through inventory",
+        "html": "<p>Use amounts, not only the direction of unit movement: absorption profit \u2212 variable profit = fixed manufacturing overhead in ending inventory \u2212 fixed manufacturing overhead in beginning inventory, under this case\u2019s assumptions. In month one the bridge is 200 \u00d7 $6 \u2212 $0 = $1,200, so $6,600 \u2212 $5,400 = $1,200. Absorption defers that amount in the 200 units still held.</p><p>Month two starts with $1,200 of fixed overhead in inventory and ends with 100 \u00d7 $6 = $600. The bridge is $600 \u2212 $1,200 = \u2212$600, matching $10,200 \u2212 $10,800. More prior fixed overhead leaves inventory through sales than enters the closing balance. Across both months, absorption profit is $16,800 versus $16,200 variable profit; the remaining $600 difference equals fixed overhead still included in the final inventory. This is an expense-timing difference, not $600 newly collected cash.</p>"
+      },
+      {
+        "id": "capacity-reporting",
+        "title": "Do not inflate inventory by ignoring capacity or exclusions",
+        "html": "<p>Normal capacity is not interchangeable with whatever production denominator produces the most favorable profit. The Australian standard setter\u2019s <a href=\"https://standards.aasb.gov.au/aasb-102-dec-2021\">AASB 102 paragraphs 12\u201313</a>, an IFRS-aligned reference for the specified Australian reporting scope, describe production-overhead allocation and normal-capacity treatment, including unallocated overhead when relevant. Do not silently treat that framework-specific reference as a US tax rule. For US nongovernmental GAAP, confirm current applicable requirements in the <a href=\"https://fasb.org/Page/PageContent?PageId=%2Fstaticpages%2Fstandards.html\">FASB Accounting Standards Codification</a>; pre-Codification summaries are not the current authority.</p><p>If actual output falls or idle capacity appears, reassess the allocation and expense treatment instead of automatically dividing the full pool by fewer units. Likewise, a management decision to produce extra stock requires demand, storage, obsolescence and funding evidence. Higher absorption profit caused by inventory growth does not show that customer sales or economic performance improved. The example assumes actual equals the selected normal capacity specifically to isolate timing without an unresolved volume variance.</p>"
+      },
+      {
+        "id": "management-use",
+        "title": "Use the comparison for the decision it can support",
+        "html": "<p>A variable-costing report can make cost behavior and contribution visible for a defined internal decision, but it must not omit fixed commitments when assessing total profitability. An absorption unit cost includes assigned fixed manufacturing cost, so it is not automatically the incremental cost of one extra order. Identify spare capacity, additional setup, avoidable resources and opportunity cost before accepting or rejecting work.</p><p>Use the existing <a href=\"/blogs/contribution-margin-income-statement/\">contribution income statement guide</a> for its presentation format and <a href=\"/blogs/how-to-calculate-cost-of-goods-sold/\">COGS guide</a> for inventory-to-expense reconciliation. This page owns the manufacturing-method timing bridge. Preserve the unit movement, cost classification, capacity basis, opening inventory layers and fixed-overhead bridge with the close. The downloadable worksheet is a manual working record; it neither calculates the reports automatically nor determines the inventory policy appropriate for a reader\u2019s business.</p>"
+      }
+    ],
+    "worksheet": {
+      "headers": [
+        "Report line USD",
+        "M1 absorption",
+        "M1 variable",
+        "M2 absorption",
+        "M2 variable"
+      ],
+      "rows": [
+        [
+          "Sales",
+          "32,000",
+          "32,000",
+          "44,000",
+          "44,000"
+        ],
+        [
+          "Manufacturing cost of goods sold",
+          "20,800",
+          "16,000",
+          "28,600",
+          "22,000"
+        ],
+        [
+          "Variable selling expense",
+          "1,600",
+          "1,600",
+          "2,200",
+          "2,200"
+        ],
+        [
+          "Fixed manufacturing expense shown separately",
+          "0",
+          "6,000",
+          "0",
+          "6,000"
+        ],
+        [
+          "Fixed selling/admin expense",
+          "3,000",
+          "3,000",
+          "3,000",
+          "3,000"
+        ],
+        [
+          "Operating profit",
+          "6,600",
+          "5,400",
+          "10,200",
+          "10,800"
+        ],
+        [
+          "Closing inventory",
+          "5,200",
+          "4,000",
+          "2,600",
+          "2,000"
+        ]
+      ],
+      "blankHeaders": [
+        "Period / evidence",
+        "Opening / made / sold / closing units",
+        "Variable manufacturing cost / unit",
+        "Fixed overhead / capacity",
+        "Fixed OH in opening / closing stock",
+        "Profit difference / reconciliation"
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is the main difference between absorption and variable costing?",
+        "a": "In the simplified comparison, absorption includes fixed manufacturing overhead in product cost; variable costing expenses that fixed manufacturing amount in the period."
+      },
+      {
+        "q": "Why is absorption profit higher in month one?",
+        "a": "The $1,200 fixed manufacturing overhead in the 200 unsold units remains in absorption inventory instead of becoming current-period expense."
+      },
+      {
+        "q": "Why is absorption profit lower in month two?",
+        "a": "Opening inventory releases $1,200 fixed overhead while closing inventory retains $600, making absorption profit $600 below variable profit in that month."
+      },
+      {
+        "q": "Should fixed selling expense be included in inventory?",
+        "a": "Not in this case. The fixed manufacturing versus nonmanufacturing boundary matters; being fixed does not itself make a cost inventoriable."
+      },
+      {
+        "q": "Can the inventory unit change always be multiplied by today\u2019s overhead rate?",
+        "a": "Only when the relevant fixed-overhead content and other assumptions make that shortcut valid. Different opening cost layers require their actual amounts."
+      },
+      {
+        "q": "Does an absorption-profit increase prove cash generation?",
+        "a": "No. Inventory timing can change reported profit while using cash to fund unsold goods. Review demand, capacity, carrying value and cash separately."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openstax.org/books/principles-managerial-accounting/pages/6-5-compare-and-contrast-variable-and-absorption-costing",
+        "label": "OpenStax: educational comparison of variable and absorption costing"
+      },
+      {
+        "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-2-inventories/",
+        "label": "IFRS Foundation: IAS 2 inventory scope; IFRS-specific"
+      },
+      {
+        "url": "https://fasb.org/Page/PageContent?PageId=%2Fstaticpages%2Fstandards.html",
+        "label": "FASB: Codification as current nongovernmental US GAAP authority"
+      },
+      {
+        "url": "https://standards.aasb.gov.au/aasb-102-dec-2021",
+        "label": "AASB 102 paragraphs 12\u201313: normal-capacity example; Australian/IFRS-aligned scope"
+      }
+    ]
+  }
+]

@@ -1,0 +1,397 @@
+[
+  {
+    "id": "N037",
+    "slug": "accrued-expenses",
+    "title": "Accrued Expenses: Recognize, Reconcile and Settle Unpaid Costs",
+    "seoTitle": "Accrued Expenses: Entries and Reconciliation",
+    "description": "Record unpaid period costs with supported accruals, reconcile the liability and compare direct settlement with optional reversing entries in a checked example.",
+    "primaryKeyword": "accrued expenses",
+    "scopeBoundary": "Period-end operating-expense accrual evidence, settlement and optional reversal. Not a general accrual-accounting overview, tax computation, inventory capitalization or contingency-recognition guide.",
+    "opening": "Accrued expenses are costs incurred but not yet paid. When the cost and obligation have not already been recorded, a supported cutoff adjustment recognizes them; the later invoice or payment must clear the balance without counting the same expense twice.",
+    "sections": [
+      {
+        "id": "recognize",
+        "title": "Start with the consumed service and reporting cutoff",
+        "html": "<p>Accrual recognition follows the transaction facts and applicable reporting policy, rather than waiting automatically for a supplier invoice. <a href=\"https://openstax.org/books/principles-financial-accounting/pages/4-2-discuss-the-adjustment-process-and-illustrate-common-types-of-adjusting-entries\">OpenStax\u2019s adjusting-entry discussion</a> illustrates an expense paired with a payable when an incurred cost remains unrecorded. This guide applies that basic mechanism to a service business; it does not determine whether a complex legal claim, uncertain bonus or tax obligation satisfies its own recognition requirements.</p><p>Ask what work was received, which dates it covers and what evidence supports the amount. A future service in an unsigned proposal is not an incurred expense merely because management expects to buy it. A bill already entered in accounts payable also needs no second expense accrual. Distinguish an omitted liability from a different label for an existing one.</p>"
+      },
+      {
+        "id": "evidence",
+        "title": "Build an accrual record that another preparer can follow",
+        "html": "<p>Use a unique reference, counterparty, service period, expense account, liability account, estimate basis, supporting record and responsible reviewer. For payroll, retain approved work dates and the unpaid portion. For utilities, use relevant consumption evidence and the supported billing basis. For professional work, retain the accepted delivery or documented service performed, not only an annual purchase budget.</p><p>Search both the general ledger and supplier subledger before posting. An approved $700 supplier bill already recorded as expense and accounts payable stays outside the new-accrual total below. The payment can still be outstanding without creating another $700 expense. Review supplier statements and invoices received after cutoff as completeness evidence, with their actual service dates.</p>"
+      },
+      {
+        "id": "case",
+        "title": "Recognize three original November accruals",
+        "html": "<p>Every amount in this example is an original fictional USD teaching input. At November 30, six wage days have been earned at $200 per day but remain unpaid. November utilities consumed are supported at $450. A consultant has completed accepted November work priced at $900, with the invoice to arrive in December. Assume all three are operating expenses, no opening accruals, no payroll withholdings, sales tax, foreign currency or other adjustments.</p><div class=\"article-table-scroll\"><table><caption>Original November 30 expense-accrual record; USD</caption><thead><tr><th scope=\"col\">Cutoff</th><th scope=\"col\">Evidence / item</th><th scope=\"col\">Amount</th><th scope=\"col\">Adjustment</th></tr></thead><tbody><tr><th scope=\"row\">November 30</th><td>Six unpaid November wage days</td><td>1,200</td><td>Dr wage expense / Cr wages payable</td></tr><tr><th scope=\"row\">November 30</th><td>Consumed utilities; supported estimate</td><td>450</td><td>Dr utilities expense / Cr utilities payable</td></tr><tr><th scope=\"row\">November 30</th><td>Accepted consulting work; invoice pending</td><td>900</td><td>Dr consulting expense / Cr accrued services</td></tr><tr><th scope=\"row\">November total</th><td>Expense and new liability</td><td>2,550</td><td>No cash entry at accrual</td></tr></tbody></table></div><p>The total is $1,200 + $450 + $900 = $2,550. Relative to omitting these entries, November expense rises $2,550, November profit falls $2,550 and liabilities rise $2,550. The posting itself changes no cash balance. It is not a payment and does not establish that cash is available for the due dates.</p>"
+      },
+      {
+        "id": "settle",
+        "title": "Allocate the later payment to the correct periods",
+        "html": "<p>Suppose December payroll pays $2,000 for ten days: the six November days plus four December days. Without a reversing entry, debit Wages Payable $1,200, debit December Wage Expense $800 and credit Cash $2,000. November\u2019s expense stays $1,200; December receives only its four-day $800 portion.</p><p>Assume the final utilities invoice is exactly $450 and consulting invoice exactly $900. If invoice processing transfers these accruals into supplier payables, debit their accrual liabilities and credit Accounts Payable, without another expense. Their payments subsequently debit Accounts Payable and credit Cash. A direct debit to the accrued liability on payment is another workflow; select the actual system path and reconcile it, rather than posting both alternatives.</p>"
+      },
+      {
+        "id": "reversal",
+        "title": "Compare an optional reversal with direct settlement",
+        "html": "<p><a href=\"https://openstax.org/books/principles-financial-accounting/pages/5-4-appendix-complete-a-comprehensive-accounting-cycle-for-a-business\">OpenStax\u2019s reversing-entry appendix</a> describes reversal as an optional aid for specified accruals. For the wage example, a December 1 reversal debits Wages Payable $1,200 and credits Wage Expense $1,200. The payroll system then debits Wage Expense $2,000 and credits Cash $2,000. December\u2019s net wage expense is still $800: $2,000 less the $1,200 reversal.</p><p>These are alternative methods for the same obligation. Do not reverse the accrual and also debit that cleared payable in the payment entry. That would remove the liability twice. Track which exact journal is scheduled to reverse, its date and whether the normal invoice or payroll feed will use expense. A temporary expense credit after reversal is not a cash receipt or an approved cost reduction.</p>"
+      },
+      {
+        "id": "estimate",
+        "title": "Investigate a changed invoice before choosing the period",
+        "html": "<p>An estimate needs a documented update process. In an independent variation, the utility invoice arrives before November statements are finalized and provides better evidence that the November service cost was $480, rather than $450. Assuming that evidence belongs to the same recognition period, increase November utility expense and payable by $30. The revised three-item November accrual becomes $2,580.</p><p>Do not automatically call every difference a December expense, and do not rewrite issued statements without assessing the applicable correction and subsequent-event policy. Retain the original estimate, new document, timing and reason for the adjustment. An estimate revision, duplicate invoice and prior-period error are different diagnoses; the invoice date alone does not resolve them.</p>"
+      },
+      {
+        "id": "reconcile",
+        "title": "Reconcile liability movements independently from cash",
+        "html": "<div class=\"article-table-scroll\"><table><caption>Base case only: liability and expense checkpoints; USD</caption><thead><tr><th scope=\"col\">Checkpoint</th><th scope=\"col\">Accrued liability</th><th scope=\"col\">Recognized expense / cash</th></tr></thead><tbody><tr><th scope=\"row\">Opening before the three items</th><td>0</td><td>No case expense yet</td></tr><tr><th scope=\"row\">November adjustments</th><td>2,550</td><td>November expense 2,550; cash 0</td></tr><tr><th scope=\"row\">Later settlement of November portions</th><td>0 after all settle</td><td>Liability reductions 2,550</td></tr><tr><th scope=\"row\">Combined November and December wage portion</th><td>Not another liability</td><td>Expenses 2,550 + 800 = 3,350</td></tr><tr><th scope=\"row\">All base payments</th><td>No remaining case liability</td><td>Cash paid 2,000 + 450 + 900 = 3,350</td></tr></tbody></table></div><p>A liability-to-payables transfer changes the ledger location, not the overall obligation. Reconcile both accounts together so a transferred item is not reported as an unpaid accrual and a supplier payable simultaneously. New December accruals, if any, would require separate records; the zero closing figure assumes none within this deliberately bounded case.</p>"
+      },
+      {
+        "id": "routine",
+        "title": "Use the accrual schedule as a close and payment handoff",
+        "html": "<p>At each close, check service cutoff, source evidence, duplicate references, estimate approval, reversal settings and later settlement. Give unresolved items an owner and next evidence date. Preserve the final record so the next preparer can understand why the balance exists, not just copy last month\u2019s amount.</p><p>The <a href=\"/blogs/accrual-accounting/\">accrual-accounting overview</a> explains revenue, cash and prepayments together. Use <a href=\"/blogs/accounts-payable-process/\">the payable workflow</a> for supplier approval and <a href=\"/blogs/general-ledger-template/\">the ledger record</a> for journal references. The <a href=\"/blogs/accounting-cycle/\">accounting cycle</a> connects the reviewed adjustment to statements; this guide\u2019s task is the supported unpaid expense and its later clearance.</p>"
+      }
+    ],
+    "worksheet": {
+      "headers": [
+        "Cutoff",
+        "Evidence / item",
+        "Amount",
+        "Adjustment"
+      ],
+      "rows": [
+        [
+          "November 30",
+          "Six unpaid November wage days",
+          "1,200",
+          "Dr wage expense / Cr wages payable"
+        ],
+        [
+          "November 30",
+          "Consumed utilities; supported estimate",
+          "450",
+          "Dr utilities expense / Cr utilities payable"
+        ],
+        [
+          "November 30",
+          "Accepted consulting work; invoice pending",
+          "900",
+          "Dr consulting expense / Cr accrued services"
+        ],
+        [
+          "November total",
+          "Expense and new liability",
+          "2,550",
+          "No cash entry at accrual"
+        ]
+      ],
+      "blankHeaders": [
+        "Reference / service period",
+        "Evidence / amount basis",
+        "Expense / liability accounts",
+        "Amount / reversal status",
+        "Invoice / settlement / reviewer"
+      ]
+    },
+    "faq": [
+      {
+        "q": "Does an accrued expense require an invoice first?",
+        "a": "Not necessarily. The service or cost must meet the applicable recognition requirements, and the amount needs support; an invoice date alone does not determine the expense period."
+      },
+      {
+        "q": "Is an unpaid bill already in accounts payable another accrual?",
+        "a": "It is already an obligation. Do not post the same expense again merely to rename an accounts-payable balance as an accrual."
+      },
+      {
+        "q": "Are reversing entries mandatory?",
+        "a": "No. The case compares direct settlement with an optional specified reversal; both reach the same period expenses when implemented consistently."
+      },
+      {
+        "q": "Why is December wage expense only $800 on a $2,000 payment?",
+        "a": "Six $200 days were already recognized in November. The payment covers those $1,200 plus four December days worth $800."
+      },
+      {
+        "q": "What if the actual invoice differs from the estimate?",
+        "a": "Investigate the service period, evidence and statement timing. The guide\u2019s separate $480 variation updates November by $30 before finalization; it does not prescribe every difference as a current-period expense."
+      },
+      {
+        "q": "Does the accrual entry reduce cash immediately?",
+        "a": "No. It records expense and a liability. The later payment changes cash and clears the appropriate liability."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openstax.org/books/principles-financial-accounting/pages/4-2-discuss-the-adjustment-process-and-illustrate-common-types-of-adjusting-entries",
+        "label": "OpenStax: accrued-expense adjusting-entry mechanism"
+      },
+      {
+        "url": "https://openstax.org/books/principles-financial-accounting/pages/5-4-appendix-complete-a-comprehensive-accounting-cycle-for-a-business",
+        "label": "OpenStax: optional reversing entries and the settlement trail"
+      }
+    ]
+  },
+  {
+    "id": "N038",
+    "slug": "retained-earnings",
+    "title": "Retained Earnings: Reconcile Profit, Dividends and Equity",
+    "seoTitle": "Retained Earnings: Formula and Equity Bridge",
+    "description": "Reconcile opening retained earnings, net income and declared dividends. Separate cash, contributed capital and any supported opening-balance adjustments.",
+    "primaryKeyword": "retained earnings",
+    "scopeBoundary": "Corporate retained-earnings rollforward, cash-dividend timing and equity reconciliation. Not owner drawings, dividend legality advice, a complete accounting-cycle tutorial or an OCI measurement guide.",
+    "opening": "Retained earnings is a cumulative equity balance built from earnings retained in the corporation, adjusted for distributions and any separately supported opening-balance items. It is not a bank account or a promise that the balance can be distributed.",
+    "sections": [
+      {
+        "id": "meaning",
+        "title": "Identify the corporation and the balance being reconciled",
+        "html": "<p>Retained earnings belongs within corporate shareholders\u2019 equity. <a href=\"https://openstax.org/books/principles-financial-accounting/pages/14-4-compare-and-contrast-owners-equity-versus-retained-earnings\">OpenStax\u2019s equity comparison</a> distinguishes the retained-earnings movement from the broader statement of changes in equity. A sole proprietor\u2019s owner-capital record or drawings account should not be relabeled automatically as the corporate dividend example below.</p><p>Use the same entity, reporting period and currency for the opening balance, net income and distributions. The opening retained-earnings figure should agree to the previous closing ledger and financial statements, subject to any separately justified restatement. Net income is the period\u2019s accounting result after its included income-tax expense; it is not revenue, EBITDA or customer collections. Verify the source statement rather than inserting a desired target profit.</p>"
+      },
+      {
+        "id": "bridge",
+        "title": "Build one original retained-earnings rollforward",
+        "html": "<p>This original fictional USD case starts with $32,000 retained earnings. The corporation reports $12,000 net income for the period and validly declares $5,000 cash dividends. Assume no stock dividends, treasury-share transactions, opening corrections or other retained-earnings movements in the base case. The example assumes the declaration has been appropriately authorized; it does not assess legal distribution capacity.</p><div class=\"article-table-scroll\"><table><caption>Base corporate retained-earnings bridge; USD</caption><thead><tr><th scope=\"col\">Movement</th><th scope=\"col\">Amount</th></tr></thead><tbody><tr><th scope=\"row\">Opening retained earnings</th><td>32,000</td></tr><tr><th scope=\"row\">Current-period net income</th><td>+12,000</td></tr><tr><th scope=\"row\">Cash dividends declared in period</th><td>\u22125,000</td></tr><tr><th scope=\"row\">Closing retained earnings</th><td>39,000</td></tr></tbody></table></div><p>Closing retained earnings is $32,000 + $12,000 \u2212 $5,000 = $39,000. A positive $7,000 change in this account reflects these modeled income and distribution movements. It does not mean cash increased by $7,000. Keep each input traceable to its ledger, closing journal or board record, with sign conventions shown.</p>"
+      },
+      {
+        "id": "dividends",
+        "title": "Use declaration and payment dates without counting twice",
+        "html": "<p><a href=\"https://openstax.org/books/principles-financial-accounting/pages/14-3-record-transactions-and-the-effects-on-financial-statements-for-cash-dividends-property-dividends-stock-dividends-and-stock-splits\">OpenStax\u2019s cash-dividend entries</a> distinguishes the declared obligation from later payment. In this case, declaration reduces retained earnings by $5,000 and creates Dividends Payable $5,000. If the system first uses a temporary Dividends account, its closing transfer must produce the same retained-earnings reduction, rather than a second $5,000 deduction.</p><p>Suppose $3,000 is paid during the period and $2,000 remains payable. The payment debits Dividends Payable $3,000 and credits Cash $3,000. It does not reduce retained earnings again. A retained-earnings schedule that subtracts $5,000 declared and another $3,000 paid would incorrectly show $36,000 rather than $39,000. Review both the authorization and settlement trail. Cash dividends are distributions, not operating expenses used to calculate the $12,000 net income.</p>"
+      },
+      {
+        "id": "cash",
+        "title": "Reconcile available cash through its own movements",
+        "html": "<div class=\"article-table-scroll\"><table><caption>Separate fictional cash schedule for the same period; USD</caption><thead><tr><th scope=\"col\">Cash movement</th><th scope=\"col\">Amount</th><th scope=\"col\">Running cash</th></tr></thead><tbody><tr><th scope=\"row\">Opening cash</th><td>15,000</td><td>15,000</td></tr><tr><th scope=\"row\">Net operating cash movement</th><td>+9,000</td><td>24,000</td></tr><tr><th scope=\"row\">Equipment purchase</th><td>\u22128,000</td><td>16,000</td></tr><tr><th scope=\"row\">New share capital received</th><td>+10,000</td><td>26,000</td></tr><tr><th scope=\"row\">Cash dividends paid</th><td>\u22123,000</td><td>23,000</td></tr></tbody></table></div><p>Closing cash is $23,000 while retained earnings is $39,000. Operating cash differs from net income because receipts, payments and noncash or accrual items can occur on different dates. The equipment payment changes cash and the asset record, while share proceeds are an owner contribution. Neither becomes an extra retained-earnings credit merely because money entered or left the bank.</p><p>The unpaid $2,000 dividend remains a liability and belongs in future payment planning. This cash schedule is a limited reconciliation, not a complete statement of cash flows or proof that every balance-sheet account is correct. Verify restricted balances and commitments before describing any amount as usable.</p>"
+      },
+      {
+        "id": "equity",
+        "title": "Reconcile retained earnings inside total equity",
+        "html": "<p>Assume opening paid-in capital is $70,000 and opening accumulated other comprehensive income is $1,200. New shares add $10,000 paid-in capital, while a separately measured current-period OCI loss of $400 reduces that accumulated component to $800. The OCI amount is a supplied assumption for this bridge; this article does not decide its underlying classification.</p><div class=\"article-table-scroll\"><table><caption>Separate equity components, not three cash accounts; USD</caption><thead><tr><th scope=\"col\">Component</th><th scope=\"col\">Opening</th><th scope=\"col\">Movement</th><th scope=\"col\">Closing</th></tr></thead><tbody><tr><th scope=\"row\">Paid-in capital</th><td>70,000</td><td>+10,000 share contribution</td><td>80,000</td></tr><tr><th scope=\"row\">Retained earnings</th><td>32,000</td><td>+12,000 income \u22125,000 dividends</td><td>39,000</td></tr><tr><th scope=\"row\">Accumulated OCI</th><td>1,200</td><td>\u2212400 OCI</td><td>800</td></tr><tr><th scope=\"row\">Total equity</th><td>103,200</td><td>+16,600 net movement</td><td>119,800</td></tr></tbody></table></div><p>The total bridge is $103,200 + $12,000 net income \u2212 $400 OCI + $10,000 share capital \u2212 $5,000 declared dividends = $119,800. Crediting share proceeds to retained earnings would misclassify equity even if total equity still agreed. A balanced accounting equation alone does not prove the component classification is right.</p>"
+      },
+      {
+        "id": "adjustment",
+        "title": "Keep any opening-balance correction separate and supported",
+        "html": "<p>An error affecting issued prior statements requires an applicable-framework and materiality assessment. It is not a general permission to post unexplained differences to retained earnings. <a href=\"https://www.sec.gov/rules-regulations/staff-guidance/staff-accounting-bulletins/staff-accounting-bulletin-no-108\">SEC Staff Accounting Bulletin 108</a> discusses how prior-year errors can affect current financial statements for SEC registrants; that scope must not be treated as a universal bookkeeping shortcut.</p><p>In an independent alternative, assume a completed accounting assessment requires a $3,000 net-of-tax reduction to opening retained earnings. Show the previously reported $32,000, the separately labeled \u2212$3,000 correction and adjusted opening $29,000. Adding $12,000 current net income and deducting $5,000 declared dividends then gives $36,000. Do not combine that alternative with the base $39,000 result or hide its effect inside this period\u2019s expenses. Document the actual treatment and disclosures required.</p>"
+      },
+      {
+        "id": "deficit",
+        "title": "Interpret a deficit without turning it into a cash measure",
+        "html": "<p>A debit retained-earnings balance is often described as an accumulated deficit. For a separate fictional case, opening retained earnings of $4,000 plus a $9,000 net loss and no distributions produces a $5,000 deficit. The arithmetic identifies the equity balance; it does not establish insolvency, liquidity, company value or whether the company can continue trading.</p><p>Likewise, positive retained earnings does not prove dividend permission, sufficient usable cash or absence of lender restrictions. Review the actual jurisdiction, governing documents, financing agreements and obligations before a distribution decision. An accounting rollforward answers how the balance moved. A funding or legal-capacity assessment uses additional evidence and should not be replaced by this formula.</p>"
+      },
+      {
+        "id": "review",
+        "title": "Close the reconciliation and retain the evidence",
+        "html": "<p>Agree opening balance to the prior close, net income to the final income statement, declarations to authorization and distributions to the liability/payment ledger. List every other movement separately; unresolved differences need an owner and correction trail. Retain the version used for reporting rather than changing last period\u2019s figures silently.</p><p>Use the <a href=\"/blogs/accounting-cycle/\">accounting-cycle guide</a> for the full close, <a href=\"/blogs/accrued-expenses/\">accrued-expense schedule</a> for omitted period costs and <a href=\"/blogs/assets-liabilities-equity/\">accounting-equation guide</a> for total-balance context. The <a href=\"/blogs/how-to-analyze-financial-statements/\">statement-analysis guide</a> addresses interpretation after these components reconcile. Retained earnings remains a permanent balance carried forward, rather than an expense account reset to zero each month.</p>"
+      }
+    ],
+    "worksheet": {
+      "headers": [
+        "Movement",
+        "Amount"
+      ],
+      "rows": [
+        [
+          "Opening retained earnings",
+          "32,000"
+        ],
+        [
+          "Current-period net income",
+          "+12,000"
+        ],
+        [
+          "Cash dividends declared in period",
+          "\u22125,000"
+        ],
+        [
+          "Closing retained earnings",
+          "39,000"
+        ]
+      ],
+      "blankHeaders": [
+        "Period / opening evidence",
+        "Net income reference",
+        "Declared dividends / authorization",
+        "Other separately supported movement",
+        "Closing balance / reviewer"
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is the basic retained-earnings formula?",
+        "a": "Under the stated base case, opening retained earnings plus net income minus declared dividends equals closing retained earnings. Other supported movements must be shown separately."
+      },
+      {
+        "q": "Is retained earnings the cash available in the bank?",
+        "a": "No. The case closes with $39,000 retained earnings and $23,000 cash. They reconcile different records and can differ substantially."
+      },
+      {
+        "q": "Do newly issued shares increase retained earnings?",
+        "a": "They normally belong in contributed-equity accounts under the applicable treatment, rather than current profit or retained earnings. The example credits the $10,000 share contribution to paid-in capital."
+      },
+      {
+        "q": "Should paid dividends be deducted again after declaration?",
+        "a": "No. The $5,000 declaration already reduces retained earnings. The later $3,000 payment reduces the payable and cash."
+      },
+      {
+        "q": "Can I use retained earnings to fix any unexplained difference?",
+        "a": "No. Determine the cause, period, framework and materiality. A supported opening correction must be separately identified and receive the required treatment."
+      },
+      {
+        "q": "What does negative retained earnings prove?",
+        "a": "It identifies an accumulated deficit under the recorded movements. It does not by itself establish the company\u2019s usable cash, insolvency or distribution rights."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openstax.org/books/principles-financial-accounting/pages/14-4-compare-and-contrast-owners-equity-versus-retained-earnings",
+        "label": "OpenStax: retained earnings and the broader equity movement"
+      },
+      {
+        "url": "https://openstax.org/books/principles-financial-accounting/pages/14-3-record-transactions-and-the-effects-on-financial-statements-for-cash-dividends-property-dividends-stock-dividends-and-stock-splits",
+        "label": "OpenStax: declaration and payment entries for cash dividends"
+      },
+      {
+        "url": "https://www.sec.gov/rules-regulations/staff-guidance/staff-accounting-bulletins/staff-accounting-bulletin-no-108",
+        "label": "SEC SAB 108: prior-year misstatement assessment for registrants, not a universal posting rule"
+      }
+    ]
+  },
+  {
+    "id": "N039",
+    "slug": "other-comprehensive-income",
+    "title": "Other Comprehensive Income: Reconcile OCI, AOCI and Equity",
+    "seoTitle": "Other Comprehensive Income: OCI and AOCI",
+    "description": "Separate net income, current-period OCI and accumulated OCI. Follow a limited US GAAP debt-security reclassification through a checked equity reconciliation.",
+    "primaryKeyword": "other comprehensive income",
+    "scopeBoundary": "Limited US GAAP educational presentation and reconciliation, assuming qualifying available-for-sale debt-security noncredit gains. Excludes recognition eligibility decisions, credit losses, equity securities, hedge/pension/foreign-currency measurement and tax calculations; specialist publication gate remains separately assessed.",
+    "opening": "Other comprehensive income, or OCI, is a period flow reported outside net income for items whose accounting treatment requires it. Accumulated other comprehensive income, or AOCI, is the related accumulated equity balance. Keep the flow, balance and any reclassification separate.",
+    "sections": [
+      {
+        "id": "scope",
+        "title": "State the framework before deciding where a gain belongs",
+        "html": "<p>This guide uses a limited US GAAP presentation example for a corporation. It assumes the underlying accounting assessment has already established that the modeled noncredit gains on available-for-sale debt securities belong initially in OCI. It does not choose an investment classification, calculate a credit-loss allowance or determine when an instrument qualifies for a particular treatment.</p><p>The <a href=\"https://xbrl.fasb.org/impdocs/OCI_TIG/othercompincome.htm\">FASB April 2025 OCI Taxonomy Implementation Guide</a> illustrates OCI, accumulated balances and reclassifications, while explicitly stating that it is not authoritative recognition guidance. Its examples assume the reporting criteria are met. Current ASC and any applicable SEC requirements govern a real entity. Do not use a taxonomy label, this worksheet or an old investment example as permission to route an unwanted operating loss outside net income.</p>"
+      },
+      {
+        "id": "distinguish",
+        "title": "Separate net income, OCI, comprehensive income and AOCI",
+        "html": "<div class=\"article-table-scroll\"><table><caption>Four labels used throughout this bounded example</caption><thead><tr><th scope=\"col\">Measure</th><th scope=\"col\">Period or balance?</th><th scope=\"col\">Question answered</th></tr></thead><tbody><tr><th scope=\"row\">Net income</th><td>Current-period flow</td><td>What is the result included in earnings?</td></tr><tr><th scope=\"row\">OCI</th><td>Current-period flow</td><td>What qualifying items are outside net income this period?</td></tr><tr><th scope=\"row\">Comprehensive income</th><td>Current-period flow</td><td>What is net income plus OCI?</td></tr><tr><th scope=\"row\">AOCI</th><td>Accumulated equity balance</td><td>What related amounts remain accumulated at the reporting date?</td></tr></tbody></table></div><p>AOCI is separate from retained earnings in this example\u2019s equity reconciliation. Net income flows into retained earnings through the close, while OCI changes the accumulated OCI component. A gain is not automatically OCI merely because it is unrealized. Classification follows the relevant requirements; different securities and transactions can have different earnings treatment. Avoid applying this debt-security illustration to shares, ordinary customer invoices or any other asset without a fresh assessment.</p>"
+      },
+      {
+        "id": "case",
+        "title": "Define the original net-of-tax teaching inputs",
+        "html": "<p>All amounts below are fictional USD inputs, not a company result or market observation. Assume opening AOCI is $3,000, all attributable to the modeled eligible component. Current-period net income before the specified reclassification is $9,000. A new qualifying holding gain of $1,600 is initially reported in OCI. A separate prior accumulated gain of $800 is now appropriately reclassified into net income upon the assumed sale.</p><p>All supplied gain amounts and income figures are after their separately determined income-tax effects. No tax rate is prescribed and no current/deferred-tax journal is calculated. Assume no credit losses, impairment, hedging, noncontrolling interest, other OCI components or opening corrections. These boundaries isolate the presentation arithmetic; they do not turn the example into a complete US GAAP accounting model.</p>"
+      },
+      {
+        "id": "flow",
+        "title": "Reconcile current-period comprehensive income without double counting",
+        "html": "<div class=\"article-table-scroll\"><table><caption>Original flow and accumulated-balance reconciliation; all USD figures net of tax</caption><thead><tr><th scope=\"col\">Movement / result</th><th scope=\"col\">Amount</th></tr></thead><tbody><tr><th scope=\"row\">Net income before the assumed reclassification</th><td>9,000</td></tr><tr><th scope=\"row\">Prior gain reclassified into net income</th><td>+800</td></tr><tr><th scope=\"row\">Net income including the reclassification</th><td>9,800</td></tr><tr><th scope=\"row\">Current gain initially reported in OCI</th><td>+1,600</td></tr><tr><th scope=\"row\">Reclassification adjustment in OCI</th><td>\u2212800</td></tr><tr><th scope=\"row\">Net current-period OCI</th><td>800</td></tr><tr><th scope=\"row\">Comprehensive income</th><td>10,600</td></tr><tr><th scope=\"row\">Opening AOCI</th><td>3,000</td></tr><tr><th scope=\"row\">Closing AOCI</th><td>3,800</td></tr></tbody></table></div><p>Net income becomes $9,000 + $800 = $9,800. Current-period OCI is $1,600 \u2212 $800 = $800. Comprehensive income is $9,800 + $800 = $10,600. Closing AOCI is $3,000 opening balance + $800 current-period OCI = $3,800. Retain the minus sign on the OCI reclassification: the previously accumulated gain cannot be counted again in current comprehensive income simply because it is now included in net income.</p>"
+      },
+      {
+        "id": "reclassification",
+        "title": "Trace the reclassification to its source and earnings line",
+        "html": "<p>The <a href=\"https://fasb.org/page/getarticle?uid=fasb_NewsRelease02-05-13Body_0228221200\">FASB explanation of ASU 2013-02</a> describes greater visibility over amounts reclassified from AOCI and affected earnings lines; it does not create eligibility for an otherwise unsupported OCI item. For the assumed sale, retain the investment reference, accumulated gain being released, disposal evidence, tax treatment and the specific net-income line receiving the $800.</p><p>The numerical transfer adds $800 to the period\u2019s net income and subtracts $800 through OCI, leaving total comprehensive income unchanged by the transfer itself. Before that transfer, this case would show $9,000 net income and $1,600 OCI, also totaling $10,600. The release can change the composition of equity once income closes, without creating another $800 of new total equity. It is not an $800 bank receipt by itself; sale cash and the carrying amount require their separate asset record.</p>"
+      },
+      {
+        "id": "equity",
+        "title": "Reconcile the flow to closing corporate equity",
+        "html": "<p>Add fictional opening retained earnings of $40,000 and paid-in capital of $50,000. Assume $2,000 validly declared dividends, no new shares and no other equity movements. Opening total equity is $50,000 + $40,000 + $3,000 = $93,000. Closing retained earnings is $40,000 + $9,800 \u2212 $2,000 = $47,800. Paid-in capital stays $50,000 and closing AOCI is $3,800.</p><div class=\"article-table-scroll\"><table><caption>Separate equity components; USD</caption><thead><tr><th scope=\"col\">Component</th><th scope=\"col\">Opening</th><th scope=\"col\">Closing</th></tr></thead><tbody><tr><th scope=\"row\">Paid-in capital</th><td>50,000</td><td>50,000</td></tr><tr><th scope=\"row\">Retained earnings</th><td>40,000</td><td>47,800</td></tr><tr><th scope=\"row\">AOCI</th><td>3,000</td><td>3,800</td></tr><tr><th scope=\"row\">Total equity</th><td>93,000</td><td>101,600</td></tr></tbody></table></div><p>The independent total is $93,000 + $10,600 comprehensive income \u2212 $2,000 dividends = $101,600. Declared dividends are an owner distribution, outside this modeled comprehensive-income flow. Adding comprehensive income to equity and then adding net income a second time would overstate the change by $9,800. Use each component once.</p>"
+      },
+      {
+        "id": "read",
+        "title": "Read the note rather than only the OCI headline",
+        "html": "<p>Look for the component, opening amount, current movements, reclassification, tax basis and closing balance. Determine whether a positive amount means gain, release of a loss or a presentation convention in that particular table. An AOCI loss can coexist with current positive OCI when a prior loss is recovering or being reclassified; a positive period flow does not imply the accumulated balance is positive.</p><p>A <a href=\"https://www.sec.gov/Archives/edgar/data/1018979/000119312526314074/R16.htm\">2026 SEC-filed issuer note</a> provides a real example of separately presenting beginning balance, OCI before reclassification, reclassified amounts and ending AOCI. It is evidence of that issuer\u2019s disclosure, not an SEC endorsement or a universal policy for every company. This guide deliberately uses independent fictional amounts rather than relabeling the issuer\u2019s figures as a small-business benchmark.</p>"
+      },
+      {
+        "id": "review",
+        "title": "Use a component-level evidence and review record",
+        "html": "<p>Record reporting framework, instrument or component, recognition-policy reference, period, opening balance, current gain/loss, release, related earnings line, tax basis, closing balance and reviewer. Reconcile the statement of comprehensive income, equity statement and note. If the underlying recognition, tax allocation or release condition is unresolved, stop at the provisional schedule instead of using a plug to force agreement.</p><p>The <a href=\"/blogs/retained-earnings/\">retained-earnings guide</a> explains the earnings and dividend bridge, while <a href=\"/blogs/assets-liabilities-equity/\">the accounting-equation example</a> covers total balances. Use <a href=\"/blogs/how-to-analyze-financial-statements/\">statement analysis</a> to read the resulting reports. This source and arithmetic verification does not claim external professional sign-off or replace the entity-specific accounting assessment needed for a compliant filing.</p>"
+      }
+    ],
+    "worksheet": {
+      "headers": [
+        "Movement / result",
+        "Amount"
+      ],
+      "rows": [
+        [
+          "Net income before the assumed reclassification",
+          "9,000"
+        ],
+        [
+          "Prior gain reclassified into net income",
+          "+800"
+        ],
+        [
+          "Net income including the reclassification",
+          "9,800"
+        ],
+        [
+          "Current gain initially reported in OCI",
+          "+1,600"
+        ],
+        [
+          "Reclassification adjustment in OCI",
+          "\u2212800"
+        ],
+        [
+          "Net current-period OCI",
+          "800"
+        ],
+        [
+          "Comprehensive income",
+          "10,600"
+        ],
+        [
+          "Opening AOCI",
+          "3,000"
+        ],
+        [
+          "Closing AOCI",
+          "3,800"
+        ]
+      ],
+      "blankHeaders": [
+        "Framework / component / source",
+        "Opening AOCI",
+        "Current OCI before release / tax basis",
+        "Reclassification / earnings line",
+        "Closing AOCI / NI / total-equity check"
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is the difference between OCI and AOCI?",
+        "a": "OCI is a current-period flow; AOCI is the accumulated equity balance. This case adds $800 net current OCI to $3,000 opening AOCI to reach $3,800."
+      },
+      {
+        "q": "Is every unrealized investment gain reported in OCI?",
+        "a": "No. The applicable requirements and classification determine the treatment. The guide assumes only a qualifying available-for-sale debt-security noncredit-gain case."
+      },
+      {
+        "q": "Why is the $800 gain subtracted in OCI when included in net income?",
+        "a": "It was already accumulated through OCI. The reclassification adjustment prevents the same gain from being counted twice in comprehensive income."
+      },
+      {
+        "q": "Does the reclassification create another $800 total-equity gain?",
+        "a": "No. In the modeled transfer, net income rises $800 and OCI falls $800, leaving total comprehensive income unchanged by the transfer itself."
+      },
+      {
+        "q": "Are the example\u2019s values before or after tax?",
+        "a": "They are supplied after-tax amounts. The guide does not choose a tax rate or calculate the underlying tax allocation."
+      },
+      {
+        "q": "Does this worksheet establish US GAAP compliance?",
+        "a": "No. It checks a limited reconciliation after recognition eligibility and tax effects are assumed to have been determined. Entity-specific policy, disclosure and professional review remain separate."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://xbrl.fasb.org/impdocs/OCI_TIG/othercompincome.htm",
+        "label": "FASB April 2025 OCI taxonomy implementation: illustrative, nonauthoritative modeling"
+      },
+      {
+        "url": "https://fasb.org/page/getarticle?uid=fasb_NewsRelease02-05-13Body_0228221200",
+        "label": "FASB ASU 2013-02 announcement: visibility over AOCI reclassifications"
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1018979/000119312526314074/R16.htm",
+        "label": "2026 SEC-filed issuer note: actual AOCI movement disclosure, not universal recognition guidance"
+      }
+    ]
+  }
+]
