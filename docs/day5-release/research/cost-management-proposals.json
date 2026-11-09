@@ -1,0 +1,397 @@
+[
+  {
+    "id": "N040",
+    "slug": "marginal-cost",
+    "title": "Marginal Cost: Calculate Added Output and Capacity Steps",
+    "seoTitle": "Marginal Cost: Output and Capacity Steps",
+    "description": "Calculate marginal cost from matching changes in cost and output. Reconcile a fictional batch example, a capacity step and an additional-order decision.",
+    "primaryKeyword": "marginal cost",
+    "scopeBoundary": "Finite-change marginal production cost, batch versus next-unit interpretation and capacity-step sensitivity; not average cost, a market-price forecast or complete investment appraisal.",
+    "opening": "Marginal cost measures the change in a defined total cost divided by the change in output. State the interval: a batch average can differ sharply from the cost of the very next unit when a capacity commitment is triggered.",
+    "sections": [
+      {
+        "id": "definition",
+        "title": "Define both changes before dividing",
+        "html": "<p><a href=\"https://openstax.org/books/principles-economics-3e/pages/7-3-costs-in-the-short-run\">OpenStax distinguishes marginal cost from average cost</a>: one compares changes in cost and output; the other spreads a defined total across output. For a finite interval, marginal cost = (new total cost − original total cost) / (new quantity − original quantity). Use quantities of the same product, quality and period. If output does not change, this quotient is undefined rather than zero.</p><p>Write the decision beside the calculation. Increasing monthly production from 200 to 250 comparable units is different from replacing a machine or discontinuing a service. A historical cost comparison can describe what happened without identifying a causal cost function. Changes in input price, product mix or specifications must be explained before attributing the entire difference to added output.</p>"
+      },
+      {
+        "id": "case",
+        "title": "Build an explicit fictional production-cost schedule",
+        "html": "<p>The original USD case assumes one homogeneous product and a single month. Up to 300 units, included production cost is $4,800 committed period cost plus $18 for each unit. Producing any amount above 300 and up to 360 requires an additional $1,200 capacity commitment for that month. The $18 unit rate is unchanged. These are constructed teaching assumptions, not supplier quotes or an industry cost benchmark.</p><div class=\"article-table-scroll\"><table><caption>Original interval calculations; USD per added unit</caption><thead><tr><th scope=\"col\">Output interval</th><th scope=\"col\">Total cost, before → after</th><th scope=\"col\">Cost change</th><th scope=\"col\">Output change</th><th scope=\"col\">Interval cost / unit</th></tr></thead><tbody><tr><th scope=\"row\">200 → 250</th><td>8,400 → 9,300</td><td>900</td><td>50</td><td>18.00</td></tr><tr><th scope=\"row\">250 → 300</th><td>9,300 → 10,200</td><td>900</td><td>50</td><td>18.00</td></tr><tr><th scope=\"row\">300 → 320</th><td>10,200 → 11,760</td><td>1,560</td><td>20</td><td>78.00</td></tr><tr><th scope=\"row\">320 → 360</th><td>11,760 → 12,480</td><td>720</td><td>40</td><td>18.00</td></tr></tbody></table></div><p>At 200 units, total cost is $4,800 + $3,600 = $8,400. At 300, it is $10,200. At 320, it becomes $4,800 + $1,200 + $5,760 = $11,760. The 300-to-320 increase therefore costs $1,560, not simply 20 × $18.</p>"
+      },
+      {
+        "id": "next-unit",
+        "title": "Separate an interval average from the next unit",
+        "html": "<p>For 300 to 320 units, $1,560 / 20 = <strong>$78 per additional unit on average across that batch</strong>. The 301st unit alone triggers the full $1,200 capacity payment plus $18 unit cost: its modeled incremental cost is $1,218. Units 302 through 320 then add $18 each, once the same capacity has been obtained. Twenty units total $1,218 + 19 × $18 = $1,560.</p><p>Calling $78 the cost of every individual added unit would hide the step. Conversely, treating $1,218 as the repeating cost of units 302 onward would charge for the same commitment repeatedly. Compare the actual feasible batch with its alternative, and record whether the capacity commitment has already been made. This piecewise schedule does not have a smooth derivative at the threshold.</p>"
+      },
+      {
+        "id": "fixed-cost",
+        "title": "Ask which commitments the decision really changes",
+        "html": "<p><a href=\"https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f5/technical-articles/relevant-costs.html\">ACCA’s relevant-cost guidance</a> distinguishes unchanged existing allocations from additional commitments caused by a decision. In this case, the original $4,800 is payable under either monthly output alternative. It cancels from the comparison. The new $1,200 does not cancel when comparing 300 units with a proposal that requires capacity above 300.</p><p>After that $1,200 has become unavoidable for the stated month, a later decision within the obtained 360-unit limit has a different starting position. Do not silently use that later position to approve the original capacity purchase. Also do not assume capacity can be cancelled, renewed or reused on favorable terms without evidence. A fixed cost can be unchanged for one decision and avoidable for another horizon.</p>"
+      },
+      {
+        "id": "order",
+        "title": "Test the whole additional order, not one attractive unit rate",
+        "html": "<p>Assume a separately accepted offer pays $65 for each added unit and initially adds no other selling or fulfillment cost. A 20-unit order above the 300-unit baseline yields $1,300 additional revenue against $1,560 additional production cost: the difference is <strong>−$260</strong>. Comparing $65 with the existing 300-unit average of $34 would incorrectly approve this production-only case.</p><p>A 60-unit order using the same new capacity yields $3,900 additional revenue. Cost rises from $10,200 at 300 to $12,480 at 360, an increase of $2,280; the difference is $1,620 before omitted order costs. If accepting it displaces another order with $300 otherwise obtainable contribution, the incremental advantage falls to $1,320 before those other costs. That opportunity effect is a decision comparison, not a second supplier invoice.</p>"
+      },
+      {
+        "id": "limits",
+        "title": "Check the information the quotient cannot supply",
+        "html": "<p>Confirm the delivery deadline, staffing, usable capacity, material availability and accepted specifications. At 361 units this model supplies no cost estimate; extending its last $18 rate beyond the 360-unit limit would invent evidence. A new shift, overtime rate or subcontractor quote needs a new alternative and cost schedule. Separate the purchase date from consumption, expense recognition and payment timing when converting the case into accounting or cash records.</p><p>The order example deliberately excludes financing, tax and any additional marketing, warranty, packing or delivery costs. Add actual decision-changing amounts before approval. A positive added-order difference does not show that the entire business earns a profit, pays every bill on time or should buy a long-lived asset. Neither market demand nor a sustainable selling price comes from dividing a cost change by units.</p>"
+      },
+      {
+        "id": "record",
+        "title": "Preserve an auditable incremental-cost record",
+        "html": "<p>Record both output alternatives, the matched period, cost categories, capacity threshold, existing commitments and new commitments. Reconcile the beginning and ending cost totals to their underlying assumptions. Retain a dated quote or operating record for each material change, an owner for unresolved items and a decision deadline. Compare actual added cost and accepted output after delivery without rewriting the original approval assumptions.</p><p>Use <a href=\"/blogs/average-cost-per-unit/\">average cost per unit</a> for the total spread across output, <a href=\"/blogs/cost-control/\">cost control</a> for investigating actual price and usage changes, and <a href=\"/blogs/fixed-vs-variable-costs/\">fixed versus variable costs</a> for classification. The <a href=\"/blogs/cost-volume-profit-analysis/\">CVP guide</a> tests a stated operating range, while <a href=\"/blogs/business-growth-strategies/\">growth scenarios</a> connect extra demand to resources. Keep the worksheet’s incremental decision separate from the full-period result.</p>"
+      }
+    ],
+    "worksheet": {
+      "headers": [
+        "Output interval",
+        "Cost before",
+        "Cost after",
+        "Change in units",
+        "Interval marginal cost"
+      ],
+      "rows": [
+        [
+          "200 → 250",
+          "8,400",
+          "9,300",
+          "50",
+          "18.00"
+        ],
+        [
+          "250 → 300",
+          "9,300",
+          "10,200",
+          "50",
+          "18.00"
+        ],
+        [
+          "300 → 320",
+          "10,200",
+          "11,760",
+          "20",
+          "78.00"
+        ],
+        [
+          "320 → 360",
+          "11,760",
+          "12,480",
+          "40",
+          "18.00"
+        ]
+      ],
+      "blankHeaders": [
+        "Period / product",
+        "Output alternatives",
+        "Changed commitments / quote",
+        "Cost change / unit change",
+        "Incremental revenue / decision"
+      ]
+    },
+    "faq": [
+      {
+        "q": "Is marginal cost always total cost divided by units?",
+        "a": "No. That is average cost for a defined total. Marginal cost uses the cost change divided by the output change."
+      },
+      {
+        "q": "Is the $78 batch cost the cost of the 301st unit?",
+        "a": "No. The fictional 301st unit triggers $1,218. The $78 figure averages $1,560 over the full additional 20 units."
+      },
+      {
+        "q": "Are fixed costs always excluded?",
+        "a": "No. Unchanged commitments cancel from a decision comparison, but a new avoidable capacity commitment caused by the order must be included."
+      },
+      {
+        "q": "Can the formula be used when output change is zero?",
+        "a": "The finite-change quotient is undefined when the denominator is zero. Investigate the cost change on its own basis."
+      },
+      {
+        "q": "Does a price above historical average cost guarantee a useful order?",
+        "a": "No. Check the actual incremental batch cost, new capacity, other order costs and any displaced alternative."
+      },
+      {
+        "q": "Can I use the last unit rate beyond the capacity limit?",
+        "a": "Not without evidence. The example stops at 360 units; a higher output requires a supported new cost alternative."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openstax.org/books/principles-economics-3e/pages/7-3-costs-in-the-short-run",
+        "label": "OpenStax: average and marginal cost definitions"
+      },
+      {
+        "url": "https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f5/technical-articles/relevant-costs.html",
+        "label": "ACCA: relevant costs and changed commitments"
+      },
+      {
+        "url": "https://openstax.org/books/principles-managerial-accounting/pages/2-2-identify-and-apply-basic-cost-behavior-patterns",
+        "label": "OpenStax: cost behavior and relevant ranges"
+      }
+    ]
+  },
+  {
+    "id": "N041",
+    "slug": "average-cost-per-unit",
+    "title": "Average Cost per Unit: Match Costs, Output and Capacity",
+    "seoTitle": "Average Cost per Unit: Formula and Scope",
+    "description": "Calculate average cost per unit using matched costs and output. Check fixed-cost spreading, capacity steps, unsold units and the limits of a unit average.",
+    "primaryKeyword": "average cost per unit",
+    "scopeBoundary": "Same-period average production cost per comparable unit and capacity sensitivity; not weighted average cost of capital, consumer price comparisons or a complete inventory-valuation policy.",
+    "opening": "Average cost per unit is a defined cost total divided by the matched quantity of output. Label the cost boundary, product and period before interpreting the result or comparing it with another month.",
+    "sections": [
+      {
+        "id": "formula",
+        "title": "Define the cost total and output denominator",
+        "html": "<p><a href=\"https://openstax.org/books/principles-economics-3e/pages/7-3-costs-in-the-short-run\">OpenStax defines average total cost</a> as total cost divided by output. For a management production report, use production costs and comparable units produced within the same period and scope. A cost pool for one product cannot be divided by another product’s units. With zero output, an average per produced unit is undefined even when committed costs remain payable.</p><p>State whether the numerator includes materials, labor, production support, selling costs or financing. “Cost per unit” alone leaves those choices unanswered. If the report instead measures all operating cost per delivered service, use that explicit label and a matching service denominator. A production average, customer-service average and purchase-price average can all be useful while answering different questions.</p>"
+      },
+      {
+        "id": "case",
+        "title": "Calculate a fictional homogeneous-product month",
+        "html": "<p>The original USD illustration assumes one comparable finished product, no opening or closing work in process, no scrap and a single month. Committed production costs are $6,000, and included variable production cost is $12 for each completed unit. At 1,000 units, the variable pool is $12,000 and the total is $18,000. Average production cost is therefore <strong>$18 per completed unit</strong>.</p><p>A possible supporting cost record is $7,000 materials, $4,000 job-varying labor, $1,000 variable production support and $6,000 committed production costs. The first three categories sum to $12,000. These amounts are constructed assumptions, not observed manufacturer data. Selling and administration of a separately assumed $2,500 are excluded from this production total; including them creates a different $20,500 numerator and a different management metric.</p><div class=\"article-table-scroll\"><table><caption>Independent output alternatives; USD and comparable finished units</caption><thead><tr><th scope=\"col\">Output</th><th scope=\"col\">Committed costs</th><th scope=\"col\">Variable costs</th><th scope=\"col\">Total</th><th scope=\"col\">Committed / unit</th><th scope=\"col\">Variable / unit</th><th scope=\"col\">Total / unit</th></tr></thead><tbody><tr><th scope=\"row\">800</th><td>6,000</td><td>9,600</td><td>15,600</td><td>7.50</td><td>12.00</td><td>19.50</td></tr><tr><th scope=\"row\">1,000</th><td>6,000</td><td>12,000</td><td>18,000</td><td>6.00</td><td>12.00</td><td>18.00</td></tr><tr><th scope=\"row\">1,200</th><td>6,000</td><td>14,400</td><td>20,400</td><td>5.00</td><td>12.00</td><td>17.00</td></tr><tr><th scope=\"row\">1,400</th><td>8,400</td><td>16,800</td><td>25,200</td><td>6.00</td><td>12.00</td><td>18.00</td></tr></tbody></table></div>"
+      },
+      {
+        "id": "fixed",
+        "title": "Explain a lower average without claiming a cash saving",
+        "html": "<p>At 800 units the same $6,000 plus $9,600 variable cost gives $15,600, or $19.50 each. At 1,200 units, $20,400 divided by 1,200 gives $17. The $6,000 commitment has not been reduced. Its assigned amount falls from $7.50 to $5 per unit because the denominator increases, while the assumed variable amount stays $12 per unit.</p><p><a href=\"https://openstax.org/books/principles-managerial-accounting/pages/2-2-identify-and-apply-basic-cost-behavior-patterns\">OpenStax’s cost-behavior discussion</a> emphasizes the activity range behind a fixed-cost assumption. In this case, producing more units to lower the reported average is not a saving if the extra units cannot be sold or require funding. Additional materials and labor still consume resources. Compare total commitments, usable output and demand rather than rewarding a smaller allocated amount in isolation.</p>"
+      },
+      {
+        "id": "capacity",
+        "title": "Recheck the average when the cost structure steps",
+        "html": "<p>The example’s original capacity ends at 1,200 units. Producing 1,400 requires another $2,400 monthly commitment, making committed costs $8,400. Variable cost is 1,400 × $12 = $16,800. Total cost becomes $25,200 and average returns to <strong>$18</strong>. Carrying the old $6,000 commitment into this alternative would report $22,800 / 1,400, or about $16.29, and omit the capacity requirement.</p><p>The 1,200-to-1,400 increase costs $4,800 for 200 additional units, an interval incremental cost of $24. That differs from the $18 average across all 1,400. Use the <a href=\"/blogs/marginal-cost/\">marginal-cost method</a> when evaluating the added batch. Verify how long the new capacity is committed, its usable output and its payment dates before treating this alternative as achievable.</p>"
+      },
+      {
+        "id": "inventory",
+        "title": "Do not quietly replace production with sales",
+        "html": "<p>If the 1,000-unit case sells only 800 units, $18,000 divided by 800 equals $22.50. That is not the original average production cost per unit produced: it divides the whole production pool by a smaller sales denominator. It could describe a deliberately labeled cost-pool-per-unit-sold indicator, but it should not silently replace the $18 production measure.</p><p>For a simple internal allocation assigning the entire $18,000 uniformly to those 1,000 identical units, 800 units represent $14,400 and 200 remaining units represent $3,600. Those two allocations reconcile to $18,000. This arithmetic is not a complete US GAAP or tax inventory valuation: capitalization, overhead allocation, impairment, abnormal costs and other framework requirements need separate assessment. Use <a href=\"/blogs/how-to-calculate-cost-of-goods-sold/\">the COGS guide</a> for the inventory movement rather than assuming all production spending is the current cost of sales.</p>"
+      },
+      {
+        "id": "comparability",
+        "title": "Make changes in quality, mix and measurement visible",
+        "html": "<p>Compare accepted good output with the same specification and unit of measure. A kilogram, an individual component and a boxed set are not interchangeable units. A change toward larger or more complex products can raise the average while each product’s own process improves. Separate product families or use an explicitly justified cost driver instead of blending unlike output into a persuasive single figure.</p><p>Trace invoices, material consumption, time records and production support to the period. A late supplier payment does not prove the current production cost fell. A batch with more rework can look cheaper per attempted unit while costing more per accepted unit. Preserve both counts where relevant and explain which is in the denominator. The clean teaching case deliberately excludes those complications; a real report must document them rather than inherit the example’s assumptions.</p>"
+      },
+      {
+        "id": "use",
+        "title": "Use the average alongside the decision it supports",
+        "html": "<p>An average is a summary, not a selling-price rule or a guarantee of profit. A price must be tested against the whole offer, demand, relevant costs, capacity and commercial commitments. Allocated historical cost alone cannot identify the incremental cost of a rush order. Likewise, a profitable income statement does not establish that supplier and payroll payments can be funded before customer receipts clear.</p><p>Record the cost categories, output basis, time window, capacity assumptions, excluded items and reviewer beside every reported average. Use <a href=\"/blogs/cost-control/\">cost control</a> to investigate price and usage differences, <a href=\"/blogs/job-order-costing/\">job-order costing</a> when jobs require separate cost records, and <a href=\"/blogs/cost-volume-profit-analysis/\">CVP analysis</a> for operating recovery within a stated range. Recompute a new average only after changed assumptions and quantities have been reconciled to their source records.</p>"
+      }
+    ],
+    "worksheet": {
+      "headers": [
+        "Output",
+        "Committed costs",
+        "Variable costs",
+        "Total costs",
+        "Average cost"
+      ],
+      "rows": [
+        [
+          "800",
+          "6,000",
+          "9,600",
+          "15,600",
+          "19.50"
+        ],
+        [
+          "1,000",
+          "6,000",
+          "12,000",
+          "18,000",
+          "18.00"
+        ],
+        [
+          "1,200",
+          "6,000",
+          "14,400",
+          "20,400",
+          "17.00"
+        ],
+        [
+          "1,400",
+          "8,400",
+          "16,800",
+          "25,200",
+          "18.00"
+        ]
+      ],
+      "blankHeaders": [
+        "Period / product / output definition",
+        "Cost categories / exclusions",
+        "Matched output",
+        "Capacity range / new commitment",
+        "Total / output / review"
+      ]
+    },
+    "faq": [
+      {
+        "q": "What is the formula for average cost per unit?",
+        "a": "Divide a defined cost total by the matching quantity of comparable output for the stated period. The label must explain which costs and output are included."
+      },
+      {
+        "q": "Does lower fixed cost per unit mean the fixed bill fell?",
+        "a": "Not necessarily. The same committed amount can be spread across more units while the total payment remains unchanged."
+      },
+      {
+        "q": "Should I divide production cost by units sold?",
+        "a": "Use produced units for an average production cost per unit produced. A sales-based indicator needs its own explicit cost and denominator definition."
+      },
+      {
+        "q": "What happens when output is zero?",
+        "a": "The per-produced-unit average is undefined. Committed costs can still exist and should be reported separately."
+      },
+      {
+        "q": "Is $18 automatically the correct inventory valuation?",
+        "a": "No. It is the fictional case’s simple internal allocation. Actual financial-reporting and tax valuation requirements require their own review."
+      },
+      {
+        "q": "Does the average establish the cost of the next order?",
+        "a": "No. Use a matching incremental alternative, including capacity steps and other decision-changing amounts."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openstax.org/books/principles-economics-3e/pages/7-3-costs-in-the-short-run",
+        "label": "OpenStax: average total cost and output"
+      },
+      {
+        "url": "https://openstax.org/books/principles-managerial-accounting/pages/2-2-identify-and-apply-basic-cost-behavior-patterns",
+        "label": "OpenStax: cost behavior, relevant ranges and cost classifications"
+      }
+    ]
+  },
+  {
+    "id": "N042",
+    "slug": "cost-control",
+    "title": "Cost Control: Investigate Differences and Verify Actions",
+    "seoTitle": "Cost Control: Evidence, Actions and Results",
+    "description": "Control costs with matched records, clear action owners and verified results. Reconcile a fictional volume, usage and price case without double counting.",
+    "primaryKeyword": "cost control",
+    "scopeBoundary": "Evidence-to-action cost control workflow and verified economic response; not a duplicate of the existing flexible-budget tutorial, blanket spending cuts or a legal procurement policy.",
+    "opening": "Cost control connects a supported cost difference to an investigation, a responsible action and a measured result. Compare matching activity and scope before calling higher spending waste or a lower supplier rate a saving.",
+    "sections": [
+      {
+        "id": "boundary",
+        "title": "Define the control question before assigning blame",
+        "html": "<p>Choose the product, period, accepted-output measure, cost pool and standard being reviewed. Record who approved the standard and which actual documents support consumption and price. A report of “spending above budget” cannot by itself distinguish extra useful output, a changed specification, higher input prices or inefficient usage. Keep approved changes visible rather than altering last month’s standard to remove the variance.</p><p><a href=\"https://www.accaglobal.com/gb/en/student/exam-support-resources/professional-exams-study-resources/p5/technical-articles/divisional-performance-management.html\">ACCA’s controllability discussion</a> distinguishes an operation’s result from the matters a particular manager can influence. Apply that distinction to the investigation: a supplier-market shock is not automatically the buyer’s fault, and a lower-rate material is not automatically the production team’s improvement. Name the decision owner while retaining the full business effect, including quality and delivery consequences.</p>"
+      },
+      {
+        "id": "bridge",
+        "title": "Reconcile output, usage and price in one original case",
+        "html": "<p>The fictional USD case budgets 1,000 accepted units, each using two kilograms of one material at $5 per kilogram: $10,000. Actual accepted output is 1,100 units. The business consumes 2,310 kilograms at $5.20, so actual material cost is $12,012. Assume purchases equal consumption, no opening or closing material inventory, no purchase credits, no mixed products and unchanged specifications. Those constraints keep the consumption-price bridge comparable.</p><div class=\"article-table-scroll\"><table><caption>Original material-cost bridge; positive movements increase cost</caption><thead><tr><th scope=\"col\">Stage</th><th scope=\"col\">Independent calculation</th><th scope=\"col\">USD</th></tr></thead><tbody><tr><th scope=\"row\">Original standard at 1,000 units</th><td>1,000 × 2 kg × $5.00</td><td>10,000</td></tr><tr><th scope=\"row\">Output-volume movement</th><td>100 extra units × 2 kg × $5.00</td><td>+1,000</td></tr><tr><th scope=\"row\">Standard at actual 1,100 units</th><td>2,200 kg × $5.00</td><td>11,000</td></tr><tr><th scope=\"row\">Usage effect at standard price</th><td>110 extra kg × $5.00</td><td>+550</td></tr><tr><th scope=\"row\">Price effect on actual usage</th><td>2,310 kg × $0.20</td><td>+462</td></tr><tr><th scope=\"row\">Actual material cost</th><td>2,310 kg × $5.20</td><td>12,012</td></tr></tbody></table></div><p>Of the $2,012 increase over the original amount, $1,000 reflects 100 more accepted units at the standard usage and price. The remaining $1,012 compares actual cost with the $11,000 standard allowed for actual output. It requires investigation; it is not automatically an amount that can be saved.</p>"
+      },
+      {
+        "id": "interaction",
+        "title": "Allocate the price–usage interaction once",
+        "html": "<p><a href=\"https://openstax.org/books/principles-managerial-accounting/pages/8-2-compute-and-evaluate-materials-variances\">OpenStax’s materials-variance framework</a> separates price and quantity effects against a defined standard. In this example, excess consumption is 2,310 − 2,200 = 110 kilograms. Valued at $5, it gives $550. The actual-usage price effect is 2,310 × ($5.20 − $5.00) = $462. Together they reconcile the $1,012 difference at actual output.</p><p>An alternative display can separate pure price on the allowed 2,200 kilograms, $440; pure usage at standard price, $550; and the 110 × $0.20 interaction, $22. That also totals $1,012. The first display already includes the $22 interaction in its $462 price component. Adding it again would overstate the difference. Do not mix a purchase-price variance on inventory acquisitions with a consumption-usage variance without reconciling inventory movements.</p>"
+      },
+      {
+        "id": "evidence",
+        "title": "Investigate records and operations before choosing a response",
+        "html": "<p>Check the price invoice, unit conversions, freight or discounts included, actual receipts and supplier credit notes. Compare material issues, returned unused material, count adjustments and accepted output to the same cutoff. Investigate whether the 110-kilogram excess reflects real scrap, a changed design, measurement error, a poor standard or an unrecorded return. A favorable variance can also be a warning if quality or customer scope has been reduced.</p><div class=\"article-table-scroll\"><table><caption>Investigation and action ownership for this case</caption><thead><tr><th scope=\"col\">Question</th><th scope=\"col\">Evidence</th><th scope=\"col\">Action lead</th></tr></thead><tbody><tr><th scope=\"row\">Why did the comparable kilogram price change?</th><td>Matched quote, invoice and purchase terms</td><td>Procurement with finance review</td></tr><tr><th scope=\"row\">Why did usage exceed 2 kg per accepted unit?</th><td>Material issues, returns, scrap and quality records</td><td>Operations and quality</td></tr><tr><th scope=\"row\">Why were 100 more accepted units produced?</th><td>Demand authorization and completion records</td><td>Sales / production planning</td></tr><tr><th scope=\"row\">Did the approved product scope change?</th><td>Specification version and approval</td><td>Product / contract owner</td></tr></tbody></table></div><p>Agree what each lead can actually change and by when. Do not evaluate one department only on a narrow favorable rate while its decision pushes a larger cost or delay elsewhere.</p>"
+      },
+      {
+        "id": "pilot",
+        "title": "Test whether a cheaper rate reduces the whole cost",
+        "html": "<p>A fictional supplier option reduces the kilogram price from $5.20 to $5.05 but requires 2.2 kilograms per accepted unit under its tested usage assumption. At the same 1,100 units, consumption becomes 2,420 kilograms and cost becomes $12,221. That is <strong>$209 more</strong> than $12,012 despite the lower price. Confirm comparable quality, usable output and delivery before calling the quote a saving.</p><p>A separate process trial instead reduces usage to 2.05 kilograms at unchanged $5.20. It consumes 2,255 kilograms and costs $11,726, a $286 reduction. If the trial also incurs $400 expense in this same period, its first-period included cost is $12,126: $114 above the original actual case. Later benefits may justify the trial, but they need evidence and a stated horizon. Do not promise $286 monthly savings indefinitely from one pilot.</p>"
+      },
+      {
+        "id": "verification",
+        "title": "Verify the result without confusing expense and payment",
+        "html": "<p>Write the chosen action, test cost, owner, completion date, expected mechanism and stop condition before implementation. Specify whether the claimed improvement reduces physical consumption, a contractual rate, a recurring commitment or only an allocated charge. Keep supplier payment timing in the cash forecast. Delaying a payable can help current cash while leaving the cost unchanged; consuming existing stock can reduce this month’s purchases without demonstrating lower usage.</p><p>After the action, compare matching accepted output, specification, usage and prices. Separate an external market-price movement from the effect attributed to the project. Reconcile one-time trial expense, recurring benefit and actual cash movements to their own periods. Preserve the original baseline and disclose whether a later approved standard is different. Check complaints, rework and throughput so a smaller cost number is not accepted at the expense of the intended service.</p>"
+      },
+      {
+        "id": "review",
+        "title": "Keep control actions connected to the wider model",
+        "html": "<p>The output is a short action record, not a large variance report without a next step. Leave unresolved differences visible with evidence needed, a responsible person and review date. Escalate a missing document or a failed quality check before increasing the intervention. A cost pool can be fully reconciled while its rate assumptions or operating response still need investigation.</p><p>Use <a href=\"/blogs/flexible-budget-variance-analysis/\">the flexible-budget guide</a> for its broader activity-adjusted tutorial; this page owns the investigation and action workflow. Use <a href=\"/blogs/cost-drivers-small-business/\">cost-driver evidence</a> to select a meaningful activity measure, <a href=\"/blogs/average-cost-per-unit/\">average cost per unit</a> to interpret the whole-period spread, and <a href=\"/blogs/marginal-cost/\">marginal cost</a> to evaluate changed output and commitments. The <a href=\"/blogs/bookkeeping-small-business/\">bookkeeping close</a> supplies the reconciled underlying record. Close an action only when its result and remaining uncertainty are recorded.</p>"
+      }
+    ],
+    "worksheet": {
+      "headers": [
+        "Bridge stage",
+        "Calculation",
+        "USD"
+      ],
+      "rows": [
+        [
+          "Original standard at 1,000 units",
+          "1,000 × 2 kg × $5.00",
+          "10,000"
+        ],
+        [
+          "Output-volume movement",
+          "100 extra units × 2 kg × $5.00",
+          "+1,000"
+        ],
+        [
+          "Standard at actual 1,100 units",
+          "2,200 kg × $5.00",
+          "11,000"
+        ],
+        [
+          "Usage effect at standard price",
+          "110 extra kg × $5.00",
+          "+550"
+        ],
+        [
+          "Price effect on actual usage",
+          "2,310 kg × $0.20",
+          "+462"
+        ],
+        [
+          "Actual material cost",
+          "2,310 kg × $5.20",
+          "12,012"
+        ]
+      ],
+      "blankHeaders": [
+        "Period / output / standard version",
+        "Difference / evidence needed",
+        "Action / accountable owner",
+        "Test cost / deadline / stop condition",
+        "Verified result / quality / cash timing"
+      ]
+    },
+    "faq": [
+      {
+        "q": "Is every increase over the original budget waste?",
+        "a": "No. In the case, $1,000 of the $2,012 increase reflects extra accepted output at standard usage and price. Other differences need investigation."
+      },
+      {
+        "q": "Should the $22 interaction be added to the $462 price effect?",
+        "a": "Not in the first decomposition. The $462 actual-usage price effect already contains that interaction; adding it again double counts it."
+      },
+      {
+        "q": "Does a lower material price guarantee a saving?",
+        "a": "No. The fictional $5.05 option uses more material and costs $209 more at the same accepted output."
+      },
+      {
+        "q": "Does a favorable usage difference always mean better performance?",
+        "a": "No. It can reflect a changed specification, less service, measurement error or quality effects. Confirm comparable accepted output and evidence."
+      },
+      {
+        "q": "Is a payment delay a cost saving?",
+        "a": "Not necessarily. It changes cash timing; the obligation and recognized cost can remain unchanged. Evaluate any actual fees or negotiated changes separately."
+      },
+      {
+        "q": "Who should own a cost-control action?",
+        "a": "Assign someone with authority over the proposed response, supported by finance and affected teams. Distinguish controllable actions from the full operation’s result."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openstax.org/books/principles-managerial-accounting/pages/8-2-compute-and-evaluate-materials-variances",
+        "label": "OpenStax: materials price and quantity effects"
+      },
+      {
+        "url": "https://www.accaglobal.com/gb/en/student/exam-support-resources/professional-exams-study-resources/p5/technical-articles/divisional-performance-management.html",
+        "label": "ACCA: controllability and performance measures"
+      },
+      {
+        "url": "https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f5/technical-articles/relevant-costs.html",
+        "label": "ACCA: decision-changing cash flows and commitments"
+      }
+    ]
+  }
+]

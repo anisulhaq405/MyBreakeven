@@ -1,0 +1,97 @@
+[
+  {
+    "url": "https://fasb.org/Page/PageContent?PageId=%2Fstaticpages%2Fstandards.html",
+    "status": 200,
+    "finalUrl": "https://fasb.org/Page/PageContent?PageId=%2Fstaticpages%2Fstandards.html"
+  },
+  {
+    "url": "https://openstax.org/books/principles-economics-3e/pages/7-3-costs-in-the-short-run",
+    "status": 200,
+    "finalUrl": "https://openstax.org/books/principles-economics-3e/pages/7-3-costs-in-the-short-run"
+  },
+  {
+    "url": "https://openstax.org/books/principles-financial-accounting/pages/14-3-record-transactions-and-the-effects-on-financial-statements-for-cash-dividends-property-dividends-stock-dividends-and-stock-splits",
+    "status": 200,
+    "finalUrl": "https://openstax.org/books/principles-financial-accounting/pages/14-3-record-transactions-and-the-effects-on-financial-statements-for-cash-dividends-property-dividends-stock-dividends-and-stock-splits"
+  },
+  {
+    "url": "https://openstax.org/books/principles-financial-accounting/pages/14-4-compare-and-contrast-owners-equity-versus-retained-earnings",
+    "status": 200,
+    "finalUrl": "https://openstax.org/books/principles-financial-accounting/pages/14-4-compare-and-contrast-owners-equity-versus-retained-earnings"
+  },
+  {
+    "url": "https://openstax.org/books/principles-financial-accounting/pages/4-2-discuss-the-adjustment-process-and-illustrate-common-types-of-adjusting-entries",
+    "status": 200,
+    "finalUrl": "https://openstax.org/books/principles-financial-accounting/pages/4-2-discuss-the-adjustment-process-and-illustrate-common-types-of-adjusting-entries"
+  },
+  {
+    "url": "https://openstax.org/books/principles-financial-accounting/pages/5-4-appendix-complete-a-comprehensive-accounting-cycle-for-a-business",
+    "status": 200,
+    "finalUrl": "https://openstax.org/books/principles-financial-accounting/pages/5-4-appendix-complete-a-comprehensive-accounting-cycle-for-a-business"
+  },
+  {
+    "url": "https://openstax.org/books/principles-managerial-accounting/pages/2-2-identify-and-apply-basic-cost-behavior-patterns",
+    "status": 200,
+    "finalUrl": "https://openstax.org/books/principles-managerial-accounting/pages/2-2-identify-and-apply-basic-cost-behavior-patterns"
+  },
+  {
+    "url": "https://openstax.org/books/principles-managerial-accounting/pages/6-3-calculate-activity-based-product-costs",
+    "status": 200,
+    "finalUrl": "https://openstax.org/books/principles-managerial-accounting/pages/6-3-calculate-activity-based-product-costs"
+  },
+  {
+    "url": "https://openstax.org/books/principles-managerial-accounting/pages/6-5-compare-and-contrast-variable-and-absorption-costing",
+    "status": 200,
+    "finalUrl": "https://openstax.org/books/principles-managerial-accounting/pages/6-5-compare-and-contrast-variable-and-absorption-costing"
+  },
+  {
+    "url": "https://openstax.org/books/principles-managerial-accounting/pages/8-2-compute-and-evaluate-materials-variances",
+    "status": 200,
+    "finalUrl": "https://openstax.org/books/principles-managerial-accounting/pages/8-2-compute-and-evaluate-materials-variances"
+  },
+  {
+    "url": "https://standards.aasb.gov.au/aasb-102-dec-2021",
+    "status": 200,
+    "finalUrl": "https://standards.aasb.gov.au/aasb-102-dec-2021"
+  },
+  {
+    "url": "https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f5/technical-articles/relevant-costs.html",
+    "status": 200,
+    "finalUrl": "https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f5/technical-articles/relevant-costs.html"
+  },
+  {
+    "url": "https://www.accaglobal.com/gb/en/student/exam-support-resources/professional-exams-study-resources/p5/technical-articles/divisional-performance-management.html",
+    "status": 200,
+    "finalUrl": "https://www.accaglobal.com/gb/en/student/exam-support-resources/professional-exams-study-resources/p5/technical-articles/divisional-performance-management.html"
+  },
+  {
+    "url": "https://www.gao.gov/products/gao-20-195g",
+    "status": 200,
+    "finalUrl": "https://www.gao.gov/products/gao-20-195g"
+  },
+  {
+    "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-2-inventories/",
+    "status": 200,
+    "finalUrl": "https://www.ifrs.org/issued-standards/list-of-standards/ias-2-inventories/"
+  },
+  {
+    "url": "https://www.library.hbs.edu/working-knowledge/rethinking-activity-based-costing",
+    "status": 200,
+    "finalUrl": "https://www.library.hbs.edu/working-knowledge/rethinking-activity-based-costing"
+  },
+  {
+    "url": "https://www.sec.gov/rules-regulations/staff-guidance/staff-accounting-bulletins/staff-accounting-bulletin-no-108",
+    "status": 200,
+    "finalUrl": "https://www.sec.gov/rules-regulations/staff-guidance/staff-accounting-bulletins/staff-accounting-bulletin-no-108"
+  },
+  {
+    "url": "https://www.whitehouse.gov/omb/information-resources/guidance/circulars/",
+    "status": 200,
+    "finalUrl": "https://www.whitehouse.gov/omb/information-resources/guidance/circulars/"
+  },
+  {
+    "url": "https://www.whitehouse.gov/wp-content/uploads/2025/12/a094.pdf",
+    "status": 200,
+    "finalUrl": "https://www.whitehouse.gov/wp-content/uploads/2025/12/a094.pdf"
+  }
+]

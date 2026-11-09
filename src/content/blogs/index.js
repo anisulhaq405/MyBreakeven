@@ -1,3 +1,5 @@
+import {twelveDayDay5Posts} from './twelveDayDay5.js';
+import {applyDay5Review} from './twelveDayDay5Review.js';
 import {applyAuthenticityReview} from './authenticityReview20261108.js';
 import {twelveDayDay4Posts} from './twelveDayDay4.js';
 import {applyDay4Review} from './twelveDayDay4Review.js';
@@ -205,11 +207,13 @@ const normalizePost = post => {
   reviewed = applyDay2PublicationReview(reviewed);
   reviewed = applyDay3Review(reviewed);
   reviewed = applyDay4Review(reviewed);
+  reviewed = applyDay5Review(reviewed);
   const image=titledFeatureImage(reviewed.slug,featureDeliveryAssets[reviewed.image] || reviewed.image);
   return image===reviewed.image ? reviewed : {...reviewed,image};
 };
 
 export const blogCollections = Object.freeze({
+  twelveDayDay5: twelveDayDay5Posts,
   twelveDayDay4: twelveDayDay4Posts.map(applyAuthenticityReview),
   twelveDayDay3: twelveDayDay3Posts.map(applyAuthenticityReview),
   twelveDayDay2: twelveDayDay2Posts.map(applyAuthenticityReview),
