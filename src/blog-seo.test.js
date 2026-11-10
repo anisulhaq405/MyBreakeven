@@ -1,3 +1,4 @@
+import {november10RecoverySlugs} from './content/blogs/november10PositionRecovery.js';
 import {october25GscDates}from'./testFixtures/october25GscDates.js';
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
@@ -32,7 +33,7 @@ describe("industry guide SEO assets", () => {
       expect(article.tags.length).toBeGreaterThanOrEqual(4);
       expect(article.opening.length).toBeGreaterThan(120);
       expect(article.published).toBe("2026-09-10");
-      expect(article.modified).toBe(october25GscDates.has(article.slug)?'2026-10-25':(["cleaning-business-break-even","photography-business-break-even","agency-break-even"].includes(article.slug) ? "2026-10-21" : article.slug === "landscaping-break-even" ? "2026-10-22" : ["ecommerce-break-even", "landscaping-break-even"].includes(article.slug) ? "2026-10-12" : article.slug === "salon-break-even" ? "2026-10-08" : ["ecommerce-break-even", "landscaping-break-even", "restaurant-break-even", "salon-break-even", "mobile-detailing-break-even"].includes(article.slug) ? "2026-10-07" : ["mobile-detailing-break-even", "salon-break-even"].includes(article.slug) ? "2026-10-04" : article.slug === "restaurant-break-even" ? "2026-10-03" : article.slug === "landscaping-break-even" ? "2026-10-02" : article.slug === "cleaning-business-break-even" ? "2026-10-01" : "2026-09-13"));
+      expect(article.modified).toBe(november10RecoverySlugs.has(article.slug) ? "2026-11-10" : october25GscDates.has(article.slug)?'2026-10-25':(["cleaning-business-break-even","photography-business-break-even","agency-break-even"].includes(article.slug) ? "2026-10-21" : article.slug === "landscaping-break-even" ? "2026-10-22" : ["ecommerce-break-even", "landscaping-break-even"].includes(article.slug) ? "2026-10-12" : article.slug === "salon-break-even" ? "2026-10-08" : ["ecommerce-break-even", "landscaping-break-even", "restaurant-break-even", "salon-break-even", "mobile-detailing-break-even"].includes(article.slug) ? "2026-10-07" : ["mobile-detailing-break-even", "salon-break-even"].includes(article.slug) ? "2026-10-04" : article.slug === "restaurant-break-even" ? "2026-10-03" : article.slug === "landscaping-break-even" ? "2026-10-02" : article.slug === "cleaning-business-break-even" ? "2026-10-01" : "2026-09-13"));
     }
   });
 

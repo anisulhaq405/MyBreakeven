@@ -1,3 +1,4 @@
+import {november10RecoverySlugs} from './content/blogs/november10PositionRecovery.js';
 import {day4ExistingSlugs} from './content/blogs/twelveDayDay4Review.js';
 import {october25GscDates}from'./testFixtures/october25GscDates.js';
 import SecondaryPage from './Pages';
@@ -67,7 +68,7 @@ describe('Search-intent guide changes', () => {
   it('puts checked answers before the cover and preserves URL/publication and body examples', () => {
     for(const slug of ['break-even-analysis-example','target-profit-sales-formula']){
       const post=blogPostMap[slug], html=renderToStaticMarkup(<LongformArticle article={post}/>);
-      expect(post.modified).toBe(day4ExistingSlugs.has(post.slug)?'2026-11-07':(october25GscDates.has(post.slug)?'2026-10-25':(slug==='break-even-analysis-example'?'2026-10-21':'2026-10-16')));expect(post.published).not.toBe(post.modified);
+      expect(post.modified).toBe(november10RecoverySlugs.has(post.slug) ? "2026-11-10" : day4ExistingSlugs.has(post.slug)?'2026-11-07':(october25GscDates.has(post.slug)?'2026-10-25':(slug==='break-even-analysis-example'?'2026-10-21':'2026-10-16')));expect(post.published).not.toBe(post.modified);
       expect(html.indexOf('id="quick-answer"')).toBeLessThan(html.indexOf('class="article-featured"'));
       for(const [id] of post.sectionLinks)expect(html).toContain(`id="${id}"`);
       expect((html.match(/<h1/g)||[]).length).toBe(1);
