@@ -1,3 +1,4 @@
+import {november10RecoverySlugs} from './content/blogs/november10PositionRecovery.js';
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { blogPostMap, blogPosts } from "./content/blogs/index.js";
@@ -10,7 +11,7 @@ describe("Day 4 volume-to-income guides", () => {
     expect(new Set(posts.map(post => post.slug)).size).toBe(8);
     for (const post of posts) {
       expect(post.published).toBe("2026-09-22");
-      expect(post.modified).toBe(post.slug === "how-many-lawns-100k" ? "2026-10-11" : ["salon-clients-per-day-break-even", "how-many-cleaning-clients-5000", "how-many-photography-clients-month", "how-many-detailing-jobs-week", "restaurant-covers-per-night-break-even", "how-many-agency-retainer-clients"].includes(post.slug) ? "2026-10-07" : "2026-09-22");
+      expect(post.modified).toBe(november10RecoverySlugs.has(post.slug) ? "2026-11-10" : post.slug === "how-many-lawns-100k" ? "2026-10-11" : ["salon-clients-per-day-break-even", "how-many-cleaning-clients-5000", "how-many-photography-clients-month", "how-many-detailing-jobs-week", "restaurant-covers-per-night-break-even", "how-many-agency-retainer-clients"].includes(post.slug) ? "2026-10-07" : "2026-09-22");
     }
   });
 

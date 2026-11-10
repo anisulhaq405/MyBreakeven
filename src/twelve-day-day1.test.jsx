@@ -1,3 +1,4 @@
+import {november10RecoverySlugs} from './content/blogs/november10PositionRecovery.js';
 import {day5ExistingSlugs} from './content/blogs/twelveDayDay5Review.js';
 import {day4ExistingSlugs} from './content/blogs/twelveDayDay4Review.js';
 import {day3ExistingSlugs} from './content/blogs/twelveDayDay3Review.js';
@@ -42,8 +43,8 @@ describe('Day 1 editorial delivery',()=>{
   const baseline=JSON.parse(readFileSync('docs/content/2026-11-03-baseline-blog-hashes.json','utf8'));
   const current=new Map(blogPosts.map(p=>[p.slug,p]));
   for(const before of baseline){
-   if(day5ExistingSlugs.has(before.slug)||day4ExistingSlugs.has(before.slug)||day3ExistingSlugs.has(before.slug)||day2ExistingSlugs.has(before.slug)||november04GscSlugs.has(before.slug))continue; // Independently protected by the November 4 two-page review test.
-   if(before.slug==='cash-flow-statement'){const old=JSON.parse(readFileSync('docs/content/2026-11-04-cash-flow-before-release.json','utf8'));const now=current.get(before.slug);expect(now.html.startsWith(old.html)).toBe(true);expect(now.html).toContain('cash-close-cutoff-control');expect(now.modified).toBe('2026-11-04');expect({...now,html:old.html,modified:old.modified}).toEqual(old);}else expect(createHash('sha256').update(JSON.stringify(current.get(before.slug))).digest('hex')).toBe(before.sha256);
+   if(november10RecoverySlugs.has(before.slug)||day5ExistingSlugs.has(before.slug)||day4ExistingSlugs.has(before.slug)||day3ExistingSlugs.has(before.slug)||day2ExistingSlugs.has(before.slug)||november04GscSlugs.has(before.slug))continue; // Independently protected by the November 4 two-page review test.
+   if(before.slug==='cash-flow-statement'){const old=JSON.parse(readFileSync('docs/content/2026-11-04-cash-flow-before-release.json','utf8'));const now=current.get(before.slug);expect(now.html.startsWith(old.html)).toBe(true);expect(now.html).toContain('cash-close-cutoff-control');expect(now.modified).toBe(november10RecoverySlugs.has(now.slug) ? "2026-11-10" : '2026-11-04');expect({...now,html:old.html,modified:old.modified}).toEqual(old);}else expect(createHash('sha256').update(JSON.stringify(current.get(before.slug))).digest('hex')).toBe(before.sha256);
   }
  });
 });

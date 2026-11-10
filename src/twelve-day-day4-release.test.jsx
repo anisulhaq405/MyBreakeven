@@ -1,3 +1,4 @@
+import {november10RecoverySlugs} from './content/blogs/november10PositionRecovery.js';
 import {day5ExistingSlugs} from './content/blogs/twelveDayDay5Review.js';
 import {applyAuthenticityReview,authenticityReviewSlugs} from './content/blogs/authenticityReview20261108.js';
 import React from 'react';
@@ -17,7 +18,7 @@ describe('November 7 Day 4 publication',()=>{
   for(const p of posts){
    expect(before.some(b=>b.slug===p.slug)).toBe(false);
    expect(blogPostMap[p.slug]).toEqual(applyAuthenticityReview(p));expect(p.editorialStatus).toBe('published');
-   expect(p.published).toBe('2026-11-07');expect(p.modified).toBe(p.published);
+   expect(p.published).toBe('2026-11-07');expect(p.modified).toBe(november10RecoverySlugs.has(p.slug) ? "2026-11-10" : p.published);
    const html=renderToStaticMarkup(<LongformArticle article={p}/>);
    expect((html.match(/<h1\b/g)||[])).toHaveLength(1);expect(html).not.toContain('Unpublished draft');expect(html).not.toContain('Invalid Date');
    const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);expect(new Set(ids).size).toBe(ids.length);
@@ -32,9 +33,9 @@ describe('November 7 Day 4 publication',()=>{
   expect(day4ExistingSlugs.size).toBe(4);
   for(const old of before){
    const now=blogPostMap[old.slug];expect(now).toBeDefined();
-   if(day5ExistingSlugs.has(old.slug)||authenticityReviewSlugs.has(old.slug))continue; // Fully reviewed under the November 8 198-record baseline test.
+   if(november10RecoverySlugs.has(old.slug)||day5ExistingSlugs.has(old.slug)||authenticityReviewSlugs.has(old.slug))continue; // Fully reviewed under the November 8 198-record baseline test.
    if(!day4ExistingSlugs.has(old.slug)){expect(hash(now),old.slug).toBe(old.sha256);continue;}
-   const addition=day4ExistingAdditions[old.slug];expect(now.html.endsWith(addition)).toBe(true);expect(now.html.split(addition)).toHaveLength(2);expect(now.modified).toBe('2026-11-07');
+   const addition=day4ExistingAdditions[old.slug];expect(now.html.endsWith(addition)).toBe(true);expect(now.html.split(addition)).toHaveLength(2);expect(now.modified).toBe(november10RecoverySlugs.has(now.slug) ? "2026-11-10" : '2026-11-07');
    expect(hash({...now,html:now.html.slice(0,-addition.length),modified:old.modified}),old.slug).toBe(old.sha256);
    expect(applyDay4Review(now)).toBe(now);expect(()=>applyDay4Review({...now,modified:'2026-10-26',html:'original'})).toThrow(/protected/);
   }
