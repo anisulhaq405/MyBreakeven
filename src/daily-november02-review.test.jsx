@@ -1,3 +1,4 @@
+import {eighteenGuideReviewSlugs} from './content/blogs/november10EighteenGuideReview.js';
 import {november10RecoverySlugs} from './content/blogs/november10PositionRecovery.js';
 import {day5ExistingSlugs} from './content/blogs/twelveDayDay5Review.js';
 import {day4ExistingSlugs} from './content/blogs/twelveDayDay4Review.js';
@@ -21,7 +22,7 @@ const digest=p=>createHash('sha256').update(JSON.stringify(stable(p))).digest('h
 describe('November 2 existing ten-article improvements',()=>{
  it('preserves all other articles, all images and publication dates',()=>{
   expect(Object.keys(edits)).toHaveLength(10);expect(blogPosts).toHaveLength(Object.keys(baseline).length);
-  for(const p of blogPosts){expect(p.image,p.slug).toBe(baseline[p.slug].image);if(!november10RecoverySlugs.has(p.slug)&&!day5ExistingSlugs.has(p.slug)&&!day4ExistingSlugs.has(p.slug)&&!day3ExistingSlugs.has(p.slug)&&!day2ExistingSlugs.has(p.slug)&&!november04GscSlugs.has(p.slug)&&!twelveDayExistingSlugs.has(p.slug)&&!edits[p.slug]&&!november03Batch[p.slug])expect(digest(p),p.slug).toBe(baseline[p.slug].hash);else if(edits[p.slug]) {expect(baseline[p.slug].modified<= '2026-10-25',p.slug).toBe(true);expect(p.modified).toBe(november10RecoverySlugs.has(p.slug) ? "2026-11-10" : '2026-11-02');}}
+  for(const p of blogPosts){expect(p.image,p.slug).toBe(baseline[p.slug].image);if(!(november10RecoverySlugs.has(p.slug)||eighteenGuideReviewSlugs.has(p.slug))&&!day5ExistingSlugs.has(p.slug)&&!day4ExistingSlugs.has(p.slug)&&!day3ExistingSlugs.has(p.slug)&&!day2ExistingSlugs.has(p.slug)&&!november04GscSlugs.has(p.slug)&&!twelveDayExistingSlugs.has(p.slug)&&!edits[p.slug]&&!november03Batch[p.slug])expect(digest(p),p.slug).toBe(baseline[p.slug].hash);else if(edits[p.slug]) {expect(baseline[p.slug].modified<= '2026-10-25',p.slug).toBe(true);expect(p.modified).toBe((november10RecoverySlugs.has(p.slug)||eighteenGuideReviewSlugs.has(p.slug)) ? "2026-11-10" : '2026-11-02');}}
   const protectedPost={slug:Object.keys(edits)[0],modified:'2026-10-26'};expect(applyDailyNovember02Review(protectedPost)).toBe(protectedPost);
  });
  it('renders the decision aids, valid links and extracted FAQs without duplicate IDs',()=>{

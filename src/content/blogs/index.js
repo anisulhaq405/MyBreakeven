@@ -1,3 +1,4 @@
+import { applyNovember10EighteenGuideReview } from "./november10EighteenGuideReview.js";
 import { applyNovember10PositionRecovery } from "./november10PositionRecovery.js";
 import {twelveDayDay5Posts} from './twelveDayDay5.js';
 import {applyDay5Review} from './twelveDayDay5Review.js';
@@ -210,6 +211,7 @@ const normalizePost = post => {
   reviewed = applyDay4Review(reviewed);
   reviewed = applyDay5Review(reviewed);
   reviewed = applyNovember10PositionRecovery(reviewed);
+  reviewed = applyNovember10EighteenGuideReview(reviewed);
   const image=titledFeatureImage(reviewed.slug,featureDeliveryAssets[reviewed.image] || reviewed.image);
   return image===reviewed.image ? reviewed : {...reviewed,image};
 };

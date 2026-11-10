@@ -1,3 +1,4 @@
+import {eighteenGuideReviewSlugs} from './content/blogs/november10EighteenGuideReview.js';
 import {describe,it,expect} from 'vitest';
 import {blogPostMap} from './content/blogs/index.js';
 import {calculateEquivalent,equivalentDefaults} from './equivalentRatioEngine.js';
@@ -9,7 +10,7 @@ describe('Day 3 C07 G08 G09 content-first ratio acceptance',()=>{
   expect(a.html).toContain('id="four-step-ratio-answer-check"');
   expect(b.html).toContain('id="ratio-word-problem-practice"');
   for(const post of [a,b]){
-   expect(post.modified).toBe('2026-10-26');
+   expect(post.modified).toBe(eighteenGuideReviewSlugs.has(post.slug)?'2026-11-10':'2026-10-26');
    expect(post.image).toMatch(/^\/images\//);
    expect(post.faq.length).toBeGreaterThanOrEqual(3);
    expect(post.html).toContain('/calculators/equivalent-ratio-calculator/');
