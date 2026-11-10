@@ -1,3 +1,4 @@
+import {calculateRoas} from './roasEngine.js';
 import Decimal from 'decimal.js';
 const D=Decimal.clone({precision:40});
 export function calculateBusinessTool(input,mode){
@@ -6,8 +7,7 @@ export function calculateBusinessTool(input,mode){
  const v=Object.fromEntries(fields.map(k=>[k,new D(input[k])]));let out;
  if(mode==='roas'){
   if(v.price.lte(0)||v.spend.lte(0)||v.fee.gte(100)||v.margin.gte(100))return {valid:false,message:'Order value and ad spend must be above zero. Fees and target margin must be below 100%.'};
-  const contribution=v.price.times(new D(1).minus(v.fee.div(100))).minus(v.cost),rate=contribution.div(v.price),targetRate=rate.minus(v.margin.div(100));
-  out={contribution,rate:rate.times(100),breakEven:rate.gt(0)?new D(1).div(rate):null,target:targetRate.gt(0)?new D(1).div(targetRate):null,actual:v.revenue.div(v.spend),profit:v.revenue.times(rate).minus(v.spend),maxCPA:contribution.gt(0)?contribution:new D(0),requiredRevenue:rate.gt(0)?v.spend.div(rate):null,estimatedOrders:v.revenue.div(v.price)};
+  return calculateRoas({...input,costMode:'total',support:0,overhead:0});
  }else if(mode==='hourly'){
   if(v.hours.lte(0)||v.hours.gt(168)||v.weeks.lte(0)||v.weeks.gt(52)||v.billable.lte(0)||v.billable.gt(100)||v.fee.gte(100))return {valid:false,message:'Use 0–168 weekly hours (above zero), 0–52 working weeks (above zero), billable time above 0% up to 100%, and fees below 100%.'};
   const annualHours=v.hours.times(v.weeks).times(v.billable.div(100)),annualNeed=v.income.plus(v.overhead).plus(v.profit).times(12),raw=annualNeed.div(annualHours).div(new D(1).minus(v.fee.div(100)));
