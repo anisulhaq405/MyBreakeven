@@ -1,3 +1,4 @@
+import {eighteenGuideReviewSlugs} from './content/blogs/november10EighteenGuideReview.js';
 import React from 'react';
 import {describe,it,expect} from 'vitest';
 import {renderToStaticMarkup} from 'react-dom/server';
@@ -15,7 +16,7 @@ describe('Nine pending blueprint owners',()=>{
  it('uses exactly the eight approved guide slugs and one isolated editorial hub',()=>{expect(posts.map(p=>p.slug)).toEqual(expectedSlugs);expect(routeEntryForPath('/guides/financial-ratios/')).toBe('src/routes/FinancialRatiosHubRoute.jsx');});
  it.each(posts)('$id has readable original content, valid anchors, reciprocal tool links and visible FAQs',post=>{
   const p=blogPostMap[post.slug],html=renderToStaticMarkup(<LongformArticle article={p}/>);
-  expect(p).toMatchObject({published:'2026-10-26',modified:'2026-10-26',editorialStatus:'published'});
+  expect(p).toMatchObject({published:'2026-10-26',modified:eighteenGuideReviewSlugs.has(p.slug)?'2026-11-10':'2026-10-26',editorialStatus:'published'});
   expect(html.match(/<h1\b/g)).toHaveLength(1);
   const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);expect(new Set(ids).size).toBe(ids.length);
   for(const [id]of p.sectionLinks)expect(ids).toContain(id);

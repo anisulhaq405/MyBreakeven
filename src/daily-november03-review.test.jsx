@@ -1,3 +1,4 @@
+import {eighteenGuideReviewSlugs} from './content/blogs/november10EighteenGuideReview.js';
 import {november10RecoverySlugs} from './content/blogs/november10PositionRecovery.js';
 import {day5ExistingSlugs} from './content/blogs/twelveDayDay5Review.js';
 import {day4ExistingSlugs} from './content/blogs/twelveDayDay4Review.js';
@@ -21,7 +22,7 @@ const required=['cleaning-contract-payroll-cash-gap','cleaning-estimate-vs-actua
 describe('November 3 isolated ten-article update',()=>{
  it('updates only the ten eligible articles and preserves all publication dates and images',()=>{
   expect(Object.keys(edits).sort()).toEqual(required.sort());expect(blogPosts).toHaveLength(Object.keys(baseline).length);
-  for(const p of blogPosts){expect(p.image,p.slug).toBe(baseline[p.slug].image);expect(p.published,p.slug).toBe(baseline[p.slug].published);if(!november10RecoverySlugs.has(p.slug)&&!day5ExistingSlugs.has(p.slug)&&!day4ExistingSlugs.has(p.slug)&&!day3ExistingSlugs.has(p.slug)&&!day2ExistingSlugs.has(p.slug)&&!november04GscSlugs.has(p.slug)&&!twelveDayExistingSlugs.has(p.slug)&&!edits[p.slug])expect(digest(p),p.slug).toBe(baseline[p.slug].hash);else if(edits[p.slug]){expect(baseline[p.slug].modified<='2026-10-25').toBe(true);expect(p.modified).toBe(november10RecoverySlugs.has(p.slug) ? "2026-11-10" : '2026-11-03');expect(digest(p)).not.toBe(baseline[p.slug].hash);}}
+  for(const p of blogPosts){expect(p.image,p.slug).toBe(baseline[p.slug].image);expect(p.published,p.slug).toBe(baseline[p.slug].published);if(!(november10RecoverySlugs.has(p.slug)||eighteenGuideReviewSlugs.has(p.slug))&&!day5ExistingSlugs.has(p.slug)&&!day4ExistingSlugs.has(p.slug)&&!day3ExistingSlugs.has(p.slug)&&!day2ExistingSlugs.has(p.slug)&&!november04GscSlugs.has(p.slug)&&!twelveDayExistingSlugs.has(p.slug)&&!edits[p.slug])expect(digest(p),p.slug).toBe(baseline[p.slug].hash);else if(edits[p.slug]){expect(baseline[p.slug].modified<='2026-10-25').toBe(true);expect(p.modified).toBe((november10RecoverySlugs.has(p.slug)||eighteenGuideReviewSlugs.has(p.slug)) ? "2026-11-10" : '2026-11-03');expect(digest(p)).not.toBe(baseline[p.slug].hash);}}
   const recent={slug:required[0],modified:'2026-10-26'};expect(applyDailyNovember03Review(recent)).toBe(recent);
  });
  it('renders distinct accessible worksheets, valid links and matching FAQ extraction',()=>{

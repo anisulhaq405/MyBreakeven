@@ -1,3 +1,4 @@
+import {eighteenGuideReviewSlugs} from './content/blogs/november10EighteenGuideReview.js';
 import {november10RecoverySlugs} from './content/blogs/november10PositionRecovery.js';
 import {day5ExistingSlugs} from './content/blogs/twelveDayDay5Review.js';
 import {applyAuthenticityReview,authenticityReviewSlugs} from './content/blogs/authenticityReview20261108.js';
@@ -20,7 +21,7 @@ describe('Authorized November 5 Day 2 publication',()=>{
   expect(new Set(twelveDayDay2Posts.map(p=>p.slug)).size).toBe(9);
   for(const p of twelveDayDay2Posts){
    expect(before.some(b=>b.slug===p.slug)).toBe(false);expect(blogPostMap[p.slug]).toEqual(applyAuthenticityReview(p));
-   expect(p.editorialStatus).toBe('published');expect(p.published).toBe('2026-11-05');expect(p.modified).toBe(november10RecoverySlugs.has(p.slug) ? "2026-11-10" : p.published);
+   expect(p.editorialStatus).toBe('published');expect(p.published).toBe('2026-11-05');expect(p.modified).toBe((november10RecoverySlugs.has(p.slug)||eighteenGuideReviewSlugs.has(p.slug)) ? "2026-11-10" : p.published);
    expect((p.seoTitle+' | MyBreakeven').length).toBeLessThanOrEqual(60);
    const html=renderToStaticMarkup(<LongformArticle article={p}/>);
    if(p.html.includes('/images/diagrams/day2'))expect(p.html).toContain('<img style="max-width:100%;height:auto" src="/images/diagrams/day2');
@@ -35,10 +36,10 @@ describe('Authorized November 5 Day 2 publication',()=>{
  it('preserves all 171 prior records exactly except three approved append-only additions and their modification dates',()=>{
   expect([...day2ExistingSlugs].sort()).toEqual(['operating-cash-flow','operating-expenses','rolling-forecast']);
   for(const old of before){
-   if(november10RecoverySlugs.has(old.slug)||day5ExistingSlugs.has(old.slug)||authenticityReviewSlugs.has(old.slug)||day4ExistingSlugs.has(old.slug)||day3ExistingSlugs.has(old.slug))continue; // Exact allowed change protected by the 180-record Day 3 baseline test.
+   if((november10RecoverySlugs.has(old.slug)||eighteenGuideReviewSlugs.has(old.slug))||day5ExistingSlugs.has(old.slug)||authenticityReviewSlugs.has(old.slug)||day4ExistingSlugs.has(old.slug)||day3ExistingSlugs.has(old.slug))continue; // Exact allowed change protected by the 180-record Day 3 baseline test.
    const now=blogPostMap[old.slug];expect(now).toBeDefined();
    if(!day2ExistingSlugs.has(old.slug)){expect(hash(now),old.slug).toBe(old.sha256);continue;}
-   const addition=day2ExistingAdditions[old.slug];expect(now.html.endsWith(addition)).toBe(true);expect(now.html.split(addition)).toHaveLength(2);expect(now.modified).toBe(november10RecoverySlugs.has(now.slug) ? "2026-11-10" : '2026-11-05');
+   const addition=day2ExistingAdditions[old.slug];expect(now.html.endsWith(addition)).toBe(true);expect(now.html.split(addition)).toHaveLength(2);expect(now.modified).toBe((november10RecoverySlugs.has(now.slug)||eighteenGuideReviewSlugs.has(now.slug)) ? "2026-11-10" : '2026-11-05');
    expect(hash({...now,html:now.html.slice(0,-addition.length),modified:old.modified}),old.slug).toBe(old.sha256);
    expect(applyDay2PublicationReview(now)).toBe(now);
    expect(()=>applyDay2PublicationReview({...now,modified:'2026-10-26',html:'original'})).toThrow(/protected/);
