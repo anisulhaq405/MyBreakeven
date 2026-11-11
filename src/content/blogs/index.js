@@ -1,3 +1,4 @@
+import {twelveDayDay6Posts} from './twelveDayDay6.js';
 import {applyNovember11Day6Review} from './november11Day6Existing.js';
 import { applyNovember10EighteenGuideReview } from "./november10EighteenGuideReview.js";
 import { applyNovember10PositionRecovery } from "./november10PositionRecovery.js";
@@ -219,6 +220,7 @@ const normalizePost = post => {
 };
 
 export const blogCollections = Object.freeze({
+  twelveDayDay6: twelveDayDay6Posts,
   twelveDayDay5: twelveDayDay5Posts,
   twelveDayDay4: twelveDayDay4Posts.map(applyAuthenticityReview),
   twelveDayDay3: twelveDayDay3Posts.map(applyAuthenticityReview),

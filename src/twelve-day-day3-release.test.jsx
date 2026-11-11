@@ -17,7 +17,7 @@ const before=JSON.parse(readFileSync('docs/day3-release/baseline.json','utf8'));
 const hash=p=>createHash('sha256').update(JSON.stringify(p)).digest('hex');
 describe('November 6 Day 3 publication',()=>{
  it('publishes nine distinct original tasks with complete article assets and real internal links',()=>{
-  expect(blogPosts).toHaveLength(before.length+26);
+  expect(blogPosts).toHaveLength(before.length+35);
   for(const p of posts){
    expect(before.some(b=>b.slug===p.slug)).toBe(false);
    expect(blogPostMap[p.slug]).toEqual(applyAuthenticityReview(p));expect(p.editorialStatus).toBe('published');

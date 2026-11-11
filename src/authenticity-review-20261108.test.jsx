@@ -16,7 +16,7 @@ const original=JSON.parse(readFileSync('docs/36-guide-authenticity-review/review
 const hash=p=>createHash('sha256').update(JSON.stringify(p)).digest('hex');
 describe('November 8 complete 36-guide authenticity review',()=>{
  it('updates exactly the authorized 36 records while preserving every other guide',()=>{
-  expect(blogPosts.length).toBe(baseline.length+8);expect(original).toHaveLength(36);expect(authenticityReviewSlugs.size).toBe(36);
+  expect(blogPosts.length).toBe(baseline.length+17);expect(original).toHaveLength(36);expect(authenticityReviewSlugs.size).toBe(36);
   for(const b of baseline){if(november11Day6Slugs.has(b.slug))continue; // Covered by the strict November 11 full-registry preservation test.
 if((november10RecoverySlugs.has(b.slug)||eighteenGuideReviewSlugs.has(b.slug))||day5ExistingSlugs.has(b.slug))continue;const p=blogPostMap[b.slug];if(!authenticityReviewSlugs.has(b.slug)){expect(hash(p),b.slug).toBe(b.sha256);continue;}const old=original.find(x=>x.slug===b.slug);expect(hash(old),b.slug).toBe(b.sha256);expect(p).toEqual(applyAuthenticityReview(old));expect(hash(p)).not.toBe(b.sha256);expect(p.modified).toBe((november10RecoverySlugs.has(p.slug)||eighteenGuideReviewSlugs.has(p.slug)) ? "2026-11-10" : '2026-11-08');for(const k of ['slug','published','image','title','seoTitle','description','metaDescription'])expect(p[k],b.slug+' '+k).toBe(old[k]);expect(applyAuthenticityReview(p)).toBe(p);}
  });
