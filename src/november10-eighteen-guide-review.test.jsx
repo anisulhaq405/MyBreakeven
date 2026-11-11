@@ -1,3 +1,4 @@
+import {november11Day6Slugs} from './content/blogs/november11Day6Existing.js';
 import React from 'react';
 import {describe,it,expect} from 'vitest';
 import {readFileSync,existsSync} from 'node:fs';
@@ -12,7 +13,8 @@ const hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
 describe('18 explicitly authorized November 10 guide updates',()=>{
  it('changes exactly 18 articles, leaving all 188 other records byte-for-byte equal',()=>{
   expect(blogPosts.length).toBe(206);expect(before.length).toBe(206);expect(eighteenGuideReviewSlugs.size).toBe(18);
-  for(const b of before){const p=blogPostMap[b.slug];expect(p.published,b.slug).toBe(b.published);expect(p.image,b.slug).toBe(b.image);
+  for(const b of before){if(november11Day6Slugs.has(b.slug))continue; // Covered by the strict November 11 full-registry preservation test.
+const p=blogPostMap[b.slug];expect(p.published,b.slug).toBe(b.published);expect(p.image,b.slug).toBe(b.image);
    if(!eighteenGuideReviewSlugs.has(b.slug)){expect(hash(p),b.slug).toBe(b.sha256);continue;}
    expect(p.modified).toBe('2026-11-10');expect(hash(p)).not.toBe(b.sha256);
    const id=`review-20261110-${b.slug}`;const start=p.html.indexOf(`<section aria-labelledby="${id}">`);const end=p.html.indexOf('</section>',start)+10;

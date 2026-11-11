@@ -1,16 +1,18 @@
 import React, { useMemo, useState } from 'react';
 import CurrencySelector from './CurrencySelector';
-import { calculateUnitContribution } from './unitContribution.js';
+import { calculateUnitContribution,calculateContributionQuantity } from './unitContribution.js';
 import './margin-markup-widget.css';
 
 const example = { price: '50', variableCost: '25', feePct: '3', fixedFee: '0.30' };
 export default function ContributionMarginWidget() {
   const [input, setInput] = useState({ ...example });
   const [currency, setCurrency] = useState('USD');
+  const [quantity,setQuantity]=useState('100');
   const result = useMemo(() => calculateUnitContribution(input), [input]);
+  const total=useMemo(()=>calculateContributionQuantity(input,quantity),[input,quantity]);
   const money = n => new Intl.NumberFormat('en-US', { style: 'currency', currency, currencyDisplay: 'code', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(n);
   const percentage = n => `${new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(n)}%`;
-  const field = (key, label, help, max = 1e12) => <label className="margin-widget-field"><span>{label}</span><input type="number" inputMode="decimal" min="0" max={max} step="any" value={input[key]} onChange={e => setInput(s => ({ ...s, [key]: e.target.value }))} aria-describedby={`contribution-help-${key}`} /><small id={`contribution-help-${key}`}>{help}</small></label>;
+  const field = (key, label, help, max = 1e12) => <label className="margin-widget-field"><span id={`contribution-label-${key}`}>{label}</span><input aria-labelledby={`contribution-label-${key}`} type="number" inputMode="decimal" min="0" max={max} step="any" value={input[key]} onChange={e => setInput(s => ({ ...s, [key]: e.target.value }))} aria-describedby={`contribution-help-${key}`} /><small id={`contribution-help-${key}`}>{help}</small></label>;
   return <section className="margin-widget" id="contribution-calculator" aria-labelledby="contribution-widget-title">
     <h2 id="contribution-widget-title">Contribution margin per unit calculator</h2>
     <p>Calculate what one product, order or completed job leaves toward fixed costs and profit. Use the same sale unit for every input.</p>
@@ -19,8 +21,9 @@ export default function ContributionMarginWidget() {
       {field('price', 'Selling price per unit', 'After discounts; exclude sales tax collected for a tax authority. The percentage fee below is applied to this price.')}
       {field('variableCost', 'Other variable costs per unit', 'Materials, variable labour, shipping, commissions and expected returns. Exclude fees entered separately below.')}
       {field('feePct', 'Payment / platform fee (%)', 'Enter your own combined rate, or 0. Do not also include this fee in other variable costs.', 100)}
-      {field('fixedFee', 'Fixed transaction fee per unit', 'A fixed fee for each sale, not monthly overhead. For one order = one unit, enter the fee per order.')}
-      <button type="button" onClick={() => setInput({ ...example })}>Reset fictional example</button>
+      {field('fixedFee', 'Fixed transaction fee per unit', 'A flat fee allocated to the chosen unit, not monthly overhead. For one $0.30 checkout containing two identical items, use $0.15 per item or define the whole order as one unit.')}
+      <label className="margin-widget-field"><span id="contribution-quantity-label">Matching sold quantity</span><input aria-labelledby="contribution-quantity-label" type="number" inputMode="numeric" min="0" max="1000000" step="1" value={quantity} onChange={e=>setQuantity(e.target.value)} aria-describedby="contribution-quantity-help"/><small id="contribution-quantity-help">Whole sold units of the same scope, from 0 to 1,000,000. The quantity check does not infer customers or change the unit formula.</small></label>
+      <button type="button" onClick={() => {setInput({ ...example });setQuantity('100');}}>Reset fictional example</button>
     </div><div className="margin-widget-results" aria-labelledby="contribution-results-title">
       <h3 id="contribution-results-title">What each sale contributes</h3>
       <div aria-live="polite" aria-atomic="true">
@@ -32,6 +35,7 @@ export default function ContributionMarginWidget() {
           {result.state === 'negative' && <p className="margin-widget-warning">This sale loses {money(Math.abs(result.contribution))} before fixed costs. Selling more at the same price and cost increases that loss.</p>}
         </>}
       </div>
+      <section aria-labelledby="contribution-total-heading"><h3 id="contribution-total-heading">Reconcile the matching sold quantity</h3>{!total.valid?<p className="margin-widget-warning" role="status">{total.message}</p>:<><dl><div><dt>Revenue from sold units</dt><dd>{money(total.sales)}</dd></div><div><dt>Variable cost of sold units</dt><dd>{money(total.variableCost)}</dd></div><div><dt>Total contribution</dt><dd>{money(total.contribution)}</dd></div><div><dt>Period contribution margin</dt><dd>{total.observedRatio===null?'Not defined at zero sales':percentage(total.observedRatio)}</dd></div></dl><p>Revenue minus variable cost equals contribution, before fixed commitments. These totals assume the entered price, fees and unit cost apply to every sold unit; no volume discount, changing mix or capacity step is added automatically.</p></>}</section>
       <p className="margin-widget-note">The starting values are a fictional USD example: $50 price, $25 other variable costs, 3% fee and $0.30 transaction fee produce $23.20 contribution and 46.4%. Replace every value with your records. Displayed amounts are rounded; calculations use unrounded inputs.</p>
     </div></div>
     <p><strong>Cost boundary:</strong> include labour here only when its cost changes with the sale. Keep salaried commitments, rent and other fixed overhead in the monthly plan. Enter each cost once. Contribution is not net profit.</p>

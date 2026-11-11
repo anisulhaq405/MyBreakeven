@@ -37,3 +37,14 @@ export function calculateUnitContribution(raw) {
     state: amounts.contribution.gt(0) ? 'positive' : amounts.contribution.isZero() ? 'zero' : 'negative',
   };
 }
+
+// A matched sales quantity, separate from the offer's per-unit margin.
+export function calculateContributionQuantity(raw, quantity) {
+  const unit=calculateUnitContribution(raw);
+  if(!unit.valid)return unit;
+  let q;
+  try{q=new Decimal(quantity);}catch{return {valid:false,message:'Enter a whole sold quantity from 0 to 1,000,000.'};}
+  if(typeof quantity==='boolean'||String(quantity).trim()===''||!q.isFinite()||!q.isInteger()||q.lt(0)||q.gt(1000000))return {valid:false,message:'Enter a whole sold quantity from 0 to 1,000,000.'};
+  const amounts=unitContributionAmounts(raw.price,raw.variableCost,raw.feePct,raw.fixedFee);
+  return {valid:true,quantity:q.toNumber(),sales:new Decimal(raw.price).mul(q).toNumber(),variableCost:amounts.totalVariableCost.mul(q).toNumber(),contribution:amounts.contribution.mul(q).toNumber(),observedRatio:q.isZero()?null:unit.ratio};
+}
