@@ -32,6 +32,8 @@ jobs:
         run: node scripts/qa-12day-day5-release.mjs
       - name: Verify Day 6 new guide publication
         run: node scripts/qa-12day-day6-release.mjs
+      - name: Verify November topic discovery and article links
+        run: node scripts/qa-november-clusters.mjs
       - name: Verify all 36 source-reviewed guides and worksheets
         run: node scripts/qa-36-guide-authenticity.mjs
       - name: Audit rendered routes and internal links

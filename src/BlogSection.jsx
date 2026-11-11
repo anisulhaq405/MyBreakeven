@@ -3,6 +3,7 @@ import React, { useMemo, useState } from "react";
 import { ArrowUpRight, BookOpen, Search, X } from "lucide-react";
 import { blogListingData } from "./blogListingData.js";
 import { filterBlogPosts } from "./blogSearch.js";
+import {businessTopics,guideTopic} from './novemberTopics.js';
 const blogPosts = blogListingData.posts;
 const dateLabel = value => new Date(`${value}T12:00:00Z`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
 
@@ -11,8 +12,9 @@ const initialQuery = () => typeof window === "undefined" ? "" : new URLSearchPar
 export default function BlogSection({ isHub = false } = {}) {
   const [query, setQuery] = useState(initialQuery);
   const [tag, setTag] = useState("All");
+  const [topic, setTopic] = useState("All");
   const tags = useMemo(() => ["All", ...new Set(blogPosts.map(post => post.tag))], []);
-  const filtered = useMemo(() => filterBlogPosts(blogPosts, query, tag), [query, tag]);
+  const filtered = useMemo(() => filterBlogPosts(blogPosts, query, tag).filter(p=>topic==='All'||guideTopic(p.slug)?.id===topic), [query, tag, topic]);
   const featured = filtered[0];
   const updateQuery = value => {
     setQuery(value);
@@ -26,7 +28,8 @@ export default function BlogSection({ isHub = false } = {}) {
     <div className="blog-heading"><div><span>MYBREAKEVEN FIELD NOTES</span><h2>Practical guides for healthier business margins.</h2><p>Search pricing, startup costs, profitability, and break-even strategy across every guide.</p></div>{!isHub && <a href="/blogs/">Explore all guides <ArrowUpRight /></a>}</div>
     <div className="blog-discovery">
       <label className="blog-search"><Search aria-hidden="true" /><span className="sr-only">Search all business guides</span><input type="search" value={query} onChange={event => updateQuery(event.target.value)} placeholder="Search any topic, e.g. cleaning prices" autoComplete="off" />{query && <button type="button" onClick={() => updateQuery("")} aria-label="Clear blog search"><X /></button>}</label>
-      <div className="blog-filters" aria-label="Filter guides by category">{tags.map(item => <button type="button" key={item} className={tag === item ? "active" : ""} aria-pressed={tag === item} onClick={() => setTag(item)}>{item}</button>)}</div>
+      {isHub&&<label className="guide-topic-filter">Filter by business topic <select value={topic} onChange={e=>{setTopic(e.target.value);setTag('All');}}><option value="All">All topics</option>{businessTopics.map(t=><option key={t.id} value={t.id}>{t.title}</option>)}</select></label>}
+      <div className="blog-filters" aria-label="Filter guides by category">{tags.map(item => <button type="button" key={item} className={tag === item ? "active" : ""} aria-pressed={tag === item} onClick={() => {setTag(item);setTopic('All');}}>{item}</button>)}</div>
       <p className="blog-count" aria-live="polite">{filtered.length} {filtered.length === 1 ? "guide" : "guides"}</p>
     </div>
     {featured ? <><article className="blog-featured-card">
@@ -35,6 +38,6 @@ export default function BlogSection({ isHub = false } = {}) {
     </article><div className="blog-grid">{filtered.slice(1).map(article => <article key={article.slug}>
       {article.image && <a className="blog-card-image" href={`/blogs/${article.slug}/`} tabIndex="-1" aria-hidden="true"><img src={article.image} {...responsiveFeatureProps(article.image,true)} alt="" width="1200" height="675" loading="lazy" decoding="async" /></a>}
       <div><span>{article.tag}</span><time dateTime={article.published}>Published {dateLabel(article.published)}</time><h3><a href={`/blogs/${article.slug}/`}>{article.title}</a></h3><p>{article.description}</p><a className="blog-read" href={`/blogs/${article.slug}/`}>Read guide <ArrowUpRight /></a></div>
-    </article>)}</div></> : <div className="blog-empty"><BookOpen /><h3>No matching guides yet</h3><p>Try a broader topic or clear the category filter.</p><button type="button" onClick={() => { updateQuery(""); setTag("All"); }}>Show all guides</button></div>}
+    </article>)}</div></> : <div className="blog-empty"><BookOpen /><h3>No matching guides yet</h3><p>Try a broader topic or clear the category filter.</p><button type="button" onClick={() => { updateQuery(""); setTag("All"); setTopic('All'); }}>Show all guides</button></div>}
   </section>;
 }

@@ -1,5 +1,5 @@
 import FinancialRatiosHub from './FinancialRatiosHub.jsx';
-import FinanceTopicNavigator from './FinanceTopicNavigator.jsx';
+import GuideTopicNavigator from './GuideTopicNavigator.jsx';
 import FounderCaseStudy from './FounderCaseStudy.jsx';
 import { Pricing, About, Contact, legalPages, LegalPage } from './StaticPageContent.jsx';
 import './pricing-decisions.css';
@@ -68,7 +68,7 @@ export default function SecondaryPage({ path, initialArticle }) {
             <p><span>Pricing</span><span>Startup</span><span>Margins</span><span>Break-even</span></p>
           </div>
         </section>
-        <FinanceTopicNavigator /><ClusterDirectory /><BlogSection isHub />
+        <GuideTopicNavigator /><ClusterDirectory /><BlogSection isHub />
       </div>
     ) : path === "/about-us" ? (
       <About />

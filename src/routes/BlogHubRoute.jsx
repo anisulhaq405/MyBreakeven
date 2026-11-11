@@ -1,4 +1,4 @@
-import FinanceTopicNavigator from '../FinanceTopicNavigator.jsx';
+import GuideTopicNavigator from '../GuideTopicNavigator.jsx';
 import React from 'react';
 import SecondaryLayout from '../SecondaryLayout.jsx';
 import ClusterDirectory from '../ClusterDirectory.jsx';
@@ -19,5 +19,5 @@ export default function BlogHubRoute({path,initialArticle}) { return <SecondaryL
             <p><span>Pricing</span><span>Startup</span><span>Margins</span><span>Break-even</span></p>
           </div>
         </section>
-        <FinanceTopicNavigator /><ClusterDirectory /><BlogSection isHub />
+        <GuideTopicNavigator /><ClusterDirectory /><BlogSection isHub />
       </div></SecondaryLayout>; }

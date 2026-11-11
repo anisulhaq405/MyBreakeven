@@ -1,3 +1,4 @@
+import NovemberTopicConnections, {GuideTopicLink} from './NovemberTopicConnections.jsx';
 import './malaysia-review.css';
 import SalonBoothComparison from './SalonBoothComparison.jsx';
 import OperatingCashFlowWidget from './OperatingCashFlowWidget.jsx';
@@ -52,7 +53,7 @@ export default function LongformArticle({ article: a }) {
     <EcommerceExampleLink slug={a.slug} />
     <ScenarioAnalysisLink slug={a.slug || slug} />
     <RestaurantExampleLink slug={a.slug} />
-    <div className="article-tags" aria-label="Article topics">{a.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
+    <div className="article-tags" aria-label="Article topics">{a.tags.map(tag => <span key={tag}>{tag}</span>)}</div><GuideTopicLink article={a}/>
     {a.sectionLinks&&<nav className="article-section-nav" aria-label="Guide sections">{a.sectionLinks.map(([id,label])=><a key={id} href={`#${id}`}>{label}</a>)}</nav>}
     {a.answerHtml&&<section className="article-summary" dangerouslySetInnerHTML={{__html:a.answerHtml}} />}
     {slug==='salon-booth-rent-vs-commission-owner'&&<SalonBoothComparison/>}
@@ -68,7 +69,7 @@ export default function LongformArticle({ article: a }) {
     {slug==='break-even-analysis-example'&&<BreakEvenChartWidget/>}
     <figure className="article-featured"><img src={a.image} {...responsiveFeatureProps(a.image)} alt={a.alt} width={blogImageDimensions[a.image]?.width || 1200} height={blogImageDimensions[a.image]?.height || 675} fetchPriority={hasIntroWidget?undefined:'high'} loading={hasIntroWidget?'lazy':undefined} decoding="async"/><figcaption>{a.imageCaption}</figcaption></figure>
     <div className="day1-markdown" dangerouslySetInnerHTML={{ __html: a.html }} />
-    <ScenarioAnalysis slug={a.slug || slug} />
+    <NovemberTopicConnections article={a}/><ScenarioAnalysis slug={a.slug || slug} />
     {!faq.inline && faq.items.length > 0 && <section className="article-faq" id={a.sectionLinks?'guide-faqs':undefined}><h2>Frequently asked questions</h2>{faq.items.map(item => <details key={item.q}><summary>{item.q}</summary><p>{item.a}</p></details>)}</section>}
     {!a.html.includes('href="/blogs/"') && !a.html.includes('href="https://mybreakeven.com/blogs/"') && <p><a href="/blogs/">Browse the MyBreakeven blog hub</a> for related planning guides.</p>}
     <ClusterRelatedReading article={a} />

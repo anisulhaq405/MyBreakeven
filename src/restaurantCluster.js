@@ -68,7 +68,8 @@ export const restaurantClusters = [
       "restaurant-cash-flow-forecast",
       "restaurant-profit-margin-average",
       "restaurant-break-even",
-      "restaurant-covers-per-night-break-even"
+      "restaurant-covers-per-night-break-even",
+      "restaurant-break-even-calculator-malaysia-user-review"
     ]
   }
 ];
