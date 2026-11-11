@@ -1,3 +1,4 @@
+import {novemberGuideSlugs} from './novemberTopics.js';
 import {financeTopics,linkedBlogSlugs} from './financeTopics.js';
 import React from 'react';
 import './cluster-related-reading.css';
@@ -19,6 +20,7 @@ export function relatedClusterPosts(article) {
   return group.slugs.filter(slug => slug !== article.slug && !existing.has(slug)).map(slug => blogListingData.posts.find(post => post.slug === slug)).filter(Boolean).slice(0, 2);
 }
 export default function ClusterRelatedReading({ article }) {
+  if(novemberGuideSlugs.has(article.slug))return null;
   const posts = relatedClusterPosts(article);
   if (!posts.length) return null;
   return <aside className="cluster-related-reading" aria-label="Related planning decisions"><h2>Related planning decisions</h2><ul>{posts.map(post => <li key={post.slug}><a href={`/blogs/${post.slug}/`}>{post.title}</a><p>{post.description}</p></li>)}</ul></aside>;
