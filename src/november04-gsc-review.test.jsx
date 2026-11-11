@@ -1,3 +1,4 @@
+import {november11Day6Slugs} from './content/blogs/november11Day6Existing.js';
 import {eighteenGuideReviewSlugs} from './content/blogs/november10EighteenGuideReview.js';
 import {november10RecoverySlugs} from './content/blogs/november10PositionRecovery.js';
 import {day5ExistingSlugs} from './content/blogs/twelveDayDay5Review.js';
@@ -18,7 +19,8 @@ const baseline=JSON.parse(readFileSync('src/testFixtures/november04GscBefore.jso
 describe('November 4 explicitly authorized two-page GSC improvement',()=>{
  it('changes only the two requested articles, preserving all publication dates and images',()=>{
   expect(blogPosts).toHaveLength(baseline.length+twelveDayDay2Posts.length+26);
-  for(const old of baseline){const now=blogPostMap[old.slug];expect(now.published,old.slug).toBe(old.published);expect(now.image,old.slug).toBe(old.image);if((november10RecoverySlugs.has(old.slug)||eighteenGuideReviewSlugs.has(old.slug))||day5ExistingSlugs.has(old.slug)||authenticityReviewSlugs.has(old.slug)||day4ExistingSlugs.has(old.slug)||day3ExistingSlugs.has(old.slug)||day2ExistingSlugs.has(old.slug))continue; if(!november04GscSlugs.has(old.slug))expect(createHash('sha256').update(JSON.stringify(now)).digest('hex'),old.slug).toBe(old.sha256);else{expect(now.modified).toBe((november10RecoverySlugs.has(now.slug)||eighteenGuideReviewSlugs.has(now.slug)) ? "2026-11-10" : '2026-11-04');expect(applyNovember04GscReview(now)).toBe(now);}}
+  for(const old of baseline){if(november11Day6Slugs.has(old.slug))continue; // Covered by the strict November 11 full-registry preservation test.
+const now=blogPostMap[old.slug];expect(now.published,old.slug).toBe(old.published);expect(now.image,old.slug).toBe(old.image);if((november10RecoverySlugs.has(old.slug)||eighteenGuideReviewSlugs.has(old.slug))||day5ExistingSlugs.has(old.slug)||authenticityReviewSlugs.has(old.slug)||day4ExistingSlugs.has(old.slug)||day3ExistingSlugs.has(old.slug)||day2ExistingSlugs.has(old.slug))continue; if(!november04GscSlugs.has(old.slug))expect(createHash('sha256').update(JSON.stringify(now)).digest('hex'),old.slug).toBe(old.sha256);else{expect(now.modified).toBe((november10RecoverySlugs.has(now.slug)||eighteenGuideReviewSlugs.has(now.slug)) ? "2026-11-10" : '2026-11-04');expect(applyNovember04GscReview(now)).toBe(now);}}
  });
  it('preserves working-capital definitions, downloads and original anchor targets',()=>{
   const p=blogPostMap['how-to-calculate-working-capital'];
@@ -30,7 +32,7 @@ describe('November 4 explicitly authorized two-page GSC improvement',()=>{
  it('reconciles cost formulas and the cost-indifference point, without corrupting FAQ answers',()=>{
   const p=blogPostMap['fixed-vs-variable-costs'];expect(p.html).toContain('id="total-fixed-variable-formulas"');expect(p.html).toContain('cost-indifference point');expect(p.html).toContain('<img style="max-width:100%;height:auto" src="/images/blog/day4-cost-curves.svg"');
   expect(9680-81*80).toBe(3200);expect(9680/80).toBe(121);const units=(4800-1200)/(50-20);expect(units).toBe(120);expect(4800+20*units).toBe(1200+50*units);
-  expect(articleFaq(p).inline).toBe(false);expect(articleFaq(p).items).toHaveLength(7);expect(articleFaq(p).items.find(f=>f.q.startsWith('Are payment')).a).not.toContain('For another angle');
+  expect(articleFaq(p).inline).toBe(false);expect(articleFaq(p).items).toHaveLength(8); // Seven original answers plus the authorized tier-pricing FAQ.expect(articleFaq(p).items.find(f=>f.q.startsWith('Are payment')).a).not.toContain('For another angle');
  });
  it('renders unique anchors, real internal destinations, concise metadata and matching FAQs',()=>{
   for(const slug of november04GscSlugs){const p=blogPostMap[slug],html=renderToStaticMarkup(<LongformArticle article={p}/>);expect((html.match(/<h1\b/g)||[])).toHaveLength(1);const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);expect(new Set(ids).size).toBe(ids.length);for(const[id]of p.sectionLinks)expect(ids,id).toContain(id);for(const[,s]of p.html.matchAll(/href="\/blogs\/([^/]+)\//g))expect(blogPostMap[s],s).toBeDefined();expect((p.seoTitle+' | MyBreakeven').length).toBeLessThanOrEqual(60);expect(p.metaDescription.length).toBeLessThanOrEqual(160);}

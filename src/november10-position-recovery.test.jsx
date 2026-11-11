@@ -1,3 +1,4 @@
+import {november11Day6Slugs} from './content/blogs/november11Day6Existing.js';
 import React from 'react';
 import {eighteenGuideReviewSlugs} from './content/blogs/november10EighteenGuideReview.js';
 import {describe,it,expect} from 'vitest';
@@ -14,7 +15,8 @@ const hash=p=>createHash('sha256').update(JSON.stringify(p)).digest('hex');
 describe('November 10 existing-owner position recovery',()=>{
  it('changes exactly twelve selected owners and preserves every other record',()=>{
   expect(blogPosts.length).toBe(before.length);expect(november10RecoverySlugs.size).toBe(12);
-  for(const b of before){const p=blogPostMap[b.slug];expect(p.published,b.slug).toBe(b.published);expect(p.image,b.slug).toBe(b.image);
+  for(const b of before){if(november11Day6Slugs.has(b.slug))continue; // Covered by the strict November 11 full-registry preservation test.
+const p=blogPostMap[b.slug];expect(p.published,b.slug).toBe(b.published);expect(p.image,b.slug).toBe(b.image);
    if(eighteenGuideReviewSlugs.has(b.slug))continue; // Later review covered by the full 206-record preservation test.
    if(!november10RecoverySlugs.has(b.slug)){expect(hash(p),b.slug).toBe(b.sha256);continue;}
    expect(b.modified<= '2026-10-25').toBe(true);expect(p.modified).toBe('2026-11-10');expect(hash(p)).not.toBe(b.sha256);

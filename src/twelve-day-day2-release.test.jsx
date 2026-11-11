@@ -1,3 +1,4 @@
+import {november11Day6Slugs} from './content/blogs/november11Day6Existing.js';
 import {eighteenGuideReviewSlugs} from './content/blogs/november10EighteenGuideReview.js';
 import {november10RecoverySlugs} from './content/blogs/november10PositionRecovery.js';
 import {day5ExistingSlugs} from './content/blogs/twelveDayDay5Review.js';
@@ -35,7 +36,8 @@ describe('Authorized November 5 Day 2 publication',()=>{
  });
  it('preserves all 171 prior records exactly except three approved append-only additions and their modification dates',()=>{
   expect([...day2ExistingSlugs].sort()).toEqual(['operating-cash-flow','operating-expenses','rolling-forecast']);
-  for(const old of before){
+  for(const old of before){if(november11Day6Slugs.has(old.slug))continue; // Covered by the strict November 11 full-registry preservation test.
+
    if((november10RecoverySlugs.has(old.slug)||eighteenGuideReviewSlugs.has(old.slug))||day5ExistingSlugs.has(old.slug)||authenticityReviewSlugs.has(old.slug)||day4ExistingSlugs.has(old.slug)||day3ExistingSlugs.has(old.slug))continue; // Exact allowed change protected by the 180-record Day 3 baseline test.
    const now=blogPostMap[old.slug];expect(now).toBeDefined();
    if(!day2ExistingSlugs.has(old.slug)){expect(hash(now),old.slug).toBe(old.sha256);continue;}
