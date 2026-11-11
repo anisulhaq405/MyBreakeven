@@ -7,7 +7,6 @@ import { useProductPageView } from './useProductTracking';
 import { staticPageMeta } from './staticPageMeta.js';
 import AuthorityPage from './AuthorityPages.jsx';
 import { authorityPages } from './authorityResources.js';
-import ClusterDirectory from './ClusterDirectory.jsx';
 import AgencyCluster, { AgencyClusterLink } from './AgencyCluster.jsx';
 import EcommerceCluster, { EcommerceClusterLink } from './EcommerceCluster.jsx';
 import PhotographyCluster, { PhotographyClusterLink } from './PhotographyCluster.jsx';
@@ -68,7 +67,7 @@ export default function SecondaryPage({ path, initialArticle }) {
             <p><span>Pricing</span><span>Startup</span><span>Margins</span><span>Break-even</span></p>
           </div>
         </section>
-        <GuideTopicNavigator /><ClusterDirectory /><BlogSection isHub />
+        <GuideTopicNavigator /><BlogSection isHub />
       </div>
     ) : path === "/about-us" ? (
       <About />

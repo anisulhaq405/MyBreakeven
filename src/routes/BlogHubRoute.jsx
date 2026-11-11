@@ -1,7 +1,6 @@
 import GuideTopicNavigator from '../GuideTopicNavigator.jsx';
 import React from 'react';
 import SecondaryLayout from '../SecondaryLayout.jsx';
-import ClusterDirectory from '../ClusterDirectory.jsx';
 import BlogSection from '../BlogSection.jsx';
 import { blogListingData } from '../blogListingData.js';
 import '../blogs-page.css';
@@ -19,5 +18,5 @@ export default function BlogHubRoute({path,initialArticle}) { return <SecondaryL
             <p><span>Pricing</span><span>Startup</span><span>Margins</span><span>Break-even</span></p>
           </div>
         </section>
-        <GuideTopicNavigator /><ClusterDirectory /><BlogSection isHub />
+        <GuideTopicNavigator /><BlogSection isHub />
       </div></SecondaryLayout>; }
