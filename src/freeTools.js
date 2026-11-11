@@ -1,3 +1,4 @@
+import {applyRoasContentReview} from './roasContentReview.js';
 import {titledFeatureImage} from './featureTitleCovers.js';
 import {financeFeatureAssets,financeFeatureCaption} from './financeFeatureAssets.js';
 import {finalFinanceTools} from './finalFinanceTools.js';
@@ -41,6 +42,8 @@ const pricingTools = {
 const baseFreeTools = Object.fromEntries(Object.entries({...finalFinanceTools,...fireCoastTools,...financeDay1Tools,...startupCostTools,...netCashFlowTools,...operatingMarginTools,...roiTools,...pricingTools,...businessTools,...operationalTools,...decisionTools,...foodTools,...planningTools}).map(([slug,tool])=>[slug,applyGscOctober25ToolReview(slug,applyDay5ToolReview(slug,applyKeywordToolReview(slug,applyDay3ToolDraft(slug,applyDay2ToolDraft(slug,connectPlanningTool(slug,completeCalculatorPage(slug,{...tool,theme:tool.theme || toolThemes[slug],category:tool.category || "Pricing & contribution"})))))))]));
 
 export const freeTools = Object.fromEntries(Object.entries(baseFreeTools).map(([slug,tool])=>[slug,slug==='operating-profit-margin-calculator'?{...tool,related:[['Analyze the full statement ratios','/calculators/financial-ratios-calculator/'],...(tool.related||[]),['Reconcile net income to EBITDA','/calculators/ebitda-calculator/']]}:slug==='business-roi-calculator'?{...tool,related:[...(tool.related||[]),['Project a separate future savings balance','/calculators/future-value-calculator/']]}:slug==='future-value-calculator'?{...tool,related:[['Compare a mortgage refinance separately','/calculators/refinance-calculator/'],...(tool.related||[]),['Full FIRE accumulation in today’s money','/calculators/fire-calculator/'],['Coast FIRE with zero further contributions','/calculators/coast-fire-calculator/']]}:tool]));
+
+freeTools['break-even-roas-calculator']=applyRoasContentReview(freeTools['break-even-roas-calculator']);
 
 // Only replace the seven requested finance calculator covers.
 for (const [slug, tool] of Object.entries(freeTools)) { const asset=financeFeatureAssets[slug]; if(asset)Object.assign(tool,asset,{caption:financeFeatureCaption}); }

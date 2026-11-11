@@ -24,7 +24,7 @@ const tools = {
   "/calculators/business-roi-calculator": "src/routes/RoiToolRoute.jsx",
   "/calculators/discount-break-even-calculator": "src/routes/PricingToolRoute.jsx",
   "/calculators/price-increase-calculator": "src/routes/PricingToolRoute.jsx",
-  "/calculators/break-even-roas-calculator": "src/routes/BusinessToolRoute.jsx",
+  "/calculators/break-even-roas-calculator": "src/routes/RoasToolRoute.jsx",
   "/calculators/hourly-rate-calculator": "src/routes/BusinessToolRoute.jsx",
   "/calculators/cash-runway-calculator": "src/routes/BusinessToolRoute.jsx",
   "/calculators/cleaning-contract-profit-calculator": "src/routes/BusinessToolRoute.jsx",
