@@ -12,7 +12,7 @@ const before=JSON.parse(readFileSync('src/testFixtures/november10EighteenBefore.
 const hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
 describe('18 explicitly authorized November 10 guide updates',()=>{
  it('changes exactly 18 articles, leaving all 188 other records byte-for-byte equal',()=>{
-  expect(blogPosts.length).toBe(206);expect(before.length).toBe(206);expect(eighteenGuideReviewSlugs.size).toBe(18);
+  expect(blogPosts.length).toBe(215);expect(before.length).toBe(206);expect(eighteenGuideReviewSlugs.size).toBe(18);
   for(const b of before){if(november11Day6Slugs.has(b.slug))continue; // Covered by the strict November 11 full-registry preservation test.
 const p=blogPostMap[b.slug];expect(p.published,b.slug).toBe(b.published);expect(p.image,b.slug).toBe(b.image);
    if(!eighteenGuideReviewSlugs.has(b.slug)){expect(hash(p),b.slug).toBe(b.sha256);continue;}

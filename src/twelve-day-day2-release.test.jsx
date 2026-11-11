@@ -18,7 +18,7 @@ const hash=p=>createHash('sha256').update(JSON.stringify(p)).digest('hex');
 
 describe('Authorized November 5 Day 2 publication',()=>{
  it('publishes exactly nine new canonical owners and complete production assets',()=>{
-  expect(blogPosts).toHaveLength(before.length+35);expect(blogModels).toHaveLength(8);
+  expect(blogPosts).toHaveLength(before.length+44);expect(blogModels).toHaveLength(8);
   expect(new Set(twelveDayDay2Posts.map(p=>p.slug)).size).toBe(9);
   for(const p of twelveDayDay2Posts){
    expect(before.some(b=>b.slug===p.slug)).toBe(false);expect(blogPostMap[p.slug]).toEqual(applyAuthenticityReview(p));

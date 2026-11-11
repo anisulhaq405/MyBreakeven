@@ -14,7 +14,7 @@ const before=JSON.parse(readFileSync('src/testFixtures/november10Before.json'));
 const hash=p=>createHash('sha256').update(JSON.stringify(p)).digest('hex');
 describe('November 10 existing-owner position recovery',()=>{
  it('changes exactly twelve selected owners and preserves every other record',()=>{
-  expect(blogPosts.length).toBe(before.length);expect(november10RecoverySlugs.size).toBe(12);
+  expect(blogPosts.length).toBe(before.length+9);expect(november10RecoverySlugs.size).toBe(12);
   for(const b of before){if(november11Day6Slugs.has(b.slug))continue; // Covered by the strict November 11 full-registry preservation test.
 const p=blogPostMap[b.slug];expect(p.published,b.slug).toBe(b.published);expect(p.image,b.slug).toBe(b.image);
    if(eighteenGuideReviewSlugs.has(b.slug))continue; // Later review covered by the full 206-record preservation test.
