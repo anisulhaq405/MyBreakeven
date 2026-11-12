@@ -12,9 +12,10 @@ for (const [slug, expectedRevenue] of [
   describe(slug, () => {
     it("serves a usable same-page calculator with the verified engine result", () => {
       const html = renderToStaticMarkup(<IndustryPage slug={slug} />);
+      const quick = slug === "ecommerce-break-even-calculator" ? html.slice(html.indexOf('class="industry-quick-fields"'), html.indexOf('class="industry-quick-results"')) : html;
       expect(html).toContain('href="#industry-calculator"');
       expect(html).toContain('id="industry-calculator"');
-      expect((html.match(/type="number"/g) || []).length).toBe(slug === "restaurant-break-even-calculator" ? 15 : 14);
+      expect((quick.match(/type="number"/g) || []).length).toBe(slug === "restaurant-break-even-calculator" ? 15 : 14);
       expect(html).toContain('aria-live="polite"');
       expect(html).toContain(expectedRevenue);
     });
@@ -24,8 +25,9 @@ for (const [slug, expectedRevenue] of [
 for (const [slug, page] of Object.entries(industryPages)) {
   it(`${slug} exposes editable inputs and distinguishes a profit target from break-even`, () => {
     const html = renderToStaticMarkup(<IndustryPage slug={slug} />);
+    const quick = slug === "ecommerce-break-even-calculator" ? html.slice(html.indexOf('class="industry-quick-fields"'), html.indexOf('class="industry-quick-results"')) : html;
     const expected = calculate(industries[page.key].values);
-    expect((html.match(/type="number"/g) || []).length).toBe(slug === "restaurant-break-even-calculator" ? 15 : 14);
+    expect((quick.match(/type="number"/g) || []).length).toBe(slug === "restaurant-break-even-calculator" ? 15 : 14);
     expect(html).toContain('href="#industry-calculator"');
     expect(html).toContain(`/?industry=${page.key}&amp;from=industry#calculator`);
     expect(html).toContain(expected.practicalRevenue.toLocaleString("en-US", { style: "currency", currency: "USD" }));

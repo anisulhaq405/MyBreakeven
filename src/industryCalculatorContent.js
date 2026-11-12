@@ -1,3 +1,4 @@
+import {ecommerceDetailedFaq} from './ecommerceDetailedContent.js';
 import { calculate } from './engine.js';
 import { industries } from './industries.js';
 export const industryPages = {
@@ -6,7 +7,7 @@ export const industryPages = {
   "photography-business-break-even-calculator": { key: "photography", title: "Photography Business Break-Even Calculator", lead: "Turn session pricing, editing time, travel, booking costs and studio overhead into an exact monthly session target.", costs: "session materials, photographer labor, editing, gallery delivery, travel, payment fees and booking acquisition", questions: ["How many photography sessions do I need each month?", "Does editing time create a capacity gap?", "What average session price supports owner pay?"] },
   "agency-break-even-calculator": { key: "agency", title: "Agency and Freelancer Break-Even Calculator", lead: "Calculate required retainers, client leads and delivery capacity using contractor costs, software, labor and acquisition assumptions.", costs: "delivery labor, contractors, client software, payment fees and sales acquisition", questions: ["How many retainer clients cover agency overhead?", "How much delivery capacity does the team have?", "How many qualified leads are needed to win the target clients?"] },
   "mobile-detailing-break-even-calculator": { key: "detailing", title: "Mobile Detailing Break-Even Calculator", lead: "Estimate required detailing jobs and bookings after supplies, technician labor, travel, equipment and local marketing costs.", costs: "detailing products, technician labor, water, travel, equipment use, fees and booked-job acquisition", questions: ["How many detailing jobs are needed to break even?", "Can the mobile team serve enough vehicles?", "How does price affect monthly booking requirements?"] },
-  "ecommerce-break-even-calculator": { key: "ecommerce", title: "E-commerce Break-Even Calculator", lead: "Calculate exact break-even orders and revenue after COGS, fulfillment, shipping subsidy, returns, platform fees and paid acquisition.", costs: "COGS, fulfillment labor, shipping subsidy, return allowance, payment or platform fees and customer acquisition cost", questions: ["How many e-commerce orders are needed to break even?", "What revenue covers overhead and advertising?", "How do returns and shipping affect contribution margin?"] },
+  "ecommerce-break-even-calculator": { key: "ecommerce", title: "E-commerce Break-Even Calculator", lead: "Calculate ecommerce break-even orders, revenue and profit targets. Include shipping income, refunds, recoverable stock, fees and acquisition costs.", costs: "COGS, fulfillment labor, shipping subsidy, return allowance, payment or platform fees and customer acquisition cost", questions: ["How many e-commerce orders are needed to break even?", "What revenue covers overhead and advertising?", "How do returns and shipping affect contribution margin?"] },
   "restaurant-break-even-calculator": { key: "restaurant", title: "Restaurant Break-Even Calculator", lead: "Convert average check, food cost, direct labor, packaging, delivery commission and overhead into required monthly orders.", costs: "food and ingredients, direct labor, packaging, delivery commissions, card fees and promotion", questions: ["How many restaurant orders cover monthly fixed costs?", "What sales revenue reaches break-even?", "Can kitchen and service capacity handle required demand?"] },
   "salon-break-even-calculator": { key: "salon", title: "Salon Break-Even Calculator", lead: "Estimate appointments, revenue and customer inquiries using service price, product usage, stylist labor and chair capacity.", costs: "service products, stylist labor, disposables, laundry, payment fees and appointment acquisition", questions: ["How many salon appointments are needed to break even?", "What revenue covers rent and owner pay?", "Are stylist hours sufficient for the target appointments?"] },
 };
@@ -174,14 +175,14 @@ export const industryInputGuidance = {
   "ecommerce": {
     "records": [
       [
-        "Net order value",
-        "Matched orders after discounts and refunds",
-        "Exclude taxes collected for others; a payout after fees is not the original revenue."
+        "Original order value and refunds",
+        "Detailed mode: paid cohort after discounts, before modeled refunds",
+        "Exclude collected tax. Quick mode instead uses a representative retained-sale unit. A payout after fees is not original revenue."
       ],
       [
         "Order costs and return allowance",
         "Landed product, fulfillment, shipping and return records",
-        "Net refunded revenue once and include remaining unrecovered costs once."
+        "Detailed mode deducts modeled refunds. Quick mode nets them once before entry; include remaining unrecovered costs once."
       ],
       [
         "Overhead and fulfillment hours",
@@ -307,10 +308,10 @@ export function industryCalculatorFaq(industryKey) {
   const industry = industries[industryKey], result = calculate(industry.values), guidance = industryInputGuidance[industryKey];
   const ecommerceQuestions = industryKey === 'ecommerce' ? [
     ['Can I use this for handmade products and small batches?', 'Yes. Preview and load the jewellery, ceramics, clothing or art-print example, then replace every assumption. Include making and packing worker-hours, allocate batch costs consistently, and keep owner compensation either in monthly owner pay or the relevant labor cost, once. The examples are illustrative USD inputs, not industry benchmarks.'],
-    ['How should I enter shipping, returns and platform fees?', 'Include seller-funded shipping, packing, flat fees and unrecovered return costs in the appropriate per-order costs. Exclude collected taxes from net price. Reconcile refunds and fee reversals so the same amount is not deducted twice; enter percentage fees separately from flat charges.'],
-    ['Do I need Pro to calculate, and where can I save my plan?', 'No. This page calculates free without an account. Continue with these numbers carries valid inputs to the full calculator in the same browser tab. A free account supports up to 3 saved scenarios; Pro supports up to 100 saved scenarios, three-plan comparisons and CSV/PDF reports. Opening the pricing page alone does not save inputs.'],
+    ['How should I enter shipping, returns and platform fees?', 'In detailed mode enter customer shipping income, outbound shipping, fees, full-refund share and recovery assumptions separately. Revenue starts before the modeled refunds. In quick mode use a representative retained-sale unit and include any remaining return allowance once in costs. Do not deduct a refund again from revenue already net of that refund.'],
+    ['Do I need Pro to calculate, and where can I save my plan?', 'No. This page calculates free without an account. In quick mode, Continue with these numbers carries valid inputs to the full calculator in the same browser tab. A free account supports up to 3 saved scenarios; Pro supports up to 100 saved scenarios, three-plan comparisons and CSV/PDF reports. Opening the pricing page alone does not save inputs.'],
   ] : [];
-  return [...page.questions.map(q=>[q,answerQuestion(q,result,industry)]), ...ecommerceQuestions,
+  return [...page.questions.map(q=>[q,industryKey === 'ecommerce' ? 'In the quick estimate: ' + answerQuestion(q,result,industry) + ' This is the combined funding target; the detailed mode separately displays operating break-even, owner-pay coverage and the extra profit target.' : answerQuestion(q,result,industry)]), ...ecommerceQuestions, ...(industryKey === 'ecommerce' ? ecommerceDetailedFaq : []),
     [guidance.question,guidance.answer],
     ['What if required sales exceed capacity?','The target does not fit the productive hours you entered. Test price, costs, delivery time or a revised capacity plan. Recalculate any new monthly staffing or equipment commitment; more available hours do not prove customer demand.'],
     ['Is this a cash-flow forecast or net-profit statement?','No. It models contribution, a monthly funding target and productive-hour capacity. Schedule collections, supplier payments, taxes, equipment cash and loan principal separately; reconcile any unentered items before interpreting accounting net profit.']];

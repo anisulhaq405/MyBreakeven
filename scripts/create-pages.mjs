@@ -35,7 +35,7 @@ const calculators = {
   "photography-business-break-even-calculator": ["Photography Business Break-Even Calculator | MyBreakeven", "Calculate photography sessions, revenue, bookings and delivery capacity needed after editing, travel, labor, studio and marketing costs."],
   "agency-break-even-calculator": ["Agency & Freelancer Break-Even Calculator | MyBreakeven", "Calculate retainer clients, monthly revenue, qualified leads and delivery capacity needed after labor, contractor, software and acquisition costs."],
   "mobile-detailing-break-even-calculator": ["Mobile Detailing Break-Even Calculator | MyBreakeven", "Calculate mobile detailing jobs, revenue, bookings and technician capacity after supplies, labor, travel, equipment and marketing costs."],
-  "ecommerce-break-even-calculator": ["E-commerce Break-Even Calculator | MyBreakeven", "Calculate exact break-even orders and revenue after COGS, fulfillment, shipping subsidy, returns, platform fees and customer acquisition costs."],
+  "ecommerce-break-even-calculator": ["E-commerce Break-Even Calculator | MyBreakeven", "Calculate ecommerce break-even orders, owner-pay and profit targets with shipping income, refunds, stock recovery, fees and acquisition costs."],
   "restaurant-break-even-calculator": ["Restaurant Break-Even Calculator | MyBreakeven", "Calculate restaurant break-even revenue and orders after food, direct labor, packaging, delivery commissions, promotion and monthly overhead."],
   "salon-break-even-calculator": ["Salon Break-Even Calculator | MyBreakeven", "Calculate salon appointments, revenue, customer inquiries and stylist capacity after products, labor, disposables, laundry and marketing costs."],
 };
@@ -326,7 +326,7 @@ for (const [slug, [title, description]] of Object.entries(calculators)) {
   const pageImage = titledFeatureImage(slug,tool?.image || `/images/tools/${industryImageKeys[slug]}-break-even-feature-20261016.webp`,'calculator');
   const pageImageAlt = tool?.alt || `${title.replace(" | MyBreakeven", "")} planning model: direct costs, contribution, monthly target and capacity.`;
   const schema = { "@context": "https://schema.org", "@graph": [
-    { "@type": "WebPage", "@id": `${canonical}#webpage`, url: canonical, name: title, description, ...(tool ? {primaryImageOfPage: {"@type": "ImageObject", url: `https://mybreakeven.com${tool.image}`, width: 1200, height: 675}, dateModified: tool.reviewed || "2026-10-06", publisher: {"@id": "https://mybreakeven.com/#organization"}} : {dateModified:slug === "landscaping-break-even-calculator" ? "2026-10-24" : "2026-10-13",publisher:{"@id":"https://mybreakeven.com/#organization"},primaryImageOfPage:{"@type":"ImageObject",url:`https://mybreakeven.com${pageImage}`,width:1200,height:675}}), inLanguage: "en-US", isPartOf: { "@id": "https://mybreakeven.com/#website" } },
+    { "@type": "WebPage", "@id": `${canonical}#webpage`, url: canonical, name: title, description, ...(tool ? {primaryImageOfPage: {"@type": "ImageObject", url: `https://mybreakeven.com${tool.image}`, width: 1200, height: 675}, dateModified: tool.reviewed || "2026-10-06", publisher: {"@id": "https://mybreakeven.com/#organization"}} : {dateModified:slug === "ecommerce-break-even-calculator" ? "2026-11-12" : slug === "landscaping-break-even-calculator" ? "2026-10-24" : "2026-10-13",publisher:{"@id":"https://mybreakeven.com/#organization"},primaryImageOfPage:{"@type":"ImageObject",url:`https://mybreakeven.com${pageImage}`,width:1200,height:675}}), inLanguage: "en-US", isPartOf: { "@id": "https://mybreakeven.com/#website" } },
     { "@type": "WebApplication", "@id": `${canonical}#calculator`, name: title.replace(" | MyBreakeven", ""), url: canonical, applicationCategory: "BusinessApplication", operatingSystem: "Any web browser", isAccessibleForFree: true, description, ...(tool ? {image: `https://mybreakeven.com${tool.image}`, featureList: tool.features, mainEntityOfPage: {"@id": `${canonical}#webpage`}} : {}), offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
     { "@type": "BreadcrumbList", itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://mybreakeven.com/" },
@@ -374,6 +374,7 @@ articleModified.set(`https://mybreakeven.com/${founderCaseRoute}/`,founderCaseDa
 for(const [route,date] of Object.entries(authorityReviewDates))articleModified.set(`https://mybreakeven.com/${route}/`,date);
 // The cluster gained a substantive founder-evidence section; the calculator only gained navigation.
 articleModified.set('https://mybreakeven.com/guides/ecommerce-business/',founderCaseDate);
+articleModified.set('https://mybreakeven.com/calculators/ecommerce-break-even-calculator/', '2026-11-12');
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${publicUrls.map(url => `  <url><loc>${escapeHtml(url)}</loc>${articleModified.has(url) ? `<lastmod>${escapeHtml(articleModified.get(url))}</lastmod>` : ""}</url>`).join("\n")}\n</urlset>\n`;
 await writeFile(new URL("../dist/sitemap.xml", import.meta.url), sitemap);
 
