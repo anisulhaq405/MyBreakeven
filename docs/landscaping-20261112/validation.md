@@ -1,0 +1,12 @@
+# Landscaping release validation — 12 November 2026
+
+- Complete local suite: 162 test files / 1,247 tests passed. Final focused suite:35 tests passed after job labels and branding were corrected. Full suite runs again in PR and deployment workflows.
+- Independent Decimal fixtures: legacy contribution110.72; worked123.50; three calendar thresholds and separate eight-month recovery; twelve-month parity; exact decimal order ceilings; owner-only/unused role; zero capacity/planned work; invalid equipment/months/overflow; route, equipment and downtime scenarios.
+- Scope snapshots protect215 blog records, seven other industry SSR renderings, shared engine/defaults/transfer, cleaning/ecommerce detailed source, and the pre-existing landscaping example-guide source. Older ecommerce/cleaning scope guards delegate the now-authorized landscaping page change to this fresh baseline.
+- Production build and all three detailed calculator acceptance checks passed. Landscaping has one H1, canonical/indexable metadata,14 matching visible/schema FAQs, unique IDs, valid internal destinations and November12 review/sitemap dates. Existing landscaping example anchors remain.
+- Built-site292 routes /287 sitemap URLs: no route/link issues. Delivery/image budgets, November clusters and36 reviewed-guide checks pass.
+- Chromium mobile390px iframe: body375/scroll375. Desktop1280px iframe: body1265/scroll1265. After stable final build and network-idle, mobile worked example shows33/57/65. Early checks during preview replacement showed stale pre-update copy; final reload retested corrected labels and controls.
+- Standalone worked example: CM123.50; calendar33/57/65; eight-month49/86/98; capacity80. Seasonal after-owner4920, annual goal gap−7080, price310.14. Entering12 active months changes seasonal33/57/65 and price264.32. Zero months validates. Increasing equipment hours2→3 reduces contribution123.50→115.50 without multiplying machine-hours by employees.
+- Local CSV downloaded and parsed:80 rows; contribution123.5, seasonalTargetVisits98, annualTargetGap−7080 match. PKR formatting keeps contribution123.5; no FX conversion.
+- Quick model with edited price350: CM139.85,81 jobs, revenue28350. Full-calculator continuation carries81 jobs/capacity94/290 inquiries after navigation completes.
+- Research comparator and exact-Google-ranking limits are documented in competitor-review.md. No ranking or impressions guarantee.
