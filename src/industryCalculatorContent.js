@@ -1,8 +1,9 @@
+import {cleaningDetailedFaq} from './cleaningDetailedContent.js';
 import {ecommerceDetailedFaq} from './ecommerceDetailedContent.js';
 import { calculate } from './engine.js';
 import { industries } from './industries.js';
 export const industryPages = {
-  "cleaning-business-break-even-calculator": { key: "cleaning", title: "Cleaning Business Break-Even Calculator", lead: "Calculate the monthly cleaning jobs, leads and team hours needed to cover overhead, owner pay and your profit goal.", costs: "cleaning supplies, direct labor, travel, equipment use, card fees and lead-generation cost", questions: ["How many cleaning jobs do I need to break even?", "Can my cleaners deliver the required monthly jobs?", "How many cleaning leads does my conversion rate require?"] },
+  "cleaning-business-break-even-calculator": { key: "cleaning", title: "Cleaning Business Break-Even Calculator", lead: "Calculate cleaning visits, recurring clients and price floors. Include paid travel, loaded wages, owner pay and separate staff and owner capacity.", costs: "cleaning supplies, direct labor, travel, equipment use, card fees and lead-generation cost", questions: ["How many cleaning jobs do I need to break even?", "Can my cleaners deliver the required monthly jobs?", "How many cleaning leads does my conversion rate require?"] },
   "landscaping-break-even-calculator": { key: "landscaping", title: "Landscaping Break-Even Calculator", lead: "Enter your landscaping job price and costs to calculate monthly job targets, revenue and crew capacity. Set owner pay and target profit to zero to check operating break-even.", costs: "plants and materials, crew labor, fuel, equipment use, payment fees and customer acquisition", questions: ["How many landscaping jobs cover monthly overhead?", "Is current crew capacity enough for the target?", "How does average job price change break-even volume?"] },
   "photography-business-break-even-calculator": { key: "photography", title: "Photography Business Break-Even Calculator", lead: "Turn session pricing, editing time, travel, booking costs and studio overhead into an exact monthly session target.", costs: "session materials, photographer labor, editing, gallery delivery, travel, payment fees and booking acquisition", questions: ["How many photography sessions do I need each month?", "Does editing time create a capacity gap?", "What average session price supports owner pay?"] },
   "agency-break-even-calculator": { key: "agency", title: "Agency and Freelancer Break-Even Calculator", lead: "Calculate required retainers, client leads and delivery capacity using contractor costs, software, labor and acquisition assumptions.", costs: "delivery labor, contractors, client software, payment fees and sales acquisition", questions: ["How many retainer clients cover agency overhead?", "How much delivery capacity does the team have?", "How many qualified leads are needed to win the target clients?"] },
@@ -22,7 +23,7 @@ export const industryInputGuidance = {
       [
         "Worker-hours and loaded labor",
         "Time sheets including setup and allocated paid travel",
-        "Use total person-hours, not elapsed time for a whole crew."
+        "Detailed mode multiplies employee count by elapsed hours and counts owner time separately. Quick mode takes total person-hours directly."
       ],
       [
         "Monthly commitments",
@@ -30,9 +31,9 @@ export const industryInputGuidance = {
         "Keep costs already charged per visit out of overhead."
       ]
     ],
-    "pitfall": "For a two-person team working two hours, enter four total worker-hours per job. If the work is one customer contract with several visits, model one completed visit consistently and price the contract in the linked tool.",
+    "pitfall": "In the detailed plan, enter two employees and two elapsed on-site hours to calculate four employee worker-hours; enter owner time separately. In the quick estimate, enter four total worker-hours directly. Model one completed visit consistently and price multi-visit contracts in the linked tool.",
     "question": "Can I use a monthly cleaning contract as one job?",
-    "answer": "Yes, only if price, variable costs and total worker-hours all describe that entire monthly contract. Otherwise use a completed visit as the unit and keep the monthly contract quote separate.",
+    "answer": "The detailed crew plan uses one completed visit; split a monthly contract into comparable visits and use visits per client for the client estimate. The quick estimate can represent a whole monthly contract only when price, costs and total worker-hours all use that same entire-contract unit.",
     "links": [
       [
         "Price a recurring contract",
@@ -311,7 +312,7 @@ export function industryCalculatorFaq(industryKey) {
     ['How should I enter shipping, returns and platform fees?', 'In detailed mode enter customer shipping income, outbound shipping, fees, full-refund share and recovery assumptions separately. Revenue starts before the modeled refunds. In quick mode use a representative retained-sale unit and include any remaining return allowance once in costs. Do not deduct a refund again from revenue already net of that refund.'],
     ['Do I need Pro to calculate, and where can I save my plan?', 'No. This page calculates free without an account. In quick mode, Continue with these numbers carries valid inputs to the full calculator in the same browser tab. A free account supports up to 3 saved scenarios; Pro supports up to 100 saved scenarios, three-plan comparisons and CSV/PDF reports. Opening the pricing page alone does not save inputs.'],
   ] : [];
-  return [...page.questions.map(q=>[q,industryKey === 'ecommerce' ? 'In the quick estimate: ' + answerQuestion(q,result,industry) + ' This is the combined funding target; the detailed mode separately displays operating break-even, owner-pay coverage and the extra profit target.' : answerQuestion(q,result,industry)]), ...ecommerceQuestions, ...(industryKey === 'ecommerce' ? ecommerceDetailedFaq : []),
+  return [...page.questions.map(q=>[q,industryKey === 'cleaning' ? 'Quick-estimate illustration: ' + answerQuestion(q,result,industry) + ' The detailed crew plan separately displays operating break-even, owner coverage and the full profit goal.' : industryKey === 'ecommerce' ? 'In the quick estimate: ' + answerQuestion(q,result,industry) + ' This is the combined funding target; the detailed mode separately displays operating break-even, owner-pay coverage and the extra profit target.' : answerQuestion(q,result,industry)]), ...ecommerceQuestions, ...(industryKey === 'cleaning' ? cleaningDetailedFaq : []), ...(industryKey === 'ecommerce' ? ecommerceDetailedFaq : []),
     [guidance.question,guidance.answer],
     ['What if required sales exceed capacity?','The target does not fit the productive hours you entered. Test price, costs, delivery time or a revised capacity plan. Recalculate any new monthly staffing or equipment commitment; more available hours do not prove customer demand.'],
     ['Is this a cash-flow forecast or net-profit statement?','No. It models contribution, a monthly funding target and productive-hour capacity. Schedule collections, supplier payments, taxes, equipment cash and loan principal separately; reconcile any unentered items before interpreting accounting net profit.']];

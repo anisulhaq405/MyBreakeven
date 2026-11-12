@@ -1,3 +1,5 @@
+import CleaningDetailedCalculator from './CleaningDetailedCalculator.jsx';
+import CleaningDetailedMethod from './CleaningDetailedMethod.jsx';
 import EcommerceDetailedCalculator from './EcommerceDetailedCalculator.jsx';
 import EcommerceDetailedMethod from './EcommerceDetailedMethod.jsx';
 import {titledFeatureImage} from './featureTitleCovers.js';
@@ -54,7 +56,7 @@ function IndustryQuickCalculator({ industry, industryKey }) {
   const [transferError, setTransferError] = useState("");
   useEditedResultTracking(industryKey, values, result.valid, hasEdited, recordCalculatorUse);
 
-  return <section className="industry-quick-calculator" id={industryKey === 'ecommerce' ? 'industry-quick-estimate' : 'industry-calculator'} aria-labelledby="industry-calculator-title">
+  return <section className="industry-quick-calculator" id={['ecommerce','cleaning'].includes(industryKey) ? 'industry-quick-estimate' : 'industry-calculator'} aria-labelledby="industry-calculator-title">
     <div className="industry-quick-intro">
       <span>TRY YOUR OWN NUMBERS · USD</span>
       <h2 id="industry-calculator-title">Calculate your {(industry.short === "Agencies" ? "Agency" : industry.short).toLowerCase()} break-even point</h2>
@@ -139,7 +141,7 @@ export default function IndustryPage({ slug }) {
           <small>PLAN YOUR NEXT SERVICE</small><strong>Busy service. Enough contribution?</strong>
           <span>Preview dine-in, direct takeaway and delivery-app examples, then test your own food costs, fees and worker-hours.</span>
           <div><b>Free calculation</b> · no account needed</div><a href="#restaurant-channel-examples">Explore the three channel examples →</a>
-        </aside> : page.key === 'ecommerce' ? <aside>
+        </aside> : page.key === 'cleaning' ? <aside><small>VISITS, PEOPLE &amp; ROUTES</small><strong>Cover costs. Fund the owner. Check the hours.</strong><span>Separate employee pay, owner time and recurring clients before setting a monthly cleaning target.</span><div><b>Free detailed plan</b> · no account needed</div><a href="#industry-calculator">Check your crew and client plan →</a></aside> : page.key === 'ecommerce' ? <aside>
           <small>START WITH YOUR PRODUCT</small>
           <strong>One order. A clear monthly target.</strong>
           <span>Choose jewellery, ceramics, clothing or art prints, then enter your own costs and making time.</span>
@@ -156,9 +158,10 @@ export default function IndustryPage({ slug }) {
       </section>
       <figure className="industry-tool-feature"><img src={titledFeatureImage(Object.keys(industryPages).find(key=>industryPages[key].key===page.key),`/images/tools/${page.key}-break-even-feature-20261016.webp`,'calculator')} {...responsiveFeatureProps(titledFeatureImage(Object.keys(industryPages).find(key=>industryPages[key].key===page.key),`/images/tools/${page.key}-break-even-feature-20261016.webp`,'calculator'))} alt={`${industry.short} break-even planning: direct costs, contribution, monthly sales target and working capacity.`} width="1200" height="675" decoding="async"/><figcaption>A {industry.short.toLowerCase()} planning model: use your own price, costs and delivery capacity.</figcaption></figure>
 
-      <nav className="tool-guide-nav industry-page-nav" aria-label="Calculator page sections"><a href="#industry-calculator">Calculator</a><a href="#input-records">Input records</a>{page.key === 'landscaping' && <a href="#landscaping-target-check">Price and capacity examples</a>}<a href={page.key === 'ecommerce' ? '#ecommerce-detailed-method' : '#calculation-method'}>Formula</a><a href="#industry-questions">FAQs</a></nav>
-      {page.key === 'ecommerce' ? <EcommerceDetailedCalculator><IndustryQuickCalculator key={page.key} industry={industry} industryKey={page.key}/></EcommerceDetailedCalculator> : <IndustryQuickCalculator key={page.key} industry={industry} industryKey={page.key}/>}
+      <nav className="tool-guide-nav industry-page-nav" aria-label="Calculator page sections"><a href="#industry-calculator">Calculator</a><a href="#input-records">Input records</a>{page.key === 'landscaping' && <a href="#landscaping-target-check">Price and capacity examples</a>}<a href={page.key === 'cleaning' ? '#cleaning-detailed-method' : page.key === 'ecommerce' ? '#ecommerce-detailed-method' : '#calculation-method'}>Formula</a><a href="#industry-questions">FAQs</a></nav>
+      {page.key === 'cleaning' ? <CleaningDetailedCalculator><IndustryQuickCalculator key={page.key} industry={industry} industryKey={page.key}/></CleaningDetailedCalculator> : page.key === 'ecommerce' ? <EcommerceDetailedCalculator><IndustryQuickCalculator key={page.key} industry={industry} industryKey={page.key}/></EcommerceDetailedCalculator> : <IndustryQuickCalculator key={page.key} industry={industry} industryKey={page.key}/>}
       <section className="industry-content">
+      {page.key === 'cleaning' && <CleaningDetailedMethod/>}
       {page.key === 'ecommerce' && <EcommerceDetailedMethod/>}
       {page.key === 'landscaping' && <LandscapingTargetGuide />}
       <section className="industry-copy" id="input-records"><h2>Gather the records for your {industry.short.toLowerCase()} plan</h2><p>Use one consistent completed-sale unit and reporting period. Replace illustrative defaults with records you can reconcile.</p><div className="tool-table-wrap"><table><caption>Input records and cost boundaries</caption><thead><tr><th scope="col">Input group</th><th scope="col">Record to use</th><th scope="col">Boundary to check</th></tr></thead><tbody>{industryInputGuidance[page.key].records.map(row=><tr key={row[0]}><th scope="row">{row[0]}</th><td>{row[1]}</td><td>{row[2]}</td></tr>)}</tbody></table></div><p>{industryInputGuidance[page.key].pitfall}</p></section>
@@ -175,7 +178,7 @@ export default function IndustryPage({ slug }) {
           <article><ShieldCheck /><h3>Private and transparent</h3><p>Inputs stay in your browser, while the formula trace explains how each result was calculated.</p></article>
         </div>
         <div className="industry-copy" id="calculation-method">
-          <h2>Formula, assumptions and rounding{page.key === 'ecommerce' ? ' — quick estimate' : ''}</h2>
+          <h2>Formula, assumptions and rounding{['ecommerce','cleaning'].includes(page.key) ? ' — quick estimate' : ''}</h2>
           <p>Contribution per {industry.singular} = average price minus direct materials, labor, other variable costs, acquisition cost and percentage payment fees. Required monthly {industry.unit} = (operating overhead + owner pay + target profit) divided by contribution per {industry.singular}.</p>
           <p>For a traditional operating break-even calculation, set owner pay and target profit to zero. Keep owner pay if you want the business to cover your compensation, and add profit only when calculating a profit target. The example values are illustrative USD inputs, not industry averages.</p>
           <p>The example contribution is {money(example.contribution)} per {industry.singular}. The exact target is {example.jobs.toFixed(2)} {industry.unit}; rounding up gives {example.wholeJobs.toLocaleString("en-US")} whole {industry.unit} and {money(example.practicalRevenue)} in monthly sales. Costs entered per {industry.singular} must not also be included in monthly overhead.</p>
@@ -189,7 +192,7 @@ export default function IndustryPage({ slug }) {
           <h2>{industry.short === "Agencies" ? "Agency" : industry.short} break-even questions</h2>
           {industryCalculatorFaq(page.key).map(([question,answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}
         </div>
-        <section className="industry-copy" id="next-step-checklist"><h2>Review the target before changing your plan</h2><ol><li>Record the entered unit, period and cost boundary alongside the result.</li><li>Compare required whole sales with both capacity and evidence of demand.</li><li>Run a downside case using a lower realized price or higher delivery cost. Add new commitments if the operating range changes.</li><li>Check a dated cash forecast before treating a profitable target as available cash.</li></ol>{industryInputGuidance[page.key].links.map(([label,url])=><p key={url}><a href={url}>{label}</a></p>)}<p>Method and example inputs reviewed {page.key === 'ecommerce' ? 'November 12, 2026' : 'October 13, 2026'}. <a href="/calculation-methodology/">Calculation methodology</a> · <a href="/editorial-policy/">Editorial standards and corrections</a>. The <a href={page.key === 'ecommerce' ? 'https://stripe.com/resources/more/how-to-calculate-the-break-even-point' : 'https://legacy.sba.gov/business-guide/plan-your-business/calculate-your-startup-costs/break-even-point'}>{page.key === 'ecommerce' ? 'Stripe break-even explanation' : 'SBA break-even explanation'}</a> covers the basic fixed-cost/contribution method; owner pay, profit targets and productive-hour checks are explicit additions in this model.</p></section>
+        <section className="industry-copy" id="next-step-checklist"><h2>Review the target before changing your plan</h2><ol><li>Record the entered unit, period and cost boundary alongside the result.</li><li>Compare required whole sales with both capacity and evidence of demand.</li><li>Run a downside case using a lower realized price or higher delivery cost. Add new commitments if the operating range changes.</li><li>Check a dated cash forecast before treating a profitable target as available cash.</li></ol>{industryInputGuidance[page.key].links.map(([label,url])=><p key={url}><a href={url}>{label}</a></p>)}<p>Method and example inputs reviewed {['ecommerce','cleaning'].includes(page.key) ? 'November 12, 2026' : 'October 13, 2026'}. <a href="/calculation-methodology/">Calculation methodology</a> · <a href="/editorial-policy/">Editorial standards and corrections</a>. The <a href={['ecommerce','cleaning'].includes(page.key) ? 'https://stripe.com/resources/more/how-to-calculate-the-break-even-point' : 'https://legacy.sba.gov/business-guide/plan-your-business/calculate-your-startup-costs/break-even-point'}>{['ecommerce','cleaning'].includes(page.key) ? 'Stripe break-even explanation' : 'SBA break-even explanation'}</a> covers the basic fixed-cost/contribution method; owner pay, profit targets and productive-hour checks are explicit additions in this model.</p></section>
       </section>
     </div>
   );

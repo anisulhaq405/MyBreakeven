@@ -1,0 +1,11 @@
+# Cleaning release validation — 12 November 2026
+
+- Complete local suite: 161 files, 1,239 tests passed. Final scoped tests also pass after the input handler was made safe for queued edits. PR and deployment workflows rerun the full suite.
+- New model checked against six independently computed Decimal fixtures: legacy contribution parity, two-employee paid travel, owner-only service, employee-only service, exact decimal ceiling and nonpositive contribution. Separate role capacity, fee-aware upward-cent prices, recurring clients, zero volume and invalid/overflow inputs covered.
+- Hash snapshots protect all 215 blog records, seven non-cleaning industry renderings including the upgraded ecommerce page, shared engine, industry defaults, transfer logic and ecommerce detailed source. The older ecommerce scope test now delegates the authorized cleaning change to this new guard rather than requiring its pre-upgrade cleaning markup.
+- Production build and cleaning/ecommerce acceptance pass. Cleaning has one H1, canonical, indexable metadata, 14 matching visible/schema FAQs, unique IDs, valid internal destinations and November 12 review/sitemap dates.
+- Built-site inventory: 292 routes / 287 sitemap URLs, no route/link issues after the existing generated annual restaurant workbook was included in dist. Delivery budgets and image dimensions pass. November cluster and 36 reviewed-guide checks pass.
+- Real Chromium 390px and 1280px frames: mobile body375/scroll375, desktop1265/scroll1265. Worked example shows contribution107.20, thresholds24/52/56, capacity57 and planned60 warning. Owner-only setting leaves employee role nonbinding. Blank price validates. Some later frame interactions timed out, so final fee-boundary and download checks used the standalone page.
+- Standalone UI: 100% fee displays the nonpositive-contribution warning; worked example restores24/52/56. CSV downloaded and parsed: 61 rows with contribution107.2, targetVisits56, capacity57. PKR currency changes only labels, preserving107.2.
+- Quick estimate remains functional. Editing price to200 gives contribution96.20, target91, revenue18200. Continue to the full calculator carries this edited plan:91 jobs, capacity97 and304 inquiries.
+- Search comparator ranking limits are recorded in competitor-review.md. No Google position or future-impressions guarantee.
