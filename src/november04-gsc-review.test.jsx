@@ -33,7 +33,8 @@ const now=blogPostMap[old.slug];expect(now.published,old.slug).toBe(old.publishe
  it('reconciles cost formulas and the cost-indifference point, without corrupting FAQ answers',()=>{
   const p=blogPostMap['fixed-vs-variable-costs'];expect(p.html).toContain('id="total-fixed-variable-formulas"');expect(p.html).toContain('cost-indifference point');expect(p.html).toContain('<img style="max-width:100%;height:auto" src="/images/blog/day4-cost-curves.svg"');
   expect(9680-81*80).toBe(3200);expect(9680/80).toBe(121);const units=(4800-1200)/(50-20);expect(units).toBe(120);expect(4800+20*units).toBe(1200+50*units);
-  expect(articleFaq(p).inline).toBe(false);expect(articleFaq(p).items).toHaveLength(8); // Seven original answers plus the authorized tier-pricing FAQ.expect(articleFaq(p).items.find(f=>f.q.startsWith('Are payment')).a).not.toContain('For another angle');
+  expect(articleFaq(p).inline).toBe(false);expect(articleFaq(p).items).toHaveLength(10); // Eight existing answers plus two November 13 cost-behavior questions.
+  expect(articleFaq(p).items.find(f=>f.q.startsWith('Are payment')).a).not.toContain('For another angle');
  });
  it('renders unique anchors, real internal destinations, concise metadata and matching FAQs',()=>{
   for(const slug of november04GscSlugs){const p=blogPostMap[slug],html=renderToStaticMarkup(<LongformArticle article={p}/>);expect((html.match(/<h1\b/g)||[])).toHaveLength(1);const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);expect(new Set(ids).size).toBe(ids.length);for(const[id]of p.sectionLinks)expect(ids,id).toContain(id);for(const[,s]of p.html.matchAll(/href="\/blogs\/([^/]+)\//g))expect(blogPostMap[s],s).toBeDefined();expect((p.seoTitle+' | MyBreakeven').length).toBeLessThanOrEqual(60);expect(p.metaDescription.length).toBeLessThanOrEqual(160);}

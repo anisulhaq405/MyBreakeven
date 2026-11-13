@@ -1,3 +1,4 @@
+import './fixed-variable-guide.css';
 import './restaurant-budget-layout.css';
 import NovemberTopicConnections, {GuideTopicLink} from './NovemberTopicConnections.jsx';
 import './malaysia-review.css';
@@ -42,7 +43,7 @@ export default function LongformArticle({ article: a }) {
   }, [a, slug]);
   if (!a) return <section className="page-hero"><h1>Guide not found</h1><a href="/blogs/">Return to blogs</a></section>;
   const faq = articleFaq(a);
-  return <article className={`article-page${a.sectionLinks?' article-with-section-nav':''}${slug==='restaurant-budgeting'?' restaurant-budget-layout':''}`}>
+  return <article className={`article-page${a.sectionLinks?' article-with-section-nav':''}${slug==='restaurant-budgeting'?' restaurant-budget-layout':''}${slug==='fixed-vs-variable-costs'?' fixed-variable-layout':''}`}>
     <nav className="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/blogs/">Guides</a><span>›</span><span>{a.tag}</span></nav>
     {a.tag === "Agency" && <AgencyClusterLink />}{a.tag === "E-commerce" && <EcommerceClusterLink />}{a.tag === "Photography" && <PhotographyClusterLink />}{a.tag === "Restaurant" && <RestaurantClusterLink />}{a.tag === "Salon" && <SalonClusterLink />}{a.tag === "Cleaning" && <CleaningClusterLink />}{a.tag === "Landscaping" && <LandscapingClusterLink />}{a.tag === "Mobile Detailing" && <MobileDetailingClusterLink />}
     {a.editorialStatus==='draft'&&<p className="article-note" role="status">Unpublished draft for review</p>}
