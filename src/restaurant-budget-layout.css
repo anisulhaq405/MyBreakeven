@@ -1,0 +1,49 @@
+/* Only restaurant-budgeting: narrative tables become readable records, never wide strips. */
+.restaurant-budget-layout [aria-label="Restaurant budgeting resources by purpose"],
+.restaurant-budget-layout [aria-label="Restaurant budget input calculations"]{overflow:visible;min-width:0;background:#f8f7ff;border-color:#ded9f1}
+.restaurant-budget-layout [aria-label="Restaurant budgeting resources by purpose"] table,
+.restaurant-budget-layout [aria-label="Restaurant budget input calculations"] table{display:block;width:100%;min-width:0;table-layout:fixed}
+.restaurant-budget-layout [aria-label="Restaurant budgeting resources by purpose"] caption,
+.restaurant-budget-layout [aria-label="Restaurant budget input calculations"] caption{display:block;padding:18px 20px;font-size:16px;line-height:1.5}
+.restaurant-budget-layout [aria-label="Restaurant budgeting resources by purpose"] thead,
+.restaurant-budget-layout [aria-label="Restaurant budget input calculations"] thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.restaurant-budget-layout [aria-label="Restaurant budgeting resources by purpose"] tbody{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:0 16px 16px}
+.restaurant-budget-layout [aria-label="Restaurant budgeting resources by purpose"] tr{display:flex;flex-direction:column;gap:0;min-width:0;border:1px solid #e1ddec;border-radius:12px;background:#fff;padding:18px}
+.restaurant-budget-layout [aria-label="Restaurant budgeting resources by purpose"] th,
+.restaurant-budget-layout [aria-label="Restaurant budgeting resources by purpose"] td,
+.restaurant-budget-layout [aria-label="Restaurant budget input calculations"] th,
+.restaurant-budget-layout [aria-label="Restaurant budget input calculations"] td{display:block;min-width:0;width:auto;padding:0;border:0;text-align:left;white-space:normal;overflow-wrap:anywhere;line-height:1.6;vertical-align:top}
+.restaurant-budget-layout [aria-label="Restaurant budgeting resources by purpose"] th{font-size:16px;color:#24213c;line-height:1.5;margin-bottom:14px}
+.restaurant-budget-layout [aria-label="Restaurant budgeting resources by purpose"] td:nth-child(2){font-size:15px;margin-bottom:14px}
+.restaurant-budget-layout [aria-label="Restaurant budgeting resources by purpose"] td:last-child{font-size:14px;color:#556079;margin-top:auto;padding-top:12px;border-top:1px solid #eeeaf6}
+.restaurant-budget-layout [aria-label="Restaurant budget input calculations"] tbody{display:grid;gap:12px;padding:0 16px 16px}
+.restaurant-budget-layout [aria-label="Restaurant budget input calculations"] tr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px 24px;min-width:0;background:#fff;border:1px solid #e1ddec;border-radius:12px;padding:18px 20px}
+.restaurant-budget-layout [aria-label="Restaurant budget input calculations"] th{grid-column:1/-1;font-size:16px;color:#29243d}
+.restaurant-budget-layout [aria-label="Restaurant budget input calculations"] td{font-size:15px}
+.restaurant-budget-layout [aria-label="Restaurant budget input calculations"] td:nth-child(2){background:#f0f8f6;border-radius:8px;padding:12px 14px;color:#164c43;font-variant-numeric:tabular-nums}
+.restaurant-budget-layout [aria-label="Restaurant budget input calculations"] td:last-child{padding:12px 0;color:#556079}
+.restaurant-budget-layout [aria-label="Restaurant budget input calculations"] td::before{display:block;font-size:11px;font-weight:750;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;color:#546678}
+.restaurant-budget-layout [aria-label="Restaurant budget input calculations"] td:nth-child(2)::before{content:"Exact calculation"}
+.restaurant-budget-layout [aria-label="Restaurant budget input calculations"] td:last-child::before{content:"Check against"}
+.restaurant-budget-layout .restaurant-scenario-groups{min-width:0;margin-top:26px}
+.restaurant-budget-layout .restaurant-scenario-context{padding:14px 18px;background:#edf3ff;border:1px solid #dce4f4;border-radius:10px;font-size:14px;line-height:1.5;color:#374762}
+.restaurant-budget-layout .restaurant-ticket-group{margin:24px 0 30px;min-width:0}
+.restaurant-budget-layout .restaurant-ticket-heading{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 16px;margin-bottom:12px}
+.restaurant-budget-layout .restaurant-ticket-heading h3{margin:0;font-size:18px;line-height:1.4}
+.restaurant-budget-layout .restaurant-ticket-heading h3 span{color:#5542b5}
+.restaurant-budget-layout .restaurant-ticket-heading>span{font-size:12px;color:#657088}
+.restaurant-budget-layout .restaurant-scenario-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.restaurant-budget-layout .restaurant-scenario-card{min-width:0;padding:0;background:#fff;border:1px solid #dedfec;border-radius:12px;overflow:visible}
+.restaurant-budget-layout .restaurant-scenario-card header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding:12px 14px;background:#f4f2fc;border-bottom:1px solid #e6e0f4;border-radius:12px 12px 0 0}
+.restaurant-budget-layout .restaurant-scenario-card h4{margin:0;font-size:13px;line-height:1.4;color:#4c3c99}
+.restaurant-budget-layout .restaurant-scenario-card header p{margin:0;font-size:11px;line-height:1.5;color:#626278}
+.restaurant-budget-layout .restaurant-scenario-card header strong{font-size:13px;color:#282b42;margin-left:3px}
+.restaurant-budget-layout .restaurant-scenario-card dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 10px;margin:0;padding:16px 14px}
+.restaurant-budget-layout .restaurant-scenario-card dl>div{min-width:0}
+.restaurant-budget-layout .restaurant-scenario-card dt{font-size:11px;color:#5a6479;line-height:1.45;margin:0 0 5px;overflow-wrap:anywhere}
+.restaurant-budget-layout .restaurant-scenario-card dd{margin:0;font-size:16px;font-weight:700;line-height:1.4;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;color:#252c42}
+.restaurant-budget-layout .restaurant-scenario-target dd{color:#5641b4;font-size:21px}
+.restaurant-budget-layout .restaurant-scenario-sales{grid-column:1/-1;padding-top:12px;border-top:1px solid #e9eaf0}
+.restaurant-budget-layout .restaurant-scenario-sales dd{font-size:18px}
+@media(max-width:900px){.restaurant-budget-layout [aria-label="Restaurant budgeting resources by purpose"] tbody{grid-template-columns:1fr}.restaurant-budget-layout .restaurant-scenario-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.restaurant-budget-layout .restaurant-scenario-grid{grid-template-columns:1fr}.restaurant-budget-layout [aria-label="Restaurant budget input calculations"] tr{grid-template-columns:1fr;gap:10px;padding:16px}.restaurant-budget-layout [aria-label="Restaurant budgeting resources by purpose"] tbody,.restaurant-budget-layout [aria-label="Restaurant budget input calculations"] tbody{padding:0 10px 10px;gap:10px}.restaurant-budget-layout [aria-label="Restaurant budgeting resources by purpose"] caption,.restaurant-budget-layout [aria-label="Restaurant budget input calculations"] caption{padding:16px}.restaurant-budget-layout [aria-label="Restaurant budget input calculations"] td:last-child{padding:3px 0}.restaurant-budget-layout .restaurant-ticket-heading h3{font-size:17px}.restaurant-budget-layout .restaurant-scenario-card dl{gap:16px 20px;padding:18px}.restaurant-budget-layout .restaurant-scenario-card dt{font-size:12px}}
