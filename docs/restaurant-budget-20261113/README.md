@@ -28,3 +28,5 @@ No worksheet or calculator formulas are modified. The article instructs completi
 `blog-baseline.json` protects all 214 other assembled blog records. Historical preservation tests exclude only this later-authorized article, with a new dedicated arithmetic, intent and full-registry guard. Calculator/source guards remain active. Release uses existing PR checks and Hostinger workflow, with `[skip social]`.
 
 Local verification: production build passed; all 163 test files / 1,250 tests passed; 292-route audit has no issues; delivery audit has no image or budget failures; ecommerce, cleaning, landscaping, November hubs and all 36 reviewed worksheet release checks passed.
+
+Replaced the historical SBA break-even citation because it now redirects to a generic planning page. Verified replacement: OpenStax 3.2, https://openstax.org/books/principles-managerial-accounting/pages/3-2-calculate-a-break-even-point-in-units-and-dollars (fixed-cost/contribution formulas and CVP assumptions).
