@@ -1,3 +1,4 @@
+import {reviewFoodPeriod} from './foodPeriodReview.js';
 import {reviewSalonNoShow} from './salonNoShowContent.js';
 import {applyRoasContentReview} from './roasContentReview.js';
 import {titledFeatureImage} from './featureTitleCovers.js';
@@ -53,3 +54,5 @@ for (const [slug, tool] of Object.entries(freeTools)) { const asset=financeFeatu
 for (const [slug,tool] of Object.entries(freeTools)) tool.image=titledFeatureImage(slug,tool.image,'calculator');
 
 freeTools['salon-no-show-profit-loss-calculator']=reviewSalonNoShow(freeTools['salon-no-show-profit-loss-calculator']);
+
+freeTools['food-cost-calculator']=reviewFoodPeriod(freeTools['food-cost-calculator']);
