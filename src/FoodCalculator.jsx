@@ -1,3 +1,4 @@
+import FoodPeriodPage from './FoodPeriodPage.jsx';
 import MenuPlanNextStep from './MenuPlanNextStep.jsx';
 import {foodNextDecision} from './foodNextDecision.js';
 import {trackFoodEvent,createCalculatorUseTracker,createCalculatorResultTracker} from './productAnalytics.js';
@@ -14,7 +15,8 @@ const clone = input => JSON.parse(JSON.stringify(input));
 function initial(mode){
  return {input:clone(mode==='recipe'?recipeExample:mode==='period'?foodPeriodExample:menuExample),currency:'USD'};
 }
-export default function FoodCalculator({tool,slug}) {
+export default function FoodCalculator(props){return props.slug==='food-cost-calculator'?<FoodPeriodPage {...props}/>:<StandardFoodCalculator {...props}/>;}
+export function StandardFoodCalculator({tool,slug}) {
  const mode=tool.foodMode;const [plan]=useState(()=>initial(mode));const [input,setInput]=useState(plan.input);const [currency,setCurrency]=useState(plan.currency);const [transferError,setTransferError]=useState('');
  const [transferred,setTransferred]=useState(false);
  const [edited,setEdited]=useState(false);
