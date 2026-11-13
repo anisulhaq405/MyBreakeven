@@ -1,3 +1,4 @@
+import {reviewSalonNoShow} from './salonNoShowContent.js';
 import {applyRoasContentReview} from './roasContentReview.js';
 import {titledFeatureImage} from './featureTitleCovers.js';
 import {financeFeatureAssets,financeFeatureCaption} from './financeFeatureAssets.js';
@@ -50,3 +51,5 @@ for (const [slug, tool] of Object.entries(freeTools)) { const asset=financeFeatu
 
 // Embed titles only on audited untitled covers; existing artwork assets remain intact.
 for (const [slug,tool] of Object.entries(freeTools)) tool.image=titledFeatureImage(slug,tool.image,'calculator');
+
+freeTools['salon-no-show-profit-loss-calculator']=reviewSalonNoShow(freeTools['salon-no-show-profit-loss-calculator']);

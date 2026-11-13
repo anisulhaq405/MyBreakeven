@@ -1,3 +1,4 @@
+import SalonNoShowPage from './SalonNoShowPage.jsx';
 import { EcommerceClusterLink } from './ClusterLinks.jsx';
 import { SalonClusterLink } from './ClusterLinks.jsx';
 import { MobileDetailingClusterLink } from './ClusterLinks.jsx';
@@ -10,7 +11,8 @@ import React,{useMemo,useState} from 'react';
 import {calculateOperationalTool} from './operationalToolEngine';
 import {calculateBusinessTool} from './businessToolEngine';
 import FreeToolGuide from './FreeToolGuide';
-export default function BusinessTool({tool,slug}){
+export default function BusinessTool(props){return props.slug==='salon-no-show-profit-loss-calculator'?<SalonNoShowPage {...props}/>:<StandardBusinessTool {...props}/>;}
+export function StandardBusinessTool({tool,slug}){
  const [input,setInput]=useState({...tool.defaults}),[currency,setCurrency]=useState('USD');
  const r=useMemo(()=>(["rebooking","noShow","travelProfit"].includes(tool.mode)?calculateDecisionTool:tool.fields && !["roas","hourly","runway"].includes(tool.mode)?calculateOperationalTool:calculateBusinessTool)(input,tool.mode),[input,tool.mode]);
  const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency,currencyDisplay:'code',minimumFractionDigits:2,maximumFractionDigits:2}).format(n);
