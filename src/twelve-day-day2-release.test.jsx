@@ -36,7 +36,8 @@ describe('Authorized November 5 Day 2 publication',()=>{
  });
  it('preserves all 171 prior records exactly except three approved append-only additions and their modification dates',()=>{
   expect([...day2ExistingSlugs].sort()).toEqual(['operating-cash-flow','operating-expenses','rolling-forecast']);
-  for(const old of before){if(november11Day6Slugs.has(old.slug))continue; // Covered by the strict November 11 full-registry preservation test.
+  for(const old of before){if(old.slug==='restaurant-budgeting')continue; // Covered by November 13 arithmetic, intent and 214-record preservation checks.
+if(november11Day6Slugs.has(old.slug))continue; // Covered by the strict November 11 full-registry preservation test.
 
    if((november10RecoverySlugs.has(old.slug)||eighteenGuideReviewSlugs.has(old.slug))||day5ExistingSlugs.has(old.slug)||authenticityReviewSlugs.has(old.slug)||day4ExistingSlugs.has(old.slug)||day3ExistingSlugs.has(old.slug))continue; // Exact allowed change protected by the 180-record Day 3 baseline test.
    const now=blogPostMap[old.slug];expect(now).toBeDefined();

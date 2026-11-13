@@ -3,7 +3,7 @@ import {blogPostMap,blogPosts} from './content/blogs/index.js';
 import {applyRestaurantBudgetSerpScopeReview} from './content/blogs/restaurantBudgetSerpScopeReview.js';
 describe('Restaurant budgeting SERP scope / 15-day freeze',()=>{
  it('clarifies the single-month download versus annual illustration and cash dates',()=>{
-   const a=blogPostMap['restaurant-budgeting'];expect(a.modified).toBe('2026-10-30');
+   const a=blogPostMap['restaurant-budgeting'];expect(a.modified).toBe('2026-11-13');
    expect(a.html).toContain('Choose the restaurant budgeting resource for your task');
    expect(a.html).toContain('One monthly budget versus actual');
    expect(a.html).toContain('/downloads/restaurant-12-month-budget-template.xlsx');
