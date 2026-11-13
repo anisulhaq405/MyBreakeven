@@ -54,6 +54,8 @@ jobs:
         run: node scripts/qa-cleaning-detailed.mjs
       - name: Verify detailed landscaping calculator release
         run: node scripts/qa-landscaping-detailed.mjs
+      - name: Verify restaurant budget evidence and calculations
+        run: node scripts/qa-restaurant-budget-november13.mjs
 
       - name: Verify Day 3 published guide assets and metadata
         run: node scripts/qa-12day-day3-release.mjs

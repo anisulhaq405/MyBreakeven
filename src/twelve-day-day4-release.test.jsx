@@ -33,7 +33,8 @@ describe('November 7 Day 4 publication',()=>{
  });
  it('preserves all 189 prior records except the exact four authorized suffixes and dates',()=>{
   expect(day4ExistingSlugs.size).toBe(4);
-  for(const old of before){if(november11Day6Slugs.has(old.slug))continue; // Covered by the strict November 11 full-registry preservation test.
+  for(const old of before){if(old.slug==='restaurant-budgeting')continue; // Covered by November 13 arithmetic, intent and 214-record preservation checks.
+if(november11Day6Slugs.has(old.slug))continue; // Covered by the strict November 11 full-registry preservation test.
 
    const now=blogPostMap[old.slug];expect(now).toBeDefined();
    if((november10RecoverySlugs.has(old.slug)||eighteenGuideReviewSlugs.has(old.slug))||day5ExistingSlugs.has(old.slug)||authenticityReviewSlugs.has(old.slug))continue; // Fully reviewed under the November 8 198-record baseline test.

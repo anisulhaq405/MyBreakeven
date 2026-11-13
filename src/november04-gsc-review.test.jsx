@@ -19,7 +19,8 @@ const baseline=JSON.parse(readFileSync('src/testFixtures/november04GscBefore.jso
 describe('November 4 explicitly authorized two-page GSC improvement',()=>{
  it('changes only the two requested articles, preserving all publication dates and images',()=>{
   expect(blogPosts).toHaveLength(baseline.length+twelveDayDay2Posts.length+35);
-  for(const old of baseline){if(november11Day6Slugs.has(old.slug))continue; // Covered by the strict November 11 full-registry preservation test.
+  for(const old of baseline){if(old.slug==='restaurant-budgeting')continue; // Covered by November 13 arithmetic, intent and 214-record preservation checks.
+if(november11Day6Slugs.has(old.slug))continue; // Covered by the strict November 11 full-registry preservation test.
 const now=blogPostMap[old.slug];expect(now.published,old.slug).toBe(old.published);expect(now.image,old.slug).toBe(old.image);if((november10RecoverySlugs.has(old.slug)||eighteenGuideReviewSlugs.has(old.slug))||day5ExistingSlugs.has(old.slug)||authenticityReviewSlugs.has(old.slug)||day4ExistingSlugs.has(old.slug)||day3ExistingSlugs.has(old.slug)||day2ExistingSlugs.has(old.slug))continue; if(!november04GscSlugs.has(old.slug))expect(createHash('sha256').update(JSON.stringify(now)).digest('hex'),old.slug).toBe(old.sha256);else{expect(now.modified).toBe((november10RecoverySlugs.has(now.slug)||eighteenGuideReviewSlugs.has(now.slug)) ? "2026-11-10" : '2026-11-04');expect(applyNovember04GscReview(now)).toBe(now);}}
  });
  it('preserves working-capital definitions, downloads and original anchor targets',()=>{

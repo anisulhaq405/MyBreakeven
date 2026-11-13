@@ -13,7 +13,8 @@ const hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
 describe('18 explicitly authorized November 10 guide updates',()=>{
  it('changes exactly 18 articles, leaving all 188 other records byte-for-byte equal',()=>{
   expect(blogPosts.length).toBe(215);expect(before.length).toBe(206);expect(eighteenGuideReviewSlugs.size).toBe(18);
-  for(const b of before){if(november11Day6Slugs.has(b.slug))continue; // Covered by the strict November 11 full-registry preservation test.
+  for(const b of before){if(b.slug==='restaurant-budgeting')continue; // Covered by November 13 arithmetic, intent and 214-record preservation checks.
+if(november11Day6Slugs.has(b.slug))continue; // Covered by the strict November 11 full-registry preservation test.
 const p=blogPostMap[b.slug];expect(p.published,b.slug).toBe(b.published);expect(p.image,b.slug).toBe(b.image);
    if(!eighteenGuideReviewSlugs.has(b.slug)){expect(hash(p),b.slug).toBe(b.sha256);continue;}
    expect(p.modified).toBe('2026-11-10');expect(hash(p)).not.toBe(b.sha256);
