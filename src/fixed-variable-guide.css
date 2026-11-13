@@ -1,0 +1,19 @@
+.fixed-variable-layout .fixed-variable-evidence{margin:22px 0;padding:16px 20px;border-left:4px solid #6252ce;background:#f1effb;color:#45516b;font-size:14px;line-height:1.7;border-radius:0 10px 10px 0}
+.fixed-variable-layout .article-table-scroll table{min-width:0;width:100%;table-layout:fixed}
+.fixed-variable-layout .article-table-scroll th,.fixed-variable-layout .article-table-scroll td{white-space:normal;overflow-wrap:anywhere;vertical-align:top;line-height:1.6;text-align:left}
+.fixed-variable-layout .article-table-scroll code{white-space:normal;overflow-wrap:anywhere}
+.fixed-variable-layout .fixed-variable-step-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:24px 0}
+.fixed-variable-layout .fixed-variable-step-card{min-width:0;border:1px solid #dce3ef;border-radius:12px;background:#fff;padding:17px}
+.fixed-variable-layout .fixed-variable-step-card h4{margin:0 0 14px;font-size:18px;color:#303650}
+.fixed-variable-layout .fixed-variable-step-card dl{margin:0}
+.fixed-variable-layout .fixed-variable-step-card dl>div{display:flex;justify-content:space-between;gap:12px;margin:9px 0}
+.fixed-variable-layout .fixed-variable-step-card dt{font-size:12px;line-height:1.5;color:#58647b}
+.fixed-variable-layout .fixed-variable-step-card dd{margin:0;font-size:14px;font-weight:700;color:#252d44;font-variant-numeric:tabular-nums}
+.fixed-variable-layout .fixed-variable-step-card .step-remainder{display:block;border-top:1px solid #e6e8ee;padding-top:12px;margin-top:14px}
+.fixed-variable-layout .step-remainder dd{margin-top:5px;font-size:24px;color:#216457}
+.fixed-variable-layout .has-shortfall{border-color:#e9cbbb;background:#fffaf6}
+.fixed-variable-layout .has-shortfall .step-remainder dd{color:#974321}
+@media(max-width:650px){.fixed-variable-layout .fixed-variable-step-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.fixed-variable-layout .article-table-scroll{overflow:visible;border:0;background:transparent}.fixed-variable-layout .article-table-scroll table,.fixed-variable-layout .article-table-scroll caption,.fixed-variable-layout .article-table-scroll tbody,.fixed-variable-layout .article-table-scroll tr,.fixed-variable-layout .article-table-scroll th,.fixed-variable-layout .article-table-scroll td{display:block;min-width:0;width:auto}.fixed-variable-layout .article-table-scroll caption{padding:0 0 14px;line-height:1.6}.fixed-variable-layout .article-table-scroll thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.fixed-variable-layout .article-table-scroll tbody{display:grid;gap:12px}.fixed-variable-layout .article-table-scroll tr{padding:16px;border:1px solid #dfe2ed;background:#fff;border-radius:12px}.fixed-variable-layout .article-table-scroll th[scope=row]{padding:0 0 12px;border:0;font-size:16px;color:#303650}.fixed-variable-layout .article-table-scroll td{padding:10px 0;border:0;border-top:1px solid #ececf3;text-align:left;font-size:14px}.fixed-variable-layout .article-table-scroll td::before{content:attr(data-label);display:block;font-size:11px;letter-spacing:.03em;font-weight:750;color:#627089;margin-bottom:5px}.fixed-variable-layout .fixed-variable-evidence{padding:14px 16px}}
+@media(max-width:400px){.fixed-variable-layout .fixed-variable-step-grid{grid-template-columns:1fr}}
+/* Keep the guide's navigation within narrow 320px viewports. */
+@media(max-width:360px){body:has(.fixed-variable-layout) header{padding-left:12px;padding-right:12px}body:has(.fixed-variable-layout) header .brand{font-size:18px;gap:7px;min-width:0}body:has(.fixed-variable-layout) header .brandmark{width:36px;height:36px}body:has(.fixed-variable-layout) header .header-actions{gap:6px;flex-shrink:0}}
