@@ -1,3 +1,4 @@
+import {reviewNetCashFlow} from './netCashFlowReview.js';
 import {reviewFoodPeriod} from './foodPeriodReview.js';
 import {reviewSalonNoShow} from './salonNoShowContent.js';
 import {applyRoasContentReview} from './roasContentReview.js';
@@ -56,3 +57,5 @@ for (const [slug,tool] of Object.entries(freeTools)) tool.image=titledFeatureIma
 freeTools['salon-no-show-profit-loss-calculator']=reviewSalonNoShow(freeTools['salon-no-show-profit-loss-calculator']);
 
 freeTools['food-cost-calculator']=reviewFoodPeriod(freeTools['food-cost-calculator']);
+
+freeTools['net-cash-flow-calculator']=reviewNetCashFlow(freeTools['net-cash-flow-calculator']);
