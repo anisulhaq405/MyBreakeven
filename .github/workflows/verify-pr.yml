@@ -38,6 +38,8 @@ jobs:
         run: node scripts/qa-salon-no-show.mjs
       - name: Verify detailed food-cost reconciliation
         run: node scripts/qa-food-period.mjs
+      - name: Verify net cash flow reconciliation
+        run: node scripts/qa-net-cash-review.mjs
       - name: Verify Day 3 published guide assets and metadata
         run: node scripts/qa-12day-day3-release.mjs
       - name: Verify Day 4 publication
