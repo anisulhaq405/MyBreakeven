@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Illustration of Malaysian restaurant, nasi lemak, Kuala Lumpur skyline and break-even planning">
+<defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#123454"/><stop offset="1" stop-color="#d28c52"/></linearGradient><linearGradient id="front" x2="0" y2="1"><stop stop-color="#775035"/><stop offset="1" stop-color="#35201d"/></linearGradient></defs>
+<rect width="1200" height="630" fill="url(#sky)"/>
+<circle cx="950" cy="132" r="76" fill="#ffc875" opacity=".85"/>
+<g fill="#233b4e" stroke="#ffe5a4" stroke-width="3"><path d="M755 300V112h26V76h18v36h28v188M860 300V112h26V76h18v36h28v188" /><path d="M798 86l-8-46h12zM902 86l-8-46h12z"/><path d="M818 175l44 0" stroke-width="6"/><path d="M820 164Q840 152 860 164" fill="none"/></g>
+<rect y="296" width="1200" height="334" fill="#2d291f"/>
+<path d="M70 225h590l95 90H0z" fill="#623a26"/><path d="M95 228h557l66 62H26z" fill="#98633c"/>
+<rect x="45" y="306" width="655" height="208" fill="url(#front)"/><path d="M45 305V518M700 305V518" stroke="#e8b46f" stroke-width="16"/>
+<g fill="#ffdb83"><circle cx="145" cy="327" r="15"/><circle cx="296" cy="327" r="15"/><circle cx="453" cy="327" r="15"/><circle cx="608" cy="327" r="15"/></g>
+<rect x="112" y="365" width="490" height="84" rx="12" fill="#281a16" opacity=".88"/>
+<text x="357" y="398" font-size="31" text-anchor="middle" font-family="Arial,sans-serif" fill="#ffe6ad" font-weight="700">RESTORAN MALAYSIA</text>
+<text x="357" y="427" font-size="18" text-anchor="middle" font-family="Arial,sans-serif" fill="#f2d1a0">Kuala Lumpur • Restaurant Planning</text>
+<ellipse cx="826" cy="507" rx="208" ry="87" fill="#2a1c17"/><ellipse cx="826" cy="496" rx="184" ry="68" fill="#f8ebd0"/><ellipse cx="826" cy="491" rx="125" ry="56" fill="#b5c977"/><ellipse cx="835" cy="481" rx="58" ry="40" fill="#f8f2d4"/><ellipse cx="765" cy="489" rx="38" ry="26" fill="#a83b27"/><ellipse cx="902" cy="494" rx="35" ry="25" fill="#66412a"/><ellipse cx="834" cy="480" rx="20" ry="14" fill="#efc958"/><path d="M660 540h328" stroke="#a26d46" stroke-width="12"/>
+<rect x="0" y="555" width="1200" height="75" fill="#102b37" opacity=".96"/>
+<text x="600" y="585" fill="#fff4d9" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="700">RESTAURANT BREAK-EVEN • MALAYSIA</text>
+<text x="600" y="610" fill="#f7c978" text-anchor="middle" font-family="Arial,sans-serif" font-size="18">Before &amp; After Evaluation • 5 Restaurant Owners • 2026</text></svg>

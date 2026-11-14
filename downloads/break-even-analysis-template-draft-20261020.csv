@@ -1,0 +1,13 @@
+Line,Value,Meaning
+Fixed operating costs,4000,Input for one period
+Selling price per unit,50,Input; must be positive
+Variable cost per unit,20,Input; all sale-linked costs counted once
+Additional target profit,0,Input; not a second fixed cost
+Planned units,150,Input; an assumption not a demand forecast
+Input status,"=IF(COUNT(B2:B6)<>5,""Complete numeric inputs"",IF(OR(MIN(B2:B6)<0,B3<=0),""Check inputs"",IF(B3<=B4,""No positive contribution"",""Ready"")))",Output targets remain blank unless Ready
+Contribution per unit,"=IF(B7<>""Ready"","""",B3-B4)",Calculated
+Exact target units,"=IF(B7<>""Ready"","""",(B2+B5)/B8)",Includes separate profit goal
+Whole target units,"=IF(B7<>""Ready"","""",ROUNDUP(B9,0))",Round target units upward
+Exact target sales,"=IF(B7<>""Ready"","""",B9*B3)",Financial threshold
+Whole target sales,"=IF(B7<>""Ready"","""",B10*B3)",Whole-unit operational target
+Planned operating income,"=IF(B7<>""Ready"","""",B6*B8-B2)",Does not subtract the profit goal as an expense
