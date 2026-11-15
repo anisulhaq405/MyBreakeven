@@ -1,3 +1,4 @@
+import {reviewPriceIncrease} from './priceIncreaseReview.js';
 import {reviewNetCashFlow} from './netCashFlowReview.js';
 import {reviewFoodPeriod} from './foodPeriodReview.js';
 import {reviewSalonNoShow} from './salonNoShowContent.js';
@@ -59,3 +60,5 @@ freeTools['salon-no-show-profit-loss-calculator']=reviewSalonNoShow(freeTools['s
 freeTools['food-cost-calculator']=reviewFoodPeriod(freeTools['food-cost-calculator']);
 
 freeTools['net-cash-flow-calculator']=reviewNetCashFlow(freeTools['net-cash-flow-calculator']);
+
+freeTools['price-increase-calculator']=reviewPriceIncrease(freeTools['price-increase-calculator']);
