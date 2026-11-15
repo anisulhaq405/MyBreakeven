@@ -3,10 +3,12 @@ import CurrencySelector from './CurrencySelector';
 import FreeToolGuide from './FreeToolGuide';
 import { calculatePriceChange } from './freeToolEngine';
 import './free-tools.css';
+import DiscountTool from './DiscountTool.jsx';
 import {calculatePriceIncrease,priceIncreaseCSV} from './priceIncreaseEngine.js';
 import './price-increase.css';
 const count=n=>new Intl.NumberFormat('en-US',{maximumFractionDigits:0}).format(n);
-export default function PricingTool({slug,tool}){
+export default function PricingTool(props){return props.tool.mode==='discount'?<DiscountTool {...props}/>:<StandardPricingTool {...props}/>;}
+export function StandardPricingTool({slug,tool}){
  const discount=tool.mode==='discount';
  const [input,setInput]=useState({...tool.defaults}),[currency,setCurrency]=useState('USD');
  const r=useMemo(()=>discount?calculatePriceChange(input,tool.mode):calculatePriceIncrease(input),[input,tool.mode]);

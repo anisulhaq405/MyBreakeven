@@ -1,3 +1,4 @@
+import {reviewDiscount} from './discountReview.js';
 import {reviewPriceIncrease} from './priceIncreaseReview.js';
 import {reviewNetCashFlow} from './netCashFlowReview.js';
 import {reviewFoodPeriod} from './foodPeriodReview.js';
@@ -62,3 +63,5 @@ freeTools['food-cost-calculator']=reviewFoodPeriod(freeTools['food-cost-calculat
 freeTools['net-cash-flow-calculator']=reviewNetCashFlow(freeTools['net-cash-flow-calculator']);
 
 freeTools['price-increase-calculator']=reviewPriceIncrease(freeTools['price-increase-calculator']);
+
+freeTools['discount-break-even-calculator']=reviewDiscount(freeTools['discount-break-even-calculator']);
