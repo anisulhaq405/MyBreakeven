@@ -1,0 +1,9 @@
+import {readFileSync,existsSync}from'node:fs';import assert from'node:assert/strict';
+import {freeTools}from'../src/freeTools.js';import {calculateDiscount}from'../src/discountEngine.js';
+const slug='discount-break-even-calculator',tool=freeTools[slug],url=`https://mybreakeven.com/calculators/${slug}/`,html=readFileSync(`dist/calculators/${slug}/index.html`,'utf8');
+assert(html.includes(`rel="canonical" href="${url}"`));assert.equal((html.match(/<h1[ >]/g)||[]).length,1);assert.equal((html.match(/type="number"/g)||[]).length,9);assert.equal((html.match(/type="radio"/g)||[]).length,3);
+for(const s of ['November 15, 2026','136 / month','112 sales','6.35% limit','93.65','Download promotion CSV','Print / save PDF','data-label="Required whole sales"'])assert(html.includes(s),s);
+const schemas=[...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap(m=>{const x=JSON.parse(m[1]);return x['@graph']||[x]});const faq=schemas.find(x=>x['@type']==='FAQPage');assert.equal(faq.mainEntity.length,12);for(const[q,a]of tool.faq)assert(faq.mainEntity.some(x=>x.name===q&&x.acceptedAnswer.text===a));
+const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);assert.equal(ids.length,new Set(ids).size);for(const m of html.matchAll(/href="#([^"]+)"/g))assert(ids.includes(m[1]),m[1]);for(const m of html.matchAll(/href="(\/(?:blogs|calculators)\/[^"?#]+\/)(?:[?#][^"]*)?"/g))assert(existsSync('dist'+m[1]+'index.html'),m[1]);for(const[,source]of tool.sources)assert(html.includes(source));
+const r=calculateDiscount({...tool.defaults,campaignCost:300});assert.equal(r.target,147);assert.equal(r.profitChange,-724);assert.equal(r.revenueTarget,112);
+console.log('Discount release: 9 fields, three entry modes, 12 matched FAQs, whole-sale targets, campaign cost, price floor and valid links passed.');
