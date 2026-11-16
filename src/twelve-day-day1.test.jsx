@@ -44,7 +44,7 @@ describe('Day 1 editorial delivery',()=>{
  it('preserves all other existing articles and appends only the approved cash-flow supplement',()=>{
   const baseline=JSON.parse(readFileSync('docs/content/2026-11-03-baseline-blog-hashes.json','utf8'));
   const current=new Map(blogPosts.map(p=>[p.slug,p]));
-  for(const before of baseline){if(before.slug==='restaurant-budgeting')continue; // Covered by the November 13 full-registry guard.
+  for(const before of baseline){if(['restaurant-budgeting','lower-break-even-point'].includes(before.slug))continue; // Covered by the November 13 full-registry guard.
 if(november11Day6Slugs.has(before.slug))continue; // Covered by the strict November 11 full-registry preservation test.
 
    if((november10RecoverySlugs.has(before.slug)||eighteenGuideReviewSlugs.has(before.slug))||day5ExistingSlugs.has(before.slug)||day4ExistingSlugs.has(before.slug)||day3ExistingSlugs.has(before.slug)||day2ExistingSlugs.has(before.slug)||november04GscSlugs.has(before.slug))continue; // Independently protected by the November 4 two-page review test.

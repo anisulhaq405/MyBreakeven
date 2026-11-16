@@ -1,3 +1,4 @@
+import {applyLowerBreakEvenNovember16} from './lowerBreakEvenNovember16.js';
 import {applyFixedVariableNovember13} from './fixedVariableNovember13.js';
 import {applyRestaurantBudgetNovember13} from './restaurantBudgetNovember13.js';
 import {twelveDayDay6Posts} from './twelveDayDay6.js';
@@ -219,6 +220,7 @@ const normalizePost = post => {
   reviewed = applyNovember11Day6Review(reviewed);
   reviewed = applyRestaurantBudgetNovember13(reviewed);
   reviewed = applyFixedVariableNovember13(reviewed);
+  reviewed = applyLowerBreakEvenNovember16(reviewed);
   const image=titledFeatureImage(reviewed.slug,featureDeliveryAssets[reviewed.image] || reviewed.image);
   return image===reviewed.image ? reviewed : {...reviewed,image};
 };
