@@ -48,6 +48,8 @@ jobs:
 
       - name: Build production site
         run: npm run build
+      - name: Verify detailed agency calculator release
+        run: node scripts/qa-agency-detailed.mjs
       - name: Verify detailed ecommerce calculator release
         run: node scripts/qa-ecommerce-detailed.mjs
       - name: Verify detailed cleaning calculator release

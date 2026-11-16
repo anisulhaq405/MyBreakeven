@@ -24,6 +24,8 @@ jobs:
           python3 scripts/generate-restaurant-12-month-workbook.py
       - run: npm test
       - run: npm run build
+      - name: Verify detailed agency calculator release
+        run: node scripts/qa-agency-detailed.mjs
       - name: Verify detailed ecommerce calculator release
         run: node scripts/qa-ecommerce-detailed.mjs
       - name: Verify detailed cleaning calculator release
