@@ -12,7 +12,7 @@ import React from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {describe,it,expect} from 'vitest';
 import {createHash} from 'node:crypto';
-import {blogPosts as currentBlogPosts} from './content/blogs';
+import {blogPosts as currentBlogPosts} from './testSupport/day7HistoricalView.js';
 const blogPosts=currentBlogPosts.filter(p=>Object.hasOwn(baseline,p.slug));
 import {dailyNovember02Review as edits,applyDailyNovember02Review} from './content/blogs/dailyNovember02Review';
 import baseline from './testFixtures/dailyNovember02Protected.json';

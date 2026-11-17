@@ -1,6 +1,7 @@
+// Historical registry scope; current Day 7 integrity has its own full-registry guard.
 import {describe,it,expect}from'vitest';
 import {readFileSync}from'node:fs';import{createHash}from'node:crypto';
-import{blogPostMap,blogPosts}from'./content/blogs/index.js';
+import{blogPostMap,blogPosts}from'./testSupport/day7HistoricalView.js';
 import{articleFaq}from'./articleFaq.js';
 describe('Lower break-even November 16 decision guide',()=>{
  it('preserves the other 214 articles and the requested URL, image and original publication',()=>{

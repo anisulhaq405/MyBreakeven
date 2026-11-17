@@ -1,6 +1,16 @@
 import {titleCoverDimensions} from './featureTitleCovers.js';
 // Measured image dimensions; preserve the intrinsic ratio before loading.
 export const blogImageDimensions = {
+  "/images/title-covers/day7-inventory-valuation-methods-20261117.webp": {width:1200,height:675},
+  "/images/title-covers/day7-recruitment-strategies-small-business-20261117.webp": {width:1200,height:675},
+  "/images/title-covers/day7-business-loans-20261117.webp": {width:1200,height:675},
+  "/images/title-covers/day7-startup-business-loans-20261117.webp": {width:1200,height:675},
+  "/images/title-covers/day7-small-business-grants-20261117.webp": {width:1200,height:675},
+  "/images/title-covers/day7-invoice-financing-vs-factoring-20261117.webp": {width:1200,height:675},
+  "/images/title-covers/day7-working-capital-loans-20261117.webp": {width:1200,height:675},
+  "/images/title-covers/day7-payroll-small-business-20261117.webp": {width:1200,height:675},
+  "/images/title-covers/day7-employee-compensation-20261117.webp": {width:1200,height:675},
+
   "/images/blog/restaurant-break-even-malaysia-review.webp?verify=65372ac3": {width:1536,height:1024},
   "/images/blog/cash-flow-statement-editorial-20261025.webp": {width:1200,height:675},
   "/images/blog/cash-flow-statement-editorial-20261025-800.webp": {width:800,height:450},

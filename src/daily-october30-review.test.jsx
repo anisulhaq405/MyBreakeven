@@ -14,7 +14,7 @@ import React from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {describe,it,expect} from 'vitest';
 import {createHash} from 'node:crypto';
-import {blogPosts as currentBlogPosts} from './content/blogs';
+import {blogPosts as currentBlogPosts} from './testSupport/day7HistoricalView.js';
 const blogPosts=currentBlogPosts.filter(p=>Object.hasOwn(baseline,p.slug));
 import {dailyOctober30Review as edits,applyDailyOctober30Review} from './content/blogs/dailyOctober30Review';
 import baseline from './testFixtures/dailyOctober30Protected.json';

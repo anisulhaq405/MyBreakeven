@@ -1,0 +1,65 @@
+[
+  {
+    "id": "N055",
+    "slug": "inventory-valuation-methods",
+    "title": "Inventory Valuation Methods: FIFO, Weighted Average and Profit",
+    "scopeBoundary": "Owns the inventory cost-flow and valuation decision, not stock movement controls or the general cost-of-goods-sold formula. US and IFRS boundaries are stated separately.",
+    "words": 1029
+  },
+  {
+    "id": "N056",
+    "slug": "recruitment-strategies-small-business",
+    "title": "Recruitment Strategies for Small Business: Cost and Hiring Quality",
+    "scopeBoundary": "Owns role definition, recruitment channels, consistent selection and onboarding measurement; complements rather than duplicates the cost-per-hire and employee-cost calculators.",
+    "words": 971
+  },
+  {
+    "id": "N057",
+    "slug": "business-loans",
+    "title": "Business Loans: Compare Types, Total Cost and Cash-Flow Fit",
+    "scopeBoundary": "Parent guide for business borrowing structures and comparable cash costs; startup readiness, invoice funding and short-cycle working-capital use have separate owners.",
+    "words": 1047
+  },
+  {
+    "id": "N058",
+    "slug": "startup-business-loans",
+    "title": "Startup Business Loans: Calculate the Gap Before Applying",
+    "scopeBoundary": "Owns pre-opening and early-stage funding readiness, launch cash gaps and supporting evidence; loan structures and mature working-capital cycles remain separate guides.",
+    "words": 997
+  },
+  {
+    "id": "N059",
+    "slug": "small-business-grants",
+    "title": "Small-Business Grants: Eligibility, Research and Cash Timing",
+    "scopeBoundary": "Owns grant discovery, eligibility screening, application evidence and award-cash timing; it is not a current best-grant list, grant-writing service or loan-approval page.",
+    "words": 1036
+  },
+  {
+    "id": "N060",
+    "slug": "invoice-financing-vs-factoring",
+    "title": "Invoice Financing vs Factoring: Fees, Reserves and Cash Timing",
+    "scopeBoundary": "Owns invoice-backed funding structure, advance/reserve reconciliation, fee basis and recourse; ordinary AR collection workflow and working-capital need have separate owners.",
+    "words": 1081
+  },
+  {
+    "id": "N061",
+    "slug": "working-capital-loans",
+    "title": "Working-Capital Loans: Size the Gap and Test Repayment",
+    "scopeBoundary": "Owns short-cycle funding need and repayment against dated operating cash; separate from the working-capital balance-sheet formula, startup launch gap and invoice contract mechanics.",
+    "words": 944
+  },
+  {
+    "id": "N062",
+    "slug": "payroll-small-business",
+    "title": "Payroll for Small Business: Reconcile Wages, Liabilities and Cash",
+    "scopeBoundary": "Owns the payroll record-to-payment workflow and wage/liability reconciliation; total reward design, recruitment strategy and employer-cost pricing remain separate owners.",
+    "words": 1039
+  },
+  {
+    "id": "N063",
+    "slug": "employee-compensation",
+    "title": "Employee Compensation: Salary, Benefits and Full Business Cost",
+    "scopeBoundary": "Owns compensation-package design and recurring-versus-first-year employer-cost boundaries; separate from payroll processing, recruiting cost metrics and a compensation benchmark survey.",
+    "words": 998
+  }
+]
