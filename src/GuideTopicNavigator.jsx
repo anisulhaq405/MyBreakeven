@@ -7,6 +7,8 @@ import './guide-topics.css';
 import './knowledge-library.css';
 const posts=new Map(blogListingData.posts.map(p=>[p.slug,p]));
 const display={
+ 'business-funding':['Business funding & loans',Wallet,'Match the funding to the cash need'],
+ 'hiring-people':['Hiring & people costs',Briefcase,'Fund the role and the productive hours'],
  'business-launch':['Business ideas & launch',Rocket,'Start with a strong foundation'],
  'strategy-risk':['Strategy & growth',Target,'Make your next move with clarity'],
  'accounting-records':['Bookkeeping & statements',BookOpen,'Turn your records into a clear picture'],
@@ -31,7 +33,7 @@ const industryDetails={
  'ecommerce-business':[ShoppingBag,'Order margins, stock, shipping and returns.'],
  'agency-business':[Briefcase,'Retainers, project scope and billable team hours.'],
 };
-const groupings=[['START & GROW',['business-launch','strategy-risk']],['RUN THE NUMBERS',['pricing-profitability','break-even','cost-accounting','budgets-performance','cash-inventory']],['BUILD FINANCIAL CLARITY',['accounting-records','receivables-payables','asset-depreciation','investment-capital','retirement-refinance','ratios-marketing']]];
+const groupings=[['START & GROW',['business-launch','strategy-risk','hiring-people']],['RUN THE NUMBERS',['pricing-profitability','break-even','cost-accounting','budgets-performance','cash-inventory']],['BUILD FINANCIAL CLARITY',['business-funding','accounting-records','receivables-payables','asset-depreciation','investment-capital','retirement-refinance','ratios-marketing']]];
 export default function GuideTopicNavigator(){
  const [active,setActive]=useState('pricing-profitability');
  const shouldScroll=useRef(false);

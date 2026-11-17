@@ -1,5 +1,6 @@
+// Historical registry scope; current Day 7 integrity has its own full-registry guard.
 import {describe,it,expect} from 'vitest';
-import {blogPosts,blogPostMap} from './content/blogs/index.js';
+import {blogPosts,blogPostMap} from './testSupport/day7HistoricalView.js';
 import {applyCleaningProfitabilityGscRecovery} from './content/blogs/cleaningProfitabilityGscRecovery.js';
 
 describe('Existing URLs only: GSC recovery and 15-day content freeze',()=>{

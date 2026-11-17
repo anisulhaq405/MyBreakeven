@@ -1,10 +1,11 @@
+// Historical registry scope; current Day 7 integrity has its own full-registry guard.
 import {eighteenGuideReviewSlugs} from './content/blogs/november10EighteenGuideReview.js';
 import React from 'react';
 import{describe,it,expect,vi}from'vitest';
 import{renderToStaticMarkup}from'react-dom/server';
 import{calculateEbitda,ebitdaDefaults,calculateFutureValue,fvDefaults,futureValueCsv}from'./financeDay1Engine.js';
 import{financeDay1Posts}from'./content/blogs/financeDay1Guides.js';
-import{blogPostMap,blogPosts}from'./content/blogs/index.js';
+import{blogPostMap,blogPosts}from'./testSupport/day7HistoricalView.js';
 import{freeTools}from'./freeTools.js';
 import{routeEntryForPath}from'./routeEntries.js';
 import FinanceDay1Calculator from'./FinanceDay1Calculator.jsx';

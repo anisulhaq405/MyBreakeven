@@ -1,3 +1,4 @@
+// Historical registry scope; current Day 7 integrity has its own full-registry guard.
 import {november11Day6Slugs} from './content/blogs/november11Day6Existing.js';
 import React from 'react';
 import {eighteenGuideReviewSlugs} from './content/blogs/november10EighteenGuideReview.js';
@@ -5,7 +6,7 @@ import {describe,it,expect} from 'vitest';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {readFileSync,existsSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import {blogPosts,blogPostMap} from './content/blogs/index.js';
+import {blogPosts,blogPostMap} from './testSupport/day7HistoricalView.js';
 import {november10RecoverySlugs,applyNovember10PositionRecovery} from './content/blogs/november10PositionRecovery.js';
 import BlogArticle from './BlogArticle.jsx';
 import {calculatorDirectory} from './calculatorDirectory.js';

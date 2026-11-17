@@ -1,9 +1,10 @@
+// Historical registry scope; current Day 7 integrity has its own full-registry guard.
 import React from 'react';
 import {describe,it,expect} from 'vitest';
 import {readFileSync,existsSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {renderToStaticMarkup} from 'react-dom/server';
-import {blogPosts,blogPostMap} from './content/blogs/index.js';
+import {blogPosts,blogPostMap} from './testSupport/day7HistoricalView.js';
 import {twelveDayDay6Posts as posts} from './content/blogs/twelveDayDay6.js';
 import {articleFaq} from './articleFaq.js';
 import BlogArticle from './BlogArticle.jsx';

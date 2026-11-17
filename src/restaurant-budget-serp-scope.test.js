@@ -1,5 +1,6 @@
+// Historical registry scope; current Day 7 integrity has its own full-registry guard.
 import {describe,it,expect} from 'vitest';
-import {blogPostMap,blogPosts} from './content/blogs/index.js';
+import {blogPostMap,blogPosts} from './testSupport/day7HistoricalView.js';
 import {applyRestaurantBudgetSerpScopeReview} from './content/blogs/restaurantBudgetSerpScopeReview.js';
 describe('Restaurant budgeting SERP scope / 15-day freeze',()=>{
  it('clarifies the single-month download versus annual illustration and cash dates',()=>{

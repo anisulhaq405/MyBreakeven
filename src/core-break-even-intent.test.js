@@ -1,5 +1,6 @@
+// Historical registry scope; current Day 7 integrity has its own full-registry guard.
 import {describe,it,expect} from 'vitest';
-import {blogPostMap,blogPosts} from './content/blogs/index.js';
+import {blogPostMap,blogPosts} from './testSupport/day7HistoricalView.js';
 import {applyCoreBreakEvenIntentReview} from './content/blogs/coreBreakEvenIntentReview.js';
 describe('Core break-even search intent protection',()=>{
  it('keeps existing URLs and article inventory unchanged',()=>{

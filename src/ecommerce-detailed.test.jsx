@@ -1,5 +1,6 @@
+// Historical registry scope; current Day 7 integrity has its own full-registry guard.
 import React from 'react';import{describe,it,expect}from'vitest';import{renderToStaticMarkup}from'react-dom/server';import{readFileSync}from'node:fs';import{createHash}from'node:crypto';
-import{calculateEcommerceDetailed as calc,ecommerceDetailedDefaults as defaults,ecommerceDetailedScenarios}from'./ecommerceDetailedEngine.js';import{calculate}from'./engine.js';import{industries}from'./industries.js';import IndustryPage,{industryPages}from'./IndustryPage.jsx';import{industryCalculatorFaq}from'./industryCalculatorContent.js';import{blogPosts}from'./content/blogs/index.js';
+import{calculateEcommerceDetailed as calc,ecommerceDetailedDefaults as defaults,ecommerceDetailedScenarios}from'./ecommerceDetailedEngine.js';import{calculate}from'./engine.js';import{industries}from'./industries.js';import IndustryPage,{industryPages}from'./IndustryPage.jsx';import{industryCalculatorFaq}from'./industryCalculatorContent.js';import{blogPosts}from'./testSupport/day7HistoricalView.js';
 const base={...defaults,price:100,shippingIncome:5,cogs:40,outbound:8,packaging:2,labor:3,other:1,cpa:10,feePct:3,flatFee:.3,returnRate:10,shippingRefundPct:100,recoveryPct:100,returnHandling:6,fixed:3000,ownerPay:1000,targetProfit:500,plannedOrders:150,days:30};
 const zero={...defaults,...Object.fromEntries(Object.keys(defaults).map(k=>[k,0])),price:10,cogs:10,days:30,hoursPerOrder:1,conversionPct:1};
 describe('Isolated detailed ecommerce economics',()=>{

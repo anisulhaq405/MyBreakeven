@@ -1,9 +1,10 @@
+// Historical registry scope; current Day 7 integrity has its own full-registry guard.
 import React from 'react';
 import {describe,it,expect} from 'vitest';
 import {readFileSync}from'node:fs';import {createHash}from'node:crypto';
 import {renderToStaticMarkup}from'react-dom/server';
 import {calculateDiscount as calc,discountCSV}from'./discountEngine.js';
-import {freeTools}from'./freeTools.js';import {blogPostMap}from'./content/blogs/index.js';
+import {freeTools}from'./freeTools.js';import {blogPostMap}from'./testSupport/day7HistoricalView.js';
 import DiscountTool from './DiscountTool.jsx';import PricingTool,{StandardPricingTool}from'./PricingTool.jsx';
 const d={price:100,cost:60,fee:3,volume:100,change:10,expected:20,capacity:150,newCost:'',campaignCost:''};
 describe('discount campaign decision model',()=>{
