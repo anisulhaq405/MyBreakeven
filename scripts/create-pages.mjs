@@ -189,8 +189,8 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
   const html = base
     .replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
     .replace(/<meta name="description" content="[^"]*"\s*\/?>/, `<meta name="description" content="${escapeHtml(description)}" />`)
-    .replace(/<meta name="robots" content="[^"]*"\s*\/?>/, `<meta name="robots" content="${privatePage ? "noindex,nofollow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"}" />`)
-    .replace(/<meta name="googlebot" content="[^"]*"\s*\/?>/, `<meta name="googlebot" content="${privatePage ? "noindex,nofollow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"}" />`)
+    .replace(/<meta name="robots" content="[^"]*"\s*\/?>/, `<meta name="robots" content="${route === "search" ? "noindex,follow" : privatePage ? "noindex,nofollow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"}" />`)
+    .replace(/<meta name="googlebot" content="[^"]*"\s*\/?>/, `<meta name="googlebot" content="${route === "search" ? "noindex,follow" : privatePage ? "noindex,nofollow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"}" />`)
     .replace(/<meta property="og:title" content="[^"]*"\s*\/?>/, `<meta property="og:title" content="${escapeHtml(title)}" />`)
     .replace(/<meta property="og:description" content="[^"]*"\s*\/?>/, `<meta property="og:description" content="${escapeHtml(description)}" />`)
     .replace(/<meta property="og:url" content="[^"]*"\s*\/?>/, `<meta property="og:url" content="${canonical}" />`)
@@ -362,7 +362,7 @@ for (const [slug, [title, description]] of Object.entries(calculators)) {
 
 // Keep discovery in sync with the public route and article registry.
 const publicUrls = ["https://mybreakeven.com/",
-  ...Object.entries(staticPages).filter(([, meta]) => !meta[3]).map(([route]) => `https://mybreakeven.com/${route}/`),
+  ...Object.entries(staticPages).filter(([route, meta]) => route !== "search" && !meta[3]).map(([route]) => `https://mybreakeven.com/${route}/`),
   ...allArticles.filter(article=>article.editorialStatus!=="draft").map(article => `https://mybreakeven.com/blogs/${article.slug}/`),
   ...Object.keys(calculators).map(slug => `https://mybreakeven.com/calculators/${slug}/`),
 ];
@@ -417,3 +417,6 @@ async function preloadRouteFiles(directory) {
   }
 }
 await preloadRouteFiles(new URL('../dist/', import.meta.url));
+
+// Build search from exactly the published, indexable site after all pages exist.
+await (await import("./build-site-search.mjs")).buildSiteSearch();

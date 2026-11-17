@@ -1,3 +1,4 @@
+import SiteSearchForm from './SiteSearchForm.jsx';
 import { responsiveFeatureProps } from './responsiveFeatureImages.js';
 import React, { useMemo, useState } from "react";
 import { ArrowUpRight, BookOpen, Search, X } from "lucide-react";
@@ -14,7 +15,7 @@ export default function BlogSection({ isHub = false } = {}) {
   const [tag, setTag] = useState("All");
   const [topic, setTopic] = useState("All");
   const tags = useMemo(() => ["All", ...new Set(blogPosts.map(post => post.tag))], []);
-  const filtered = useMemo(() => filterBlogPosts(blogPosts, query, tag).filter(p=>topic==='All'||guideTopic(p.slug)?.id===topic), [query, tag, topic]);
+  const filtered = useMemo(() => filterBlogPosts(blogPosts, "", tag).filter(p=>topic==='All'||guideTopic(p.slug)?.id===topic), [query, tag, topic]);
   const featured = filtered[0];
   const updateQuery = value => {
     setQuery(value);
@@ -27,7 +28,8 @@ export default function BlogSection({ isHub = false } = {}) {
   return <section className={`blog-preview${isHub ? " blog-hub" : ""}`} id="blog">
     <div className="blog-heading"><div><span>MYBREAKEVEN FIELD NOTES</span><h2>Practical guides for healthier business margins.</h2><p>Search pricing, startup costs, profitability, and break-even strategy across every guide.</p></div>{!isHub && <a href="/blogs/">Explore all guides <ArrowUpRight /></a>}</div>
     <div className="blog-discovery">
-      <label className="blog-search"><Search aria-hidden="true" /><span className="sr-only">Search all business guides</span><input type="search" value={query} onChange={event => updateQuery(event.target.value)} placeholder="Search any topic, e.g. cleaning prices" autoComplete="off" />{query && <button type="button" onClick={() => updateQuery("")} aria-label="Clear blog search"><X /></button>}</label>
+      <SiteSearchForm id="blog-site-query" defaultValue={query}/>
+      <p className="site-search-scope">Search the whole site above, or filter the guides below by topic and category.</p>
       {isHub&&<label className="guide-topic-filter">Filter by business topic <select value={topic} onChange={e=>{setTopic(e.target.value);setTag('All');}}><option value="All">All topics</option>{businessTopics.map(t=><option key={t.id} value={t.id}>{t.title}</option>)}</select></label>}
       <div className="blog-filters" aria-label="Filter guides by category">{tags.map(item => <button type="button" key={item} className={tag === item ? "active" : ""} aria-pressed={tag === item} onClick={() => {setTag(item);setTopic('All');}}>{item}</button>)}</div>
       <p className="blog-count" aria-live="polite">{filtered.length} {filtered.length === 1 ? "guide" : "guides"}</p>

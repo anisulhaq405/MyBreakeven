@@ -1,5 +1,6 @@
 import { routeEntryForPath } from './routeEntries.js';
 const loaders = {
+  'src/routes/SearchRoute.jsx': () => import('./routes/SearchRoute.jsx'),
   'src/routes/RoasToolRoute.jsx': () => import('./routes/RoasToolRoute.jsx'),
   "src/routes/FinancialRatiosHubRoute.jsx": () => import("./routes/FinancialRatiosHubRoute.jsx"),
   "src/routes/FinalFinanceToolRoute.jsx": () => import("./routes/FinalFinanceToolRoute.jsx"),

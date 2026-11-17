@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, LockKeyhole, Mail, Menu, X } from "lucide-react";
+import { ArrowUpRight, LockKeyhole, Mail, Menu, Search, X } from "lucide-react";
+import "./site-search-header.css";
 import { authStorageKey, needsAccountClient } from "./authSession";
 
 export const primaryNavigation = [
@@ -79,6 +80,7 @@ export function SiteHeader() {
         {primaryNavigation.map(([label, href]) => <a key={label} href={href} onClick={() => setMobileOpen(false)}>{label}</a>)}
       </nav>
       <div className="header-actions">
+        <a className="header-site-search" href="/search/" aria-label="Search the entire site"><Search aria-hidden="true"/><span>Search</span></a>
         <a className="account-link" href={signedIn ? "/dashboard/" : "/login/"}>{signedIn ? "Dashboard" : "Sign In"}</a>
         <button
           ref={menuButton}
