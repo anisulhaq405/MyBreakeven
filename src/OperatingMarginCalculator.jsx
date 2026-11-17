@@ -1,3 +1,4 @@
+import {ReviewConnections} from './CombinedDay1Widgets.jsx';
 import React,{useState}from'react';
 import {responsiveFeatureProps} from './responsiveFeatureImages.js';
 import FreeToolGuide from './FreeToolGuide.jsx';
@@ -11,6 +12,7 @@ export default function OperatingMarginCalculator({tool,slug}){
  return <div className="free-tool-page operating-margin-page" style={tool.theme}>
  <nav className="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/tools/">Calculators</a> › Operating margin</nav>
  <div className="om-hero"><p>Financial performance calculator</p><h1>{tool.name}</h1><p>{tool.intro}</p></div>
+ <ReviewConnections kind="operating"/>
  <section className="om-calculator" aria-label="Operating margin inputs and results"><div><h2>Choose your input method</h2><label htmlFor="om-mode">Input method</label><select id="om-mode" value={mode} onChange={e=>setMode(e.target.value)}><option value="build">Build from revenue, COGS and OPEX</option><option value="direct">Use reported operating income</option></select><p>Choose one method for the same reporting period. Each method keeps its own values; the two sets are never combined. Amounts are labeled USD, with no currency conversion.</p>
  {fields.map(([key,label,help])=><div className="om-field" key={key}><label htmlFor={'om-'+key}>{label}</label><input id={'om-'+key} aria-describedby={'om-help-'+key} type="number" step="any" min={key==='income'?-1e12:0} max="1000000000000" value={values[key]} onChange={e=>set(p=>({...p,[key]:e.target.value}))}/><small id={'om-help-'+key}>{help}</small></div>)}
  <button type="button" onClick={()=>{setBuild({...operatingMarginDefaults});setDirect({revenue:50000,income:12000});setMode('build');}}>Reset fictional example</button></div>

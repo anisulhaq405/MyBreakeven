@@ -1,0 +1,94 @@
+[
+  {
+    "id": "N064",
+    "slug": "small-business-valuation",
+    "htmlWords": 1179,
+    "faqCount": 6,
+    "seoTitleLength": 46,
+    "metaLength": 154,
+    "incomingFromDrafts": [
+      "business-expansion",
+      "customer-acquisition-cost",
+      "gross-profit-gross-margin",
+      "differential-cost",
+      "net-revenue"
+    ],
+    "unresolvedLinks": []
+  },
+  {
+    "id": "N065",
+    "slug": "business-expansion",
+    "htmlWords": 1255,
+    "faqCount": 6,
+    "seoTitleLength": 42,
+    "metaLength": 160,
+    "incomingFromDrafts": [
+      "small-business-valuation",
+      "customer-acquisition-cost",
+      "gross-profit-gross-margin",
+      "differential-cost",
+      "net-revenue"
+    ],
+    "unresolvedLinks": []
+  },
+  {
+    "id": "N069",
+    "slug": "customer-acquisition-cost",
+    "htmlWords": 1259,
+    "faqCount": 6,
+    "seoTitleLength": 42,
+    "metaLength": 158,
+    "incomingFromDrafts": [
+      "small-business-valuation",
+      "business-expansion",
+      "gross-profit-gross-margin",
+      "net-revenue"
+    ],
+    "unresolvedLinks": []
+  },
+  {
+    "id": "N070",
+    "slug": "gross-profit-gross-margin",
+    "htmlWords": 1199,
+    "faqCount": 6,
+    "seoTitleLength": 45,
+    "metaLength": 157,
+    "incomingFromDrafts": [
+      "business-expansion",
+      "customer-acquisition-cost",
+      "differential-cost",
+      "net-revenue"
+    ],
+    "unresolvedLinks": []
+  },
+  {
+    "id": "N071",
+    "slug": "differential-cost",
+    "htmlWords": 1256,
+    "faqCount": 6,
+    "seoTitleLength": 46,
+    "metaLength": 154,
+    "incomingFromDrafts": [
+      "business-expansion",
+      "customer-acquisition-cost",
+      "gross-profit-gross-margin"
+    ],
+    "unresolvedLinks": []
+  },
+  {
+    "id": "N072",
+    "slug": "net-revenue",
+    "htmlWords": 1265,
+    "faqCount": 6,
+    "seoTitleLength": 40,
+    "metaLength": 144,
+    "incomingFromDrafts": [
+      "small-business-valuation",
+      "business-expansion",
+      "customer-acquisition-cost",
+      "gross-profit-gross-margin",
+      "differential-cost"
+    ],
+    "unresolvedLinks": []
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "valuation_adjusted_ebitda": 60000,
+  "valuation_dcf": 209259.2592592593,
+  "valuation_terminal_pv": 115740.74074074076,
+  "expansion_profit": 700,
+  "expansion_capacity": 107,
+  "expansion_capacity_downside": -275,
+  "cac_blended": 125.71428571428571,
+  "cac_media_only": 65.71428571428571,
+  "cac_cohort_cumulative": [
+    5600,
+    8000,
+    10000
+  ],
+  "gross_cogs": 31000,
+  "gross_margin": 31.11111111111111,
+  "gross_markup": 45.16129032258064,
+  "gross_operating": 6150,
+  "gross_net_income": 4650,
+  "diff_cash_A": 55200,
+  "diff_cash_B": 52800,
+  "diff_economic_benefit": -1200,
+  "net_revenue": 35000,
+  "net_AR": 9000,
+  "net_bank": 10070,
+  "expansion_cash": [
+    3200,
+    -100,
+    600
+  ],
+  "expansion_additional_floor_funding": 5100
+}

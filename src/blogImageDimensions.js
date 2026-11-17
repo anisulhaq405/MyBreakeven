@@ -1,6 +1,15 @@
 import {titleCoverDimensions} from './featureTitleCovers.js';
 // Measured image dimensions; preserve the intrinsic ratio before loading.
 export const blogImageDimensions = {
+  "/images/title-covers/combined-day1-cd-calculator-20261117.webp": {width:1200,height:675},
+  "/images/title-covers/combined-day1-apy-calculator-20261117.webp": {width:1200,height:675},
+  "/images/title-covers/combined-day1-small-business-valuation-20261117.webp": {width:1200,height:675},
+  "/images/title-covers/combined-day1-business-expansion-20261117.webp": {width:1200,height:675},
+  "/images/title-covers/combined-day1-customer-acquisition-cost-20261117.webp": {width:1200,height:675},
+  "/images/title-covers/combined-day1-gross-profit-gross-margin-20261117.webp": {width:1200,height:675},
+  "/images/title-covers/combined-day1-differential-cost-20261117.webp": {width:1200,height:675},
+  "/images/title-covers/combined-day1-net-revenue-20261117.webp": {width:1200,height:675},
+
   "/images/title-covers/day7-inventory-valuation-methods-20261117.webp": {width:1200,height:675},
   "/images/title-covers/day7-recruitment-strategies-small-business-20261117.webp": {width:1200,height:675},
   "/images/title-covers/day7-business-loans-20261117.webp": {width:1200,height:675},

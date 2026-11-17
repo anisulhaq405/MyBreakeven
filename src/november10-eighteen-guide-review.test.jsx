@@ -1,3 +1,4 @@
+import{blogPostMap as currentDestinations}from'./content/blogs/index.js';
 // Historical registry scope; current Day 7 integrity has its own full-registry guard.
 import {november11Day6Slugs} from './content/blogs/november11Day6Existing.js';
 import React from 'react';
@@ -32,7 +33,7 @@ const p=blogPostMap[b.slug];expect(p.published,b.slug).toBe(b.published);expect(
   for(const slug of eighteenGuideReviewSlugs){const p=blogPostMap[slug];const html=renderToStaticMarkup(<BlogArticle slug={slug} initialArticle={p}/>);expect((html.match(/<h1\b/g)||[]).length).toBe(1);const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);expect(new Set(ids).size,slug).toBe(ids.length);
    expect(html,slug+' new visible FAQ').toContain(eighteenGuideReview[slug].q);
    expect(eighteenGuideReview[slug].copy).toContain('<caption>');expect(eighteenGuideReview[slug].copy).toContain('scope="col"');
-   for(const [,href] of html.matchAll(/href="(\/[^"#?]*)(?:[?#][^"]*)?"/g)){if(href.startsWith('/blogs/')&&href!='/blogs/')expect(blogPostMap[href.split('/')[2]],href).toBeDefined();if(href.startsWith('/calculators/')&&href!='/calculators/')expect(calculators.has(href.split('/')[2]),href).toBe(true);if(href.startsWith('/downloads/'))expect(existsSync('public'+href),href).toBe(true);}
+   for(const [,href] of html.matchAll(/href="(\/[^"#?]*)(?:[?#][^"]*)?"/g)){if(href.startsWith('/blogs/')&&href!='/blogs/')expect(currentDestinations[href.split('/')[2]],href).toBeDefined();if(href.startsWith('/calculators/')&&href!='/calculators/')expect(calculators.has(href.split('/')[2]),href).toBe(true);if(href.startsWith('/downloads/'))expect(existsSync('public'+href),href).toBe(true);}
    for(const [id] of p.sectionLinks||[])expect(ids,slug+' '+id).toContain(id);
   }
  });

@@ -1,3 +1,4 @@
+import{combinedDay1Posts}from './combinedDay1.js';
 import {twelveDayDay7Posts} from './twelveDayDay7.js';
 import {applyDay7ExistingReview} from './twelveDayDay7Review.js';
 import {applyLowerBreakEvenNovember16} from './lowerBreakEvenNovember16.js';
@@ -229,6 +230,7 @@ const normalizePost = post => {
 };
 
 export const blogCollections = Object.freeze({
+  combinedDay1: combinedDay1Posts,
   twelveDayDay7: twelveDayDay7Posts,
   twelveDayDay6: twelveDayDay6Posts,
   twelveDayDay5: twelveDayDay5Posts,

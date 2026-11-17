@@ -1,3 +1,4 @@
+import {ReviewConnections} from './CombinedDay1Widgets.jsx';
 import {futureValueGrowthBreakdown,futureValueAssetPlan} from './futureValueGapAnalysis.js';
 import {futureValueTaxAndReserve} from './futureValuePlanningLenses.js';
 import {futureValueFullReportCsv} from './futureValueFullReport.js';
@@ -42,6 +43,7 @@ export default function FinanceDay1Calculator({tool,slug}){
  return <div className="free-tools tool-theme fd-page" style={tool.theme} onChangeCapture={()=>{interacted.current=true;}} onClickCapture={e=>{if(e.target.closest?.('a[href^="/blogs/"]'))track('related_guide_click',slug);}}>
  <nav className="tool-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/tools/">Calculators</a> / {tool.name}</nav>
  <section className="tool-hero"><span>{tool.category.toUpperCase()} · FREE · NO SIGNUP</span><h1>{tool.name}</h1><p>{tool.intro}</p><a className="tool-primary-link" href="#finance-inputs">Enter my numbers</a></section>
+ {!ebitda&&<ReviewConnections kind="future"/>}
  <nav className="tool-guide-nav" aria-label="Calculator page sections"><a href="#finance-inputs">Calculator</a><a href="#finance-results">Results</a>{!ebitda&&<><a href="#fv-professional-report">Report</a><a href="#fv-visual-analysis">Charts</a><a href="#fv-risk-analysis">Risk analysis</a><a href="#fv-goal-timeline">Milestones</a><a href="#fv-custom-flows">Cash flows</a><a href="#fv-investment-comparison">Compare plans</a><a href="#fv-advanced-plan">Advanced plan</a><a href="#future-value-goal">Savings goal</a><a href="#rate-scenarios">Rate scenarios</a><a href="#growth-schedule">Schedule</a></>}<a href="#formula">Formula</a><a href="#worked-examples">Examples</a><a href="#faqs">FAQs</a></nav>
  <div className="fd-layout"><section className="fd-panel" id="finance-inputs" aria-labelledby="finance-input-title"><h2 id="finance-input-title">{ebitda?'Your earnings records':'Your growth assumptions'}</h2><p>Starts with a fictional example. Replace the inputs; all amounts must use one currency.</p><CurrencySelector value={currency} onChange={setCurrency}/>
  <div className="fd-fields">{ebitda?eFields.map(([k,l,h])=>field(k,l,h)):<>

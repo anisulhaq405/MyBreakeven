@@ -1,0 +1,80 @@
+[
+  {
+    "id": "N064",
+    "slug": "small-business-valuation",
+    "title": "Small-Business Valuation review",
+    "columns": [
+      "Interest / valuation date",
+      "Method / premise",
+      "Earnings or cash basis",
+      "Value and debt/cash bridge",
+      "Evidence / unresolved assumption"
+    ],
+    "caseBoundary": "Owns estimating a business value at a stated date and transaction perimeter, not calculating required equity returns or deciding whether an expansion project should proceed."
+  },
+  {
+    "id": "N065",
+    "slug": "business-expansion",
+    "title": "Business Expansion review",
+    "columns": [
+      "Scope / review date",
+      "Demand and displaced work",
+      "Incremental costs / capacity",
+      "Dated cash and floor",
+      "Proceed / revise / stop evidence"
+    ],
+    "caseBoundary": "Owns a specific added-location or capacity investment decision, not a generic growth-strategy list, business valuation or the accounting treatment of startup costs."
+  },
+  {
+    "id": "N069",
+    "slug": "customer-acquisition-cost",
+    "title": "Customer Acquisition Cost review",
+    "columns": [
+      "Cohort / channel / window",
+      "Acquisition cost and boundary",
+      "Unique new customers",
+      "Collected contribution by month",
+      "Allocation evidence / action"
+    ],
+    "caseBoundary": "Owns acquisition-cost boundaries, new-customer cohorts, channels and recovery, not ROAS, recruiting cost per hire or a complete lifetime-value forecast."
+  },
+  {
+    "id": "N070",
+    "slug": "gross-profit-gross-margin",
+    "title": "Gross Profit and Gross Margin review",
+    "columns": [
+      "Period and reporting policy",
+      "Gross-to-net revenue bridge",
+      "Inventory and COGS control",
+      "Gross profit / margin / cost base",
+      "Below-gross costs / evidence"
+    ],
+    "caseBoundary": "Owns the net-revenue-to-COGS gross-profit bridge, not the margin-versus-markup interactive calculator, net-revenue deductions or final net-income calculation."
+  },
+  {
+    "id": "N071",
+    "slug": "differential-cost",
+    "title": "Differential Cost review",
+    "columns": [
+      "Alternative and common horizon",
+      "Future cash cost by alternative",
+      "Unchanged and sunk items",
+      "Supported opportunity cost",
+      "Difference / evidence / decision"
+    ],
+    "caseBoundary": "Owns the alternative-by-alternative relevant-cost framework, not a second make-or-buy guide, marginal-cost calculator or complete discounted capital-budgeting model."
+  },
+  {
+    "id": "N072",
+    "slug": "net-revenue",
+    "title": "Net Revenue review",
+    "columns": [
+      "Period / gross sales basis",
+      "Discounts / returns / allowances",
+      "Net revenue control",
+      "Receivables and collections",
+      "Processor settlement / other cash"
+    ],
+    "caseBoundary": "Owns gross-to-net sales deductions and the revenue-to-collection boundary, not gross profit after COGS, business net income or employee gross-to-net pay."
+  }
+]
