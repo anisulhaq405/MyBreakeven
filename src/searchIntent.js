@@ -12,6 +12,8 @@ export const industryIntent = [
 ];
 
 export const decisionIntent = [
+ ["cd-calculator", "Fixed-opening-deposit gross maturity comparison", ["present-value-vs-future-value"]],
+ ["apy-calculator", "Nominal rate and effective annual yield conversion", ["present-value-vs-future-value"]],
  ["financial-ratios-calculator", "Statement-based business ratios and integrated leverage definitions", []],
  ["equivalent-ratio-calculator", "Exact mathematical proportions, missing term and ratio tables", []],
  ["refinance-calculator", "Fixed-rate mortgage refinance payments and same-date cost", []],

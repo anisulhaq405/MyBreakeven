@@ -1,3 +1,4 @@
+import {CostReviewWidget} from './CombinedDay1Widgets.jsx';
 import UnevenPaybackCalculator from './UnevenPaybackCalculator.jsx';
 import React,{useMemo,useState} from 'react';
 import CurrencySelector from './CurrencySelector.jsx';
@@ -22,6 +23,7 @@ export default function RoiCalculator({tool,slug}){
  return <div className="free-tools tool-theme roi-page" style={tool.theme}>
  <nav className="tool-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/tools/">Business calculators</a> / ROI &amp; payback</nav>
  <section className="tool-hero"><span>BUSINESS INVESTMENT · FREE · NO SIGNUP</span><h1>{tool.name}</h1><p>{tool.intro}</p><div className="tool-hero-actions"><a className="tool-primary-link" href="#roi-inputs">Calculate my ROI →</a><a href="#formula">See the method</a></div></section>
+ <CostReviewWidget mode="roi"/>
  <div className="roi-mode-switch" role="group" aria-label="Choose calculator mode"><button type="button" aria-pressed={mode==='business'} onClick={()=>setMode('business')}>Business investment<span>Contribution, costs and payback</span></button><button type="button" aria-pressed={mode==='ai'} onClick={()=>setMode('ai')}>AI automation<span>Cash savings versus released capacity</span></button></div>
  <nav className="tool-guide-nav" aria-label="ROI page sections"><a href="#roi-inputs">Calculator</a><a href="#uneven-discounted-payback">Uneven &amp; discounted payback</a><a href="#roi-scenarios">Compare workloads</a><a href="#roi-cash-table">Cash recovery</a><a href="#how-to-use">How to use</a><a href="#ai-method">AI method</a><a href="#worked-examples">Examples</a><a href="#faqs">FAQs</a></nav>
  <div className="tool-layout roi-layout"><section className="tool-input-panel" id="roi-inputs" aria-labelledby="roi-input-title"><h2 id="roi-input-title">Your {mode==='ai'?'AI workflow':'business investment'}</h2><p className="roi-example-note">Starts with a fictional example. Replace it with your own records.</p><CurrencySelector value={currency} onChange={setCurrency}/>

@@ -11,6 +11,8 @@ const clusters = {
   "/guides/cleaning-business": "src/routes/CleaningRoute.jsx"
 };
 const tools = {
+  "/calculators/cd-calculator": "src/routes/DepositToolRoute.jsx",
+  "/calculators/apy-calculator": "src/routes/DepositToolRoute.jsx",
   "/calculators/financial-ratios-calculator": "src/routes/FinalFinanceToolRoute.jsx",
   "/calculators/equivalent-ratio-calculator": "src/routes/FinalFinanceToolRoute.jsx",
   "/calculators/refinance-calculator": "src/routes/FinalFinanceToolRoute.jsx",

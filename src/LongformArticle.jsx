@@ -1,3 +1,4 @@
+import {CostReviewWidget,ReviewConnections} from './CombinedDay1Widgets.jsx';
 import './fixed-variable-guide.css';
 import './restaurant-budget-layout.css';
 import NovemberTopicConnections, {GuideTopicLink} from './NovemberTopicConnections.jsx';
@@ -33,7 +34,7 @@ const dateLabel = value => new Date(`${value}T12:00:00Z`).toLocaleDateString("en
 
 export default function LongformArticle({ article: a }) {
   const slug = a?.slug;
-  const hasIntroWidget = ['salon-booth-rent-vs-commission-owner','operating-cash-flow', 'master-budget', 'cost-drivers-small-business', 'job-order-costing', 'margin-vs-markup', 'calculate-contribution-margin', 'high-low-method', 'flexible-budget-variance-analysis', 'make-or-buy-decision', 'break-even-analysis-example'].includes(slug);
+  const hasIntroWidget = ['marginal-cost','average-cost-per-unit','salon-booth-rent-vs-commission-owner','operating-cash-flow', 'master-budget', 'cost-drivers-small-business', 'job-order-costing', 'margin-vs-markup', 'calculate-contribution-margin', 'high-low-method', 'flexible-budget-variance-analysis', 'make-or-buy-decision', 'break-even-analysis-example'].includes(slug);
   const guideType = articleGuideType(a);
   useEffect(() => {
     if (!a) return;
@@ -60,7 +61,9 @@ export default function LongformArticle({ article: a }) {
     {a.answerHtml&&<section className="article-summary" dangerouslySetInnerHTML={{__html:a.answerHtml}} />}
     {slug==='salon-booth-rent-vs-commission-owner'&&<SalonBoothComparison/>}
     {slug==='operating-cash-flow'&&<OperatingCashFlowWidget/>}
-    {slug==='margin-vs-markup'&&<MarginMarkupWidget/>}
+    {slug==='margin-vs-markup'&&<><ReviewConnections kind="margin"/><MarginMarkupWidget/></>}
+    {slug==='marginal-cost'&&<CostReviewWidget mode="marginal"/>}
+    {slug==='average-cost-per-unit'&&<CostReviewWidget mode="average"/>}
     {slug==='calculate-contribution-margin'&&<ContributionMarginWidget/>}
     {slug==='master-budget'&&<BudgetBridgeWidget/>}
     {slug==='cost-drivers-small-business'&&<DriverAllocationWidget/>}
