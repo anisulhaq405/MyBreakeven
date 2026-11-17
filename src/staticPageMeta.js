@@ -3,6 +3,7 @@ import { authorityPages } from './authorityResources.js';
 
 // Shared by static HTML generation and browser metadata updates.
 export const staticPageMeta = {
+  search: ["Search Guides, Calculators & Topics | MyBreakeven", "Search the whole MyBreakeven site for business guides, calculators, topic collections and resources.", "Search MyBreakeven"],
   "guides/financial-ratios": ["Financial Ratios: Formulas, Types & Examples | MyBreakeven", "Use a printable reference for 19 business financial measures. Review liquidity, profitability, leverage, average balances and a reconciled statement example.", "Financial Ratios: Formulas, Types and Examples"],
   ...authorityPages,
   [founderCaseRoute]: founderCaseMeta,

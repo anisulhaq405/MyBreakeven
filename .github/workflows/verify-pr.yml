@@ -50,6 +50,8 @@ jobs:
         run: node scripts/qa-12day-day4-release.mjs
       - name: Verify Day 5 publication and OCI hold
         run: node scripts/qa-12day-day5-release.mjs
+      - name: Verify site-wide public content search
+        run: node scripts/qa-site-search.mjs
       - name: Verify Day 7 guide publication and assets
         run: node scripts/qa-12day-day7-release.mjs
       - name: Verify Day 6 new guide publication
