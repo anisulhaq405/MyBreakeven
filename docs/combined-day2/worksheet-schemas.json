@@ -1,0 +1,93 @@
+[
+  {
+    "id": "N066",
+    "slug": "limited-liability-company",
+    "title": "Limited Liability Company review",
+    "columns": [
+      "Entity / state / activity",
+      "Owners and authority",
+      "Funding / loan / distribution",
+      "Evidence and professional question",
+      "Decision owner / review date"
+    ],
+    "caseBoundary": "Owns general US LLC structure, ownership and record implications; does not own state formation instructions, a filing service, tax-election advice or startup-cost accounting."
+  },
+  {
+    "id": "N067",
+    "slug": "startup-costs-accounting",
+    "title": "Startup Costs Accounting review",
+    "columns": [
+      "Transaction / received date",
+      "Cash paid / payable",
+      "Book account and evidence",
+      "Separate tax-review question",
+      "Reviewer / follow-up date"
+    ],
+    "caseBoundary": "Owns accounting classification and recognition of launch transactions, with a clear books-versus-US-tax boundary; does not own estimating launch funding or forming an LLC."
+  },
+  {
+    "id": "N068",
+    "slug": "cloud-accounting",
+    "title": "Cloud Accounting review",
+    "columns": [
+      "Workflow / exception",
+      "Named role / permissions",
+      "Reconciliation and evidence",
+      "Complete cost / pilot result",
+      "Recovery / export / owner"
+    ],
+    "caseBoundary": "Owns choosing and operating a cloud-accounting workflow and its record controls; not a ranked software roundup, vendor-price list or a replacement for bookkeeping rules."
+  },
+  {
+    "id": "N076",
+    "slug": "capital-expenditure",
+    "title": "Capital Expenditure review",
+    "columns": [
+      "Asset / contract / use date",
+      "Qualifying cost and evidence",
+      "OPEX / excluded amount",
+      "Depreciation / cash bridge",
+      "Policy question / reviewer"
+    ],
+    "caseBoundary": "Owns capital expenditure and CAPEX versus OPEX classification and reconciliation; does not own selecting projects, startup funding totals or a tax-depreciation election."
+  },
+  {
+    "id": "N079",
+    "slug": "net-income",
+    "title": "Net Income review",
+    "columns": [
+      "Period / entity / basis",
+      "Net revenue and COGS",
+      "OPEX / other income / tax",
+      "Net-income / cash / equity bridge",
+      "Evidence / action / reviewer"
+    ],
+    "caseBoundary": "Owns business net income and gross-versus-net business profit; not net revenue deductions, employee take-home pay, gross-margin conversion or an EBITDA calculator."
+  },
+  {
+    "id": "N080",
+    "slug": "financial-reporting",
+    "title": "Financial Reporting review",
+    "columns": [
+      "Entity / period / basis",
+      "Schedule and ledger control",
+      "Statement-to-statement bridge",
+      "Open judgment / evidence",
+      "Preparer / reviewer / version"
+    ],
+    "caseBoundary": "Owns the preparation, reconciliation, review and release of a financial-reporting package; not ratio interpretation, financial-statement analysis or the separate income-statement template."
+  },
+  {
+    "id": "N081",
+    "slug": "cash-flow-analysis",
+    "title": "Cash Flow Analysis review",
+    "columns": [
+      "Period / cash definition",
+      "Operating-cash explanation",
+      "Investing / financing evidence",
+      "Timing sensitivity and exclusions",
+      "Finding / owner / next action"
+    ],
+    "caseBoundary": "Owns interpreting historical cash-flow quality, funding dependence and liquidity evidence; not preparing a cash-flow statement, forecasting payment dates or a standalone cash-flow-ratio directory."
+  }
+]

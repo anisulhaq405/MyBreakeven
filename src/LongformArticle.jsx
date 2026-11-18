@@ -1,3 +1,4 @@
+import{Day2Review,CashBridgeWidget}from './CombinedDay2Review.jsx';
 import {CostReviewWidget,ReviewConnections} from './CombinedDay1Widgets.jsx';
 import './fixed-variable-guide.css';
 import './restaurant-budget-layout.css';
@@ -34,7 +35,7 @@ const dateLabel = value => new Date(`${value}T12:00:00Z`).toLocaleDateString("en
 
 export default function LongformArticle({ article: a }) {
   const slug = a?.slug;
-  const hasIntroWidget = ['marginal-cost','average-cost-per-unit','salon-booth-rent-vs-commission-owner','operating-cash-flow', 'master-budget', 'cost-drivers-small-business', 'job-order-costing', 'margin-vs-markup', 'calculate-contribution-margin', 'high-low-method', 'flexible-budget-variance-analysis', 'make-or-buy-decision', 'break-even-analysis-example'].includes(slug);
+  const hasIntroWidget = ['cash-flow-statement','how-to-analyze-financial-statements','marginal-cost','average-cost-per-unit','salon-booth-rent-vs-commission-owner','operating-cash-flow', 'master-budget', 'cost-drivers-small-business', 'job-order-costing', 'margin-vs-markup', 'calculate-contribution-margin', 'high-low-method', 'flexible-budget-variance-analysis', 'make-or-buy-decision', 'break-even-analysis-example'].includes(slug);
   const guideType = articleGuideType(a);
   useEffect(() => {
     if (!a) return;
@@ -62,6 +63,8 @@ export default function LongformArticle({ article: a }) {
     {slug==='salon-booth-rent-vs-commission-owner'&&<SalonBoothComparison/>}
     {slug==='operating-cash-flow'&&<OperatingCashFlowWidget/>}
     {slug==='margin-vs-markup'&&<><ReviewConnections kind="margin"/><MarginMarkupWidget/></>}
+    {slug==='how-to-analyze-financial-statements'&&<Day2Review kind="analysis"/>}
+    {slug==='cash-flow-statement'&&<><Day2Review kind="statement"/><CashBridgeWidget/></>}
     {slug==='marginal-cost'&&<CostReviewWidget mode="marginal"/>}
     {slug==='average-cost-per-unit'&&<CostReviewWidget mode="average"/>}
     {slug==='calculate-contribution-margin'&&<ContributionMarginWidget/>}

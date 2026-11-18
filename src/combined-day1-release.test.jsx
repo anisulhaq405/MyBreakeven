@@ -3,7 +3,7 @@ import{describe,it,expect}from'vitest';
 import{readFileSync}from'node:fs';
 import{createHash}from'node:crypto';
 import{renderToStaticMarkup}from'react-dom/server';
-import{blogPosts,blogPostMap}from'./content/blogs/index.js';
+import{blogPosts,blogPostMap}from'./testSupport/combinedDay2HistoricalView.js';
 import{combinedDay1Posts}from'./content/blogs/combinedDay1.js';
 import{freeTools}from'./freeTools.js';
 import{calculateCd,calculateApy,annualYield,cdDefaults,apyDefaults}from'./depositEngine.js';

@@ -1,0 +1,5 @@
+import fs from'node:fs/promises';import sharp from'sharp';
+const root=new URL('../',import.meta.url),slugs=['income-statement-template','limited-liability-company','startup-costs-accounting','cloud-accounting','capital-expenditure','net-income','financial-reporting','cash-flow-analysis'];
+await fs.mkdir(new URL('public/images/title-covers/',root),{recursive:true});await fs.mkdir(new URL('public/downloads/',root),{recursive:true});
+for(const slug of slugs){for(const width of[1200,800,400])await sharp(new URL(`docs/combined-day2/image-source/${slug}.webp`,root).pathname).resize(width,Math.round(width*9/16)).webp({quality:82}).toFile(new URL(`public/images/title-covers/combined-day2-${slug}-20261118${width===1200?'':'-'+width}.webp`,root).pathname);if(slug!=='income-statement-template')await fs.copyFile(new URL(`docs/combined-day2/downloads/${slug}-worksheet.html`,root),new URL(`public/downloads/${slug}-worksheet.html`,root));}
+await fs.copyFile(new URL('docs/combined-day2/income-statement-template.xlsx',root),new URL('public/downloads/income-statement-template.xlsx',root));
