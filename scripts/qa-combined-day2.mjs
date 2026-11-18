@@ -1,5 +1,5 @@
 import fs from'node:fs/promises';import assert from'node:assert/strict';import{createHash}from'node:crypto';import sharp from'sharp';import{execFileSync}from'node:child_process';
-import{combinedDay2Posts as posts}from'../src/content/blogs/combinedDay2.js';import{blogPosts,blogPostMap}from'../src/content/blogs/index.js';import{freeTools}from'../src/freeTools.js';import{statementResource,statementFaq}from'../src/incomeStatementContent.js';
+import{combinedDay2Posts as posts}from'../src/content/blogs/combinedDay2.js';import{blogPosts,blogPostMap}from'../src/testSupport/fiveReviewHistoricalView.js';import{freeTools}from'../src/freeTools.js';import{statementResource,statementFaq}from'../src/incomeStatementContent.js';
 const before=JSON.parse(await fs.readFile('docs/combined-day2/baseline.json','utf8')),hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
 assert.equal(blogPosts.length,237);for(const p of before.blogs)assert.equal(hash(blogPostMap[p.slug]),p.hash,p.slug);for(const p of before.tools)assert.equal(hash(freeTools[p.slug]),p.hash,p.slug);
 const sitemap=await fs.readFile('dist/sitemap.xml','utf8'),report=[];

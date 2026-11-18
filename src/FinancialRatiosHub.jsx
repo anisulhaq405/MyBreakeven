@@ -1,4 +1,5 @@
 import React from 'react';
+import {RatioReferenceExtension} from './FivePageReview.jsx';
 import {responsiveFeatureProps} from './responsiveFeatureImages.js';
 import {financialRatiosHub as hub,financeGuideDate} from './content/blogs/financeCompletionGuides.js';
 import './blogs-page.css';
@@ -7,13 +8,14 @@ import './finance-editorial.css';
 export default function FinancialRatiosHub(){return <article className="article-page article-with-section-nav financial-ratios-hub">
  <nav className="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/blogs/">Guides</a><span>›</span><span>Financial ratios</span></nav>
  <span>BUSINESS FINANCIAL ANALYSIS</span><h1>{hub.title}</h1>
- <div className="article-meta"><time dateTime={financeGuideDate}>Published October 26, 2026</time><span>Updated October 26, 2026</span></div>
+ <div className="article-meta"><time dateTime={financeGuideDate}>Published October 26, 2026</time><span>Updated November 18, 2026</span></div>
  <p className="article-note">Published by <a href="/about-us/">MyBreakeven</a>. <a href="/editorial-policy/">Editorial standards and corrections</a>.</p>
- <p className="article-lead">{hub.description}</p>
+ <p className="article-lead">Explore 55 financial measures: 19 connected worked examples and 36 additional formula definitions. Match each measure to the right records, period and business question before interpreting the result.</p>
  <p className="article-summary"><a href="/calculators/financial-ratios-calculator/">Calculate all 55 measures in the interactive calculator →</a></p>
- <nav className="article-section-nav" aria-label="Financial ratio categories">{[['definition','Definition'],['categories','Categories'],['dataset','Example dataset'],['reference','Printable formulas'],['periods','Dates and periods'],['leverage','Leverage'],['interpretation','Interpretation'],['mistakes','Mistakes'],['sources','Sources'],['hub-faqs','FAQs']].map(([id,label])=><a href={'#'+id} key={id}>{label}</a>)}</nav>
+ <nav className="article-section-nav" aria-label="Financial ratio categories">{[['definition','Definition'],['categories','Categories'],['dataset','Example dataset'],['reference','Printable formulas'],['additional-ratio-reference','36 more formulas'],['periods','Dates and periods'],['leverage','Leverage'],['interpretation','Interpretation'],['mistakes','Mistakes'],['sources','Sources'],['hub-faqs','FAQs']].map(([id,label])=><a href={'#'+id} key={id}>{label}</a>)}</nav>
  <figure className="article-featured"><img src={hub.image} {...responsiveFeatureProps(hub.image)} width="1200" height="675" alt={hub.alt} decoding="async"/><figcaption>Illustrative financial-analysis scene. The reference table contains the exact formulas and fictional figures.</figcaption></figure>
  <div className="day1-markdown" dangerouslySetInnerHTML={{__html:hub.html}}/>
+ <RatioReferenceExtension/>
  <section className="article-faq" id="hub-faqs"><h2>Frequently asked questions</h2>{hub.faq.map(([q,a])=><details key={q}><summary>{q}</summary><p>{a}</p></details>)}</section>
  <p className="article-note">Educational examples only. Ratios do not establish credit eligibility or replace accounting advice.</p>
  </article>;}

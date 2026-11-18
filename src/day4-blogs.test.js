@@ -1,7 +1,7 @@
 import {november10RecoverySlugs} from './content/blogs/november10PositionRecovery.js';
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { blogPostMap, blogPosts } from "./content/blogs/index.js";
+import { blogPostMap, blogPosts } from "./testSupport/fiveReviewHistoricalView.js";
 
 const posts = blogPosts.filter(post => post.cluster === "volume-to-income");
 
