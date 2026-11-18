@@ -1,0 +1,13 @@
+# Combined plan Day2 release — November18,2026
+
+Eight new canonical owners:7guides N066/N067/N068/N076/N079/N080/N081 and the Income Statement Template preparation resource. Exact ownership is in intent-ledger.md. No duplicate CAPEX-vs-OPEX, net-income-calculator or cash-flow-calculator URLs. OCI remains held.
+
+Each new guide contains an original checked case,6FAQs, primary references, a visible scope boundary and a printable manual record.5–6incoming article links per new guide. Existing15general-business topic clusters and8industry hubs remain the same;7new memberships added.8matching title covers,24optimized WebP variants.
+
+The Income Statement Template includes an interactive one-period example, fixed-value CSV and a3-sheet formula workbook: Instructions, Blank Statement, Example Statement. Monthly and selected-YTD arithmetic, input changes, missing selected-month guard and YTD selector were recalculation-tested in Artifact Tool. All3sheets rendered/inspected. Saved XLSX cache/formula/data-validation/error checks passed through openpyxl. No native Excel application or physical phone claim.
+
+Four existing improvements: financial-statement preparation/reconciliation navigation; cash-flow statement profit-to-cash teaching bridge; forecast event/date/category preflight; startup-funding versus accounting-classification table and links.230existingarticle and31tool records remain byte-identical under JSON SHA-256 checks. Existing methods/defaults/covers/content dates preserved. Protected EBITDA and Financial Ratios audits are recorded separately; no protected engine or definition edits.
+
+Validation:175test files /1424tests pass. Production build and prior-release QA pass. New-release QA verifies8owners,48matchedFAQs,24covervariants,7manualrecords and3-sheet workbook. Route audit318pages/312sitemap URLs with zeroissues. Delivery budgets and image dimensions pass. Search327public documents, all sitemap owners covered. Topic audit75November-new guides with minimum3incoming article paths across the current program.
+
+Browser preview: monthly example net11700; changed sales net21700; blanks display visible errors; reset returns defaults. Excel and CSV downloads completed. Cash bridge operating9800/investing−6000/financing3500/net7300/closing22300; signed receivables change works and blank profit errors. Manual record editable/reset. EBITDA default130000/13%, ratios55measures visible. Seven guides have oneH1/sixFAQs with desktop layouts. At340CSSpixels the resource, cash-flow bridge, forecast, startup tool and reporting guide have no document overflow. These are emulated narrow-width checks, not physical device measurements.

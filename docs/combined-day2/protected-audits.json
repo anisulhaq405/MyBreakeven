@@ -1,0 +1,90 @@
+{
+  "reviewed": "2026-11-18",
+  "kind": "Protected audit; no content, date, default or engine changes",
+  "owners": [
+    {
+      "url": "/calculators/ebitda-calculator/",
+      "reviewedDatePreserved": "2026-10-26",
+      "defaultResult": {
+        "valid": true,
+        "errors": {},
+        "base": 130000,
+        "adjusted": 130000,
+        "margin": 13,
+        "adjustedMargin": 13,
+        "bridge": [
+          {
+            "key": "net",
+            "value": 80000
+          },
+          {
+            "key": "interest",
+            "value": 10000
+          },
+          {
+            "key": "tax",
+            "value": 20000
+          },
+          {
+            "key": "depreciation",
+            "value": 15000
+          },
+          {
+            "key": "amortization",
+            "value": 5000
+          }
+        ],
+        "adjustments": []
+      },
+      "checks": [
+        "130000 EBITDA / 13% margin",
+        "Negative net income retained",
+        "Signed tax benefit retained",
+        "Blank/zero revenue yields unavailable margin",
+        "Blank required financial amount rejected",
+        "Standard and adjusted EBITDA remain separately labeled"
+      ]
+    },
+    {
+      "url": "/calculators/financial-ratios-calculator/",
+      "reviewedDatePreserved": "2026-10-26",
+      "computedRowCount": 55,
+      "checks": [
+        "Current ratio 60000/30000=2",
+        "Zero denominator returns unavailable value",
+        "Missing denominator asks for required field",
+        "Signed profits and equity retain documented behavior",
+        "Existing financial leverage stays integrated"
+      ]
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "src/financeDay1Engine.js",
+      "sha256": "2dcce5e8364a37caca98e5efe0d19eaeed157bf9fde1e99d55e73857ed87dc5d"
+    },
+    {
+      "path": "src/financialRatiosEngine.js",
+      "sha256": "4509a3862a14cdc7019de55ee0d05c47f62d5e5410f6fdc223c6c570b1fbc84b"
+    },
+    {
+      "path": "src/FinanceDay1Calculator.jsx",
+      "sha256": "baa11ad0f64e6ba1f5a30ba7e308680c2e5276ed7197de77b1e5cec265977c92"
+    },
+    {
+      "path": "src/FinancialRatiosCalculator.jsx",
+      "sha256": "316c9be7b3c8deeb9d3ca73f6e45b594b198ab1510e4239ae12419c31e68c236"
+    }
+  ],
+  "sourceConcepts": [
+    [
+      "SEC income statement",
+      "https://www.sec.gov/files/income-statement-building-blocks.pdf"
+    ],
+    [
+      "SEC statement relationships",
+      "https://www.sec.gov/about/reports-publications/beginners-guide-financial-statements"
+    ]
+  ],
+  "publicationClaim": "Audit only; no new publication or content freshness date"
+}

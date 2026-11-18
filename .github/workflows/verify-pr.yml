@@ -52,6 +52,8 @@ jobs:
         run: node scripts/qa-12day-day5-release.mjs
       - name: Verify site-wide public content search
         run: node scripts/qa-site-search.mjs
+      - name: Verify combined Day 2 preparation resource and guide publication
+        run: node scripts/qa-combined-day2.mjs
       - name: Verify combined Day 1 publication and preserved records
         run: node scripts/qa-combined-day1.mjs
       - name: Verify Day 7 guide publication and assets

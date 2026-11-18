@@ -10,13 +10,13 @@ import NovemberTopicConnections,{GuideTopicLink} from './NovemberTopicConnection
 const baseline=JSON.parse(readFileSync('docs/november-clusters/baseline.json'));
 describe('November topic organization and discovery',()=>{
  it('preserves all 215 article records, including content, dates, metadata, URLs and images',()=>{
-  expect(blogPosts).toHaveLength(230);expect(baseline).toHaveLength(215);
+  expect(blogPosts).toHaveLength(237);expect(baseline).toHaveLength(215);
   for(const b of baseline)if(!['restaurant-budgeting','fixed-vs-variable-costs','lower-break-even-point','margin-vs-markup','landscaping-business-profit-margin','agency-profit-margin'].includes(b.slug))expect(createHash('sha256').update(JSON.stringify(blogPostMap[b.slug])).digest('hex'),b.slug).toBe(b.sha256);
  });
  it('assigns each guide exactly one real subject owner and covers all November publications and updates',()=>{
-  const slugs=allGuideTopics.flatMap(t=>t.slugs);expect(slugs).toHaveLength(230);expect(new Set(slugs).size).toBe(230);
-  expect(businessTopics).toHaveLength(15);expect(novemberGuides).toHaveLength(144);
-  expect(novemberGuides.filter(p=>p.published.startsWith('2026-11-'))).toHaveLength(68);
+  const slugs=allGuideTopics.flatMap(t=>t.slugs);expect(slugs).toHaveLength(237);expect(new Set(slugs).size).toBe(237);
+  expect(businessTopics).toHaveLength(15);expect(novemberGuides).toHaveLength(151);
+  expect(novemberGuides.filter(p=>p.published.startsWith('2026-11-'))).toHaveLength(75);
   for(const s of slugs)expect(blogPostMap[s],s).toBeDefined();for(const p of novemberGuides)expect(guideTopic(p.slug),p.slug).toBeDefined();
  });
  it('puts every general-business topic member into crawlable HTML with a matching hub fragment',()=>{

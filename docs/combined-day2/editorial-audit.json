@@ -1,0 +1,134 @@
+[
+  {
+    "id": "N066",
+    "slug": "limited-liability-company",
+    "words": 1169,
+    "faqs": 6,
+    "incoming": [
+      "startup-costs-accounting",
+      "cloud-accounting",
+      "net-income",
+      "financial-reporting",
+      "cash-flow-analysis"
+    ],
+    "missingBlogLinks": [],
+    "titleLength": 37,
+    "descriptionLength": 159,
+    "scope": "Owns general US LLC structure, ownership and record implications; does not own state formation instructions, a filing service, tax-election advice or startup-cost accounting.",
+    "titleWithBrandLength": 51
+  },
+  {
+    "id": "N067",
+    "slug": "startup-costs-accounting",
+    "words": 1198,
+    "faqs": 6,
+    "incoming": [
+      "limited-liability-company",
+      "cloud-accounting",
+      "capital-expenditure",
+      "net-income",
+      "financial-reporting",
+      "cash-flow-analysis"
+    ],
+    "missingBlogLinks": [],
+    "titleLength": 38,
+    "descriptionLength": 157,
+    "scope": "Owns accounting classification and recognition of launch transactions, with a clear books-versus-US-tax boundary; does not own estimating launch funding or forming an LLC.",
+    "titleWithBrandLength": 52
+  },
+  {
+    "id": "N068",
+    "slug": "cloud-accounting",
+    "words": 1141,
+    "faqs": 6,
+    "incoming": [
+      "limited-liability-company",
+      "startup-costs-accounting",
+      "capital-expenditure",
+      "net-income",
+      "financial-reporting",
+      "cash-flow-analysis"
+    ],
+    "missingBlogLinks": [],
+    "titleLength": 39,
+    "descriptionLength": 160,
+    "scope": "Owns choosing and operating a cloud-accounting workflow and its record controls; not a ranked software roundup, vendor-price list or a replacement for bookkeeping rules.",
+    "titleWithBrandLength": 53
+  },
+  {
+    "id": "N076",
+    "slug": "capital-expenditure",
+    "words": 1143,
+    "faqs": 6,
+    "incoming": [
+      "limited-liability-company",
+      "startup-costs-accounting",
+      "cloud-accounting",
+      "net-income",
+      "financial-reporting",
+      "cash-flow-analysis"
+    ],
+    "missingBlogLinks": [],
+    "titleLength": 34,
+    "descriptionLength": 159,
+    "scope": "Owns capital expenditure and CAPEX versus OPEX classification and reconciliation; does not own selecting projects, startup funding totals or a tax-depreciation election.",
+    "titleWithBrandLength": 48
+  },
+  {
+    "id": "N079",
+    "slug": "net-income",
+    "words": 1141,
+    "faqs": 6,
+    "incoming": [
+      "limited-liability-company",
+      "startup-costs-accounting",
+      "cloud-accounting",
+      "capital-expenditure",
+      "financial-reporting",
+      "cash-flow-analysis"
+    ],
+    "missingBlogLinks": [],
+    "titleLength": 38,
+    "descriptionLength": 154,
+    "scope": "Owns business net income and gross-versus-net business profit; not net revenue deductions, employee take-home pay, gross-margin conversion or an EBITDA calculator.",
+    "titleWithBrandLength": 52
+  },
+  {
+    "id": "N080",
+    "slug": "financial-reporting",
+    "words": 1137,
+    "faqs": 6,
+    "incoming": [
+      "limited-liability-company",
+      "startup-costs-accounting",
+      "cloud-accounting",
+      "capital-expenditure",
+      "net-income",
+      "cash-flow-analysis"
+    ],
+    "missingBlogLinks": [],
+    "titleLength": 43,
+    "descriptionLength": 158,
+    "scope": "Owns the preparation, reconciliation, review and release of a financial-reporting package; not ratio interpretation, financial-statement analysis or the separate income-statement template.",
+    "titleWithBrandLength": 57
+  },
+  {
+    "id": "N081",
+    "slug": "cash-flow-analysis",
+    "words": 1133,
+    "faqs": 6,
+    "incoming": [
+      "limited-liability-company",
+      "startup-costs-accounting",
+      "cloud-accounting",
+      "capital-expenditure",
+      "net-income",
+      "financial-reporting"
+    ],
+    "missingBlogLinks": [],
+    "titleLength": 39,
+    "descriptionLength": 160,
+    "scope": "Owns interpreting historical cash-flow quality, funding dependence and liquidity evidence; not preparing a cash-flow statement, forecasting payment dates or a standalone cash-flow-ratio directory.",
+    "titleWithBrandLength": 53
+  }
+]
