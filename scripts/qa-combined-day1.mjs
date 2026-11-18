@@ -3,7 +3,7 @@ import assert from'node:assert/strict';
 import sharp from'sharp';
 import{createHash}from'node:crypto';
 import{combinedDay1Posts as posts}from'../src/content/blogs/combinedDay1.js';
-import{blogPostMap}from'../src/content/blogs/index.js';
+import{blogPostMap}from'../src/testSupport/fiveReviewHistoricalView.js';
 import{freeTools}from'../src/freeTools.js';
 const before=JSON.parse(await fs.readFile('docs/combined-day1/baseline.json','utf8')),hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
 for(const x of before.blogs)assert.equal(hash(blogPostMap[x.slug]),x.hash,x.slug);

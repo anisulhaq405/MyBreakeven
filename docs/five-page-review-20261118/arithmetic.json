@@ -1,0 +1,55 @@
+{
+  "retail": {
+    "basket_contributions": [
+      "19.80",
+      "26.85"
+    ],
+    "base_cycle_contribution": "113.10",
+    "base_cycles": 71,
+    "base_receipts": 355,
+    "base_revenue": 16330,
+    "base_contribution": "8030.10",
+    "base_result_after_7000": "1030.10",
+    "weaker_mix_cycle": "106.05",
+    "weaker_mix_target_cycles": 76,
+    "weaker_mix_same_volume_result": "529.55",
+    "discount_cycle_contribution": "90.79",
+    "discount_cycles": 89,
+    "discount_contribution": "8080.31",
+    "discount_hours": "97.9",
+    "base_hours": "78.1",
+    "visits_needed": 1775,
+    "stock_advance": 2600,
+    "stock_cash_gap": 1100
+  },
+  "ecommerce": {
+    "before_returns_contribution": 3000,
+    "refund": 600,
+    "incremental_return_cost": 80,
+    "inventory_recovery": 200,
+    "return_burden": 480,
+    "net_sales": 5400,
+    "net_variable_cost": 2880,
+    "cohort_contribution": 2520,
+    "per_placed": "25.20",
+    "per_kept": "28.00",
+    "target_placed": 199,
+    "target_contribution": "5014.8",
+    "target_kept": 179,
+    "wrong_179_placed_contribution": "4510.8",
+    "wrong_target_shortfall": "489.2",
+    "shipping_days": 22,
+    "peak_orders": 120,
+    "peak_days": 5,
+    "peak_capacity": 90,
+    "peak_unshipped": 30
+  },
+  "existing_minimal_correction": {
+    "slug": "ecommerce-orders-per-day-profitable",
+    "exact_annual_orders": "3428.571428571428571428571429",
+    "exact_theoretical_revenue_rounded_cents": "274285.71",
+    "whole_orders": 3429,
+    "whole_order_revenue": 274320,
+    "whole_order_contribution": 96012
+  }
+}

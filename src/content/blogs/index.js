@@ -275,8 +275,10 @@ export const blogCollections = Object.freeze({
   october20Draft: october20DraftPosts.map(normalizePost),
 });
 
+import {applyFiveReview} from './fiveReview.js';
 export const blogPosts = Object.values(blogCollections)
   .flat()
+  .map(applyFiveReview)
   .sort((a, b) => String(b.published).localeCompare(String(a.published)));
 
 export const blogModels = Object.freeze(
