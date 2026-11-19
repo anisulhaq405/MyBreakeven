@@ -2,7 +2,9 @@ import {founderCaseRoute,founderCaseMeta} from './founderCaseStudyData.js';
 import { authorityPages } from './authorityResources.js';
 
 // Shared by static HTML generation and browser metadata updates.
+import {thaiCaseRoute,thaiCaseMeta} from './thaiCaseData.js';
 export const staticPageMeta = {
+  [thaiCaseRoute]:thaiCaseMeta,
   search: ["Search Guides, Calculators & Topics | MyBreakeven", "Search the whole MyBreakeven site for business guides, calculators, topic collections and resources.", "Search MyBreakeven"],
   "guides/financial-ratios": ["Financial Ratios: Formulas, Types & Examples | MyBreakeven", "Explore 55 financial measures: 19 worked examples plus 36 additional formulas. Check liquidity, margins, leverage, cash flow, required records and period consistency.", "Financial Ratios: Formulas, Types and Examples"],
   ...authorityPages,

@@ -141,6 +141,8 @@ jobs:
 
       - name: Verify five requested page updates
         run: node scripts/qa-five-page-review.mjs
+      - name: Verify Thai Foods restaurant case study
+        run: node scripts/qa-thai-case-study.mjs
       - name: Audit rendered routes and internal links
         run: python3 scripts/audit-built-site.py --output /tmp/site-inventory.json
 
