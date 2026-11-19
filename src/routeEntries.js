@@ -47,6 +47,7 @@ const industries = new Set(["/calculators/cleaning-business-break-even-calculato
 const authority = new Set(["/resources/income-statement-template","/resources/business-plan-template","/resources/five-year-business-plan-template","/resources/landscaping-business-plan-template","/resources/agency-business-plan-template","/resources/ecommerce-business-plan-template","/resources/one-page-business-plan-template","/resources/budget-vs-actual-template","/calculation-methodology","/editorial-policy","/founder","/resources","/resources/cleaning-business-budget-template","/resources/cleaning-job-cost-worksheet","/calculator-walkthroughs"]);
 export function routeEntryForPath(path) {
   path = path.replace(/\/$/, '') || '/';
+  if (path === '/resources/thai-foods-restaurant-break-even-case-study') return 'src/routes/ThaiCaseRoute.jsx';
   if (path === '/search') return 'src/routes/SearchRoute.jsx';
   if (path === '/resources/daily-outfitter-founder-case-study') return 'src/routes/FounderCaseRoute.jsx';
   if (path === '/') return 'src/main.jsx';
