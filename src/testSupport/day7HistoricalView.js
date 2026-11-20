@@ -5,7 +5,7 @@ import{combinedDay2Posts}from'../content/blogs/combinedDay2.js';
 // Strip ONLY its exact reviewed suffixes and nine new owners, leaving every other
 // current field intact. The current registry, 212 untouched records, 3 new suffixes,
 // and 9 new owners are independently guarded by twelve-day-day7-release.test.jsx.
-import{blogPosts as currentPosts}from'../content/blogs/index.js';
+import{beforeGscBlogPosts as currentPosts}from'../content/blogs/index.js';
 import{combinedDay1Posts}from'../content/blogs/combinedDay1.js';
 import{twelveDayDay7Posts}from'../content/blogs/twelveDayDay7.js';
 import{day7ExistingSections}from'../content/blogs/twelveDayDay7Review.js';

@@ -12,7 +12,7 @@ import { calculatorDirectory, matchesCalculatorSearch } from './calculatorDirect
 import { FreeToolsHub } from './FreeTools';
 import { industryPages } from './industryCalculatorContent';
 import { freeTools } from './freeTools';
-import { blogPostMap } from './content/blogs/index';
+import { blogPostMap } from './testSupport/beforeGscReview.js';
 import LongformArticle from './LongformArticle';
 
 describe('Storage-independent explicit analytics choice', () => {

@@ -5,7 +5,7 @@ import React from 'react';
 import {describe,it,expect}from'vitest';
 import{renderToStaticMarkup}from'react-dom/server';
 import BlogArticle from './BlogArticle.jsx';
-import{blogPostMap}from'./content/blogs/index.js';
+import{blogPostMap}from'./testSupport/beforeGscReview.js';
 const slugs=['restaurant-labor-cost-percentage','restaurant-food-cost-percentage','operating-leverage-small-business','contribution-margin-vs-profit-margin'];
 describe('Four existing guide answers',()=>{
  it('renders all answers and method handoffs before the cover with one displaced quick answer removed',()=>{

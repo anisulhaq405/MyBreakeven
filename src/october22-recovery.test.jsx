@@ -4,7 +4,7 @@ import React from 'react';
 import {describe, it, expect} from 'vitest';
 import {renderToStaticMarkup} from 'react-dom/server';
 import BlogArticle from './BlogArticle.jsx';
-import {blogPostMap} from './content/blogs/index.js';
+import {blogPostMap} from './testSupport/beforeGscReview.js';
 
 const slugs = ['how-much-does-it-cost-to-open-a-restaurant','how-much-does-it-cost-to-start-an-ecommerce-store','mobile-detailing-business-startup-cost','how-much-does-it-cost-to-start-a-photography-business','restaurant-budgeting'];
 describe('October 22 existing-page recovery', () => {

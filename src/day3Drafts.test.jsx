@@ -1,7 +1,7 @@
 import {day3ExistingSlugs} from './content/blogs/twelveDayDay3Review.js';
 import {october25GscDates}from'./testFixtures/october25GscDates.js';
 import React from'react';import{describe,it,expect}from'vitest';import{renderToStaticMarkup}from'react-dom/server';
-import{blogPostMap}from'./content/blogs/index.js';import LongformArticle from'./LongformArticle.jsx';
+import{blogPostMap}from'./testSupport/beforeGscReview.js';import LongformArticle from'./LongformArticle.jsx';
 import{BudgetBridgeWidget,DriverAllocationWidget,JobCostWidget}from'./Day3PlanningWidgets.jsx';
 import{freeTools}from'./freeTools.js';import{day3DraftSections}from'./content/blogs/day3DraftEnrichment.js';
 describe('Day 3 published package',()=>{

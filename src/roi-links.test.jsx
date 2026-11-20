@@ -3,7 +3,7 @@ import {october25GscDates}from'./testFixtures/october25GscDates.js';
 import React from 'react';
 import {describe,it,expect} from 'vitest';
 import {renderToStaticMarkup} from 'react-dom/server';
-import {blogPostMap} from './content/blogs/index.js';
+import {blogPostMap} from './testSupport/beforeGscReview.js';
 import {connectRoiGuide,roiGuideConnections} from './content/blogs/roiConnections.js';
 import {freeTools} from './freeTools.js';
 import {industryPages} from './industryCalculatorContent.js';

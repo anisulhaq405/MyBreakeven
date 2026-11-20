@@ -1,4 +1,4 @@
-import{blogPosts as current}from'../content/blogs/index.js';
+import{beforeGscBlogPosts as current}from'../content/blogs/index.js';
 import{freeTools as all}from'../freeTools.js';
 const added=new Set(['capacity-planning','business-continuity-plan','gross-pay-vs-net-pay','small-business-hr','product-lifecycle-management']);
 export const blogPosts=current.filter(p=>!added.has(p.slug));

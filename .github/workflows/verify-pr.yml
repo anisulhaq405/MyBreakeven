@@ -70,6 +70,8 @@ jobs:
         run: node scripts/qa-thai-case-study.mjs
       - name: Verify combined final batch content and calculators
         run: node scripts/qa-combined-day3.mjs
+      - name: Verify November20 GSC existing-page improvements
+        run: node scripts/qa-gsc-november20.mjs
       - name: Audit rendered routes and internal links
         run: python3 scripts/audit-built-site.py --output /tmp/site-inventory.json
       - name: Audit every page delivery budget and image dimensions
