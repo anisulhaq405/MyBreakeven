@@ -18,7 +18,8 @@ for(const slug of slugs){
  for(const m of all){const schema=JSON.parse(m[1]);if(!schema)throw Error('Schema empty '+slug);}
  const links=[...h.matchAll(/href="(\/(?:blogs|calculators)\/[^"#?]+)"/g)].map(x=>clean(x[1]));
  for(const url of links)if(!sitemap.includes('<loc>https://mybreakeven.com'+url+'</loc>'))throw Error('Internal destination missing '+slug+' -> '+url);
- if(slug==='target-profit-sales-formula'&&!h.includes('70 whole jobs'))throw Error('Target profit example missing');
+ const text=h.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ');
+ if(slug==='target-profit-sales-formula'&&!['70 jobs','$16,800','$10,500','$7,500','$3,000 operating profit'].every(part=>text.includes(part)))throw Error('Target profit reconciliation missing');
  if(slug==='contribution-margin-vs-profit-margin'&&!h.includes('40%'))throw Error('Contribution margin reconciliation missing');
  if(slug==='margin-of-safety-business'&&!h.includes('33.33%'))throw Error('Margin of safety example missing');
  if(slug==='operating-leverage-small-business'&&!h.includes('10% sales change'))throw Error('DOL sensitivity missing');
