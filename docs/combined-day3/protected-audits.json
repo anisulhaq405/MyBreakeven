@@ -1,0 +1,98 @@
+{
+  "date": "2026-11-20",
+  "cases": [
+    {
+      "slug": "how-much-does-it-cost-to-start-a-cleaning-business",
+      "reviewDate": "2026-11-20",
+      "contentModified": "2026-11-10",
+      "hash": "d6964e0cafcdf272328b347f4347110922bf09fcb4d70dfd5687fae33d326bc1",
+      "checks": [
+        "Existing unit/period and cost boundaries reviewed in normalized article",
+        "FAQ,existing source references and calculator paths retained",
+        "No new duplicate pricing/startup owner created"
+      ],
+      "finding": "Current protected owner retained; no substantive rewrite or freshness date applied.",
+      "action": "Audit only; preserve complete record."
+    },
+    {
+      "slug": "how-much-does-it-cost-to-start-a-landscaping-business",
+      "reviewDate": "2026-11-20",
+      "contentModified": "2026-11-10",
+      "hash": "9d9cec682c6ee1d43e6643ee50c978f7ec6d97b767435a861d46c4ff49593646",
+      "checks": [
+        "Existing unit/period and cost boundaries reviewed in normalized article",
+        "FAQ,existing source references and calculator paths retained",
+        "No new duplicate pricing/startup owner created"
+      ],
+      "finding": "Current protected owner retained; no substantive rewrite or freshness date applied.",
+      "action": "Audit only; preserve complete record."
+    },
+    {
+      "slug": "how-much-to-charge-for-house-cleaning",
+      "reviewDate": "2026-11-20",
+      "contentModified": "2026-11-10",
+      "hash": "0658620c3a94b51975818e60c14b821e7e776ebdcd67f23898f3095ec96f2c98",
+      "checks": [
+        "Existing unit/period and cost boundaries reviewed in normalized article",
+        "FAQ,existing source references and calculator paths retained",
+        "No new duplicate pricing/startup owner created"
+      ],
+      "finding": "Current protected owner retained; no substantive rewrite or freshness date applied.",
+      "action": "Audit only; preserve complete record."
+    },
+    {
+      "slug": "break-even-roas-calculator",
+      "reviewDate": "2026-11-20",
+      "contentModified": "2026-11-10",
+      "hash": "77b4e86c5762255f94dd1d171a8fc8d8902d9b4e2c397d801c2b6985b986b775",
+      "finding": "Existing retained-net-revenue contribution, target reserve and campaign cost model reviewed.",
+      "action": "Protected audit only. Existing tool definitions,defaults,engine and content remain unchanged."
+    },
+    {
+      "slug": "refinance-calculator",
+      "reviewDate": "2026-11-20",
+      "contentModified": "2026-10-26",
+      "hash": "d8cb4a2813a8684a43b616808d14ead4a6f817eb18b565337795c3e3336846e9",
+      "finding": "Existing same-horizon loan fees, credit limits and early payoff comparison reviewed.",
+      "action": "Protected audit only. Existing tool definitions,defaults,engine and content remain unchanged."
+    }
+  ],
+  "formulaChecks": {
+    "roas": {
+      "contribution": 33.6,
+      "breakEven": 2.380952380952381,
+      "target": 3.125,
+      "profit": 680,
+      "blankInvalid": true
+    },
+    "refinance": {
+      "valid": true,
+      "saving": 6394.53445865226,
+      "zeroHorizon": true,
+      "blankInvalid": true
+    }
+  },
+  "sourceFiles": [
+    {
+      "path": "src/roasEngine.js",
+      "sha256": "cd47fc17664383549667f895c386e0af2287cc2862180d142e248396a0e6667d"
+    },
+    {
+      "path": "src/refinanceEngine.js",
+      "sha256": "79769639fa63a29e3524d39624f02c3b3c01a87d44c985f96dad9c9a77148747"
+    },
+    {
+      "path": "src/RoasCalculator.jsx",
+      "sha256": "455e24bf9c37c8a2cd7c88580db12acc0f2e254944a7a6d04be80e325365ef54"
+    },
+    {
+      "path": "src/RefinanceCalculator.jsx",
+      "sha256": "6fe34252620b304553432e8db89167b498b4333ec1ffbbf8e3d65cd5f0462532"
+    }
+  ],
+  "hold": [
+    "N039 Other Comprehensive Income remains held",
+    "No general mortgage-calculator owner created",
+    "Financial leverage stays with existing Financial Ratios owner"
+  ]
+}

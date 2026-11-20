@@ -1,0 +1,163 @@
+[
+  {
+    "id": "N073",
+    "slug": "capacity-planning",
+    "case": {
+      "paidHours": 105,
+      "unavailableHours": 30,
+      "productiveHours": 75,
+      "laborCapacity": 50,
+      "machineCapacity": 40,
+      "inspectionCapacity": 60,
+      "demand": 46,
+      "machineGapHours": "3.6",
+      "outsourceCost": 168,
+      "baseContribution": 2600,
+      "alternativeContribution": 2822,
+      "incrementalContribution": 222
+    },
+    "recordFields": [
+      "Demand / completed unit",
+      "Resource / usable hours",
+      "Time per unit / load",
+      "Bottleneck / feasible output",
+      "Alternative cost / owner / due date"
+    ],
+    "sources": [
+      "https://www.nist.gov/publications/examination-national-supply-chain-flow-time"
+    ],
+    "independentCheck": "Python Decimal exact arithmetic; passed November20,2026"
+  },
+  {
+    "id": "N074",
+    "slug": "business-continuity-plan",
+    "case": {
+      "affectedJobs": 80,
+      "duringDisruption": 32,
+      "shortfallJobs": 48,
+      "canceledJobs": 18,
+      "deferredJobs": 30,
+      "canceledRevenue": 1620,
+      "avoidedVariableCost": 990,
+      "lostContribution": 630,
+      "delayedCollections": 2700,
+      "extraCosts": 560,
+      "normalContribution": 2800,
+      "eventualContributionBeforeExtras": 2170,
+      "eventualAfterExtras": 1610,
+      "adverseImpact": 1190
+    },
+    "recordFields": [
+      "Critical service / minimum level",
+      "Impact / timing / dependency",
+      "Recovery objective / workaround",
+      "Test result / actual recovery",
+      "Gap / action owner / retest date"
+    ],
+    "sources": [
+      "https://www.cyber.gc.ca/en/guidance/developing-your-business-continuity-plan-itsap10005"
+    ],
+    "independentCheck": "Python Decimal exact arithmetic; passed November20,2026"
+  },
+  {
+    "id": "N075",
+    "slug": "gross-pay-vs-net-pay",
+    "case": {
+      "regularEarnings": 900,
+      "bonus": 120,
+      "grossPay": 1020,
+      "employeeDeductions": 321,
+      "netPay": 699,
+      "reimbursement": 45,
+      "employeeTransfer": 744,
+      "employerAdditionalCosts": 200,
+      "employerCostBeforeReimbursement": 1220,
+      "allCashOutflows": 1265,
+      "otherRecipients": 521,
+      "biweeklyAnnualNet": 39000,
+      "biweeklyMonthlyAverage": 3250,
+      "semimonthlyAnnualNet": 36000,
+      "semimonthlyMonthlyNet": 3000
+    },
+    "recordFields": [
+      "Pay period / approved earnings",
+      "Gross pay / source record",
+      "Deduction / amount / category",
+      "Net pay / reimbursement / bank split",
+      "Reviewer / explanation / correction"
+    ],
+    "sources": [
+      "https://apps.irs.gov/app/understandingTaxes/hows/tax_tutorials/mod01/tt_mod01_03.jsp",
+      "https://www.irs.gov/businesses/small-businesses-self-employed/understanding-employment-taxes"
+    ],
+    "independentCheck": "Python Decimal exact arithmetic; passed November20,2026"
+  },
+  {
+    "id": "N077",
+    "slug": "small-business-hr",
+    "case": {
+      "approvedTeamHours": 312,
+      "importedTeamHours": 310,
+      "missingHours": 2,
+      "assumedHourlyRate": 24,
+      "approvedOrdinaryEarnings": 480,
+      "importedOrdinaryEarnings": 432,
+      "grossGap": 48,
+      "splitRateEarnings": 952,
+      "allNewRate": 988,
+      "overstatement": 36,
+      "allOldRate": 912,
+      "understatement": 40,
+      "exceptionsTotal": 32,
+      "resolved": 20,
+      "assignedOpen": 7,
+      "unassignedOpen": 5,
+      "allOpen": 12
+    },
+    "recordFields": [
+      "Process / request reference",
+      "Responsible role / approval",
+      "Effective date / source version",
+      "Reviewed result / exception",
+      "Next action / backup / review date"
+    ],
+    "sources": [
+      "https://www.eeoc.gov/employers/small-business",
+      "https://www.dol.gov/general/topic/workhours/hoursrecordkeeping"
+    ],
+    "independentCheck": "Python Decimal exact arithmetic; passed November20,2026"
+  },
+  {
+    "id": "N078",
+    "slug": "product-lifecycle-management",
+    "case": {
+      "revisionACount": 120,
+      "revisionBCount": 180,
+      "totalUnits": 300,
+      "revisionAParts": 16,
+      "revisionBParts": 18,
+      "revisionACost": 1920,
+      "revisionBCost": 3240,
+      "standardParts": 5160,
+      "allABaseline": 4800,
+      "mixIncrease": 360,
+      "affectedReworkUnits": 20,
+      "extraScrap": 40,
+      "reworkHours": 5,
+      "incrementalReworkLabor": 120,
+      "limitedCostAfterRework": 5320
+    },
+    "recordFields": [
+      "Product / record identifier",
+      "Revision / released status",
+      "Change / effectivity boundary",
+      "Cost / capacity / acceptance evidence",
+      "Approval / service link / review owner"
+    ],
+    "sources": [
+      "https://www.nist.gov/publications/product-information-modeling-framework-product-lifecycle-management",
+      "https://www.nasa.gov/reference/6-0-crosscutting-technical-management/"
+    ],
+    "independentCheck": "Python Decimal exact arithmetic; passed November20,2026"
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "slug": "capacity-planning",
+    "fields": [
+      "Demand / completed unit",
+      "Resource / usable hours",
+      "Time per unit / load",
+      "Bottleneck / feasible output",
+      "Alternative cost / owner / due date"
+    ],
+    "rows": 4,
+    "manual": true,
+    "calculates": false,
+    "saves": false,
+    "submits": false
+  },
+  {
+    "slug": "business-continuity-plan",
+    "fields": [
+      "Critical service / minimum level",
+      "Impact / timing / dependency",
+      "Recovery objective / workaround",
+      "Test result / actual recovery",
+      "Gap / action owner / retest date"
+    ],
+    "rows": 4,
+    "manual": true,
+    "calculates": false,
+    "saves": false,
+    "submits": false
+  },
+  {
+    "slug": "gross-pay-vs-net-pay",
+    "fields": [
+      "Pay period / approved earnings",
+      "Gross pay / source record",
+      "Deduction / amount / category",
+      "Net pay / reimbursement / bank split",
+      "Reviewer / explanation / correction"
+    ],
+    "rows": 4,
+    "manual": true,
+    "calculates": false,
+    "saves": false,
+    "submits": false
+  },
+  {
+    "slug": "small-business-hr",
+    "fields": [
+      "Process / request reference",
+      "Responsible role / approval",
+      "Effective date / source version",
+      "Reviewed result / exception",
+      "Next action / backup / review date"
+    ],
+    "rows": 4,
+    "manual": true,
+    "calculates": false,
+    "saves": false,
+    "submits": false
+  },
+  {
+    "slug": "product-lifecycle-management",
+    "fields": [
+      "Product / record identifier",
+      "Revision / released status",
+      "Change / effectivity boundary",
+      "Cost / capacity / acceptance evidence",
+      "Approval / service link / review owner"
+    ],
+    "rows": 4,
+    "manual": true,
+    "calculates": false,
+    "saves": false,
+    "submits": false
+  }
+]

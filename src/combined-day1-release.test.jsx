@@ -5,7 +5,7 @@ import{createHash}from'node:crypto';
 import{renderToStaticMarkup}from'react-dom/server';
 import{blogPosts,blogPostMap}from'./testSupport/combinedDay2HistoricalView.js';
 import{combinedDay1Posts}from'./content/blogs/combinedDay1.js';
-import{freeTools}from'./freeTools.js';
+import{freeTools}from'./testSupport/beforeCombinedDay3.js';
 import{calculateCd,calculateApy,annualYield,cdDefaults,apyDefaults}from'./depositEngine.js';
 import{calculateCostReview}from'./costReviewEngine.js';
 import{CostReviewWidget,ReviewConnections}from'./CombinedDay1Widgets.jsx';

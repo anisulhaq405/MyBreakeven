@@ -12,6 +12,8 @@ export const industryIntent = [
 ];
 
 export const decisionIntent = [
+ ['prorated-rent-calculator','prorated rent calculator',['gross-pay-vs-net-pay']],
+ ['debt-to-income-calculator','debt to income calculator',['gross-pay-vs-net-pay','net-income']],
  ["cd-calculator", "Fixed-opening-deposit gross maturity comparison", ["present-value-vs-future-value"]],
  ["apy-calculator", "Nominal rate and effective annual yield conversion", ["present-value-vs-future-value"]],
  ["financial-ratios-calculator", "Statement-based business ratios and integrated leverage definitions", []],
