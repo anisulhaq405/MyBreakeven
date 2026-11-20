@@ -4,7 +4,8 @@ import { industryPages } from './industryCalculatorContent.js';
 import { toolThemes } from './toolThemes.js';
 import { industries } from './industries.js';
 
-// All entries point to existing pages. Keep the current decision filters.
+// Registries append new calculators. Show the latest additions first in every directory view.
+// Reverse only this new directory array; preserve source records and decision filters.
 export const calculatorDirectory = [
   ...Object.entries(industryPages).map(([slug, page]) => [slug, {
     name: page.title, category: `${industries[page.key].short} planning`, intro: page.lead,
@@ -12,6 +13,6 @@ export const calculatorDirectory = [
     alt: `${industries[page.key].short} break-even planning`, theme: toolThemes[page.key],
   }]),
   ...Object.entries(freeTools),
-];
+].reverse();
 
 export { matchesCalculatorSearch } from './calculatorSearch.js';
