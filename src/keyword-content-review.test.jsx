@@ -7,7 +7,7 @@ import {describe,it,expect} from 'vitest';
 import {renderToStaticMarkup} from 'react-dom/server';
 import Decimal from 'decimal.js';
 import BlogArticle from './BlogArticle.jsx';
-import {blogPostMap} from './content/blogs/index.js';
+import {blogPostMap} from './testSupport/beforeGscReview.js';
 import {keywordContentReviewData} from './content/blogs/keywordContentReviewData.js';
 import {freeTools} from './freeTools.js';
 

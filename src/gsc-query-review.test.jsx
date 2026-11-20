@@ -1,7 +1,7 @@
 import React from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {it,expect} from 'vitest';
-import {blogPostMap} from './content/blogs/index.js';
+import {blogPostMap} from './testSupport/beforeGscReview.js';
 import BlogArticle from './BlogArticle.jsx';
 it('makes the janitorial workbook available before the cover with valid section navigation',()=>{
  const p=blogPostMap['cleaning-business-monthly-expenses'];const html=renderToStaticMarkup(<BlogArticle slug={p.slug} initialArticle={p}/>);

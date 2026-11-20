@@ -1,3 +1,4 @@
+import GscCalculatorReview from './GscCalculatorReview.jsx';
 import AgencyDetailedCalculator from './AgencyDetailedCalculator.jsx';
 import AgencyDetailedMethod from './AgencyDetailedMethod.jsx';
 import LandscapingDetailedCalculator from './LandscapingDetailedCalculator.jsx';
@@ -166,7 +167,7 @@ export default function IndustryPage({ slug }) {
       {page.key === 'agency' ? <AgencyDetailedCalculator><IndustryQuickCalculator key={page.key} industry={industry} industryKey={page.key}/></AgencyDetailedCalculator> : page.key === 'landscaping' ? <LandscapingDetailedCalculator><IndustryQuickCalculator key={page.key} industry={industry} industryKey={page.key}/></LandscapingDetailedCalculator> : page.key === 'cleaning' ? <CleaningDetailedCalculator><IndustryQuickCalculator key={page.key} industry={industry} industryKey={page.key}/></CleaningDetailedCalculator> : page.key === 'ecommerce' ? <EcommerceDetailedCalculator><IndustryQuickCalculator key={page.key} industry={industry} industryKey={page.key}/></EcommerceDetailedCalculator> : <IndustryQuickCalculator key={page.key} industry={industry} industryKey={page.key}/>}
       <section className="industry-content">
       {page.key === 'agency' && <AgencyDetailedMethod/>}
-      {page.key === 'landscaping' && <LandscapingDetailedMethod/>}
+      {page.key === 'landscaping' && <GscCalculatorReview kind="landscaping"/>}{page.key === 'landscaping' && <LandscapingDetailedMethod/>}
       {page.key === 'cleaning' && <CleaningDetailedMethod/>}
       {page.key === 'ecommerce' && <EcommerceDetailedMethod/>}
       {page.key === 'landscaping' && <><p className="industry-copy">The existing price and capacity examples below use the quick model. The detailed seasonal comparison above uses its own entered costs and earning-month assumptions.</p><LandscapingTargetGuide /></>}

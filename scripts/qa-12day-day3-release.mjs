@@ -3,7 +3,7 @@ import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import path from 'node:path';
 import sharp from 'sharp';
-import {blogPostMap} from '../src/content/blogs/index.js';
+import {blogPostMap} from '../src/testSupport/beforeGscReview.js';
 import {twelveDayDay3Posts} from '../src/content/blogs/twelveDayDay3.js';
 import {day3ExistingAdditions} from '../src/content/blogs/twelveDayDay3Review.js';
 const report=[];

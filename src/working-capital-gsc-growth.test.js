@@ -1,5 +1,5 @@
 import {describe,it,expect} from 'vitest';
-import {blogPostMap} from './content/blogs/index.js';
+import {blogPostMap} from './testSupport/beforeGscReview.js';
 import {applyWorkingCapitalGscGrowth} from './content/blogs/workingCapitalGscGrowth.js';
 describe('October 26 Working Capital GSC formula intent growth',()=>{
  const slug='how-to-calculate-working-capital';

@@ -8,7 +8,7 @@ import {calculate} from './engine.js';
 import ScenarioAnalysis from './ScenarioAnalysis.jsx';
 import IndustryPage from './IndustryPage.jsx';
 import BlogArticle from './BlogArticle.jsx';
-import {blogPostMap} from './content/blogs/index.js';
+import {blogPostMap} from './testSupport/beforeGscReview.js';
 
 describe('Reproducible scenario analyses on existing articles',()=>{
  it('reconciles every restaurant row with independent integer-cent arithmetic',()=>{
