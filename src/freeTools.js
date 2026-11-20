@@ -1,3 +1,4 @@
+import {householdTools} from './householdTools.js';
 import {depositTools} from './depositTools.js';
 import {reviewDiscount} from './discountReview.js';
 import {reviewPriceIncrease} from './priceIncreaseReview.js';
@@ -68,4 +69,4 @@ freeTools['price-increase-calculator']=reviewPriceIncrease(freeTools['price-incr
 freeTools['discount-break-even-calculator']=reviewDiscount(freeTools['discount-break-even-calculator']);
 
 // Combined sprint Day 1 adds only two distinct deposit-rate owners.
-Object.assign(freeTools,depositTools);
+Object.assign(freeTools,depositTools,householdTools);

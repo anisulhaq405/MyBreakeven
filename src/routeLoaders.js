@@ -1,5 +1,6 @@
 import { routeEntryForPath } from './routeEntries.js';
 const loaders = {
+  'src/routes/HouseholdToolRoute.jsx':()=>import('./routes/HouseholdToolRoute.jsx'),
  'src/routes/ThaiCaseRoute.jsx':()=>import('./routes/ThaiCaseRoute.jsx'),
   'src/routes/DepositToolRoute.jsx': () => import('./routes/DepositToolRoute.jsx'),
   'src/routes/SearchRoute.jsx': () => import('./routes/SearchRoute.jsx'),
@@ -37,7 +38,7 @@ const loaders = {
 export function loadSecondaryRoute(path) { return loaders[routeEntryForPath(path)](); }
 
 export async function loadSecondaryRouteData(path) {
-  if (!/(?:Deposit|Roas|FinalFinance|Retirement|Finance|Business|Food|Planning|Pricing|Roi|OperatingMargin|NetCashFlow|StartupCost)ToolRoute\.jsx$/.test(routeEntryForPath(path))) return null;
+  if (!/(?:Household|Deposit|Roas|FinalFinance|Retirement|Finance|Business|Food|Planning|Pricing|Roi|OperatingMargin|NetCashFlow|StartupCost)ToolRoute\.jsx$/.test(routeEntryForPath(path))) return null;
   const { loadTool } = await import('./toolContentLoader.js');
   return loadTool(path.split('/')[2]);
 }

@@ -1,0 +1,86 @@
+[
+  {
+    "slug": "capacity-planning",
+    "masterPath": "docs/combined-day3/image-source/capacity-planning.webp",
+    "width": 1200,
+    "height": 675,
+    "bytes": 76644,
+    "titleVerified": true,
+    "subtitleVerified": true,
+    "safeMarginsVerified": true,
+    "sceneRelevant": true,
+    "visualQa": "Exact headline and subtitle readable; no clipping or overlap; coherent editorial photograph; no financial result or approval claim."
+  },
+  {
+    "slug": "business-continuity-plan",
+    "masterPath": "docs/combined-day3/image-source/business-continuity-plan.webp",
+    "width": 1200,
+    "height": 675,
+    "bytes": 88400,
+    "titleVerified": true,
+    "subtitleVerified": true,
+    "safeMarginsVerified": true,
+    "sceneRelevant": true,
+    "visualQa": "Exact headline and subtitle readable; no clipping or overlap; coherent editorial photograph; no financial result or approval claim."
+  },
+  {
+    "slug": "gross-pay-vs-net-pay",
+    "masterPath": "docs/combined-day3/image-source/gross-pay-vs-net-pay.webp",
+    "width": 1200,
+    "height": 675,
+    "bytes": 78782,
+    "titleVerified": true,
+    "subtitleVerified": true,
+    "safeMarginsVerified": true,
+    "sceneRelevant": true,
+    "visualQa": "Exact headline and subtitle readable; no clipping or overlap; coherent editorial photograph; no financial result or approval claim."
+  },
+  {
+    "slug": "small-business-hr",
+    "masterPath": "docs/combined-day3/image-source/small-business-hr.webp",
+    "width": 1200,
+    "height": 675,
+    "bytes": 83286,
+    "titleVerified": true,
+    "subtitleVerified": true,
+    "safeMarginsVerified": true,
+    "sceneRelevant": true,
+    "visualQa": "Exact headline and subtitle readable; no clipping or overlap; coherent editorial photograph; no financial result or approval claim."
+  },
+  {
+    "slug": "product-lifecycle-management",
+    "masterPath": "docs/combined-day3/image-source/product-lifecycle-management.webp",
+    "width": 1200,
+    "height": 675,
+    "bytes": 91260,
+    "titleVerified": true,
+    "subtitleVerified": true,
+    "safeMarginsVerified": true,
+    "sceneRelevant": true,
+    "visualQa": "Exact headline and subtitle readable; no clipping or overlap; coherent editorial photograph; no financial result or approval claim."
+  },
+  {
+    "slug": "prorated-rent-calculator",
+    "masterPath": "docs/combined-day3/image-source/prorated-rent-calculator.webp",
+    "width": 1200,
+    "height": 675,
+    "bytes": 85174,
+    "titleVerified": true,
+    "subtitleVerified": true,
+    "safeMarginsVerified": true,
+    "sceneRelevant": true,
+    "visualQa": "Exact headline and subtitle readable; no clipping or overlap; coherent editorial photograph; no financial result or approval claim."
+  },
+  {
+    "slug": "debt-to-income-calculator",
+    "masterPath": "docs/combined-day3/image-source/debt-to-income-calculator.webp",
+    "width": 1200,
+    "height": 675,
+    "bytes": 76488,
+    "titleVerified": true,
+    "subtitleVerified": true,
+    "safeMarginsVerified": true,
+    "sceneRelevant": true,
+    "visualQa": "Exact headline and subtitle readable; no clipping or overlap; coherent editorial photograph; no financial result or approval claim."
+  }
+]

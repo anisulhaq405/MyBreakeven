@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "capacity-planning",
+    "words": 1233,
+    "faq": 6,
+    "titleLength": 54,
+    "descriptionLength": 150,
+    "incoming": 4
+  },
+  {
+    "slug": "business-continuity-plan",
+    "words": 1311,
+    "faq": 6,
+    "titleLength": 56,
+    "descriptionLength": 158,
+    "incoming": 4
+  },
+  {
+    "slug": "gross-pay-vs-net-pay",
+    "words": 1337,
+    "faq": 6,
+    "titleLength": 52,
+    "descriptionLength": 151,
+    "incoming": 4
+  },
+  {
+    "slug": "small-business-hr",
+    "words": 1370,
+    "faq": 6,
+    "titleLength": 56,
+    "descriptionLength": 157,
+    "incoming": 4
+  },
+  {
+    "slug": "product-lifecycle-management",
+    "words": 1324,
+    "faq": 6,
+    "titleLength": 51,
+    "descriptionLength": 157,
+    "incoming": 4
+  }
+]
