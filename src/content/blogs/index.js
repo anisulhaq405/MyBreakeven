@@ -278,13 +278,15 @@ export const blogCollections = Object.freeze({
 });
 
 import {applyGscReview} from './gscNovember20.js';
+import {applyFourReview} from './gscFourNovember21.js';
 import {applyFiveReview} from './fiveReview.js';
 export const beforeGscBlogPosts = Object.values(blogCollections)
   .flat()
   .map(applyFiveReview)
   .sort((a, b) => String(b.published).localeCompare(String(a.published)));
 
-export const blogPosts = beforeGscBlogPosts.map(applyGscReview);
+export const beforeFourBlogPosts = beforeGscBlogPosts.map(applyGscReview);
+export const blogPosts = beforeFourBlogPosts.map(applyFourReview);
 
 export const blogModels = Object.freeze(
   [...new Set(blogPosts.map(post => post.tag).filter(tag => tag && tag !== "Break-Even Concepts"))],
