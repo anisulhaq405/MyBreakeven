@@ -1,0 +1,21 @@
+Line,Value,Instructions
+Planned jobs,200,Input
+Net price per job,180,Input; positive
+Variable cost per job,80,Input; paid now
+Fixed cash operating costs,14000,Input; expensed and paid now
+Opening available cash,5000,Input
+Current sales collection percent,80,Input 0 to 100; enter 80 not 0.8
+Opening receivables collected,3000,Input; exclude from current revenue
+Other cash payments,1000,Input; outside operating result
+Capital payments,2000,Input; outside operating expenses
+Desired minimum closing cash,4000,Input
+Input status,"=IF(COUNT(B2:B11)<>10,""Complete numeric inputs"",IF(OR(MIN(B2:B11)<0,B3<=0,B7>100),""Check inputs"",""Ready""))",All ten inputs required
+Sales,"=IF(B12<>""Ready"","""",B2*B3)",Calculated; simplified no-inventory/no-depreciation model
+Variable expenses,"=IF(B12<>""Ready"","""",B2*B4)",Calculated; simplified no-inventory/no-depreciation model
+Contribution,"=IF(B12<>""Ready"","""",B13-B14)",Calculated; simplified no-inventory/no-depreciation model
+Operating income,"=IF(B12<>""Ready"","""",B15-B5)",Calculated; simplified no-inventory/no-depreciation model
+Current sales collected,"=IF(B12<>""Ready"","""",B13*B7/100)",Calculated; simplified no-inventory/no-depreciation model
+Total cash receipts,"=IF(B12<>""Ready"","""",B17+B8)",Calculated; simplified no-inventory/no-depreciation model
+Total cash payments,"=IF(B12<>""Ready"","""",B14+B5+B9+B10)",Calculated; simplified no-inventory/no-depreciation model
+Closing cash before financing,"=IF(B12<>""Ready"","""",B6+B18-B19)",Calculated; simplified no-inventory/no-depreciation model
+Cash-floor gap,"=IF(B12<>""Ready"","""",MAX(B11-B20,0))",Calculated; simplified no-inventory/no-depreciation model

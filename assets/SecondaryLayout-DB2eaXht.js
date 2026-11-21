@@ -1,0 +1,1 @@
+import{a as e,t}from"./index-Bci-2wjS.js";import{n,t as r}from"./SiteChrome-BLfKeIQG.js";e();var i=t();function a({children:e}){return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsx)(n,{}),(0,i.jsx)(`main`,{className:`secondary-page`,children:e}),(0,i.jsx)(r,{})]})}export{a as t};

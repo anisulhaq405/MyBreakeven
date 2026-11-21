@@ -1,0 +1,46 @@
+# Canonical host: keep every path and query string on the HTTPS apex domain.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# Redirect only explicit index.html requests, never internal DirectoryIndex resolution.
+# Keep query parameters (for example account verification codes) intact.
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html(?:[?\s]) [NC]
+RewriteRule ^(.*/)?index\.html$ https://mybreakeven.com/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^www\.mybreakeven\.com$ [NC]
+RewriteRule ^ https://mybreakeven.com%{REQUEST_URI} [R=301,L,NE]
+</IfModule>
+
+# Serve downloadable Office documents using their correct file types.
+<IfModule mod_mime.c>
+AddType application/vnd.openxmlformats-officedocument.spreadsheetml.sheet .xlsx
+AddType application/vnd.openxmlformats-officedocument.wordprocessingml.document .docx
+AddType application/pdf .pdf
+AddType text/csv .csv
+</IfModule>
+
+# Vite includes a content hash in built JS/CSS filenames. New builds get new
+# URLs, so these files can be cached for a year without serving an old build.
+# Keep HTML and stable public filenames on the hosting provider's shorter TTL.
+<IfModule mod_headers.c>
+<FilesMatch "\.(xlsx|docx)$">
+Header set Content-Disposition "attachment"
+</FilesMatch>
+<FilesMatch "-[A-Za-z0-9_-]{8}\.(js|css|woff2)$">
+Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+</IfModule>
+
+# Scenario exports must retain their CSV filename instead of downloading as text.
+<FilesMatch "^(restaurant|landscaping)-20-scenarios-v1\.csv$">
+ForceType text/csv
+</FilesMatch>
+<IfModule mod_headers.c>
+<Files "restaurant-20-scenarios-v1.csv">
+Header set Content-Type "text/csv; charset=utf-8"
+Header set Content-Disposition "attachment; filename=restaurant-20-scenarios-v1.csv"
+</Files>
+<Files "landscaping-20-scenarios-v1.csv">
+Header set Content-Type "text/csv; charset=utf-8"
+Header set Content-Disposition "attachment; filename=landscaping-20-scenarios-v1.csv"
+</Files>
+</IfModule>

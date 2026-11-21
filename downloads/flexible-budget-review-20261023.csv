@@ -1,0 +1,19 @@
+"Flexible budget review — original fictional example","USD / equivalent visits"
+"Planned visits",200
+"Actual visits",180
+"Budgeted price",180
+"Budgeted variable rate",80
+"Budgeted fixed expense",14000
+"Actual revenue",31500
+"Actual variable expense",15120
+"Actual fixed expense",14300
+"Original operating income","=IF(AND(COUNT(B2:B9)=8,MIN(B2:B9)>=0,B4>0,MAX(B2:B9)<=1000000000000),B2*(B4-B5)-B6,\"\")"
+"Flexible operating income","=IF(AND(COUNT(B2:B9)=8,MIN(B2:B9)>=0,B4>0,MAX(B2:B9)<=1000000000000),B3*(B4-B5)-B6,\"\")"
+"Actual operating income","=IF(AND(COUNT(B2:B9)=8,MIN(B2:B9)>=0,B4>0,MAX(B2:B9)<=1000000000000),B7-B8-B9,\"\")"
+"Activity effect","=IF(AND(COUNT(B2:B9)=8,MIN(B2:B9)>=0,B4>0,MAX(B2:B9)<=1000000000000),B11-B10,\"\")"
+"Performance effect","=IF(AND(COUNT(B2:B9)=8,MIN(B2:B9)>=0,B4>0,MAX(B2:B9)<=1000000000000),B12-B11,\"\")"
+"Total change","=IF(AND(COUNT(B2:B9)=8,MIN(B2:B9)>=0,B4>0,MAX(B2:B9)<=1000000000000),B12-B10,\"\")"
+"Reconciliation residual (must be zero)","=IF(AND(COUNT(B2:B9)=8,MIN(B2:B9)>=0,B4>0,MAX(B2:B9)<=1000000000000),B13+B14-B15,\"\")"
+"Instructions","Edit B2:B9 only. Preserve row positions. Require complete nonnegative inputs and positive price."
+"Sign convention","Positive operating income effect is favorable. Negative is unfavorable."
+"Scope","One equivalent activity unit; fixed budget within its relevant range. No cash timing or labor subvariance model."

@@ -1,0 +1,20 @@
+"Make-or-buy review — original fictional example","USD / acceptable components"
+"Required quantity",1000
+"Avoidable make unit cost",14
+"Avoidable make fixed cost",3000
+"Buy unit quote",18
+"Buying-only period costs",500
+"Contribution forgone by making",2000
+"Common fixed commitment",4000
+"Relevant make cost","=IF(AND(COUNT(B2:B8)=7,MIN(B2:B8)>=0,B2>0,MAX(B2:B8)<=1000000000000),B2*B3+B4+B7,\"\")"
+"Relevant buy cost","=IF(AND(COUNT(B2:B8)=7,MIN(B2:B8)>=0,B2>0,MAX(B2:B8)<=1000000000000),B2*B5+B6,\"\")"
+"Make minus buy (positive favors buy)","=IF(AND(COUNT(B2:B8)=7,MIN(B2:B8)>=0,B2>0,MAX(B2:B8)<=1000000000000),B9-B10,\"\")"
+"Make including common","=IF(AND(COUNT(B2:B8)=7,MIN(B2:B8)>=0,B2>0,MAX(B2:B8)<=1000000000000),B9+B8,\"\")"
+"Buy including common","=IF(AND(COUNT(B2:B8)=7,MIN(B2:B8)>=0,B2>0,MAX(B2:B8)<=1000000000000),B10+B8,\"\")"
+"Supplier quote at economic tie","=IF(AND(COUNT(B2:B8)=7,MIN(B2:B8)>=0,B2>0,MAX(B2:B8)<=1000000000000),(B9-B6)/B2,\"\")"
+"Opportunity contribution at tie (signed)","=IF(AND(COUNT(B2:B8)=7,MIN(B2:B8)>=0,B2>0,MAX(B2:B8)<=1000000000000),B10-(B2*B3+B4),\"\")"
+"Positive unique crossover","=IF(AND(COUNT(B2:B8)=7,MIN(B2:B8)>=0,B2>0,MAX(B2:B8)<=1000000000000),IF(B5=B3,\"\",IF((B4+B7-B6)/(B5-B3)>0,(B4+B7-B6)/(B5-B3),\"\")),\"\")"
+"Instructions","Edit B2:B8 only. Preserve row positions. Require complete nonnegative inputs and positive quantity."
+"Interpretation","A negative quote ceiling means no nonnegative quote can tie under these assumptions. A negative opportunity threshold means buying already has an advantage at zero opportunity."
+"Crossover","Blank when there is no positive unique crossing. Rates and period opportunity held constant."
+"Scope","Economic comparison. Opportunity contribution is not an invoice; prepare cash timing separately."
