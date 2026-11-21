@@ -1,3 +1,4 @@
+import {startupQueryReviews} from './startupQueryNovember21.js';
 // Existing intent owners only. Preserve earlier records for historical release contracts.
 const originals=new Map();
 const table=(caption,heads,rows)=>`<div class="article-table-scroll" role="region" aria-label="${caption}" tabindex="0"><table><caption>${caption}</caption><thead><tr>${heads.map(x=>`<th scope="col">${x}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr><th scope="row">${r[0]}</th>${r.slice(1).map(x=>`<td>${x}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
@@ -40,6 +41,7 @@ export const fourReviews={
   next:`<h2 id="review-next-cleaning">Choose an improvement you can verify in completed visits</h2><p>Check actual worker-hours and re-cleans before raising a volume target. In the existing $175-price scenario, contribution becomes $77.75 and the whole-visit requirement falls to 78, still above the same 70-visit capacity. A price change alone does not make that schedule feasible, and customer acceptance is not assumed.</p><p>Use ${link('/resources/cleaning-job-cost-worksheet/','the completed-job worksheet')} to investigate overruns, ${link('/blogs/cleaning-business-monthly-expenses/','the monthly expense budget')} to reconcile commitments, and ${link('/calculators/cleaning-business-break-even-calculator/','the cleaning calculator')} to test the revised plan. For recurring discounts, compare ${link('/blogs/recurring-vs-one-time-cleaning-profitability/','recurring versus one-time contribution')} rather than assuming repeat work always earns more.</p>`
  }
 };
+Object.assign(fourReviews,startupQueryReviews);
 export const fourReviewedSlugs=new Set(Object.keys(fourReviews));
 export function applyFourReview(p){
  const r=fourReviews[p.slug];if(!r)return p;if(p.answerHtml?.includes('id="review-answer-'))return p;originals.set(p.slug,p);
@@ -49,7 +51,8 @@ export function applyFourReview(p){
   html=html.replace('Five $3,500 retainers produce $17,500, still $188 below break-even.','Five $3,500 retainers produce $17,500: $187.50 below the exact $17,687.50 sales threshold. At 80% contribution, they leave $14,000 against $14,150 commitments, a $150 shortfall. Six whole retainers are needed under these assumptions.');
  }
  if(p.slug==='is-a-cleaning-business-profitable')html=html.replace('A query containing 40–60 does not make that range a verified industry rule.','Neither percentage establishes a recommended payroll target for another business.');
+ if(p.slug==='how-much-does-it-cost-to-start-an-ecommerce-store')html=html.replace('Checked October 22, 2026:', 'Pricing rechecked November 21, 2026:');
  let faq=p.faq;if(p.slug==='how-much-does-it-cost-to-start-a-marketing-agency')faq=faq.map(x=>({...x,a:x.a.split(' ## Takeaways')[0]}));
- return {...p,seoTitle:r.seoTitle,description:r.description,metaDescription:r.description,opening:r.opening,modified:'2026-11-21',answerHtml:`<h2 id="review-answer-${p.slug}">${r.heading}</h2><p>${r.answer}</p>${r.comparison}<p><a href="#review-next-${p.slug.includes('landscaping')?'landscaping':p.slug.includes('photography')?'photography':p.slug.includes('agency')?'agency':'cleaning'}">Choose the next practical step</a>.</p>`,html:html+r.next,faq};
+ return {...p,seoTitle:r.seoTitle,description:r.description,metaDescription:r.description,opening:r.opening,modified:'2026-11-21',answerHtml:`${r.legacyAnchor?`<span id="${r.legacyAnchor}"></span>`:""}<h2 id="review-answer-${p.slug}">${r.heading}</h2><p>${r.answer}</p>${r.comparison}<p><a href="#review-next-${r.nextId|| (p.slug.includes('landscaping')?'landscaping':p.slug.includes('photography')?'photography':p.slug.includes('agency')?'agency':'cleaning')}">Choose the next practical step</a>.</p>`,html:html+r.next,faq};
 }
 export const restoreFourReview=p=>originals.get(p.slug)||p;

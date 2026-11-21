@@ -18,7 +18,7 @@ describe('November topic organization and discovery',()=>{
  });
  it('assigns each guide exactly one real subject owner and covers all November publications and updates',()=>{
   const slugs=allGuideTopics.flatMap(t=>t.slugs);expect(slugs).toHaveLength(242);expect(new Set(slugs).size).toBe(242);
-  expect(businessTopics).toHaveLength(15);expect(novemberGuides).toHaveLength(163);
+  expect(businessTopics).toHaveLength(15);expect(novemberGuides).toHaveLength(165);
   expect(novemberGuides.filter(p=>p.published.startsWith('2026-11-'))).toHaveLength(80);
   for(const s of slugs)expect(blogPostMap[s],s).toBeDefined();for(const p of novemberGuides)expect(guideTopic(p.slug),p.slug).toBeDefined();
  });
