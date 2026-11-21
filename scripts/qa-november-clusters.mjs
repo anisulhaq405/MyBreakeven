@@ -21,7 +21,7 @@ for(const preview of novemberGuides){
  for(const target of c.posts)assert(h.includes(`href="/blogs/${target.slug}/"`));
  assert(h.includes(`rel="canonical" href="https://mybreakeven.com/blogs/${p.slug}/"`));
  assert.equal((h.match(/<h1\b/g)||[]).length,1);
- if(p.published.startsWith('2026-11-'))assert(incoming.get(p.slug).size>=2,p.slug+' needs at least two incoming article paths');
+ if(p.published>='2026-11-01')assert(incoming.get(p.slug).size>=2,p.slug+' needs at least two incoming article paths');
  rows.push({slug:p.slug,published:p.published,topic:t.title,hub:t.href,articleIncoming:incoming.get(p.slug).size,relatedNavigation:c.posts.length});
  if(t.href.startsWith('/blogs/#'))assert(hub.includes(`id="${t.href.split('#')[1]}"`));else{const sector=await fs.readFile(`dist${t.href}index.html`,'utf8');assert(sector.includes(`href="/blogs/${p.slug}/"`),p.slug+' missing from sector hub');}
 }

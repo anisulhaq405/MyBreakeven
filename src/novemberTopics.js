@@ -29,7 +29,9 @@ export const businessTopics=[
 const sectorSpecs=[['Cleaning','cleaning-business',cleaningClusters],['Landscaping','landscaping-business',landscapingClusters],['Mobile Detailing','mobile-detailing-business',mobileDetailingClusters],['Salon','salon-business',salonClusters],['Restaurant','restaurant-business',restaurantClusters],['Photography','photography-business',photographyClusters],['E-commerce','ecommerce-business',ecommerceClusters],['Agency','agency-business',agencyClusters]];
 export const sectorTopics=sectorSpecs.map(([tag,id,groups])=>({id,title:`${tag} business`,description:`Follow ${tag.toLowerCase()} costs, pricing, capacity and cash decisions.`,href:`/guides/${id}/`,slugs:blogListingData.posts.filter(p=>p.tag===tag).map(p=>p.slug),groups}));
 export const allGuideTopics=[...businessTopics,...sectorTopics];
-export const novemberGuides=blogListingData.posts.filter(p=>p.published.startsWith('2026-11-')||p.modified.startsWith('2026-11-'));
+// Keep the legacy export names; future publications must receive the same connected navigation.
+export const hasConnectedTopicNavigation=p=>[p.published,p.modified].some(date=>/^\d{4}-\d{2}-\d{2}$/.test(date||'')&&date>='2026-11-01');
+export const novemberGuides=blogListingData.posts.filter(hasConnectedTopicNavigation);
 export const novemberGuideSlugs=new Set(novemberGuides.map(p=>p.slug));
 export function guideTopic(slug){return allGuideTopics.find(t=>t.slugs.includes(slug));}
 const posts=new Map(blogListingData.posts.map(p=>[p.slug,p]));

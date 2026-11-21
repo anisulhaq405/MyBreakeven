@@ -30,6 +30,12 @@ import { renderToString } from "react-dom/server";
 import { createServer } from "vite";
 import { blogPosts } from "../src/content/blogs/index.js";
 
+import {allGuideTopics,sectorTopics} from '../src/novemberTopics.js';
+import {validateGuideClusters,validateCalculatorNavigation} from '../src/guideClusterPolicy.js';
+import {calculatorDirectory} from '../src/calculatorDirectory.js';
+console.log('Guide cluster coverage:', validateGuideClusters(blogPosts,allGuideTopics,sectorTopics));
+console.log('Calculator navigation:', validateCalculatorNavigation(calculatorDirectory,blogPosts));
+
 const calculators = {
   ...Object.fromEntries(Object.entries(freeTools).map(([slug, tool]) => [slug, [tool.title, tool.description]])),
   "cleaning-business-break-even-calculator": ["Cleaning Business Break-Even Calculator | MyBreakeven", "Calculate cleaning break-even visits, recurring clients and minimum prices with paid travel, loaded wages, owner pay and crew capacity."],
