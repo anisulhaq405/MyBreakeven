@@ -8,7 +8,8 @@ import { decisionTools } from './decisionTools.js';
 import { calculateUnitContribution } from './unitContribution.js';
 import { calculate } from './engine.js';
 import { demoPlans } from './authorityResources.js';
-import { blogPostMap } from './content/blogs/index.js';
+import {beforeFourBlogPosts} from './content/blogs/index.js';
+const blogPostMap=Object.fromEntries(beforeFourBlogPosts.map(p=>[p.slug,p]));
 import { remainingSectionEnrichment } from './content/blogs/remainingSectionEnrichment.js';
 const defaults = mode => Object.values(decisionTools).find(t => t.mode === mode).defaults;
 
