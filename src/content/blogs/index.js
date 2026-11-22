@@ -286,7 +286,9 @@ export const beforeGscBlogPosts = Object.values(blogCollections)
   .sort((a, b) => String(b.published).localeCompare(String(a.published)));
 
 export const beforeFourBlogPosts = beforeGscBlogPosts.map(applyGscReview);
-export const blogPosts = beforeFourBlogPosts.map(applyFourReview);
+import {applyExistingBatch1November23} from './existingBatch1November23.js';
+export const beforeBatch1BlogPosts = beforeFourBlogPosts.map(applyFourReview);
+export const blogPosts = beforeBatch1BlogPosts.map(applyExistingBatch1November23);
 
 export const blogModels = Object.freeze(
   [...new Set(blogPosts.map(post => post.tag).filter(tag => tag && tag !== "Break-Even Concepts"))],
