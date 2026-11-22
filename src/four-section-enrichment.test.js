@@ -8,7 +8,8 @@ import { recipeExample, foodPeriodExample, menuExample } from './foodCalculatorD
 import { calculate } from './engine.js';
 import { calculateUnitContribution } from './unitContribution.js';
 import { demoPlans } from './authorityResources.js';
-import { blogPostMap } from './content/blogs/index.js';
+import { beforeBatch1BlogPosts } from './content/blogs/index.js';
+const blogPostMap=Object.fromEntries(beforeBatch1BlogPosts.map(p=>[p.slug,p]));
 import { fourSectionEnrichment } from './content/blogs/fourSectionEnrichment.js';
 
 describe('four section worked decisions', () => {
