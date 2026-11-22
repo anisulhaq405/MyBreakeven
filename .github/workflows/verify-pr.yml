@@ -74,6 +74,9 @@ jobs:
         run: node scripts/qa-gsc-november20.mjs
       - name: Verify four existing GSC guide improvements
         run: node scripts/qa-gsc-four-november21.mjs
+      - name: Verify existing-page improvement batch 1
+        run: node scripts/qa-existing-batch1-nov23.mjs
+
       - name: Audit rendered routes and internal links
         run: python3 scripts/audit-built-site.py --output /tmp/site-inventory.json
       - name: Audit every page delivery budget and image dimensions
