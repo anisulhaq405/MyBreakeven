@@ -52,7 +52,7 @@ export default function LongformArticle({ article: a }) {
     {a.editorialStatus==='draft'&&<p className="article-note" role="status">Unpublished draft for review</p>}
     <span>{a.tag} {guideType}</span><h1>{a.title}</h1>
     <div className="article-meta"><time dateTime={a.published}>{a.editorialStatus==='draft'?'Draft prepared':'Published'} {dateLabel(a.published)}</time><span>Updated {dateLabel(a.modified)}</span></div>
-    <p className="article-note">Published by <a href="/about-us/">MyBreakeven</a>. <a href="/editorial-policy/">Editorial standards and corrections</a>. Report a calculation or content issue to <a href="mailto:support@mybreakeven.com">support@mybreakeven.com</a>.</p>
+    <p className="article-note">Published by <a href="/about-us/">MyBreakeven</a>. <a href="/editorial-policy/">Editorial standards and corrections</a>. Report a calculation or content issue to <a href="mailto:mybreakeven1@gmail.com">mybreakeven1@gmail.com</a>.</p>
     <p className="article-lead">{a.description}</p>
     <GuideCalculatorLink slug={a.slug} />
     <EcommerceExampleLink slug={a.slug} />
@@ -78,7 +78,7 @@ export default function LongformArticle({ article: a }) {
     {slug==='make-or-buy-decision'&&<MakeOrBuyWidget/>}
     {slug==='break-even-analysis-example'&&<BreakEvenChartWidget/>}
     <figure className="article-featured"><img src={a.image} {...responsiveFeatureProps(a.image)} alt={a.alt} width={blogImageDimensions[a.image]?.width || 1200} height={blogImageDimensions[a.image]?.height || 675} fetchPriority={hasIntroWidget?undefined:'high'} loading={hasIntroWidget?'lazy':undefined} decoding="async"/><figcaption>{a.imageCaption}</figcaption></figure>
-    <div className="day1-markdown" dangerouslySetInnerHTML={{ __html: a.html }} />
+    <div className="day1-markdown" dangerouslySetInnerHTML={{ __html: a.html.replaceAll('support@mybreakeven.com','mybreakeven1@gmail.com') }} />
     <NovemberTopicConnections article={a}/><ScenarioAnalysis slug={a.slug || slug} />
     {!faq.inline && faq.items.length > 0 && <section className="article-faq" id={a.sectionLinks?'guide-faqs':undefined}><h2>Frequently asked questions</h2>{faq.items.map(item => <details key={item.q}><summary>{item.q}</summary><p>{item.a}</p></details>)}</section>}
     {!a.html.includes('href="/blogs/"') && !a.html.includes('href="https://mybreakeven.com/blogs/"') && <p><a href="/blogs/">Browse the MyBreakeven blog hub</a> for related planning guides.</p>}

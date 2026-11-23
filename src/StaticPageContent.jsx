@@ -68,7 +68,7 @@ export const About = () => (
     </section>
     <section className="about-story" aria-label="Content responsibility">
       <div><h2>Who publishes these guides</h2></div>
-      <p>MyBreakeven publishes the guides and calculator explanations on this site. <a href="/founder/">Anis Ul Haq is the founder</a>. Worked examples show stated planning assumptions; they are not customer results or a forecast for your business. Read the <a href="/editorial-policy/">editorial and correction standards</a> and <a href="/calculation-methodology/">calculation methodology</a>. Send calculation errors, unclear assumptions or content corrections to <a href="mailto:support@mybreakeven.com">support@mybreakeven.com</a>.</p>
+      <p>MyBreakeven publishes the guides and calculator explanations on this site. <a href="/founder/">Anis Ul Haq is the founder</a>. Worked examples show stated planning assumptions; they are not customer results or a forecast for your business. Read the <a href="/editorial-policy/">editorial and correction standards</a> and <a href="/calculation-methodology/">calculation methodology</a>. Send calculation errors, unclear assumptions or content corrections to <a href="mailto:mybreakeven1@gmail.com">mybreakeven1@gmail.com</a>.</p>
     </section>
     <section className="about-principles" aria-label="How MyBreakeven works">
       <article>
@@ -106,7 +106,7 @@ export const About = () => (
     </section>
   </>
 );
-const supportEmailAddress = "support@mybreakeven.com";
+const supportEmailAddress = "mybreakeven1@gmail.com";
 const emailProviderUrl = (provider, subject) => {
   const email = encodeURIComponent(supportEmailAddress);
   const topic = encodeURIComponent(subject);
@@ -155,7 +155,7 @@ export const Contact = () => (
       <aside className="contact-inbox">
         <Mail />
         <small>PRIMARY SUPPORT INBOX</small>
-        <SupportEmailLink subject="MyBreakeven support request">support@mybreakeven.com <span aria-hidden="true">↗</span></SupportEmailLink>
+        <SupportEmailLink subject="MyBreakeven support request">mybreakeven1@gmail.com <span aria-hidden="true">↗</span></SupportEmailLink>
         <p>Product questions, account support, calculator feedback and industry requests.</p>
       </aside>
     </section>
@@ -206,11 +206,11 @@ export const legalPages = {
       ["Website information", "Our hosting and security providers may process standard technical data such as IP address, browser type, device information, requested pages and timestamps to operate, protect and diagnose the website."],
       ["Messages you send", "If you contact us, we use the information in your message to reply, provide support and improve the product."],
       ["Optional accounts", "If you create an account, our authentication provider processes your email address, encrypted authentication credentials, verification status and security session data. MyBreakeven never receives your plain-text password."],
-      ["Account controls", "You may request access, correction or deletion of account information by emailing support@mybreakeven.com. Authentication records may be retained where reasonably required for security, fraud prevention or legal compliance."],
+      ["Account controls", "You may request access, correction or deletion of account information by emailing mybreakeven1@gmail.com. Authentication records may be retained where reasonably required for security, fraud prevention or legal compliance."],
       ["Analytics", "With your permission, Google Analytics measures pages viewed, approximate location, device and browser information, traffic sources and interactions. We do not send calculator inputs, account passwords or saved scenario contents to Google Analytics. You can reject optional analytics without losing access to the service."],
       ["Error monitoring", "We use Sentry to receive technical error details needed to diagnose failures. Default personally identifiable information, session replay, logs and performance tracing are disabled. Query strings, request headers, cookies, request bodies and user identity are removed before an error is sent."],
       ["Service providers", "We use carefully selected providers for hosting, analytics, authentication, email and subscription payments through Polar. Each provider processes data for its stated service and under its own applicable terms."],
-      ["Your choices", "You may ask about, correct or request deletion of personal information you have directly provided by emailing support@mybreakeven.com."],
+      ["Your choices", "You may ask about, correct or request deletion of personal information you have directly provided by emailing mybreakeven1@gmail.com."],
     ],
   },
   "/terms-of-service": {
@@ -222,7 +222,7 @@ export const legalPages = {
       ["Your responsibility", "You are responsible for the accuracy of your inputs and for reviewing important decisions with qualified professionals where appropriate."],
       ["Acceptable use", "Do not misuse the service, interfere with its operation, attempt unauthorized access, or copy and resell the product or its protected content."],
       ["Availability", "We may improve, change or discontinue features. We aim for reliable service but cannot promise uninterrupted or error-free availability."],
-      ["Contact", "Questions about these terms can be sent to support@mybreakeven.com."],
+      ["Contact", "Questions about these terms can be sent to mybreakeven1@gmail.com."],
     ],
   },
   "/refund-policy": {
@@ -232,7 +232,7 @@ export const legalPages = {
     sections: [
       ["Subscription billing", "MyBreakeven Pro is billed monthly through Polar at the price shown during checkout."],
       ["Subscription cancellation", "Customers can cancel renewal through the billing customer portal. Access will normally continue through the paid billing period."],
-      ["Refund requests", "If a billing error, duplicate charge or material service problem occurs, contact us promptly at support@mybreakeven.com. Eligible requests will be reviewed fairly under applicable consumer law and the checkout provider's rules."],
+      ["Refund requests", "If a billing error, duplicate charge or material service problem occurs, contact us promptly at mybreakeven1@gmail.com. Eligible requests will be reviewed fairly under applicable consumer law and the checkout provider's rules."],
       ["No guaranteed outcome", "A subscription provides access to software features. Business results depend on user inputs and real-world conditions, so a particular financial outcome is not guaranteed."],
     ],
   },

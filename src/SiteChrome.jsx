@@ -111,7 +111,7 @@ export function SiteFooter() {
         <div className="compact-footer-brand">
           <Logo light />
           <p>Break-even, profit and capacity planning for small businesses.</p>
-          <a className="compact-support" href="mailto:support@mybreakeven.com"><Mail /> support@mybreakeven.com</a>
+          <a className="compact-support" href="mailto:mybreakeven1@gmail.com"><Mail /> mybreakeven1@gmail.com</a>
         </div>
         <nav className="compact-footer-nav" aria-label="Product links">
           {primaryNavigation.map(([label, href]) => <a key={label} href={href}>{label}</a>)}
