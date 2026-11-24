@@ -152,6 +152,9 @@ jobs:
       - name: Verify existing-page improvement batch 1
         run: node scripts/qa-existing-batch1-nov23.mjs
 
+      - name: Verify existing-page improvement batch 2
+        run: node scripts/qa-existing-batch2-nov24.mjs
+
       - name: Audit rendered routes and internal links
         run: python3 scripts/audit-built-site.py --output /tmp/site-inventory.json
 

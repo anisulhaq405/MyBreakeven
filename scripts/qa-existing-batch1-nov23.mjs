@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
-import {blogPosts,beforeBatch1BlogPosts} from '../src/content/blogs/index.js';
+import {beforeBatch2BlogPosts as blogPosts,beforeBatch1BlogPosts} from '../src/content/blogs/index.js';
 import {batch1ReviewedSlugs} from '../src/content/blogs/existingBatch1November23.js';
 const old=Object.fromEntries(beforeBatch1BlogPosts.map(p=>[p.slug,p]));
 const sitemap=await fs.readFile('dist/sitemap.xml','utf8');
