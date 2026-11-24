@@ -160,8 +160,8 @@ export default function App() {
             <div className="hero-calculator-heading">
               <div>
                 <span>FREE INDUSTRY CALCULATOR</span>
-                <h1>Build your break-even plan.</h1>
-                <p>Choose your model and adjust the monthly assumptions.</p>
+                <h1>Break-even point calculator</h1>
+                <p>Find the sales needed to cover your costs, then test owner pay, profit goals and capacity. Choose your business model to begin.</p><p className="calculator-definition"><strong>Breakeven means total revenue equals total costs.</strong> <a href="#breakeven-meaning">See the meaning, formula and example</a>.</p>
               </div>
               <span className="live-pill"><i /> Live</span>
             </div>
