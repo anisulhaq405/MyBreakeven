@@ -288,7 +288,9 @@ export const beforeGscBlogPosts = Object.values(blogCollections)
 export const beforeFourBlogPosts = beforeGscBlogPosts.map(applyGscReview);
 import {applyExistingBatch1November23} from './existingBatch1November23.js';
 export const beforeBatch1BlogPosts = beforeFourBlogPosts.map(applyFourReview);
-export const blogPosts = beforeBatch1BlogPosts.map(applyExistingBatch1November23);
+export const beforeBatch2BlogPosts = beforeBatch1BlogPosts.map(applyExistingBatch1November23);
+import {applyExistingBatch2November24} from './existingBatch2November24.js';
+export const blogPosts = beforeBatch2BlogPosts.map(applyExistingBatch2November24);
 
 export const blogModels = Object.freeze(
   [...new Set(blogPosts.map(post => post.tag).filter(tag => tag && tag !== "Break-Even Concepts"))],
