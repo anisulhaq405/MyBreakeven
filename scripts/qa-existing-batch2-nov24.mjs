@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
-import {blogPosts,beforeBatch2BlogPosts} from '../src/content/blogs/index.js';
+import {beforeBreakevenCoreBlogPosts as blogPosts,beforeBatch2BlogPosts} from '../src/content/blogs/index.js';
 import {batch2ReviewedSlugs} from '../src/content/blogs/existingBatch2November24.js';
 import {guideTopic} from '../src/novemberTopics.js';
 const old=Object.fromEntries(beforeBatch2BlogPosts.map(p=>[p.slug,p]));

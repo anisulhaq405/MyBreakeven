@@ -1,7 +1,7 @@
 import React from 'react';
 import {it,expect} from 'vitest';
 import {renderToStaticMarkup} from 'react-dom/server';
-import {blogPosts,beforeBatch2BlogPosts,blogPostMap} from './content/blogs/index.js';
+import {beforeBreakevenCoreBlogPosts as blogPosts,beforeBatch2BlogPosts,blogPostMap} from './content/blogs/index.js';
 import {batch2ReviewedSlugs,restoreExistingBatch2} from './content/blogs/existingBatch2November24.js';
 import {calculateUnitContribution,calculateContributionQuantity} from './unitContribution.js';
 import {articleFaq} from './articleFaq.js';

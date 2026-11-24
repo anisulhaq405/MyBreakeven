@@ -8,7 +8,7 @@ describe("homepage SEO contract", () => {
   it("has one concise, descriptive title and meta description", () => {
     const title = content(/<title>([^<]+)<\/title>/);
     const description = content(/<meta name="description" content="([^"]+)"/);
-    expect(title).toBe("Free Small Business Break-Even Calculator | MyBreakeven");
+    expect(title).toBe("Break-Even Calculator: Units &amp; Revenue | MyBreakeven");
     expect(title.length).toBeLessThanOrEqual(65);
     expect(description.length).toBeGreaterThanOrEqual(120);
     expect(description.length).toBeLessThanOrEqual(165);

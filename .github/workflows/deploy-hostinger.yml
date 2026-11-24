@@ -155,6 +155,9 @@ jobs:
       - name: Verify existing-page improvement batch 2
         run: node scripts/qa-existing-batch2-nov24.mjs
 
+      - name: Verify break-even topic and homepage
+        run: node scripts/qa-breakeven-core.mjs
+
       - name: Audit rendered routes and internal links
         run: python3 scripts/audit-built-site.py --output /tmp/site-inventory.json
 

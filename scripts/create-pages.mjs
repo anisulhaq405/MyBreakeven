@@ -379,6 +379,7 @@ const publicUrls = ["https://mybreakeven.com/",
   ...Object.keys(calculators).map(slug => `https://mybreakeven.com/calculators/${slug}/`),
 ];
 const articleModified = new Map(allArticles.map(article => [`https://mybreakeven.com/blogs/${article.slug}/`, article.modified]));
+articleModified.set("https://mybreakeven.com/", "2026-11-24");
 for (const slug of Object.keys(calculators)) articleModified.set(`https://mybreakeven.com/calculators/${slug}/`, (slug === "net-cash-flow-calculator" ? "2026-11-18" : freeTools[slug]?.reviewed) || (slug === "landscaping-break-even-calculator" ? "2026-10-24" : "2026-10-13"));
 for (const route of Object.keys(authorityPages)) articleModified.set(`https://mybreakeven.com/${route}/`, route === "resources/budget-vs-actual-template" ? day1PlanningRelease.date : route === "resources/cleaning-job-cost-worksheet" ? "2026-10-14" : ["founder", "resources", "resources/cleaning-business-budget-template"].includes(route) ? "2026-10-11" : "2026-10-10");
 for (const industry of ["restaurant", "cleaning", "ecommerce", "agency", "salon", "photography", "mobile-detailing", "landscaping"]) articleModified.set(`https://mybreakeven.com/guides/${industry}-business/`, "2026-10-14");

@@ -1,5 +1,6 @@
 import { homeFaq as faqs } from "./homeFaq.js";
 import React from "react";
+import BreakevenReference from "./BreakevenReference.jsx";
 import { calculatorDirectory } from './calculatorDirectoryData.js';
 const decisionTools = calculatorDirectory.filter(([, tool]) => tool.mode !== 'industry');
 
@@ -19,7 +20,7 @@ const models = [
 export default function HomeSEO() {
   return (
     <section className="seo-content" aria-labelledby="seo-heading">
-      <div className="seo-section"><h2>Free business planning tools</h2><p>Check pricing, ad returns, billable hours and cash before building your full business plan.</p><ul>{decisionTools.map(([slug,tool]) => <li key={slug}><a href={`/calculators/${slug}/`}>{tool.name}</a></li>)}</ul><a href="/tools/">Explore business calculators</a></div>
+      <BreakevenReference />
       <div className="seo-intro">
         <span>SMALL BUSINESS BREAK-EVEN ANALYSIS</span>
         <h2 id="seo-heading">A free break-even calculator built for real operating decisions</h2>
@@ -46,7 +47,7 @@ export default function HomeSEO() {
         </div>
         <ol>
           <li><strong>Calculate contribution per sale.</strong> Subtract direct materials, labor, other variable costs, acquisition cost and payment fees from average price. <a href="/blogs/fixed-vs-variable-costs/">Distinguish fixed and variable costs</a> before choosing the inputs; restaurant operators can also <a href="/calculators/food-cost-calculator/">reconcile actual food cost from inventory and sales</a>.</li>
-          <li><strong>Set the monthly amount to cover.</strong> Add operating overhead, owner pay and optional target profit.</li>
+          <li><strong>Set the monthly amount to cover.</strong> Use operating fixed costs for a zero-profit operating threshold. Add owner pay only if it is not already in costs, and add optional profit only for a higher funding target.</li>
           <li><strong>Calculate the exact sales target.</strong> Divide the monthly amount to cover by contribution per sale without prematurely rounding the result. <a href="/blogs/break-even-formula-units-dollars/">Compare the units and revenue formulas</a> or <a href="/blogs/calculate-break-even-point/">follow the step-by-step calculation</a>.</li>
           <li><strong>Check capacity and inquiry requirements.</strong> Compare required sales with team capacity and translate the sales target into required customer inquiries.</li>
         </ol>
@@ -87,6 +88,7 @@ export default function HomeSEO() {
           <div><dt>Whole jobs the team can deliver</dt><dd>43</dd></div>
         </dl>
       </div>
+      <div className="seo-section"><h2>Free business planning tools</h2><p>Check pricing, ad returns, billable hours and cash before building your full business plan.</p><ul>{decisionTools.map(([slug,tool]) => <li key={slug}><a href={`/calculators/${slug}/`}>{tool.name}</a></li>)}</ul><a href="/tools/">Explore business calculators</a></div>
       <div className="faq" aria-labelledby="faq-heading">
         <span>FREQUENTLY ASKED QUESTIONS</span>
         <h2 id="faq-heading">Small business break-even calculator FAQs</h2>
