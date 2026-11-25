@@ -7,9 +7,9 @@ const { featured, supporting, guideCount } = homeBlogData;
 
 const topics = [
   ["Break-even", "break-even"],
-  ["Pricing guides", "pricing"],
-  ["Startup costs", "startup"],
-  ["Profit margins", "profit"],
+  ["Pricing guides", "pricing-profitability"],
+  ["Startup costs", "business-launch"],
+  ["Profit margins", "pricing-profitability"],
 ];
 
 export default function HomeBlogShowcase() {
@@ -31,7 +31,7 @@ export default function HomeBlogShowcase() {
               <span className="home-journal-number">0{index + 2}</span><div><span className="home-journal-category">{post.tag}</span><h3><a href={`/blogs/${post.slug}/`}>{post.title}</a></h3></div><a className="home-journal-arrow" href={`/blogs/${post.slug}/`} aria-label={`Read ${post.title}`}><ArrowUpRight aria-hidden="true" /></a>
             </article>)}
           </div>
-          <div className="home-journal-topics" aria-label="Explore guides by topic"><span>FIND YOUR NEXT ANSWER</span><div>{topics.map(([label, query]) => <a key={query} href={`/blogs/?q=${encodeURIComponent(query)}`}>{label}<ArrowUpRight aria-hidden="true" /></a>)}</div></div>
+          <div className="home-journal-topics" aria-label="Explore guides by topic"><span>FIND YOUR NEXT ANSWER</span><div>{topics.map(([label, query]) => <a key={query} href={`/blogs/#topic-${query}`}>{label}<ArrowUpRight aria-hidden="true" /></a>)}</div></div>
         </div>
       </div>
     </div>

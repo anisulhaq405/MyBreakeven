@@ -7,7 +7,7 @@ assert.equal(index.version,1);assert.equal(urls.size,documents.length);assert((a
 const sitemap=await fs.readFile('dist/sitemap.xml','utf8');
 for(const [,url]of sitemap.matchAll(/<loc>([^<]+)<\/loc>/g))assert(urls.has(new URL(url).pathname),url);
 for(const d of documents){assert(d.url.startsWith('/')&&!d.url.startsWith('//'));assert(!/^\/(search|login|signup|dashboard|reset-password|forgot-password)(\/|$)/.test(d.url));const [path,fragment]=d.url.split('#'),html=await fs.readFile('dist'+path+'index.html','utf8');assert(!/<meta name="robots" content="[^"]*noindex/.test(html));if(fragment)assert(html.includes(`id="${fragment}"`));assert(d.title&&d.summary&&d.text);}
-for(const query of ['payroll','inventory valuation','cash flow','ROAS','margin markup','startup loans','recruitment'])assert(searchSite(documents,query).length>0,query);
+for(const query of ['payroll','inventory valuation','cash flow','ROAS','margin markup','startup loans','recruitment','BEP','COGS','return on ad spend','DTI'])assert(searchSite(documents,query).length>0,query);
 for(const kind of ['Guide','Calculator','Topic'])assert(searchSite(documents,'payroll').some(d=>d.kind===kind),kind);
 assert.equal(searchSite(documents,'business loans')[0].url,'/blogs/business-loans/');
 assert(searchSite(documents,'reimbursement').some(d=>d.url==='/blogs/small-business-grants/'));

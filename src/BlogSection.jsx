@@ -32,7 +32,7 @@ export default function BlogSection({ isHub = false } = {}) {
       <p className="site-search-scope">Search the whole site above, or filter the guides below by topic and category.</p>
       {isHub&&<label className="guide-topic-filter">Filter by business topic <select value={topic} onChange={e=>{setTopic(e.target.value);setTag('All');}}><option value="All">All topics</option>{businessTopics.map(t=><option key={t.id} value={t.id}>{t.title}</option>)}</select></label>}
       <div className="blog-filters" aria-label="Filter guides by category">{tags.map(item => <button type="button" key={item} className={tag === item ? "active" : ""} aria-pressed={tag === item} onClick={() => {setTag(item);setTopic('All');}}>{item}</button>)}</div>
-      <p className="blog-count" aria-live="polite">{filtered.length} {filtered.length === 1 ? "guide" : "guides"}</p>
+      <p className="blog-count" aria-live="polite">{filtered.length} {filtered.length === 1 ? "guide" : "guides"}{topic!=='All'?` in ${businessTopics.find(t=>t.id===topic)?.title}`:tag!=='All'?` in ${tag}`:''}</p>{(topic!=='All'||tag!=='All')&&<button type="button" className="blog-read" onClick={()=>{setTopic('All');setTag('All');}}>Clear guide filters</button>}
     </div>
     {featured ? <><article className="blog-featured-card">
       {featured.image && <a href={`/blogs/${featured.slug}/`} tabIndex="-1" aria-hidden="true"><img src={featured.image} {...responsiveFeatureProps(featured.image)} alt="" width="1200" height="675" loading="eager" decoding="async" /></a>}

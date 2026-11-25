@@ -1,6 +1,6 @@
 // Search only the versioned public-content index; never account or calculator entries.
 export const searchKinds = ['All', 'Calculator', 'Guide', 'Topic', 'Page'];
-export const normalizeSearch = value => String(value || '').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').replace(/\bbreak\s+even\b/g,'breakeven').replace(/\bcashflow\b/g,'cash flow').replace(/\be commerce\b/g,'ecommerce').trim();
+export const normalizeSearch = value => String(value || '').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').replace(/\bbreak\s+even\b/g,'breakeven').replace(/\bbep\b/g,'breakeven').replace(/\bcogs\b/g,'cost of goods sold').replace(/\broas\b/g,'return on ad spend').replace(/\broi\b/g,'return on investment').replace(/\bdti\b/g,'debt to income').replace(/\bcashflow\b/g,'cash flow').replace(/\be commerce\b/g,'ecommerce').trim();
 const stem = word => word.length > 4 ? word.replace(/ies$/,'y').replace(/s$/,'') : word;
 const stops = new Set(['a','an','the','how','to','for','of','and','or','in','is','my','your','with']);
 export function searchTerms(query) { return [...new Set(normalizeSearch(String(query).slice(0,120)).split(/\s+/).filter(t=>t&&!stops.has(t)).map(stem))].slice(0,10); }
