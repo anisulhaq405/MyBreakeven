@@ -19,9 +19,13 @@ import { cafePosts } from "../src/content/blogs/cafe.js";
 
 const latest = collection => [...collection].sort((a, b) => b.published.localeCompare(a.published))[0];
 await generateClusterLinkStyles();
-const pick = post => post && Object.fromEntries(
+const finalPosts = new Map(blogPosts.map(post => [post.slug, post]));
+const pick = original => {
+ const post = original && finalPosts.get(original.slug);
+ return post && Object.fromEntries(
   ["slug", "image", "title", "description", "tag"].map(key => [key, post[key]]),
 );
+};
 const highlights = {
   guideCount: blogLibrarySummary.guideCount,
   featured: pick(latest(blogCollections.concepts)),
