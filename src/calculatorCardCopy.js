@@ -1,5 +1,6 @@
 // Directory summaries describe the decision; worked figures stay on the calculator page.
 const copy = {
+ mortgage: ['Separate fixed-rate loan payments from tax, insurance and HOA; inspect the amortization schedule.', 'Plan mortgage payments'],
  household: ['Compare your income and payment obligations using your own figures.', 'Check my figures'],
  deposit: ['Compare deposit growth using your balance, rate, term and compounding assumptions.', 'Compare savings'],
  cashForecast: ['Map dated receipts and payments to spot cash shortfalls and reserve gaps.', 'Forecast cash'],

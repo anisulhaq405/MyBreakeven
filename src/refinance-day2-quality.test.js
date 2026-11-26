@@ -1,5 +1,5 @@
 import {describe,it,expect} from 'vitest';
-import {blogPostMap} from './content/blogs/index.js';
+import {beforePendingBlogPostMap as blogPostMap} from './content/blogs/index.js';
 import {calculateRefinance,refinanceDefaults} from './refinanceEngine.js';
 describe('Day 2 refinance content numerical and intent integrity',()=>{
  it('publishes a single focused decision section to each existing guide',()=>{

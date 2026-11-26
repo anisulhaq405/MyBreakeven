@@ -19,6 +19,7 @@ for(const p of posts){
  const sheet=await fs.readFile(`dist/downloads/${p.slug}-worksheet.html`,'utf8');assert(sheet.includes('contenteditable="true"'));assert(sheet.includes('does not automatically calculate'));
  report.push({slug:p.slug,url,status:'passed',faqCount:6,sizes});
 }
-assert.equal(posts.length,9);assert(!sitemap.includes('/blogs/other-comprehensive-income/'));
+assert.equal(posts.length,9);assert(!posts.some(p=>p.slug==='other-comprehensive-income')); // Historical release excludes OCI; current closure checks it independently.
+
 await fs.mkdir('qa-artifacts',{recursive:true});await fs.writeFile('qa-artifacts/day7-build.json',JSON.stringify({passed:true,newGuides:report,previousGuidesUnchanged:212},null,2));
 console.log('Day 7: 9 routes, 54 matched FAQs, 9 printable records, 27 optimized cover variants verified.');

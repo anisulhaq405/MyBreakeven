@@ -1,14 +1,14 @@
-# Legacy seven-day plan — separate open backlog
+# Legacy seven-day backlog — reconciled 26 November 2026
 
-Preserved from the supplied26October master handover. This is not the three-day finance blueprint and is not closed by its20 public pages.
+The former October ledger is historical, not a current list of missing URLs. The owner authorized pending-work closure on November 26. Known topic coverage is assigned to existing intent owners to avoid duplication.
 
-| Legacy pending owner | Status |
+| Legacy topic | Current disposition / owner |
 |---|---|
-| Working-Capital Management | Open; exact original owner/route needs legacy audit |
-| Working-Capital Turnover | Open; exact original owner/route needs legacy audit |
-| Cash-Flow Ratios | Open; exact original owner/route needs legacy audit |
-| Free Cash Flow | Open; exact original owner/route needs legacy audit |
-| Startup Financial Model / Business-Plan Projections | Open; exact original owner/route needs legacy audit |
-| Sixth outstanding owner | Unresolved: do not invent a topic or route |
+| Working-Capital Management | Existing /blogs/how-to-calculate-working-capital/; management controls added in the November26 closure. |
+| Working-Capital Turnover | Explicit formula, worked case and denominator limits added to that same working-capital owner. |
+| Cash-Flow Ratios | Explicit operating-CFO/current-liabilities measure added to /blogs/operating-cash-flow/. |
+| Free Cash Flow | Defined CFO-minus-cash-CAPEX example and limitations added to /blogs/operating-cash-flow/; existing cash-flow-analysis guide remains complementary. |
+| Startup Financial Model / Business-Plan Projections | Connected projection example added to /blogs/sales-forecast-small-business/ with existing business-plan and five-year projection resources. |
+| Sixth outstanding owner | Unidentified, not complete. Original topic/name is missing; do not invent a route. |
 
-Authoritative missing source: `MyBreakeven-7-Day-Exact-Pending-Audit-20261024.md`. It was not supplied or recoverable in the current handover session. The seven conditional topics also remain separate and uncommitted. This file preserves the known backlog without creating duplicate URLs or asserting that the unresolved owner was reconciled. Resume only after the active release or a new user priority.
+The original `MyBreakeven-7-Day-Exact-Pending-Audit-20261024.md` remains unavailable after a new exact-title Library search. Seven unnamed conditional topics from the old handover also cannot be declared complete without their names. The identified conditional mortgage calculator is handled separately in docs/pending-close-20261126/status.md. Unknown rows remain explicitly unresolved.

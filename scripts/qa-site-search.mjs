@@ -11,7 +11,7 @@ for(const query of ['payroll','inventory valuation','cash flow','ROAS','margin m
 for(const kind of ['Guide','Calculator','Topic'])assert(searchSite(documents,'payroll').some(d=>d.kind===kind),kind);
 assert.equal(searchSite(documents,'business loans')[0].url,'/blogs/business-loans/');
 assert(searchSite(documents,'reimbursement').some(d=>d.url==='/blogs/small-business-grants/'));
-assert(!urls.has('/blogs/other-comprehensive-income/'));
+assert(urls.has('/blogs/other-comprehensive-income/'));
 const page=await fs.readFile('dist/search/index.html','utf8');assert(page.includes('content="noindex,follow"'));assert(!sitemap.includes('/search/'));assert(page.includes('Search the entire site'));assert(page.includes('data-prerendered="true"'));
 for(const path of ['/','/blogs/','/tools/','/blogs/business-loans/','/calculators/employee-cost-calculator/'])assert((await fs.readFile('dist'+path+'index.html','utf8')).includes('aria-label="Search the entire site"'),path);
 console.log(`Site search passed: ${documents.length} public documents, all sitemap pages covered, public-only content, ranked queries, index size, crawl settings and shared entry points.`);

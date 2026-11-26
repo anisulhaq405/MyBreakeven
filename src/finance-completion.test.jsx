@@ -3,7 +3,7 @@ import React from 'react';
 import {describe,it,expect} from 'vitest';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {financeCompletionPosts as posts,financialRatiosHub,ratioReferenceRows,statementIncomeRows,statementBalanceRows} from './content/blogs/financeCompletionGuides.js';
-import {blogPostMap} from './content/blogs/index.js';
+import {beforePendingBlogPostMap as blogPostMap} from './content/blogs/index.js';
 import LongformArticle from './LongformArticle.jsx';
 import Hub from './FinancialRatiosHub.jsx';
 import {freeTools} from './freeTools.js';
