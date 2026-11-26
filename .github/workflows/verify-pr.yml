@@ -80,6 +80,9 @@ jobs:
       - name: Verify existing-page improvement batch 2
         run: node scripts/qa-existing-batch2-nov24.mjs
 
+      - name: Verify restaurant relevance batch 4
+        run: node scripts/qa-existing-batch4-nov26.mjs
+
       - name: Verify break-even topic and homepage
         run: node scripts/qa-breakeven-core.mjs
 

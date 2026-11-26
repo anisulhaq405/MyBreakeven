@@ -292,7 +292,9 @@ export const beforeBatch2BlogPosts = beforeBatch1BlogPosts.map(applyExistingBatc
 import {applyExistingBatch2November24} from './existingBatch2November24.js';
 export const beforeBreakevenCoreBlogPosts = beforeBatch2BlogPosts.map(applyExistingBatch2November24);
 import {applyBreakevenCore} from './breakevenCoreNovember24.js';
-export const blogPosts = beforeBreakevenCoreBlogPosts.map(applyBreakevenCore);
+export const beforeBatch4BlogPosts = beforeBreakevenCoreBlogPosts.map(applyBreakevenCore);
+import {applyExistingBatch4November26} from './existingBatch4November26.js';
+export const blogPosts = beforeBatch4BlogPosts.map(applyExistingBatch4November26);
 
 export const blogModels = Object.freeze(
   [...new Set(blogPosts.map(post => post.tag).filter(tag => tag && tag !== "Break-Even Concepts"))],

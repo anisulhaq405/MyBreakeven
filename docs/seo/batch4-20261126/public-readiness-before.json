@@ -1,0 +1,137 @@
+{
+  "checkedAtUTC": "2026-11-26T07:25:08.583170+00:00",
+  "scope": "Public HTTP readiness only. Not Google URL Inspection or proof of indexing. Three older discovered-list representatives plus current templates.",
+  "measurementService": "PageSpeed Insights API returned HTTP 429 for all five mobile requests. No LCP, INP or CLS pass is claimed.",
+  "rows": [
+    {
+      "path": "/",
+      "status": 200,
+      "final": "https://mybreakeven.com/",
+      "encoding": "gzip",
+      "responseBytes": 14604,
+      "canonical": [
+        "https://mybreakeven.com/"
+      ],
+      "h1Count": 1,
+      "noindex": false,
+      "xRobotsTag": null
+    },
+    {
+      "path": "/tools/",
+      "status": 200,
+      "final": "https://mybreakeven.com/tools/",
+      "encoding": "gzip",
+      "responseBytes": 10622,
+      "canonical": [
+        "https://mybreakeven.com/tools/"
+      ],
+      "h1Count": 1,
+      "noindex": false,
+      "xRobotsTag": null
+    },
+    {
+      "path": "/blogs/",
+      "status": 200,
+      "final": "https://mybreakeven.com/blogs/",
+      "encoding": "gzip",
+      "responseBytes": 48390,
+      "canonical": [
+        "https://mybreakeven.com/blogs/"
+      ],
+      "h1Count": 1,
+      "noindex": false,
+      "xRobotsTag": null
+    },
+    {
+      "path": "/guides/restaurant-business/",
+      "status": 200,
+      "final": "https://mybreakeven.com/guides/restaurant-business/",
+      "encoding": "gzip",
+      "responseBytes": 8554,
+      "canonical": [
+        "https://mybreakeven.com/guides/restaurant-business/"
+      ],
+      "h1Count": 1,
+      "noindex": false,
+      "xRobotsTag": null
+    },
+    {
+      "path": "/blogs/restaurant-food-cost-percentage/",
+      "status": 200,
+      "final": "https://mybreakeven.com/blogs/restaurant-food-cost-percentage/",
+      "encoding": "gzip",
+      "responseBytes": 11584,
+      "canonical": [
+        "https://mybreakeven.com/blogs/restaurant-food-cost-percentage/"
+      ],
+      "h1Count": 1,
+      "noindex": false,
+      "xRobotsTag": null
+    },
+    {
+      "path": "/blogs/restaurant-labor-cost-percentage/",
+      "status": 200,
+      "final": "https://mybreakeven.com/blogs/restaurant-labor-cost-percentage/",
+      "encoding": "gzip",
+      "responseBytes": 10071,
+      "canonical": [
+        "https://mybreakeven.com/blogs/restaurant-labor-cost-percentage/"
+      ],
+      "h1Count": 1,
+      "noindex": false,
+      "xRobotsTag": null
+    },
+    {
+      "path": "/calculators/food-cost-calculator/",
+      "status": 200,
+      "final": "https://mybreakeven.com/calculators/food-cost-calculator/",
+      "encoding": "gzip",
+      "responseBytes": 10465,
+      "canonical": [
+        "https://mybreakeven.com/calculators/food-cost-calculator/"
+      ],
+      "h1Count": 1,
+      "noindex": false,
+      "xRobotsTag": null
+    },
+    {
+      "path": "/blogs/accrued-expenses/",
+      "status": 200,
+      "final": "https://mybreakeven.com/blogs/accrued-expenses/",
+      "encoding": "gzip",
+      "responseBytes": 8630,
+      "canonical": [
+        "https://mybreakeven.com/blogs/accrued-expenses/"
+      ],
+      "h1Count": 1,
+      "noindex": false,
+      "xRobotsTag": null
+    },
+    {
+      "path": "/blogs/accumulated-depreciation/",
+      "status": 200,
+      "final": "https://mybreakeven.com/blogs/accumulated-depreciation/",
+      "encoding": "gzip",
+      "responseBytes": 7952,
+      "canonical": [
+        "https://mybreakeven.com/blogs/accumulated-depreciation/"
+      ],
+      "h1Count": 1,
+      "noindex": false,
+      "xRobotsTag": null
+    },
+    {
+      "path": "/blogs/activity-based-costing/",
+      "status": 200,
+      "final": "https://mybreakeven.com/blogs/activity-based-costing/",
+      "encoding": "gzip",
+      "responseBytes": 8695,
+      "canonical": [
+        "https://mybreakeven.com/blogs/activity-based-costing/"
+      ],
+      "h1Count": 1,
+      "noindex": false,
+      "xRobotsTag": null
+    }
+  ]
+}
