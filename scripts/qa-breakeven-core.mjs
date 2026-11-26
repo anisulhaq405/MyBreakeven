@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
-import{blogPosts,beforeBreakevenCoreBlogPosts}from'../src/content/blogs/index.js';
+import{beforeBatch4BlogPosts as blogPosts,beforeBreakevenCoreBlogPosts}from'../src/content/blogs/index.js';
 import{homeFaq}from'../src/homeFaq.js';
 const home=await fs.readFile('dist/index.html','utf8'),guide=await fs.readFile('dist/blogs/calculate-break-even-point/index.html','utf8');
 assert.equal(blogPosts.length,242);

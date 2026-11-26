@@ -1,0 +1,30 @@
+{
+  "captured": "2026-11-26 before Batch 4 edits",
+  "latestGscExport": "2026-11-20, through 2026-11-18; page-filtered query data and current inspection unavailable",
+  "pages": [
+    {
+      "slug": "restaurant-food-cost-percentage",
+      "title": "How to Calculate Restaurant Food Cost Percentage",
+      "seoTitle": "Restaurant Food Cost Percentage Formula",
+      "description": "Calculate restaurant food cost percentage from inventory, purchases and food sales. Compare the result with recipe costs to spot a real variance.",
+      "metaDescription": "Calculate restaurant food cost percentage from inventory, purchases and food sales. See a 33.33% worked example and compare actual vs ideal recipe cost.",
+      "opening": "Food cost percentage compares the cost of food used during a period with food sales from that same period. It is useful for checking waste, portion control and purchasing after the fact. It differs from the recipe cost of one dish, which helps set a menu price before the sale. Mixing those two measures can make a menu seem healthy while inventory is disappearing faster than planned.",
+      "published": "2026-09-26",
+      "modified": "2026-10-27",
+      "image": "/images/title-covers/blog-restaurant-food-cost-percentage-20261026.webp",
+      "calculatorSlug": "restaurant-break-even-calculator"
+    },
+    {
+      "slug": "restaurant-labor-cost-percentage",
+      "title": "Restaurant Labor Cost Percentage: Calculate Loaded Payroll",
+      "seoTitle": "Restaurant Labor Cost Percentage: Formula",
+      "description": "Calculate restaurant labor cost percentage, then test a shift schedule against forecast orders, loaded payroll and staffing thresholds. Includes worked numbers.",
+      "metaDescription": "Calculate restaurant labor cost percentage, then test a shift schedule against forecast orders, loaded payroll and staffing thresholds. Includes worked numbers.",
+      "opening": "Restaurant labor cost percentage is loaded labor expense divided by sales over the same period. Add wages, employer payroll taxes, benefits and paid management time according to the measure you choose; state whether owner compensation is included. A percentage can tell you what changed, but the actual schedule tells you why. Two restaurants with the same ratio can have very different service formats and costs.",
+      "published": "2026-09-26",
+      "modified": "2026-10-25",
+      "image": "/images/title-covers/blog-restaurant-labor-cost-percentage-20261026.webp",
+      "calculatorSlug": "restaurant-break-even-calculator"
+    }
+  ]
+}

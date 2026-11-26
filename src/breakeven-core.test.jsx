@@ -5,7 +5,7 @@ import{readFileSync}from'node:fs';
 import HomeSEO from './HomeSEO.jsx';
 import App from './main.jsx';
 import LongformArticle from './LongformArticle.jsx';
-import{blogPosts,beforeBreakevenCoreBlogPosts,blogPostMap}from'./content/blogs/index.js';
+import{beforeBatch4BlogPosts as blogPosts,beforeBreakevenCoreBlogPosts,blogPostMap}from'./content/blogs/index.js';
 import{homeFaq}from'./homeFaq.js';
 it('defines the topic visibly before peripheral tools and retains one clear homepage H1',()=>{
  const h=renderToStaticMarkup(<App/>);expect((h.match(/<h1\b/g)||[]).length).toBe(1);expect(h).toContain('<h1>Break-even point calculator</h1>');expect(h.indexOf('id="breakeven-meaning"')).toBeLessThan(h.indexOf('Free business planning tools'));expect(h).toContain('total revenue equals total costs');

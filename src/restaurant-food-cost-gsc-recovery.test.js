@@ -1,5 +1,6 @@
 import {describe,it,expect} from 'vitest';
-import {blogPostMap} from './content/blogs/index.js';
+import {beforeBatch4BlogPosts} from './content/blogs/index.js';
+const blogPostMap=Object.fromEntries(beforeBatch4BlogPosts.map(p=>[p.slug,p]));
 import {applyRestaurantFoodCostGscRecovery} from './content/blogs/restaurantFoodCostGscRecovery.js';
 
 describe('October 26 restaurant food-cost GSC recovery',()=>{
