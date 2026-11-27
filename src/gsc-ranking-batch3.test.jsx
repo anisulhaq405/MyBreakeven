@@ -21,6 +21,7 @@ describe('ranking-task handoffs between existing intent owners',()=>{
  it('suppresses each new block when a destination already exists in body or review HTML',()=>{
   for(const [source,target]of pairs){const p=blogPostMap[source];
    for(const key of ['html','answerHtml','queryReviewHtml'])expect(renderToStaticMarkup(<DiscoveryNextStep article={{...p,[key]:(p[key]||'')+`<a href="/blogs/${target}/">Existing answer</a>`}}/>)).toBe('');
+   expect(renderToStaticMarkup(<DiscoveryNextStep article={{...p,sections:[{heading:'Existing path',links:[['Read the next guide',`/blogs/${target}/`]]}]}}/>)).toBe('');
   }
  });
  it('keeps landscaping in its industry subgroup and documents distinct follow-on questions',()=>{

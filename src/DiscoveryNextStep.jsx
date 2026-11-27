@@ -87,9 +87,10 @@ export function discoveryNextStep(article) {
   if (!step) return null;
   const body = `${article.html || ''} ${article.answerHtml || ''} ${article.queryReviewHtml || ''}`;
   const linked = [...body.matchAll(/href=["'](?:https:\/\/mybreakeven\.com)?\/blogs\/([^/"'?#]+)\//g)].some(([, slug]) => slug === step.target);
+  const structuredLinked = article.sections?.some(section => section.links?.some(([, href]) => String(href).match(/^(?:https:\/\/mybreakeven\.com)?\/blogs\/([^/"'?#]+)\//)?.[1] === step.target));
   // Keep an existing topic-renderer path instead of inserting a duplicate if
   // the topic order changes in a later release.
-  if (linked || topicConnections(article)?.posts.some(post => post.slug === step.target)) return null;
+  if (linked || structuredLinked || topicConnections(article)?.posts.some(post => post.slug === step.target)) return null;
   return step;
 }
 
