@@ -1,0 +1,45 @@
+name: Verify Batch 2 live pages
+on:
+  push:
+    branches: [seo/gsc-batch2-live-20261127]
+permissions:
+  contents: read
+jobs:
+  public-http:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Verify published answers and preserved controls
+        shell: python
+        run: |
+          import urllib.request, concurrent.futures, re, hashlib, json
+          from html import unescape
+          rows = [
+            ("target-profit-sales-formula", "Target profit: required units and sales", "Target Profit Formula: Sales & Units Example | MyBreakeven"),
+            ("margin-of-safety-business", "Margin of safety: units, sales and percentage", "Margin of Safety Formula: Units & Sales | MyBreakeven"),
+            ("contribution-margin-vs-profit-margin", "One sales figure, three different margins", "Contribution Margin vs Profit Margin | MyBreakeven"),
+            ("retail-break-even-analysis", "Retail break-even: count customer receipts, not items", "Retail Break-Even Analysis: Sales Example | MyBreakeven"),
+            ("lower-break-even-point", "886ddc22d021aafa988b402c3b37ef7eb9561f3426002c93eaa00c860b08ce2a", "How to Lower Your Break-Even Point: 4 Ways | MyBreakeven"),
+            ("break-even-analysis-example", "ea7ed87e4d413f1e4de4dc6a122918f12e9e132f22de7752c48a754d07133a6a", "Break-Even Analysis Example: 500 Units | MyBreakeven")
+          ]
+          def check(row):
+            slug,expected,title=row
+            url="https://mybreakeven.com/blogs/"+slug+"/"
+            with urllib.request.urlopen(urllib.request.Request(url,headers={"User-Agent":"MyBreakeven-authorized-release-QA/1.0"}),timeout=50) as r:
+              assert r.status==200,(slug,r.status)
+              h=r.read().decode()
+            summary=re.search(r'<section class="article-summary">([\s\S]*?)</section>',h).group(1)
+            assert unescape(re.search(r"<title>(.*?)</title>",h).group(1))==title,(slug,"title")
+            assert 'rel="canonical" href="'+url+'"' in h,(slug,"canonical")
+            assert not re.search(r'name="(?:robots|googlebot)" content="[^"]*noindex',h),(slug,"noindex")
+            assert len(re.findall(r"<h1\b",h))==1,(slug,"h1")
+            if len(expected)==64:
+              assert hashlib.sha256(summary.encode()).hexdigest()==expected,(slug,"control changed")
+            else:
+              assert expected in summary and "click-answer-table" in summary,(slug,"new answer absent")
+              assert h.index(summary)<h.index("article-featured"),(slug,"answer position")
+            return {"url":url,"status":200,"titlePreserved":True,"canonical":True,"answer":"unchanged control" if len(expected)==64 else "new table verified"}
+          with concurrent.futures.ThreadPoolExecutor(6) as pool:
+            for result in pool.map(check,rows):
+              print(json.dumps(result))
+          print("PASS: four live answer tables, two identical control summaries, all six titles/canonicals/indexability.")
