@@ -86,6 +86,9 @@ jobs:
       - name: Verify controlled existing-page answer presentation
         run: node scripts/qa-gsc-click-batch2.mjs
 
+      - name: Verify existing-owner ranking task paths
+        run: node scripts/qa-gsc-ranking-batch3.mjs
+
       - name: Verify authorized pending-plan closure
         run: node scripts/qa-pending-close.mjs
 
