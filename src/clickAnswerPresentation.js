@@ -27,7 +27,7 @@ export const clickAnswerVersions={
 export function presentClickAnswer(article){
  let html=article.answerHtml;
  const replacement=clickAnswerVersions[article.slug];
- if(!replacement||!html)return html;
+ if(!replacement||!html||!article.html?.includes(`id="gsc-next-${article.slug}"`))return html;
  // Replace the existing summary presentation, rather than stacking another box.
  if(article.slug==='margin-of-safety-business')html=html.replace(/<ul>[\s\S]*?<\/ul>/,'');
  if(article.slug==='contribution-margin-vs-profit-margin')html=html.replace(/<div class="article-table-scroll"><table>[\s\S]*?<\/table><\/div>/,'');
