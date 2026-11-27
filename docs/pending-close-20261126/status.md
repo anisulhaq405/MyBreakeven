@@ -1,5 +1,7 @@
 # Authorized pending-plan closure — 26 November 2026
 
+> Follow-up, 27 November: the sixth legacy core intent was recovered as **business valuation** from the October25 release record and is already covered by N064. The full 81-new/45-existing reconciliation is now in `docs/plan-closure-20261127/README.md`. Historical statements below describe the November26 checkpoint.
+
 User instruction: complete pending/held work today. This supersedes the prior exclusion of a general mortgage tool and authorizes revisiting held educational content. It does not create or imply an independent qualified accounting review.
 
 | Item | Disposition |
