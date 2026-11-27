@@ -1,5 +1,5 @@
 import {describe,it,expect} from 'vitest';
-import {blogPostMap} from './content/blogs/index.js';
+import {beforePendingBlogPostMap as blogPostMap} from './content/blogs/index.js';
 import {calculateRefinance,refinanceDefaults} from './refinanceEngine.js';
 import {applyDay3RefinanceContent} from './content/blogs/day3RefinanceContent.js';
 describe('Day 3 C08 G10-G12 content and refinance decision matrix',()=>{

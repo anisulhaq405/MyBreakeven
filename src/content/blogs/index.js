@@ -294,7 +294,11 @@ export const beforeBreakevenCoreBlogPosts = beforeBatch2BlogPosts.map(applyExist
 import {applyBreakevenCore} from './breakevenCoreNovember24.js';
 export const beforeBatch4BlogPosts = beforeBreakevenCoreBlogPosts.map(applyBreakevenCore);
 import {applyExistingBatch4November26} from './existingBatch4November26.js';
-export const blogPosts = beforeBatch4BlogPosts.map(applyExistingBatch4November26);
+export const beforePendingBlogPosts = beforeBatch4BlogPosts.map(applyExistingBatch4November26);
+export const beforePendingBlogPostMap=Object.fromEntries(beforePendingBlogPosts.map(p=>[p.slug,p]));
+import {pendingOCIPost} from './pendingCloseOCI.js';
+import {applyPendingClose} from './pendingCloseReview.js';
+export const blogPosts = [pendingOCIPost,...beforePendingBlogPosts.map(applyPendingClose)];
 
 export const blogModels = Object.freeze(
   [...new Set(blogPosts.map(post => post.tag).filter(tag => tag && tag !== "Break-Even Concepts"))],

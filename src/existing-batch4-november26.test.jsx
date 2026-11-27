@@ -1,7 +1,7 @@
 import React from 'react';
 import {describe,it,expect} from 'vitest';
 import {renderToStaticMarkup} from 'react-dom/server';
-import {blogPosts,beforeBatch4BlogPosts,blogPostMap} from './content/blogs/index.js';
+import {beforePendingBlogPosts as blogPosts,beforeBatch4BlogPosts,beforePendingBlogPostMap as blogPostMap} from './content/blogs/index.js';
 import {batch4ReviewedSlugs} from './content/blogs/existingBatch4November26.js';
 import {calculateRecipe,calculateFoodPeriod,calculateMenuPrice} from './foodCostEngine.js';
 import {recipeExample,foodPeriodExample} from './foodCalculatorDefaults.js';

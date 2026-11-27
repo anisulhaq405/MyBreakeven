@@ -1,0 +1,94 @@
+export const pendingOCIPost = {
+  "id": "N039",
+  "slug": "other-comprehensive-income",
+  "title": "Other Comprehensive Income: Reconcile OCI, AOCI and Equity",
+  "seoTitle": "Other Comprehensive Income: OCI and AOCI",
+  "description": "Separate net income, current-period OCI and accumulated OCI. Follow a limited US GAAP debt-security reclassification through a checked equity reconciliation.",
+  "primaryKeyword": "other comprehensive income",
+  "opening": "Other comprehensive income, or OCI, is a period flow reported outside net income for items whose accounting treatment requires it. Accumulated other comprehensive income, or AOCI, is the related accumulated equity balance. Keep the flow, balance and any reclassification separate.",
+  "metaDescription": "Separate net income, current-period OCI and accumulated OCI. Follow a limited US GAAP debt-security reclassification through a checked equity reconciliation.",
+  "published": "2026-11-26",
+  "modified": "2026-11-26",
+  "tag": "Break-Even Concepts",
+  "tags": [
+    "Accounting",
+    "Financial statements",
+    "OCI"
+  ],
+  "cluster": "concepts",
+  "image": "/images/title-covers/pending-other-comprehensive-income-20261126.webp",
+  "alt": "Other Comprehensive Income title beside an illustrative income and equity reconciliation desk",
+  "imageCaption": "AI-created editorial illustration. The numerical case is fictional; no independent accounting certification is implied.",
+  "editorialStatus": "published",
+  "scopeBoundary": "Educational presentation arithmetic after accounting classification and tax effects are supplied; no instrument eligibility, journal-entry, tax or filing opinion.",
+  "faq": [
+    {
+      "q": "What is the difference between OCI and AOCI?",
+      "a": "OCI is a current-period flow; AOCI is the accumulated equity balance. This case adds $800 net current OCI to $3,000 opening AOCI to reach $3,800."
+    },
+    {
+      "q": "Is every unrealized investment gain reported in OCI?",
+      "a": "No. The applicable requirements and classification determine the treatment. The guide assumes only a qualifying available-for-sale debt-security noncredit-gain case."
+    },
+    {
+      "q": "Why is the $800 gain subtracted in OCI when included in net income?",
+      "a": "It was already accumulated through OCI. The reclassification adjustment prevents the same gain from being counted twice in comprehensive income."
+    },
+    {
+      "q": "Does the reclassification create another $800 total-equity gain?",
+      "a": "No. In the modeled transfer, net income rises $800 and OCI falls $800, leaving total comprehensive income unchanged by the transfer itself."
+    },
+    {
+      "q": "Are the example’s values before or after tax?",
+      "a": "They are supplied after-tax amounts. The guide does not choose a tax rate or calculate the underlying tax allocation."
+    },
+    {
+      "q": "Does this worksheet establish US GAAP compliance?",
+      "a": "No. It checks a limited reconciliation after recognition eligibility and tax effects are assumed to have been determined. Entity-specific policy, disclosure and professional review remain separate."
+    }
+  ],
+  "sectionLinks": [
+    [
+      "oci-quick-answer",
+      "Definition and quick answer"
+    ],
+    [
+      "scope",
+      "State the framework before deciding where a gain belongs"
+    ],
+    [
+      "distinguish",
+      "Separate net income, OCI, comprehensive income and AOCI"
+    ],
+    [
+      "case",
+      "Define the original net-of-tax teaching inputs"
+    ],
+    [
+      "flow",
+      "Reconcile current-period comprehensive income without double counting"
+    ],
+    [
+      "reclassification",
+      "Trace the reclassification to its source and earnings line"
+    ],
+    [
+      "equity",
+      "Reconcile the flow to closing corporate equity"
+    ],
+    [
+      "read",
+      "Read the note rather than only the OCI headline"
+    ],
+    [
+      "review",
+      "Use a component-level evidence and review record"
+    ],
+    [
+      "oci-reader-boundary",
+      "Scope and next steps"
+    ]
+  ],
+  "html": "<h2 id=\"scope\">State the framework before deciding where a gain belongs</h2><p>This guide uses a limited US GAAP presentation example for a corporation. It assumes the underlying accounting assessment has already established that the modeled noncredit gains on available-for-sale debt securities belong initially in OCI. It does not choose an investment classification, calculate a credit-loss allowance or determine when an instrument qualifies for a particular treatment.</p><p>The <a href=\"https://xbrl.fasb.org/impdocs/OCI_TIG/othercompincome.htm\">FASB April 2025 OCI Taxonomy Implementation Guide</a> illustrates OCI, accumulated balances and reclassifications, while explicitly stating that it is not authoritative recognition guidance. Its examples assume the reporting criteria are met. The applicable accounting requirements and the entity’s qualified advisers determine a real reporting treatment. This teaching example does not reproduce or certify a current complete Codification assessment. Do not use a taxonomy label, this worksheet or an old investment example as permission to route an unwanted operating loss outside net income.</p><h2 id=\"distinguish\">Separate net income, OCI, comprehensive income and AOCI</h2><div class=\"article-table-scroll\"><table><caption>Four labels used throughout this bounded example</caption><thead><tr><th scope=\"col\">Measure</th><th scope=\"col\">Period or balance?</th><th scope=\"col\">Question answered</th></tr></thead><tbody><tr><th scope=\"row\">Net income</th><td>Current-period flow</td><td>What is the result included in earnings?</td></tr><tr><th scope=\"row\">OCI</th><td>Current-period flow</td><td>What qualifying items are outside net income this period?</td></tr><tr><th scope=\"row\">Comprehensive income</th><td>Current-period flow</td><td>What is net income plus OCI?</td></tr><tr><th scope=\"row\">AOCI</th><td>Accumulated equity balance</td><td>What related amounts remain accumulated at the reporting date?</td></tr></tbody></table></div><p>AOCI is separate from retained earnings in this example’s equity reconciliation. Net income flows into retained earnings through the close, while OCI changes the accumulated OCI component. A gain is not automatically OCI merely because it is unrealized. Classification follows the relevant requirements; different securities and transactions can have different earnings treatment. Avoid applying this debt-security illustration to shares, ordinary customer invoices or any other asset without a fresh assessment.</p><h2 id=\"case\">Define the original net-of-tax teaching inputs</h2><p>All amounts below are fictional USD inputs, not a company result or market observation. Assume opening AOCI is $3,000, all attributable to the modeled eligible component. Current-period net income before the specified reclassification is $9,000. A new qualifying holding gain of $1,600 is initially reported in OCI. A separate prior accumulated gain of $800 is now appropriately reclassified into net income upon the assumed sale.</p><p>All supplied gain amounts and income figures are after their separately determined income-tax effects. No tax rate is prescribed and no current/deferred-tax journal is calculated. Assume no credit losses, impairment, hedging, noncontrolling interest, other OCI components or opening corrections. These boundaries isolate the presentation arithmetic; they do not turn the example into a complete US GAAP accounting model.</p><h2 id=\"flow\">Reconcile current-period comprehensive income without double counting</h2><div class=\"article-table-scroll\"><table><caption>Original flow and accumulated-balance reconciliation; all USD figures net of tax</caption><thead><tr><th scope=\"col\">Movement / result</th><th scope=\"col\">Amount</th></tr></thead><tbody><tr><th scope=\"row\">Net income before the assumed reclassification</th><td>9,000</td></tr><tr><th scope=\"row\">Prior gain reclassified into net income</th><td>+800</td></tr><tr><th scope=\"row\">Net income including the reclassification</th><td>9,800</td></tr><tr><th scope=\"row\">Current gain initially reported in OCI</th><td>+1,600</td></tr><tr><th scope=\"row\">Reclassification adjustment in OCI</th><td>−800</td></tr><tr><th scope=\"row\">Net current-period OCI</th><td>800</td></tr><tr><th scope=\"row\">Comprehensive income</th><td>10,600</td></tr><tr><th scope=\"row\">Opening AOCI</th><td>3,000</td></tr><tr><th scope=\"row\">Closing AOCI</th><td>3,800</td></tr></tbody></table></div><p>Net income becomes $9,000 + $800 = $9,800. Current-period OCI is $1,600 − $800 = $800. Comprehensive income is $9,800 + $800 = $10,600. Closing AOCI is $3,000 opening balance + $800 current-period OCI = $3,800. Retain the minus sign on the OCI reclassification: the previously accumulated gain cannot be counted again in current comprehensive income simply because it is now included in net income.</p><h2 id=\"reclassification\">Trace the reclassification to its source and earnings line</h2><p>The <a href=\"https://fasb.org/page/getarticle?uid=fasb_NewsRelease02-05-13Body_0228221200\">FASB explanation of ASU 2013-02</a> describes greater visibility over amounts reclassified from AOCI and affected earnings lines; it does not create eligibility for an otherwise unsupported OCI item. For the assumed sale, retain the investment reference, accumulated gain being released, disposal evidence, tax treatment and the specific net-income line receiving the $800.</p><p>The numerical transfer adds $800 to the period’s net income and subtracts $800 through OCI, leaving total comprehensive income unchanged by the transfer itself. Before that transfer, this case would show $9,000 net income and $1,600 OCI, also totaling $10,600. The release can change the composition of equity once income closes, without creating another $800 of new total equity. It is not an $800 bank receipt by itself; sale cash and the carrying amount require their separate asset record.</p><h2 id=\"equity\">Reconcile the flow to closing corporate equity</h2><p>Add fictional opening retained earnings of $40,000 and paid-in capital of $50,000. Assume $2,000 validly declared dividends, no new shares and no other equity movements. Opening total equity is $50,000 + $40,000 + $3,000 = $93,000. Closing retained earnings is $40,000 + $9,800 − $2,000 = $47,800. Paid-in capital stays $50,000 and closing AOCI is $3,800.</p><div class=\"article-table-scroll\"><table><caption>Separate equity components; USD</caption><thead><tr><th scope=\"col\">Component</th><th scope=\"col\">Opening</th><th scope=\"col\">Closing</th></tr></thead><tbody><tr><th scope=\"row\">Paid-in capital</th><td>50,000</td><td>50,000</td></tr><tr><th scope=\"row\">Retained earnings</th><td>40,000</td><td>47,800</td></tr><tr><th scope=\"row\">AOCI</th><td>3,000</td><td>3,800</td></tr><tr><th scope=\"row\">Total equity</th><td>93,000</td><td>101,600</td></tr></tbody></table></div><p>The independent total is $93,000 + $10,600 comprehensive income − $2,000 dividends = $101,600. Declared dividends are an owner distribution, outside this modeled comprehensive-income flow. Adding comprehensive income to equity and then adding net income a second time would overstate the change by $9,800. Use each component once.</p><h2 id=\"read\">Read the note rather than only the OCI headline</h2><p>Look for the component, opening amount, current movements, reclassification, tax basis and closing balance. Determine whether a positive amount means gain, release of a loss or a presentation convention in that particular table. An AOCI loss can coexist with current positive OCI when a prior loss is recovering or being reclassified; a positive period flow does not imply the accumulated balance is positive.</p><p>A <a href=\"https://www.sec.gov/Archives/edgar/data/1018979/000119312526314074/R16.htm\">2026 SEC-filed issuer note</a> provides a real example of separately presenting beginning balance, OCI before reclassification, reclassified amounts and ending AOCI. It is evidence of that issuer’s disclosure, not an SEC endorsement or a universal policy for every company. This guide deliberately uses independent fictional amounts rather than relabeling the issuer’s figures as a small-business benchmark.</p><h2 id=\"review\">Use a component-level evidence and review record</h2><p>Record reporting framework, instrument or component, recognition-policy reference, period, opening balance, current gain/loss, release, related earnings line, tax basis, closing balance and reviewer. Reconcile the statement of comprehensive income, equity statement and note. If the underlying recognition, tax allocation or release condition is unresolved, stop at the provisional schedule instead of using a plug to force agreement.</p><p>The <a href=\"/blogs/retained-earnings/\">retained-earnings guide</a> explains the earnings and dividend bridge, while <a href=\"/blogs/assets-liabilities-equity/\">the accounting-equation example</a> covers total balances. Use <a href=\"/blogs/how-to-analyze-financial-statements/\">statement analysis</a> to read the resulting reports. This source and arithmetic verification does not claim external professional sign-off or replace the entity-specific accounting assessment needed for a compliant filing.</p><p><a href=\"/downloads/other-comprehensive-income-worksheet.html\">Open the editable OCI reconciliation record</a>. This manual record does not calculate or save entries; print it before leaving.</p><h2 id=\"oci-reader-boundary\">Use this as a reconciliation, not a classification decision</h2><p>This published guide explains the relationship between supplied net income, OCI and equity amounts. It is not an entity-specific accounting opinion or a certified reporting assessment. A real investment classification, tax effect or filing decision requires the applicable framework and qualified review; no such assessment is supplied here.</p><p>Continue with <a href=\"/blogs/net-income/\">business net income</a>, <a href=\"/blogs/retained-earnings/\">retained earnings</a>, <a href=\"/blogs/assets-liabilities-equity/\">the accounting equation</a> and <a href=\"/blogs/financial-reporting/\">the reporting workflow</a>. For organizing a profit statement, use the <a href=\"/resources/income-statement-template/\">income-statement template</a>; it does not prepare a statement of comprehensive income.</p>",
+  "answerHtml": "<h2 id=\"oci-quick-answer\">What is other comprehensive income?</h2><p><strong>OCI is current-period income or expense presented outside net income under the applicable accounting requirements. AOCI is the related accumulated equity balance.</strong> Comprehensive income equals net income plus current-period OCI. An unrealized gain is not automatically OCI.</p><p>In the original net-of-tax teaching case, $9,800 net income + $800 current OCI = $10,600 comprehensive income. Opening AOCI $3,000 + $800 = $3,800 closing AOCI. Follow the supplied classification assumptions and reclassification bridge below; this is not guidance for deciding which real transactions qualify.</p>"
+};

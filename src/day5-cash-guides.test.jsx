@@ -3,7 +3,7 @@ import React from 'react';
 import {describe,it,expect} from 'vitest';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {existsSync,readFileSync}from'node:fs';
-import {blogPostMap,blogPosts}from'./content/blogs/index.js';
+import {beforePendingBlogPostMap as blogPostMap,beforePendingBlogPosts as blogPosts}from'./content/blogs/index.js';
 import {cashFlowCase,reconcileCashCase,cashRecoveryCase,cashSchedule}from'./cashFlowExamples.js';
 import {calculateOperatingCashFlow,defaultOcfInputs,operatingCashFlowCsv}from'./operatingCashFlowEngine.js';
 import {articleFaq}from'./articleFaq.js';

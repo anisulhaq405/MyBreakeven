@@ -12,6 +12,7 @@ export const industryIntent = [
 ];
 
 export const decisionIntent = [
+ ['mortgage-calculator','Fixed-rate payment and separate ownership budget',['mortgage-refinance-break-even']],
  ['prorated-rent-calculator','prorated rent calculator',['gross-pay-vs-net-pay']],
  ['debt-to-income-calculator','debt to income calculator',['gross-pay-vs-net-pay','net-income']],
  ["cd-calculator", "Fixed-opening-deposit gross maturity comparison", ["present-value-vs-future-value"]],

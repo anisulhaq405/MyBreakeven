@@ -7,7 +7,8 @@ for(const[slug,p,kind]of[...posts.map(p=>[p.slug,p,'blogs']),['income-statement-
 for(const width of[1200,800,400]){const path='dist'+p.image.replace('.webp',width===1200?'.webp':`-${width}.webp`),m=await sharp(path).metadata();assert.equal(m.width,width);assert.equal(m.height,width*9/16);assert((await fs.stat(path)).size<250000);}if(kind==='blogs'){const record=await fs.readFile(`dist/downloads/${slug}-worksheet.html`,'utf8');assert(record.includes('textarea'));assert(record.includes('noindex,follow'));assert(record.includes('does not calculate'));}report.push({url,passed:true});}
 for(const[route,needle]of[['blogs/how-to-analyze-financial-statements','Prepare, reconcile, then interpret'],['blogs/cash-flow-statement','profit-to-cash-bridge'],['calculators/cash-flow-forecast-template','Review the cash dates'],['calculators/business-startup-cost-calculator','Keep the funding budget separate']])assert((await fs.readFile(`dist/${route}/index.html`,'utf8')).includes(needle),route);
 const audit=JSON.parse(await fs.readFile('docs/combined-day2/protected-audits.json','utf8'));for(const f of audit.sourceFiles)assert.equal(createHash('sha256').update(await fs.readFile(f.path)).digest('hex'),f.sha256,f.path+' protected source');
-assert(!sitemap.includes('/blogs/other-comprehensive-income/'));assert.equal(statementFaq.length,6);
+assert(!posts.some(p=>p.slug==='other-comprehensive-income')); // Historical release excludes OCI; current closure checks it independently.
+assert.equal(statementFaq.length,6);
 execFileSync('python3',['-c',`import openpyxl
 p='dist/downloads/income-statement-template.xlsx'
 w=openpyxl.load_workbook(p,data_only=True);f=openpyxl.load_workbook(p,data_only=False)

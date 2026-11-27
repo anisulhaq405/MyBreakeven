@@ -1,6 +1,7 @@
 import {titleCoverDimensions} from './featureTitleCovers.js';
 // Measured image dimensions; preserve the intrinsic ratio before loading.
 export const blogImageDimensions = {
+ "/images/title-covers/pending-other-comprehensive-income-20261126.webp":{width:1200,height:675},
   "/images/title-covers/combined-day2-income-statement-template-20261118.webp": {width:1200,height:675},
   "/images/title-covers/combined-day2-limited-liability-company-20261118.webp": {width:1200,height:675},
   "/images/title-covers/combined-day2-startup-costs-accounting-20261118.webp": {width:1200,height:675},

@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
-import {blogPosts,beforeBatch4BlogPosts} from '../src/content/blogs/index.js';
+import {beforePendingBlogPosts as blogPosts,beforeBatch4BlogPosts} from '../src/content/blogs/index.js';
 import {batch4ReviewedSlugs} from '../src/content/blogs/existingBatch4November26.js';
 import {articleFaq} from '../src/articleFaq.js';
 import {guideTopic} from '../src/novemberTopics.js';
