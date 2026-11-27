@@ -1,0 +1,992 @@
+{
+  "date": "2026-11-27",
+  "sourceCommit": "5f55dbaa2bb509af40a25a45039d74ff10c14668",
+  "scope": "Normal public HTTP evidence only; not Google index status or authenticated URL Inspection.",
+  "sitemapUrls": 322,
+  "seedPaths": [
+    "/blogs/cost-drivers-small-business/",
+    "/blogs/job-order-costing/",
+    "/blogs/landscaping-crew-utilization/",
+    "/blogs/mulch-installation-job-cost/",
+    "/blogs/restaurant-sales-forecast/",
+    "/calculators/cash-flow-forecast-template/",
+    "/calculators/cash-runway-calculator/",
+    "/calculators/discount-break-even-calculator/",
+    "/calculators/hourly-rate-calculator/",
+    "/calculators/menu-pricing-calculator/"
+  ],
+  "downloadPaths": [
+    "/downloads/budget-vs-actual-template.xlsx?release=20261023",
+    "/downloads/restaurant-monthly-budget-template.xlsx",
+    "/downloads/five-year-business-plan-template.docx",
+    "/downloads/flexible-budget-review-20261023.csv",
+    "/downloads/ecommerce-business-plan-financials.xlsx",
+    "/downloads/mybreakeven-cleaning-monthly-budget.xlsx",
+    "/downloads/uneven-discounted-payback-example.xlsx?v=20261024",
+    "/downloads/landscaping-business-plan-financials.xlsx",
+    "/downloads/five-year-business-plan-worksheet.xlsx",
+    "/downloads/restaurant-20-scenarios-v1.csv",
+    "/downloads/make-or-buy-review-20261023.csv",
+    "/downloads/restaurant-20-scenarios-v1.csv?v=3"
+  ],
+  "noindexPaths": [
+    "/search/?q=%7Bsearch_term_string%7D",
+    "/downloads/business-continuity-plan-worksheet.html",
+    "/downloads/startup-costs-accounting-worksheet.html",
+    "/downloads/product-lifecycle-management-worksheet.html",
+    "/dashboard/",
+    "/downloads/business-goals-worksheet.html",
+    "/downloads/how-to-start-small-business-worksheet.html",
+    "/login/"
+  ],
+  "alternatePaths": [
+    "/?industry=cleaning&from=industry",
+    "/blogs/?q=pricing",
+    "/?industry=ecommerce",
+    "/?industry=cleaning",
+    "/?industry=salon",
+    "/?industry=detailing",
+    "/?industry=detailing&from=industry",
+    "/?industry=agency&from=industry",
+    "/?industry=landscaping",
+    "/?industry=restaurant",
+    "/?industry=restaurant&from=industry"
+  ],
+  "pairs": [
+    {
+      "source": "fixed-vs-variable-costs",
+      "target": "activity-based-costing",
+      "present": false
+    },
+    {
+      "source": "how-to-calculate-cost-of-goods-sold",
+      "target": "current-assets",
+      "present": false
+    },
+    {
+      "source": "operating-expenses",
+      "target": "accrued-expenses",
+      "present": false
+    },
+    {
+      "source": "target-profit-sales-formula",
+      "target": "pricing-strategies",
+      "present": false
+    },
+    {
+      "source": "how-to-price-products-for-ecommerce",
+      "target": "cost-plus-pricing",
+      "present": false
+    },
+    {
+      "source": "margin-vs-markup",
+      "target": "penetration-pricing",
+      "present": false
+    },
+    {
+      "source": "how-to-analyze-financial-statements",
+      "target": "retained-earnings",
+      "present": true
+    }
+  ],
+  "rows": [
+    {
+      "path": "/blogs/cost-drivers-small-business/",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/blogs/cost-drivers-small-business/",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/blogs/cost-drivers-small-business/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 42090,
+      "zipMagic": null,
+      "inSitemap": true
+    },
+    {
+      "path": "/blogs/job-order-costing/",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/blogs/job-order-costing/",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/blogs/job-order-costing/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 44752,
+      "zipMagic": null,
+      "inSitemap": true
+    },
+    {
+      "path": "/blogs/landscaping-crew-utilization/",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/blogs/landscaping-crew-utilization/",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-crew-utilization/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 36664,
+      "zipMagic": null,
+      "inSitemap": true
+    },
+    {
+      "path": "/blogs/mulch-installation-job-cost/",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/blogs/mulch-installation-job-cost/",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/blogs/mulch-installation-job-cost/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 35152,
+      "zipMagic": null,
+      "inSitemap": true
+    },
+    {
+      "path": "/blogs/restaurant-sales-forecast/",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/blogs/restaurant-sales-forecast/",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-sales-forecast/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 28693,
+      "zipMagic": null,
+      "inSitemap": true
+    },
+    {
+      "path": "/calculators/cash-flow-forecast-template/",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/calculators/cash-flow-forecast-template/",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/calculators/cash-flow-forecast-template/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 41623,
+      "zipMagic": null,
+      "inSitemap": true
+    },
+    {
+      "path": "/calculators/cash-runway-calculator/",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/calculators/cash-runway-calculator/",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/calculators/cash-runway-calculator/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 29562,
+      "zipMagic": null,
+      "inSitemap": true
+    },
+    {
+      "path": "/calculators/discount-break-even-calculator/",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/calculators/discount-break-even-calculator/",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/calculators/discount-break-even-calculator/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 45969,
+      "zipMagic": null,
+      "inSitemap": true
+    },
+    {
+      "path": "/calculators/hourly-rate-calculator/",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/calculators/hourly-rate-calculator/",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/calculators/hourly-rate-calculator/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 29246,
+      "zipMagic": null,
+      "inSitemap": true
+    },
+    {
+      "path": "/calculators/menu-pricing-calculator/",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/calculators/menu-pricing-calculator/",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/calculators/menu-pricing-calculator/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 35649,
+      "zipMagic": null,
+      "inSitemap": true
+    },
+    {
+      "path": "/blogs/fixed-vs-variable-costs/",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/blogs/fixed-vs-variable-costs/",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/blogs/fixed-vs-variable-costs/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 60923,
+      "zipMagic": null,
+      "inSitemap": true
+    },
+    {
+      "path": "/blogs/how-to-calculate-cost-of-goods-sold/",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/blogs/how-to-calculate-cost-of-goods-sold/",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/blogs/how-to-calculate-cost-of-goods-sold/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 40998,
+      "zipMagic": null,
+      "inSitemap": true
+    },
+    {
+      "path": "/blogs/operating-expenses/",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/blogs/operating-expenses/",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/blogs/operating-expenses/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 34804,
+      "zipMagic": null,
+      "inSitemap": true
+    },
+    {
+      "path": "/blogs/target-profit-sales-formula/",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/blogs/target-profit-sales-formula/",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/blogs/target-profit-sales-formula/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 36509,
+      "zipMagic": null,
+      "inSitemap": true
+    },
+    {
+      "path": "/blogs/how-to-price-products-for-ecommerce/",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/blogs/how-to-price-products-for-ecommerce/",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/blogs/how-to-price-products-for-ecommerce/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 39431,
+      "zipMagic": null,
+      "inSitemap": true
+    },
+    {
+      "path": "/blogs/margin-vs-markup/",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/blogs/margin-vs-markup/",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/blogs/margin-vs-markup/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 40598,
+      "zipMagic": null,
+      "inSitemap": true
+    },
+    {
+      "path": "/blogs/how-to-analyze-financial-statements/",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/blogs/how-to-analyze-financial-statements/",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/blogs/how-to-analyze-financial-statements/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 34551,
+      "zipMagic": null,
+      "inSitemap": true
+    },
+    {
+      "path": "/downloads/budget-vs-actual-template.xlsx?release=20261023",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/downloads/budget-vs-actual-template.xlsx?release=20261023",
+      "redirects": [],
+      "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "xRobots": "",
+      "disposition": "attachment",
+      "canonical": "",
+      "robots": [],
+      "h1": 0,
+      "bytes": 11520,
+      "zipMagic": true,
+      "inSitemap": false
+    },
+    {
+      "path": "/downloads/restaurant-monthly-budget-template.xlsx",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/downloads/restaurant-monthly-budget-template.xlsx",
+      "redirects": [],
+      "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "xRobots": "",
+      "disposition": "attachment",
+      "canonical": "",
+      "robots": [],
+      "h1": 0,
+      "bytes": 5768,
+      "zipMagic": true,
+      "inSitemap": false
+    },
+    {
+      "path": "/downloads/five-year-business-plan-template.docx",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/downloads/five-year-business-plan-template.docx",
+      "redirects": [],
+      "type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "xRobots": "",
+      "disposition": "attachment",
+      "canonical": "",
+      "robots": [],
+      "h1": 0,
+      "bytes": 41456,
+      "zipMagic": true,
+      "inSitemap": false
+    },
+    {
+      "path": "/downloads/flexible-budget-review-20261023.csv",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/downloads/flexible-budget-review-20261023.csv",
+      "redirects": [],
+      "type": "text/csv",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "",
+      "robots": [],
+      "h1": 0,
+      "bytes": 1405,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/downloads/ecommerce-business-plan-financials.xlsx",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/downloads/ecommerce-business-plan-financials.xlsx",
+      "redirects": [],
+      "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "xRobots": "",
+      "disposition": "attachment",
+      "canonical": "",
+      "robots": [],
+      "h1": 0,
+      "bytes": 13538,
+      "zipMagic": true,
+      "inSitemap": false
+    },
+    {
+      "path": "/downloads/mybreakeven-cleaning-monthly-budget.xlsx",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/downloads/mybreakeven-cleaning-monthly-budget.xlsx",
+      "redirects": [],
+      "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "xRobots": "",
+      "disposition": "attachment",
+      "canonical": "",
+      "robots": [],
+      "h1": 0,
+      "bytes": 9100,
+      "zipMagic": true,
+      "inSitemap": false
+    },
+    {
+      "path": "/downloads/uneven-discounted-payback-example.xlsx?v=20261024",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/downloads/uneven-discounted-payback-example.xlsx?v=20261024",
+      "redirects": [],
+      "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "xRobots": "",
+      "disposition": "attachment",
+      "canonical": "",
+      "robots": [],
+      "h1": 0,
+      "bytes": 6417,
+      "zipMagic": true,
+      "inSitemap": false
+    },
+    {
+      "path": "/downloads/landscaping-business-plan-financials.xlsx",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/downloads/landscaping-business-plan-financials.xlsx",
+      "redirects": [],
+      "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "xRobots": "",
+      "disposition": "attachment",
+      "canonical": "",
+      "robots": [],
+      "h1": 0,
+      "bytes": 12506,
+      "zipMagic": true,
+      "inSitemap": false
+    },
+    {
+      "path": "/downloads/five-year-business-plan-worksheet.xlsx",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/downloads/five-year-business-plan-worksheet.xlsx",
+      "redirects": [],
+      "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "xRobots": "",
+      "disposition": "attachment",
+      "canonical": "",
+      "robots": [],
+      "h1": 0,
+      "bytes": 12067,
+      "zipMagic": true,
+      "inSitemap": false
+    },
+    {
+      "path": "/downloads/restaurant-20-scenarios-v1.csv",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/downloads/restaurant-20-scenarios-v1.csv",
+      "redirects": [],
+      "type": "text/csv; charset=utf-8",
+      "xRobots": "",
+      "disposition": "attachment; filename=restaurant-20-scenarios-v1.csv",
+      "canonical": "",
+      "robots": [],
+      "h1": 0,
+      "bytes": 4478,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/downloads/make-or-buy-review-20261023.csv",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/downloads/make-or-buy-review-20261023.csv",
+      "redirects": [],
+      "type": "text/csv",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "",
+      "robots": [],
+      "h1": 0,
+      "bytes": 1795,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/downloads/restaurant-20-scenarios-v1.csv?v=3",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/downloads/restaurant-20-scenarios-v1.csv?v=3",
+      "redirects": [],
+      "type": "text/csv; charset=utf-8",
+      "xRobots": "",
+      "disposition": "attachment; filename=restaurant-20-scenarios-v1.csv",
+      "canonical": "",
+      "robots": [],
+      "h1": 0,
+      "bytes": 4478,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/search/?q=%7Bsearch_term_string%7D",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/search/?q=%7Bsearch_term_string%7D",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/search/",
+      "robots": [
+        "noindex,follow",
+        "noindex,follow"
+      ],
+      "h1": 1,
+      "bytes": 13953,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/downloads/business-continuity-plan-worksheet.html",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/downloads/business-continuity-plan-worksheet.html",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "",
+      "robots": [
+        "noindex,follow"
+      ],
+      "h1": 1,
+      "bytes": 4206,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/downloads/startup-costs-accounting-worksheet.html",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/downloads/startup-costs-accounting-worksheet.html",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "",
+      "robots": [
+        "noindex,follow"
+      ],
+      "h1": 1,
+      "bytes": 3850,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/downloads/product-lifecycle-management-worksheet.html",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/downloads/product-lifecycle-management-worksheet.html",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "",
+      "robots": [
+        "noindex,follow"
+      ],
+      "h1": 1,
+      "bytes": 4250,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/dashboard/",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/dashboard/",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/dashboard/",
+      "robots": [
+        "noindex,nofollow",
+        "noindex,nofollow"
+      ],
+      "h1": 1,
+      "bytes": 5642,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/downloads/business-goals-worksheet.html",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/downloads/business-goals-worksheet.html",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "",
+      "robots": [
+        "noindex,nofollow"
+      ],
+      "h1": 1,
+      "bytes": 5970,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/downloads/how-to-start-small-business-worksheet.html",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/downloads/how-to-start-small-business-worksheet.html",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "",
+      "robots": [
+        "noindex,nofollow"
+      ],
+      "h1": 1,
+      "bytes": 6775,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/login/",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/login/",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/login/",
+      "robots": [
+        "noindex,nofollow",
+        "noindex,nofollow"
+      ],
+      "h1": 1,
+      "bytes": 5537,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/?industry=cleaning&from=industry",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/?industry=cleaning&from=industry",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 54214,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/blogs/?q=pricing",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/blogs/?q=pricing",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/blogs/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 467453,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/?industry=ecommerce",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/?industry=ecommerce",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 54214,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/?industry=cleaning",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/?industry=cleaning",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 54214,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/?industry=salon",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/?industry=salon",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 54214,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/?industry=detailing",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/?industry=detailing",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 54214,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/?industry=detailing&from=industry",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/?industry=detailing&from=industry",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 54214,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/?industry=agency&from=industry",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/?industry=agency&from=industry",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 54214,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/?industry=landscaping",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/?industry=landscaping",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 54214,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/?industry=restaurant",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/?industry=restaurant",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 54214,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/?industry=restaurant&from=industry",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/?industry=restaurant&from=industry",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 54214,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/blogs/restaurant-prime-cost",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/blogs/restaurant-prime-cost/",
+      "redirects": [
+        {
+          "status": 301,
+          "from": "https://mybreakeven.com/blogs/restaurant-prime-cost",
+          "to": "https://mybreakeven.com/blogs/restaurant-prime-cost/"
+        }
+      ],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-prime-cost/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 24327,
+      "zipMagic": null,
+      "inSitemap": false
+    },
+    {
+      "path": "/blogs/restaurant-prime-cost/",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/blogs/restaurant-prime-cost/",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-prime-cost/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 24327,
+      "zipMagic": null,
+      "inSitemap": true
+    },
+    {
+      "path": "/resources/business-plan-template/",
+      "status": 200,
+      "finalUrl": "https://mybreakeven.com/resources/business-plan-template/",
+      "redirects": [],
+      "type": "text/html",
+      "xRobots": "",
+      "disposition": "",
+      "canonical": "https://mybreakeven.com/resources/business-plan-template/",
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "h1": 1,
+      "bytes": 31369,
+      "zipMagic": null,
+      "inSitemap": true
+    },
+    {
+      "path": "/downloads/one-page-business-plan-template.pdf",
+      "status": 200,
+      "finalUrl": null,
+      "redirects": null,
+      "type": "application/pdf",
+      "xRobots": "",
+      "disposition": null,
+      "canonical": null,
+      "robots": null,
+      "h1": null,
+      "bytes": 43287,
+      "zipMagic": null,
+      "inSitemap": false
+    }
+  ]
+}

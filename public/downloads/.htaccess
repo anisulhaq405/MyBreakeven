@@ -1,0 +1,9 @@
+# Download-only spreadsheets, documents and CSV exports use their HTML landing
+# pages as search owners. Keep the files crawlable and downloadable so crawlers
+# can read this response header. HTML worksheets retain their own meta rules;
+# PDFs, images and media are deliberately outside this policy.
+<IfModule mod_headers.c>
+  <FilesMatch "(?i)\.(xlsx|docx|csv)$">
+    Header always set X-Robots-Tag "noindex"
+  </FilesMatch>
+</IfModule>

@@ -1,3 +1,4 @@
+import DiscoveryNextStep from './DiscoveryNextStep.jsx';
 import{Batch3QuoteReview}from './CombinedDay3Review.jsx';
 import{Day2Review,CashBridgeWidget}from './CombinedDay2Review.jsx';
 import {CostReviewWidget,ReviewConnections} from './CombinedDay1Widgets.jsx';
@@ -79,6 +80,7 @@ export default function LongformArticle({ article: a }) {
     {slug==='break-even-analysis-example'&&<BreakEvenChartWidget/>}
     <figure className="article-featured"><img src={a.image} {...responsiveFeatureProps(a.image)} alt={a.alt} width={blogImageDimensions[a.image]?.width || 1200} height={blogImageDimensions[a.image]?.height || 675} fetchPriority={hasIntroWidget?undefined:'high'} loading={hasIntroWidget?'lazy':undefined} decoding="async"/><figcaption>{a.imageCaption}</figcaption></figure>
     <div className="day1-markdown" dangerouslySetInnerHTML={{ __html: a.html.replaceAll('support@mybreakeven.com','mybreakeven1@gmail.com') }} />
+    <DiscoveryNextStep article={a}/>
     <NovemberTopicConnections article={a}/><ScenarioAnalysis slug={a.slug || slug} />
     {!faq.inline && faq.items.length > 0 && <section className="article-faq" id={a.sectionLinks?'guide-faqs':undefined}><h2>Frequently asked questions</h2>{faq.items.map(item => <details key={item.q}><summary>{item.q}</summary><p>{item.a}</p></details>)}</section>}
     {!a.html.includes('href="/blogs/"') && !a.html.includes('href="https://mybreakeven.com/blogs/"') && <p><a href="/blogs/">Browse the MyBreakeven blog hub</a> for related planning guides.</p>}

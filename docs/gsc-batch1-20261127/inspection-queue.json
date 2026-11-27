@@ -1,0 +1,76 @@
+{
+  "date": "2026-11-27",
+  "purpose": "Priority business owners; public readiness is not Google indexing.",
+  "owners": [
+    {
+      "url": "https://mybreakeven.com/blogs/cost-drivers-small-business/",
+      "publicReadiness": "200; self-canonical; indexable metadata; sitemap present",
+      "googleSelectedCanonical": "Not inspected",
+      "googleLastCrawl": "Not inspected",
+      "requestIndexing": "Not submitted"
+    },
+    {
+      "url": "https://mybreakeven.com/blogs/job-order-costing/",
+      "publicReadiness": "200; self-canonical; indexable metadata; sitemap present",
+      "googleSelectedCanonical": "Not inspected",
+      "googleLastCrawl": "Not inspected",
+      "requestIndexing": "Not submitted"
+    },
+    {
+      "url": "https://mybreakeven.com/blogs/landscaping-crew-utilization/",
+      "publicReadiness": "200; self-canonical; indexable metadata; sitemap present",
+      "googleSelectedCanonical": "Not inspected",
+      "googleLastCrawl": "Not inspected",
+      "requestIndexing": "Not submitted"
+    },
+    {
+      "url": "https://mybreakeven.com/blogs/mulch-installation-job-cost/",
+      "publicReadiness": "200; self-canonical; indexable metadata; sitemap present",
+      "googleSelectedCanonical": "Not inspected",
+      "googleLastCrawl": "Not inspected",
+      "requestIndexing": "Not submitted"
+    },
+    {
+      "url": "https://mybreakeven.com/blogs/restaurant-sales-forecast/",
+      "publicReadiness": "200; self-canonical; indexable metadata; sitemap present",
+      "googleSelectedCanonical": "Not inspected",
+      "googleLastCrawl": "Not inspected",
+      "requestIndexing": "Not submitted"
+    },
+    {
+      "url": "https://mybreakeven.com/calculators/cash-flow-forecast-template/",
+      "publicReadiness": "200; self-canonical; indexable metadata; sitemap present",
+      "googleSelectedCanonical": "Not inspected",
+      "googleLastCrawl": "Not inspected",
+      "requestIndexing": "Not submitted"
+    },
+    {
+      "url": "https://mybreakeven.com/calculators/cash-runway-calculator/",
+      "publicReadiness": "200; self-canonical; indexable metadata; sitemap present",
+      "googleSelectedCanonical": "Not inspected",
+      "googleLastCrawl": "Not inspected",
+      "requestIndexing": "Not submitted"
+    },
+    {
+      "url": "https://mybreakeven.com/calculators/discount-break-even-calculator/",
+      "publicReadiness": "200; self-canonical; indexable metadata; sitemap present",
+      "googleSelectedCanonical": "Not inspected",
+      "googleLastCrawl": "Not inspected",
+      "requestIndexing": "Not submitted"
+    },
+    {
+      "url": "https://mybreakeven.com/calculators/hourly-rate-calculator/",
+      "publicReadiness": "200; self-canonical; indexable metadata; sitemap present",
+      "googleSelectedCanonical": "Not inspected",
+      "googleLastCrawl": "Not inspected",
+      "requestIndexing": "Not submitted"
+    },
+    {
+      "url": "https://mybreakeven.com/calculators/menu-pricing-calculator/",
+      "publicReadiness": "200; self-canonical; indexable metadata; sitemap present",
+      "googleSelectedCanonical": "Not inspected",
+      "googleLastCrawl": "Not inspected",
+      "requestIndexing": "Not submitted"
+    }
+  ]
+}
