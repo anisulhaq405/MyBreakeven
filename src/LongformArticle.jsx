@@ -1,4 +1,6 @@
 import DiscoveryNextStep from './DiscoveryNextStep.jsx';
+import {presentClickAnswer} from './clickAnswerPresentation.js';
+import './click-answer-presentation.css';
 import{Batch3QuoteReview}from './CombinedDay3Review.jsx';
 import{Day2Review,CashBridgeWidget}from './CombinedDay2Review.jsx';
 import {CostReviewWidget,ReviewConnections} from './CombinedDay1Widgets.jsx';
@@ -62,7 +64,7 @@ export default function LongformArticle({ article: a }) {
     <div className="article-tags" aria-label="Article topics">{a.tags.map(tag => <span key={tag}>{tag}</span>)}</div><GuideTopicLink article={a}/>
     {['how-to-price-products-for-ecommerce','lawn-care-pricing-per-acre'].includes(slug)&&<Batch3QuoteReview kind={slug==='lawn-care-pricing-per-acre'?'lawn':'ecommerce'}/>}
     {a.sectionLinks&&<nav className="article-section-nav" aria-label="Guide sections">{a.sectionLinks.map(([id,label])=><a key={id} href={`#${id}`}>{label}</a>)}</nav>}
-    {a.answerHtml&&<section className="article-summary" dangerouslySetInnerHTML={{__html:a.answerHtml}} />}
+    {a.answerHtml&&<section className="article-summary" dangerouslySetInnerHTML={{__html:presentClickAnswer(a)}} />}
     {slug==='salon-booth-rent-vs-commission-owner'&&<SalonBoothComparison/>}
     {slug==='operating-cash-flow'&&<OperatingCashFlowWidget/>}
     {slug==='margin-vs-markup'&&<><ReviewConnections kind="margin"/><MarginMarkupWidget/></>}
