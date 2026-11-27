@@ -1,0 +1,412 @@
+{
+  "date": "2026-11-27",
+  "sourceCommit": "f506493bbac8dadbd648f8312b9ecbfa9a6c37b7",
+  "scope": "45 existing candidates; final dispositions, not 45 rewrites. Image-plan statuses are not execution evidence.",
+  "records": [
+    {
+      "id": "E001",
+      "topic": "Financial Ratios: Formulas, Types & Examples",
+      "path": "/guides/financial-ratios/",
+      "disposition": "improved",
+      "evidence": "src/FivePageReview.jsx",
+      "expectedLiveMarker": "additional-ratio-reference",
+      "note": "November18 expanded reference; 36 definitions plus 19 worked formulas."
+    },
+    {
+      "id": "E002",
+      "topic": "Business Plan Template: Word Outline & Executive Summary",
+      "path": "/resources/business-plan-template/",
+      "disposition": "reviewed-retained",
+      "evidence": "scripts/build-day1-review.mjs",
+      "expectedLiveMarker": null,
+      "note": "Protected general business-plan owner retained; draft supplement deliberately not mounted. Read-only review closed; no rewrite claimed."
+    },
+    {
+      "id": "E003",
+      "topic": "Landscaping Business Plan Template: Free Word & Excel",
+      "path": "/resources/landscaping-business-plan-template/",
+      "disposition": "improved",
+      "evidence": "src/Day1PlanningReview.jsx",
+      "expectedLiveMarker": "Separate seasonal maintenance from installation commitments",
+      "note": "Approved planning evidence section is mounted by BusinessPlanTemplatePage."
+    },
+    {
+      "id": "E004",
+      "topic": "Cleaning Business Planning Guides",
+      "path": "/guides/cleaning-business/",
+      "disposition": "improved",
+      "evidence": "src/Day1PlanningReview.jsx",
+      "expectedLiveMarker": "Follow one cleaning decision from quote to cash",
+      "note": "Approved quote-to-cash section is mounted by CleaningCluster."
+    },
+    {
+      "id": "E005",
+      "topic": "How to Analyze Financial Statements",
+      "path": "/blogs/how-to-analyze-financial-statements/",
+      "disposition": "improved",
+      "evidence": "src/CombinedDay2Review.jsx",
+      "expectedLiveMarker": "Prepare, reconcile, then interpret the reports",
+      "note": "November18 scoped report-preparation path."
+    },
+    {
+      "id": "E006",
+      "topic": "Cash Flow Statement: Format & Worked Example",
+      "path": "/blogs/cash-flow-statement/",
+      "disposition": "improved",
+      "evidence": "src/CombinedDay2Review.jsx",
+      "expectedLiveMarker": "profit-to-cash-bridge",
+      "note": "November4 close-cutoff supplement and November18 profit-to-cash widget."
+    },
+    {
+      "id": "E007",
+      "topic": "Operating Cash Flow: Formula & Example",
+      "path": "/blogs/operating-cash-flow/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/pendingCloseReview.js",
+      "expectedLiveMarker": "legacy-cash-ratios-free-cash-flow",
+      "note": "November5 cash-vs-capital path; November26 cash-ratio/free-cash-flow section."
+    },
+    {
+      "id": "E008",
+      "topic": "Cash Flow Problems: Causes & Recovery Plan",
+      "path": "/blogs/cash-flow-problems/",
+      "disposition": "reviewed-retained",
+      "evidence": "docs/seo/2026-11-05-day2-publication.md",
+      "expectedLiveMarker": null,
+      "note": "Reviewed and retained: existing dated recovery schedules already answer the task."
+    },
+    {
+      "id": "E009",
+      "topic": "Operating Expenses: Examples, Formula & COGS",
+      "path": "/blogs/operating-expenses/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/twelveDayDay2Release.js",
+      "expectedLiveMarker": "payroll-cogs-or-opex",
+      "note": "November5 payroll COGS/OPEX classification case."
+    },
+    {
+      "id": "E010",
+      "topic": "Rolling Forecast: Example & Excel Template",
+      "path": "/blogs/rolling-forecast/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/twelveDayDay2Release.js",
+      "expectedLiveMarker": "sales-evidence-before-reforecast",
+      "note": "November5 sales-demand evidence path."
+    },
+    {
+      "id": "E011",
+      "topic": "Cost Drivers: Examples & Calculator",
+      "path": "/blogs/cost-drivers-small-business/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/twelveDayDay3Review.js",
+      "expectedLiveMarker": "day3-evidence-before-new-pools",
+      "note": "Approved append-only teaching/navigation addition; original article retained."
+    },
+    {
+      "id": "E012",
+      "topic": "Job Order Costing: Formula & Cost Sheet",
+      "path": "/blogs/job-order-costing/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/twelveDayDay3Review.js",
+      "expectedLiveMarker": "day3-job-cost-versus-settlement",
+      "note": "Approved append-only teaching/navigation addition; original article retained."
+    },
+    {
+      "id": "E013",
+      "topic": "Flexible Budget & Variance Calculator",
+      "path": "/blogs/flexible-budget-variance-analysis/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/twelveDayDay3Review.js",
+      "expectedLiveMarker": "day3-timing-versus-performance",
+      "note": "Approved append-only teaching/navigation addition; original article retained."
+    },
+    {
+      "id": "E014",
+      "topic": "Contribution Margin Income Statement",
+      "path": "/blogs/contribution-margin-income-statement/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/twelveDayDay3Review.js",
+      "expectedLiveMarker": "day3-contribution-format-next-analysis",
+      "note": "Approved append-only teaching/navigation addition; original article retained."
+    },
+    {
+      "id": "E015",
+      "topic": "How to Calculate Cost of Goods Sold (COGS)",
+      "path": "/blogs/how-to-calculate-cost-of-goods-sold/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/twelveDayDay4Review.js",
+      "expectedLiveMarker": "day4-cogs-record-evidence",
+      "note": "Approved append-only teaching/navigation addition; original article retained."
+    },
+    {
+      "id": "E016",
+      "topic": "How to Calculate Working Capital: Formula",
+      "path": "/blogs/how-to-calculate-working-capital/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/pendingCloseReview.js",
+      "expectedLiveMarker": "working-capital-management-turnover",
+      "note": "Originally protected; November26 targeted authorized management/turnover addition."
+    },
+    {
+      "id": "E017",
+      "topic": "How to Calculate Days Sales Outstanding (DSO)",
+      "path": "/blogs/how-to-calculate-days-sales-outstanding/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/twelveDayDay4Review.js",
+      "expectedLiveMarker": "day4-dso-gross-net-evidence",
+      "note": "Approved append-only teaching/navigation addition; original article retained."
+    },
+    {
+      "id": "E018",
+      "topic": "Target Profit Formula: Sales and Units",
+      "path": "/blogs/target-profit-sales-formula/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/twelveDayDay4Review.js",
+      "expectedLiveMarker": "day4-profit-versus-cash-target",
+      "note": "Approved append-only teaching/navigation addition; original article retained."
+    },
+    {
+      "id": "E019",
+      "topic": "Operating Leverage Formula and Example",
+      "path": "/blogs/operating-leverage-small-business/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/twelveDayDay4Review.js",
+      "expectedLiveMarker": "day4-operating-leverage-depreciation-scope",
+      "note": "Approved append-only teaching/navigation addition; original article retained."
+    },
+    {
+      "id": "E020",
+      "topic": "Break-Even ROAS Formula for Ecommerce",
+      "path": "/blogs/break-even-roas-formula/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/twelveDayDay5Review.js",
+      "expectedLiveMarker": "day5-roas-versus-roi",
+      "note": "Approved append-only teaching/navigation addition; original article retained."
+    },
+    {
+      "id": "E021",
+      "topic": "Break-Even for Multiple Products: Sales Mix",
+      "path": "/blogs/break-even-multiple-products-sales-mix/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/twelveDayDay5Review.js",
+      "expectedLiveMarker": "day5-composite-bundle-capacity",
+      "note": "Approved append-only teaching/navigation addition; original article retained."
+    },
+    {
+      "id": "E022",
+      "topic": "Landscaping Seasonal Break-Even Guide",
+      "path": "/blogs/landscaping-seasonal-break-even/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/twelveDayDay5Review.js",
+      "expectedLiveMarker": "day5-landscaping-budget-cash",
+      "note": "Approved append-only teaching/navigation addition; original article retained."
+    },
+    {
+      "id": "E023",
+      "topic": "Cleaning Business Expenses & Monthly Budget",
+      "path": "/blogs/cleaning-business-monthly-expenses/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/twelveDayDay5Review.js",
+      "expectedLiveMarker": "day5-janitorial-expense-close",
+      "note": "Approved append-only teaching/navigation addition; original article retained."
+    },
+    {
+      "id": "E024",
+      "topic": "Calculate Break-Even Point: Units and Sales",
+      "path": "/blogs/calculate-break-even-point/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/november11Day6Existing.js",
+      "expectedLiveMarker": "day6-20261111-calculate-break-even-point",
+      "note": "November11 explicit authorization covers both former inspect-only and eligible owners."
+    },
+    {
+      "id": "E025",
+      "topic": "Break-Even Formula: Units and Dollars",
+      "path": "/blogs/break-even-formula-units-dollars/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/november11Day6Existing.js",
+      "expectedLiveMarker": "day6-20261111-break-even-formula-units-dollars",
+      "note": "November11 explicit authorization covers both former inspect-only and eligible owners."
+    },
+    {
+      "id": "E026",
+      "topic": "Contribution Margin per Unit Calculator",
+      "path": "/blogs/calculate-contribution-margin/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/november11Day6Existing.js",
+      "expectedLiveMarker": "day6-20261111-calculate-contribution-margin",
+      "note": "November11 explicit authorization covers both former inspect-only and eligible owners."
+    },
+    {
+      "id": "E027",
+      "topic": "Fixed vs Variable Costs: Per-Unit Formula",
+      "path": "/blogs/fixed-vs-variable-costs/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/november11Day6Existing.js",
+      "expectedLiveMarker": "day6-20261111-fixed-vs-variable-costs",
+      "note": "November11 explicit authorization covers both former inspect-only and eligible owners."
+    },
+    {
+      "id": "E028",
+      "topic": "Margin vs Markup: Calculator & Formula",
+      "path": "/blogs/margin-vs-markup/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/twelveDayDay7Review.js",
+      "expectedLiveMarker": "day7-20261117-margin-vs-markup",
+      "note": "November17 fee-adjusted contribution case plus combined-plan connections."
+    },
+    {
+      "id": "E029",
+      "topic": "Is a Cleaning Business Profitable?",
+      "path": "/blogs/is-a-cleaning-business-profitable/",
+      "disposition": "reviewed-retained",
+      "evidence": "docs/day7-release/editorial-review.md",
+      "expectedLiveMarker": null,
+      "note": "Protected no-change audit; original profitability owner retained."
+    },
+    {
+      "id": "E030",
+      "topic": "Landscaping Business Profit Margin",
+      "path": "/blogs/landscaping-business-profit-margin/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/twelveDayDay7Review.js",
+      "expectedLiveMarker": "day7-20261117-landscaping-business-profit-margin",
+      "note": "November17 hiring/cash-principal case."
+    },
+    {
+      "id": "E031",
+      "topic": "Agency Profit Margin: Formula & Examples",
+      "path": "/blogs/agency-profit-margin/",
+      "disposition": "improved",
+      "evidence": "src/content/blogs/twelveDayDay7Review.js",
+      "expectedLiveMarker": "day7-20261117-agency-profit-margin",
+      "note": "November17 advance/reserve case."
+    },
+    {
+      "id": "E032",
+      "topic": "Cleaning Business Startup Costs and Budget",
+      "path": "/blogs/how-much-does-it-cost-to-start-a-cleaning-business/",
+      "disposition": "reviewed-retained",
+      "evidence": "docs/combined-day3/protected-audits.json",
+      "expectedLiveMarker": null,
+      "note": "November20 protected audit; no rewrite, cosmetic date or engine replacement."
+    },
+    {
+      "id": "E033",
+      "topic": "Landscaping Startup Costs and Cash Budget",
+      "path": "/blogs/how-much-does-it-cost-to-start-a-landscaping-business/",
+      "disposition": "reviewed-retained",
+      "evidence": "docs/combined-day3/protected-audits.json",
+      "expectedLiveMarker": null,
+      "note": "November20 protected audit; no rewrite, cosmetic date or engine replacement."
+    },
+    {
+      "id": "E034",
+      "topic": "How Much to Charge for House Cleaning",
+      "path": "/blogs/how-much-to-charge-for-house-cleaning/",
+      "disposition": "reviewed-retained",
+      "evidence": "docs/combined-day3/protected-audits.json",
+      "expectedLiveMarker": null,
+      "note": "November20 protected audit; no rewrite, cosmetic date or engine replacement."
+    },
+    {
+      "id": "E035",
+      "topic": "Lawn Care Pricing Per Acre: Set Your Rates",
+      "path": "/blogs/lawn-care-pricing-per-acre/",
+      "disposition": "improved",
+      "evidence": "src/CombinedDay3Review.jsx",
+      "expectedLiveMarker": "batch3-price-check",
+      "note": "Context-only owner received November20 whole-visit quote component; original article preserved."
+    },
+    {
+      "id": "E036",
+      "topic": "Ecommerce Pricing: Costs, Fees and Margin",
+      "path": "/blogs/how-to-price-products-for-ecommerce/",
+      "disposition": "improved",
+      "evidence": "src/CombinedDay3Review.jsx",
+      "expectedLiveMarker": "batch3-price-check",
+      "note": "November20 independent contribution-price component."
+    },
+    {
+      "id": "E037",
+      "topic": "Financial Ratios Calculator: 55 Measures",
+      "path": "/calculators/financial-ratios-calculator/",
+      "disposition": "reviewed-retained",
+      "evidence": "docs/combined-day2/protected-audits.json",
+      "expectedLiveMarker": null,
+      "note": "November18 protected calculator audit; original definitions, defaults and engine retained."
+    },
+    {
+      "id": "E038",
+      "topic": "Refinance Calculator: 5 Loan Types",
+      "path": "/calculators/refinance-calculator/",
+      "disposition": "reviewed-retained",
+      "evidence": "docs/combined-day3/protected-audits.json",
+      "expectedLiveMarker": null,
+      "note": "November20 protected audit; no rewrite, cosmetic date or engine replacement."
+    },
+    {
+      "id": "E039",
+      "topic": "EBITDA Calculator: Formula, Margin & Examples",
+      "path": "/calculators/ebitda-calculator/",
+      "disposition": "reviewed-retained",
+      "evidence": "docs/combined-day2/protected-audits.json",
+      "expectedLiveMarker": null,
+      "note": "November18 protected calculator audit; original definitions, defaults and engine retained."
+    },
+    {
+      "id": "E040",
+      "topic": "Business Startup Cost Calculator: Cash Needed to Launch",
+      "path": "/calculators/business-startup-cost-calculator/",
+      "disposition": "improved",
+      "evidence": "src/CombinedDay2Review.jsx",
+      "expectedLiveMarker": "Keep the funding budget separate from accounting recognition",
+      "note": "November18 startup funding-versus-accounting classification."
+    },
+    {
+      "id": "E041",
+      "topic": "Operating Profit Margin Calculator",
+      "path": "/calculators/operating-profit-margin-calculator/",
+      "disposition": "improved",
+      "evidence": "src/CombinedDay1Widgets.jsx",
+      "expectedLiveMarker": "Connect revenue, gross profit and operating income",
+      "note": "November17 net-revenue to gross/operating-income bridge."
+    },
+    {
+      "id": "E042",
+      "topic": "Business ROI Calculator: Uneven & Discounted Payback",
+      "path": "/calculators/business-roi-calculator/",
+      "disposition": "improved",
+      "evidence": "src/CombinedDay1Widgets.jsx",
+      "expectedLiveMarker": "simple-roi",
+      "note": "November17 simple unannualized ROI widget."
+    },
+    {
+      "id": "E043",
+      "topic": "Break-Even ROAS Calculator: Margin, Fees & CPA",
+      "path": "/calculators/break-even-roas-calculator/",
+      "disposition": "reviewed-retained",
+      "evidence": "docs/combined-day3/protected-audits.json",
+      "expectedLiveMarker": null,
+      "note": "November20 protected audit; no rewrite, cosmetic date or engine replacement."
+    },
+    {
+      "id": "E044",
+      "topic": "Employee Cost Calculator: Productive Hour",
+      "path": "/calculators/employee-cost-calculator/",
+      "disposition": "improved",
+      "evidence": "src/CombinedDay3Review.jsx",
+      "expectedLiveMarker": "batch3-employee-review",
+      "note": "November20 loaded cost and usable capacity explanation."
+    },
+    {
+      "id": "E045",
+      "topic": "Cash Flow Forecast Template: 13 Weeks",
+      "path": "/calculators/cash-flow-forecast-template/",
+      "disposition": "improved",
+      "evidence": "src/CombinedDay2Review.jsx",
+      "expectedLiveMarker": "Review the cash dates before accepting the forecast",
+      "note": "November18 event/date/category preflight."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "checkedAtUTC": "2026-11-27T06:38:45.041188+00:00",
+  "results": [
+    {
+      "path": "/downloads/landscaping-business-plan-template.docx",
+      "status": 200,
+      "bytes": 39648,
+      "zipMagic": true,
+      "sha256": "5f11d01d9c7b07dfae17cd24235acdb4a02e2743a84343f16e5993efcf0c988b"
+    },
+    {
+      "path": "/downloads/landscaping-business-plan-financials.xlsx",
+      "status": 200,
+      "bytes": 12506,
+      "zipMagic": true,
+      "sha256": "9edcacdfa01be929feb4c1ccae4d6cc1619d305a04dc78b175c3abda444ae19b"
+    },
+    {
+      "path": "/downloads/other-comprehensive-income-worksheet.html",
+      "status": 200,
+      "bytes": 2021,
+      "zipMagic": null,
+      "sha256": "4a10cb4fbc9e5256193843b6bc0cba707708e1ebd99cd2d5506ad9452a70b556"
+    }
+  ]
+}

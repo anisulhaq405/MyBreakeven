@@ -1,0 +1,58 @@
+{
+  "method": "Local production build based on f506493 plus unit-label contrast and scoped mortgage hero corrections; Lighthouse12.8.2 mobile simulated throttling. Python local HTTP server has no production compression/cache. Excludes live hosting, CrUX, INP and field Core Web Vitals.",
+  "results": [
+    {
+      "path": "/",
+      "fetchTime": "2026-11-27T06:42:14.205Z",
+      "scores": {
+        "performance": 0.74,
+        "accessibility": 1,
+        "seo": 1
+      },
+      "metrics": {
+        "first-contentful-paint": 4204.032000000001,
+        "largest-contentful-paint": 4536.531999999999,
+        "total-blocking-time": 27.999999999999545,
+        "cumulative-layout-shift": 0.0004131958602613375,
+        "speed-index": 4204.032000000001
+      }
+    },
+    {
+      "path": "/calculators/mortgage-calculator/",
+      "fetchTime": "2026-11-27T06:42:22.378Z",
+      "scores": {
+        "performance": 0.74,
+        "accessibility": 1,
+        "seo": 1
+      },
+      "metrics": {
+        "first-contentful-paint": 4205.608499999999,
+        "largest-contentful-paint": 4516.108499999999,
+        "total-blocking-time": 23,
+        "cumulative-layout-shift": 0.03310211612074997,
+        "speed-index": 4205.608499999999
+      }
+    },
+    {
+      "path": "/resources/landscaping-business-plan-template/",
+      "fetchTime": "2026-11-27T06:42:29.226Z",
+      "scores": {
+        "performance": 0.69,
+        "accessibility": 1,
+        "seo": 1
+      },
+      "metrics": {
+        "first-contentful-paint": 4550.528,
+        "largest-contentful-paint": 5240.292,
+        "total-blocking-time": 35.5,
+        "cumulative-layout-shift": 0.01264768048717688,
+        "speed-index": 4550.528
+      }
+    }
+  ],
+  "limitations": [
+    "Timings on uncompressed local hosting are not a production speed benchmark.",
+    "No fresh PageSpeed/CrUX result; API429 quota.",
+    "SEO100 is an automated check score, not search-rank proof."
+  ]
+}

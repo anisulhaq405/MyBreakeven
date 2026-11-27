@@ -1,0 +1,2167 @@
+{
+  "checkedAtUTC": "2026-11-27T06:32:15.897919+00:00",
+  "base": "https://mybreakeven.com",
+  "sourceCommit": "f506493bbac8dadbd648f8312b9ecbfa9a6c37b7",
+  "scope": {
+    "existingCandidates": 45,
+    "novemberNewGuides": 81,
+    "uniqueUrls": 135,
+    "sitemapUrls": 322,
+    "note": "Calculator directory is /tools/. The guessed /calculators/ directory returned403 and was removed from the expected-route scope."
+  },
+  "results": [
+    {
+      "id": null,
+      "path": "/blogs/other-comprehensive-income/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/other-comprehensive-income/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "f33dbd3b92ae791cb1f030640f376b9ced98332774fb6fe022c940453102afd7",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/capacity-planning/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/capacity-planning/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "41d96234b98af1e68ac4d2fb8b1e3459a540ef9c5492bd9315ca1940f925e41b",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/business-continuity-plan/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/business-continuity-plan/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "7129790c14c95570ac6327efbada30131f6f9a02d34aa6d70274705d62ce184c",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/gross-pay-vs-net-pay/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/gross-pay-vs-net-pay/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "928eb86dad932bfbcd880749240fb47b15c517b980d2b5fdd76c49121e9f51e6",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/small-business-hr/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/small-business-hr/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "4c86029ad66f949e54a7f6fd38374fbdf2bfa68aa26f672675bcb94e316cbfc3",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/product-lifecycle-management/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/product-lifecycle-management/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "401dfccee340a60fab7b2fc7b7293b1530311fc89558a1c94803a70bdea0275e",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/limited-liability-company/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/limited-liability-company/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "7e55711a294a0c3a08967ebcf67eebc90ec979044f08448dea122fc2526e98d1",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/startup-costs-accounting/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/startup-costs-accounting/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "732568eee813847da05a39554a2144ca652b6c357fd6f3b29641df80d9b22c6b",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/cloud-accounting/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/cloud-accounting/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "4caf37eb7ab818f7e8533c7fd0ab48a5d337050570ba40ddff18976096556ce7",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/capital-expenditure/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/capital-expenditure/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "6d41c5da8934a9e9bcb4082d9b4e5b38e6e469a42c4f25fd8e0d65015e1c8ae4",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/net-income/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/net-income/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "1b89d8ff8cfba3692f8cb81765b6f68e6378b261f3cfd3ee34a78fd28870d484",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/financial-reporting/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/financial-reporting/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "16f0b359326437b8ec18218ad17a101d8bee8912fd05d1696b634a9222359cf9",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/cash-flow-analysis/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/cash-flow-analysis/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "93cd0ef108daaf0a365352683f8539d076e1464ad502d55eb57eeb97dcc81b1e",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/small-business-valuation/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/small-business-valuation/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "28c4ab59411c5d94b837f188438b2df9a81ef8cf9c52df7870c2ff3edc756abf",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/business-expansion/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/business-expansion/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "766cdf94321e4bf5a4de2ff538f209c63e312f04c111c13f5654d00f2cdc2755",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/customer-acquisition-cost/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/customer-acquisition-cost/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "a1baf9eaa2fec3aca289d75e5494b7967d84884dc623634d04914e30abe7b170",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/gross-profit-gross-margin/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/gross-profit-gross-margin/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "145deebf473af023ebff1df0a57aca1f9dae3bf9e40f0b2e56ccd24a80e17a76",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/differential-cost/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/differential-cost/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "045e19fd61e564c55808e92e73b5b4053d68498031ea3cedbc8c5d9632f0dcfc",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/net-revenue/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/net-revenue/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "d625497a84a47ac9e3e8339eade02fb24bb0979fa3926d1f1076bab943674f5d",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/inventory-valuation-methods/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/inventory-valuation-methods/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "b85d51194131258f6d7f070edec03c7d8858b30a0483288e9b1ffa7aea961a25",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/recruitment-strategies-small-business/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/recruitment-strategies-small-business/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "916091c217598a737e1da3f53399535576e5b0a66ddde65667161ed9d14a9f46",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/business-loans/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/business-loans/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "389dc3aefe691b544a531b209b4f0e58cdd3230a7add613bb88faf461f1b9b48",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/startup-business-loans/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/startup-business-loans/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "ca84a64d6dafa4f8f2874f175493c8801fb7b7cbaed330736a06acc2fc26bb4c",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/small-business-grants/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/small-business-grants/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "8900f8dee4f09d3064011e3ce556334d31159e562e4613ed577c13c8bca69122",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/invoice-financing-vs-factoring/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/invoice-financing-vs-factoring/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "0fb425b45a58e1956b5839f1bc2913c4f139db111ac55b5d3ad81d3b69ea3fae",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/working-capital-loans/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/working-capital-loans/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "ab5cde5cb7d02cb1c8d4388aa9c03d315986fa2709b59fc7a82595c8f553e9fc",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/payroll-small-business/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/payroll-small-business/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "98e45fac9b8ec3eac5003724b6bc16e6be7dcaaf980714ac71534a7b2fdd2554",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/employee-compensation/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/employee-compensation/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "aeb526aff3bba6aacfd0930eea7099392a05a27abc20769606e72b9f65b69bc6",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/product-costs-vs-period-costs/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/product-costs-vs-period-costs/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "d489ea8b19bab2d2129311aa043a3331fdeb8bc2f4d36aadbcfbe2f5729e2ca6",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/pricing-strategies/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/pricing-strategies/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "d46dbdc6fd5ebc82ba6567d3db48163ab1b5874ab194049a1a7500002a276890",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/penetration-pricing/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/penetration-pricing/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "eb79b7df82c498f0f9c77f410f88431d52015134999ae58e5fe0b36f3f5c23de",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/cost-plus-pricing/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/cost-plus-pricing/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "356a8e2255043a89b7a478519cd9a2457c857123c331be85455908c617290a83",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/capital-budgeting/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/capital-budgeting/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "bddb4091f9135a200028b3d217c07613e8c487ab4cd11cc900b5e15f177e3481",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/payback-period/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/payback-period/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "ce8e8dfe1cbf0c88dc99896ae906846c0d20df44cb87aa76ce94fcd6aac72b24",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/wacc/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/wacc/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "25c6a6ba347494fb4fae0c2576e51ca3abf912a78b69b03725c0ca981b8108df",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/cost-of-equity/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/cost-of-equity/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "d9c18d80093bcb5e37fe0ef353c4f33c3630838aca527eeff5a668ce5a9a802f",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/small-business-inventory-management/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/small-business-inventory-management/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "ed9b92737a2e831d7f9e3c806025f7233552c00f544647e0df3f6a104cf4d670",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/accrued-expenses/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/accrued-expenses/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "7f95099f70136d30c098c1b8f952944a196e1b73d087a80f03128008384b43d2",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/retained-earnings/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/retained-earnings/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "df1cb9a37cf99a50fe8f36a01e6f3e9b3fdc79dac37acef51ab98545fdf48afc",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/marginal-cost/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/marginal-cost/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "60af144ec8521b06ba7ef32acc9eea8751a2e4e1521e9a05ca6daa59851377d9",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/average-cost-per-unit/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/average-cost-per-unit/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "d911ae0b8bf1e9d9bdb088720778aef2a5ae4045e909da18739fb8d78ef12dd3",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/cost-control/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/cost-control/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "4a4a18274b64dd5e2875154936e7612c4eeccb7957416b1017df93f7dddc3b4f",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/cost-benefit-analysis/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/cost-benefit-analysis/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "a4f56418722e81ae6c756aaed1acba3e7271dd01fba5947bb39cff38a3663a13",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/activity-based-costing/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/activity-based-costing/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "3536fa3009e86c409e4ec18e1cd6fd34b22d56c8327f295f13c88b740d117a4c",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/absorption-vs-variable-costing/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/absorption-vs-variable-costing/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "fd6a45535e84877e24a91292c4aa24ad945b1fa431c171802a6d061d2081e88c",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/accrual-accounting/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/accrual-accounting/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "6c75ccad1da6103e4e935a03572ac2b9ac1f01b8b58462ca2b42ad29c972093d",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/bookkeeping-small-business/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/bookkeeping-small-business/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "45c7558d86340f4621f00e31b11bf511d1128c6e449569e2c78c26fe46343491",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/accounting-cycle/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/accounting-cycle/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "0b1f92b068203bf4ce71431bd12d1ff46dedb6265adb17ba2011fe6c42cbbd05",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/general-ledger-template/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/general-ledger-template/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "06dd2ab8b2c742c2e8793c5b4cda6aab8c748df9ba6c4b40e064d599572b7238",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/depreciation-methods/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/depreciation-methods/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "e42e64d8a496d5b97b0d2109c16466012b67d6c6bf77db9994db9d068789bfda",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/accumulated-depreciation/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/accumulated-depreciation/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "4d4dad854a8d5e140f8b738063530a458518ed9c50768004b4f7cbdb4b2c787b",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/straight-line-depreciation/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/straight-line-depreciation/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "6bc4f1aa76f1ef93e144a4422f47b96aec87a048229a942595c121b81cc0668e",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/allowance-doubtful-accounts/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/allowance-doubtful-accounts/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "acc26b8971819d57fa3e95283a7d7fe7b99767e3bca9c5654c13cea2f2305373",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/bad-debt-expense/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/bad-debt-expense/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "391ca8f83979623d1b6640086e95e3e71afb394d77eae1477a38b6423823df8d",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/business-risk-assessment/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/business-risk-assessment/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "b5fe6b4131c50b1cbbd56598a2d849e439a9041db4048083101bd6ca034b6bb7",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/online-business-ideas/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/online-business-ideas/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "fcb2d7ae4320a9e59e0da99892a25deddee25db595a62242ae8c572d3c028f3c",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/how-to-start-online-business/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/how-to-start-online-business/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "27173545d726d50d09af81be69bdadda5848c74c33d95220605d9666271e8242",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/start-home-based-business/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/start-home-based-business/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "e86638a18928f64f9ea3899a39c9b2a4f6ddef04a300b98371d85102c64eda1b",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/assets-liabilities-equity/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/assets-liabilities-equity/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "a54017469c77f7ba10adefb38a1f509888bce692f779d2b392ca86693878ece4",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/current-assets/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/current-assets/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "6a6c5770fd5ff37347a39e9bc85c91efb934645349c4909160b18c0ffef95b85",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/current-liabilities/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/current-liabilities/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "2c51e456d9d41d0a9eb57967da0e4938c629080bc934d84aacf941b0023ec4a7",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/accounts-receivable-process/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/accounts-receivable-process/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "0ed0ed39eb2ed331adef4bd007b3a23c846f05d755d50571bfcc3eb0deebe985",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/accounts-payable-process/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/accounts-payable-process/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "7d2a5a8069e646286fdf077275bf8be304be23b5b72557ff03748095004d14cd",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/landscaping-working-capital/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/landscaping-working-capital/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "807486043940fded3f3b855f2b365f8bb9eaefa9c7b7e70c2a4e05970d4bcd6c",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/small-business-ideas/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/small-business-ideas/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "c8808e42547bb4e6e074fbde8367f6abd320f2bc05ff2f7cdc35a2c35e47070e",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/how-to-start-small-business/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/how-to-start-small-business/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "02509cc171b4765f60f3133b9e3a1f366a43d248833cda4739aaba686224120f",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/business-model-canvas/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/business-model-canvas/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "bcbabdafe7c4eb1c01a12658ee42b59d69fc08626a6966285f0b2131738a64d8",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/business-proposal-template/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/business-proposal-template/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "f36a9dc0e2c211a0c6550ac6c8e122e3dd55c85f53f838a417166e37f6887164",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/business-growth-strategies/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/business-growth-strategies/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "ccc50131a84a00a8d669d71c7663e2a3263029603439f62949347782e0217044",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/business-feasibility-study/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/business-feasibility-study/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "86f5a742c5e5304e160cf85d670d2d6a28985188cb6233b0a6e03a0a67d732cd",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/business-goals/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/business-goals/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "ff00dcbe3ba263dfdcd544bb8ad73d3d6de02782f5db0f310604a8b1883ef5d2",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/small-business-strategic-planning/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/small-business-strategic-planning/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "e9186ef4470ba1d1a54522935a05fb7c372022a2a7068a544d0ff3603ef04f87",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/customer-profitability-analysis/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/customer-profitability-analysis/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "d77dc8b66d0fee36da604a528ccae414d92e54aac35a1de39a4b1e293590b1c8",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/roas-vs-roi/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/roas-vs-roi/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "81354ad979318ea6ce2dc8ccd4bc65dba224ffce1ba1e2014b0c9ca2df4d2f13",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/sales-forecast-small-business/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/sales-forecast-small-business/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "fb24360ad89ec7c7550d74c9e96e3e3ace4b95b5aebea5df2af74fa2a928e553",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/cost-volume-profit-analysis/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/cost-volume-profit-analysis/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "ed0bf4205117329e8d0e9c3d2e23683293fe57a778403fe90c2b6ffa344507fe",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/cost-per-hire-vs-employee-cost/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/cost-per-hire-vs-employee-cost/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "920601d5dc9ef2c76b2b6641d517fbc50509d4f8ea62722dcc2ed9852846be38",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/business-financial-contingency-plan/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/business-financial-contingency-plan/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "b4233887aa92f0f6fc85e901eb13abc036749ef0d36ca8cabf80626e43ee5c06",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/accounts-receivable-vs-accounts-payable/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/accounts-receivable-vs-accounts-payable/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "e8d572509b549f95c3f7bfef77ceaad3aff7aa27c052e0d3e90502d742779293",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/cost-performance-index/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/cost-performance-index/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "ee7bdf2093e3b48ff1aa1c61da54c90dd466a69f1a21166435560eeaaf4f7973",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/blogs/profitability-index/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/profitability-index/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "8f477f6d396b5cbeac28767a5d8583923e0f3d9c50fc1937c10db436a459140c",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "1679be93d1625762e0e2b5e5321118a991617d17eaa67c1ce22e321dac0f67e2",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/tools/",
+      "errors": [],
+      "status": 200,
+      "canonical": "https://mybreakeven.com/tools/",
+      "h1": 1,
+      "sitemap": true
+    },
+    {
+      "id": null,
+      "path": "/blogs/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "46822f5a010a9b8aa781d65bc6af6e91c9132721ab48d0b5402d76918cd00dc1",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/calculators/mortgage-calculator/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/calculators/mortgage-calculator/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "3af4ab9e7eb2ed1412f8c33ac05627818c910e3bd3d8f35cb2f4c7c115dee0a2",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/calculators/cd-calculator/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/calculators/cd-calculator/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "bb7e758033f87c4ef247c6d06003fe8a4217905cf0f1ffc8048d1ea266ec67b2",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/calculators/apy-calculator/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/calculators/apy-calculator/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "f1ea78caba32ef355f1064c8de4925239b59956e1293c909b53b03925a5ada44",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/calculators/prorated-rent-calculator/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/calculators/prorated-rent-calculator/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "5e7ecc1b22360ac7fe6f13ebea1ad00736e0328f27fad4b87a568668ad5dc985",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/calculators/debt-to-income-calculator/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/calculators/debt-to-income-calculator/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "8000d957158a1114c8ae616fbca1a3d835b4885f4251189a23b999dcdc5fe30e",
+      "errors": []
+    },
+    {
+      "id": null,
+      "path": "/resources/income-statement-template/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/resources/income-statement-template/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "d312dfe72d373331672f183c5b4f987426f4c56631bacce544f3db199e7e5a4d",
+      "errors": []
+    },
+    {
+      "id": "E001",
+      "path": "/guides/financial-ratios/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/guides/financial-ratios/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "additional-ratio-reference",
+      "markerPresent": true,
+      "htmlSha256": "d96840063170adc3b5cd37c7a1e6bf064561d336ba94319e2151111d8b837312",
+      "errors": []
+    },
+    {
+      "id": "E002",
+      "path": "/resources/business-plan-template/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/resources/business-plan-template/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "22f1c58f417177ad53555cb7d2bab2311523adb45df1a277c99b1a0fa9644712",
+      "errors": []
+    },
+    {
+      "id": "E003",
+      "path": "/resources/landscaping-business-plan-template/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/resources/landscaping-business-plan-template/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "Separate seasonal maintenance from installation commitments",
+      "markerPresent": true,
+      "htmlSha256": "4fc376249a981f80460493189cf87167562878dbba4cebf58d19b1b93b4dc8b7",
+      "errors": []
+    },
+    {
+      "id": "E004",
+      "path": "/guides/cleaning-business/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/guides/cleaning-business/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "Follow one cleaning decision from quote to cash",
+      "markerPresent": true,
+      "htmlSha256": "38b99a17f0513dfec54033783adf2882968067ebaf107dd9ed463e7f059998fc",
+      "errors": []
+    },
+    {
+      "id": "E005",
+      "path": "/blogs/how-to-analyze-financial-statements/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/how-to-analyze-financial-statements/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "Prepare, reconcile, then interpret the reports",
+      "markerPresent": true,
+      "htmlSha256": "c2c936ad0cb80743983cfabf4efd71ff9ad7317b9a7c56c3eeab00f0049d40c9",
+      "errors": []
+    },
+    {
+      "id": "E006",
+      "path": "/blogs/cash-flow-statement/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/cash-flow-statement/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "profit-to-cash-bridge",
+      "markerPresent": true,
+      "htmlSha256": "2c89f5a26bea38640b27d71e551fbcc12104e2e65128413f395156d19fa3fccc",
+      "errors": []
+    },
+    {
+      "id": "E007",
+      "path": "/blogs/operating-cash-flow/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/operating-cash-flow/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "legacy-cash-ratios-free-cash-flow",
+      "markerPresent": true,
+      "htmlSha256": "966cf4843f539ac9f5a67a080605621665512fb6034a0129aac4c7fd9434e88a",
+      "errors": []
+    },
+    {
+      "id": "E008",
+      "path": "/blogs/cash-flow-problems/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/cash-flow-problems/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "439a9444ea40ac06123011ab61ad237d8dcd55b4ffe513f758a39c394473ab4f",
+      "errors": []
+    },
+    {
+      "id": "E009",
+      "path": "/blogs/operating-expenses/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/operating-expenses/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "payroll-cogs-or-opex",
+      "markerPresent": true,
+      "htmlSha256": "e7764b1f198fd7ae53d7812529c673b6e21f6fc2cc398e0cd4a20c77a1e836de",
+      "errors": []
+    },
+    {
+      "id": "E010",
+      "path": "/blogs/rolling-forecast/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/rolling-forecast/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "sales-evidence-before-reforecast",
+      "markerPresent": true,
+      "htmlSha256": "acd36e9106b12bbe09c6ef8548514087d66e690bf9a61e6dbcc46fbe59c2a95f",
+      "errors": []
+    },
+    {
+      "id": "E011",
+      "path": "/blogs/cost-drivers-small-business/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/cost-drivers-small-business/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "day3-evidence-before-new-pools",
+      "markerPresent": true,
+      "htmlSha256": "c22a64307c392ca5cfafe30910e84a298b629526c8c4b8da810e8751adafc55d",
+      "errors": []
+    },
+    {
+      "id": "E012",
+      "path": "/blogs/job-order-costing/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/job-order-costing/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "day3-job-cost-versus-settlement",
+      "markerPresent": true,
+      "htmlSha256": "2df01eb30c85fbb1bfc6680226d88c49fecf8443ea549ecd442ff6871b9bdad9",
+      "errors": []
+    },
+    {
+      "id": "E013",
+      "path": "/blogs/flexible-budget-variance-analysis/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/flexible-budget-variance-analysis/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "day3-timing-versus-performance",
+      "markerPresent": true,
+      "htmlSha256": "d042200e35bc3bc2cfacabfa4f2c9f65cde6b98dfecc066cbab18c30ff07a5ee",
+      "errors": []
+    },
+    {
+      "id": "E014",
+      "path": "/blogs/contribution-margin-income-statement/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/contribution-margin-income-statement/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "day3-contribution-format-next-analysis",
+      "markerPresent": true,
+      "htmlSha256": "b6009d32603d00fc67b3e7040d86881b8564e1c925b33e1ff6a504c8d0790764",
+      "errors": []
+    },
+    {
+      "id": "E015",
+      "path": "/blogs/how-to-calculate-cost-of-goods-sold/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/how-to-calculate-cost-of-goods-sold/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "day4-cogs-record-evidence",
+      "markerPresent": true,
+      "htmlSha256": "1518d5badace3bfa2ff53973298fdc0e2713787400d89a9eb82fc63876367303",
+      "errors": []
+    },
+    {
+      "id": "E016",
+      "path": "/blogs/how-to-calculate-working-capital/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/how-to-calculate-working-capital/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "working-capital-management-turnover",
+      "markerPresent": true,
+      "htmlSha256": "7bd9569cbfcf0cfa866b59c555715044903148cec84b157d4e0bca318557715a",
+      "errors": []
+    },
+    {
+      "id": "E017",
+      "path": "/blogs/how-to-calculate-days-sales-outstanding/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/how-to-calculate-days-sales-outstanding/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "day4-dso-gross-net-evidence",
+      "markerPresent": true,
+      "htmlSha256": "7d61ef51e7304bab7b127ffc00ee7cb9a240d0006eb32ce49501f4d28fa5516b",
+      "errors": []
+    },
+    {
+      "id": "E018",
+      "path": "/blogs/target-profit-sales-formula/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/target-profit-sales-formula/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "day4-profit-versus-cash-target",
+      "markerPresent": true,
+      "htmlSha256": "d7fc924bff54c1e62c17b3e2d2a0aa9d25ebda340933c1cdec1a38d79b5e8513",
+      "errors": []
+    },
+    {
+      "id": "E019",
+      "path": "/blogs/operating-leverage-small-business/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/operating-leverage-small-business/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "day4-operating-leverage-depreciation-scope",
+      "markerPresent": true,
+      "htmlSha256": "6cc285c254910191347973371fc22221cd2f4dd6eefa44edc17ea06a89edafec",
+      "errors": []
+    },
+    {
+      "id": "E020",
+      "path": "/blogs/break-even-roas-formula/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/break-even-roas-formula/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "day5-roas-versus-roi",
+      "markerPresent": true,
+      "htmlSha256": "4769c0236e849ead0c863f49b9148a398e48af3ae63df9d8ff1b7b00be07c0d3",
+      "errors": []
+    },
+    {
+      "id": "E021",
+      "path": "/blogs/break-even-multiple-products-sales-mix/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/break-even-multiple-products-sales-mix/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "day5-composite-bundle-capacity",
+      "markerPresent": true,
+      "htmlSha256": "c2552ee172475ebae248ce61f902a236067695a65cde25bfab9d6ebe68663dd1",
+      "errors": []
+    },
+    {
+      "id": "E022",
+      "path": "/blogs/landscaping-seasonal-break-even/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/landscaping-seasonal-break-even/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "day5-landscaping-budget-cash",
+      "markerPresent": true,
+      "htmlSha256": "947e4f7d60512aecbdb3f266e9da0a5bd3b259b183fb6eca71c30b41948987a1",
+      "errors": []
+    },
+    {
+      "id": "E023",
+      "path": "/blogs/cleaning-business-monthly-expenses/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/cleaning-business-monthly-expenses/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "day5-janitorial-expense-close",
+      "markerPresent": true,
+      "htmlSha256": "6cc9040e418a5e976023a85e19cb1a9050b2593792b0d8335d432fcac6f44b5d",
+      "errors": []
+    },
+    {
+      "id": "E024",
+      "path": "/blogs/calculate-break-even-point/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/calculate-break-even-point/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "day6-20261111-calculate-break-even-point",
+      "markerPresent": true,
+      "htmlSha256": "da02ca09251dca2bd2b3de58e2ddb650919316b4b51ee1c6e4ab8d6bd88d4304",
+      "errors": []
+    },
+    {
+      "id": "E025",
+      "path": "/blogs/break-even-formula-units-dollars/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/break-even-formula-units-dollars/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "day6-20261111-break-even-formula-units-dollars",
+      "markerPresent": true,
+      "htmlSha256": "ffda6db4437a0e58ae041fd03e89ba06ef2fe179d85bbe2f7d50ef0681c9b67b",
+      "errors": []
+    },
+    {
+      "id": "E026",
+      "path": "/blogs/calculate-contribution-margin/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/calculate-contribution-margin/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "day6-20261111-calculate-contribution-margin",
+      "markerPresent": true,
+      "htmlSha256": "cfc33275f4af823e5be809d60478bed59d08a263d064d36d66ad387d41579de8",
+      "errors": []
+    },
+    {
+      "id": "E027",
+      "path": "/blogs/fixed-vs-variable-costs/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/fixed-vs-variable-costs/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "day6-20261111-fixed-vs-variable-costs",
+      "markerPresent": true,
+      "htmlSha256": "bcc5cd41d6d0fa72bf829c8d197a1a5730b66418889f2e9d0d7f8c66f2fcbc1b",
+      "errors": []
+    },
+    {
+      "id": "E028",
+      "path": "/blogs/margin-vs-markup/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/margin-vs-markup/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "day7-20261117-margin-vs-markup",
+      "markerPresent": true,
+      "htmlSha256": "eeef739e0ddbd2d123d315ef1072118a591426212d4a3775e8cc4c9fc17869ef",
+      "errors": []
+    },
+    {
+      "id": "E029",
+      "path": "/blogs/is-a-cleaning-business-profitable/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/is-a-cleaning-business-profitable/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "24922595ea04fd1c012e892a97745058088c73702bbd4039d85214f9652bda62",
+      "errors": []
+    },
+    {
+      "id": "E030",
+      "path": "/blogs/landscaping-business-profit-margin/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/landscaping-business-profit-margin/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "day7-20261117-landscaping-business-profit-margin",
+      "markerPresent": true,
+      "htmlSha256": "821dd48522ceb2d5e79ef0123d85e40b863096c418b855b526bf01426aacdb73",
+      "errors": []
+    },
+    {
+      "id": "E031",
+      "path": "/blogs/agency-profit-margin/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/agency-profit-margin/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "day7-20261117-agency-profit-margin",
+      "markerPresent": true,
+      "htmlSha256": "91ce10be52eb1b632d0bcd6e3f4d2a8358b9a8ab73f7fe94da2e13c7a3ffb2e5",
+      "errors": []
+    },
+    {
+      "id": "E032",
+      "path": "/blogs/how-much-does-it-cost-to-start-a-cleaning-business/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-cleaning-business/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "bf2ba7fee5779d73488634e12ffa5865be2e5212fcfdd9a7013417a6d34a7599",
+      "errors": []
+    },
+    {
+      "id": "E033",
+      "path": "/blogs/how-much-does-it-cost-to-start-a-landscaping-business/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/how-much-does-it-cost-to-start-a-landscaping-business/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "99a57e75cfd164c19c692487d6aec0f4fb67ef5aca5a25de0d29c14e639f0a70",
+      "errors": []
+    },
+    {
+      "id": "E034",
+      "path": "/blogs/how-much-to-charge-for-house-cleaning/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/how-much-to-charge-for-house-cleaning/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "0371a81644991c85683a9fb63417cdd068ae0b4e55ec34367b12a52b0b214003",
+      "errors": []
+    },
+    {
+      "id": "E035",
+      "path": "/blogs/lawn-care-pricing-per-acre/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/lawn-care-pricing-per-acre/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "batch3-price-check",
+      "markerPresent": true,
+      "htmlSha256": "70308f5f5065d8da3a67767c69e643c46730dc95186362a87e2364540860b275",
+      "errors": []
+    },
+    {
+      "id": "E036",
+      "path": "/blogs/how-to-price-products-for-ecommerce/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/blogs/how-to-price-products-for-ecommerce/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "batch3-price-check",
+      "markerPresent": true,
+      "htmlSha256": "57ed0715426153e57c227d0454121d251ea997e32a785ddb2025709c9d0882fc",
+      "errors": []
+    },
+    {
+      "id": "E037",
+      "path": "/calculators/financial-ratios-calculator/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/calculators/financial-ratios-calculator/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "f4da9b8f5d2c96cb4895ce0aa508169f01c5ac580d610b25aa983f59bd79b0d6",
+      "errors": []
+    },
+    {
+      "id": "E038",
+      "path": "/calculators/refinance-calculator/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/calculators/refinance-calculator/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "e92a29acefa7c89e6e7482568bc49d3ba9f4fa514302a5bc62858c06b289afb2",
+      "errors": []
+    },
+    {
+      "id": "E039",
+      "path": "/calculators/ebitda-calculator/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/calculators/ebitda-calculator/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "5f1776356a297283a09db0f5a294ad919cd3388f1053a1c3392f3c12aa2b4c0d",
+      "errors": []
+    },
+    {
+      "id": "E040",
+      "path": "/calculators/business-startup-cost-calculator/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/calculators/business-startup-cost-calculator/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "Keep the funding budget separate from accounting recognition",
+      "markerPresent": true,
+      "htmlSha256": "4cbabdaa24d2c48694af69de9f2a5e04e03fb01861dff9e506e477bdb0c97f9b",
+      "errors": []
+    },
+    {
+      "id": "E041",
+      "path": "/calculators/operating-profit-margin-calculator/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/calculators/operating-profit-margin-calculator/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "Connect revenue, gross profit and operating income",
+      "markerPresent": true,
+      "htmlSha256": "ee521bd8d50371cdeff986c30fe5a0c6f352ee353067e2d1f2e10b57fc53f3a9",
+      "errors": []
+    },
+    {
+      "id": "E042",
+      "path": "/calculators/business-roi-calculator/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/calculators/business-roi-calculator/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "simple-roi",
+      "markerPresent": true,
+      "htmlSha256": "2123a1a8f07720f05e34c8d7a6f9da1c834ad2bbeaa3b98a7e99d6b005188126",
+      "errors": []
+    },
+    {
+      "id": "E043",
+      "path": "/calculators/break-even-roas-calculator/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/calculators/break-even-roas-calculator/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": null,
+      "markerPresent": null,
+      "htmlSha256": "f87fb13a44af0acbe2c4594533efdf4168710ea9934bceb975d3c728f0a258b6",
+      "errors": []
+    },
+    {
+      "id": "E044",
+      "path": "/calculators/employee-cost-calculator/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/calculators/employee-cost-calculator/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "batch3-employee-review",
+      "markerPresent": true,
+      "htmlSha256": "b6c5a46d070ddd6464a201b590f77ab0a04dfe0333d6035a883bf4a8a7e88546",
+      "errors": []
+    },
+    {
+      "id": "E045",
+      "path": "/calculators/cash-flow-forecast-template/",
+      "status": 200,
+      "canonical": "https://mybreakeven.com/calculators/cash-flow-forecast-template/",
+      "h1": 1,
+      "robots": [
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+        "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      ],
+      "sitemap": true,
+      "marker": "Review the cash dates before accepting the forecast",
+      "markerPresent": true,
+      "htmlSha256": "41ea27d3b225067811fb71d0cb91233750ffed0e4478ee790ba0b0e63de860a2",
+      "errors": []
+    }
+  ]
+}

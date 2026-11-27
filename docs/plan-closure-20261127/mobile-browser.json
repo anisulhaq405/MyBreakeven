@@ -1,0 +1,484 @@
+{
+  "checkedAtUTC": "2026-11-27T06:42:11.289Z",
+  "method": "Local production build based on f506493 plus unit-label contrast and scoped mortgage hero corrections; Chromium mobile/touch viewport390px and desktop1280px. Not live hosting, physical hardware or field Core Web Vitals",
+  "results": [
+    {
+      "route": "/",
+      "width": 390,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [
+        {
+          "tag": "svg",
+          "class": {},
+          "id": ""
+        },
+        {
+          "tag": "path",
+          "class": {},
+          "id": ""
+        },
+        {
+          "tag": "path",
+          "class": {},
+          "id": ""
+        },
+        {
+          "tag": "path",
+          "class": {},
+          "id": ""
+        },
+        {
+          "tag": "path",
+          "class": {},
+          "id": ""
+        },
+        {
+          "tag": "circle",
+          "class": {},
+          "id": ""
+        },
+        {
+          "tag": "g",
+          "class": {},
+          "id": ""
+        },
+        {
+          "tag": "text",
+          "class": {},
+          "id": ""
+        }
+      ],
+      "disclosure": true,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/",
+      "width": 1280,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 1280,
+      "scrollWidth": 1280,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [],
+      "disclosure": true,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/blogs/",
+      "width": 390,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/blogs/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [
+        {
+          "tag": "BUTTON",
+          "class": "",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "class": "",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "class": "",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "class": "",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "class": "",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "class": "",
+          "id": ""
+        },
+        {
+          "tag": "BUTTON",
+          "class": "",
+          "id": ""
+        }
+      ],
+      "disclosure": null,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/blogs/",
+      "width": 1280,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 1280,
+      "scrollWidth": 1280,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/blogs/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [],
+      "disclosure": null,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/tools/",
+      "width": 390,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/tools/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [],
+      "disclosure": null,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/tools/",
+      "width": 1280,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 1280,
+      "scrollWidth": 1280,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/tools/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [],
+      "disclosure": null,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/resources/landscaping-business-plan-template/",
+      "width": 390,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/resources/landscaping-business-plan-template/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [],
+      "disclosure": null,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/resources/landscaping-business-plan-template/",
+      "width": 1280,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 1280,
+      "scrollWidth": 1280,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/resources/landscaping-business-plan-template/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [],
+      "disclosure": null,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/guides/cleaning-business/",
+      "width": 390,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/guides/cleaning-business/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [],
+      "disclosure": null,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/guides/cleaning-business/",
+      "width": 1280,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 1280,
+      "scrollWidth": 1280,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/guides/cleaning-business/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [],
+      "disclosure": null,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/calculators/mortgage-calculator/",
+      "width": 390,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/calculators/mortgage-calculator/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [
+        {
+          "tag": "TABLE",
+          "class": "",
+          "id": ""
+        },
+        {
+          "tag": "CAPTION",
+          "class": "",
+          "id": ""
+        },
+        {
+          "tag": "THEAD",
+          "class": "",
+          "id": ""
+        },
+        {
+          "tag": "TR",
+          "class": "",
+          "id": ""
+        },
+        {
+          "tag": "TH",
+          "class": "",
+          "id": ""
+        },
+        {
+          "tag": "TBODY",
+          "class": "",
+          "id": ""
+        },
+        {
+          "tag": "TR",
+          "class": "",
+          "id": ""
+        },
+        {
+          "tag": "TD",
+          "class": "",
+          "id": ""
+        }
+      ],
+      "disclosure": true,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/calculators/mortgage-calculator/",
+      "width": 1280,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 1280,
+      "scrollWidth": 1280,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/calculators/mortgage-calculator/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [],
+      "disclosure": true,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/blogs/other-comprehensive-income/",
+      "width": 390,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/blogs/other-comprehensive-income/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [],
+      "disclosure": true,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/blogs/other-comprehensive-income/",
+      "width": 1280,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 1280,
+      "scrollWidth": 1280,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/blogs/other-comprehensive-income/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [],
+      "disclosure": true,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/blogs/how-to-calculate-working-capital/",
+      "width": 390,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/blogs/how-to-calculate-working-capital/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [],
+      "disclosure": true,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/blogs/how-to-calculate-working-capital/",
+      "width": 1280,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 1280,
+      "scrollWidth": 1280,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/blogs/how-to-calculate-working-capital/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [],
+      "disclosure": true,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/blogs/operating-cash-flow/",
+      "width": 390,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/blogs/operating-cash-flow/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [],
+      "disclosure": true,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/blogs/operating-cash-flow/",
+      "width": 1280,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 1280,
+      "scrollWidth": 1280,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/blogs/operating-cash-flow/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [],
+      "disclosure": true,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/calculators/food-cost-calculator/",
+      "width": 390,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/calculators/food-cost-calculator/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [],
+      "disclosure": true,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/calculators/food-cost-calculator/",
+      "width": 1280,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 1280,
+      "scrollWidth": 1280,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/calculators/food-cost-calculator/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [],
+      "disclosure": true,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/blogs/restaurant-food-cost-percentage/",
+      "width": 390,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/blogs/restaurant-food-cost-percentage/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [],
+      "disclosure": null,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/blogs/restaurant-food-cost-percentage/",
+      "width": 1280,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 1280,
+      "scrollWidth": 1280,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/blogs/restaurant-food-cost-percentage/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [],
+      "disclosure": null,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/blogs/restaurant-labor-cost-percentage/",
+      "width": 390,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 390,
+      "scrollWidth": 390,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/blogs/restaurant-labor-cost-percentage/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [],
+      "disclosure": null,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "route": "/blogs/restaurant-labor-cost-percentage/",
+      "width": 1280,
+      "status": 200,
+      "heroFits": true,
+      "viewport": 1280,
+      "scrollWidth": 1280,
+      "h1": 1,
+      "canonical": "https://mybreakeven.com/blogs/restaurant-labor-cost-percentage/",
+      "visibleBrokenImages": [],
+      "overflowingElements": [],
+      "disclosure": null,
+      "errors": [],
+      "pass": true
+    }
+  ]
+}
