@@ -20,6 +20,7 @@ const loaders = {
   'src/routes/AuthorityRoute.jsx': () => import('./routes/AuthorityRoute.jsx'),
   'src/routes/BlogHubRoute.jsx': () => import('./routes/BlogHubRoute.jsx'),
   'src/routes/BlogRoute.jsx': () => import('./routes/BlogRoute.jsx'),
+  'src/routes/MarketplaceToolRoute.jsx': () => import('./routes/MarketplaceToolRoute.jsx'),
   'src/routes/BusinessToolRoute.jsx': () => import('./routes/BusinessToolRoute.jsx'),
   'src/routes/CleaningRoute.jsx': () => import('./routes/CleaningRoute.jsx'),
   'src/routes/DirectoryRoute.jsx': () => import('./routes/DirectoryRoute.jsx'),
