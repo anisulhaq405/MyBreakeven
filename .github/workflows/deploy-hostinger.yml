@@ -155,6 +155,9 @@ jobs:
       - name: Verify existing-page improvement batch 2
         run: node scripts/qa-existing-batch2-nov24.mjs
 
+      - name: Verify scoped download indexing and discovery paths
+        run: node scripts/qa-gsc-discovery-batch1.mjs
+
       - name: Verify authorized pending-plan closure
         run: node scripts/qa-pending-close.mjs
 
