@@ -67,7 +67,7 @@ export const marketplaceTools = {
     name:'eBay Fee & Profit Calculator',
     title:'eBay Fee Calculator: Final Value Fees & Seller Profit',
     description:'Estimate US eBay final value fees, per-order charges and promoted listing fees. Calculate seller profit and the minimum item price after shipping and costs.',
-    intro:'See what a domestic US eBay sale leaves after final value fees, the per-order charge, attributed advertising, shipping and product costs. Use a supported category or enter a verified flat percentage.',
+    intro:'Estimate eBay US final value fees, ad costs and seller contribution. Choose a supported category or use a verified flat rate.',
     image:'/images/tools/ecommerce-break-even-feature-20261016.webp',
     alt:'Ecommerce seller workspace with parcels and order-planning materials',
     theme:{'--tool-accent':'#1d4ed8','--tool-dark':'#172554','--tool-soft':'#eef4ff'},
