@@ -1,0 +1,80 @@
+{
+  "date": "2026-11-27",
+  "base": "b3f34850d60a58624c5a5d003546865e6bbaf654",
+  "evidence": "Deployed HTML and source records; historical worldwide GSC priorities, not current USA query-to-page evidence",
+  "pages": [
+    {
+      "slug": "fixed-vs-variable-costs",
+      "path": "blogs/fixed-vs-variable-costs",
+      "title": "Fixed vs Variable Costs: Examples &amp; Formulas | MyBreakeven",
+      "description": "Compare fixed and variable costs in total and per unit. Use clear examples, identify mixed and step costs, and calculate contribution without double counting.",
+      "canonical": "https://mybreakeven.com/blogs/fixed-vs-variable-costs/",
+      "action": "reviewed; existing coverage retained",
+      "newTarget": null
+    },
+    {
+      "slug": "restaurant-budgeting",
+      "path": "blogs/restaurant-budgeting",
+      "title": "Restaurant Budget Template: Excel &amp; Example | MyBreakeven",
+      "description": "Download an editable restaurant budget template for Excel. Build a monthly sales and expense plan, compare actuals, and connect annual and cash forecasts.",
+      "canonical": "https://mybreakeven.com/blogs/restaurant-budgeting/",
+      "action": "contextual handoff added",
+      "newTarget": "restaurant-sales-forecast"
+    },
+    {
+      "slug": "break-even-formula-units-dollars",
+      "path": "blogs/break-even-formula-units-dollars",
+      "title": "Break-Even Point Formula: Units &amp; Sales | MyBreakeven",
+      "description": "Use the break-even point formula for units and sales revenue. Compare contribution dollars vs ratio, whole-unit rounding and a $12,000 fixed-cost example.",
+      "canonical": "https://mybreakeven.com/blogs/break-even-formula-units-dollars/",
+      "action": "contextual handoff added",
+      "newTarget": "operating-leverage-small-business"
+    },
+    {
+      "slug": "calculate-contribution-margin",
+      "path": "blogs/calculate-contribution-margin",
+      "title": "Contribution Margin per Unit Calculator | MyBreakeven",
+      "description": "Calculate contribution margin per unit with variable costs and selling fees. Check the ratio, worked examples and costs that belong in your monthly plan.",
+      "canonical": "https://mybreakeven.com/blogs/calculate-contribution-margin/",
+      "action": "contextual handoff added",
+      "newTarget": "target-profit-sales-formula"
+    },
+    {
+      "slug": "operating-leverage-small-business",
+      "path": "blogs/operating-leverage-small-business",
+      "title": "Operating Leverage Formula: DOL Example | MyBreakeven",
+      "description": "Calculate operating leverage as contribution divided by operating profit. Check a DOL of 6, a 10% volume change and the limits near break-even.",
+      "canonical": "https://mybreakeven.com/blogs/operating-leverage-small-business/",
+      "action": "reviewed; existing coverage retained",
+      "newTarget": null
+    },
+    {
+      "slug": "landscaping-break-even",
+      "path": "blogs/landscaping-break-even",
+      "title": "Landscaping Break-Even: Jobs and Capacity | MyBreakeven",
+      "description": "Calculate landscaping break-even jobs from price, costs and crew capacity. Test a whole-job shortfall, price-sensitive fees and added staffing costs.",
+      "canonical": "https://mybreakeven.com/blogs/landscaping-break-even/",
+      "action": "contextual handoff added",
+      "newTarget": "landscaping-working-capital"
+    },
+    {
+      "slug": "how-to-calculate-cost-of-goods-sold",
+      "path": "blogs/how-to-calculate-cost-of-goods-sold",
+      "title": "Cost of Goods Sold Formula: Worked Example | MyBreakeven",
+      "description": "Calculate COGS from opening inventory, net additions and closing stock. Check a $30,000 example, supplier credits, freight, losses and the gross-profit bridge.",
+      "canonical": "https://mybreakeven.com/blogs/how-to-calculate-cost-of-goods-sold/",
+      "action": "reviewed; existing coverage retained",
+      "newTarget": null
+    },
+    {
+      "slug": "break-even-roas-calculator",
+      "path": "calculators/break-even-roas-calculator",
+      "title": "Break-Even ROAS Calculator: Margin, Fees & CPA",
+      "description": "Calculate break-even ROAS after product costs and fees. Compare ad performance, maximum CPA and the ROAS needed for your contribution target.",
+      "canonical": "https://mybreakeven.com/calculators/break-even-roas-calculator/",
+      "action": "reviewed; existing coverage retained",
+      "newTarget": null
+    }
+  ],
+  "measurement": "No ranking, indexing or traffic gain claimed. Owner manages GSC; compare equal post-recrawl windows."
+}

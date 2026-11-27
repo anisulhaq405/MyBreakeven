@@ -1,3 +1,4 @@
+import DiscoveryNextStep from './DiscoveryNextStep.jsx';
 import NovemberTopicConnections, {GuideTopicLink} from './NovemberTopicConnections.jsx';
 import {responsiveFeatureProps} from './responsiveFeatureImages.js';
 import './day3-print.css';
@@ -52,6 +53,7 @@ export default function BlogArticle({slug,initialArticle}){
     <section><h2>What the linked calculator checks</h2><ul>{a.features.map(item=><li key={item}>{item}</li>)}</ul></section>
     {a.sections.map((section,index)=><React.Fragment key={section.heading}><section><h2 id={section.id}>{section.heading}</h2>{section.paragraphs?.map(p=><p key={p}>{p}</p>)}{section.table&&<div className="article-table-scroll"><table className="article-records-table"><caption>{section.table.caption}</caption><thead><tr>{section.table.headings.map(heading=><th scope="col" key={heading}>{heading}</th>)}</tr></thead><tbody>{section.table.rows.map(row=><tr key={row[0]}><th scope="row">{row[0]}</th>{row.slice(1).map((cell,cellIndex)=><td key={cellIndex}>{cell}</td>)}</tr>)}</tbody></table></div>}{section.links&&<ul>{section.links.map(([label,href])=><li key={href}><a href={href}>{label}</a></li>)}</ul>}{section.bullets&&<ul>{section.bullets.map(item=><li key={item}>{item}</li>)}</ul>}</section>{index===2&&a.insideImage&&<figure className="article-visual"><img src={a.insideImage} alt={a.insideAlt} width={blogImageDimensions[a.insideImage]?.width || 1200} height={blogImageDimensions[a.insideImage]?.height || 630} loading="lazy" decoding="async"/><figcaption>How the {a.name.toLowerCase()} break-even calculation connects contribution, required {a.unit}, revenue and capacity.</figcaption></figure>}</React.Fragment>)}
     {a.queryReviewHtml&&<div className="day1-markdown" dangerouslySetInnerHTML={{__html:a.queryReviewHtml}}/>}
+    <DiscoveryNextStep article={a}/>
     <NovemberTopicConnections article={a}/><ScenarioAnalysis slug={a.slug || slug} />
     <section className="article-faq"><h2>Frequently asked questions</h2>{a.faq.map(item=><details key={item.q}><summary>{item.q}</summary><p>{item.a}</p></details>)}</section>
     <aside><h2>How to run your own numbers</h2><p>Open the matching calculator with industry-specific inputs, exact fractional results and whole-unit operating targets.</p><a className="page-button" href={`/calculators/${a.calculatorSlug}/`}>Use the free {a.tag} break-even calculator</a></aside>
