@@ -83,6 +83,9 @@ jobs:
       - name: Verify scoped download indexing and discovery paths
         run: node scripts/qa-gsc-discovery-batch1.mjs
 
+      - name: Verify controlled existing-page answer presentation
+        run: node scripts/qa-gsc-click-batch2.mjs
+
       - name: Verify authorized pending-plan closure
         run: node scripts/qa-pending-close.mjs
 

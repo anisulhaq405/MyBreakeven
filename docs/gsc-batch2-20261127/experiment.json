@@ -1,0 +1,249 @@
+{
+  "date": "2026-11-27",
+  "scope": "Answer presentation only; zero metadata tests started",
+  "evidence": "User-supplied 27 November report: worldwide page aggregates through 25 November. USA query/page comparison unavailable; user handles GSC manually.",
+  "measurement": "Compare equal 7/14/28-day windows after verified recrawl, by USA query, page and device. Retain position and query mix; sparse counts need longer observation. Do not interpret deployment as improved CTR.",
+  "pages": [
+    {
+      "slug": "target-profit-sales-formula",
+      "url": "https://mybreakeven.com/blogs/target-profit-sales-formula/",
+      "primaryTopic": {
+        "id": "break-even",
+        "title": "Break-even and sales risk",
+        "description": "Translate contribution into sales targets and test capacity, product mix and the sales cushion.",
+        "slugs": [
+          "cost-volume-profit-analysis",
+          "calculate-break-even-point",
+          "break-even-formula-units-dollars",
+          "break-even-analysis-example",
+          "target-profit-sales-formula",
+          "margin-of-safety-business",
+          "operating-leverage-small-business",
+          "break-even-multiple-products-sales-mix",
+          "lower-break-even-point"
+        ],
+        "href": "/blogs/#topic-break-even"
+      },
+      "seoTitle": "Target Profit Formula: Sales & Units Example",
+      "metaDescription": "Calculate target profit sales and required units. Follow a checked 70-job example, include owner pay once, and test whether your working hours can deliver.",
+      "published": "2026-09-30",
+      "modified": "2026-11-20",
+      "version": "2026-11-27-answer-presentation-v1",
+      "googleRecrawl": "Not inspected; owner manages GSC",
+      "selectedGoogleSnippet": "Not observed"
+    },
+    {
+      "slug": "margin-of-safety-business",
+      "url": "https://mybreakeven.com/blogs/margin-of-safety-business/",
+      "primaryTopic": {
+        "id": "break-even",
+        "title": "Break-even and sales risk",
+        "description": "Translate contribution into sales targets and test capacity, product mix and the sales cushion.",
+        "slugs": [
+          "cost-volume-profit-analysis",
+          "calculate-break-even-point",
+          "break-even-formula-units-dollars",
+          "break-even-analysis-example",
+          "target-profit-sales-formula",
+          "margin-of-safety-business",
+          "operating-leverage-small-business",
+          "break-even-multiple-products-sales-mix",
+          "lower-break-even-point"
+        ],
+        "href": "/blogs/#topic-break-even"
+      },
+      "seoTitle": "Margin of Safety Formula: Units & Sales",
+      "metaDescription": "Calculate margin of safety in units, sales and percent. Check a $6,000 cushion and 33.33% example, then distinguish forecast risk from profit and cash.",
+      "published": "2026-09-30",
+      "modified": "2026-11-20",
+      "version": "2026-11-27-answer-presentation-v1",
+      "googleRecrawl": "Not inspected; owner manages GSC",
+      "selectedGoogleSnippet": "Not observed"
+    },
+    {
+      "slug": "contribution-margin-vs-profit-margin",
+      "url": "https://mybreakeven.com/blogs/contribution-margin-vs-profit-margin/",
+      "primaryTopic": {
+        "id": "pricing-profitability",
+        "title": "Pricing and customer profitability",
+        "description": "Choose a pricing method, reconcile fees and test the contribution customers and orders leave.",
+        "slugs": [
+          "pricing-strategies",
+          "cost-plus-pricing",
+          "margin-vs-markup",
+          "calculate-contribution-margin",
+          "contribution-margin-vs-gross-margin",
+          "contribution-margin-vs-profit-margin",
+          "customer-profitability-analysis",
+          "penetration-pricing",
+          "discount-break-even-sales-volume",
+          "how-many-customers-can-you-lose-after-raising-prices",
+          "customer-acquisition-cost",
+          "gross-profit-gross-margin"
+        ],
+        "href": "/blogs/#topic-pricing-profitability"
+      },
+      "seoTitle": "Contribution Margin vs Profit Margin",
+      "metaDescription": "Compare contribution, operating and net profit margins using one reconciled example. See which costs each measure includes and the pricing question it answers.",
+      "published": "2026-10-01",
+      "modified": "2026-11-20",
+      "version": "2026-11-27-answer-presentation-v1",
+      "googleRecrawl": "Not inspected; owner manages GSC",
+      "selectedGoogleSnippet": "Not observed"
+    },
+    {
+      "slug": "lower-break-even-point",
+      "url": "https://mybreakeven.com/blogs/lower-break-even-point/",
+      "primaryTopic": {
+        "id": "break-even",
+        "title": "Break-even and sales risk",
+        "description": "Translate contribution into sales targets and test capacity, product mix and the sales cushion.",
+        "slugs": [
+          "cost-volume-profit-analysis",
+          "calculate-break-even-point",
+          "break-even-formula-units-dollars",
+          "break-even-analysis-example",
+          "target-profit-sales-formula",
+          "margin-of-safety-business",
+          "operating-leverage-small-business",
+          "break-even-multiple-products-sales-mix",
+          "lower-break-even-point"
+        ],
+        "href": "/blogs/#topic-break-even"
+      },
+      "seoTitle": "How to Lower Your Break-Even Point: 4 Ways",
+      "metaDescription": "Compare four ways to lower break-even: fixed costs, variable costs, net price and sales mix. Check the job targets, trade-offs and cash impact of each change.",
+      "published": "2026-09-23",
+      "modified": "2026-11-20",
+      "version": "unchanged control",
+      "googleRecrawl": "Not inspected; owner manages GSC",
+      "selectedGoogleSnippet": "Not observed"
+    },
+    {
+      "slug": "retail-break-even-analysis",
+      "url": "https://mybreakeven.com/blogs/retail-break-even-analysis/",
+      "primaryTopic": {
+        "id": "ecommerce-business",
+        "title": "E-commerce business",
+        "description": "Follow e-commerce costs, pricing, capacity and cash decisions.",
+        "href": "/guides/ecommerce-business/",
+        "slugs": [
+          "how-to-calculate-cost-of-goods-sold",
+          "amazon-marketplace-vs-own-store-profit-per-order",
+          "ecommerce-inventory-holding-cost-per-sku",
+          "inventory-reorder-point-cash-flow",
+          "subscription-box-churn-break-even",
+          "retail-break-even-analysis",
+          "ecommerce-bundle-pricing-profit",
+          "free-shipping-threshold-profit",
+          "break-even-roas-formula",
+          "ecommerce-chargeback-cost-per-order",
+          "ecommerce-return-cost-per-order",
+          "ecommerce-shipping-costs",
+          "ecommerce-orders-per-day-profitable",
+          "ecommerce-profit-margin",
+          "how-much-does-it-cost-to-start-an-ecommerce-store",
+          "how-to-price-products-for-ecommerce",
+          "ecommerce-break-even"
+        ],
+        "groups": [
+          {
+            "id": "startup",
+            "title": "Launch funding and store profit",
+            "description": "Separate opening cash from ongoing business performance; distinguish an online store from a physical retail model.",
+            "slugs": [
+              "how-much-does-it-cost-to-start-an-ecommerce-store",
+              "ecommerce-profit-margin",
+              "retail-break-even-analysis"
+            ]
+          },
+          {
+            "id": "pricing",
+            "title": "Products, bundles and shipping offers",
+            "description": "Price the complete order and test whether a discount or shipping promise leaves enough contribution.",
+            "slugs": [
+              "how-to-price-products-for-ecommerce",
+              "ecommerce-bundle-pricing-profit",
+              "free-shipping-threshold-profit",
+              "ecommerce-shipping-costs"
+            ]
+          },
+          {
+            "id": "losses",
+            "title": "Returns and payment disputes",
+            "description": "Track recovered stock, refunds and dispute costs without treating every lost dollar as the same cost.",
+            "slugs": [
+              "ecommerce-return-cost-per-order",
+              "ecommerce-chargeback-cost-per-order"
+            ]
+          },
+          {
+            "id": "channels",
+            "title": "Acquisition, marketplaces and subscriptions",
+            "description": "Compare channel contribution and active orders before forecasting growth.",
+            "slugs": [
+              "break-even-roas-formula",
+              "amazon-marketplace-vs-own-store-profit-per-order",
+              "subscription-box-churn-break-even"
+            ]
+          },
+          {
+            "id": "inventory",
+            "title": "Stock holding and replenishment cash",
+            "description": "Keep inventory position, carrying cost and payment timing visible.",
+            "slugs": [
+              "how-to-calculate-cost-of-goods-sold",
+              "how-to-calculate-working-capital",
+              "ecommerce-inventory-holding-cost-per-sku",
+              "inventory-reorder-point-cash-flow"
+            ]
+          },
+          {
+            "id": "capacity",
+            "title": "Break-even and daily orders",
+            "description": "Convert net order contribution into whole orders and practical fulfillment capacity.",
+            "slugs": [
+              "ecommerce-break-even",
+              "ecommerce-orders-per-day-profitable"
+            ]
+          }
+        ]
+      },
+      "seoTitle": "Retail Break-Even Analysis: Sales Example",
+      "metaDescription": "Calculate retail break-even sales and receipts from basket contribution. Check the 354-receipt example, discounts, store traffic, staffing and stock cash.",
+      "published": "2026-10-06",
+      "modified": "2026-11-20",
+      "version": "2026-11-27-answer-presentation-v1",
+      "googleRecrawl": "Not inspected; owner manages GSC",
+      "selectedGoogleSnippet": "Not observed"
+    },
+    {
+      "slug": "break-even-analysis-example",
+      "url": "https://mybreakeven.com/blogs/break-even-analysis-example/",
+      "primaryTopic": {
+        "id": "break-even",
+        "title": "Break-even and sales risk",
+        "description": "Translate contribution into sales targets and test capacity, product mix and the sales cushion.",
+        "slugs": [
+          "cost-volume-profit-analysis",
+          "calculate-break-even-point",
+          "break-even-formula-units-dollars",
+          "break-even-analysis-example",
+          "target-profit-sales-formula",
+          "margin-of-safety-business",
+          "operating-leverage-small-business",
+          "break-even-multiple-products-sales-mix",
+          "lower-break-even-point"
+        ],
+        "href": "/blogs/#topic-break-even"
+      },
+      "seoTitle": "Break-Even Analysis Example: 500 Units",
+      "metaDescription": "Follow a break-even analysis example with full workings: $12,000 fixed cost, $24 contribution and 500 units. Check sales, profit and the editable worksheet.",
+      "published": "2026-09-23",
+      "modified": "2026-11-20",
+      "version": "unchanged control",
+      "googleRecrawl": "Not inspected; owner manages GSC",
+      "selectedGoogleSnippet": "Not observed"
+    }
+  ]
+}
