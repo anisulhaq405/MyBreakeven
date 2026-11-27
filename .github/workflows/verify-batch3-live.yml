@@ -1,0 +1,75 @@
+name: Verify Batch 3 live paths
+on:
+  push:
+    branches: [seo/gsc-batch3-live-20261127]
+permissions:
+  contents: read
+jobs:
+  public-http:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Verify canonical owners, four new paths and their destinations
+        shell: python
+        run: |
+          import urllib.request, concurrent.futures, re, json, time
+          from html import unescape
+          pages=json.loads("{\n  \"date\": \"2026-11-27\",\n  \"base\": \"b3f34850d60a58624c5a5d003546865e6bbaf654\",\n  \"evidence\": \"Deployed HTML and source records; historical worldwide GSC priorities, not current USA query-to-page evidence\",\n  \"pages\": [\n    {\n      \"slug\": \"fixed-vs-variable-costs\",\n      \"path\": \"blogs/fixed-vs-variable-costs\",\n      \"title\": \"Fixed vs Variable Costs: Examples &amp; Formulas | MyBreakeven\",\n      \"description\": \"Compare fixed and variable costs in total and per unit. Use clear examples, identify mixed and step costs, and calculate contribution without double counting.\",\n      \"canonical\": \"https://mybreakeven.com/blogs/fixed-vs-variable-costs/\",\n      \"action\": \"reviewed; existing coverage retained\",\n      \"newTarget\": null\n    },\n    {\n      \"slug\": \"restaurant-budgeting\",\n      \"path\": \"blogs/restaurant-budgeting\",\n      \"title\": \"Restaurant Budget Template: Excel &amp; Example | MyBreakeven\",\n      \"description\": \"Download an editable restaurant budget template for Excel. Build a monthly sales and expense plan, compare actuals, and connect annual and cash forecasts.\",\n      \"canonical\": \"https://mybreakeven.com/blogs/restaurant-budgeting/\",\n      \"action\": \"contextual handoff added\",\n      \"newTarget\": \"restaurant-sales-forecast\"\n    },\n    {\n      \"slug\": \"break-even-formula-units-dollars\",\n      \"path\": \"blogs/break-even-formula-units-dollars\",\n      \"title\": \"Break-Even Point Formula: Units &amp; Sales | MyBreakeven\",\n      \"description\": \"Use the break-even point formula for units and sales revenue. Compare contribution dollars vs ratio, whole-unit rounding and a $12,000 fixed-cost example.\",\n      \"canonical\": \"https://mybreakeven.com/blogs/break-even-formula-units-dollars/\",\n      \"action\": \"contextual handoff added\",\n      \"newTarget\": \"operating-leverage-small-business\"\n    },\n    {\n      \"slug\": \"calculate-contribution-margin\",\n      \"path\": \"blogs/calculate-contribution-margin\",\n      \"title\": \"Contribution Margin per Unit Calculator | MyBreakeven\",\n      \"description\": \"Calculate contribution margin per unit with variable costs and selling fees. Check the ratio, worked examples and costs that belong in your monthly plan.\",\n      \"canonical\": \"https://mybreakeven.com/blogs/calculate-contribution-margin/\",\n      \"action\": \"contextual handoff added\",\n      \"newTarget\": \"target-profit-sales-formula\"\n    },\n    {\n      \"slug\": \"operating-leverage-small-business\",\n      \"path\": \"blogs/operating-leverage-small-business\",\n      \"title\": \"Operating Leverage Formula: DOL Example | MyBreakeven\",\n      \"description\": \"Calculate operating leverage as contribution divided by operating profit. Check a DOL of 6, a 10% volume change and the limits near break-even.\",\n      \"canonical\": \"https://mybreakeven.com/blogs/operating-leverage-small-business/\",\n      \"action\": \"reviewed; existing coverage retained\",\n      \"newTarget\": null\n    },\n    {\n      \"slug\": \"landscaping-break-even\",\n      \"path\": \"blogs/landscaping-break-even\",\n      \"title\": \"Landscaping Break-Even: Jobs and Capacity | MyBreakeven\",\n      \"description\": \"Calculate landscaping break-even jobs from price, costs and crew capacity. Test a whole-job shortfall, price-sensitive fees and added staffing costs.\",\n      \"canonical\": \"https://mybreakeven.com/blogs/landscaping-break-even/\",\n      \"action\": \"contextual handoff added\",\n      \"newTarget\": \"landscaping-working-capital\"\n    },\n    {\n      \"slug\": \"how-to-calculate-cost-of-goods-sold\",\n      \"path\": \"blogs/how-to-calculate-cost-of-goods-sold\",\n      \"title\": \"Cost of Goods Sold Formula: Worked Example | MyBreakeven\",\n      \"description\": \"Calculate COGS from opening inventory, net additions and closing stock. Check a $30,000 example, supplier credits, freight, losses and the gross-profit bridge.\",\n      \"canonical\": \"https://mybreakeven.com/blogs/how-to-calculate-cost-of-goods-sold/\",\n      \"action\": \"reviewed; existing coverage retained\",\n      \"newTarget\": null\n    },\n    {\n      \"slug\": \"break-even-roas-calculator\",\n      \"path\": \"calculators/break-even-roas-calculator\",\n      \"title\": \"Break-Even ROAS Calculator: Margin, Fees & CPA\",\n      \"description\": \"Calculate break-even ROAS after product costs and fees. Compare ad performance, maximum CPA and the ROAS needed for your contribution target.\",\n      \"canonical\": \"https://mybreakeven.com/calculators/break-even-roas-calculator/\",\n      \"action\": \"reviewed; existing coverage retained\",\n      \"newTarget\": null\n    }\n  ],\n  \"measurement\": \"No ranking, indexing or traffic gain claimed. Owner manages GSC; compare equal post-recrawl windows.\"\n}\n")
+          def fetch(url):
+            with urllib.request.urlopen(urllib.request.Request(url,headers={"User-Agent":"MyBreakeven-authorized-release-QA/1.0"}),timeout=45) as r:
+              assert r.status==200,(url,r.status)
+              return r.read().decode()
+          def check(p):
+            h=fetch(p["canonical"])
+            assert re.search(r"<title>(.*?)</title>",h).group(1)==p["title"],(p["slug"],"title")
+            assert 'name="description" content="'+p["description"]+'"' in h,(p["slug"],"description")
+            assert 'rel="canonical" href="'+p["canonical"]+'"' in h,(p["slug"],"canonical")
+            assert not re.search(r'name="(?:robots|googlebot)" content="[^"]*noindex',h),(p["slug"],"indexability")
+            assert len(re.findall(r"<h1\b",h))==1,(p["slug"],"h1")
+            if p["newTarget"]:
+              assert 'id="discovery-next-'+p["slug"]+'"' in h,(p["slug"],"new context")
+              assert 'href="/blogs/'+p["newTarget"]+'/"' in h,(p["slug"],"new link")
+              target="https://mybreakeven.com/blogs/"+p["newTarget"]+"/"
+              target_html=fetch(target)
+              assert 'rel="canonical" href="'+target+'"' in target_html,(p["slug"],"target canonical")
+            return {"url":p["canonical"],"status":200,"metadataPreserved":True,"canonical":True,"newTarget":p["newTarget"]}
+          for attempt in range(5):
+            try:
+              with concurrent.futures.ThreadPoolExecutor(6) as pool:
+                results=list(pool.map(check,pages["pages"]))
+              for result in results:
+                print(json.dumps(result))
+              print("PASS: eight live owners; four contextual paths and four canonical destinations; metadata preserved.")
+              break
+            except Exception as error:
+              print("Attempt",attempt+1,str(error))
+              if attempt==4:
+                raise
+              time.sleep(10)
+
+          downloads = [
+            "budget-vs-actual-template.xlsx?release=20261023",
+            "restaurant-monthly-budget-template.xlsx",
+            "five-year-business-plan-template.docx",
+            "flexible-budget-review-20261023.csv",
+            "ecommerce-business-plan-financials.xlsx",
+            "mybreakeven-cleaning-monthly-budget.xlsx",
+            "uneven-discounted-payback-example.xlsx?v=20261024",
+            "landscaping-business-plan-financials.xlsx",
+            "five-year-business-plan-worksheet.xlsx",
+            "restaurant-20-scenarios-v1.csv",
+            "make-or-buy-review-20261023.csv",
+            "restaurant-20-scenarios-v1.csv?v=3"
+          ]
+          def download_check(path):
+            url="https://mybreakeven.com/downloads/"+path
+            try:
+              with urllib.request.urlopen(url,timeout=40) as r:
+                prefix=r.read(4)
+                return {"path":path,"status":r.status,"noindex":"noindex" in r.headers.get("X-Robots-Tag","").lower(),"officeZip":prefix[:2]==b"PK" if ".xlsx" in path or ".docx" in path else None}
+            except Exception as error:
+              return {"path":path,"error":str(error)}
+          with concurrent.futures.ThreadPoolExecutor(6) as pool:
+            download_results=list(pool.map(download_check,downloads))
+          print("Earlier download-cache follow-up:",json.dumps(download_results))
+          print("Download ordinary-URL noindex count:",sum(x.get("noindex",False) and x.get("status")==200 for x in download_results),"/",len(download_results))
