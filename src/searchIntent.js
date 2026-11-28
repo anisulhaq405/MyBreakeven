@@ -12,6 +12,8 @@ export const industryIntent = [
 ];
 
 export const decisionIntent = [
+ ['etsy-fee-calculator', 'US Etsy seller fees, Offsite Ads and item price floor', ['ecommerce-profit-margin']],
+ ['ebay-fee-calculator', 'US eBay final value fee, attributed advertising and item price floor', ['ecommerce-profit-margin']],
  ['mortgage-calculator','Fixed-rate payment and separate ownership budget',['mortgage-refinance-break-even']],
  ['prorated-rent-calculator','prorated rent calculator',['gross-pay-vs-net-pay']],
  ['debt-to-income-calculator','debt to income calculator',['gross-pay-vs-net-pay','net-income']],

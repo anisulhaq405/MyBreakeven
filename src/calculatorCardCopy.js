@@ -32,6 +32,7 @@ const copy = {
  financialRatios: ['Calculate liquidity, profitability and leverage ratios from financial statements.', 'Check financial ratios'],
 };
 export function calculatorCardCopy(slug, tool) {
+ if (tool.mode === 'marketplace') return [tool.intro, 'Calculate seller fees'];
  if (slug === 'debt-to-income-calculator') return ['Compare monthly debt payments with gross income, with rent shown separately.', 'Check debt to income'];
  if (slug === 'prorated-rent-calculator') return ['Work out partial-month rent using the selected dates and day-count method.', 'Calculate prorated rent'];
  const [summary, action] = copy[tool.mode] || [tool.intro, 'Build my break-even plan'];
