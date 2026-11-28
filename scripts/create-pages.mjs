@@ -1,4 +1,5 @@
-import {thaiCaseRoute,thaiCaseDate,thaiCaseImage,thaiCaseAlt,thaiCaseFaq} from '../src/thaiCaseData.js';
+import {editorialTeamAuthor, latestBlogCredit} from "../src/editorialCredits.js";
+import {thaiCaseRoute,thaiCaseDate,thaiCaseUpdated,thaiCaseImage,thaiCaseAlt,thaiCaseFaq} from '../src/thaiCaseData.js';
 import{statementResource,statementFaq}from '../src/incomeStatementContent.js';
 import {titledFeatureImage} from '../src/featureTitleCovers.js';
 import {financialRatiosHub,financeGuideDate} from '../src/content/blogs/financeCompletionGuides.js';
@@ -132,7 +133,7 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
     page.primaryImageOfPage={'@type':'ImageObject',url:'https://mybreakeven.com/images/resources/one-page-plan-editorial-20261024.webp',width:1200,height:675};
     pageSchema['@graph'].push({'@type':'FAQPage',mainEntity:onePagePlanFaq.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))});
   }
-  if(route===thaiCaseRoute){const page=pageSchema['@graph'].find(e=>e['@type']==='WebPage');Object.assign(page,{datePublished:thaiCaseDate,dateModified:thaiCaseDate,primaryImageOfPage:{'@type':'ImageObject',url:'https://mybreakeven.com'+thaiCaseImage,width:1200,height:675},mainEntity:{'@id':canonical+'#article'}});pageSchema['@graph'].push({'@type':'Article','@id':canonical+'#article',headline:heading,description,datePublished:thaiCaseDate,dateModified:thaiCaseDate,image:'https://mybreakeven.com'+thaiCaseImage,author:{'@id':'https://mybreakeven.com/#organization'},publisher:{'@id':'https://mybreakeven.com/#organization'},mainEntityOfPage:{'@id':canonical+'#webpage'},inLanguage:'en-US'},{'@type':'FAQPage',mainEntity:thaiCaseFaq.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))},{'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:'https://mybreakeven.com/'},{'@type':'ListItem',position:2,name:'Resources',item:'https://mybreakeven.com/resources/'},{'@type':'ListItem',position:3,name:'Thai Foods case study',item:canonical}]});}
+  if(route===thaiCaseRoute){const page=pageSchema['@graph'].find(e=>e['@type']==='WebPage');Object.assign(page,{datePublished:thaiCaseDate,dateModified:thaiCaseUpdated,primaryImageOfPage:{'@type':'ImageObject',url:'https://mybreakeven.com'+thaiCaseImage,width:1200,height:675},mainEntity:{'@id':canonical+'#article'}});pageSchema['@graph'].push({'@type':'Article','@id':canonical+'#article',headline:heading,description,datePublished:thaiCaseDate,dateModified:thaiCaseUpdated,image:'https://mybreakeven.com'+thaiCaseImage,author:editorialTeamAuthor,publisher:{'@id':'https://mybreakeven.com/#organization'},mainEntityOfPage:{'@id':canonical+'#webpage'},inLanguage:'en-US'},{'@type':'FAQPage',mainEntity:thaiCaseFaq.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))},{'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:'https://mybreakeven.com/'},{'@type':'ListItem',position:2,name:'Resources',item:'https://mybreakeven.com/resources/'},{'@type':'ListItem',position:3,name:'Thai Foods case study',item:canonical}]});}
   if (route === founderCaseRoute) {
     const page=pageSchema['@graph'].find(entity=>entity['@type']==='WebPage');
     Object.assign(page,{datePublished:founderCaseDate,dateModified:founderCaseDate,mainEntity:{'@id':`${canonical}#article`}});
@@ -268,7 +269,7 @@ for (const article of allArticles) {
   const title = `${article.seoTitle} | MyBreakeven`;
   const resolvedFaq = articleFaq(article);
   const schema = { "@context": "https://schema.org", "@graph": [
-    { "@type": "BlogPosting", "@id": `${canonical}#article`, headline: article.title, description: article.metaDescription, image: { "@type": "ImageObject", url: `https://mybreakeven.com${article.image}`, ...(blogImageDimensions[article.image] || { width: 1200, height: 675 }) }, datePublished: article.published, dateModified: article.modified, keywords: article.tags.join(", "), mainEntityOfPage: { "@id": `${canonical}#webpage` }, author: { "@type": "Organization", name: "MyBreakeven", url: "https://mybreakeven.com/" }, publisher: { "@id": "https://mybreakeven.com/#organization" }, about: article.about || `${article.tag} business planning`, inLanguage: "en-US" },
+    { "@type": "BlogPosting", "@id": `${canonical}#article`, headline: article.title, description: article.metaDescription, image: { "@type": "ImageObject", url: `https://mybreakeven.com${article.image}`, ...(blogImageDimensions[article.image] || { width: 1200, height: 675 }) }, datePublished: article.published, dateModified: article.slug===latestBlogCredit.slug ? latestBlogCredit.updated : article.modified, keywords: article.tags.join(", "), mainEntityOfPage: { "@id": `${canonical}#webpage` }, author: article.slug===latestBlogCredit.slug ? editorialTeamAuthor : { "@type": "Organization", name: "MyBreakeven", url: "https://mybreakeven.com/" }, publisher: { "@id": "https://mybreakeven.com/#organization" }, about: article.about || `${article.tag} business planning`, inLanguage: "en-US" },
     { "@type": "WebPage", "@id": `${canonical}#webpage`, url: canonical, name: title, description: article.metaDescription, isPartOf: { "@id": "https://mybreakeven.com/#website" } },
     { "@type": "FAQPage", mainEntity: resolvedFaq.items.map(item => ({ "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a } })) },
     { "@type": "BreadcrumbList", itemListElement: [
@@ -393,7 +394,8 @@ articleModified.set('https://mybreakeven.com/calculators/landscaping-break-even-
 articleModified.set('https://mybreakeven.com/calculators/agency-break-even-calculator/', '2026-11-16');
 articleModified.set('https://mybreakeven.com/guides/financial-ratios/','2026-11-18');
 articleModified.set('https://mybreakeven.com/guides/landscaping-business/','2026-11-18');
-articleModified.set('https://mybreakeven.com/'+thaiCaseRoute+'/',thaiCaseDate);
+articleModified.set('https://mybreakeven.com/'+thaiCaseRoute+'/',thaiCaseUpdated);
+articleModified.set('https://mybreakeven.com/blogs/'+latestBlogCredit.slug+'/',latestBlogCredit.updated);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${publicUrls.map(url => `  <url><loc>${escapeHtml(url)}</loc>${articleModified.has(url) ? `<lastmod>${escapeHtml(articleModified.get(url))}</lastmod>` : ""}</url>`).join("\n")}\n</urlset>\n`;
 await writeFile(new URL("../dist/sitemap.xml", import.meta.url), sitemap);
 

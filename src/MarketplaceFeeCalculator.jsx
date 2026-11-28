@@ -1,5 +1,6 @@
 import React, {useMemo, useState} from 'react';
 import './marketplace-tool.css';
+import {dateLabel} from './authorityResources.js';
 import FreeToolGuide from './FreeToolGuide.jsx';
 import {calculateMarketplace, digitalMarketplaceDefaults, ebayRates, marketplaceDefaults} from './marketplaceFeeEngine.js';
 import {responsiveFeatureProps} from './responsiveFeatureImages.js';
@@ -35,7 +36,9 @@ export default function MarketplaceFeeCalculator({tool, slug}) {
     <div className="tool-wrap">
       <nav className="tool-breadcrumb" aria-label="Breadcrumb"><a href="/tools/">Free business calculators</a></nav>
       <div className="tool-hero">
-        <h1>{tool.name}</h1><p>{tool.intro}</p>
+        <h1>{tool.name}</h1>
+        {slug === "etsy-fee-calculator" && <p>Published by <a href="/about-us/">MyBreakeven</a> · <time dateTime={tool.reviewed}>Updated {dateLabel(tool.reviewed)}</time></p>}
+        <p>{tool.intro}</p>
         <p><strong>Scope</strong> US domestic sale · USD · one item per checkout</p>
         <p><a href="#marketplace-inputs">Enter your order</a> · <a href="#marketplace-formula">Fee formula</a> · <a href="#marketplace-example">Worked example</a></p>
       </div>
