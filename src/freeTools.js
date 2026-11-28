@@ -1,3 +1,4 @@
+import {sellerAssetTools} from './sellerAssetTools.js';
 import {marketplaceTools} from './marketplaceTools.js';
 import {mortgageTools} from './mortgageTool.js';
 import {householdTools} from './householdTools.js';
@@ -73,4 +74,4 @@ freeTools['discount-break-even-calculator']=reviewDiscount(freeTools['discount-b
 // Combined sprint Day 1 adds only two distinct deposit-rate owners.
 Object.assign(freeTools,depositTools,householdTools);
 export const beforePendingTools={...freeTools};
-Object.assign(freeTools,mortgageTools,marketplaceTools);
+Object.assign(freeTools,mortgageTools,marketplaceTools,sellerAssetTools);
