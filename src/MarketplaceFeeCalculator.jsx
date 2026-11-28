@@ -23,11 +23,11 @@ export default function MarketplaceFeeCalculator({tool, slug}) {
   return <div className="free-tool-page marketplace-tool" style={tool.theme}>
     <div className="tool-wrap">
       <nav className="tool-breadcrumb" aria-label="Breadcrumb"><a href="/tools/">Free business calculators</a></nav>
-      <header className="tool-hero">
+      <div className="tool-hero">
         <h1>{tool.name}</h1><p>{tool.intro}</p>
         <p><strong>Scope</strong> US domestic sale · USD · one item per checkout</p>
         <p><a href="#marketplace-inputs">Enter your order</a> · <a href="#marketplace-formula">Fee formula</a> · <a href="#marketplace-example">Worked example</a></p>
-      </header>
+      </div>
       <div className="tool-workspace" id="marketplace-inputs">
         <section className="tool-panel">
           <h2>Your sale and seller costs</h2>
