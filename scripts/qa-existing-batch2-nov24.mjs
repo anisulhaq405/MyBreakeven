@@ -1,3 +1,4 @@
+import {expectedGrowthDate as expectedDate} from '../src/organicGrowthUpdates.js';
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import {beforeBreakevenCoreBlogPosts as blogPosts,beforeBatch2BlogPosts} from '../src/content/blogs/index.js';
@@ -12,8 +13,9 @@ for(const p of blogPosts){
  const path=`/blogs/${p.slug}/`,h=await fs.readFile('dist'+path+'index.html','utf8');
  assert.equal((h.match(/<h1\b/g)||[]).length,1);
  assert(h.includes(`rel="canonical" href="https://mybreakeven.com${path}"`));
- assert(h.includes('"dateModified":"2026-11-24"'));
- assert(sitemap.includes(`<loc>https://mybreakeven.com${path}</loc><lastmod>2026-11-24</lastmod>`));
+ const modified=expectedDate(p.slug,'2026-11-24');
+ assert(h.includes(`"dateModified":"${modified}"`));
+ assert(sitemap.includes(`<loc>https://mybreakeven.com${path}</loc><lastmod>${modified}</lastmod>`));
  assert(search.documents.some(d=>d.url===path));
  assert(h.indexOf('id="quick-answer"')<h.indexOf('article-featured'));
  if(p.slug==='calculate-contribution-margin')assert(h.indexOf('id="quick-answer"')<h.indexOf('id="contribution-calculator"'));

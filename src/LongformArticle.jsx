@@ -1,4 +1,6 @@
 import {editorialTeam, latestBlogCredit} from './editorialCredits.js';
+import {growthUpdates, growthUpdateDate} from './organicGrowthUpdates.js';
+import GrowthArticleUpdate from './GrowthArticleUpdate.jsx';
 import DiscoveryNextStep from './DiscoveryNextStep.jsx';
 import {presentClickAnswer} from './clickAnswerPresentation.js';
 import './click-answer-presentation.css';
@@ -40,15 +42,16 @@ const dateLabel = value => new Date(`${value}T12:00:00Z`).toLocaleDateString("en
 
 export default function LongformArticle({ article: a }) {
   const slug = a?.slug;
+  const growthUpdate = growthUpdates[slug];
   const editorialExample = slug === latestBlogCredit.slug;
   const hasIntroWidget = ['cash-flow-statement','how-to-analyze-financial-statements','marginal-cost','average-cost-per-unit','salon-booth-rent-vs-commission-owner','operating-cash-flow', 'master-budget', 'cost-drivers-small-business', 'job-order-costing', 'margin-vs-markup', 'calculate-contribution-margin', 'high-low-method', 'flexible-budget-variance-analysis', 'make-or-buy-decision', 'break-even-analysis-example'].includes(slug);
   const guideType = articleGuideType(a);
   useEffect(() => {
     if (!a) return;
-    document.title = `${a.seoTitle} | MyBreakeven`;
-    document.querySelector('meta[name="description"]')?.setAttribute("content", a.metaDescription);
+    document.title = `${growthUpdate?.title || a.seoTitle} | MyBreakeven`;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", growthUpdate?.description || a.metaDescription);
     document.querySelector('link[rel="canonical"]')?.setAttribute("href", `https://mybreakeven.com/blogs/${slug}/`);
-  }, [a, slug]);
+  }, [a, slug, growthUpdate]);
   if (!a) return <section className="page-hero"><h1>Guide not found</h1><a href="/blogs/">Return to blogs</a></section>;
   const faq = articleFaq(a);
   return <article className={`article-page${a.sectionLinks?' article-with-section-nav':''}${slug==='restaurant-budgeting'?' restaurant-budget-layout':''}${slug==='fixed-vs-variable-costs'?' fixed-variable-layout':''}`}>
@@ -56,9 +59,10 @@ export default function LongformArticle({ article: a }) {
     {a.tag === "Agency" && <AgencyClusterLink />}{a.tag === "E-commerce" && <EcommerceClusterLink />}{a.tag === "Photography" && <PhotographyClusterLink />}{a.tag === "Restaurant" && <RestaurantClusterLink />}{a.tag === "Salon" && <SalonClusterLink />}{a.tag === "Cleaning" && <CleaningClusterLink />}{a.tag === "Landscaping" && <LandscapingClusterLink />}{a.tag === "Mobile Detailing" && <MobileDetailingClusterLink />}
     {a.editorialStatus==='draft'&&<p className="article-note" role="status">Unpublished draft for review</p>}
     <span>{a.tag} {guideType}</span><h1>{a.title}</h1>
-    <div className="article-meta"><time dateTime={a.published}>{a.editorialStatus==='draft'?'Draft prepared':'Published'} {dateLabel(a.published)}</time>{editorialExample ? <time dateTime={latestBlogCredit.updated}>Updated {dateLabel(latestBlogCredit.updated)}</time> : <span>Updated {dateLabel(a.modified)}</span>}</div>
+    <div className="article-meta"><time dateTime={a.published}>{a.editorialStatus==='draft'?'Draft prepared':'Published'} {dateLabel(a.published)}</time>{growthUpdate ? <time dateTime={growthUpdateDate}>Updated {dateLabel(growthUpdateDate)}</time> : editorialExample ? <time dateTime={latestBlogCredit.updated}>Updated {dateLabel(latestBlogCredit.updated)}</time> : <span>Updated {dateLabel(a.modified)}</span>}</div>
     <p className="article-note">{editorialExample ? <>By <a href={editorialTeam.path} rel="author">{editorialTeam.name}</a>.</> : <>Published by <a href="/about-us/">MyBreakeven</a>.</>} <a href="/editorial-policy/">Editorial standards and corrections</a>. Report a calculation or content issue to <a href="mailto:mybreakeven1@gmail.com">mybreakeven1@gmail.com</a>.</p>
     <p className="article-lead">{a.description}</p>
+    {growthUpdate && slug!=='calculate-contribution-margin' && <GrowthArticleUpdate slug={slug} update={growthUpdate}/>}
     <GuideCalculatorLink slug={a.slug} />
     <EcommerceExampleLink slug={a.slug} />
     <ScenarioAnalysisLink slug={a.slug || slug} />
@@ -74,7 +78,7 @@ export default function LongformArticle({ article: a }) {
     {slug==='cash-flow-statement'&&<><Day2Review kind="statement"/><CashBridgeWidget/></>}
     {slug==='marginal-cost'&&<CostReviewWidget mode="marginal"/>}
     {slug==='average-cost-per-unit'&&<CostReviewWidget mode="average"/>}
-    {slug==='calculate-contribution-margin'&&<ContributionMarginWidget/>}
+    {slug==='calculate-contribution-margin'&&<><GrowthArticleUpdate slug={slug} update={growthUpdate}/><ContributionMarginWidget/></>}
     {slug==='master-budget'&&<BudgetBridgeWidget/>}
     {slug==='cost-drivers-small-business'&&<DriverAllocationWidget/>}
     {slug==='job-order-costing'&&<JobCostWidget/>}

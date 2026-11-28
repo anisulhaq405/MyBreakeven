@@ -1,3 +1,4 @@
+import {expectedGrowthDate as expectedDate} from '../src/organicGrowthUpdates.js';
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import path from 'node:path';
@@ -11,7 +12,7 @@ for(const p of posts){
  assert(h.includes(p.answerHtml));assert(h.includes(p.image));
  const nodes=[...h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap(m=>{const j=JSON.parse(m[1]);return j['@graph']||[j]});
  const article=nodes.find(n=>n['@type']==='BlogPosting'),faq=nodes.find(n=>n['@type']==='FAQPage');
- assert.equal(article.datePublished,'2026-11-11');assert.equal(article.dateModified,'2026-11-11');
+ assert.equal(article.datePublished,'2026-11-11');assert.equal(article.dateModified,expectedDate(p.slug,'2026-11-11'));
  assert.equal(faq.mainEntity.length,6);for(const f of p.faq)assert(faq.mainEntity.some(n=>n.name===f.q&&n.acceptedAnswer.text===f.a));
  for(const[,href]of p.html.matchAll(/href="(\/[^"#?]+)"/g))assert((await fs.stat(href.endsWith('.html')?path.join('dist',href):path.join('dist',href,'index.html'))).isFile(),href);
  const sizes=[];

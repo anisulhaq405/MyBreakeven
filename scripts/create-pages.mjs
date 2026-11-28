@@ -1,3 +1,4 @@
+import {growthUpdates, growthUpdateDate} from "../src/organicGrowthUpdates.js";
 import {editorialTeamAuthor, latestBlogCredit} from "../src/editorialCredits.js";
 import {thaiCaseRoute,thaiCaseDate,thaiCaseUpdated,thaiCaseImage,thaiCaseAlt,thaiCaseFaq} from '../src/thaiCaseData.js';
 import{statementResource,statementFaq}from '../src/incomeStatementContent.js';
@@ -263,7 +264,9 @@ for (const [route, [title, description, heading, privatePage = false]] of Object
   await mkdir(new URL(`../dist/${route}/`, import.meta.url), { recursive: true });
   await writeFile(new URL(`../dist/${route}/index.html`, import.meta.url), publicHtml);
 }
-for (const article of allArticles) {
+for (const originalArticle of allArticles) {
+  const growth = growthUpdates[originalArticle.slug];
+  const article = growth ? {...originalArticle, seoTitle: growth.title || originalArticle.seoTitle, metaDescription: growth.description, modified: growthUpdateDate} : originalArticle;
   const route = `blogs/${article.slug}`;
   const canonical = `https://mybreakeven.com/${route}/`;
   const title = `${article.seoTitle} | MyBreakeven`;
@@ -339,7 +342,7 @@ for (const [slug, [title, description]] of Object.entries(calculators)) {
   const pageImage = titledFeatureImage(slug,tool?.image || `/images/tools/${industryImageKeys[slug]}-break-even-feature-20261016.webp`,'calculator');
   const pageImageAlt = tool?.alt || `${title.replace(" | MyBreakeven", "")} planning model: direct costs, contribution, monthly target and capacity.`;
   const schema = { "@context": "https://schema.org", "@graph": [
-    { "@type": "WebPage", "@id": `${canonical}#webpage`, url: canonical, name: title, description, ...(tool ? {primaryImageOfPage: {"@type": "ImageObject", url: `https://mybreakeven.com${tool.image}`, width: 1200, height: 675}, dateModified: slug === "net-cash-flow-calculator" ? "2026-11-18" : tool.reviewed || "2026-10-06", publisher: {"@id": "https://mybreakeven.com/#organization"}} : {dateModified:slug === "agency-break-even-calculator" ? "2026-11-16" : ["ecommerce-break-even-calculator","cleaning-business-break-even-calculator","landscaping-break-even-calculator"].includes(slug) ? "2026-11-12" : slug === "landscaping-break-even-calculator" ? "2026-10-24" : "2026-10-13",publisher:{"@id":"https://mybreakeven.com/#organization"},primaryImageOfPage:{"@type":"ImageObject",url:`https://mybreakeven.com${pageImage}`,width:1200,height:675}}), inLanguage: "en-US", isPartOf: { "@id": "https://mybreakeven.com/#website" } },
+    { "@type": "WebPage", "@id": `${canonical}#webpage`, url: canonical, name: title, description, ...(tool ? {primaryImageOfPage: {"@type": "ImageObject", url: `https://mybreakeven.com${tool.image}`, width: 1200, height: 675}, dateModified: slug === "business-roi-calculator" ? growthUpdateDate : slug === "net-cash-flow-calculator" ? "2026-11-18" : tool.reviewed || "2026-10-06", publisher: {"@id": "https://mybreakeven.com/#organization"}} : {dateModified:slug === "agency-break-even-calculator" ? "2026-11-16" : ["ecommerce-break-even-calculator","cleaning-business-break-even-calculator","landscaping-break-even-calculator"].includes(slug) ? "2026-11-12" : slug === "landscaping-break-even-calculator" ? "2026-10-24" : "2026-10-13",publisher:{"@id":"https://mybreakeven.com/#organization"},primaryImageOfPage:{"@type":"ImageObject",url:`https://mybreakeven.com${pageImage}`,width:1200,height:675}}), inLanguage: "en-US", isPartOf: { "@id": "https://mybreakeven.com/#website" } },
     { "@type": "WebApplication", "@id": `${canonical}#calculator`, name: title.replace(" | MyBreakeven", ""), url: canonical, applicationCategory: "BusinessApplication", operatingSystem: "Any web browser", isAccessibleForFree: true, description, ...(tool ? {image: `https://mybreakeven.com${tool.image}`, featureList: tool.features, mainEntityOfPage: {"@id": `${canonical}#webpage`}} : {}), offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
     { "@type": "BreadcrumbList", itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://mybreakeven.com/" },
@@ -396,6 +399,8 @@ articleModified.set('https://mybreakeven.com/guides/financial-ratios/','2026-11-
 articleModified.set('https://mybreakeven.com/guides/landscaping-business/','2026-11-18');
 articleModified.set('https://mybreakeven.com/'+thaiCaseRoute+'/',thaiCaseUpdated);
 articleModified.set('https://mybreakeven.com/blogs/'+latestBlogCredit.slug+'/',latestBlogCredit.updated);
+for (const slug of Object.keys(growthUpdates)) articleModified.set(`https://mybreakeven.com/blogs/${slug}/`, growthUpdateDate);
+articleModified.set("https://mybreakeven.com/calculators/business-roi-calculator/", growthUpdateDate);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${publicUrls.map(url => `  <url><loc>${escapeHtml(url)}</loc>${articleModified.has(url) ? `<lastmod>${escapeHtml(articleModified.get(url))}</lastmod>` : ""}</url>`).join("\n")}\n</urlset>\n`;
 await writeFile(new URL("../dist/sitemap.xml", import.meta.url), sitemap);
 
