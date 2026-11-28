@@ -52,3 +52,5 @@ export const growthUpdates = {
     links: [['Use Amazon’s official fee estimator', 'https://sell.amazon.com/pricing/estimate'], ['Carry order contribution into your ecommerce profit model', '/blogs/ecommerce-profit-margin/']],
   },
 };
+
+export const expectedGrowthDate = (slug, currentDate) => growthUpdates[slug] ? growthUpdateDate : currentDate;
