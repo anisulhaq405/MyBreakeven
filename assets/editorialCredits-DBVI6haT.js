@@ -1,0 +1,1 @@
+var e={name:`MyBreakeven Editorial Team`,path:`/editorial-policy/`},t={slug:`other-comprehensive-income`,updated:`2026-11-28`};e.name,``+e.path;export{t as n,e as t};

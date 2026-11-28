@@ -1,0 +1,4 @@
+/blog /blogs/ 301
+/blog/ /blogs/ 301
+/blog/* /blogs/:splat 301
+/index.html / 301
