@@ -1,5 +1,5 @@
 import {describe, expect, it} from 'vitest';
-import {calculateMarketplace, marketplaceDefaults} from './marketplaceFeeEngine.js';
+import {calculateMarketplace, digitalMarketplaceDefaults, marketplaceDefaults} from './marketplaceFeeEngine.js';
 
 const etsy = (changes = {}) => calculateMarketplace('etsy', {...marketplaceDefaults.etsy, ...changes});
 const ebay = (changes = {}) => calculateMarketplace('ebay', {...marketplaceDefaults.ebay, ...changes});
@@ -35,5 +35,26 @@ describe('US marketplace planning model', () => {
   it('handles empty fields and zero revenue explicitly', () => {
     expect(etsy({price:''}).error).toBeTruthy();
     expect(ebay({price:0, shipping:0}).margin).toBeNull();
+  });
+});
+
+describe('digital products', () => {
+  it('ignores physical fulfillment and keeps Etsy digital fees', () => {
+    const digital = {...digitalMarketplaceDefaults.etsy, shipping:45, postage:25, supplies:10};
+    expect(calculateMarketplace('etsy', digital)).toMatchObject({
+      revenue:12, feeBase:12.96, costs:2.5, fees:1.62, profit:7.88, breakEven:3.27, targetPrice:12.14,
+    });
+  });
+
+  it('requires eBay digital fees instead of applying the physical schedule', () => {
+    const digital = digitalMarketplaceDefaults.ebay;
+    expect(calculateMarketplace('ebay', digital).error).toMatch(/verified/);
+    const fees = {...digital, price:9, tax:0, customRate:0, digitalOrderFee:0, shipping:50, postage:20};
+    expect(calculateMarketplace('ebay', fees)).toMatchObject({
+      revenue:9, fees:0, costs:3.5, profit:5.5, breakEven:3.5,
+    });
+    expect(calculateMarketplace('ebay', {...digital,customRate:5,digitalOrderFee:0.2})).toMatchObject({
+      fees:1, profit:10.51, targetPrice:12.36,
+    });
   });
 });

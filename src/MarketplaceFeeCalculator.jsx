@@ -1,7 +1,7 @@
 import React, {useMemo, useState} from 'react';
 import './marketplace-tool.css';
 import FreeToolGuide from './FreeToolGuide.jsx';
-import {calculateMarketplace, ebayRates, marketplaceDefaults} from './marketplaceFeeEngine.js';
+import {calculateMarketplace, digitalMarketplaceDefaults, ebayRates, marketplaceDefaults} from './marketplaceFeeEngine.js';
 import {responsiveFeatureProps} from './responsiveFeatureImages.js';
 
 const usd = new Intl.NumberFormat('en-US', {style:'currency', currency:'USD'});
@@ -9,9 +9,20 @@ const money = value => value === null ? 'Outside modeled price range' : usd.form
 
 export default function MarketplaceFeeCalculator({tool, slug}) {
   const etsy = tool.marketplace === 'etsy';
-  const [values, setValues] = useState(marketplaceDefaults[tool.marketplace]);
+  const [productType, setProductType] = useState('physical');
+  const [scenarios, setScenarios] = useState({
+    physical: marketplaceDefaults[tool.marketplace],
+    digital: digitalMarketplaceDefaults[tool.marketplace],
+  });
+  const digital = productType === 'digital';
+  const values = scenarios[productType];
   const result = useMemo(() => calculateMarketplace(tool.marketplace, values), [tool.marketplace, values]);
-  const update = (key, value) => setValues(previous => ({...previous, [key]:value}));
+  const update = (key, value) => setScenarios(previous => ({
+    ...previous, [productType]: {...previous[productType], [key]: value},
+  }));
+  const reset = () => setScenarios(previous => ({
+    ...previous, [productType]: (digital ? digitalMarketplaceDefaults : marketplaceDefaults)[tool.marketplace],
+  }));
   const field = (key, label, help, step = '0.01') => (
     <label className="tool-field" htmlFor={key}>
       <span>{label}</span>
@@ -31,14 +42,21 @@ export default function MarketplaceFeeCalculator({tool, slug}) {
       <div className="tool-workspace" id="marketplace-inputs">
         <section className="tool-panel">
           <h2>Your sale and seller costs</h2>
+          <label className="tool-field">Product type
+            <select value={productType} onChange={event => setProductType(event.target.value)}>
+              <option value="physical">Physical product</option>
+              <option value="digital">Digital product</option>
+            </select>
+          </label>
+          {digital && !etsy && <p>For eligible electronically delivered items, use the fees confirmed for your listing format. eBay restricts digital listings. Check its <a href="https://www.ebay.com/help/policies/selling-policies/prohibited-restricted-items-policy?id=4289">electronically delivered items policy</a> before listing. This scenario does not apply the standard physical category rates or order charge.</p>}
           <div className="tool-inputs">
             {field('price','Item selling price ($)','What the buyer pays for the item after seller discounts.')}
-            {field('shipping','Shipping charged to buyer ($)','Enter handling and gift wrap here when they share the modeled fee and tax bases.')}
-            {field('tax','Effective sales tax on item + shipping (%)','Use the effective checkout rate. If only the item is taxable, divide actual tax by item plus shipping.')}
-            {field('itemCost','Landed item cost ($)','Inventory or materials, direct labor and inbound freight allocated to the sold item.')}
-            {field('postage','Postage you pay ($)','Use your actual label or fulfillment cost, even when the buyer pays for shipping.')}
-            {field('supplies','Packaging and handling cost ($)','Enter incremental seller costs that are not already in landed cost or postage.')}
-            {field('allowance','Other cost or expected return loss ($)','Use a per-sale allowance. Keep refunded revenue, fee credits and recoverable stock out of a duplicated cost entry.')}
+            {!digital && field('shipping','Shipping charged to buyer ($)','Enter handling and gift wrap here when they share the modeled fee and tax bases.')}
+            {field('tax',digital ? 'Effective sales tax on item (%)' : 'Effective sales tax on item + shipping (%)',digital ? 'Enter the rate shown for this digital order. Use zero if no buyer tax applies.' : 'Use the effective checkout rate. If only the item is taxable, divide actual tax by item plus shipping.')}
+            {field('itemCost',digital ? 'Digital product cost per sale ($)' : 'Landed item cost ($)',digital ? 'Include per-sale royalties, file delivery, or an allocated share of design costs.' : 'Inventory or materials, direct labor and inbound freight allocated to the sold item.')}
+            {!digital && field('postage','Postage you pay ($)','Use your actual label or fulfillment cost, even when the buyer pays for shipping.')}
+            {!digital && field('supplies','Packaging and handling cost ($)','Enter incremental seller costs that are not already in landed cost or postage.')}
+            {field('allowance',digital ? 'Support and refund allowance ($)' : 'Other cost or expected return loss ($)',digital ? 'Estimate unrecovered refunds and support per sale. Count each cost once.' : 'Use a per-sale allowance. Keep refunded revenue, fee credits and recoverable stock out of a duplicated cost entry.')}
             {field('goal','Target contribution per sale ($)','Amount left after the fees and costs entered here.')}
           </div>
           <h3>{etsy ? 'Etsy fees and ad attribution' : 'eBay category and listing fees'}</h3>
@@ -52,6 +70,10 @@ export default function MarketplaceFeeCalculator({tool, slug}) {
                 <small>Choose the rate shown in your Etsy account. The fee is capped at $100 per attributed order.</small>
               </label>
             </> : <>
+              {digital ? <>
+                {field('customRate','Verified percentage fee (%)','Applied to the modeled item price plus buyer tax. Enter zero if it does not apply.')}
+                {field('digitalOrderFee','Verified fixed fee per order ($)','Enter the checkout or processing charge for one sale, or zero.')}
+              </> : <>
               <label className="tool-field">US final value fee schedule
                 <select value={values.category} onChange={event => update('category',event.target.value)}>
                   {Object.entries(ebayRates).map(([key,option])=><option key={key} value={key}>{option.label} · {option.rate}%</option>)}
@@ -60,11 +82,12 @@ export default function MarketplaceFeeCalculator({tool, slug}) {
                 <small>Published basic-fee schedules only. Use custom for a flat rate you have verified.</small>
               </label>
               {values.category === 'custom' && field('customRate','Custom final value percentage (%)','One flat rate across the modeled sale amount.')}
+              </>}
               {field('insertion','Insertion and listing upgrades allocated ($)','Enter zero if covered by a free listing and you did not buy upgrades.')}
-              {field('promoted','Attributed Promoted Listings rate (%)','Use zero for an unattributed order. This models a percentage of item, shipping and tax.')}
+              {field('promoted',digital ? 'Verified attributed advertising rate (%)' : 'Attributed Promoted Listings rate (%)',digital ? 'Enter zero if no percentage-based advertising fee applies.' : 'Use zero for an unattributed order. This models a percentage of item, shipping and tax.')}
             </>}
           </div>
-          <button type="button" onClick={() => setValues(marketplaceDefaults[tool.marketplace])}>Reset example</button>
+          <button type="button" onClick={reset}>Reset example</button>
         </section>
         <section className="tool-panel" aria-labelledby="marketplace-results">
           <h2 id="marketplace-results">Order profit and price floor</h2>
@@ -85,7 +108,7 @@ export default function MarketplaceFeeCalculator({tool, slug}) {
               ].map(([label,value])=><tr key={label}><th scope="row">{label}</th><td>{money(value)}</td></tr>)}</tbody>
             </table></div>
             {result.adsImpact > 0 && <p>Without attributed advertising, the same order would leave about {money(result.profit + result.adsImpact)} in contribution. Compare that difference with the extra orders the ads generate.</p>}
-            <p>Price floors hold shipping, effective tax rate and seller costs constant. Fees are estimated at full precision and displayed to cents. Compare against your order statement before setting a live price.</p>
+            <p>Price floors hold the effective tax rate and seller costs constant{digital ? '.' : ', including shipping.'} Fees are estimated at full precision and displayed to cents. Compare against your order statement before setting a live price.</p>
           </>}
         </section>
       </div>
