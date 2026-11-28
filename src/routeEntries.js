@@ -11,6 +11,8 @@ const clusters = {
   "/guides/cleaning-business": "src/routes/CleaningRoute.jsx"
 };
 const tools = {
+  "/calculators/paypal-fee-calculator": "src/routes/SellerAssetToolRoute.jsx",
+  "/calculators/business-depreciation-calculator": "src/routes/SellerAssetToolRoute.jsx",
   "/calculators/etsy-fee-calculator": "src/routes/MarketplaceToolRoute.jsx",
   "/calculators/ebay-fee-calculator": "src/routes/MarketplaceToolRoute.jsx",
   "/calculators/mortgage-calculator":"src/routes/MortgageToolRoute.jsx",

@@ -15,7 +15,7 @@ describe('scoped download indexing and existing-page discovery',()=>{
   expect(blogPosts).toHaveLength(Object.keys(before.articles).length);
   for(const p of blogPosts)expect(hash(p),p.slug).toBe(before.articles[p.slug]);
   for(const [slug,digest] of Object.entries(before.tools)) expect(hash(freeTools[slug]),slug).toBe(digest);
-  expect(Object.keys(freeTools).filter(slug=>!Object.hasOwn(before.tools,slug)).sort()).toEqual(['ebay-fee-calculator','etsy-fee-calculator']);
+  expect(Object.keys(freeTools).filter(slug=>!Object.hasOwn(before.tools,slug)).sort()).toEqual(['business-depreciation-calculator','ebay-fee-calculator','etsy-fee-calculator','paypal-fee-calculator']);
  });
  it('renders existing, uniquely owned contextual destinations in normal server HTML',()=>{
   expect(Object.keys(discoveryNextSteps)).toHaveLength(6);

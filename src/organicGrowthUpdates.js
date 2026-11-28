@@ -36,14 +36,20 @@ export const growthUpdates = {
   'ecommerce-profit-margin': {
     description: 'Calculate ecommerce profit margin from retained order revenue through product, shipping, ad and return costs to monthly operating profit.',
     heading: 'From profit per order to monthly operating margin',
-    copy: 'Suppose each order averages $75 in net revenue after refunds, and $50 in variable costs after inventory recoveries. At 400 orders, net revenue is $30,000 and contribution is $10,000. With $7,000 in operating overhead, operating profit is $3,000 and operating margin is 10%. Keep the order count and cost basis consistent. Deduct any refund or recovered inventory only once.',
-    links: [['Model return costs per order', '/calculators/ecommerce-return-cost-calculator/'], ['Test the monthly ecommerce break-even order count', '/calculators/ecommerce-break-even-calculator/']],
+    copy: 'Suppose each order averages $75 in net revenue after refunds, and $50 in variable costs after inventory recoveries. At 400 orders, net revenue is $30,000 and contribution is $10,000. With $7,000 in operating overhead, operating profit is $3,000 and operating margin is 10%. Keep the order count and cost basis consistent. Deduct any refund or recovered inventory only once. If your variable-cost total already includes payment processing, use the PayPal estimate to reconcile that cost rather than deducting the fee again.',
+    links: [['Estimate PayPal fees for a seller payment', '/calculators/paypal-fee-calculator/'], ['Model return costs per order', '/calculators/ecommerce-return-cost-calculator/'], ['Test the monthly ecommerce break-even order count', '/calculators/ecommerce-break-even-calculator/']],
   },
   'depreciation-methods': {
     description: 'Compare book depreciation methods and build an asset schedule. See how opening carrying value, depreciation and residual value connect.',
     heading: 'Turn your depreciation method into a schedule',
-    copy: 'Record opening carrying value, depreciation expense and closing carrying value for each period. A $12,000 asset with $2,000 residual value and a five-year life has $2,000 annual straight-line depreciation for full years. The first year closes at $10,000 and the fifth at $2,000. Reconcile the asset schedule to accumulated depreciation and document partial periods or changes in estimates. This is a book depreciation example.',
-    links: [['Build a straight-line depreciation schedule', '/blogs/straight-line-depreciation/'], ['Reconcile accumulated depreciation', '/blogs/accumulated-depreciation/']],
+    copy: 'Record opening carrying value, depreciation expense and closing carrying value for each period. A $12,000 asset with $2,000 residual value and a five-year life has $2,000 annual straight-line depreciation for full years. The first year closes at $10,000 and the fifth at $2,000. Reconcile the asset schedule to accumulated depreciation and document partial periods or changes in estimates. Carry cost, residual value and useful life into the calculator, then select the method you want to compare. This is a book depreciation example.',
+    links: [['Compare full-year book schedules in the calculator', '/calculators/business-depreciation-calculator/'], ['Build a straight-line depreciation schedule', '/blogs/straight-line-depreciation/'], ['Reconcile accumulated depreciation', '/blogs/accumulated-depreciation/']],
+  },
+  'straight-line-depreciation': {
+    description: 'Calculate straight-line depreciation, reconcile a worked annual and monthly schedule, and try an interactive full-year business asset example.',
+    heading: 'Check the full-year schedule with your own asset',
+    copy: 'Enter cost, residual value and useful life in the calculator, then select straight-line. Compare its annual expense and final carrying value with your worksheet. The interactive schedule uses full years. Use this guide’s worked calendar-year schedule for the in-service month and partial periods.',
+    links: [['Open the Business Depreciation Calculator', '/calculators/business-depreciation-calculator/']],
   },
   'amazon-marketplace-vs-own-store-profit-per-order': {
     description: 'Compare Amazon FBA and your own store after marketplace fees, fulfillment, product costs, advertising and expected returns.',

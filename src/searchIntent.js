@@ -12,6 +12,8 @@ export const industryIntent = [
 ];
 
 export const decisionIntent = [
+ ['paypal-fee-calculator', 'Domestic US PayPal merchant fees and reverse pricing', ['ecommerce-profit-margin']],
+ ['business-depreciation-calculator', 'Interactive annual business asset book value schedule', ['depreciation-methods', 'straight-line-depreciation']],
  ['etsy-fee-calculator', 'US Etsy seller fees, Offsite Ads and item price floor', ['ecommerce-profit-margin']],
  ['ebay-fee-calculator', 'US eBay final value fee, attributed advertising and item price floor', ['ecommerce-profit-margin']],
  ['mortgage-calculator','Fixed-rate payment and separate ownership budget',['mortgage-refinance-break-even']],
