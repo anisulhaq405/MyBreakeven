@@ -1,3 +1,4 @@
+import {editorialTeam, latestBlogCredit} from './editorialCredits.js';
 import DiscoveryNextStep from './DiscoveryNextStep.jsx';
 import {presentClickAnswer} from './clickAnswerPresentation.js';
 import './click-answer-presentation.css';
@@ -39,6 +40,7 @@ const dateLabel = value => new Date(`${value}T12:00:00Z`).toLocaleDateString("en
 
 export default function LongformArticle({ article: a }) {
   const slug = a?.slug;
+  const editorialExample = slug === latestBlogCredit.slug;
   const hasIntroWidget = ['cash-flow-statement','how-to-analyze-financial-statements','marginal-cost','average-cost-per-unit','salon-booth-rent-vs-commission-owner','operating-cash-flow', 'master-budget', 'cost-drivers-small-business', 'job-order-costing', 'margin-vs-markup', 'calculate-contribution-margin', 'high-low-method', 'flexible-budget-variance-analysis', 'make-or-buy-decision', 'break-even-analysis-example'].includes(slug);
   const guideType = articleGuideType(a);
   useEffect(() => {
@@ -54,8 +56,8 @@ export default function LongformArticle({ article: a }) {
     {a.tag === "Agency" && <AgencyClusterLink />}{a.tag === "E-commerce" && <EcommerceClusterLink />}{a.tag === "Photography" && <PhotographyClusterLink />}{a.tag === "Restaurant" && <RestaurantClusterLink />}{a.tag === "Salon" && <SalonClusterLink />}{a.tag === "Cleaning" && <CleaningClusterLink />}{a.tag === "Landscaping" && <LandscapingClusterLink />}{a.tag === "Mobile Detailing" && <MobileDetailingClusterLink />}
     {a.editorialStatus==='draft'&&<p className="article-note" role="status">Unpublished draft for review</p>}
     <span>{a.tag} {guideType}</span><h1>{a.title}</h1>
-    <div className="article-meta"><time dateTime={a.published}>{a.editorialStatus==='draft'?'Draft prepared':'Published'} {dateLabel(a.published)}</time><span>Updated {dateLabel(a.modified)}</span></div>
-    <p className="article-note">Published by <a href="/about-us/">MyBreakeven</a>. <a href="/editorial-policy/">Editorial standards and corrections</a>. Report a calculation or content issue to <a href="mailto:mybreakeven1@gmail.com">mybreakeven1@gmail.com</a>.</p>
+    <div className="article-meta"><time dateTime={a.published}>{a.editorialStatus==='draft'?'Draft prepared':'Published'} {dateLabel(a.published)}</time>{editorialExample ? <time dateTime={latestBlogCredit.updated}>Updated {dateLabel(latestBlogCredit.updated)}</time> : <span>Updated {dateLabel(a.modified)}</span>}</div>
+    <p className="article-note">{editorialExample ? <>By <a href={editorialTeam.path} rel="author">{editorialTeam.name}</a>.</> : <>Published by <a href="/about-us/">MyBreakeven</a>.</>} <a href="/editorial-policy/">Editorial standards and corrections</a>. Report a calculation or content issue to <a href="mailto:mybreakeven1@gmail.com">mybreakeven1@gmail.com</a>.</p>
     <p className="article-lead">{a.description}</p>
     <GuideCalculatorLink slug={a.slug} />
     <EcommerceExampleLink slug={a.slug} />

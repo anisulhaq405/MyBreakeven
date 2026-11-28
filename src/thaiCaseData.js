@@ -1,6 +1,7 @@
 export const thaiCaseRoute='resources/thai-foods-restaurant-break-even-case-study';
 export const thaiCasePath='/'+thaiCaseRoute+'/';
 export const thaiCaseDate='2026-11-19';
+export const thaiCaseUpdated='2026-11-28';
 export const thaiCaseTitle='Thai Foods Restaurant Break-Even Case Study: From Monthly Costs to Daily Table Bills';
 export const thaiCaseMeta=['Thai Foods Restaurant Break-Even Case Study | MyBreakeven','See how Thai Foods in Jacksonville used a $99 average table bill to plan 1,476 monthly bills. Inspect costs, daily targets, manager feedback and evidence limits.',thaiCaseTitle];
 export const thaiCaseImage='/images/case-studies/thai-foods-restaurant-break-even-case-study.webp';
