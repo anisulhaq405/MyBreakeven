@@ -11,14 +11,24 @@ export const marketplaceDefaults = {
   ebay: { price: 100, shipping: 8, tax: 6, itemCost: 48, postage: 10, supplies: 2, allowance: 3, goal: 25, category: 'most', insertion: 0, promoted: 4, customRate: 13.6 },
 };
 
+export const digitalMarketplaceDefaults = {
+  etsy: { ...marketplaceDefaults.etsy, productType: 'digital', price: 12, shipping: 0, itemCost: 2, postage: 0, supplies: 0, allowance: 0.5, goal: 8, offsite: 0 },
+  ebay: { ...marketplaceDefaults.ebay, productType: 'digital', price: 15, shipping: 0, itemCost: 3, postage: 0, supplies: 0, allowance: 0.5, goal: 8, customRate: '', digitalOrderFee: '', promoted: 0 },
+};
+
 const decimal = value => new Decimal(value);
 const cents = value => decimal(value).toDecimalPlaces(2).toNumber();
 const percent = value => decimal(value).div(100);
 
 export function calculateMarketplace(platform, input) {
   const etsy = platform === 'etsy';
-  const fields = ['price', 'shipping', 'tax', 'itemCost', 'postage', 'supplies', 'allowance', 'goal',
-    ...(etsy ? ['listings', 'offsite'] : ['insertion', 'promoted', ...(input.category === 'custom' ? ['customRate'] : [])])];
+  const digital = input.productType === 'digital';
+  const physicalCosts = digital ? [] : ['postage', 'supplies'];
+  const fields = ['price', 'tax', 'itemCost', 'allowance', 'goal', ...physicalCosts, ...(digital ? [] : ['shipping']),
+    ...(etsy ? ['listings', 'offsite'] : ['insertion', 'promoted', ...(digital ? ['customRate', 'digitalOrderFee'] : input.category === 'custom' ? ['customRate'] : [])])];
+  if (!etsy && digital && (input.customRate === '' || input.digitalOrderFee === '')) {
+    return { error: 'Enter your verified percentage fee and fixed fee per order. Enter zero for any fee that does not apply.' };
+  }
   if (fields.some(key => input[key] === '' || !Number.isFinite(Number(input[key])) || Number(input[key]) < 0 || Number(input[key]) > 1e7)) {
     return { error: 'Enter a number from 0 to 10,000,000 in each field.' };
   }
@@ -26,14 +36,14 @@ export function calculateMarketplace(platform, input) {
       (etsy && !Number.isInteger(Number(input.listings)))) {
     return { error: 'Use a tax rate from 0% to 100% and whole listing charges where applicable.' };
   }
-  const custom = input.category === 'custom';
+  const custom = digital || input.category === 'custom';
   const rate = etsy ? 0 : custom ? Number(input.customRate) : ebayRates[input.category]?.rate;
   if (!etsy && (!Number.isFinite(rate) || rate + Number(input.promoted) >= 50)) {
     return { error: 'Choose a supported category, with combined custom and promoted fee rates below 50%.' };
   }
-  const costs = ['itemCost', 'postage', 'supplies', 'allowance'].reduce((sum, key) => sum.plus(input[key]), decimal(0));
+  const costs = ['itemCost', 'allowance', ...physicalCosts].reduce((sum, key) => sum.plus(input[key]), decimal(0));
   const taxRate = percent(input.tax);
-  const shipping = decimal(input.shipping);
+  const shipping = decimal(digital ? 0 : input.shipping);
   const quote = (price, orderFeeOverride) => {
     const revenue = price.plus(shipping);
     const buyerTax = revenue.mul(taxRate).toDecimalPlaces(2);
@@ -49,10 +59,10 @@ export function calculateMarketplace(platform, input) {
     } else {
       const percentageFee = custom ? buyerTotal.mul(percent(rate))
         : Decimal.min(buyerTotal, 7500).mul(percent(rate)).plus(Decimal.max(buyerTotal.minus(7500), 0).mul('0.0235'));
-      const orderFee = orderFeeOverride ?? (buyerTotal.lte(10) ? '0.30' : '0.40');
+      const orderFee = digital ? input.digitalOrderFee : orderFeeOverride ?? (buyerTotal.lte(10) ? '0.30' : '0.40');
       lines = [
-        ['Final value percentage fee', percentageFee],
-        ['Final value per-order charge', decimal(orderFee)],
+        [digital ? 'Entered percentage fee' : 'Final value percentage fee', percentageFee],
+        [digital ? 'Entered fixed fee per order' : 'Final value per-order charge', decimal(orderFee)],
         ['Insertion fee allocated to this order', decimal(input.insertion)],
         ['Attributed ad fee', buyerTotal.mul(percent(input.promoted))],
       ];
@@ -67,7 +77,7 @@ export function calculateMarketplace(platform, input) {
   function priceFor(target) {
     const priceAt = minor => decimal(minor).div(100);
     let minimumHighFee = 0;
-    if (!etsy) {
+    if (!etsy && !digital) {
       let lo = 0;
       let hi = 1001;
       while (lo < hi) {
@@ -86,7 +96,7 @@ export function calculateMarketplace(platform, input) {
       }
       return low / 100;
     }
-    return etsy ? solve(0, 1000000000)
+    return etsy || digital ? solve(0, 1000000000)
       : solve(0, minimumHighFee - 1, '0.30') ?? solve(minimumHighFee, 1000000000, '0.40');
   }
 
