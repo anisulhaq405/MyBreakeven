@@ -16,6 +16,7 @@ import { SalonClusterLink } from './ClusterLinks.jsx';
 import { MobileDetailingClusterLink } from './ClusterLinks.jsx';
 import { LandscapingClusterLink } from './ClusterLinks.jsx';
 import { CleaningClusterLink } from './ClusterLinks.jsx';
+import {growthUpdates} from './organicGrowthUpdates.js';
 import React,{useEffect,useState}from"react";
 import LongformArticle from "./LongformArticle.jsx";
 import { getLoadedBlogPost, loadBlogPost, relatedBlogPosts } from "./blogContentLoader.js";
@@ -28,8 +29,8 @@ export default function BlogArticle({slug,initialArticle}){
     return ()=>{active=false;};
   },[slug]);
   useEffect(()=>{if(a){
-    document.title=`${a.seoTitle} | MyBreakeven`;
-    document.querySelector('meta[name="description"]')?.setAttribute("content",a.metaDescription);
+    document.title=`${growthUpdates[slug]?.title || a.seoTitle} | MyBreakeven`;
+    document.querySelector('meta[name="description"]')?.setAttribute("content",growthUpdates[slug]?.description || a.metaDescription);
     document.querySelector('link[rel="canonical"]')?.setAttribute("href",`https://mybreakeven.com/blogs/${slug}/`);
   }},[a,slug]);
   if(a===undefined)return <section className="page-hero"><h1>Loading guide…</h1></section>;

@@ -1,11 +1,14 @@
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
+import {growthUpdates} from '../src/organicGrowthUpdates.js';
 const review=JSON.parse(await fs.readFile('docs/gsc-batch3-20261127/review.json','utf8'));
 const sitemap=await fs.readFile('dist/sitemap.xml','utf8');
 for(const p of review.pages){
  const h=await fs.readFile('dist/'+p.path+'/index.html','utf8');
- assert(h.includes('<title>'+p.title+'</title>'),p.slug+' preserved title');
- assert(h.includes('name="description" content="'+p.description+'"'),p.slug+' preserved description');
+ const growth=growthUpdates[p.slug];
+ const title=growth?.title ? growth.title+' | MyBreakeven' : p.title;
+ assert(h.includes('<title>'+title+'</title>'),p.slug+' expected title');
+ assert(h.includes('name="description" content="'+(growth?.description || p.description)+'"'),p.slug+' expected description');
  assert(h.includes('rel="canonical" href="'+p.canonical+'"'),p.slug+' canonical');
  assert(sitemap.includes(p.canonical));assert(!/name="(?:robots|googlebot)" content="[^"]*noindex/.test(h),p.slug);
  assert.equal((h.match(/<h1\b/g)||[]).length,1,p.slug);
@@ -21,4 +24,4 @@ assert(budget.indexOf('/downloads/restaurant-monthly-budget-template.xlsx')<budg
 const contribution=await fs.readFile('dist/blogs/calculate-contribution-margin/index.html','utf8');
 assert(contribution.includes('id="contribution-calculator"'));assert(contribution.includes('id="contribution-total-heading"'));
 const fixed=await fs.readFile('dist/blogs/fixed-vs-variable-costs/index.html','utf8');assert(fixed.includes('href="/blogs/activity-based-costing/"'));
-console.log('Batch3 ranking paths: eight owners reviewed; four contextual handoffs; preserved metadata, calculators, workbook access and Batch1 paths.');
+console.log('Batch3 ranking paths: eight owners reviewed; four contextual handoffs; expected metadata, calculators, workbook access and Batch1 paths.');
